@@ -65,16 +65,12 @@
     <Compile Include="ContentLabelAnalyses\EngagePageList.cs" />
     <Compile Include="ContentLabelAnalyses\FriendLink.cs" />
     <Compile Include="ContentLabelAnalyses\HotKeyword.cs" />
-    <Compile Include="ContentLabelAnalyses\InvestmentKeyPageList.cs" />
-    <Compile Include="ContentLabelAnalyses\MachiningKeyPageList.cs" />
     <Compile Include="ContentLabelAnalyses\NewsList.cs" />
     <Compile Include="ContentLabelAnalyses\NewsPageList.cs" />
-    <Compile Include="ContentLabelAnalyses\ServiceKeyPageList.cs" />
     <Compile Include="ContentLabelAnalyses\ShowList.cs" />
     <Compile Include="ContentLabelAnalyses\ShowPageList.cs" />
     <Compile Include="ContentLabelAnalyses\SupplyBuyList.cs" />
     <Compile Include="ContentLabelAnalyses\SupplyBuyPageList.cs" />
-    <Compile Include="ContentLabelAnalyses\SupplyKeyPageList.cs" />
     <Compile Include="ContentLabelAnalyses\SupplyList.cs" />
     <Compile Include="ClassLabelManager.cs" />
     <Compile Include="ContentLabelAnalyses\SupplyPageList.cs" />
@@ -100,10 +96,8 @@
     <Compile Include="Model\LabelType.cs" />
     <Compile Include="Model\OuterParameterInfo.cs" />
     <Compile Include="Model\SEARCH_PAGE_LIST.cs" />
-    <Compile Include="PartLabelManager.cs" />
     <Compile Include="PollLabelManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RankingLabelManager.cs" />
     <Compile Include="SystemLabelAnalyses\Keyword.cs" />
     <Compile Include="SystemLabelAnalyses\More.cs" />
     <Compile Include="SystemLabelManager.cs" />

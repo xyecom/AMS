@@ -130,6 +130,13 @@
     <Compile Include="Creditor\AddForeclosed.aspx.designer.cs">
       <DependentUpon>AddForeclosed.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Creditor\BaseEdit.aspx.cs">
+      <DependentUpon>BaseEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\BaseEdit.aspx.designer.cs">
+      <DependentUpon>BaseEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Creditor\Creditor.master.cs">
       <DependentUpon>Creditor.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -866,20 +873,6 @@
     <Compile Include="xymanage\LabelManage\NewsSet.aspx.designer.cs">
       <DependentUpon>NewsSet.aspx</DependentUpon>
     </Compile>
-    <Compile Include="xymanage\LabelManage\PartLabelList.aspx.cs">
-      <DependentUpon>PartLabelList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="xymanage\LabelManage\PartLabelList.aspx.designer.cs">
-      <DependentUpon>PartLabelList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="xymanage\LabelManage\PartLabelView.aspx.cs">
-      <DependentUpon>PartLabelView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="xymanage\LabelManage\PartLabelView.aspx.designer.cs">
-      <DependentUpon>PartLabelView.aspx</DependentUpon>
-    </Compile>
     <Compile Include="xymanage\LabelManage\PollLabelList.aspx.cs">
       <DependentUpon>PollLabelList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1473,6 +1466,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Creditor\AddForeclosed.aspx" />
+    <Content Include="Creditor\BaseEdit.aspx" />
     <Content Include="Creditor\Index.aspx" />
     <Content Include="Creditor\UserContorl\left.ascx" />
     <Content Include="Creditor\UserContorl\menu.ascx" />
@@ -3031,7 +3025,6 @@
     <Content Include="Common\Js\UploadControl.js" />
     <Content Include="Common\XYOutInvoke.aspx" />
     <Content Include="config\js\config.js" />
-    <Content Include="exhibition\index.aspx" />
     <Content Include="icon\big_grade_1.gif" />
     <Content Include="icon\big_grade_2.gif" />
     <Content Include="icon\big_grade_3.gif" />
@@ -3041,7 +3034,6 @@
     <Content Include="icon\grade_2.gif" />
     <Content Include="icon\grade_3.gif" />
     <Content Include="icon\WaterMarkCert.gif" />
-    <Content Include="Index.aspx" />
     <Content Include="page404.htm" />
     <Content Include="error.htm" />
     <Content Include="TemplateEmail\AuditingInfo.htm" />
@@ -4170,8 +4162,6 @@
     <Content Include="xymanage\LabelManage\LabelTypeList.aspx" />
     <Content Include="xymanage\LabelManage\List.aspx" />
     <Content Include="xymanage\LabelManage\NewsSet.aspx" />
-    <Content Include="xymanage\LabelManage\PartLabelList.aspx" />
-    <Content Include="xymanage\LabelManage\PartLabelView.aspx" />
     <Content Include="xymanage\LabelManage\PollLabelList.aspx" />
     <Content Include="xymanage\LabelManage\SelectUser.aspx" />
     <Content Include="xymanage\LabelManage\ShowSet.aspx" />
@@ -4387,7 +4377,6 @@
   <ItemGroup>
     <Folder Include="aspx\" />
     <Folder Include="cache\" />
-    <Folder Include="Licence\" />
     <Folder Include="templates\default\cp\" />
     <Folder Include="templates\default\icon\" />
     <Folder Include="templates\default\service\" />
@@ -4410,7 +4399,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>8100</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

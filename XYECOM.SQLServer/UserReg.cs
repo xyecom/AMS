@@ -190,7 +190,7 @@ namespace XYECOM.SQLServer
                 info.Question = reader["U_Question"].ToString();
                 info.RegDate = Core.MyConvert.GetDateTime(reader["U_RegDate"].ToString());
 
-                info.GradeId = Core.MyConvert.GetInt32(reader["UG_ID"].ToString());                
+                info.GradeId = Core.MyConvert.GetInt32(reader["UG_ID"].ToString());
 
 
                 info.Cred = Core.MyConvert.GetInt32(reader["U_Cred"].ToString());
@@ -243,7 +243,7 @@ namespace XYECOM.SQLServer
                 info.LayerId = reader["LayerId"].ToString();
 
                 info.Description = reader["Description"].ToString();
-                info.DelState = Core.MyConvert.GetInt32(reader["DelState"].ToString()); 
+                info.DelState = Core.MyConvert.GetInt32(reader["DelState"].ToString());
                 info.Telphone = reader["Telphone"].ToString();
                 info.OtherContact = reader["OtherContact"].ToString();
                 info.Sex = Core.MyConvert.GetBoolean(reader["Sex"].ToString());
@@ -253,6 +253,8 @@ namespace XYECOM.SQLServer
                 info.IsExport = Core.MyConvert.GetBoolean(reader["IsExport"].ToString()); ;
                 info.UserType = Core.MyConvert.GetInt32(reader["UserType"].ToString());
                 info.IdentityNumber = reader["IdentityNumber"].ToString();
+
+                info.CompanyId = Core.MyConvert.GetInt32(reader["CompanyId"].ToString());
             }
 
             return info;
@@ -391,7 +393,7 @@ namespace XYECOM.SQLServer
                     eu.Password = dr["U_PassWord"].ToString();
                     eu.Question = dr["U_Question"].ToString();
                     eu.RegDate = Core.MyConvert.GetDateTime(dr["U_RegDate"].ToString());
-                    
+
                     eu.Cred = Core.MyConvert.GetInt32(dr["U_Cred"].ToString());
                     eu.MessageNum = Core.MyConvert.GetInt32(dr["U_MessageNum"].ToString());
                     eu.NoMessgeNum = Core.MyConvert.GetInt32(dr["U_NoMessgeNum"].ToString());

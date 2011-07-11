@@ -71,7 +71,6 @@ namespace XYECOM.Web
             regInfo.Answer = string.Empty;
             regInfo.Question = string.Empty;
             regInfo.IsPrimary = true;
-            regInfo.CompanyId = 0;
 
 
             XYECOM.Model.UserInfo userInfo = new XYECOM.Model.UserInfo();
