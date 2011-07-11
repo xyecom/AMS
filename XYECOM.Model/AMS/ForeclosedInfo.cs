@@ -35,7 +35,7 @@ namespace XYECOM.Model.AMS
             get;
             set;
         }
-        
+
         /// <summary>
         /// 目前最高价
         /// </summary>
@@ -75,7 +75,7 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 创建时间
         /// </summary>
-        public string CreateDate
+        public DateTime CreateDate
         {
             get;
             set;
@@ -102,7 +102,7 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 所属公司
         /// </summary>
-        public int? UserId
+        public int UserId
         {
             get;
             set;
@@ -111,7 +111,7 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 所属用户、部门
         /// </summary>
-        public int? DepartmentId
+        public int DepartmentId
         {
             get;
             set;
@@ -129,6 +129,24 @@ namespace XYECOM.Model.AMS
         /// 说明
         /// </summary>
         public string Description
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 类型
+        /// </summary>
+        public string ForeColseTypeName
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 类型编号（扩展字段）
+        /// </summary>
+        public int ForeCloseTypeId
         {
             get;
             set;

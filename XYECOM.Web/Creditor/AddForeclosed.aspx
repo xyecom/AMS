@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Creditor/Site1.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Creditor/Creditor.master" AutoEventWireup="true"
     CodeBehind="AddForeclosed.aspx.cs" Inherits="XYECOM.Web.Creditor.AddForeclosed" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->
     <div id="right">
         <!--rightzqmain start-->
@@ -27,15 +27,35 @@
                         拍卖底价：
                     </td>
                     <td>
-                        <asp:TextBox runat="server" ID="txtLinePrice"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtLinePrice"></asp:TextBox><span>元</span>
                     </td>
                 </tr>
                 <tr>
                     <td class="info1">
-                        物品所在地：
+                        地区：
+                    </td>
+                    <td>
+                        <div id="divarea">
+                            <input type="hidden" id="city" name="city" runat="server" />
+                        </div>
+                    </td>
+                    <td class="info1">
+                        物品类型：
+                    </td>
+                    <td>
+                        <asp:DropDownList runat="server" ID="droTypeName" Width="135px">
+                            <asp:ListItem Value="房屋" Text="房屋"></asp:ListItem>
+                            <asp:ListItem Value="汽车" Text="汽车"></asp:ListItem>
+                            <asp:ListItem Value="金条" Text="金条"></asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info1">
+                        详细地址：
                     </td>
                     <td colspan="3">
-                        <input id="Text3" type="text" style="width: 550px" />
+                        <asp:TextBox runat="server" ID="txtAddress"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -43,7 +63,17 @@
                         结束竞拍时间：
                     </td>
                     <td colspan="3">
-                        <input id="Text4" type="text" />
+                        <input id="endDate" runat="server" size="10" type="text" readonly="readonly" onclick="getDateString(this);" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="info1">
+                        物品详细描述：
+                    </td>
+                    <td colspan="3">
+                        <FCKeditorV2:FCKeditor ID="fckDescription" runat="server" BasePath="/Common/fckeditor/"
+                            ToolbarSet="News" Height="200px">
+                        </FCKeditorV2:FCKeditor>
                     </td>
                 </tr>
             </table>
@@ -68,9 +98,15 @@
         </div>
         <!--rightzqmain end-->
         <div style="width: 812px; height: 40px; line-height: 40px; text-align: center">
-            <input type="button" value="确 定" style="background: url(../images/yes.gif); width: 80px;
-                height: 25px; border: none; cursor: pointer; color: #FFF" />
+            <%--  <input type="button" value="确 定" style="background: url(../images/yes.gif); width: 80px;
+                height: 25px; border: none; cursor: pointer; color: #FFF" />--%>
+            <asp:Button runat="server" ID="btnOK" Width="80px" Height="25px" Text="确定" OnClick="btnOK_Click" />
         </div>
     </div>
+    <script type="text/javascript">
+        var claarea = new ClassType("claarea", 'area', 'divarea', 'city');
+        claarea.Mode = "select";
+        claarea.Init();
+    </script>
     <!--right end-->
 </asp:Content>
