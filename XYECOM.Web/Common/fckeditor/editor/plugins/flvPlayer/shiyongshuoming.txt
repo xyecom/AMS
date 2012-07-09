@@ -1,0 +1,13 @@
+此为国外人专门为fckeditor制作的强大FLV视频播放器插件，可以自定义播放器界面颜色，支持单文件即XML文档列表调用。 
+
+直接下载压缩包后，将文件夹flvplayer拷贝到fckeditor\editor\plugins\目录下，然后修改fckeditor/fckconfig.js此文件，在此文件中加入以下代码： 
+
+FCKConfig.Plugins.Add( 'flvPlayer','zh-cn') ; 
+其中zh-cn对应lang文件夹下的语言包文件名； 
+
+然后在编辑器控制面板中加入视频按钮： 
+
+FCKConfig.ToolbarSets[ "Default"] = [ 
+['Source','DocProps','-','Save','NewPage','Preview','-','Templates','flvPlayer'], 
+
+完成以上操作后，此时启动fckeditor编辑器应该在编辑器的toolbar上多了一个图标，点击此图标即可添加你的FLV视频文件了。
