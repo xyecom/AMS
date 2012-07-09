@@ -55,6 +55,7 @@
     <Compile Include="AdPlace.cs" />
     <Compile Include="AdPlaceType.cs" />
     <Compile Include="AdTrafficLog.cs" />
+    <Compile Include="AMS\ForeclosedAccess.cs" />
     <Compile Include="Area.cs">
       <SubType>Code</SubType>
     </Compile>

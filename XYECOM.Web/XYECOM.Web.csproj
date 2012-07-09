@@ -22,6 +22,7 @@
     </UpgradeBackupLocation>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -121,6 +122,13 @@
     </Compile>
     <Compile Include="Common\XYOutInvoke.aspx.designer.cs">
       <DependentUpon>XYOutInvoke.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\AddForeclosed.aspx.cs">
+      <DependentUpon>AddForeclosed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\AddForeclosed.aspx.designer.cs">
+      <DependentUpon>AddForeclosed.aspx</DependentUpon>
     </Compile>
     <Compile Include="Creditor\Creditor.master.cs">
       <DependentUpon>Creditor.master</DependentUpon>
@@ -1464,6 +1472,7 @@
     <Content Include="Copyright.htm" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Creditor\AddForeclosed.aspx" />
     <Content Include="Creditor\Index.aspx" />
     <Content Include="Creditor\UserContorl\left.ascx" />
     <Content Include="Creditor\UserContorl\menu.ascx" />

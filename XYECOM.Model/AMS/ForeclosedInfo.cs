@@ -102,7 +102,7 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 所属公司
         /// </summary>
-        public int UserId
+        public int? UserId
         {
             get;
             set;
@@ -111,7 +111,7 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 所属用户、部门
         /// </summary>
-        public int DepartmentId
+        public int? DepartmentId
         {
             get;
             set;
