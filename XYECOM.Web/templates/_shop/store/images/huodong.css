@@ -1,0 +1,93 @@
+
+#daohang {
+	padding: 10px 0 0 20px; width: 960px; height: 22px; background: url(../images/comm_04.gif) no-repeat 2px center; text-align: left;
+}
+/* level1 һ */
+#level1 {
+	width: 980px;
+}
+#l_left {
+	float: left; width: 220px; text-align: left;
+}
+/* Ŀ */
+#left_lm {
+	width: 218px; border-top: 1px solid #e5e5e5; border-right: 1px solid #e5e5e5; border-left: 1px solid #e5e5e5;
+}
+#left_lm ul li{
+	padding: 12px 0 12px 63px; width: 155px; height: 17px; 
+	font-size: 14px; font-weight: bold; border-bottom: 1px solid #e5e5e5; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+#left_lm ul li a:link {color: #666; text-decoration: none;}
+#left_lm ul li a:visited {color: #333; text-decoration: none;}
+#left_lm ul li a:hover {color: #ff6600; text-decoration: none;}
+/* ͼƬ */
+#left_img { margin: 10px 0 0 0; width: 220px; height: 182px;}
+#left_img img {width: 220px; height: 182px; border: 0;}
+/* ߲Ʒ */
+#l_right {
+	float: right; padding: 10px 11px; width: 726px; border: 1px solid #e5e5e5; background: #f2f2f2;
+}
+#spzs_top {
+	position: relative; padding: 0 0 0 26px; width: 700px; height: 30px; border-bottom: 2px solid #bc0301;
+}
+.spzs_title {
+	float: left; padding: 11px 12px 0 12px; height: 19px; font-size: 14px; color: #666666;
+}
+.spzs_this {
+	margin: 0 0 -2px 0; padding: 9px 10px 0 10px; height: 21px; cursor: pointer;
+	border-left: 2px solid #bc0301; border-top: 2px solid #bc0301; border-right: 2px solid #bc0301; background: #fff; color: #bc0301;
+}
+.spzs_box {
+	padding: 5px 8px; width: 710px; background: #fff;
+}
+.spzs_hide {display: none;}
+.spzs_list {
+	position: relative; float: left; padding: 5px 7px; width: 128px; height: 164px;
+}
+.spzs_img a img:link, .spzs_img a img:visited { padding: 1px;  border: 1px solid #E4E4E4;}
+.spzs_img a img:hover, .spzs_img a img:active { padding: 1px;  border: 1px solid #bc0301;}
+.spzs_img img {width: 124px; height: 160px;  border: 1px solid #E4E4E4;}
+.spzs_text {
+	position: absolute; bottom: 9px; left: 9px; width: 124px; height: 22px; background: #bc0301;
+}
+.spzs_text .gray {float: left; padding: 2px 0 0 3px; color: #fff;}
+.spzs_text .white {float: right; padding: 2px 3px 0 0; color: #fff; font-size: 14px; font-weight: bold;}
+#level2 {
+	width: 980px; text-align: left;
+}
+/* ؼб */
+.tjlb_list {
+	float: left; padding: 10px 0 0 0; width: 485px; position: relative;
+}
+.tjlb_blank { float: left; width: 10px; }
+.tj_top {
+	padding: 10px 0 0 18px; width: 465px; height: 25px; border: 1px solid #e4e4e4; font-size: 16px; font-weight: bold; color: #990000; background: #f2f2f2;
+}
+.tj_all { position: absolute; top: 23px; right: 10px;}
+.tj_all a:link {color: #666666; text-decoration: none;}
+.tj_all a:visited {color: #666666; text-decoration: none;}
+.tj_all a:hover {color: #ff6600; text-decoration: underline;}
+.tj_box {
+	width: 483px; border-right: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; border-left: 1px solid #e4e4e4;
+}
+.tj_left {
+	float: left; width: 200; height: 298px;
+}
+.tj_left img { width: 200px; height: 298px; border: 0;}
+.tj_right {
+	float: right; width: 280px; height: 298px;
+}
+.tj_right ul li {
+	float: left; padding: 10px 5px 9px 5px; width: 130px; height: 130px;
+}
+.tj_rimg {
+	padding: 0 30px; width: 69px; height: 90px;
+}
+.tj_rimg img { width: 69px; height: 90px; border: 0;}
+.tj_rt {
+	text-align: center; line-height: 20px; width: 130px; height: 20px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.tj_rp {
+	text-align: center; line-height: 18px; width: 130px; height: 18px; color: #990000; font-size: 14px;
+}
+.tj_rp strike {color: #999999; font-size: 12px;}

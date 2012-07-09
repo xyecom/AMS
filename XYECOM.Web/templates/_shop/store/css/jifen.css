@@ -1,0 +1,194 @@
+
+#daohang {
+	padding: 10px 0 0 20px; width: 960px; height: 22px; background: url(../images/comm_04.gif) no-repeat 2px center; text-align: left;
+}
+/* main */
+#main {
+	width: 980px; text-align: left;
+}
+#main_left {
+	float: left; width: 220px;
+}
+/* Ʒ */
+#spfl {
+	margin: 0 0 7px 0; width: 220px;
+}
+#spfl_top {
+	width: 220px;
+	height: 31px;
+}
+#spfl_box {
+	padding: 0 10px; width: 196px;
+	border-right: 2px solid #b60134; border-bottom: 2px solid #b60134; border-left: 2px solid #b60134;
+}
+.spfl_title {
+	position: relative; padding: 11px 0 0 10px; width: 186px; height: 22px;
+	border-bottom: 1px solid #e2e2e2; background: url(../images/comm_03.gif) no-repeat left center; color: #be1b2c; clear: both;
+}
+.spfl_all {
+	position: absolute; top: 11px; right: 2px;
+}
+.spfl_list {
+	padding: 10px 0 9px 0; width: 196px; height: 13px; position: relative; z-index: 20;
+	background: url(../images/comm_02.gif) no-repeat 189px center; border-bottom: 1px solid #e2e2e2; color: #be1b2c; clear: both;
+}
+.spfl_list_left {
+	float: left; padding: 0 9px 0 0; width: 51px; text-align: right;
+}
+.spfl_list_left2 {
+	float: left; padding: 0 0 0 3px; width: 180px;
+}
+.spfl_list_right {
+	float: left; padding: 0 0 0 9px; width: 116px; border-left: 1px solid #666; overflow: hidden; white-space: nowrap;
+}
+.spfl_list_right a:link { padding: 0 5px 0 0; color: #666;}
+.spfl_list_right a:visited { padding: 0 5px 0 0; color: #666;}
+.spfl_list_right a:hover { padding: 0 5px 0 0; color: #ff6600;}
+.spfl_list_img {
+	float: right; padding: 3px 2px; width: 5px; height: 7px; cursor: pointer; display: 
+}
+.spfl_xiao {
+	padding: 5px 0 6px 1px; width: 195px; clear: both;
+}
+.spfl_xiao ul li {
+	float: left; padding: 4px 0 3px 0; width: 65px; height: 13px;
+}
+.spfl_xiao ul li a:link { color: #666;}
+.spfl_xiao ul li a:visited { color: #666;}
+.spfl_xiao ul li a:hover { color: #ff6600;}
+/* Ŀ */
+.spfl_this { margin: 0 -10px 0 0; width: 206px; background: #cc0000 url(../images/comm_05.gif) no-repeat 189px center;}
+.spfl_this .spfl_list_left a:link{color: #fff;}
+.spfl_this .spfl_list_left a:visited{color: #fff;}
+.spfl_this .spfl_list_left a:hover{color: #fff;}
+.spfl_this .spfl_list_left2 a:link{color: #fff;}
+.spfl_this .spfl_list_left2 a:visited{color: #fff;}
+.spfl_this .spfl_list_left2 a:hover{color: #fff;}
+.detail {
+	position: absolute; top: 0; left: 206px; z-index: 21; padding: 5px 20px;  width: 350px; border: 1px solid #cc0000; background: #fff;
+}
+.d_hide {display: none;}
+.d_list {
+	padding: 3px 0; width: 350px;
+}
+.d_title {
+	float: left; padding: 8px 0 0 8px; width: 57px; background: url(../images/comm_01.gif) no-repeat left 9px;
+}
+.d_title a:link { color: #cc0000; text-decoration: none;}
+.d_title a:visited { color: #cc0000; text-decoration: none;}
+.d_title a:hover { color: #ff6600; text-decoration: underline;}
+.d_box {
+	float: right; width: 280px;
+}
+.d_box ul li {
+	float: left; padding: 8px 0 0 0; width: 70px; height: 20px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.d_line { margin: 0 0 0 5px; width: 345px; border-bottom: 1px dashed #cccccc; clear: both; height: 1px;}
+
+#spfl_gengduo {
+	margin: 0 -10px;
+	padding: 6px 0 0 0; width: 216px; height: 20px;
+	border-top: 1px solid #ffd98a; background: #fff4d0; color: #be1b2c; font-weight: bold; clear: both; text-align: center;
+}
+#spfl_gengduo a:link { color: #be1b2c; text-decoration: none;}
+#spfl_gengduo a:visited { color: #be1b2c; text-decoration: none;}
+#spfl_gengduo a:hover { color: #be1b2c; text-decoration: underline;}
+/* ѡƷ */
+#xzpp {
+	margin: 0 0 7px 0; width: 220px; position: relative;
+}
+#xzpp_top {
+	padding: 11px 0 0 17px; width: 203px; height: 24px;
+	background: url(../images/g_02.jpg) no-repeat; font-size: 14px; font-weight: bold; color: #333;
+}
+#xzpp_all {
+	position: absolute; top: 12px; right: 10px;
+}
+#xzpp_all a:link { color: #be1b2c; text-decoration: none;}
+#xzpp_all a:visited { color: #be1b2c; text-decoration: none;}
+#xzpp_all a:hover { color: #be1b2c; text-decoration: underline;}
+#xzpp_box {
+	padding: 5px 14px; width: 190px;
+	border-right: 1px solid #d4d2d3; border-bottom: 1px solid #d4d2d3; border-left: 1px solid #d4d2d3;
+}
+#xzpp_box ul li {
+	padding: 6px 0 0 0; width: 190px; height: 19px;
+}
+/* Ʒ */
+#zjll {
+	width: 220px; position: relative;
+}
+#zjll_top {
+	padding: 9px 0 0 17px; width: 203px; height: 23px;
+	background: url(../images/g_03.jpg) no-repeat; font-size: 14px; color: #555;
+}
+#zjll_clear {
+	position: absolute; top: 11px; right: 10px;
+}
+#zjll_clear a:link { color: #555; text-decoration: none;}
+#zjll_clear a:visited { color: #555; text-decoration: none;}
+#zjll_clear a:hover { color: #ff6600; text-decoration: underline;}
+#zjll_box {
+	padding: 5px 0; width: 218px;
+	border-right: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; border-left: 1px solid #e4e4e4;
+}
+#main_right {
+	float: right; width: 750px;
+}
+/* ֹ */
+#jfgz {
+	padding: 8px 8px 0 8px; width: 732px; border: 1px solid #b4b4b4;
+}
+#gz_img { padding: 70px 26px 0 26px; width: 680px; height: 200px; background: url(../images/j_01.jpg) no-repeat;}
+#gz_img span { width: 680px; line-height: 25px;}
+#gz_img .yellow {color: #997f10; font-size: 14px; line-height: 28px;}
+#jffl { padding: 18px 0 10px 0; width: 732px; height: 17px;}
+#jffl_img { float: left; width: 37px; height: 17px;}
+#jffl_img img { width: 37px; height: 17px; border: 0;}
+#jffl_box { float: left; padding: 2px 10px; width: 675px; height: 13px;}
+#jffl_box ul li { float: left; padding: 0 10px; height: 13px; color: #999999;}
+/* ʾʽ */
+#xsfs {
+	padding: 6px 8px; width: 732px; height: 19px;
+	border-right: 1px solid #b4b4b4; border-bottom: 1px solid #b4b4b4; border-left: 1px solid #b4b4b4; background: #0d0 url(../images/j_03.gif) repeat-x;
+}
+#xsfs select { padding: 1px 1px 2px 2px; border: 1px solid #b4b4b4; font-size: 12px;}
+#xsfs span { display: inline-block; padding: 0 15px 2px 4px; height: 16px; border: 1px solid #b4b4b4; cursor: pointer;}
+#xsfs .xs_xl { }
+#xsfs .xs_hp { border-left: 0;}
+#xsfs .xs_jg { border-left: 0;}
+#xsfs .xs_zx { border-left: 0;}
+#xsfs .xs_up_gray { background: url(../images/j_04.gif) no-repeat right center;}
+#xsfs .xs_do_gray { background: url(../images/j_05.gif) no-repeat right center;}
+#xsfs .xs_up_red { background: url(../images/j_06.gif) no-repeat right center;}
+#xsfs .xs_do_red { background: url(../images/j_07.gif) no-repeat right center;}
+/* Ʒ */
+#xgsp {
+	margin: 7px 0 0 0; width: 750px;
+}
+#xgsp_top {
+	padding: 6px 0 0 15px; width: 735px; height: 22px; background: url(../images/g_04.jpg) no-repeat; color: #333;
+}
+#xgsp_top .red {color: #be1b2c;}
+#xgsp_top span { display: inline-block; padding: 0 5px 1px 5px; height: 16px; background: #fff; border: 1px solid #c7c7c7; cursor: pointer;}
+#xgsp_box {
+	padding: 6px; width: 736px;
+	border-right: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7; border-left: 1px solid #C7C7C7;
+}
+.xgsp_list {float: left; padding: 0 6px; width: 172px; height: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.xgsp_img {padding: 5px 0; width: 172px; height: 172px;}
+.xgsp_img a img:link, .xgsp_img a img:visited {border: 1px solid #C7C7C7;}
+.xgsp_img a img:hover, .xgsp_img a img:active {border: 1px solid #be1b2c;}
+.xgsp_img img { width: 170px; height: 170px; border: 1px solid #C7C7C7;}
+.xgsp_text { padding: 0 0 0 8px; line-height: 20px;}
+.xgsp_text a { margin: 0 0 0 -5px;}
+.xgsp_text strike {color: #999;}
+.xgsp_text .red {color: #be1b2c;}
+.xgsp_text .orange {color: #ff6600;}
+#xgsp_page { padding: 10px 43px; width: 650px; height: 19px; text-align: right; clear: both;}
+#xgsp_page input { padding: 2px 1px 1px 1px; width: 26px; height: 14px; border: 1px solid #c7c7c7;}
+#xgsp_page span { display: inline-block; margin: 0 3px; padding: 0px 6px 2px 6px; height: 17px; background: #c2030d; color: #ffffff;}
+#xgsp_page a:link { display: inline-block; margin: 0 3px; padding: 0px 6px 2px 6px; height: 17px; background: #757575; color: #ffffff; text-decoration: none;}
+#xgsp_page a:visited { display: inline-block; margin: 0 3px; padding: 0px 6px 2px 6px; height: 17px; background: #757575; color: #ffffff; text-decoration: none;}
+#xgsp_page a:hover { display: inline-block; margin: 0 3px; padding: 0px 6px 2px 6px; height: 17px; background: #c2030d; color: #ffffff; text-decoration: none;}
+

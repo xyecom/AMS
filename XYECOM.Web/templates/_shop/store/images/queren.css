@@ -1,0 +1,85 @@
+body {
+	font-family:"",arial; margin:1px; padding:0; background: #FFF; font-size:12px; color:#333;
+}
+div, form, img, ul, ol, li, dl, dt, dd {margin: 0; padding: 0; border: 0;}
+ul, li{ list-style-type:none;}
+h1, h2, h3, h4, h5, h6 { margin:0; padding:0;}
+
+a:link {
+	color:#333; text-decoration: none;
+}
+a:visited {
+	color:#333; text-decoration:none;
+}
+a:hover {
+	color:#ff6600; text-decoration: underline;
+}
+a:active {
+	color:#333; text-decoration: none;
+}
+a.red:link {
+	color: #f60; text-decoration: none;
+}
+a.red:visited {
+	color: #f60; text-decoration: none;
+}
+a.red:hover {
+	color: #f60; text-decoration: underline;
+}
+.clear { clear: both; visibility: hidden;}
+.blank { height: 7px;}
+
+#top { width: 980px;}
+#logo { float: left; padding: 6px 0 6px 15px; width: 200px; height: 65px;}
+#submenu { float: right; width: 590px; height: 77px;}
+#login { margin-top: 7px; text-align: right; height: 18px;}
+#top_bottom { width: 100%; height: 2px; background: #b50000;}
+/* main */
+#main {
+	width: 980px; text-align: left; padding: 0 0 20px 0;
+}
+#qr_top { padding: 10px 0; width: 980px; height: 35px;}
+#qr_top img { width: 980px; height: 35px; border: 0;}
+.qr_title {
+	padding: 8px 0 8px 18px; width: 962px; height: 16px; position: relative;
+	background: url(../images/comm_06.gif) no-repeat left center; font-size: 14px; font-weight: bold;
+}
+.qr_more { position: absolute; top: 10px; right: 10px; color: #0066cc; font-size: 12px; font-weight: normal;}
+.qr_box { position: relative; padding: 5px 9px; border: 1px solid #d7e3fa; width: 960px;}
+.qr_bmore { position: absolute; top: 10px; right: 10px;}
+.qr_box img {vertical-align: middle;}
+.qr_box .red {color: #f00;}
+.qr_box .hui {color: #999;}
+.qr_box .lan {color: #0066cc;}
+.qr_list { padding: 5px 0; width: 960px; height: 19px; line-height: 19px;}
+.qr_l { float: left; width: 110px; text-align: right;}
+.qr_r { float: right; width: 845px;}
+.qr_r input { padding: 3px 2px 0 2px; border: 1px solid #bbb; height: 14px; vertical-align: middle; color: #777; font-size: 12px;}
+.qr_r select { padding: 1px 2px 0 2px; border: 1px solid #7f9db9; font-size: 12px;}
+#qr_jy_img { padding: 5px;}
+#qr_jy_img img { width: 632px; height: 81px; border: 0;}
+#dg_title { padding: 9px 0 0 0; width: 978px; height: 21px; border: 1px solid #ccc; background: url(../images/i_17.gif) repeat-x; text-align: center;}
+#dg_box { padding: 5px 0; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; width: 978px;}
+.dg_list { padding: 5px 0; text-align: center; line-height: 20px;}
+.dg_list .dg_hp {text-align: left; color: #06c;}
+.dg_hp { float: left; width: 390px;}
+.dg_hp img { width: 65px; height: 45px; border: 0; padding: 0 10px; vertical-align: top;}
+.dg_kg { float: left; width: 114px;}
+.dg_yf { float: left; width: 120px; text-align: left;}
+.dg_dj { float: left; width: 114px;}
+.dg_num { float: left; width: 120px;}
+.dg_list .dg_price {font-size: 14px;}
+.dg_price { float: left; width: 120px;}
+.dg_left { float: left; width: 720px; text-align: left;}
+.dg_left textarea {padding: 3px; width: 360px; height: 60px; border: 1px solid #ccc; vertical-align: top;}
+.dg_right { float: right; width: 250px; line-height: 25px; text-align: right;}
+.dg_list .red {color: #f60;}
+
+
+
+#footer {
+	width: 100%; border-top:2px solid #b50000; padding: 8px 0 5px 0; line-height:24px; color:#666666; margin-top:8px; clear:both
+}
+#footer a {
+	padding: 0 8px;
+}
