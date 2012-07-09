@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<about>
+  <template name="blue" cname="商城专用" access="private" user="2,35" author="xyecs" createdate="2007-12-04" ver="1.0" copyright="Copyright 2008 xycs Inc." />
+</about>

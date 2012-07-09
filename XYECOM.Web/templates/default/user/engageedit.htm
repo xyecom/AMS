@@ -1,0 +1,181 @@
+
+<%Include _head%>
+
+<div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;  <a href="{config.WebURL}user/engagelist.{config.Suffix}">招聘管理</a> &gt;  修改招聘信息</div>
+
+<%Include _menu%>
+<form action="#" id="" method="post"> 
+<div id="right">
+ 
+  <table class="contentl">
+   <caption>修改招聘信息<span>(*为必填项)</span></caption>
+  <tr>
+    <th>拟招聘岗位：<em class="red">*</em></th>
+     <td>
+  <input type ="hidden" id="engageaid"  name="engageaid" value="{ei.PostId}"/> 
+<div id="classTypejob"></div>
+<script type="text/javascript">
+var jobcla = new ClassType("jobcla",'job','classTypejob','engageaid');
+jobcla.Mode = "select";
+jobcla.Init();
+</script> 
+  </td>
+  </tr>
+  <tr>
+    <th>具体职位名称：<em class="red">*</em></th>
+    <td><input name="EI_Job" type="text" value="{ei.JobTitle}" size="30"  maxlength="40" />
+    <span >（应与上一项拟招聘岗位相匹配）</span></td>
+  </tr>
+  <tr>
+    <th>招聘类型：</th>
+    <td>
+	<select name="EI_Type">
+	<option value="{ei.JobType}">{ei.JobType}</option>
+	<option value="不限">不限</option>
+    <option value="全职">全职</option>
+    <option value="兼职">兼职</option>
+    </select></td>
+  </tr>
+  <tr>
+   <th>招聘人数：</th>
+    <td><input name="EI_Number" type="text" size="8" value="{ei.Number}" />
+	人<span>（只能填数字）</span></td>
+  </tr>
+  <tr>
+    <th>招聘部门：<em class="red">*</em></th>
+    <td>
+	<input name="EI_Branch" type="text" value="{ei.JobBranch}" size="30"  maxlength="40"/>
+	</td>
+  </tr>
+  
+   <tr>
+    <th>截至日期：<em class="red">*</em></th>
+    <td>
+		 <input onclick="getDateString(this);" id="EI_EndDate"  readonly="readonly" value="{ei.EndDate.ToShortDateString()}" name ="EI_EndDate" />
+        <span>（系统默认30天）</span></td>
+  </tr>
+<tr>
+<th>
+工作地区：<em class="red">*</em></th>
+<td>
+<div id="classType"></div>
+<input type ="hidden" id="citytypeid"  name="citytypeid"/> 
+<input type ="hidden" id="provinceid"  name="provinceid" /> 
+<input type ="hidden" id="areatypeid"  name="areatypeid" value="{ei.WorkAreaID}" />
+<script type="text/javascript">
+var cla = new ClassType("cla",'area','classType','areatypeid');
+cla.Mode = "select";
+cla.Init();
+</script>
+</td>
+</tr>
+  <tr>
+    <th>具体要求：<em class="red">*</em></th>
+    <td >
+	<textarea name="EI_Request" cols="50" rows="5">{ei.Request}</textarea>
+	<span >（60-650字）</span>	</td>
+  </tr>
+  <tr>
+    <th>薪资福利：</th>
+    <td >
+	<input name="EI_Pay" type="text" value="{ei.Pay}" size="8" />
+        元<span>（0位面议，只能填数字）</span>	</td>
+  </tr>
+  </table>
+  
+   <table id="Table1" class="contentl">
+  <caption> 应聘条件</caption>
+  <tr>
+    <th>学历：<em class="red">*</em></th>
+    <td>
+	<select name="EI_Eb">
+	<option value="{ei.Education}">{ei.Education}</option>
+    <option value="不限">不限</option>
+    <option value="大专">大专</option>
+    <option value="本科">本科</option>
+    <option value="研究生">研究生</option>
+    <option value="博士生">博士生</option>
+    </select>以上
+	</td>
+    <th>年龄：<em class="red">*</em></th>
+    <td>
+	<select name="EI_Age">
+	<option value="{ei.Age}">{ei.Age}</option>
+    <option value="不限">不限</option>
+    <option value="20-25">20-25</option>
+    <option value="26-30">26-30</option>
+    <option value="31-35">31-35</option>
+    <option value="35-40">35-40</option>
+    <option value="40-50">40-50</option>
+    </select>
+        岁
+	</td>
+  </tr>
+  <tr>
+    <th>性别：</th>
+    <td >
+	<select name="EI_Sex">
+	<option value="{ei.Sex}">{ei.Sex}</option>
+    <option value="不限">不限</option>
+    <option value="男性">男性</option>
+    <option value="女性">女性</option>
+    </select>
+	</td>    
+	<th>工作经验：</th>
+    <td >
+        <input name="EI_Experience" type="text" id="Text2" value="{ei.Experience}" size="10" />
+        年以上
+	</td>
+  </tr>
+  <tr>
+    <th>户口所在地：</th>
+    <td>
+        <input name="EI_Nationality" type="text" id="Text3" value="{ei.Nationality}" size="40"  maxlength="180" /></td>
+    <td></td>
+	<td></td>
+  </tr>
+</table>
+<br/>
+<!--检查联系信息-->
+
+<table class="contentl">
+<caption>检查联系信息<span>(本次招聘的联系方式系统默认您单位的联系方式)</span></caption>
+  <tr>
+    <th>联系人：</th>
+    <td>
+        {userinfo.linkman}</td>
+  </tr>
+  <tr>
+    <th>公司名称：</th>
+    <td>
+        {userinfo.unitname}</td>
+  </tr>
+  <tr>
+    <th>手机：</th>
+    <td>
+        {userinfo.mobile}</td>
+  </tr>
+  <tr>
+    <th>电话：</th>
+    <td>
+        {userinfo.telephone}</td>
+  </tr>
+  <tr>
+    <th>传真：</th>
+    <td>
+        {userinfo.fax}</td>
+  </tr>
+  <tr>
+    <th>电子邮件：</th>
+    <td>
+        {userinfo.email}</td>
+  </tr>
+</table>
+<div class="content_action">
+ <input name="submit"  type="submit" class="button" value="确认" onclick="javascript:return engeinfo()"/> 
+  <input name="submit"  type="button" class="button" value="取消" onclick="window.location.href='{config.WebURL}user/engagelist.{config.Suffix}';"/> 
+ </div>
+ </div>
+</form>
+<%Include _footer%>
+

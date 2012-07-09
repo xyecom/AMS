@@ -1,0 +1,923 @@
+
+#demo {
+	OVERFLOW: hidden
+}
+#indemo {
+	FLOAT: left; WIDTH: 5000px
+}
+#demo1 {
+	FLOAT: left
+}
+#demo2 {
+	FLOAT: left
+}
+
+.tuijian_company {
+	PADDING-BOTTOM: 5px;
+	PADDING-TOP: 5px;
+	line-height: 180%;
+	width: 100%;
+	text-align: left;
+}
+.tuijian_company p {
+	margin-top: 14px;
+	margin-right: 10px;
+	text-indent: 20px;
+	margin-bottom: 7px;
+	margin-left: 20px;
+}
+
+.filter{filter: Alpha(opacity=95);-moz-opacity:.95;opacity:0.95;}/*90%的透明滤镜效果*/
+.filter2{filter: Alpha(opacity=70);-moz-opacity:.70;opacity:0.70;}/*70%的透明滤镜效果*/
+.filter3{filter: Alpha(opacity=0);-moz-opacity:.0;opacity:0.0;}/*90%的透明滤镜效果*/
+
+.logo {
+	/*非IE的主流浏览器识别的垂直居中的方法*/
+	display: table-cell;
+	vertical-align:middle;
+
+	/*设置水平居中*/
+	text-align:center;
+
+	/* 针对IE的Hack */
+	*display: block;
+	*font-size: 52px;/*约为高度的0.873，200*0.873 约为175*/
+	*font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/
+
+	width:100px;
+	height:60px;
+
+	
+	float: left;
+	margin-top: 15px !important;
+	margin-top: 15px;
+
+	margin-left: 7px;
+	margin-right: 14px;
+}
+.logo img {
+	/*设置图片垂直居中*/
+	vertical-align:middle;
+}
+
+.logo1{
+	width:295px;
+	height:55px;
+	line-height:20px;
+	position: absolute;
+	z-index:6;
+	background-image: url(http://images.glass.cn/logo/200810/anlanlogo.jpg);
+	background-repeat: no-repeat;
+}
+.logo1{top:30px;left:470px;}
+/*.logo {
+	float: left;
+	clear: both;
+	margin-top: 30px;
+	margin-left: 7px;
+	height: 60px;
+	width: 100px;
+	text-align: center;
+	vertical-align: middle;
+	margin-right: 14px;
+}*/
+/*新*/
+.gold_year{
+	width:157px;
+	height:59px;
+	line-height:20px;
+	position: absolute;
+	z-index:6;
+	background-image: url(../images/gold_bg.gif);
+	background-repeat: no-repeat;
+}
+.gold_year{top:0px;left:780px;}
+.brand{
+	width:58px;
+	height:22px;
+	line-height:20px;
+	position: absolute;
+	z-index:6;
+	background-image: url(../images/brand.gif);
+	background-repeat: no-repeat;
+}
+.brand{top:10px;left:710px;}
+#bodyleft {
+	width: 200px;
+	float: left;
+}
+#bodyright {
+	width: 738px;
+	float: right;
+
+}
+.glass {
+	height: 20px;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 7px;
+	background-image: url(../images/topbg.gif);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+}
+.glass A:link {
+	text-decoration:none;
+	color: #003399;
+}
+.glass A:visited {
+	color: #003399; 	
+	text-decoration:none;
+}
+.glass A:hover {
+	text-decoration:underline;
+	color: #FF3300;
+}
+.glass ul {
+	width: 950px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.glass li {
+	float: left;
+}
+.glass .glass_left {
+	float: left;
+	width: 400px;
+	color: #999999;
+}
+.glass .glass_right {
+	float: right;
+	width: 400px;
+	text-align: right;
+	color: #999999;
+}
+.gold_wz {
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	margin-top: 25px;
+}
+.gold_wz td {
+	font-size: 12px;
+	line-height: 15px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.gold_wz .time {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+.gold_wz span {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+
+
+.newsleft_pic {
+	float: left;
+	border: 1px solid #CCCCCC;
+	clear: both;
+	margin-top: 10px;
+	width: 220px;
+	margin-bottom: 20px;
+	padding: 2px;
+	margin-right: 20px;
+	margin-left: 10px;
+	margin-left: 20px !important;
+	margin-left: 10px;
+}
+.newsleft_pic_big {
+	float: left;
+	border: 1px solid #CCCCCC;
+	clear: both;
+	margin-top: 10px;
+	width: 220px;
+	margin-bottom: 20px;
+	padding: 2px;
+	margin-right: 20px;
+	margin-left: 20px !important;
+	margin-left: 10px;
+}
+.product_big {
+	float: left;
+	margin-top: 10px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	margin-left: 7px;
+	text-align: center;
+}
+
+DIV#MainPromotionBanner {
+	FLOAT: left;
+	WIDTH: 250px;
+	HEIGHT: auto;
+	border: 1px solid #CCCCCC;
+}
+#MainPromotionBanner #SlidePlayer {
+	MARGIN: 0px auto;
+	POSITION: relative;
+	text-align: center;
+}
+#MainPromotionBanner .Slides {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 250px
+}
+#MainPromotionBanner .Slides LI {
+	FLOAT: left;
+	WIDTH: 250px;
+	HEIGHT: 250px;
+	background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;
+}
+#MainPromotionBanner .Slides IMG {
+	BORDER-TOP-WIDTH: 0px; DISPLAY: block; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 250px; BORDER-RIGHT-WIDTH: 0px
+}
+#MainPromotionBanner .SlideTriggers {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; Z-INDEX: 10; RIGHT: 5px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; POSITION: absolute; TOP: 225px; HEIGHT: 25px
+}
+#MainPromotionBanner .SlideTriggers LI {
+	DISPLAY: inline; FONT-SIZE: 0.9em; BACKGROUND: url(http://www.glass.cn/adimages/homenews/slide_trigger.gif) no-repeat center center; FLOAT: left; MARGIN: 3px; OVERFLOW: hidden; WIDTH: 16px; CURSOR: pointer; COLOR: #0066CC; LINE-HEIGHT: 16px; FONT-FAMILY: Arial; HEIGHT: 16px; TEXT-ALIGN: center
+}
+#MainPromotionBanner .SlideTriggers LI.Current {
+	BORDER-TOP-WIDTH: 0px; FONT-WEIGHT: bold; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 1.4em; BACKGROUND: url(http://www.glass.cn/adimages/homenews/slide_trigger_c.gif) no-repeat center center; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px 3px; WIDTH: 21px; COLOR: #fff; LINE-HEIGHT: 21px; HEIGHT: 21px; BORDER-RIGHT-WIDTH: 0px}
+.img_title {
+	font-size: 12px;
+	line-height: 140%;
+	color: #999999;
+	text-align: center;
+}
+.pd {
+	MARGIN-TOP: 7px
+}
+.cent {
+	TEXT-ALIGN: center
+}
+.clr {
+	CLEAR: both
+}
+.company_kuang {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	height: 210px;
+
+}
+.factory {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 7px;
+}
+.factory li {
+	float: left;
+	width: 200px;
+	margin-right: 15px;
+	text-align: center;
+	margin-left: 14px;
+	margin-top: 7px;
+	height: 200px;
+
+}
+.trade_product {
+	PADDING-BOTTOM: 5px;
+	PADDING-TOP: 5px;
+	line-height: 180%;
+	width: 100%;
+}
+.tuijian_product {
+	PADDING-BOTTOM: 5px;
+	PADDING-TOP: 5px;
+	line-height: 180%;
+	width: 100%;
+	text-align: left;
+}
+.tuijian_product p {
+	margin-top: 14px;
+	margin-right: 10px;
+	text-indent: 20px;
+	margin-bottom: 7px;
+	margin-left: 20px;
+}
+.tuijian_product li {
+	float: left;
+	width: 120px;
+	margin-right: 10px;
+	text-align: center;
+	margin-left: 12px;
+	margin-top: 7px;
+	height: 170px;
+}
+.newslist {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 10px;
+	margin-bottom: 20px;
+}
+.newslist span {
+	font-size: 13px;
+	color: #666666;
+	padding-left: 20px;
+}
+.newslist li {
+	width: 95%;
+	font-size: 14px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #CCCCCC;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	padding-left: 14px;
+}
+.contact {
+	height: 20px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #CCCCCC;
+	padding-top: 5px;
+	margin-bottom: 7px;
+	color: #666666;
+	padding-bottom: 5px;
+}
+
+.mainTextColor {
+	border: 1px solid #CCCCCC;
+	line-height: 250%;
+	font-size: 14px;
+	text-align: center;
+}
+.title12 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #000000;
+	padding-bottom: 7px;
+}
+.picbox1 {
+	padding: 1px;
+	float: left;
+	width: 250px;
+	margin-left: 15px;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+.space7 {
+	line-height:7px;
+	height:7px;
+}
+
+DIV#MainPromotionBanner1 {
+	FLOAT: left;
+	WIDTH: 250px;
+	HEIGHT: auto;
+	padding: 2px;
+	border: 1px solid #CCCCCC;
+		background-color: #FFFFFF;
+
+}
+#MainPromotionBanner1 #SlidePlayer {
+	MARGIN: 0px auto;
+	POSITION: relative;
+	text-align: center;
+}
+#MainPromotionBanner1 .Slides {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 200px
+}
+#MainPromotionBanner1 .Slides LI {
+	FLOAT: left; WIDTH: 250px; HEIGHT: 200px
+}
+#MainPromotionBanner1 .Slides IMG {
+	BORDER-TOP-WIDTH: 0px; DISPLAY: block; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 250px; BORDER-RIGHT-WIDTH: 0px
+}
+#MainPromotionBanner1 .SlideTriggers {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; Z-INDEX: 10; RIGHT: 5px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; POSITION: absolute; TOP: 175px; HEIGHT: 25px
+}
+#MainPromotionBanner1 .SlideTriggers LI {
+	DISPLAY: inline; FONT-SIZE: 0.9em; BACKGROUND: url(http://www.glass.cn/adimages/homenews/slide_trigger.gif) no-repeat center center; FLOAT: left; MARGIN: 3px; OVERFLOW: hidden; WIDTH: 16px; CURSOR: pointer; COLOR: #0066CC; LINE-HEIGHT: 16px; FONT-FAMILY: Arial; HEIGHT: 16px; TEXT-ALIGN: center
+}
+#MainPromotionBanner1 .SlideTriggers LI.Current {
+	BORDER-TOP-WIDTH: 0px; FONT-WEIGHT: bold; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 1.4em; BACKGROUND: url(http://www.glass.cn/adimages/homenews/slide_trigger_c.gif) no-repeat center center; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px 3px; WIDTH: 21px; COLOR: #fff; LINE-HEIGHT: 21px; HEIGHT: 21px; BORDER-RIGHT-WIDTH: 0px}
+
+.tuijian_company {
+	PADDING-BOTTOM: 5px;
+	PADDING-TOP: 5px;
+	line-height: 180%;
+	width: 100%;
+	text-align: left;
+}
+.tuijian_company p {
+	margin-top: 14px;
+	margin-right: 10px;
+	text-indent: 20px;
+	margin-bottom: 7px;
+	margin-left: 20px;
+}
+BODY {
+	BORDER-TOP-WIDTH: 0px;
+	BORDER-LEFT-WIDTH: 0px;
+	FONT-SIZE: 12px;
+	BORDER-BOTTOM-WIDTH: 0px;
+	MARGIN: 0px;
+	BORDER-RIGHT-WIDTH: 0px;
+	padding: 0px;
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL {
+PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+div,form,ul,ol,li,dl,dt,p,h1,h2,h3,dd 
+{margin:0; padding:0; border:0; color:#555;
+}
+.clr {
+	CLEAR: both
+}
+.picBox {
+	display: table-cell;
+	vertical-align:middle;
+	clear: both;
+	/*设置水平居中*/
+	text-align:center;
+	/* 针对IE的Hack */
+	*display: block;
+	*font-size: 87px;/*约为高度的0.873，200*0.873 约为175*/
+	*font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/
+	width:102px;
+	height:102px;
+	border: 1px solid #cccccc;
+	background-color: #FFFFFF;
+}
+.picBox IMG {
+	VERTICAL-ALIGN: middle
+}
+.head {
+	height: 90px;
+	width: 950px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	background-color: #FFFFFF;
+}
+.head h1 {
+	font-family: "黑体";
+	font-size: 30px;
+	color: #000000;
+	padding-top: 20px;
+	padding-bottom: 7px;
+	margin-left: 20px;
+}
+.head p {
+	color: #000000;
+	text-indent: 2px;
+	margin-left: 20px;
+}
+a:link{color: #333333;text-decoration: none;}
+a:visited{color: #333333;text-decoration: none;}
+a:hover{color: #FF5500;text-decoration: underline;}
+.layout950_100 {
+	margin-right: auto;
+	margin-left: auto;
+	width: 100%;
+	height: auto;
+	background-position: top;
+	background-repeat: repeat;
+}
+.layout950 {
+	margin-right: auto;
+	margin-left: auto;
+	width: 950px;
+	position: relative;
+	background-color: #F4F8FA;
+}
+.banner {
+	width: 950px;
+	background-color: #FFFFFF;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-image: url(style12.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px -115px;
+	height: 200px;
+}
+.banner IMG {
+	VERTICAL-ALIGN: middle;
+	POSITION: relative;
+	text-align: center;
+}
+.nav {
+	height: 32px;
+	width: 930px;
+	margin-right: auto;
+	text-align: center;
+	padding-left: 20px;
+	background-repeat: no-repeat;
+	background-image: url(style12.jpg);
+}
+.nav li {
+	float: left;
+	width: 101px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	text-align: center;
+	padding-top: 9px;
+}
+.nav li A:link {
+	text-decoration:none;
+	color: #ffffff;
+}
+.nav li A:visited {
+	color: #ffffff; 	
+	text-decoration:none;
+}
+.nav li A:hover {
+	text-decoration:underline;
+}
+.nav .hover {
+	height: 22px;
+	padding-top: 5px;
+	background-color: #FFFFFF;
+	margin-top: 5px;
+	background-image: url(style12.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px -85px;
+}
+.nav .hover A:link {
+	text-decoration:none;
+	color: #000000;
+}
+.nav .hover A:visited {
+	text-decoration:none;
+	color: #000000;
+}
+.nav .hover A:hover {
+	text-decoration:underline;
+	color: #02091C;
+}
+.leftkuang {
+	border: 1px solid #D7E2E6;
+	padding-bottom: 7px !important;
+	padding-bottom: 1px;
+
+	margin-bottom: 7px;
+}
+.factorykuang {
+	FONT-SIZE: 90px;
+	WIDTH: 200px;
+	LINE-HEIGHT: 90px;
+	TEXT-ALIGN: center;
+	border: 1px dashed #D7E2E6;
+	height: 160px;
+	padding: 2px;
+}
+
+.lefttitle {
+	font-size: 14px;
+	color: #ffffff;
+	height: 18px;
+	padding-top: 4px;
+	padding-left: 15px;
+	font-weight: bold;
+	background-image: url(style12.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px -35px;
+}
+.righttitle {
+	font-size: 14px;
+	color: #ffffff;
+	height: 18px;
+	padding-top: 4px;
+	padding-left: 10px;
+	font-weight: bold;
+	background-image: url(style12.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px -60px;
+}
+.righttitle .more {
+	float: left;
+	font-size: 12px;
+	color: #ffffff;
+	font-weight: normal;
+	text-align: right;
+}
+.righttitle .more A:link {
+	text-decoration:none;
+	color: #ffffff;
+}
+.righttitle .more A:visited {
+	text-decoration:none;
+		color: #ffffff;
+}
+.righttitle .more A:hover {
+	text-decoration:underline;
+	color: #ffffff;
+}
+.righttitle li {
+	float: left;
+	width: 360px;
+	color: #ffffff;
+}
+.rightkuang {
+	border: 1px solid #00CC66;
+}
+.gonggaoContContent {
+	PADDING-BOTTOM: 5px;
+	PADDING-TOP: 5px;
+	TEXT-ALIGN: left;
+	padding-left: 10px;
+	line-height: 160%;
+}
+.bodyContContent {
+	PADDING-BOTTOM: 5px;
+	PADDING-TOP: 5px;
+	TEXT-ALIGN: left;
+	padding-left: 10px;
+	line-height: 160%;
+}
+.bodyContContent li {
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #D7E2E6;
+	line-height: 200%;
+	padding-left: 18px;
+	background-image: url(../images/icon_arrow.gif);
+	background-repeat: no-repeat;
+	background-position: 5px 7px;
+	font-size: 12px;
+	font-weight: bold;
+	width: 160px;
+}
+.linksContContent {
+	PADDING-BOTTOM: 7px;
+	PADDING-TOP: 7px;
+	TEXT-ALIGN: left;
+	padding-left: 10px;
+	line-height: 160%;
+}
+.linksContContent li {
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #D7E2E6;
+	line-height: 200%;
+}
+.lefttitle span {
+	float: left;
+	padding-left: 500px;
+}
+.lefttitle li {
+	float: left;
+	width: 360px;
+	color: #FFFFFF;
+}
+.factoryBox {
+	WIDTH: 180px;
+	WORD-BREAK: break-all;
+	TEXT-ALIGN: center;
+	margin-right: auto;
+	margin-left: auto;
+	line-height: 130%;
+	margin-top: 7px;
+	margin-bottom: 0px;
+}
+.textBox {
+	WIDTH: 114px;
+	WORD-BREAK: break-all;
+	TEXT-ALIGN: center;
+	margin-right: auto;
+	margin-left: auto;
+	line-height: 130%;
+	margin-top: 7px;
+	margin-bottom: 0px;
+}
+.jiageBox {
+	WIDTH: 114px;
+	WORD-BREAK: break-all;
+	TEXT-ALIGN: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 3px;
+}
+.jiageBox span {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FF0000;
+	font-weight: bold;
+}
+.jobTextColor {
+	font-size: 14px;
+	line-height: 300%;
+	font-weight: normal;
+}
+.contact_kuang {
+	font-size: 18px;
+	margin-top: 14px;
+	margin-left: 50px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #D7E2E6;
+	margin-bottom: 7px;
+	padding-bottom: 7px;
+	height: 30px;
+	padding-top: 14px;
+	padding-left: 30px;
+	font-family: "黑体";
+	color: #000000;
+}
+.contactkuang{
+	line-height: 200%;
+	font-size: 14px;
+}
+.where {
+	height: 18px;
+	padding-top: 5px;
+	padding-left: 10px;
+	font-size: 12px;
+	font-weight: bold;
+
+	margin-top: 7px;
+	margin-bottom: 7px;
+	border: 1px solid #D7E2E6;
+}
+.tradetitle {
+	font-family: "宋体";
+	font-size: 25px;
+	font-weight: bold;
+	margin-top: 10px;
+	width: 95%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #F6FFF8;
+	border: 1px solid #F6FFF8;
+	padding: 10px;
+	color: #02091C;
+}
+.tradejiage span {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #FF3300;
+}
+.fangda {
+	text-align: center;
+}
+
+.fenglei {
+	line-height: 200%;
+	width: 95%;
+	margin-right: auto;
+	margin-left: auto;
+}
+.fenglei li {
+	float: left;
+	width: 125px;
+	margin-right: 10px;
+	font-size: 12px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.tradejiage {
+	float: left;
+	height: 200px;
+	width: 400px;
+	margin-left: 20px;
+	padding-top: 10px;
+}
+.tradejiage li {
+	font-size: 14px;
+	line-height: 200%;
+	padding-bottom: 7px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #D7E2E6;
+}
+.tradexiangxi {
+	width: 95%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+.tradexiangxi p {
+	font-size: 14px;
+	line-height: 200%;
+	margin-top: 10px;
+}
+/*报价*/
+.sell_infor {
+	BORDER-RIGHT: #ffcb99 1px solid;
+	PADDING-RIGHT: 6px;
+	BORDER-TOP: #ffcb99 1px solid;
+	PADDING-LEFT: 6px;
+	BACKGROUND: #fff8ee;
+	PADDING-BOTTOM: 6px;
+	BORDER-LEFT: #ffcb99 1px solid;
+	WORD-BREAK: break-all;
+	BORDER-BOTTOM: #ffcb99 1px solid;
+	font-size: 14px;
+	font-weight: normal;
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+.no_infor_len2 {
+	WIDTH: 80%;
+	height: 40px;
+}
+.bt02_arrow {
+	PADDING-RIGHT: 16px; DISPLAY: block; PADDING-LEFT: 32px; FONT-WEIGHT: bold; FONT-SIZE: 16px; BACKGROUND: url(http://www.glass.cn/glass/biz/bt02_arrow.gif); FLOAT: left; WIDTH: 68px; LINE-HEIGHT: 30px; HEIGHT: 30px
+}
+.bt02_arrow:link {
+	COLOR: #ffffff
+}
+.bt02_arrow:visited {
+	COLOR: #ffffff
+}
+.bt02_arrow:hover {
+	BACKGROUND: url(http://www.glass.cn/glass/biz/bt02_arrow.gif) 0px -30px; COLOR: #fff; TEXT-DECORATION: none
+}
+.left {
+	FLOAT: left
+}
+.right {
+	FLOAT: right
+}
+.center {
+	TEXT-ALIGN: center
+}
+.pd {
+	MARGIN-TOP: 10px
+}
+.pd2 {
+	MARGIN-TOP: 14px
+}
+.pd_2h {
+	PADDING-LEFT: 14px
+}
+.pd_3h {
+	PADDING-LEFT: 20px
+}
+.row uo span {
+	font-size: 16px;
+	font-weight: bold;
+	color: #FF3300;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.copyright {
+	height: 60px;
+	width: 950px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	filter: Alpha(Opacity=80);
+	background-color: #FFFFFF;
+	padding-top: 10px;
+	color: #333333;
+}
+.copyright A:link {
+	text-decoration:none;
+	color: #333333; 	
+}
+.copyright A:visited {
+	color: #333333; 	
+	text-decoration:none;
+}
+.copyright A:hover {
+	text-decoration:underline;
+	color: #333333; 	
+}
+.page {
+	PADDING-RIGHT: 0px;
+	MARGIN-TOP: 15px;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 10px;
+	OVERFLOW: hidden;
+	COLOR: #000000;
+	PADDING-TOP: 15px;
+	ZOOM: 1;
+	font-size: 1.3em;
+	text-align: center;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	word-spacing: 2pt;
+	margin-bottom: 10px;
+	border-top-width: 1px;
+	border-top-style: dashed;
+	border-top-color: #CCCCCC;
+}
+.currentpage {
+	PADDING-RIGHT: 2px;
+	PADDING-LEFT: 2px;
+	BACKGROUND: #ff7300;
+	PADDING-BOTTOM: 1px;
+	COLOR: #fff;
+	PADDING-TOP: 1px;
+	width: 20px;
+	height: 20px;
+}

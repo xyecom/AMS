@@ -1,0 +1,21 @@
+
+<div class="nav">
+    <ul id="_shop_menu_list">
+        <%set str=GetLinkPrefix()%>
+        <li id="_shop_menu_index" class="hover"><a href="{str}index.{config.Suffix}">首页</a> </li>
+        <li id="_shop_menu_introduction"><a href="{str}introduction.{config.Suffix}">单位信息</a> </li>
+        <li id="_shop_menu_product"><a href="{str}product.{config.Suffix}">产品列表</a> </li>
+        <li id="_shop_menu_offer"><a href="{str}offer.{config.Suffix}">商情列表</a> </li>
+        <li id="_shop_menu_newslist"><a href="{str}newslist.{config.Suffix}">企业动态</a> </li>
+        <li id="_shop_menu_brandlist"><a href="{str}brandlist.{config.Suffix}">品牌介绍</a> </li>
+        <li id="_shop_menu_cred"><a href="{str}cred.{config.Suffix}">荣誉资质</a> </li>
+        <li id="_shop_menu_joblist"><a href="{str}joblist.{config.Suffix}">招聘中心</a> </li>
+        <li id="_shop_menu_contact"><a href="{str}contact.{config.Suffix}">联系方式</a> </li>
+    </ul>
+    <script type="text/javascript">xy_Shop_SetMenu();</script>
+</div>
+<div class="banner">
+    <%if shopuserinfo.banner!=""%>
+        <img src="{shopuserinfo.banner}" width="950px;" height="200px" alt=""/>
+    <%/if%>
+</div>

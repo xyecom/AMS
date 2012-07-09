@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <%Include _head%>
+</head>
+<body onload="{pageinfo.OnLoadEvents}">
+    <%Include _top%>
+    
+        <div class=layout950_100 style="BACKGROUND-IMAGE: url({config.WebURL}templates/_shop/skins_2009/{shopuserinfo.template}/images/stylebg1.jpg)">
+    
+        <%Include _banner%>
+        <div class="clr"></div>
+        
+        <div class=layout950>
+        
+        <%Include _menu%>
+        <div class="clr"></div>
+        
+        <div class=where>你现在的位置：首页 &gt; 产品展示</div>
+        
+        <%Include _left%>
+        
+        <!--供应信息-->
+        <div id=bodyright>
+            <div class=leftkuang>
+            <div class=righttitle>
+            <ul>
+              <li>供应信息 </li></ul></div>
+            <div class=tuijian_product>
+                <ul>
+                    <%loop (DataRow) info infolist%>
+                    <%set str = GetInfoUrl("offer",info["InfoFlag"],info["InfoId"],info["HtmlPage"])%>
+                    <%set str1 = GetInfoImgHref("offer",info["InfoId"])%>
+                    <li>
+                        <div class=picBox><a href="{str}" target="_blank"><img alt="{info[InfoTitle]}" src="{str1}" border="0" onload='SetImgSize(this,100,100);'></a></div>
+                        <div class=textBox><a href="{str}" target="_blank">{info[InfoTitle]} </a></div>
+                    </li>
+                    <%/loop%>
+                </ul>
+                </div>
+                <div class="clr"></div>
+                <div class="page">
+                    共{pageinfo.PageCount}页 {pageinfo.FirstPage}&nbsp;{pageinfo.PreviousPage}&nbsp;{pageinfo.NextPage}&nbsp;{pageinfo.LastPage}
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+        
+        <!--供应信息结束-->
+        <div class="clr"></div>
+        </div>
+        <%Include _footer%>
+    </div>
+    
+   </body>
+</html>

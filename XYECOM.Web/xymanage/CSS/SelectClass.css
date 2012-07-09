@@ -1,0 +1,31 @@
+.SelectItem {
+	list-style:none;	
+	text-align: left;
+}
+.SelectItem li {
+	float:left;	
+	margin-left:5px;
+	cursor:hand;
+	background:url(bgimages/bg_select.gif) no-repeat left top;
+}
+.SelectItem li a{
+	width:90px;
+	padding:0px 5px;
+	display: block;
+}
+.SelectClassType{
+    z-index:99;
+	position: absolute;
+	border:1px solid #FCC187;
+	background: #FFFEFB;
+	padding:10px;
+	text-align:left;
+}	
+.SelectClassType li{ 
+  height: 19px;
+  text-align: left;
+  float:left;
+  margin-bottom: 5px;
+  
+}
+.SelectClassType a{padding-left:8px; width:110px; float:left; margin:0;}

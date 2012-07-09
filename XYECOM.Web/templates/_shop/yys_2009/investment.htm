@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <%Include _head%>
+</head>
+<body onload="{pageinfo.OnLoadEvents}">
+     <%Include _top%>
+
+        <div class=layout950_100 style="BACKGROUND-IMAGE: url({config.WebURL}templates/_shop/skins_2009/{shopuserinfo.template}/images/stylebg1.jpg)">
+    
+    <%Include _banner%>
+    
+    <div class="clr"></div>
+    <div class=layout950>
+    
+    <%Include _menu%>
+    
+    <div class="clr"></div>
+    
+    <div class=where>你现在的位置：首页 &gt; 招商加盟</div>
+    
+    <%Include _left%>
+    
+    <!--供应信息-->
+    <div id=bodyright>
+        <div class=leftkuang>
+            <div class="infotitle">
+                <ul>
+                    {pageinfo.InfoListLink}
+                </ul>
+            </div>
+            <div class="infolist">
+                <ul>
+                    <%loop (DataRow) info infolist%>
+                    <%set str = GetInfoUrl("investment",info["InfoFlag"],info["InfoId"],info["HtmlPage"])%>
+                    <%set str1 = GetInfoImgHref("investment",info["InfoId"])%>
+                    <li>
+                        <div class="pBox"><a href="{str}" target="_blank"><img src="{str1}" border="0" alt="{info[infoTitle]}" onload='SetImgSize(this,70,70);'/></a></div>
+                        <div class="tBox">
+                            <h2><a href="{str}" target="_blank">{info[infoTitle]}</a> <span>(更新时间：{info[addtime]})</span></h2>
+                            <%left(info[details],300)%>
+                        </div>
+                    </li>
+                    <%/loop%>
+                </ul>
+            </div>
+            <div class="clr"></div>
+            <div class=page>
+                共{pageinfo.PageCount}页 {pageinfo.FirstPage}&nbsp;{pageinfo.PreviousPage}&nbsp;{pageinfo.NextPage}&nbsp;{pageinfo.LastPage}
+            </div>
+            <div class="clr"></div>
+        </div>
+    </div><!--供应信息结束-->
+    <div class="clr">
+    </div>
+    </div>
+
+    <%Include _footer%>
+    
+    </div>
+</body>
+</html>

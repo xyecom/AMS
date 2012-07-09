@@ -1,0 +1,83 @@
+<%if pageinfo.PageError==1%>
+    <%include _msgbox%>
+    <%end%>
+<%/if%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<%include _head%>
+</head>
+<body>
+
+
+<div id="wrapper">
+
+         <%include _login_bar%>
+
+         <%Include _top%>
+
+         <%Include _search%>
+
+         <%include _menu%>
+
+	<div id="idx_cnt2">
+		<div id="left">
+
+			<div class="resumeInfo">
+            <table>
+                <caption style="text-align:left; font-size:16px; font-weight:bold;">简历信息</caption>
+                <tr>
+                    <td width="20%">毕业学校：</td>
+                    <td width="80%">{resumeInfo.RE_School}</td>
+                </tr>
+                <tr>
+                    <td>所学专业：</td>
+                    <td>{resumeInfo.RE_Speciality}</td>
+                </tr>
+                <tr>
+                    <td>毕业时间：</td>
+                    <td>{resumeInfo.RE_Gyear.ToShortDateString()}</td>
+                   
+                </tr>
+                <tr>
+                    <td>教育程度：</td>
+                    <td>{resumeInfo.RE_Schoolage}</td>
+                </tr>
+                <tr>
+                    <td>职位：</td>
+                    <td>{resumeInfo.RE_Intentjob}</td>
+                </tr>
+                <tr>
+                    <td>薪水要求：</td>
+                    <td>{resumeInfo.RE_Intentpay}</td>
+                </tr>
+                <tr>
+                    <td>期望所在城市：</td>
+                    <td>{ainfo.Name}</td>
+                </tr>
+                <tr>
+                    <td>工作年限：</td>
+                    <td>{resumeInfo.RE_JobYear}</td>
+                </tr>
+                <tr>
+                    <td>工作经验：</td>
+                    <td>{resumeInfo.RE_Experience}</td>
+                </tr>
+            </table> 
+			</div>
+
+		</div>
+
+		<div id="right" style="width:270px;">
+			<div class="pages_bnr"><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_bnr_6.gif" width="267" height="241" alt="" /></a></div>
+		</div>
+		<div class="clr"></div>
+	</div>
+	<div id="news_pages_btm2" class="spacer"></div>
+
+	<%include _footer%>
+
+</div>
+
+</body>
+</html>

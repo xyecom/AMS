@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<%include _head%>
+</head>
+<body  onload="{pageinfo.OnLoadEvents}">
+<div class="wrapper">
+
+    <div id="hd_info">
+		<div class="smpMenu">
+	            <a href="{config.WebURL}" class="tabactive">首 页</a> | 
+				<a href="{config.WebURL}news/">新闻资讯</a> | 
+				<a href="{config.WebURL}offer/">产品中心</a> | 
+				<a href="{config.WebURL}investment/">招商加盟</a> | 
+				<a href="{config.WebURL}company/">行业公司</a> | 
+				<a href="{config.WebURL}job/">人才招聘</a> | 
+				<a href="{config.WebURL}brand/">行业品牌</a> | 
+				<a href="{config.WebURL}exhibition/">展会信息</a>
+			<div class="clr"></div>
+		</div>
+	</div>
+	<div class="clr"></div>
+	
+	<div class="cmtBody">
+
+    <div class="cmtNav">
+		 您现在的位置：{pageinfo.Navigation} &gt; 评论列表
+	</div>
+
+
+    <h2>主题：
+    <%if config.BogusStatic==true%>
+	  <a href="{config.WebURL}news/content-{NewsID}.{config.Suffix}">
+	<%else%>
+	  <a href="{config.WebURL}news/content.{config.Suffix}?ns_id={NewsID}">
+	<%/if%>{nsname}
+	</a>
+	</h2>
+
+
+    <div class="comments">
+            <div>   
+             <dl>
+             <%loop (DataRow) nsdis nsdislist%>
+            <dd><span>{nsdis[ND_AddTime]}</span>
+                <%if {nsdis[U_ID]}=="0"%><strong>{nsdis[U_Name]}</strong>(游客)<%/if%> 
+                 <%if {nsdis[U_ID]}!="0"%>
+                   <%if {nsdis[U_Flag]}=="True"%>
+                   <%if {nsdis[U_HtmlPage]}==""%>
+                   <%if config.IsDomain==true%>
+                   <strong><a href="http://{nsdis[U_Name]}{pageinfo.DomainHost}/" target="_blank">{nsdis[U_Name]}</a></strong>
+                   <%else%>
+                   <strong><a href="{config.WebURL}shop/{nsdis[U_Name]}/index.{config.Suffix}" target="_blank">{nsdis[U_Name]}</a></strong>
+                   <%/if%>
+                   <%/if%>
+                   <%if {nsdis[U_HtmlPage]}!=""%>
+                   <strong><a href="{nsdis[U_HtmlPage]}">{nsdis[U_Name]}</a></strong>
+                   <%/if%>
+                   <%else%>
+		            {nsdis[U_Name]}(个人会员)
+		           <%/if%>
+                 <%/if%>
+                 </dd>
+                <dt>{nsdis[ND_Content]}</dt>	
+
+                <%/loop%>
+        </dl>
+  
+   <div id="page">{pageinfo.PreviousPage} {pageinfo.NumPage} {pageinfo.NextPage}</div>
+  </div>
+	<div class="clear"></div>
+</div>
+<br/>
+<div class="contentbox"><h2><span>发表评论</span></h2>  </div>
+
+<div class="content">
+  <table width="80%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="comment"><label>
+      <textarea cols="70" maxlength="4000" rows="6" id="CommentBody"></textarea>
+    </label>     
+      <input type="hidden" id="NewsId" value="{NewsID}" name="NID" /></td>
+  </tr>
+
+  <tr>
+    <td class="con_tdr"><label>
+      &nbsp;&nbsp;<input id="IsHiddenIP" type="checkbox" value=""/>隐藏IP&nbsp;<input name="post" type="button" class='myinput' value="快速发表评论" onclick="InsertComment();window.location.reload();"/> 
+    </label></td>
+  </tr>
+</table>
+</div>
+
+    
+
+    </div>
+
+<%Include _footer%>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<%Include _pagehead%>
+<style type="text/css">
+    /*选项卡 样式*/
+    #Tab2
+    {
+        clear: both;
+        width: 980px;
+        margin: 0px;
+        padding: 0px;
+        margin: 0 auto;
+    }
+    
+    .Menubox
+    {
+        width: 100%;
+        height: 28px;
+        line-height: 28px;
+        border-bottom: 2px solid #b80733;
+        height: 29px;
+    }
+    .Menubox ul
+    {
+        margin: 0px;
+        padding: 0px;
+    }
+    .Menubox li
+    {
+        float: left;
+        display: block;
+        cursor: pointer;
+        width: 90px;
+        margin-right: 5px;
+        height: 26px;
+        text-align: center;
+        background: url({config.WebURL}templates/_shop/store/images/navtab1.gif) no-repeat scroll 0 0 transparent;
+        color: #333;
+        padding-top: 5px;
+    }
+    .Menubox li.hover
+    {
+        color: #fff;
+        text-decoration: none;
+        background-attachment: scroll;
+        background-color: transparent;
+        background-image: url({config.WebURL}templates/_shop/store/images/navtab.gif);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+    }
+    .Contentbox
+    {
+        clear: both;
+        margin-top: 0px;
+        border: 2px solid #b80733;
+        border-top: none;
+        text-align: center;
+        padding-top: 8px;
+    }
+    
+    #infolist div a.STYLE12
+    {
+        background: url({config.WebURL}templates/_shop/store/images/arrowfl.gif) no-repeat scroll 0 17px transparent;
+        border-bottom: 1px dashed #CCCCCC;
+        color: #C50C0C;
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        margin-left: 0;
+        padding: 10px 0 5px 10px;
+    }
+</style>
+<%Include _header%>
+<!--top end-->
+<!--main start-->
+<div class="mian">
+    <div class="clearfix2">
+        <span class="pos">{categoryTitle}</span><a class="amore a2" href="{shopuserinfo.domain}brandlist.{config.suffix}"
+            target="_blank">查看所有品牌</a>
+    </div>
+    <!--分类 start-->
+    <div class="bor1 clearfix2">
+        <div class="headtitle">
+            <table class="tagli" border="0" cellspacing="0" cellpadding="0" width="99%">
+                <tbody>
+                    <tr>
+                        <td height="30" valign="center" align="middle">
+                            <div class="headtitle">
+                                商品目录
+                            </div>
+                        </td>
+                        <%loop (DataRow) rowitem customtypelist%>
+                        <td valign="center" align="middle">
+                            <a href='{shopuserinfo.domain}category-{rowitem[Id]}.{config.suffix}'
+                                target="_self" class="menu">{rowitem[PtName]} </a>
+                        </td>
+                        <%/loop%>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="infolist">
+            <%loop (DataRow) row2 parent%>
+            <div class="fllist" id="store-tablest">
+                <table class="store-item dis" num="1">
+                    <tbody>
+                        <tr>
+                            <td align="left">
+                                <h2>
+                                    <%set tmplinkurl=GetInfoLink(row2["Id"],row2["SubCount"])%>
+                                    <a class="STYLE12" href='{tmplinkurl}'>{row2[PtName]}</a></h2>
+                                <%set subtype=GetSubTypeById(row2["Id"].ToString())%>
+                                <%loop (DataRow) typeitem subtype%>
+                                <%set tmplinkurl=GetInfoLink(typeitem["Id"],typeitem["SubCount"])%>
+                                <%if typeitem__loop__id==1%>
+                                <a class="first" href="{tmplinkurl}" target="_blank">{typeitem[PtName]}</a>
+                                <%else%>
+                                <a class="fb" href="{tmplinkurl}" rel="nofollow">{typeitem[PtName]}</a>
+                                <%/if%>
+                                <%/loop%>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <%/loop%>
+            <div class="morelink">
+                <ul>
+                    <li>
+                        <div class="morelinkinside" align="left">
+                            <table width="97%" align="center">
+                                <tbody>
+                                    <tr>
+                                        <td align="right">
+                                            <form method="get" action="">
+                                            <fieldset>
+                                                <span class="STYLE120">
+                                                    <div>
+                                                        <span class="STYLE9">热门搜索：亿家商城—</span> <a href="#" target="_blank">时尚</a> <a href="#"
+                                                            target="_blank">烫钻</a> <a href="#" target="_blank">条纹</a> <a href="#" target="_blank">
+                                                                纯棉</a> <a title="" href="#" target="_blank">外套</a> <a href="#" target="_blank">围脖</a>
+                                                        <a href="#" target="_blank">印花</a> <a href="#" target="_blank">点点</a> <a href="#"
+                                                            target="_blank">面膜</a> <a href="#" target="_blank">美肤</a> <a href="#" target="_blank">
+                                                                嫩白</a> <a href="#" target="_blank">沐浴</a> <a href="#" target="_blank">相宜本草</a>
+                                                        <a href="#" target="_blank">薇姿</a> <a href="#" target="_blank">迷奇</a> <a href="#"
+                                                            target="_blank">昭贵</a> <a href="#" target="_blank">PBA</a> <a href="#" target="_blank">
+                                                                欧莱雅</a> <a href="#" target="_blank">资生堂</a> <a href="#" target="_blank">美容护肤</a>
+                                                        <a href="#" target="_blank">按摩</a> <a href="#" target="_blank">BB霜</a> <a href="#"
+                                                            target="_blank">瑜伽</a>
+                                                    </div>
+                                                </span>
+                                                <input class="hd-text lower" value="时尚 女装" size="31" type="text" name="keyword">
+                                                <input style="border-bottom: medium none; border-left: medium none; border-top: medium none;
+                                                    border-right: medium none" class="hd-sbt" value="搜索" type="submit">
+                                                &nbsp;
+                                            </fieldset>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--分类 end-->
+</div>
+<!--main end-->
+<!--footer start-->
+<%Include _footer%>
+<!--footer end-->

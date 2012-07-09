@@ -1,0 +1,591 @@
+﻿<%Include _pagehead%>
+<link rel="stylesheet" type="text/css" href="{config.WebURL}templates/_shop/store/css/content.css" />
+<script type="text/javascript" src="{config.WebURL}templates/_shop/store/js/jquery.js"></script>
+<script language="javascript">
+    $(document).ready(function () {
+        if ({productInfo.Stocks} < {productInfo.LeastNum}){
+            $("#btnMyCart").attr("disabled","disabled");
+            $("#btnbuy").attr("disabled","disabled");
+            $("#btnOrder").attr("disabled","disabled");
+        }
+        $('.spfl_list').mouseover(function () {
+            $(this).addClass('spfl_this');
+            $(this).children('.detail').removeClass('d_hide');
+        }).mouseout(function () {
+            $(this).removeClass('spfl_this');
+            $(this).children('.detail').addClass('d_hide');
+        });
+        $('.sp_list').mouseover(function () {
+            $('.sp_list').removeClass('sp_this');
+            $(this).addClass('sp_this');
+            $('#sp_img img').attr('src', $(this).children('img').attr('src'));
+        });
+
+        $('.sp_size').click(function () {
+            $('.sp_size').removeClass('sp_s_this');
+            $(this).addClass('sp_s_this');
+        });
+        $('.sp_color').click(function () {
+            $('.sp_color').removeClass('sp_c_this');
+            $(this).addClass('sp_c_this');
+        });
+
+        $('.spxx_l').click(function () {
+            $('.spxx_l').removeClass('spxx_t');
+            $(this).addClass('spxx_t');
+        });
+
+        $("#frmbuy").submit(function () {
+            var pcounts = $("#count").val();
+            var patrn = /^\d+$/;
+            if (!patrn.exec(pcounts)) {
+                pcounts = {productInfo.LeastNum};
+            }
+            else {
+                
+
+                if (pcounts < {productInfo.LeastNum}){
+                    pcounts = {productInfo.LeastNum};
+                 }
+                if (pcounts >= {productInfo.Stocks}){
+                    pcounts = {productInfo.Stocks};
+                 }
+            }
+            $("#count").val(pcounts)
+        });
+        $("#count").blur(function () {
+            var pcounts = $("#count").val();
+            var patrn = /^\d+$/;
+            if (!patrn.exec(pcounts)) {
+                pcounts = {productInfo.LeastNum};
+            }
+            else {
+                if (pcounts < {productInfo.LeastNum}){
+                    alert("购买的数量不能小于产品最小起订量！");
+                    pcounts = {productInfo.LeastNum};
+                 }
+                if (pcounts > {productInfo.Stocks}){
+                    alert("购买的数量不能大于产品的挂牌量！");
+                    pcounts = {productInfo.Stocks};
+                 }
+            }
+            $("#count").val(pcounts)
+        });
+    });
+</script>
+<%Include _header%>
+<!--main start-->
+<div class="main">
+    <!-- 导航条 -->
+    <div id="daohang">
+        <a href="./">首页</a> &gt; <a href="">童装/母婴</a> &gt; <a href="">儿童服装</a> &gt; 商品详情
+    </div>
+    <div id="main_left">
+        <div id="spfl">
+            <!-- 商品分类 -->
+            <div id="spfl_top">
+                <img src="{config.WebURL}templates/_shop/store/images/g_01.jpg" width="220" height="31"
+                    border="0" />
+            </div>
+            <div id="spfl_box">
+                <div class="spfl_title">
+                    <strong>小商品</strong>
+                    <div class="spfl_all">
+                        <a href="{shopuserinfo.domain}category.{config.suffix}" class="red">所有分类</a>
+                    </div>
+                </div>
+                <div class="spfl_list">
+                    <div class="spfl_list_left2">
+                        <a href="{shopuserinfo.domain}offerlist-------.{config.suffix}">工艺礼品</a>
+                    </div>
+                    <div class="detail d_hide">
+                        <div class="d_list">
+                            <div class="d_title">
+                                <a href="{shopuserinfo.domain}offerlist-------.{config.suffix}" target="_blank">
+                                    广告促销</a>
+                            </div>
+                            <div class="d_box">
+                                <ul>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">广告杯</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">广告扇</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">广告伞</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">广告笔</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">礼品灯</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">礼品餐具</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">冰箱贴</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">开瓶器</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="d_line">
+                        </div>
+                        <div class="d_list">
+                            <div class="d_title">
+                                <a href="{shopuserinfo.domain}offerlist-------.{config.suffix}" target="_blank">
+                                    冬季促销</a>
+                            </div>
+                            <div class="d_box">
+                                <ul>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">礼品口杯</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">礼品冰杯</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">礼品水壶</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">礼品冰垫</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">pp扇子</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">宫扇</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">礼品化妆镜</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">usb电池</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="d_line">
+                        </div>
+                        <div class="d_list">
+                            <div class="d_title">
+                                <a href="{shopuserinfo.domain}offerlist-------.{config.suffix}" target="_blank">
+                                    商务办公</a>
+                            </div>
+                            <div class="d_box">
+                                <ul>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">商务套装</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">文化礼品</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">商务馈赠</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">会展礼品</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">礼品计算器</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">礼品相框</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">礼品笔</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">上海世贸商</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="d_line">
+                        </div>
+                        <div class="d_list">
+                            <div class="d_title">
+                                <a href="{shopuserinfo.domain}offerlist-------.{config.suffix}" target="_blank">
+                                    节庆礼品</a>
+                            </div>
+                            <div class="d_box">
+                                <ul>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">生日</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">婚庆</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">情侣</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">春节</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">助威道具</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">气球</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">旗帜</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">贺卡</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="d_line">
+                        </div>
+                        <div class="d_list">
+                            <div class="d_title">
+                                <a href="{shopuserinfo.domain}offerlist-------.{config.suffix}" target="_blank">
+                                    传统工艺</a>
+                            </div>
+                            <div class="d_box">
+                                <ul>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">珠宝玉器</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">艺术品</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">书画</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">收藏品</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">民间工艺</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">灯笼</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">中国结</a></li>
+                                    <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}"
+                                        target="_blank">古玩古董</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spfl_xiao">
+                    <ul>
+                        <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}">节日用品</a></li>
+                        <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}">婚庆</a></li>
+                        <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}">创意杯子</a></li>
+                        <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}">手表</a></li>
+                        <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}">打火机</a></li>
+                        <li><a href="{shopuserinfo.domain}offerlist-------.{config.suffix}">家用电器</a></li>
+                    </ul>
+                </div>
+                <div id="spfl_gengduo">
+                    <a href="{shopuserinfo.domain}category.{config.suffix}">查看更多分类</a>
+                </div>
+            </div>
+        </div>
+        <%Include _brand%>
+        <div id="zjll">
+            <!-- 最近浏览的商品 -->
+            <div id="zjll_top">
+                我最近浏览的商品
+            </div>
+            <div id="zjll_clear">
+                <a href="">清除</a>
+            </div>
+            <div id="zjll_box">
+            </div>
+        </div>
+    </div>
+    <div id="main_right">
+        <div id="spxq">
+            <!--商品详情-->
+            <div id="spxq_l">
+                <div id="sp_img">
+                    <img src="{productInfo.SmallImg[0]}" alt="{productInfo.Title}" />
+                    <!--<img src="{config.WebURL}templates/_shop/store/tupian/c001.jpg" />-->
+                </div>
+                <div id="sp_box">
+                    <%loop (string) path images%>
+                    <div class="sp_list">
+                        <img src="{path}" alt="{productInfo.Title}" />
+                    </div>
+                    <%/loop%>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+            <div id="spxq_r">
+                <div id="sp_bt">
+                    {productInfo.Title}<%if isPayMargin%><span style="color:Red">已缴纳保证金，可放心购买</span><%/if%>
+                </div>
+                <div id="sp_pp">
+                    {brandFlagName}
+                </div>
+                <div id="sp_jg">
+                    <div id="jg_title">
+                        <div class="jg_num">
+                            数量({productInfo.Unit})
+                        </div>
+                        <div class="jg_price">
+                            价格(元/{productInfo.Unit})
+                        </div>
+                    </div>
+                    <%loop (XYECOM.Model.PriceRangeInfo) item productInfo.PriceRange%>
+                    <div class="jg_list">
+                        <div class="jg_num">
+                            <%if item.RangeNum!=-1%>
+                            {item.OrderNum}-{item.RangeNum}
+                            <%else%>
+                            >={item.OrderNum}
+                            <%/if%>
+                        </div>
+                        <div class="jg_price">
+                            <span>{item.Price}</span>
+                        </div>
+                    </div>
+                    <%/loop%>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="sp_text" style="display:none">
+                    <div class="spt_l">
+                        单位重量：
+                    </div>
+                    <div class="spt_r">
+                        50g
+                    </div>
+                </div>
+                <div class="sp_text">
+                    <div class="spt_l">
+                        发货地：
+                    </div>
+                    <div class="spt_r">
+                        {depotName}
+                    </div>
+                </div>
+                <div class="sp_text" style="display:none">
+                    <div class="spt_l">
+                        送货到：
+                    </div>
+                    <div class="spt_r">
+                        <div class="sp_shdz">
+                            山东
+                        </div>
+                        <div class="sp_shsm">
+                            首重1.0公斤10.00元；续重每1.0公斤4.00元；30.0公斤以上，每公斤0.00元
+                        </div>
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+                <div id="sp_gm">
+                    <form action="{config.WebURL}common/initcart.{config.suffix}" id="frmbuy" method="post"
+                    target="_blank">
+                    <%if !isContract%>
+                    <div class="sp_text">
+                        <div class="spt_l">
+                            我要订购：
+                        </div>
+                        <div class="spt_r">
+                            <input type="hidden" name="pid" id="pid" value="{productInfo.InfoID}" />
+                            <input type="text" name="count" id="count" value="{productInfo.LeastNum}" />
+                            {productInfo.Unit} (可售{productInfo.Stocks}{productInfo.Unit} 累计售出{productInfo.SalesVolume}{productInfo.Unit})
+                        </div>
+                    </div>
+                    <%/if%>
+                    <div class="sp_button">
+                        <%if !isContract%>
+                        <input type="image" src="{config.WebURL}templates/_shop/store/images/i_12.jpg" id="btnbuy" />
+                        <input type="image" src="{config.WebURL}templates/_shop/store/images/i_13.jpg" id="btnMyCart" />
+                        <%else%>
+                        <%if isConMargin%>
+                        <a class="de-contract-record" href="{config.WebURL}BuyerContract.{config.suffix}?offerId={productInfo.InfoID}">
+                            签订合同协议</a> <a class="de-contract-txtlink" target="_blank" href="#">什么是签订保障合同？</a>
+                        <%else%>
+                        <a class="de-contract-txtlink" href="#">和我联系</a>
+                        <input type="hidden" id="sellerId" value="{productInfo.UserID}" />
+                        <%/if%>
+                        <%/if%>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div id="spxx">
+            <!--商品信息-->
+            <div class="spxx_l spxx_t">
+                商品信息
+            </div>
+            <div class="spxx_l">
+                顾客评论
+            </div>
+            <div class="spxx_l">
+                购买记录
+            </div>
+            <div class="spxx_l">
+                商品咨询
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div id="spms">
+            <!--商品描述-->
+            <div id="spms_top">
+                商品描述
+            </div>
+            <div id="spms_box">
+                {productInfo.InfoContent}
+            </div>
+        </div>
+        <div id="ppdp">
+            <!--品牌店铺-->
+            <div id="ppdp_l">
+                {brandFlagName} <span>{brandName}</span>
+            </div>
+            <div id="ppdp_r">
+                <a href="{shopuserinfo.domain}productlist----{brandId}.{config.suffix}">
+                    进入品牌店铺</a> <a href="">订阅新品通知</a>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div id="myzs">
+            <!--满意指数-->
+            <div id="myzs_l">
+                <div id="myzs_my">
+                    满意指数：<img src="{config.WebURL}templates/_shop/store/images/c_03.jpg" />
+                    <span>4分</span>
+                </div>
+                <div id="myzs_pw">
+                    评论：<span>2</span>次 问答：<span>0</span>次
+                </div>
+            </div>
+            <div id="myzs_r">
+                价格：<span>{productInfo.Price}</span>
+                <form id="frmbuy2" action="{config.WebURL}common/initcart.{config.suffix}" method="post">
+                <input type="hidden" name="pid" id="productId" value="{productInfo.InfoID}" />
+                <input type="hidden" name="count" id="productCount" value="{productInfo.LeastNum}" />
+                <%if !isContract%>
+                <input type="image" src="{config.WebURL}templates/_shop/store/images/t_05.jpg" id="btnOrder" />
+                <%else%>
+                <%/if%>
+                </form>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div id="gkpl">
+            <!--顾客评论-->
+            <div id="gkpl_top">
+                <font class="title">顾客评论</font> <a href="{shopuserinfo.domain}evaluationlist-{infoId}.{config.suffix}">
+                    共{evaluationCount}人评论，查看所有评论</a> 购买该商品的用户才能进行评论 <a href="">
+                        <img src="{config.WebURL}templates/_shop/store/images/c_10.jpg" /></a>
+            </div>
+            <div id="gkpl_box">
+                <ul>
+                    <%loop (DataRow) info EvaluationTable%>
+                    <li>
+                        <div class="gk_name">
+                            {info[U_Name]}
+                        </div>
+                        <div class="gk_name">
+                            综合评价分值：{info[EvaluationScore]}
+                        </div>
+                        <div class="gk_name">
+                            优点： {info[Advantages]}
+                        </div>
+                        <div class="gk_name">
+                            缺点：{info[Shortcomings]}
+                        </div>
+                        <div class="gk_date">
+                            评价时间： {info[EvaluationDate]}
+                        </div>
+                        <div class="gk_content">
+                            评价时间： {info[EvaluationMessage]}
+                        </div>
+                    </li>
+                    <%/loop%>
+                </ul>
+            </div>
+            <div id="gkpl_bottom">
+                <a href="">查看更多评论</a> <a href="">
+                    <img src="{config.WebURL}templates/_shop/store/images/c_10.jpg" /></a>
+            </div>
+        </div>
+        <div id="gmjl">
+            <!--购买记录-->
+            <div id="gmjl_top">
+                <a href="{shopuserinfo.domain}buyloglist-{infoId}.{config.suffix}">
+                    共{buyInfoCount}人购买该产品</a>
+            </div>
+            <div id="gmjl_box">
+                <div id="gm_title">
+                    <div class="gm_r">
+                        购买人
+                    </div>
+                    <div class="gm_j">
+                        购买价格
+                    </div>
+                    <div class="gm_s">
+                        数量
+                    </div>
+                    <div class="gm_d">
+                        购买时间
+                    </div>
+                </div>
+                <ul>
+                    <%loop (DataRow) buyItem buyTable%>
+                    <li>
+                        <div class="gm_r">
+                            {buyItem[u_name]}
+                        </div>
+                        <div class="gm_j">
+                            {buyItem[Price]}
+                        </div>
+                        <div class="gm_s">
+                            {buyItem[Quantity]}
+                        </div>
+                        <div class="gm_d">
+                            {buyItem[OrderDate]}
+                        </div>
+                    </li>
+                    <%/loop%>
+                </ul>
+            </div>
+            <div id="gmjl_bottom">
+            </div>
+        </div>
+        <div id="cxsp">
+            <!--畅销商品-->
+            <div id="cxsp_top">
+                EUROMODA 的畅销商品
+            </div>
+            <div id="cxsp_more">
+                <a href="">查看更多畅销商品</a>
+            </div>
+            <div id="cxsp_box">
+                <ul>
+                    <li>
+                        <div class="cx_img">
+                            <a href="" target="_blank">
+                                <img src="{config.WebURL}templates/_shop/store/tupian/c004.jpg" /></a>
+                        </div>
+                        <div class="cx_t">
+                            <a href="" target="_blank">欢乐精灵格子大衣</a><br />
+                            价格：<span>￥189.00</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cx_img">
+                            <a href="" target="_blank">
+                                <img src="{config.WebURL}templates/_shop/store/tupian/c005.jpg" /></a>
+                        </div>
+                        <div class="cx_t">
+                            <a href="" target="_blank">欢乐精灵格子大衣</a><br />
+                            价格：<span>￥189.00</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cx_img">
+                            <a href="" target="_blank">
+                                <img src="{config.WebURL}templates/_shop/store/tupian/c004.jpg" /></a>
+                        </div>
+                        <div class="cx_t">
+                            <a href="" target="_blank">欢乐精灵格子大衣</a><br />
+                            价格：<span>￥189.00</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cx_img">
+                            <a href="" target="_blank">
+                                <img src="{config.WebURL}templates/_shop/store/tupian/c005.jpg" /></a>
+                        </div>
+                        <div class="cx_t">
+                            <a href="" target="_blank">欢乐精灵格子大衣</a><br />
+                            价格：<span>￥189.00</span>
+                        </div>
+                    </li>
+                    <div class="clear">
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+<!--main end-->
+<%Include _footer%>

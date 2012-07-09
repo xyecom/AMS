@@ -1,0 +1,257 @@
+﻿
+/*公共样式*/
+* { 
+	padding:0; 
+	margin:0; 
+	font-size:12px; 
+}
+
+html{
+	height:100%;
+}
+
+body{
+	font-family:"宋体",Verdana, Arial, Helvetica, sans-serif; 
+	font-size:12px; 
+	color:#333;
+	height:100%;
+	text-align:center; 
+	line-height:21px; 
+	background:#fff;	
+}
+
+ul,ol,li,dl,dt,dd {
+	list-style:none;
+}
+img {border:0;}
+table{ border-collapse:collapse;}
+
+.clear{ clear:both; line-height:1px}/*清除浮动*/
+
+/*操作按钮的样式*/
+.button {
+	font: 12px Arial, Helvetica, sans-serif;
+	padding: 0 4px;
+	color: #000;
+	background:url(bgimages/bg_button.gif)  repeat-x;
+	
+	/*for Mozilla*/
+ 	outline: 1px solid #1590BE ;
+	border: 1px solid #FFFFFF !important;
+	height: 24px !important;
+	line-height: 22px !important;
+
+	/*for IE7*/
+	> border: 1px solid #1590BE !important;
+	> height: 26px !important;
+	> line-height: 20px !important;
+
+	/*for IE*/
+	border: 1px solid #1590BE ;
+	height: 26px;
+	line-height: 20px;
+	
+}
+
+/*输入框的样式*/
+.input{ background:#fff; border:1px solid #69c; padding:3px; text-align:left;}
+
+
+/*链接样式*/
+a:link{ color:#555; text-decoration:none;}
+a:visited{ color:#666; text-decoration:none;}
+a:hover{ color:#F60; text-decoration:underline;}
+
+/*位置导航样式*/
+h1{ width:98%; margin:10px auto 8px auto; background:#FBFFE1; border:1px solid #1598CB; padding:4px 0; text-indent:15px; text-align:left; font-weight:normal; color:#f60;}
+h1 a:link,h1 a:visited{ color:#555; text-decoration:none;}
+h1 a:hover{ color:#555; text-decoration:underline;}
+
+/*表格的公用样式--列表---内容居中*/
+.content{ width:97%; margin:0 auto; background:#fff;border:1px solid #525C3D;}
+.content caption{  background: url(bgimages/left_bg.GIF) #159FD4 repeat-x left top; border-width:1px 1px 0 1px; border-style:solid; border-color:#525C3D; margin:0px auto; }
+.content caption{ text-align:left; padding-left:10px; color:#fff; font-weight:bold; font-size:13px;line-height:30px; height:30px;}
+.content caption span{ color:#fff; font-weight:normal; }
+.content th{ background:#F1F5F8;line-height:28px; height:28px; color:#000; font-weight:bold; border-right:1px solid #BBDCF1;border-bottom:1px solid #BBDCF1; padding:0 5px; text-align:center; }
+.content th strong{ color:#436B87;}
+.content table{ border-top:1px solid #BBDCF1; }
+.content table td{ border-bottom:1px solid #BBDCF1; border-right:1px solid #BBDCF1; padding:4px;text-align:center; }
+
+
+/*表格的公用样式--添加---内容居左*/
+.contentl{ width:97%;  margin:0 auto; background:#fff;border:1px solid #525C3D; text-align:left;}
+.contentl caption{background: url(bgimages/left_bg.GIF) #159FD4 repeat-x left top;border-width:1px 1px 0 1px; border-style:solid; border-color:#525C3D;margin:0 auto; }
+.contentl caption{text-align:left; padding-left:10px; color:#fff; font-weight:bold;font-size:13px;line-height:30px; height:30px;}
+.contentl caption span{ color:#fff; font-weight:normal; }
+
+.contentl th{ background:#F1F5F8;line-height:28px; height:28px; color:#000; font-weight:normal; text-align:left;border-right:1px solid #BBDCF1;border-bottom:1px solid #BBDCF1; padding:0 5px; }
+.contentl th strong{ color:#436B87;}
+.contentl table{ border-top:1px solid #BBDCF1;}
+.contentl table td{ border-bottom:1px solid #BBDCF1; border-right:1px solid #BBDCF1; padding:4px;text-align:left; }
+
+
+/*操作的公用样式 如 查看，编辑*/
+.action a:link,.action a:visited{ color:#159FD4; text-decoration:underline;}
+.action a:hover{ color:#333; text-decoration:none;}
+
+/*表格按钮操作行的公用样式*/
+.content_action{ background:#F1F5F8; height:30px;   padding:5px 0 5px 8px;  }
+.content_action div{ float:right; padding-right:10px;}
+.content_action em{ color:#f60; font-style:normal;}
+
+
+
+/*翻页的公用样式*/
+.page{ width:98%; margin:10px auto;}
+.page td{  text-align:right; padding-right:10px; }
+.page td span{ color:#f60;}
+.page a{ padding:0 2px; }
+
+
+
+/*左侧列表*/
+
+.left{ text-align:left; padding:10px 8px 17px 8px; vertical-align:top; width:156px;  height:518px;}
+
+.nav_tab{ width:100%;text-align:left; border:1px solid #525C3D; margin-bottom:5px;}
+.nav_title{ background: url(bgimages/left_bg.gif) transparent repeat-x left top; color:#fff; font-weight:bold; font-size:13px; text-align:left;padding-left:10px; line-height:31px; height:31px;}
+
+.nav_list{ background:#fff; padding:3px 0;}
+.nav_list dl{ padding-left:5px; margin:0 5px 9px 5px; }
+.nav_list dd{ text-align:left; padding:4px 2px 5px 15px; border-bottom:1px solid #A3CEEB; color:#555; font-size:13px; }
+.nav_list a:link{ color:#555; text-decoration:none;}
+.nav_list a:visited{ color:#555; text-decoration:none;}
+.nav_list a:hover{ color:#555; text-decoration:underline;}
+
+
+/*版权信息*/
+.left_copy{ width:100%;text-align:left; background:#fff; border:1px solid #525C3D;  margin:5px 0;}
+.left_copy td{color:#193C69; padding:8px; line-height:18px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:10px; }
+.left_copy td span{ color:#f00;}
+
+
+/*页面头部导航样式*/
+.right{ text-align:left; vertical-align:top;}
+.head_nav{ background: #60B7DE; border-bottom:1px solid #525C3D; height:55px; text-align:left;  }
+.head_wel{color:#fff; font-weight:bold; font-size:13px; padding-left:20px;}
+.head_wel a{ color:#fff; font-size:13px;text-decoration:underline;}
+.head_wel a:hover{ color:#FFCC33; text-decoration:none;}
+.head_right{ text-align:right; padding-right:8px;}
+.head_button{ padding:5px 10px; height:28px; background:#E3E3E3; border:1px solid #43809C; font-weight:bold; margin-right:2px; line-height:28px; font-size:14px;}
+
+
+
+
+
+/*弹出提示信息窗口*/
+
+.showBox {
+	Z-INDEX: 99; LEFT: 0px; WIDTH: 100%; POSITION: absolute; TOP: 0px; HEIGHT: 100%; TEXT-ALIGN: center
+	
+}
+
+.efalan {
+Z-INDEX: 1002; 
+position:absolute;
+top:50%; left:50%; 
+margin:-130px 0 0 -200px; /*外补丁负值=其自身宽度/高度 除以 2*/
+width:421px;
+height:200px;
+}
+
+.efalan .title{ 
+	background:url(bgimages/cue_header.gif) no-repeat left top; 
+	height:27px;
+	text-align:left; 
+	padding-left:25px;
+	font-weight:bold;
+	color:#2C71AF; 
+	line-height:27px;
+ }
+ 
+.efalan .title .close{ 
+float:right; 
+border:none;
+margin-right:10px;
+margin-top:8px;
+
+background:none;
+} 
+.efalan .title .close a{
+background:url(bgimages/cue_close_off.gif) no-repeat left top;
+display:block;
+width:8px;
+height:8px;
+}
+.efalan .title .close a:hover{
+background:url(bgimages/cue_close_on.gif) no-repeat left top;
+display:block;
+width:8px;
+height:8px;
+}
+
+
+.alphaBox {
+	Z-INDEX: 1000; BACKGROUND: #000; FILTER: alpha(opacity=25); LEFT: 0px; WIDTH: 100%; POSITION: absolute; TOP: 0px; HEIGHT: 100%; opacity: 0.6; -moz-opacity: 0.6
+}
+
+
+
+.cuecontent{
+ background: #FBFEFF;
+ border-left:1px solid #8B9FAF;
+ border-right:1px solid #8B9FAF;
+ COLOR: #416f02;
+ padding-top:10px;
+ 
+ 
+}
+.cuecontent h3 {
+	padding: 5px 0px;
+	font-size:14px; 
+	COLOR: #06559B;
+	text-align:center;
+
+}
+.cuecontent P {
+color:#06559B;
+	DISPLAY: block; 
+}
+.cuecontent p.intro { 
+	margin: 8px 0;
+	line-height: 25px;
+}
+
+.cuecontent A {
+display:block;
+	COLOR: #06559B;
+	text-decoration:underline;
+}
+.cuecontent A:hover {
+	COLOR: #c00;
+}
+
+.efalan .closebutton {
+    background:url(bgimages/cue_close_bg.gif) #EEF2F6 repeat-x left top;
+	background:url(bgimages/cue_close_bg.gif) #EEF2F6 repeat-x left top;
+	height:38px;
+	text-align:right;	
+}
+.alertbutton{ 
+	background:url(bgimages/cue_button_bg.gif) no-repeat left top;
+	border:0;
+	text-align:center;
+	width:66px;
+	height:22px;
+	line-height:22px;
+	margin-right:10px;
+	margin-top:8px;
+}
+.footer{ background:url(bgimages/cue_footer.gif) no-repeat left bottom;
+height:6px; font-size:0;}
+ 
+ 
+ 
+
+.choice_input{ background:url(bgimages/arrow_choice.gif) #E3F0F8 no-repeat right center;height:16px;  color:#333; padding:2px; border:1px solid #7F9DB9;
+}

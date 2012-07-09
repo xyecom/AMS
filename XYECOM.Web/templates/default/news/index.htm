@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <%Include _head%>
+</head>
+<body>
+
+
+<div id="wrapper">
+
+    <%include _login_bar%>
+
+    <%Include _top%>
+
+    <%Include _search%>
+
+    <%include _menu%>
+
+	
+	<div id="news_cnt1">
+		<div id="left">
+			<div id="cntA">
+				<div id="news_slide">{XY_SlideTop5ByNewsIndex} </div>
+				<div class="MTitle_01">
+					<h2 id="x_tab1" class="" class="selected" onmouseover="xy_selectBox(2,1,'x','selected');"><a target="_blank" href="#">人物访谈</a></h2>
+			        <h2 id="x_tab2"  onmouseout="xy_selectBox(2,2,'x','selected');"><a target="_blank" href="#">科研技术</a></h2>
+				</div>
+				
+				
+				<div id="x_box1" class="Mblk_01"  >
+					<div class="pictext">
+						<div id="lt"><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_14.gif" width="80" height="60" alt="" /></a></div>
+						<div id="rt">
+							<h4><a href="">江苏上海手机上网资费大跳水</a></h4>
+							<p>中国对其拥有不可置疑的所有权，这些文物理应归还中国。拍卖战争中非法...</p>
+						</div>
+						<div class="clr"></div>
+					</div>
+					<div class="com_pages">
+						<ul>
+							{XY_NewsIndex_RenWuZhuanFang}
+					    </ul>
+					</div>
+				</div>
+				
+				<div id="x_box2" class="Mblk_01" style="display:none">
+					<div class="pictext">
+						<div id="lt"><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_14.gif" width="80" height="60" alt="" /></a></div>
+						<div id="rt">
+							<h4><a href="">江苏上海手机上网资费大跳水</a></h4>
+							<p>中国对其拥有不可置疑的所有权，这些文物理应归还中国。拍卖战争中非法...</p>
+						</div>
+						<div class="clr"></div>
+					</div>
+					<div class="com_pages">
+						<ul>
+							{XY_NewsIndex_KeYanJIshu}
+					    </ul>
+					</div>
+				</div>
+				
+				
+			</div>
+			<div id="cntB">
+
+				<div id="news_headline">
+					<div class="tit"><span class="fright"><a href="">更多></a></span><h2>要闻</h2></div>
+					<div class="main">
+						<h3><a href="#">Palm Pre评测二:webOS系统揭秘</a></h3>
+						<ul>
+							 {XY_Index_TuiJianNews}
+						</ul>
+					</div>
+				</div>
+
+				<div class="MTitle_01">
+					<h2 id="h201" class=""><a target="_blank" href="#" class="big"><strong>业界资讯</strong></a></h2>
+				</div>
+				<div id="con01" class="Mblk_01 newsmid">
+					<div class="com_pages2">
+						<ul>
+							{XY_Index_YeJieZIXun}
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="clr"></div>
+		</div>
+		
+		
+		<div id="right">
+
+			<div class="MTitle_01">
+				<h2 id="y_tab1" class="" onmouseover="xy_selectBox(2,1,'y','selected');"><a target="_blank" href="#">名优企业</a></h2>
+			    <h2 id="y_tab2" class="selected" onmouseover="xy_selectBox(2,2,'y','selected');"><a target="_blank" href="#">最新企业</a></h2>
+			</div>
+			
+			
+			<div id="y_box1" class="Mblk_01"  style="display:none">
+				<div class="rank_compy">
+					<ul>
+						{XY_Index_MingYouQiYe}
+					</ul>
+					<div class="rank_pic">
+						<a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_11.gif" width="238" height="50" alt="" /></a>
+					</div>
+				</div>
+			</div>
+			
+			
+
+			<div class="spacer" style="height:7px;"></div>
+
+
+            <div id="y_box2" class="Mblk_01">
+				<div class="rank_compy">
+					<ul>
+						{XY_Index_ZuiXinQiYe}
+					</ul>
+					<div class="rank_pic">
+						<a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_11.gif" width="238" height="50" alt="" /></a>
+					</div>
+				</div>
+			</div>
+   
+			
+			<div class="MTitle_01">
+				<h2 id="z_tab1" class="" onmouseover="xy_selectBox(2,1,'z','selected');"><a target="_blank" href="#">名优企业</a></h2>
+			    <h2 id="z_tab2"  class="selected" onmouseover="xy_selectBox(2,2,'z','selected');"><a target="_blank" href="#">最新企业</a></h2>
+			</div>
+			
+			
+			<div id="z_box1"  style="display:none" class="Mblk_01 newsright">
+				<div class="com_pages">
+					<ul>
+						{XY_Index_ZuiXinQiYe}
+					</ul>
+				</div>
+			</div>
+			
+			<div id="z_box2" class="Mblk_01 newsright">
+				<div class="com_pages">
+					<ul>
+						{XY_Index_MingYouQiYe}
+					</ul>
+				</div>
+			</div>
+			
+			
+		</div>
+		
+		
+		
+		<div class="clr"></div>
+	</div>
+
+	<div class="bnr"><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_bnr_3.gif" width="980" height="74" alt="" /></a></div>
+
+	<div id="news_cnt2">
+		<div id="left">
+			<div class="area1">
+				<div class="hd">
+					<div class="tit">
+						<span class="fright"><a href="" class="black">更多&raquo;</a></span>
+						<a href="" class="h2_image"><h2>企业大全</h2></a>
+					</div>
+				</div>
+				<div class="cnt padding15" style="width:695px;">
+					{XY_NewsIndex_TuPianXinWentop}
+					<div id="main">
+						<ul>
+							{XY_NewsIndex_TuPianXinWen6}
+							
+						</ul>
+					</div>
+					<div class="clr"></div>
+				</div>
+			</div>
+
+			<div class="spacer height8"></div>
+
+			<div class="news_lists">
+				<div class="item">
+					<div class="MTitle_01">
+						<h2 id="h201" class=""><a target="_blank" class="big" href="#"><strong>本站动态</strong></a></h2>
+					</div>
+					<div id="con01" class="Mblk_01">
+						<div class="pictext">
+							<div id="lt"><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_14.gif" width="80" height="60" alt="" /></a></div>
+							<div id="rt">
+								<h4><a href="">江苏上海手机上网资费大跳水</a></h4>
+								<p>中国对其拥有不可置疑的所有权，这些文物理应归还中国。拍卖战争中非法...</p>
+							</div>
+							<div class="clr"></div>
+						</div>
+						<div class="com_pages2">
+							<ul>
+								 {XY_NewsIndex_BenZhanDongTaiF4}
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="MTitle_01">
+						<h2 id="h201" class=""><a target="_blank" class="big" href="#"><strong>业界资讯</strong></a></h2>
+					</div>
+					<div id="con01" class="Mblk_01">
+						<div class="pictext">
+							<div id="lt"><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_14.gif" width="80" height="60" alt="" /></a></div>
+							<div id="rt">
+								<h4><a href="">江苏上海手机上网资费大跳水</a></h4>
+								<p>中国对其拥有不可置疑的所有权，这些文物理应归还中国。拍卖战争中非法...</p>
+							</div>
+							<div class="clr"></div>
+						</div>
+						<div class="com_pages2">
+							<ul>
+								 {XY_NewsIndex_YeJieZiXunF4}
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="clr spacer height8"></div>
+
+				<div class="item">
+					<div class="MTitle_01">
+						<span class="fright">更多</span><h2 id="h201" class=""><a target="_blank" href="#" class="big"><strong>企业动态</strong></a></h2>
+					</div>
+					<div id="con01" class="Mblk_01" style="border-bottom:0;">
+						<div class="pictext">
+							<div id="lt"><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_14.gif" width="80" height="60" alt="" /></a></div>
+							<div id="rt">
+								<h4><a href="">江苏上海手机上网资费大跳水</a></h4>
+								<p>中国对其拥有不可置疑的所有权，这些文物理应归还中国。拍卖战争中非法...</p>
+							</div>
+							<div class="clr"></div>
+						</div>
+						<div class="com_pages2">
+							<ul>
+								 {XY_NewsIndex_QiYeDongTaiF4}
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="MTitle_01">
+						<span class="fright">更多</span><h2 id="h201" class=""><a target="_blank" href="#" class="big"><strong>展会资讯</strong></a></h2>
+					</div>
+					<div id="con01" class="Mblk_01" style="border-bottom:0;">
+						<div class="pictext">
+							<div id="lt"><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_14.gif" width="80" height="60" alt="" /></a></div>
+							<div id="rt">
+								<h4><a href="">江苏上海手机上网资费大跳水</a></h4>
+								<p>中国对其拥有不可置疑的所有权，这些文物理应归还中国。拍卖战争中非法...</p>
+							</div>
+							<div class="clr"></div>
+						</div>
+						<div class="com_pages2">
+							<ul>
+								 {XY_NewsIndex_ZhanHuiZiXunF4}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="right">
+
+			<div class="MTitle_01">
+				<span class="fright">更多</span><h2 id="h201" class=""><a target="_blank" href="#" class="big"><strong>业界资讯</strong></a></h2>
+			</div>
+			<div id="con01" class="Mblk_01">
+				<div class="com_pages">
+					<ul>
+						 {XY_Index_YeJieZIXun}
+					</ul>
+				</div>
+			</div>
+
+			<div class="spacer height8"></div>
+
+			<div class="MTitle_01">
+				<span class="fright">更多</span><h2 id="h201" class=""><a target="_blank" href="#" class="big"><strong>业界资讯</strong></a></h2>
+			</div>
+			<div id="con01" class="Mblk_01">
+				<div class="com_pages">
+					<ul>
+						 {XY_Index_YeJieZIXun}
+					</ul>
+				</div>
+			</div>
+
+
+			<div class="spacer height8"></div>
+
+			<div class="news_exhi">
+				<ul>
+					<li><a href="#" ><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_meeting_1.gif" alt='展会合作'></a></li>
+					<li><a href="#" ><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_meeting_2.gif" alt='展会合作'></a></li>
+					<li><a href="#" ><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_meeting_3.gif" alt='展会合作'></a></li>
+				</ul>
+
+			</div>
+
+
+			<div class="spacer height8"></div>
+
+			<div class="MTitle_01">
+				<h2 id="h201" class=""><a target="_blank" href="#" class="big"><strong>业界资讯</strong></a></h2>
+			</div>
+			<div id="con01" class="Mblk_01" style="border-bottom:0;">
+				<div class="com_pages">
+					<ul>
+						 {XY_Index_YeJieZIXun}
+					</ul>
+				</div>
+			</div>
+
+
+		</div>
+		<div class="clr"></div>
+	</div>
+	<div id="news_cnt2_btm" class="spacer"></div>
+    
+    <%include _footer%>
+
+</div>
+
+</body>
+</html>

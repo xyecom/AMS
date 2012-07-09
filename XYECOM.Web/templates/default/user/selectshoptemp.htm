@@ -1,0 +1,47 @@
+﻿
+<%Include _head%>
+<div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;  选择商铺模板</div>
+<%Include _menu%>
+
+<div id="right">
+    <form method="post" id="tempForm"  name="tempForm">
+
+    <ul class="seltabs">
+        <li class="current" id="tmp_tab1"><a href="javascript:;" onclick="xy_selectBox(2,1,'tmp')">当前模板</a></li>
+        <li id="tmp_tab2"><a href="javascript:;" onclick="xy_selectBox(2,2,'tmp')">选择模板</a></li>
+    </ul>
+    
+    <!--当前模板-->
+    <div id="tmp_box1" style="display: block;width:100%;">
+        <%set curTempInfo=GetCurTempInfo()%>
+        <div class="cur_temp">
+            <img src="{curTempInfo.Image}" alt=""/>
+            <br/> {curTempInfo.CName}
+         </div>
+    </div>
+ 
+    <!--选择模板-->
+    <div id="tmp_box2" style="display: none;">
+    <%set data=GetSkins()%>
+        <%loop (DataRow)  skin data%>
+            <div class="tmp_sk_name">{skin[Name]}</div>
+            <%set data1=GetThemes(skin["dir"])%>
+            <div class="temp_con2">
+	        <ul>
+            <%loop (DataRow) dttemp data1%>
+			        <li>
+			        <a href="javascript:document.getElementById('curSelTempName').value='{dttemp[filename]}';document.tempForm.submit();"><img src="{dttemp[img]}" alt="单击选择"/>
+			        <br/> {dttemp[cname]}
+			        </a>
+			        </li>
+            <%/loop%>
+            </ul>
+            </div>
+        <%/loop%>
+        <input type="hidden" name="curSelTempName" id="curSelTempName" value="" />
+    </div>
+    </form>
+</div>
+
+
+<%Include _footer%>

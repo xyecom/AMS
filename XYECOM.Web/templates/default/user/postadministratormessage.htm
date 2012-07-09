@@ -1,0 +1,45 @@
+
+<%Include _head%>
+
+<div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;  <a href="{config.WebURL}user/receivemessagelist.{config.Suffix}">留言收藏</a> &gt;  给管理员留言</div>
+
+<%Include _menu%>
+
+
+<div id="right">
+  <form method ="post">
+  <table  class="contentl">
+  <caption>给管理员留言<span>(*为必填项)</span></caption>
+  <tr>
+  <th>留言类型：<em class="red">*</em></th>
+    <td>
+    <input type="radio" name="type" value="1"/>求助
+    <input type="radio" name="type" value="2" />建议
+    <input type="radio" name="type" value="3" />投诉
+    <input type="radio" name="type" value="4" />表扬
+    <input type="radio" name="type" value="5" />业务联系
+    <input type="radio" name="type" value="6" checked="checked"/>升级会员
+    </td>
+  </tr>
+  <tr>
+  <th >留言标题：<em class="red">*</em></th>
+  <td >
+      <input id="messtitle" style="width: 380px" type="text" name ="messtitle"  maxlength ="400" /></td>
+  </tr>
+  <tr>
+    <th>留言内容：<em class="red">*</em></th>
+    <td>
+        <textarea id="admincontent" cols="65" rows="15" name="admincontent"></textarea></td>
+  </tr>
+   </table>
+<div class="content_action"><input name="" type ="submit" value=" 确定" onclick ="return getpostadministrator();" class ="button" />
+<input name="but02" type="button" value="取消" onclick ="window.location.href='{config.WebURL}user/index.{config.Suffix}';"  class ="button"/>
+</div>
+</form>
+</div>
+
+<%Include _footer%>
+
+
+
+

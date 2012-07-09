@@ -1,0 +1,62 @@
+﻿<%Include _head%>
+<div class="location fia"><a href="index.{config.suffix}">会员中心</a> &gt; 我收到的留言</div>
+<%Include _menu%>
+
+<div id="right">
+<form method ="post">
+<h2>我收到的留言</h2>
+<div id="ly_box1">
+  <div class="titles">&nbsp;</div>
+  <ul>
+    <li class="xline">
+	 <strong>主题：{title}</strong><br />
+	 时间：{messagetime}
+    </li>
+	<li>
+	  <strong>主要内容：</strong>
+	  <p>{content}</p>
+	</li>
+	<%if systemmess!=1%>
+	<li class="c">
+	  <span>顺祝商祺!</span> 
+	  公司名称：{companyname}<br />
+	  联系人：{linman}<br />
+	  地址：{address}<br/>
+	  固定电话：{linkphone} <br />
+	  传真：{linkfax} <br />
+	  手机：{moblie}
+	</li>
+	<%/if%>
+	</ul>
+</div>
+<%if nousermessinfo!="nosend"%>
+<div class="ly_tit2 ly_t30 ly_w99" id="messintotitle" name="messintotitle"><a name="message"><h4>回复留言</h4></a></div>
+<table class="ly_tab" id="messlistinfo" name="messlistinfo">
+ <tr>
+  <th>发送给：</th>
+  <td><a href="javascript:;">{linman}</a></td>
+ </tr>
+ <tr>
+  <th>主题：</th>
+  <td><input type="text" size="80"  id="rmesstitle" name="rmesstitle" value ="{rtitle}"  maxlength ="600"  disabled ="disabled"/><span>建议您修改主题，吸引对方注意，得到有限回复!</span></td>
+ </tr>
+ <tr>
+  <th>正文：</th>
+  <td><textarea name="rcontent" cols="80" rows="8" id="rcontent"></textarea>
+  <span>本留言系统不支持html代码，请不要在文本框中输入thml代码</span></td>
+ </tr>
+</table>
+<div class="ly_tab-but" id="systemmessage" name="systemmessage"><em><a href="#">检查我的联系信息是否有误</a></em><span><input type="submit" class ="button"  value="确定"  onclick ="return huifumessage();"/> <input type="button" class ="button" value="取消"  onclick ="window.location.href='{config.WebURL}person/receivemessagelist.{config.Suffix}'"/></span></div>
+<%/if%>
+<input type="hidden" id="ismessage" name="ismessage" value="{ismessage}"/>
+<input type="hidden" id="messageinfotitle" name="messageinfotitle" value="{mesinfo}"/>
+</form>
+</div> 
+
+<%Include _footer%>
+
+
+
+
+
+

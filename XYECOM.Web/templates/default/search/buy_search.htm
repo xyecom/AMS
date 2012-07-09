@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>{seo.Title}</title>
+    <meta name="description" content="{seo.Description}" />
+    <meta name="keywords" content="{seo.Keywords}" />
+    <meta name="robots" content="all" />
+    <meta http-equiv="Content-Type" content="text/html;" charset="gb2312" />
+    <link rel="stylesheet" href="{config.WebURL}common/css/XYLib.css" type="text/css"
+        media="screen" />
+    <link href="{config.WebURL}templates/{config.TemplatePath}/css/global.css" rel="stylesheet"
+        type="text/css" />
+    <link href="{config.WebURL}templates/{config.TemplatePath}/css/Survey.css" rel="stylesheet"
+        type="text/css" />
+    <script type="text/javascript" src="{config.WebURL}common/js/base.js" language="javascript"></script>
+    <script type="text/javascript" src="{config.WebURL}templates/{config.TemplatePath}/js/login.js"
+        language="javascript"></script>
+    <script type="text/javascript" src="{config.WebURL}templates/{config.TemplatePath}/js/SupplyBuyValidate.js"
+        language="javascript"></script>
+    <link href="{config.WebURL}templates/{config.TemplatePath}/css/index.css" rel="stylesheet"
+        type="text/css" />
+</head>
+<body onload="SearchSetDefaultValue();">
+    <div id="wrapper">
+        <%Include _login_bar%>
+        <%Include _top%>
+        <%Include _search%>
+        <div id="search_nav">
+            <strong>您现在的位置：</strong> {pageinfo.Navigation}
+        </div>
+        <div id="search_main">
+            <div id="left">
+                <input type="hidden" id="xy_FlagName" value="SupplyBuy" />
+                <div class="sch_cates" id="xy_PClassList">
+                    <h2>
+                        <img src="{config.WebURL}templates/{config.TemplatePath}/images/bg_invest_tit.gif"
+                            width="12" height="12" alt="" align="absmiddle" />
+                        栏目选择：</h2>
+                    <div class="sch_cnts" id="xy_ClassList">
+                    </div>
+                </div>
+                <div id="FilterDiv">
+                    <div id="FilterDivA">
+                        <span>每页显示数量:
+                            <select name="pagesize" id="pagesize">
+                                <option value="10">10</option>
+                                <option value="20" selected="selected">20</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </span><strong class="Font14 redLink">缩小范围:</strong>
+                        <select name="postTime" id="selectlistdid">
+                            <option value="">产品发布时间</option>
+                            <option value="1">显示今日最新</option>
+                            <option value="3">显示最近3天</option>
+                            <option value="5">显示最近5天</option>
+                            <option value="7">显示最近7天</option>
+                            <option value="15">显示最近15天</option>
+                            <option value="30">显示最近30天</option>
+                            <option value="60">显示最近60天</option>
+                            <option value="180">显示最近半年</option>
+                            <option value="1000">显示所有产品</option>
+                        </select>
+                        <select id="jinji">
+                            <option value="">不限制求购状态</option>
+                            <option value="0">紧急求购</option>
+                            <option value="1">普通求购</option>
+                        </select>
+                        <select id="style" style="display: none">
+                            <option value="0" selected="selected">样式1</option>
+                            <option value="1">样式2</option>
+                        </select>
+                        <input type="text" size="8" id="txtkeyword" onclick="SearchKeyDown()" />
+                        <input type="button" name="Submit" value="筛选" onclick="listsearch()" />
+                    </div>
+                </div>
+                <script type="text/javascript" language="javascript">                    { pageinfo.OnLoadEvents }</script>
+                {XY_newSupplyBuy}
+                <div class="pg">
+                    <div id="splitPage">
+                        {pageinfo.PreviousPage}{pageinfo.NumPage}{pageinfo.NextPage} &nbsp;&nbsp;&nbsp;
+                        直接转到&nbsp;
+                        <input name="pageformat" type="hidden" value=".html /">
+                        <input name="page" id="cpage" size="3" maxlength="3" style="height: 13px;" value="{pageinfo.PageIndex}" />&nbsp;页&nbsp;
+                        <input type="submit" value="确定>>" style="height: 20px;" onclick="xy_GoToPage(cpage.value);" />
+                        <input type="hidden" id="totalPage" value="{pageinfo.PageCount}" />
+                        <span style="font-size: 14px;">共 <strong class="orange">{pageinfo.TotalRecord}</strong>
+                            条记录&nbsp;&nbsp;&nbsp;当前为第 <strong class="orange">{pageinfo.PageIndex}</strong> 页&nbsp;&nbsp;&nbsp;共
+                            <strong class="orange">{pageinfo.PageCount}</strong> 页&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                </div>
+                <!-- 左侧结束 -->
+            </div>
+            <div id="right">
+                <div class="MTitle_01">
+                    <center>
+                        <a target="_blank" href="#" class="red big"><strong>黄金展位</strong></a></center>
+                </div>
+                <div class="Mblk_01">
+                    <br />
+                    <div class="news_exhi">
+                        <ul>
+                            <li><a href="#">
+                                <img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_meeting_11.gif"
+                                    alt='展会合作'></a></li>
+                            <li><a href="#">
+                                <img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_meeting_22.gif"
+                                    alt='展会合作'></a></li>
+                            <li><a href="#">
+                                <img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_meeting_33.gif"
+                                    alt='展会合作'></a></li>
+                            <div class="clr">
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="MTitle_01">
+                    <h2 id="h201" class="">
+                        <a target="_blank" href="#"><strong>怎样推广我的产品？</strong></a></h2>
+                </div>
+                <div id="con01" class="Mblk_01">
+                    <div class="com_pages">
+                        <ul>
+                            <li><a target="_blank" href="#">多国暴发甲型H1N1流感</a></li>
+                            <li><a target="_blank" href="#">胡锦涛出席上合峰会</a></li>
+                            <li><a target="_blank" href="#">伊朗大选引发政局动荡</a></li>
+                            <li><a target="_blank" href="#">成都公交车发生燃烧</a></li>
+                            <li><a target="_blank" href="#">法航空客A330客机坠毁</a></li>
+                            <li><a target="_blank" href="#">成都公交车发生燃烧</a></li>
+                            <li><a target="_blank" href="#">法航空客A330客机坠毁</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="MTitle_01">
+                    <h2 id="h2_1" class="">
+                        <a target="_blank" href="#"><strong>展会技巧</strong></a></h2>
+                </div>
+                <div id="Div7" class="Mblk_01">
+                    <div class="com_pages">
+                        <ul>
+                            <li><a target="_blank" href="#">多国暴发甲型H1N1流感</a></li>
+                            <li><a target="_blank" href="#">胡锦涛出席上合峰会</a></li>
+                            <li><a target="_blank" href="#">伊朗大选引发政局动荡</a></li>
+                            <li><a target="_blank" href="#">成都公交车发生燃烧</a></li>
+                            <li><a target="_blank" href="#">法航空客A330客机坠毁</a></li>
+                            <li><a target="_blank" href="#">成都公交车发生燃烧</a></li>
+                            <li><a target="_blank" href="#">法航空客A330客机坠毁</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clr">
+            </div>
+        </div>
+        <%include _footer%>
+    </div>
+</body>
+</html>

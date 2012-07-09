@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <%Include _head%>
+</head>
+<body onload="{pageinfo.OnLoadEvents}">
+     
+     <%Include _top%>
+     
+        <div class=layout950_100 style="BACKGROUND-IMAGE: url({config.WebURL}templates/_shop/skins_2009/{shopuserinfo.template}/images/stylebg1.jpg)">
+    
+    <%Include _banner%>
+    
+    <div class="clr"></div>
+    <div class=layout950>
+       
+    <%Include _menu%>
+    
+    <div class="clr"></div>
+    
+    <div class=where>你现在的位置：首页 &gt; 企业新闻</div>
+
+    <%Include _left%>
+
+    <!--单位介绍-->
+    <div id=bodyright>
+        <div class=leftkuang>
+            <div class=righttitle>
+                <ul>
+                    <li>企业新闻</li>
+                </ul>
+            </div>
+            <div class="newsdetails">
+                <h1>{news.Title}<span>{news.AddTime}</span></h1>
+                {news.Content}
+            </div>
+        <div class="clr"></div>
+        </div>
+    </div>
+
+    
+    
+    <div class="clr"></div>
+    </div>
+    <%Include _footer%>
+    </div>
+</body></html>

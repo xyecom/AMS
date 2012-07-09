@@ -1,0 +1,58 @@
+<!--完整显示信息--> 
+<div class="w290" id="loginuser" style="display:none;">  
+    <ul>
+        <li id="loginuseruginfo"></li>
+        <li class="line"><a id="loginuserurl" href="" class="link14"></a></li>
+        <li>公司资料完成率 <span id="ConsummatePercent"></span></li>
+        <li><div class="cr"><img id="PercentForImg" src="{config.WebURL}templates/{config.TemplatePath}/images/rate.gif" alt=" "  height="15px" /></div></li>
+        <li><a href="#" id="NewOfferPage">最新供应</a> | <a href="#" id="GoodFaithFile">诚信档案</a> | <a href="#" id="UserIntro">公司介绍</a></li>
+        <li>联系人：<a href="#" id="Contact"><span id="LinkManName">不详</span></a> 先生 <span id="IMOnline"></span></li>
+        <li><hr /></li>
+        <li>加入时间：第 <span id="loginuseryearnum"></span> 年</li>
+        <li> <a href="javascript:;" onclick ="Favorite();">收藏此信息</a> <a href="#" id="memessage">给我留言</a> <a href="#" id="linkme">联系方式</a></li>  
+    </ul>
+</div>
+
+<!--要求登陆后查看-->
+<div class="w290" id="UserNoLogin" style="display:none;">
+    <ul class="login">
+        <li><h4>已经是会员请登陆</h4></li>
+        <li>用户名：<input type="text" name="" tabindex="1"  id="username" name="username" onkeydown ="KeyDown();" maxlength="50" /></li>
+        <li>密&nbsp;&nbsp;&nbsp;码：<input type ="password" maxlength="20" tabindex="2" id="password"  name="password" onkeydown ="KeyDown();" /></li>
+        <%if config.IsEnabledVCode("login")%>
+        <li>验证码：{pageinfo.GetValidateCodeHTML()}</li>
+        <%/if%>
+        <li><input type="button" class="button" value="登录" onclick="return InfoLogin();"/><a href="/GetPassword.{config.Suffix}">忘记密码？</a></li>
+        <li><hr /></li>
+        <ll>你还不是会员，请<a href="{config.WebURL}register.{config.Suffix}">立刻免费注册</a></li>
+        <li>
+            <div class="contactus">
+                <ul>
+                <li><h3>如有任何疑问请与我们联系</h3></li>
+                <li>在线客服：<img src="/templates/{config.TemplatePath}/images/kefu.gif" /> <img src="/templates/{config.TemplatePath}/images/kefu.gif" /></li>
+                <li>客户热线：010-8681 8791</li>
+                </ul>
+            </div>
+        </li>      
+    </ul>
+</div>
+
+<!--要求升级后查看-->
+<div class="w290" id="loginnouser" style="display:none;">
+    <h3><span id="loginnouseruginfo"></span></h3>
+    <ul class="upgrade">
+        <li><span>您目前所在的会员组，无法查看信息。</span></li>
+        <li><a href="{config.WebURL}user/postadministratormessage.{config.Suffix}"><img src="{config.WebURL}templates/{config.TemplatePath}/images/update.gif" border="0"/></a></li>
+        <li><a href="">点此查看会员等级与权限>></a></li>
+        <li>
+            <div class="contactus">
+                <ul>
+                <li><h3>如有任何疑问请与我们联系</h3></li>
+                <li>在线客服：<img src="{config.WebURL}templates/{config.TemplatePath}/images/kefu.gif" /> <img src="{config.WebURL}templates/{config.TemplatePath}/images/kefu.gif" /></li>
+                <li>客户热线：010-8681 8791</li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="javascript:;" onclick ="Favorite();">收藏此信息</a></li>
+    </ul>
+</div>  

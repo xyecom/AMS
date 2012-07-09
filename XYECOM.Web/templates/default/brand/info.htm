@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+	<%include _head%>
+
+</head>
+<body>
+
+
+<div id="wrapper">
+
+
+    <%include _login_bar%>
+
+    <%Include _top%>
+
+    <%include _search%>
+
+	<div style="width:100%;margin:8px 0 15px 0;">
+		<strong>您的位置：{pageinfo.Navigation}</strong>
+	</div>
+    
+    <%set tempuser=GetUserInfo()%>
+    
+	<div id="idx_cnt2">
+		<div id="left" style="float:right;">
+			<div class="brand_pages">
+				<div id="brand_top" class="spacer"></div>
+				<div id="brand_mid">
+
+					<div class="contents">
+
+						<div id="brand_item_lt"><a href=""><img src="{brandinfo.SmallImg[0]}" onload="LoadImg(198,110,this)" alt="{tempuser.unitname}" border="0" style="border:1px solid #d1d1d1" /></a></div>
+						<div id="brand_item_rt">
+							<ul>
+								<li><strong>公 司:</strong> <a href="{tempuser.shopindex}" target="_blank" class="blueLink">{tempuser.unitname}</a></li>
+								<li><strong>品 牌:</strong> {brandinfo.Title}</li>
+								<li><strong>主 营:</strong> {tempuser.supplypro}</li>
+<!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+								<li><strong>行 业:</strong> </li>
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+							</ul>
+						</div>
+						<div class="clr"></div>
+
+
+						<div class="cate"><h2>品牌信息</h2></div>
+
+
+						<img src="{brandinfo.SmallImg[0]}" alt="{tempuser.unitname}" border="0" align="right" style="margin-left:10px;" onload="LoadImg(100,100,this)" />
+						　　 {brandinfo.InfoContent}</p>
+						<p><strong>公司名称：</strong>{tempuser.unitname}<br />
+
+						<strong>品牌名称：</strong>{brandinfo.Title}<br />
+						<strong>电 话：</strong>{tempuser.telephone}<br />
+						<strong>传 真：</strong>{tempuser.fax}<br />
+						<strong>网 址：</strong><a href="{tempuser.homepage}" target="_blank">{tempuser.homepage}</a><br />
+						<strong>Email：</strong>{tempuser.email}<br />
+
+						<strong>地 址：</strong>{tempuser.address}</p>
+					</div>
+				</div>
+				<div id="brand_btm" class="spacer"></div>
+			</div>
+
+		</div>
+		<div id="right" style="float:left;">
+
+			<div class="MTitle_01">
+				<h2 id="h201" class=""><a target="_blank" href="#"><strong>品牌类别</strong></a></h2>
+			</div>
+			<div id="con01" class="Mblk_01">
+				<div class="cnt" id="price">
+					<dl>
+						<dt><h4><a href="">笔记本电脑</a></h4></dt>
+						<dd>
+							<ul>
+								<li>联想</li>
+								<li>惠普</li>
+								<li>华硕</li>
+								<li>东芝</li>
+								<li>惠普</li>
+								<li>华硕</li>
+								<li>东芝</li>
+								<li>IBM</li>
+								<li>戴尔</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt><h4><a href="">笔记本电脑</a></h4></dt>
+						<dd>
+							<ul>
+								<li>联想</li>
+								<li>惠普</li>
+								<li>华硕</li>
+								<li>东芝</li>
+								<li>IBM</li>
+								<li>戴尔</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt><h4><a href="">笔记本电脑</a></h4></dt>
+						<dd>
+							<ul>
+								<li>联想</li>
+								<li>惠普</li>
+								<li>华硕</li>
+								<li>东芝</li>
+								<li>IBM</li>
+								<li>戴尔</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class="clr"></div>
+			</div>
+
+			<div class="MTitle_01" style="margin-top:6px;">
+				<h2 id="h201" class=""><a target="_blank" href="#"><strong>如何刊登品牌？</strong></a></h2>
+			</div>
+			<div class="Mblk_01">
+				<div id="jointous">
+					<ul>
+						<li><a href="">· 结交贸易伙伴，拓展网络商圈</a></li>
+						<li><a href="">· 成为会员，免费发布供求信息</a></li>
+						<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/btn_brand_reg.gif" alt="" /></a></li>
+
+					</ul>
+				</div>
+			</div>
+
+
+			<div class="MTitle_01">
+				<h2 id="h201" class=""><a target="_blank" href="#" class="big"><strong>品牌推广技巧</strong></a></h2>
+			</div>
+			<div id="con01" class="Mblk_01">
+				<div class="com_pages">
+					<ul>
+						<li><a target="_blank" href="#">头条：阿泰去湖人是谣言！</a></li>
+						<li><a target="_blank" href="#">亡羊补牢未为晚矣 四方为姚明伤停买单</a></li>
+						<li><a target="_blank" href="#">姚明值不值1.33亿的顶薪合同？</a></li>
+						<li><a target="_blank" href="#">分析“姚时代”后的男篮 郭家军令人担忧</a></li>
+						<li><a target="_blank" href="#">给中国男篮的4点建议 切忌进攻太急</a></li>
+						<li><a target="_blank" href="#">亡羊补牢未为晚矣 四方为姚明伤停买单</a></li>
+						<li><a target="_blank" href="#">姚明值不值1.33亿的顶薪合同？</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<div class="clr" style="height:10px;"></div>
+	</div>
+
+	<div class="hy_brand clr">
+		<div class="tit">行业推荐品牌</div>
+		<div class="brand_pic">
+			<ul>
+
+				{XY_Index_HangYePinPai}
+				<div class="clr"></div>
+
+			</ul>
+			<div class="clr"></div>
+		</div>
+
+	</div>
+
+    <%include _footer%>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+﻿<%Include _pagehead%>
+<style type="text/css">
+    #Tab2
+    {
+        clear: both;
+        width: 980px;
+        margin: 0px;
+        padding: 0px;
+        margin: 0 auto;
+    }
+    
+    .Menubox
+    {
+        width: 100%;
+        height: 28px;
+        line-height: 28px;
+        border-bottom: 2px solid #b80733;
+        height: 29px;
+    }
+    .Menubox ul
+    {
+        margin: 0px;
+        padding: 0px;
+    }
+    .Menubox li
+    {
+        float: left;
+        display: block;
+        cursor: pointer;
+        width: 90px;
+        margin-right: 5px;
+        height: 26px;
+        text-align: center;
+        background: url(images/navtab1.gif) no-repeat scroll 0 0 transparent;
+        color: #333;
+        padding-top: 5px;
+    }
+    .Menubox li.hover
+    {
+        color: #fff;
+        text-decoration: none;
+        background-attachment: scroll;
+        background-color: transparent;
+        background-image: url(images/navtab.gif);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+    }
+    .Contentbox
+    {
+        clear: both;
+        margin-top: 0px;
+        border: 2px solid #b80733;
+        border-top: none;
+        text-align: center;
+        padding-top: 8px;
+    }
+</style>
+<%Include _header%>
+<!--top end-->
+<!--main start-->
+<div class="mian">
+    <div class="clearfix">
+        <span class="pos">所有品牌</span><a href="{shopuserinfo.domain}category.{config.suffix}"
+            target="_self" class="amore a2">查看所有分类</a>
+    </div>
+    <div id="Tab2">
+        <div class="Menubox">
+            <ul>
+                <li id="two1" class="hover"><a href='{shopuserinfo.domain}brandlist.{config.suffix}'
+                    target="_self">所有品牌 </a></li>
+                <%loop (DataRow) row3 customtypelist%>
+                <li><a href='{shopuserinfo.domain}brandlist-{row3[Id]}.{config.suffix}'
+                    target="_self">{row3[PtName]} </a></li>
+                <%/loop%>
+            </ul>
+        </div>
+        <div class="Contentbox">
+            <!--女装品牌列表 start-->
+            <div id="con_two_1">
+                <div class="gwrap">
+                    <div id="tabcontent">
+                        <div class="tabcon cur">
+                            <ul class="branklist clearfix">
+                                <%loop (DataRow) row2 brandList%>
+                                <li class="grid6">
+                                    <div class="brandbor">
+                                        <div class="brandname">
+                                            <a href="{shopuserinfo.domain}offerlist---{row2[id]}----.{config.suffix}">
+                                                {row2[BrandName]}</a>
+                                        </div>
+                                        <div class="tc mb10">
+                                            <a target="_blank" href="{shopuserinfo.domain}offerlist---{row2[id]}----.{config.suffix}">
+                                                <%set imaUrl=GetInfoImgHref(row2["id"])%>
+                                                <img alt="" src="{imaUrl}">
+                                            </a>
+                                        </div>
+                                        <div class="quiet txt">
+                                            {row2[Description]}
+                                        </div>
+                                    </div>
+                                </li>
+                                <%/loop%>
+                            </ul>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="con_two_8" style="display: none">
+                <div class="gwrap">
+                    <div id="tabcontent">
+                        <div class="tabcon cur">
+                            <ul class="branklist clearfix">
+                                <li class="grid6">
+                                    <div class="brandbor">
+                                        <div class="brandname">
+                                            <a href="#">欧梦达</a>
+                                        </div>
+                                        <div class="tc mb10">
+                                            <a target="_blank" href="#">
+                                                <img alt="" src="{config.WebURL}templates/_shop/store/images/brand_r3_c5.gif"></a>
+                                        </div>
+                                        <div class="quiet txt">
+                                            打造时尚 优雅 甜美 可爱的女性形象。
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="grid6">
+                                    <div class="brandbor">
+                                        <div class="brandname">
+                                            <a href="#">College</a>
+                                        </div>
+                                        <div class="tc mb10">
+                                            <a target="_blank" href="#">
+                                                <img alt="" src="{config.WebURL}templates/_shop/store/images/RIP.gif"></a>
+                                        </div>
+                                        <div class="quiet txt">
+                                            活力无极限。
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="grid6">
+                                    <div class="brandbor">
+                                        <div class="brandname">
+                                            <a href="#">梵庭诗</a>
+                                        </div>
+                                        <div class="tc mb10">
+                                            <a target="_blank" href="#">
+                                                <img alt="" src="{config.WebURL}templates/_shop/store/images/茵曼.jpg"></a>
+                                        </div>
+                                        <div class="quiet txt">
+                                            爱美丽爱自己。
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="grid6">
+                                    <div class="brandbor">
+                                        <div class="brandname">
+                                            <a href="#">芮儿</a>
+                                        </div>
+                                        <div class="tc mb10">
+                                            <a target="_blank" href="#">
+                                                <img alt="" src="{config.WebURL}templates/_shop/store/images/brand_r3_c5.gif"></a>
+                                        </div>
+                                        <div class="quiet txt">
+                                            优雅时尚 新主张。
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="grid6">
+                                    <div class="brandbor">
+                                        <div class="brandname">
+                                            <a href="#">梵庭诗</a>
+                                        </div>
+                                        <div class="tc mb10">
+                                            <a target="_blank" href="#">
+                                                <img alt="" src="{config.WebURL}templates/_shop/store/images/brand_r3_c5.gif"></a>
+                                        </div>
+                                        <div class="quiet txt">
+                                            爱美丽爱自己。
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="grid6 ">
+                                    <div class="brandbor">
+                                        <div class="brandname">
+                                            <a href="#">芮儿</a>
+                                        </div>
+                                        <div class="tc mb10">
+                                            <a target="_blank" href="#">
+                                                <img alt="" src="{config.WebURL}templates/_shop/store/images/brand_r1_c5.gif"></a>
+                                        </div>
+                                        <div class="quiet txt">
+                                            优雅时尚 新主张。
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="grid6">
+                                    <div class="brandbor">
+                                        <div class="brandname">
+                                            <a href="#">欧梦达</a>
+                                        </div>
+                                        <div class="tc mb10">
+                                            <a target="_blank" href="#">
+                                                <img alt="" src="{config.WebURL}templates/_shop/store/images/brand_r3_c5.gif"></a>
+                                        </div>
+                                        <div class="quiet txt">
+                                            打造时尚 优雅 甜美 可爱的女性形象。
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="grid6">
+                                    <div class="brandbor">
+                                        <div class="brandname">
+                                            <a href="#">College</a>
+                                        </div>
+                                        <div class="tc mb10">
+                                            <a target="_blank" href="#">
+                                                <img alt="" src="{config.WebURL}templates/_shop/store/images/185x54.gif"></a>
+                                        </div>
+                                        <div class="quiet txt">
+                                            活力无极限。
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="grid6">
+                                    <div class="brandbor">
+                                        <div class="brandname">
+                                            <a href="#">欧梦达</a>
+                                        </div>
+                                        <div class="tc mb10">
+                                            <a target="_blank" href="#">
+                                                <img alt="" src="{config.WebURL}templates/_shop/store/images/茵曼.jpg"></a>
+                                        </div>
+                                        <div class="quiet txt">
+                                            打造时尚 优雅 甜美 可爱的女性形象。
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--选项卡 end-->
+</div>
+<!--main end-->
+<!--footer start-->
+<%Include _footer%>
+<!--footer end-->

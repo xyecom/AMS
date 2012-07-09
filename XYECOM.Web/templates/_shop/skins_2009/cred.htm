@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <%Include _head%>
+</head>
+
+    <body onload="{pageinfo.OnLoadEvents}">
+     <%Include _top%>
+     
+    <div class=layout950_100 style="BACKGROUND-IMAGE: url({config.WebURL}templates/_shop/skins_2009/{shopuserinfo.template}/images/stylebg1.jpg)">
+                                    
+    <%Include _banner%>
+
+    <div class="clr"></div>
+    <div class="layout950">
+
+        <%Include _menu%>
+        
+    <div class="clr"></div>
+
+    <div class="where">你现在的位置：首页 &gt; 荣誉资质</div>
+
+    <%Include _left%>
+
+    <!--供应信息-->
+    <div id="bodyright">
+        <div class="leftkuang">
+            <div class="righttitle">
+                <ul>
+                    <li>
+                        荣誉资质
+                    </li>
+                </ul>
+            </div>
+            <div class="newslist">
+                <table class="table_value" width="95%" align="center">
+                    <tr>
+                        <th class="line1">企业资料完善率：</th>
+                        <td class="line2"><label><img alt="企业资料完善率" src="{config.WebURL}templates/_shop/default/images/rate.gif"  width="{formation}"/></label><i>( {shopuserinfo.infoperfectpercent}% )</i></td>
+                    </tr> 
+                    <tr>
+                        <th class="line1">成员年限：</th>
+                        <td class="line2">{config.WebName} {shopuserinfo.gradename} 第 <span class="f_f00">{shopuserinfo.years}</span> 年 </td>
+                    </tr>
+                    <tr>
+                        <th class="line1">处罚信息：</th>
+                        <td class="line2">恶意填写处罚 <span class="f_f00">{shopuserinfo.maliceerr}</span> 次， 错误填写处罚 <span class="f_f00">{shopuserinfo.commonerr}</span> 次</td>
+                    </tr>
+
+                </table>
+	
+                <table class="mainTextColor" style="PADDING-BOTTOM: 10px; PADDING-TOP: 10px" cellSpacing="1" cellPadding="0" width="95%" align="center" bgColor=#efefef border=0>
+                    <Tbody>
+                        <tr>
+                            <th width="21%">证书</th>
+                            <th width="28%" >证书名称</th>
+                            <th width="25%">发证机构</th>
+                            <th width="14%">生效日期</th>
+                            <th width="14%">结束日期</th>
+                        </tr>
+                        <%set data = GetCertificate()%>
+                        <%loop (DataRow) info data%>
+                        <%set str = GetInfoImgHref("certificate",info["CE_ID"])%>
+                        <tr>
+                            <td bgcolor="#ffffff" height="25" >
+                                <a href="{str}" target="_blank"><img  width=100px src="{str}" border="0"/></a>
+                            </td>
+                            <td bgcolor="#ffffff"><a  class="M" target="_blank" href='{str}'>{info[CE_Name]}</a></td>
+                            <td bgcolor="#ffffff">{info[CE_Organ]}</td>
+                            <td bgcolor="#ffffff"><%formatdatetime(info[CE_Begin],yyyy-MM-dd)%></td>
+                            <td bgcolor="#ffffff"><%formatdatetime(info[CE_Upto],yyyy-MM-dd)%></td>
+                        </tr>
+                        <%/loop%>
+                    </Tbody>
+                </table>
+            </div>
+            <div class="clr"></div>
+        </div>
+    </div>
+    <!--供应信息结束-->
+    
+    
+    <div class="clr"></div>
+    </div>
+    
+            <%Include _footer%>
+    
+        </div>
+    </body>
+</html>

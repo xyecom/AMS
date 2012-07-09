@@ -1,0 +1,29 @@
+﻿<%Include _head%>
+    <div class="location fia"><a href="index.{config.suffix}">会员中心</a> &gt;  面板首页 </div>
+<%Include _menu%>
+<div id="right">
+<form action="#" id="">
+    <div class="container">
+    <div class="containerImg">
+        <img src="{userinfo.imgurl}"  alt="用户照片"  width ="130px" height ="130px"/>
+    </div>
+    <div class="containerCue">
+    <ul>
+	<li>欢迎您<em>({userinfo.realname}){userinfo.sex}</em>注：个人会员</li>
+	<!--<li> 您的虚拟帐户现有： <em>{dummymoney}</em>个{WI_WebMoney}</li>-->
+    <li>您的可用金额:<em>{cash}元</em><a href="{config.WebURL}person/accountrecharge.{config.Suffix}">在线充值</a></li>
+    <li>您的余额:<em>{Balance}元</em></li>
+    <li>您的保证金(小额):<em>{S_Margin}元</em></li>
+    <li>您的保证金(大额):<em>{C_Margin}元</em></li>
+    <li>您现有留言<em>{messagecount}</em>条 未查看 <a href="{config.WebURL}person/receivemessagelist.{config.Suffix}?nosee=0">立即查看</a></li>                  
+	<li> 您已申请了<em>{resumecounts}</em>个职位  同意面试<em>{resumecount}</em><a href="{config.WebURL}person/resumesend.{config.Suffix}">立即查看</a></li>
+	<li>{bbs}</li>
+	<li class="time">开通时间：{starttime}</li>
+	</ul>
+  </div>
+ </div>
+    <div class="clear"></div>
+ </form> 
+</div>
+<%Include _footer%>
+

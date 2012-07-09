@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+	<%include _head%>
+
+</head>
+<body>
+
+
+<div id="wrapper">
+
+	 <%Include _login_bar%>
+
+	 <%Include _top%>
+	 
+	 <%Include _search%>
+
+
+	<div id="best_cmpy">
+		<ul>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_1.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_2.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_3.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_4.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_3.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_4.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_1.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_2.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_1.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_2.jpg" width="191" height="62" alt="" /></a></li>
+		</ul>
+	</div>
+
+
+	<div id="chl_guide">
+		<h1>新闻资讯</h1>
+		<ul>
+			<li><a href="">行业资讯</a></li>
+			<li><a href="">企业新闻</a></li>
+			<li><a href="">价格行情</a></li>
+			<li><a href="">专题</a></li>
+			<li><a href="">视频</a></li>
+			<li><a href="">图片</a></li>
+			<li><a href="">行业资讯</a></li>
+			<li><a href="">企业新闻</a></li>
+			<li><a href="">价格行情</a></li>
+			<li><a href="">行业资讯</a></li>
+			<li><a href="">企业新闻</a></li>
+			<li><a href="">价格行情</a></li>
+		</ul>
+		<div class="clr"></div>
+	</div>
+
+	<div id="idx_cnt2">
+		<div id="left">
+			<div class="area1">
+				<div class="hd">
+					<div class="tit">
+						<span class="fright"><a href="" class="black">更多&raquo;</a></span>
+						<a href="" class="h2_news"><h2>热点资讯</h2></a>
+					</div>
+				</div>
+				<div class="cnt">
+					<div class="info_lt">
+						<a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_8.jpg" width="220" height="110" alt="" /></a>
+						<ul>
+							{XY_Index_ReDianZiXunLeft}
+						</ul>
+					</div>
+					<div class="info_rt">
+
+						<div class="Bm_1">
+							{XY_Index_ReDianZiXunRight}
+						</div>
+						<div class="Bm_11">
+							{XY_Index_ReDianZiXuntop1}
+							<ul class="Bm_12 fia">
+								{XY_Index_ReDianZiXuncenter}
+							</ul>
+						</div>
+					</div>
+					<div class="clr"></div>
+				</div>
+			</div>
+
+			<div class="spacer" style="height:8px;"></div>
+
+			<div class="area1">
+				<div class="hd">
+					<div class="tit">
+						<span class="fright"><a href="" class="black">更多&raquo;</a></span>
+						<a href="" class="h2_brand"><h2>推荐品牌</h2></a>
+					</div>
+				</div>
+				<div class="cnt" id="brand_tumore">
+
+					<ul class="v_ul">
+
+						{XY_BrandIndex_TuiJianPinPai}
+
+						<div class="clr"/>
+					</ul>
+
+
+				</div>
+			</div>
+
+
+		</div>
+		<div id="right">
+			<div class="MTitle_01">
+					<h2 id="y_tab1" class="" onmouseover="xy_selectBox(2,1,'y','selected');"><a target="_blank" href="#">名优企业</a></h2>
+			    <h2 id="y_tab2" class="selected" onmouseout="xy_selectBox(2,2,'y','selected');"><a target="_blank" href="#">最新企业</a></h2>
+			</div>
+			<div id="y_box1" class="Mblk_01" style="display:none;">
+				<div class="rank_compy">
+					<ul>
+						{XY_Index_MingYouQiYe}
+					</ul>
+				</div>
+			</div>
+			
+			<div id="y_box2" class="Mblk_01">
+				<div class="rank_compy">
+					<ul>
+						{XY_Index_ZuiXinQiYe}
+					</ul>
+				</div>
+			</div>
+
+			<div id="gold_user">
+				<div class="top">
+					<div class="tit"><span class="fright">更多></span><h2>金牌商家展示</h2></div>
+					<div class="slogan"><a href="" class="red big"><strong>马上入住金牌商家，商机无限>></strong></a></div>
+				</div>
+				<div id="slidetexts" class="mid">
+					<ul>
+						{XY_Index_JinPaiShangJiaZhanShi}
+					</ul>
+				</div>
+				<script type="text/javascript">
+				<!--
+					try{
+					 slideLine('slidetexts', 3000, 5, 40);
+					}catch(e) {}
+				//-->
+				</script>
+				<div class="btm spacer"></div>
+			</div>
+			<div><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_12.gif" width="270" height="93" alt="" /></a></div>
+
+			<div class="MTitle_01" style="margin-top:6px;">
+				<h2 id="x_tab1" class="" onmouseover="xy_selectBox(2,1,'x','selected');"><a target="_blank" href="#">名优企业</a></h2>
+			    <h2 id="x_tab2" class="selected" onmouseout="xy_selectBox(2,2,'x','selected');"><a target="_blank" href="#">最新企业</a></h2>
+			</div>
+
+			<div id="x_box1" class="Mblk_01" style="margin-bottom:0; display:none;">
+				<div class="rank_compy">
+					<ul>
+						{XY_Index_MingYouQiYe}
+					</ul>
+				</div>
+			</div>
+			
+			<div id="x_box2" class="Mblk_01" style="margin-bottom:0;">
+				<div class="rank_compy">
+					<ul>
+						{XY_Index_ZuiXinQiYe}
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<div class="clr"></div>
+	</div>
+
+	<div class="spacer" style="height:8px;"></div>
+
+    <%include _footer%>
+
+</div>
+
+</body>
+</html>

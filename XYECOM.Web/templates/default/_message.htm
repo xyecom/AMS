@@ -1,0 +1,61 @@
+
+<!--网站评论-->
+<div  class="infoAbout  commentTitle">
+<a name="message"></a>
+<form action="" method="post">
+    <ul class="comment">
+        <li id="msg_tab1"><a href="javascript:;" onclick="xy_selectBox(2,1,'msg','now')">游客咨询</a></li>
+        <li class="now" id="msg_tab2"><a href="javascript:;" onclick="xy_selectBox(2,2,'msg','now')">会员咨询</a></li>
+    </ul>
+ 
+    <div id="msg_box1" style="display: none;">
+        <div class="commentList">
+            <p>
+                <input type="radio" checked="checked"  value ="1" id="companyid"  name ="sinfo"/>公 司 
+                <input name="sinfo" type="radio" value="0" id="useridad" />个人
+                <span>如果您已经是会员，请<a href="javascript:geturl();" class="orangelink">点此登录</a>；如果您还不是本站会员，请<a href="{config.WebURL}register.{config.Suffix}" class="orangelink">点此注册</a></span>
+            </p>
+            <h3>联系方式</h3>
+            <ul  class="line">   
+                <li><label>联系人：<em>*</em></label><input type="text" size="25" id="linkman" onblur="checkinfo('1');" onfocus="fs('1');"  maxlength ="50"/><input id="nsex" name="" type="radio" value="1" checked ="checked" />先生 <input id="girl" name="" type="radio" value="0" />女士<span id="txt1"></span></li>       
+                <li><label>电子信箱：<em>*</em></label><input type="text" size="25"  id="email" onblur="checkinfo('2');" onfocus="fs('2');" maxlength ="50" /><span  id="txt2"></span></li>
+                <li><label>电话号码：</label><input name="" type="text" size="25" id="mobile" onblur="checkinfo('11');" onfocus="fs('11');" maxlength ="13"/><span  id="txt11"></span></li>
+            </ul>
+            
+            <h3>留言内容</h3>
+            <ul>
+                <li><label>留言标题：<em>*</em></label><input type="text" size="60" id="title" name="title" onblur="checkinfo('14');" onfocus="fs('14');" maxlength ="100" /><span  id ="txt14"></span><br /><i>请尽量采用简洁的语言，标题最多20个汉字，内容最多300个汉字。</i></li>
+                <li><div class="left"><label>留言内容：<em>*</em></label> <textarea name="neirong" cols="60" rows="5" id ="neirong" onblur="checkinfo('15');" onfocus="fs('15');"></textarea><span  id="txt15"></span></div>
+                <div class="ks" id="ks1"></div>
+                </li>
+                <%if config.IsEnabledVCode("message")%>
+                <li><label >验证码：<em>*</em></label>{pageinfo.GetValidateCodeHTML("guestVCode","guestVCodeImg")}</li>   
+                <%/if%>
+                <li>
+                    <input name="" type="button" class="button" value="确 定"  onclick ="checkmessage();"/> 
+                    <input type="button" name="button"  class="button" value="清空" onclick ="ykrewrite();"  />
+                </li>
+            </ul>
+        </div>
+    </div> 
+
+    <div id="msg_box2" style="display: block;">
+        <div class="commentList">
+            <ul>
+                <li><label>留言标题：<em>*</em></label><input type="text" size="60" id="txtTitle" name="txtTitle"  maxlength ="200" /></li>
+                <li><div class="left"><label>留言内容：<em>*</em></label> <textarea name="txtContent" cols="60" rows="5" id="txtContent"></textarea></div>
+                <div class="ks" id="ks2"></div>
+                </li>
+                <%if config.IsEnabledVCode("message")%>
+                <li><label>验证码：<em>*</em></label>{pageinfo.GetValidateCodeHTML("userVCode","userVCodeImg")}</li>
+                <%/if%>
+                <li>
+                    <input name="" type="button" class="button" value="确 定" onclick ="checkusermessage();"/> 
+                    <input type="button" name="Submit"  class="button" value="清 空"   onclick="hrrewrite();" />
+                </li>
+            </ul>
+        </div>
+    </div>
+</form> 
+</div> 
+ <script type="text/javascript" language="javascript">UserMessageInit();</script>

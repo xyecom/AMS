@@ -1,0 +1,348 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <title>纵横B2B电子商务系统</title>
+    <script language="javascript" type="text/javascript" src="/common/js/base.js"></script>
+    <script src="javascript/common.js" type="text/javascript" language="javascript"></script>
+    <script src="javascript/shrink.js" type="text/javascript" language="javascript"></script>
+</head>
+<body scroll="no">
+    <!-- content  -->
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <!-- left -->
+            <td class="left">
+                <!-- 系统信息设置 -->
+                <div id="basic">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="nav_title">
+                                <a onclick="collapse_change(1);" href="#">
+                                    <img id="menuimg_1" src="images/menu_reduce.gif" alt=" " border="0" />系统基本设置</a>
+                            </td>
+                        </tr>
+                        <tr id="menu_1">
+                            <td class="nav_list">
+                                <dl>
+                                    <dd>
+                                        <a href="basic/WebInfo.aspx" target="main">系统基本配置</a></dd>
+                                    <dd>
+                                        <a href="basic/Administrator.aspx" target="main">管理员信息</a></dd>
+                                    <dd>
+                                        <a href="basic/FiltrateKeyWord.aspx" target="main">过滤字管理</a></dd>
+                                    <dd>
+                                        <a href="basic/AreaList.aspx" target="main">地区信息管理</a></dd>
+                                    <dd>
+                                        <a href="Global/CustomConfigField.aspx" target="main">自定义配置字段</a></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--地方站管理 -->
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav_tab">
+                        <tr>
+                            <td class="nav_title">
+                                <a href="Global/AreaSiteManage.aspx" target="main">
+                                    <img id="Img1" src="images/menu_add.gif" alt=" " border="0" />地方站管理</a>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- 友情链接管理 -->
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav_tab">
+                        <tr>
+                            <td class="nav_title">
+                                <a href="FriendLink/List.aspx" target="main">
+                                    <img src="images/menu_add.gif" alt=" " border="0" />友情链接管理</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="business" style="display: none;">
+                    <!-- 商业信息管理 -->
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav_tab">
+                        <tr>
+                            <td class="nav_title">
+                                <a onclick="collapse_change(4)" href="#">
+                                    <img id="menuimg_4" src="images/menu_reduce.gif" alt=" " border="0" />商业信息管理</a>
+                            </td>
+                        </tr>
+                        <tr id="menu_4">
+                            <td class="nav_list">
+                                <dl>
+                                    <dd>
+                                        <a href="Ams/CreditList.aspx" target="main">债权信息管理</a></dd>
+                                    <dd>
+                                        <a href="Ams/ForeclosedList.aspx" target="main">抵债信息管理</a></dd>
+                                    <!--<dd>
+                                        <a href="InviteBusinessman/InfoList.aspx" target="main">招商代理信息管理</a></dd>
+                                    <dd>
+                                        <a href="Venture/FinancingList.aspx" target="main">融资信息管理</a></dd>
+                                    <dd>
+                                        <a href="Venture/VentureTypeList.aspx" target="main">投融资类型管理</a></dd>
+                                    <dd>
+                                        <a href="Venture/InvestmentList.aspx" target="main">投资信息管理</a></dd>
+                                    <dd>
+                                        <a href="Surrogate/ServiceList.aspx" target="main">服务信息管理</a></dd>
+                                    <dd>
+                                        <a href="Logistics/LogisticsStatistics.aspx" target="main">物流公司使用统计</a></dd>
+                                    <dd>
+                                        <a href="ShowInfoManage/ShowInfoList.aspx" target="main">展会信息管理</a></dd>-->
+                                </dl>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav_tab">
+                        <tr>
+                            <td class="nav_title">
+                                <a onclick="collapse_change(5)" href="#">
+                                    <img id="menuimg_5" src="images/menu_reduce.gif" alt=" " border="0" />信息基本设置</a>
+                            </td>
+                        </tr>
+                        <tr id="menu_5">
+                            <td class="nav_list">
+                                <dl>
+                                    <dd>
+                                        <a href="basic/Typelist.aspx" target="main">分类管理</a></dd>
+                                    <dd>
+                                        <a href="Global/ExpressMessageList.aspx" target="main">快速留言设置</a></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--<table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav_tab">
+                    <tr>
+                        <td class="nav_title">
+                            <a onclick="collapse_change(6)" href="#">
+                                <img id="menuimg_6" src="images/menu_reduce.gif" alt=" " border="0" />行业百科</a>
+                        </td>
+                    </tr>
+                    <tr id="menu_6">
+                        <td class="nav_list">
+                            <dl>
+                                <dd>
+                                    <a href="Baike/LemmaCategoryList.aspx" target="main">百科分类管理</a></dd>
+                                <dd>
+                                    <a href="Baike/HasCheckedLemma.aspx" target="main">词条管理</a></dd>
+                            </dl>
+                        </td>
+                    </tr>
+                </table>-->
+                </div>
+                <div id="news" style="display: none;">
+                    <!-- 新闻管理 -->
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav_tab">
+                        <tr>
+                            <td class="nav_title">
+                                <a onclick="collapse_change(7)" href="#">
+                                    <img id="menuimg_7" src="images/menu_reduce.gif" alt="" border="0" />资讯管理</a>
+                            </td>
+                        </tr>
+                        <tr id="menu_7">
+                            <td class="nav_list">
+                                <dl>
+                                    <dd>
+                                        <a href="news/TitleList.aspx" target="main">资讯栏目管理</a></dd>
+                                    <dd>
+                                        <a href="news/NewsList.aspx" target="main">资讯管理</a></dd>
+                                    <dd>
+                                        <a href="news/NewsDiscussManage.aspx" target="main">评论管理</a></dd>
+                                    <dd>
+                                        <a href="news/UserForChargedNews.aspx" target="main">用户消费信息</a></dd>
+                                    <dd>
+                                        <a href="news/UserNewsList.aspx" target="main">企业资讯管理</a></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- 新闻专题管理 -->
+                    <!--<table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav_tab">
+                        <tr>
+                            <td class="nav_title">
+                                <a href="TopicManage/TopicList.aspx" target="main">
+                                    <img id="menuimg_24" src="images/menu_add.gif" alt="" border="0" />专题管理</a>
+                            </td>
+                        </tr>
+                    </table>-->
+                </div>
+                <div id="users" style="display: none;">
+                    <!-- 用户管理 -->
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav_tab">
+                        <tr>
+                            <td class="nav_title">
+                                <a onclick="collapse_change(8)" href="#">
+                                    <img id="menuimg_8" src="images/menu_reduce.gif" alt=" " border="0" />用户管理</a>
+                            </td>
+                        </tr>
+                        <tr id="menu_8">
+                            <td class="nav_list">
+                                <dl>
+                                    <dd>
+                                        <a href="UserManage/UserListManger.aspx" target="main">企业会员管理</a></dd>
+                                    <dd>
+                                        <a href="Certificate/certificatelist.aspx" target="main">用户证书管理</a></dd>
+                                    <dd>
+                                        <a href="basic/CreaditLeavlList.aspx" target="main">信用等级管理</a></dd>
+                                    <dd>
+                                        <a href="UserManage/LivenessInfo.aspx" target="main">用户活跃度查看</a></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 站内短信管理 -->
+                <div id="advance" style="display: none;">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav_tab">
+                        <tr>
+                            <td class="nav_title">
+                                <a onclick="collapse_change(10)" href="#">
+                                    <img id="menuimg_10" src="images/menu_reduce.gif" alt=" " border="0" />短信邮件管理</a>
+                            </td>
+                        </tr>
+                        <tr id="menu_10">
+                            <td class="nav_list">
+                                <dl>
+                                    <dd>
+                                        <a href="MessageManage/ReceiveEmail.aspx" target="main">站内短信</a></dd>
+                                    <dd>
+                                        <a href="MessageManage/SendEmail.aspx" target="main">邮件管理</a></dd>
+                                    <dd>
+                                        <a href="nopage.htm" target="main">手机短信</a></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- 意见反馈 -->
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav_tab">
+                        <tr>
+                            <td class="nav_title">
+                                <a href="MessageManage/FeedbackList.aspx" target="main">
+                                    <img id="Img3" src="images/menu_add.gif" alt=" " border="0" />意见反馈</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="templte" style="display: none;">
+                    <!-- 界面管理 -->
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav_tab">
+                        <tr>
+                            <td class="nav_title">
+                                <a onclick="collapse_change(11);" href="#">
+                                    <img id="menuimg_11" src="images/menu_reduce.gif" alt=" " border="0" />界面模板管理</a>
+                            </td>
+                        </tr>
+                        <tr id="menu_11">
+                            <td class="nav_list">
+                                <dl>
+                                    <dd>
+                                        <a href="TemplatesManage/List.aspx" target="main">网站模板管理</a></dd>
+                                    <dd>
+                                        <a href="TemplatesManage/ShopTemplateManage.aspx" target="main">网店模板管理</a></dd>
+                                    <dd>
+                                        <a href="ModuleManage/ModuleList.aspx" target="main">自定义模块管理</a></dd>
+                                    <dd>
+                                        <a href="HtmlPageManage/HtmlManage.aspx" target="main">静态页面管理</a></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- 标签库管理 -->
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav_tab">
+                        <tr>
+                            <td class="nav_title">
+                                <a onclick="collapse_change(12);" href="#">
+                                    <img id="menuimg_12" src="images/menu_reduce.gif" alt=" " border="0" />标签库管理</a>
+                            </td>
+                        </tr>
+                        <tr id="menu_12">
+                            <td class="nav_list">
+                                <dl>
+                                    <dd>
+                                        <a href="LabelManage/LabelTypeList.aspx" target="main">标签分类管理</a></dd>
+                                    <dd>
+                                        <a href="LabelManage/List.aspx" target="main">内容标签管理</a></dd>
+                                    <!--<dd>
+                                        <a href="LabelManage/ClassLabelList.aspx" target="main">导航标签管理</a></dd>
+                                    <dd>
+                                        <a href="LabelManage/PollLabelList.aspx" target="main">投票标签管理</a></dd>
+                                    <dd>
+                                        <a href="LabelManage/PartLabelList.aspx" target="main">专栏标签管理</a></dd>-->
+                                    <dd>
+                                        <a href="LabelManage/LabelOut.aspx" target="main">标签导入导出</a></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="tools" style="display: none;">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav_tab">
+                        <tr>
+                            <td class="nav_title">
+                                <a onclick="collapse_change(13);" href="#">
+                                    <img id="menuimg_13" src="images/menu_reduce.gif" alt=" " border="0" />系统工具</a>
+                            </td>
+                        </tr>
+                        <tr id="menu_13">
+                            <td class="nav_list">
+                                <dl>
+                                    <dd>
+                                        <a href="Global/UpdateCache.aspx" target="main">缓存管理</a></dd>
+                                    <dd>
+                                        <a href="Global/DBManage.aspx" target="main">数据库维护</a></dd>
+                                    <dd>
+                                        <a href="Global/LogManage.aspx" target="main">日志管理</a></dd>
+                                    <dd>
+                                        <a href="Global/AttachmentManage.aspx" target="main">附件管理</a></dd>
+                                    <dd>
+                                        <a href="Global/StatisticsNew.aspx" target="main">数据统计</a></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav_tab">
+                        <tr>
+                            <td class="nav_title">
+                                <a onclick="collapse_change(14);" href="#">
+                                    <img id="menuimg_14" src="images/menu_reduce.gif" alt=" " border="0" />整合接口</a>
+                            </td>
+                        </tr>
+                        <tr id="menu_14">
+                            <td class="nav_list">
+                                <dl>
+                                    <dd>
+                                        <a href="Interface/IM.aspx" target="main">洽谈工具</a></dd>
+                                    <!--<dd>
+                                        <a href="Interface/JsInterface.aspx" target="main">外部功能整合</a></dd>-->
+                                    <!--<dd>
+                                        <a href="Interface/Payment.aspx" target="main">在线支付</a></dd>-->
+                                </dl>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--                    
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav_tab">
+                        <tr>
+                            <td class="nav_title">
+                                <a href="VoteManage/List.aspx" target="main">
+                                    <img id="Img5" src="images/menu_add.gif" alt=" " border="0" />网上调查</a>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nav_tab">
+                        <tr>
+                            <td class="nav_title">
+                                <a href="Gift/GiftList.aspx" target="main">
+                                    <img id="Img4" src="images/menu_add.gif" alt="" border="0" />礼品管理</a>
+                            </td>
+                        </tr>
+                    </table>
+                    -->
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="copyright">
+    </div>
+</body>
+</html>

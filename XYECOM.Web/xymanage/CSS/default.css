@@ -1,0 +1,207 @@
+/*网站首页公用样式 */
+.index_div{ width:800px; margin:5px auto 0 auto; text-align:left;}
+.index_div:after {
+    content: "."; 
+    display: block;
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+.index_div {display: inline-table;}
+/* Hides from IE-mac \*/
+* html .index_div {height: 1%;}
+.index_div {display: block;}
+/* End hide from IE-mac */
+
+
+
+/*网站信息  资讯聚焦  金牌企业 flash广告 */
+
+#index01_left{ width:295px; float:left; text-align:center;height:100%; text-align:left;}
+#index01_right{ width:500px;float:left; padding-left:5px; text-align:left;}
+
+
+  /*网站信息*/
+#iactivity{  margin-bottom:5px; background:url(bgimages/back_activity.gif) transparent no-repeat left 17px; text-align:left;}
+#iactivity h1{ background:url(bgimages/title_hbg.gif) #8E8171 no-repeat 16px bottom;}
+#iactivity ul{ margin:8px 5px;}
+#iactivity img{ float:left; margin:10px 9px 0 8px;}
+
+  /*资讯聚焦*/
+#iinform{  border:1px solid #92B6C4;}
+#iinform h1{ background:url(bgimages/title_hbg.gif) #A1BFBF no-repeat 16px bottom;}
+#iinform h2{ font-size:14px; text-align:center; padding-top:8px;}
+#iinform h2 a{ font-size:14px;}
+#iinform ul{ margin:6px 7px;}
+
+#iinform_img{ margin:5px 6px;}
+#iinform_img ul{ display:inline;}
+#iinform_img li{ float:left; text-align:center; }
+#iinform_img li img{ margin:3px 5px; display:block; border:1px solid #999;}
+#iinform_img a{ text-decoration:underline;}
+#iinform_img:after {
+    content: "."; 
+    display: block;
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+#iinform_img { display: inline-table;}
+/* Hides from IE-mac \*/
+* html #iinform_img{ height: 1%;}
+html>body #itool_div {height: 1%;}
+#iinform_img { display: block;}
+/* End hide from IE-mac */
+
+
+  /*flash幻灯*/
+#iflash{ background:#C8C9CA; text-align:right; }
+
+  /*金牌企业*/
+#ienterprise{  border:1px solid #C7C7C7; margin-top:6px; padding-bottom:3px; }
+#ienterprise h1{ background:url(bgimages/title_hbg.gif) #559C9C no-repeat 16px bottom;margin-bottom:4px;}
+#ienterprise img{  margin:3px 0 3px 7px;}
+
+
+
+/*企业家风采 求购信息 供应信息 */
+  
+  /*企业家风采*/
+#ienterpriser{ width:195px; float:left; margin-right:5px; border:1px solid #96A583; text-align:left;}
+#ienterpriser h1{ background:url(bgimages/title_hbg.gif) #96A583 no-repeat 20px bottom;}
+#ienterpriser img{ float:left; margin-right:9px;}
+#ienterpriser ul{ padding:12px 8px 12px 12px;}
+#ienterpriser li{ margin-bottom:8px;}
+#ienterpriser h5{ display:inline; }
+#ienterpriser h5 a{ font-size:13px;}
+
+   /*求购信息*/
+#ibuy{ width:295px; float:left; margin-right:5px; border:1px solid #BFBFBF; text-align:left;}
+#ibuy h1{ background:url(bgimages/title_hbg.gif) #887F80 no-repeat 18px bottom;}
+#ibuy table{ margin:5px; width:96%;}
+
+
+   /*供应信息*/
+#isell{ width:294px; float:left; border:1px solid #BFBFBF; text-align:left;}
+#isell h1{ background:url(bgimages/title_hbg.gif) #887F80 no-repeat 18px bottom;}
+#isell table{ margin:5px; width:96%;}
+
+
+/*分类信息   广告 */
+
+    /*分类信息*/ 
+#isort{ width:553px; float:left; border:1px solid #BBBAB8; margin-right:5px; text-align:left;}
+#isort h1{ background:url(bgimages/title_hbg.gif) #DBD5C9 no-repeat 18px bottom;}
+#isort dl{ padding:12px;}
+#isort dt{ font-weight:bold; padding:4px 0;}
+	
+#iad3{ width:240px; float:left; text-align:left;}
+#iad3 img{ margin-bottom:5px;}
+
+
+/*企业招商 人才招聘 合同样本 */
+
+#ibusy{ width:263px; float:left; border:1px solid #BBBAB8; margin-right:5px; text-align:left;}
+#ibusy h1{ background:url(bgimages/title_hbg.gif) #AB9B84 no-repeat 18px bottom;}
+#ibusy ul{ padding:8px;}
+
+#ijob{ width:260px; float:left; border:1px solid #E1C5B5; margin-right:5px; text-align:left;}
+#ijob h1{ background:url(bgimages/title_hbg.gif) #D7A474 no-repeat 18px bottom;}
+#ijob ul{ padding:8px; }
+#ijob li{ color:#82591E; }
+#ijob li a{ display:block; margin-left:12px; }
+
+
+#icontract{ width:260px; float:left; border:1px solid #E6D6DA;  text-align:left;}
+#icontract h1{ background:url(bgimages/title_hbg.gif) #D3AD9D no-repeat 18px bottom;}
+#icontract ul{ padding:8px;}
+
+
+/*生产运输  新加盟企业 */
+
+#itraffic_left{width:533px; float:left;text-align:left;margin-right:5px;}
+#itraffic_left img{ margin-top:5px;}
+
+#itraffic{border:1px solid #BCB0C4;}
+#itraffic h1{ background:url(bgimages/title_hbg.gif) #906D76 no-repeat 18px bottom;}
+#itraffic ul{ padding:10px;}
+#itraffic a{ margin:0 2px; }
+
+
+#ijoin{ width:260px; float:left; border:1px solid #BCC5CA;  text-align:left;}
+#ijoin h1{ background:url(bgimages/title_join.gif) transparent no-repeat left top; height:41px; padding-left:82px; font-size:14px; line-height:35px; color:#222;}
+#ijoin div{ background:url(bgimages/pic_join.gif) #fff repeat-y left top;}
+#ijoin ul{ padding:8px 8px 6px 12px;}
+#ijoin li{ height:23px;}
+#ijoin img{ margin-right:18px; vertical-align:middle; }
+
+
+
+/*技术标准  图纸工具 */
+
+#itech{ width:531px; float:left; border:1px solid #BCCDC6;margin-right:5px; text-align:left;}
+#itech h1{ background:url(bgimages/title_hbg.gif) #909976 no-repeat 18px bottom;}
+#itech ul{ padding:10px;}
+#itech a{ margin:0 2px; }
+
+#itool{ width:260px; float:left; border:1px solid #E6D6DA; text-align:left;}
+#itool h1{ background:url(bgimages/title_hbg.gif) #D3AD9D no-repeat 18px bottom;}
+#itool_div{ padding:10px; }
+#itool ul{ display:inline; padding:0;}
+#itool li{ width:118px; float:left;  margin-bottom:8px; padding-right:2px;  }
+#itool img{ float:left; border:1px solid #D3D3D5; margin-right:9px; }
+
+#itool_div:after {
+    content: "."; 
+    display: block;
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+#itool_div {display: inline-table;}
+/* Hides from IE-mac \*/
+* html #itool_div {height: 1%;}
+html>body #itool_div {height: 1%;}
+#itool_div {display: block;}
+/* End hide from IE-mac */
+
+
+
+
+/*热门讨论  外贸知识  经营管理 */
+
+#idiscuss{ width:261px; float:left; border:1px solid #9ABFBF; margin-right:5px; text-align:left;}
+#idiscuss h1{ background:url(bgimages/title_hbg.gif) #7E9B84 no-repeat 18px bottom;}
+#idiscuss ul{ padding:10px;}
+
+
+#itrade { width:261px; float:left; border:1px solid #BFC5B5; margin-right:5px; text-align:left;}
+#itrade h1{ background:url(bgimages/title_hbg.gif) #ABA474 no-repeat 18px bottom;}
+#itrade ul{ padding:10px;}
+
+
+#imanage { width:261px; float:left; border:1px solid #E6C6DA; text-align:left;}
+#imanage  h1{ background:url(bgimages/title_hbg.gif) #D3919D no-repeat 18px bottom;}
+#imanage  ul{ padding:10px;}
+
+
+/*友情链接 */
+
+#link{ width:800px; margin:5px auto 0 auto; text-align:left;}
+#link h1{ background:url(bgimages/title_hbg.gif) #887F80 no-repeat 18px bottom;}
+#link div{ padding:10px;} 
+#link div img{ float:left; margin-right:9px;}
+
+#link:after {
+    content: "."; 
+    display: block;
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+#link{ {display: inline-table;}
+/* Hides from IE-mac \*/
+* html #link{{height: 1%;}
+#link{ {display: block;}
+/* End hide from IE-mac */
+

@@ -1,0 +1,40 @@
+
+<%Include _head%>
+
+<div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;<a href="{config.WebURL}user/edituserinfo.{config.Suffix}">基本设置</a>&gt;上传商铺Logo</div>
+
+<%Include _menu%>
+
+
+<div id="right">
+    <form action="#" method="post">
+        <ul class="upimgtab">
+            <li class="cur"><a href="{config.weburl}user/uploadlogo.{config.suffix}">上传商铺Logo</a></li>
+            <li><a href="{config.weburl}user/uploadimage.{config.suffix}">上传企业形象图片</a></li>
+            <li><a href="{config.weburl}user/uploadbanner.{config.suffix}">上传商铺Banner</a></li>
+        </ul>
+        
+        <table class="loadimage">
+            <tr>
+                <td align="center">
+                <div id="UploadFile">
+                <input id="Upload_TabName" name="Upload_TabName" type="hidden" value="{tablename}"/>
+                <input id="Upload_IDs" name="Upload_IDs" type="hidden" value="{ids}" />
+                <input id="Upload_Files" name="Upload_Files" type="hidden" value="{files}" />
+                <input id="Upload_DelIDs" name="Upload_DelIDs" type="hidden" />
+                <input id="Upload_UpIDs" name="Upload_UpIDs" type="hidden" />
+                <input id="Upload_MaxAmount" name="Upload_MaxAmount" type="hidden" value="{maxamount}" />
+                <input id="Upload_IsWaterMark" name="Upload_IsWaterMark" type="hidden" value="{iswatermark}" />
+
+                <script language="javascript" type="text/javascript">UploadInitPicSize(300,200);</script>
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;<input type="submit" class="button" onclick="javascript:return setuserimg();" value="确定" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<%Include _footer%>

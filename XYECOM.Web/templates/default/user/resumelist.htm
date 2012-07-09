@@ -1,0 +1,73 @@
+﻿
+<%Include _head%>
+<div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;  <a href="{config.WebURL}user/engagelist.{config.Suffix}">招聘管理</a> &gt;  简历查看</div>
+<%Include _menu%>
+
+ <!--右边区域-->
+
+  <div id="right">
+ <form action="#" id="" method="post">
+   <table   class="content">
+  <caption>职位：{el_name} 共有<em>({count})</em>份简历！</caption> 
+ <thead>
+	  <tr>	    
+	      <th style="height: 20px;">选者</th>
+	      <th style="height: 20px">姓名</th>
+		  <th style="height: 20px" >手机</th>
+		  <th style="height: 20px" >
+              联系方式</th>
+		  <th style="height: 20px" >工作年限</th>
+		  <th style="height: 20px" >专业</th>
+		   <th style="height: 20px" >学历</th>	
+		  <th style="height: 20px" > 简历投放时间</th>	
+		  <th style="height: 20px" > 状态</th>			 	          
+           <th style="height: 20px;">查看</th>
+	  </tr>
+  </thead>
+  <tbody>
+  <%loop (DataRow)  sd infolist%>
+  <tr> 
+   <td><input id="sd_id" name="sd_id" type="checkbox" value="{sd[ER_ID]}" /></td>
+  <td>{sd[UI_LinkMan]}</td>
+  <td>{sd[UI_Mobil]}</td>
+  <td>{sd[U_Address]}</td>
+  <td>{sd[RE_JobYear]}</td>
+  <td>{sd[RE_Speciality]}</td>  
+  <td>{sd[RE_Schoolage]}</td>
+  <td>{sd[RE_AddDate]}</td>  
+  <td>
+   <%if {sd[RE_Estate]}=="1"%>
+    未查看
+    <%/if%>
+     <%if {sd[RE_Estate]}=="2"%>
+    已查看
+    <%/if%>
+    <%if {sd[RE_Estate]}=="3"%>
+    拒绝面试
+    <%/if%>
+    <%if {sd[RE_Estate]}=="4"%>
+    同意面试
+    <%/if%>
+    </td>
+  <td><a href="{config.WebURL}user/resumeinfo.{config.Suffix}?RE_ID={sd[ER_ID]}"> 查看</a></td>
+  </tr>
+  <%/loop%>
+  </tbody>
+
+</table>
+<table class="content_action" >
+<tr >
+<td >
+<input id="chkAll" name="chkAll" type="checkbox" value="" onclick="CheckedAll();"/>全选所有信息
+<input name="Supply"  class="button" type="submit" value="删除"  onclick="return bntDelete()"/>
+<input type="hidden" id="isDelete" value="Delete" />
+</td>
+</tr>
+</table>
+
+<div class="page">当前是第 <span>{pageinfo.PageIndex}</span> 页 &nbsp;（共 <span>{pageinfo.PageCount}</span> 页）&nbsp;{pageinfo.FirstPage}&nbsp;{pageinfo.PreviousPage}&nbsp;{pageinfo.NextPage}&nbsp;{pageinfo.LastPage}</div>
+</form>
+</div>
+
+<%Include _footer%>
+ 

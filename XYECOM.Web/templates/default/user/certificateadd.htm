@@ -1,0 +1,68 @@
+﻿
+<%Include _head%>
+    <div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;  <a href="{config.WebURL}user/certificatelist.{config.Suffix}">查看企业证书</a> &gt;  添加企业证书</div>
+<%Include _menu%>
+
+ <!--右边区域-->
+<div id="right">
+       <form method ="post">
+      <table  class="contentl">
+      <caption>发布企业证书<span>（*为必填项）</span></caption>
+      
+       <tr>
+        <th>证书名称：<em class="red">*</em><span></span></th>
+        <td>
+	    <input name="txtname" id="txtname" type="text" maxlength="30" size="30" />
+        </td>
+      </tr>
+       <tr>
+        <th>证书类别：<em class="red">*</em></th>
+        <td>
+        <select id="txttype" name="txttype">
+        <option value="0">请选择证书类别</option>
+        <option value="1">营业执照</option>
+        <option value="2">税务登记类</option>
+        <option value="3">经营许可类</option>
+        <option value="4">其它类</option>
+        </select>
+        </td>
+      </tr>
+       <tr>
+        <th>
+            发证机构：<em class="red">*</em></th>
+        <td>
+        <input name="txtorgan" id="txtorgan" type="text" maxlength="30" size="30" />
+          </td>
+      </tr>
+       <tr>
+        <th >生效日期：<em class="red">*</em></th>
+      <td>
+      <input onclick="getDateString(this);" id="txtbegin" maxlength="15" readonly="readonly" name ="txtbegin"/>
+    </td>
+      </tr>
+       <tr>
+    <th>
+        截至日期：<em class="red">*</em></th>
+    <td>
+    <input onclick="getDateString(this);" id="txtupto" maxlength="15" readonly="readonly" name ="txtupto"/>
+    </td>
+    </tr>
+       <tr>
+    <th>
+        上传证书：<em class="red">*</em></th>
+    <td>
+    <input type="hidden" id="aurl" name="aurl" value=""/>
+     <%Include _UploadControl%>
+    </td>
+    </tr>
+      </table>
+
+    <div class="content_action"><input name="but01" type ="submit" value=" 确定" onclick ="return certificate();" class ="button" />
+    <input name="but02" type="button" value="取消" onclick ="window.location.href='{config.WebURL}user/index.{config.Suffix}'"  class ="button"/>
+    </div>
+    </form>
+</div> 
+
+<%Include _footer%>
+
+

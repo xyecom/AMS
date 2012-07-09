@@ -1,0 +1,129 @@
+
+<%Include _head%>
+
+<div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;  收藏公司详细信息 </div>
+
+<!--左边导航-->
+<%Include _menu%>
+
+
+<div id="right">
+<form action="#" id="" method="post"> 
+ <table class="contentl">
+  <caption>联系人信息</caption>
+  <tr>
+    <th>Email：</th>
+    <td>{info.RegInfo.Email}&nbsp;</td>
+  </tr>
+  <tr>
+    <th>姓名：</th>
+    <td>{info.LinkMan}&nbsp;</td>
+  </tr>
+  <tr>
+    <th>固定电话：</th>
+    <td>{info.Telephone}&nbsp;</td>
+   </tr>
+  <tr>
+   <th>传真号码：</th>
+    <td >{info.Fax}&nbsp;</td>
+  </tr>
+  <tr>
+    <th>邮政编码：</th>
+    <td>{info.Postcode}&nbsp;</td>
+   </tr>
+  <tr>
+    <th>所在部门：</th>
+    <td>{info.Section}&nbsp;</td>
+  </tr>
+   <tr>
+    <th>职位：</th>
+    <td>{info.Post}&nbsp;</td>
+  </tr>
+  <tr>
+    <th>手机：</th>
+    <td>{info.Mobile}&nbsp;</td>
+  </tr>
+  <tr>
+    <th>联系地址：</th>
+    <td>{info.Address}&nbsp;</td>
+  </tr>
+  </table>
+ 
+ <table class="contentl">
+  <caption>公司详细信息</caption>
+  <tr>
+    <th>企业名称：</th>
+    <td>{info.Name}&nbsp;</td>
+  </tr>
+  <tr>
+    <th>所在区域：</th>
+    <td>
+    <%if info.AreaInfo!=null%>
+    {info.AreaInfo.Name}
+    <%/if%>&nbsp;
+    </td>
+  </tr>
+  <tr>
+    <th>企业网址：</th>
+    <td>{info.HomePage}&nbsp;</td>
+  </tr>
+  <tr>
+    <th>联系地址：</th>
+    <td>{info.Address}&nbsp;</td>
+  </tr>
+  <tr>
+    <th>企业性质：</th>
+    <td>{info.Character}	&nbsp;</td>
+  </tr>
+  <tr>
+    <th>企业类别：</th>
+    <td>
+    <%if info._UserTypeInfo!=null%>
+    {info._UserTypeInfo.UT_Type}
+    <%/if%>
+    &nbsp;
+    </td>
+  </tr>
+  <tr>
+    <th>员工人数：</th>
+    <td>{info.EmployeeTotal}&nbsp;</td>
+  </tr>
+  <tr>
+    <th>供应产品/服务：</th>
+    <td>{info.SupplyPro}&nbsp;</td>
+ </tr>
+  <tr>
+    <th>需求产品/服务：</th>
+    <td>{info.BuyPro}&nbsp;</td>
+  </tr>
+  <tr>
+    <th>注册资金：</th>
+    <td >{info.RegisteredCapital}&nbsp;</td>    
+ </tr>
+  <tr>
+	<th>企业成立年份：</th>
+    <td> {info.RegYear}&nbsp;</td>
+  </tr>
+  <tr>
+    <th>企业经营模式：</th>
+    <td>{info.Mode}&nbsp;</td>
+  </tr>
+  <tr>
+    <th>主营产品/服务：</th>
+    <td> {info.MainProduct}&nbsp;</td>
+  </tr>
+  <tr>
+    <th>企业简介：</th>
+    <td>{info.Synopsis}&nbsp;</td>
+  </tr>
+  </table>
+<div class="content_action">
+<input name="submit" type="button" value="返回" id="btnAdd" onclick="window.location.href='{config.WebURL}user/companys.{config.Suffix}'" class ="button" />    
+ </div>
+ </form>
+ </div>
+
+
+
+
+<%Include _footer%>

@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <%Include _head%>
+</head>
+
+<body onload="{pageinfo.OnLoadEvents}">
+    <%Include _top%>
+    
+       <div class=layout950_100 style="BACKGROUND-IMAGE: url({config.WebURL}templates/_shop/skins_2009/{shopuserinfo.template}/images/stylebg1.jpg)">
+
+    <%Include _banner%>
+        
+    <div class="clr"></div>
+    <div class="layout950">
+
+    <%Include _menu%>
+    
+    <div class="clr"></div>
+    <div class="where">你现在的位置：首页 &gt; 招聘信息</div>
+
+    <%Include _left%>
+
+
+    <!--单位介绍-->
+    <div id=bodyright>
+        <div class=leftkuang>
+            <div class=righttitle>
+                <ul>
+                    <li>职位介绍</li>
+                </ul>
+            </div>
+            <div class="jobinfo">
+                <table width="95%" align="center" cellpadding="0" cellspacing="1">
+                    <tr>
+                        <th>职位名称：</th>
+                        <td>{jobinfo.JobTitle}</td>
+                        <th>招聘人数：</th>
+                        <td>{jobinfo.Number} 人</td>
+                    </tr>
+                    <tr>
+                        <th>工作性质：</th>
+                        <td>{jobinfo.JobType}</td>
+                        <th>性别要求：</th>
+                        <td>{jobinfo.Sex}</td>
+                    </tr>
+                    <tr>
+                        <th>学历要求：</th>
+                        <td>{jobinfo.Education}</td>
+                        <th>年龄要求：</th>
+                        <td>{jobinfo.Age} 岁</td>
+                    </tr>
+                    <tr>
+                        <th>工作经验：</th>
+                        <td>{jobinfo.Experience}</td>
+                        <th>待遇：</th>
+                        <td>{jobinfo.Pay}</td>
+                    </tr>
+                    <tr>
+                        <th>工作地点：</th>
+                        <td>{jobinfo.WorkAreaInfo.FullName}</td>
+                        <th >结束时间：</th>
+                        <td>{jobinfo.EndDate.ToShortDateString()}</td>
+                    </tr>
+                    <tr>
+                        <th>职位说明：</th>
+                        <td colspan="3">{jobinfo.Request}</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td colspan="3"><a href="javascript:xy_Shop_ApplyJob();">申请该职位</a></td>
+                    </tr>
+                    <tr>
+                        <th>其他岗位</th>
+                        <td colspan="3">
+                            <%set data = GetOtherJob()%>
+                            <%loop (DataRow) job data%>
+                            <%set infourl = GetInfoUrl("job",job["EI_ID"],job["EI_HTMLPage"])%>
+                            <a href="{infourl}">{job[EI_Job]}</a>
+                            <%/loop%>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+  
+            <div class="clr"></div>
+            
+            <div class="righttitle">
+                <ul>
+                    <li>
+                        联系信息
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="linkmessage"></div>
+            
+
+            <div class="clr"></div>
+            
+            <div class="righttitle">
+                <ul>
+                    <li>
+                        推荐给好友
+                    </li>
+                </ul>
+            </div>
+            <div class="jobinfo">
+                <table width="95%" align="center" cellpadding="0" cellspacing="1">
+                    <tr>
+                        <th>您的姓名：</th>
+                        <td><input type="text" size="30" id="txtFromName"  maxlength ="200"/></td>
+                    </tr>
+                    <tr>
+                        <th>您的邮箱：</th>
+                        <td><input type="text" size="30" id="txtFromEmail"  maxlength ="200"/></td>
+                    </tr>
+                    <tr>
+                        <th>朋友的邮箱：</th>
+                        <td><input type="text" size="30" id="txtToEmail"  maxlength ="200"/><br/><i> 多个邮箱以","隔开</i></td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>
+                            <input name="" type="button" class="button" value="确 定" onclick ="xy_Shop_CommendJob();"/> 
+                            <input type="button" name="Submit"  class="button" value="清 空"   onclick ="xy_Shop_ResetCmdJobForm();" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <input type="hidden" id ="JobId" value="{jobinfo.JobId}" />
+            <input type="hidden" id="txtjobname" value="{jobinfo.JobTitle}" />
+            <div class="clr"></div>
+            </div>
+        </div>
+        <!--单位介绍结束-->
+        <div class="clr"></div>
+        </div>
+        <%Include _footer%>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+        <%Include _head%>
+</head>
+<body  onload="{pageinfo.OnLoadEvents}">
+     <%Include _top%>
+    <div class=layout950_100 style="BACKGROUND-IMAGE: url({config.WebURL}templates/_shop/skins_2009/{shopuserinfo.template}/images/stylebg1.jpg)">
+        <%Include _banner%>
+        <div class="clr"></div>
+        <div class="layout950">
+            <%Include _menu%>
+        <div class="clr"></div>
+        <div class="where">你现在的位置：首页 &gt; 联系我们</div>
+        <%Include _left%>
+
+        <!--工作室介绍-->
+        <div id="bodyright">
+            <div class="leftkuang">
+                <div class="righttitle">
+                    <ul>
+                        <li>联系方式</li>
+                    </ul>
+                </div>
+                <div id="linkmessage"></div>
+                
+                <div class="message">
+                    <!-- 留言模块参数 -->
+                    <input type ="hidden" id="_param_message_module" value="company" />
+                    <input type ="hidden" id="_param_message_title" value="我对贵工作室在中国营养联盟发布的服务信息很感兴趣" />
+                    <input type ="hidden" id="_param_message_parent_module" value ="{infotype}" />
+                    <input type ="hidden" id="_param_message_infoid" value ="{infoid}"/>
+                    <input type ="hidden" id="_param_message_userid" value ="{shopuserinfo.userid}" />
+                    <%include _message%>
+                </div>
+                
+                <div class="clr"></div>
+            </div>
+        </div><!--工作室介绍结束-->
+        <div class="clr"></div>
+        </div>
+        <%Include _footer%>
+    </div>
+</BODY>
+</html>

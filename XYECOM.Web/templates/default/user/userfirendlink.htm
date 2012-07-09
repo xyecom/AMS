@@ -1,0 +1,49 @@
+
+<%Include _head%>
+<div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;<a href="{config.WebURL}user/userfirendlink.{config.Suffix}">友情链接</a></div>
+<%Include _menu%>
+ <!--右边区域-->
+
+<div id="right">
+  <h3>友情链接管理</h3>
+  <form action="#" id="" method="post">
+      <table  class="content">
+        <thead>
+          <tr>
+  	          <th width="5%">选择</th>
+              <th width="20%">网站名称</th>
+	          <th width="30%">网站地址</th>
+	          <th width="35%">Logo地址</th>
+	          <th width="10%">修改</th>
+          </tr>
+        </thead>
+        <tbody>
+        <%loop (DataRow) link infolist%>
+        <tr>
+            <td><input id="sd_id" name="sd_id" type="checkbox" value="{link[LinkID]}" /></td>
+            <td>{link[SiteName]}</td>
+            <td>{link[Url]}</td>  
+            <td>{link[LogoUrl]}</td>
+            <td><a href="{config.WebURL}user/userfirendlinkadd.{config.Suffix}?LinkId={link[LinkID]}">修改</a></td>
+        </tr>
+        <input type="hidden" id="audting" name="audting" value="" />
+        <%/loop%>
+      </tbody>
+    </table>
+        <table class="content_action">
+            <tr>
+            <td><input id="chkAll" name="chkAll" type="checkbox" value="" onclick="CheckedAll();"/>全选 
+            <input name="engage"  class="button" type="submit" value="删除" onclick="return bntDelete();"/>
+            <input name="engage"  class="button" type="button" value="添加" onclick="window.location.href='{config.WebURL}user/userfirendlinkedit.{config.Suffix}';"/>
+            </td>
+            <td>
+            </td>
+            </tr>
+        </table>
+    <div class="page">当前是第 <span>{pageinfo.PageIndex}</span> 页 &nbsp;（共 <span>{pageinfo.PageCount}</span> 页）&nbsp;{pageinfo.FirstPage}&nbsp;{pageinfo.PreviousPage}&nbsp;{pageinfo.NextPage}&nbsp;{pageinfo.LastPage}</div>
+ </form>
+</div>
+
+
+<%Include _footer%>
+

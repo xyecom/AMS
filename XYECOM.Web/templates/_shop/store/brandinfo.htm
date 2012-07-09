@@ -1,0 +1,32 @@
+<%Include _head%>
+<div id="ubox">
+    <!--左边导航-->
+    <div id="uleftnav">
+        <%Include _left%>
+    </div>
+    <!--左边导航  end-->
+    <!--右边主要内容-->
+    <div id="uright">
+        <!--站点导航-->
+        <!--公司介绍-->
+        <div class="rcon">
+            <h2>
+                品牌介绍</h2>
+            <div class="pinp font14">
+                <%set array = GetImages("brand",brand.InfoID)%>
+                <%loop (string) path array%>
+                <ul class="pt10">
+                    <img src="{path}" alt="{brand.Title}" />
+                    <br />
+                    {brand.Title}
+                    <br />
+                </ul>
+                <%/loop%>
+                <br />
+            </div>
+            <p class="font142">
+                详细信息：{brand.InfoContent}</p>
+        </div>
+    </div>
+</div>
+<%Include _footer%>

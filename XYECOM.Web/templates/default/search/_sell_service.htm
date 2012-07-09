@@ -1,0 +1,193 @@
+
+	<div id="gq_guide">
+		<a href="">{pageinfo.Navigation} 
+	</div>
+    <%set tempuser=GetUserInfo()%>
+    <div id="gq_compy">
+	    <div id="CompanyLogo">
+		    <div id="CompanyLogoDiv"><img width="100" alt="{tempuser.unitname}" src="{tempuser.logo}"/></div>
+	    </div>
+	    <div id="CompanyName">{tempuser.unitname}</div>
+	    <div id="site_url"><a href="{tempuser.shopindex}">网店地址</a></div>
+      <div class="clr"></div>
+    </div>
+    
+
+	<div id="layout">
+		<div id="layoutLeft">
+			<div id="LeftProBorder">
+			
+				<div id="ProTitle">
+				        {serviceinfo.Title}
+				</div>
+				
+				<div id="ProText">
+					<div id="ProPic">
+					
+						<div id="ProPicBorder">
+							<a href="{serviceinfo.MorePicUrl}" id="viewbigURL" target="_blank">
+							    <img src="{serviceinfo.SmallImg[2]}" alt="{serviceinfo.Title}" border="0" id="viewbigpic"/>
+							</a>
+						</div>
+
+						<div id="ProPicName">
+						    <img src="{config.WebURL}templates/{config.TemplatePath}/images/big.gif" style="vertical-align:middle" /> 
+						    <a href="{serviceinfo.MorePicUrl}" target="_blank">更多图片</a>
+						</div>
+						
+					</div>
+					<div id="ProInfo">
+					
+					
+						<div id="ProInfoA">
+							<a href="{tempuser.shopindex}" class="blueLink Font14"><strong>{tempuser.unitname}</strong></a>&nbsp;&nbsp;<a href="{tempuser.shopindex}" target="_blank"><img src="{tempuser.gradeimgurl}" border="0" style="position:relative;top:1px;" /></a>&nbsp;&nbsp;<strong class="Font14">第<span class="MemberYear">{tempuser.years} </span>年</strong>
+
+
+							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="fontGray">
+								<tr>
+									<td height="10" colspan="2"></td>
+								</tr>
+								<tr>
+									<td height="33" colspan="2">
+									<a href="{tempuser.shopindex}" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/enterWEB.gif" alt="进入企业网站" width="112" height="21" border="0" /></a>&nbsp;&nbsp;&nbsp;
+									<a href="{tempuser.contactus}" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/enterContact.gif" alt="查看联系方式" width="112" height="21" border="0" /></a>
+									</td>
+									</tr>
+								<tr>
+									<td width="50%" height="22">企业类型：{tempuser.character}</td>
+									<td width="50%">员工人数：{tempuser.employeetotal}</td>
+								</tr>
+								<tr>
+									<td height="22">经营模式：{tempuser.mode}</td>
+									<td>注册资金：{tempuser.registeredcapital}万</td>
+								</tr>
+							</table>
+							
+							
+							
+						</div>
+						<div id="ProInfoB">
+						
+						
+						
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+												
+									<tr>
+										<td height="24">有效期至：{serviceinfo.EndTime.ToShortDateString()}</td>
+										<td>发布时间：{serviceinfo.PublishTime.ToShortDateString()}</td>
+									</tr>
+                                    
+									<tr>
+										<td height="24" colspan="3">联 系 人：{tempuser.linkman}&nbsp;&nbsp;<img src="{config.WebURL}templates/{config.TemplatePath}/images/icon_tianjiasy.gif" width="13" height="12" style="position:relative;top:1px;" /> <a href="javascript:void(null);" onclick="Favorite();" class="orange">添加为商业伙伴</a></td>
+									</tr>
+							</table>
+							
+							
+						</div>
+						
+						<div class="blank5"></div>
+						
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td height="60"><a href="#message"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquire2.gif" width="139" height="36" border="0" /></a> </td>
+								<td style="text-align:center;"><span class="Font14">或联系</span>：<strong class="orange" class="TempTele">86-010-62669815</strong></td>
+								<td width="23%"></td>
+							</tr>
+						</table>
+						
+					</div>
+					<div class="clr"></div>
+
+					<div id="ProDesTitle"><strong>详细信息:</strong></div>
+					
+					
+					<div class="ProDesText">
+					     <table width="95%" border="0" align="center" cellpadding="1" cellspacing="1" class="typelist">{fieldbody}</table>
+					     {serviceinfo.InfoContent}
+					</div>
+					
+					
+					<div id="ProDesTitle">
+					    <strong>联系方式:</strong>
+					</div>
+					
+					
+					<div class="ProDesText" id="linkmessage"></div>
+				
+					
+				</div>
+
+
+                <div id="ProTitle"><span>该企业发布的其他信息</span></div>
+                <div class="ProAbout">
+                <%set data = GetAboutInfo()%>
+                <ul>
+                <%loop (DataRow) info data%>
+                    <li>
+                        <a href='{info[link]}' target='_blank' title='{info[infotitle]}'><img src='{info[image]}' /></a><br />
+                        <a href='{info[link]}' target='_blank' title='{info[infotitle]}'>{info[infotitle]}</a>
+                    </li>
+                <%/loop%>
+                </ul>
+                </div>
+			</div>
+
+
+
+			<div id="ProFind">
+			    <span>
+			    <img src="{config.WebURL}templates/{config.TemplatePath}/images/icon1.gif" width="20" height="14" /><a href="javascript:void(null);" onclick="Favorite();">收藏此信息</a>&nbsp;&nbsp;&nbsp;
+			    <img src="{config.WebURL}templates/{config.TemplatePath}/images/icon2.gif" width="21" height="11" /><a href="#">推荐给朋友</a>&nbsp;&nbsp;&nbsp;
+			    <img src="{config.WebURL}templates/{config.TemplatePath}/images/icon3.gif" height="16" /><a href="{config.weburl}feedback.{config.suffix}">举报此信息</a>
+			    </span>
+			    <strong class="orange">还没有找到合适的产品?</strong>  赶快<a href="{config.weburl}user/" target="_blank">发布求购信息</a>，让供应商主动来找您！
+    	    </div>
+    	   
+			<input type ="hidden" id="_param_message_module" value="{module.EName}" />
+            <input type ="hidden" id="_param_message_title" value="{titleinfo}" />
+            <input type ="hidden" id="_param_message_parent_module" value ="{pageinfo.ModuleFlag}" />
+            <input type ="hidden" id="_param_message_infoid" value ="{serviceinfo.InfoID}"/>
+            <input type ="hidden" id="_param_message_userid" value ="{serviceinfo.UserID}" />
+            <%include _message%>
+			
+		 </form>
+
+
+
+			<div id="SayInfo">
+				<strong>免责声明</strong>：以上信息由相关企业自行提供，该企业负责信息内容的真实性、准确性和合法性。
+				<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{config.webname}对此不承担任何保证责任。
+			</div>
+
+
+
+		</div>
+		
+	    <div id="layoutRight">
+
+			<div id="content">
+                <input type ="hidden" id="_param_userinfo_parent_module" value ="{pageinfo.ModuleFlag}" />
+                <input type ="hidden" id="_param_userinfo_infoid" value ="{serviceinfo.InfoID}"/>
+                <input type ="hidden" id="_param_userinfo_userid" value ="{serviceinfo.UserID}" />
+                <%Include _userinfo%>  
+			</div>
+
+			<div class="MTitle_01">
+				<center><a target="_blank" href="#" class="red"><strong>加入我们，享受更多服务</strong></a></center>
+			</div>
+			<div class="Mblk_01">
+				<div id="jointous">
+					<ul>
+						<li><a href="">· 结交贸易伙伴，拓展网络商圈</a></li>
+						<li><a href="">· 成为会员，免费发布供求信息</a></li>
+						<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/btn_gq_reg.gif" width="130" height="29" alt="" /></a></li>
+
+					</ul>
+				</div>
+			</div>
+
+		
+	</div>
+	
+	
+	</div>

@@ -1,0 +1,353 @@
+﻿<%Include _head%>
+<div class="location fia">
+    <a href="index.{config.Suffix}">商务中心</a> &gt; 修改商业信息</div>
+<%Include _menu%>
+<div id="right">
+    <form action="#" method="post">
+    <h3>
+        修改商业信息</h3>
+    <table class="contentl">
+        <%if module.Item.Count>0%>
+        <tr>
+            <th>
+                信息类型：<em>*</em>
+            </th>
+            <td id="tdinfotype">
+                <%loop (ModuleItemInfo) item module.Item%>
+                <%if module.EName=="investment"||module.PEName=="investment"%>
+                <%if item.ID==flag%>
+                <input type="radio" name="items" value="{item.ID}" onclick="inftype('{item.InfoTypeStr}')"
+                    checked="checked" />{item.Prefix}{item.Postfix}
+                <%else%>
+                <input type="radio" name="items" value="{item.ID}" onclick="inftype('{item.InfoTypeStr}')" />{item.Prefix}{item.Postfix}
+                <%/if%>
+                <%else%>
+                <%if item.ID==flag%>
+                <input type="radio" name="items" value="{item.ID}" checked="checked" />{item.Prefix}{item.Postfix}
+                <%else%>
+                <input type="radio" name="items" value="{item.ID}" />{item.Prefix}{item.Postfix}
+                <%/if%>
+                <%/if%>
+                <%/loop%>
+            </td>
+        </tr>
+        <%/if%>
+        <tr id="ptname">
+            <th>
+                信息名称：<em>*</em>
+            </th>
+            <td class="two">
+                <input id="infotitle" name="infotitle" type="text" size="28" maxlength="50" onchange="checkproductname(this);"
+                    value="{ptname}" />
+                <em id="txt0" class="three">信息标题中请勿出现特殊字符、信息类型等内容。</em><input type="hidden" id="hidmid"
+                    name="" value="{module.EName}" />
+            </td>
+        </tr>
+        <%if module.EName=="offer"||module.PEName=="offer"%>
+        <%if userinfo.iscompanyprotype==true%>
+        <tr>
+            <th>
+                自定义产品分类：<em>*</em>
+            </th>
+            <td class="two">
+                <div id="customerType">
+                </div>
+                <input id="upt" name="upt" type="hidden" value="" />
+                <input id="flag" type="hidden" value="companytype" />
+                <script type="text/javascript">
+                    var cla2 = new ClassType("cla2", 'flag', 'customerType', 'upt', 999, 'xy001', 'uid:<%=userinfo.userid %>');
+                    cla2.Mode = "select";
+                    cla2.Init();
+                </script>
+                <em id="Em1" class="three">选择自定义产品分类。</em>
+            </td>
+        </tr>
+        <%/if%>
+        <%/if%>
+        <tr>
+            <input type="hidden" id="hidMoueleName" value="{module.EName}" />
+            <input type="hidden" id="hidTypeId" name="hidTypeId" value="{typeid}" />
+            <th>
+                选择信息类别：<em>*</em>
+            </th>
+            <td>
+                <div id="classType">
+                </div>
+                <script type="text/javascript">
+                    var cla = new ClassType("cla", 'hidMoueleName', 'classType', 'hidTypeId', null, null, "tradeids:{userinfo.tradeids}");
+                    cla.Mode = "select";
+                    cla.OnClick = SelectTypeIDOnClick;
+                    cla.OnChange = GetFieldInnerHTML;
+                    cla.Init();
+                </script>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                信息属性：<em>*</em>
+            </th>
+            <td id="tabFieldBody">
+                <table class="c1_table" width="90%">
+                    {filedinnerhtml}
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                详细说明：<em>*</em>
+            </th>
+            <td>
+                <textarea id="_content_body" style="display: none;" cols="0" rows="0">{content}</textarea>
+                <script language="javascript" type="text/javascript" src="{config.WebURL}common/fckeditor/fckeditor.js"></script>
+                <script language="javascript" type="text/javascript">
+                    var oFCKeditor = new FCKeditor('xyecom');
+                    oFCKeditor.BasePath = '/Common/fckeditor/';
+                    oFCKeditor.ToolbarSet = 'Basic';
+                    oFCKeditor.Width = '100%';
+                    oFCKeditor.Height = '400';
+                    oFCKeditor.Value = document.getElementById("_content_body").value;
+                    oFCKeditor.Create();
+                </script>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                上传图片：
+            </th>
+            <td>
+                <%Include _UploadControl%>
+            </td>
+        </tr>
+        <%if config.DateType==false%>
+        <tr>
+            <th>
+                信息有效期：<em class="red">*</em>
+            </th>
+            <td>
+                <input onclick="getDateString(this);" id="EndDate" maxlength="15" readonly="readonly"
+                    name="EndDate" /><input id="datetype" type="hidden" value="{config.DateType}" />
+            </td>
+        </tr>
+        <%else%>
+        <tr>
+            <th>
+                信息有效期：<em class="red">*</em>
+            </th>
+            <td>
+                <input type="radio" value="10" checked="checked" name="rad" />10天
+                <input type="radio" value="20" name="rad" />20天
+                <input type="radio" value="30" name="rad" />1个月
+                <input type="radio" value="90" name="rad" />3个月
+                <input type="radio" value="180" name="rad" />6个月
+                <input id="EndDate" readonly="readonly" style="display: none;" />
+                <input id="datetype" type="hidden" value="{config.DateType}" />
+            </td>
+        </tr>
+        <%/if%>
+    </table>
+    <%if module.EName=="offer"||module.PEName=="offer"%>
+    <table class="contentl mt8">
+        <tr>
+            <th>
+                单价：
+            </th>
+            <td>
+                <input maxlength="10" name="txtsprice" value="{price}" />元
+            </td>
+        </tr>
+        <tr>
+            <th>
+                计量单位：
+            </th>
+            <td>
+                <input maxlength="10" name="txtsunit" value="{unit}" />
+            </td>
+        </tr>
+        <tr>
+            <th>
+                最小起定量：
+            </th>
+            <td>
+                <input maxlength="10" name="txtssmallnum" value="{smallnum}" />
+            </td>
+        </tr>
+        <tr>
+            <th>
+                货物总量：
+            </th>
+            <td>
+                <input maxlength="10" name="txtscountnum" value="{sumnum}" />
+            </td>
+        </tr>
+        <%if ispayment==true%>
+        <tr>
+            <th>
+                是否支持在线交易：
+            </th>
+            <td>
+                <%if ispaymentvalue=="true"%>
+                <input type="radio" value="1" name="rbIsPayMent" checked="checked" />支持
+                <input type="radio" value="0" name="rbIsPayMent" />不支持
+                <%else%>
+                <input type="radio" value="1" name="rbIsPayMent" />支持
+                <input type="radio" value="0" name="rbIsPayMent" checked="checked" />不支持
+                <%/if%>
+            </td>
+        </tr>
+        <%/if%>
+    </table>
+    <%/if%>
+    <%if module.EName=="venture"||module.PEName=="venture"%>
+    <table class="contentl mt8">
+        <tr>
+            <th>
+                单价：<em class="red">*</em>
+            </th>
+            <td>
+                <input maxlength="10" name="txtcprice" value="{price}" />元
+            </td>
+        </tr>
+        <tr>
+            <th>
+                计量单位：<em class="red">*</em>
+            </th>
+            <td>
+                <input maxlength="10" name="txtcunit" value="{unit}" />
+            </td>
+        </tr>
+        <tr>
+            <th>
+                最小起定量：<em class="red">*</em>
+            </th>
+            <td>
+                <input maxlength="10" name="txtcsmallnum" value="{smallnum}" />
+            </td>
+        </tr>
+        <tr>
+            <th>
+                货物总量：<em class="red">*</em>
+            </th>
+            <td>
+                <input maxlength="10" name="txtccountnum" value="{sumnum}" />
+            </td>
+        </tr>
+    </table>
+    <%/if%>
+    <%if module.EName=="investment"||module.PEName=="investment"%>
+    <table class="contentl mt8">
+        <tr>
+            <th>
+                地区：
+            </th>
+            <td>
+                <input type="radio" id="citys" name="rbcity" onclick="showcityname(1);" value="全国" />全国
+                <input id="cityl" type="radio" name="rbcity" onclick="showcityname(2);" value="" />
+                其它
+            </td>
+        </tr>
+        <tr style="display: none" id="cityls">
+            <td>
+            </td>
+            <td id="divarea">
+                <input type="hidden" id="city" name="city" value="{area}" />
+                <script type="text/javascript">
+                    var claarea = new ClassTypes("claarea", 'area', 'divarea', 'city');
+                    claarea.Init();
+                </script>
+            </td>
+        </tr>
+        <tr id="trq1">
+            <th>
+                招商支持：
+            </th>
+            <td>
+                <textarea id="txtsupport" name="txtsupport" cols="80" rows="10">{txtsupport}</textarea>
+            </td>
+        </tr>
+        <tr id="trq2">
+            <th>
+                招商要求：
+            </th>
+            <td>
+                <textarea id="txtdemand" name="txtdemand" cols="80" rows="10">{txtdemand}</textarea>
+            </td>
+        </tr>
+        <tr id="trq3">
+            <th>
+                展示网址：
+            </th>
+            <td>
+                <input maxlength="500" name="pageurl" id="pageurl" value="{txtUR}" />
+            </td>
+        </tr>
+        <tr id="tro">
+            <th>
+                代理过的品牌：<em class="red">*</em>
+            </th>
+            <td>
+                <input type="text" name="txtbrand" value="{beginname}" id="txtbrand" />
+            </td>
+        </tr>
+    </table>
+    <%/if%>
+    <div class="content_action">
+        <input type="submit" value="同意服务条款，我要发布" class="button" onclick="return CheckInfoFrom('{module.EName}','{module.PEName}');" />
+    </div>
+    <table class="contentl">
+        <caption>
+            <i>
+                <img src="{config.WebURL}templates/{config.TemplatePath}/user/images/indexpoint.gif" />
+                <a href="{config.WebURL}user/edituserinfo.{config.Suffix}" target="_blank">点此修改</a></i>联系方式的确认与修改
+            <a name="aegisAlipay5" />若有误，您发布的信息将无法通过审核！ <a name="aegisAlipay6" />
+        </caption>
+        <tr>
+            <th>
+                姓名：
+            </th>
+            <td>
+                {userinfo.linkman}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                公司名称：
+            </th>
+            <td>
+                {userinfo.unitname}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                电话：
+            </th>
+            <td>
+                {userinfo.telephone}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                传真：
+            </th>
+            <td>
+                {userinfo.fax}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                电子邮件：
+            </th>
+            <td>
+                {userinfo.email}
+            </td>
+        </tr>
+    </table>
+    <input type="hidden" id="infotype" name="infotype" value="1" />
+    <input type="hidden" id="infodate" name="infodate" value="10" />
+    <input type="hidden" id="title" />
+    <input type="hidden" id="pclist" name="pclist" value="{provincelist}" />
+    <input type="hidden" id="hidename" name="pclist" value="{module.EName}" />
+    <div class="content_action">
+    </div>
+    </form>
+</div>
+<%Include _footer%>

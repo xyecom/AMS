@@ -1,0 +1,101 @@
+
+<%Include _head%>
+
+<div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;  <a href="{config.WebURL}user/businesslist.{config.Suffix}?ename={pageinfo.ModuleFlag}">商业信息</a> &gt;  {module.CName}管理</div>
+
+<%Include _menu%>
+
+<div id="right">
+   <form   action="#" method="post">
+       <h2><span><input type="button" class="button" value="发布新的{module.CName}"  onclick ="window.location.href='{config.WebURL}user/dis_post_step.{config.Suffix}?ename={pageinfo.ModuleFlag}'"/></span>管理{module.CName}</h2>
+       <div class="ly_100">
+    <div class="ly_tit3"> 
+     <ul>
+     <li class="on"><a   href ="{config.WebURL}user/buylist.{config.Suffix}?ename={pageinfo.ModuleFlag}">已发布上网({auditedcount})</a> </li>
+     <li class="out"><a  href ="{config.WebURL}user/buylistisauditing.{config.Suffix}?ename={pageinfo.ModuleFlag}">审核中({auditingcount})</a></li>
+     <li class="out"><a   href ="{config.WebURL}user/buylistnotauditing.{config.Suffix}?ename={pageinfo.ModuleFlag}">审核未通过({notauditedcount})</a></li>
+     <li class="out"><a href ="{config.WebURL}user/buylistdated.{config.Suffix}?ename={pageinfo.ModuleFlag}" >已过期({datedcount})</a></li>
+     </ul>
+    </div>
+    <div class="ly_tit32">
+    关键字：<input type="text"  id="key" name ="key" value="{key}"/>
+    <select id="infotype" name="infotype">
+     <option value="all">所有信息</option>
+    <%loop (ModuleItemInfo) item1 module.Item%>
+        <%if infotype==item1.ID.ToString()%>
+        <option value="{item1.ID.ToString()}" selected="selected">{item1.Prefix}{item1.Postfix}信息</option>
+        <%else%>
+        <option value="{item1.ID.ToString()}">{item1.Prefix}{item1.Postfix}信息</option>
+        <%/if%>
+    <%/loop%>
+    </select> 
+    <input type="submit" name="submit_search" value="查询" class ="button"/>
+    </div>
+    </div> 
+     <table class="ly_tab2 ly_w1">
+        <thead>
+            <tr>
+	                  <td>选择</td>	
+	                   <td>图片</td>      
+		              <td>标题</td>
+		              <td>发布日期</td>
+		              <td>当前状态</td>
+		              <td>浏览次数</td>
+		              <td>留言</td>
+		              <td>修改</td>
+            </tr>
+        </thead>
+    <tbody>
+    <%loop (DataRow)  SD infolist%>
+       <tr> 
+      <td ><input id="sd_id" name="sd_id" type="checkbox" value="{SD[SD_ID]}" /></td>
+        <td >
+                <%set infoimg = GetInfoImgHref(SD["SD_ID"].ToString())%>
+            
+            <%if infoimg==""%>
+                <img src="/common/images/DefaultImg.gif" alt="{SD[SD_Title]}" width="60" height="60" />
+            <%else%>
+                <img src="{infoimg}" alt="{SD[SD_Title]}" width="60" height="60" />
+            <%/if%> 
+        </td>
+        <td >
+            <%set infourl = GetInfoUrl(module.EName,SD["SD_Flag"].ToString(),SD["SD_ID"].ToString())%>
+        
+            <a href="{infourl}" target ="_blank"><%left(SD[SD_Title],20)%></a>
+        </td>
+        <td class="wbg_setTime">{SD[SD_PublishDate]}</td>
+        <td style="text-align:center;"><%if {SD[SD_IsSupply]}=="True"%>
+                        <span style="color:#336600;">正常</span>
+                    <%else%>
+                        <span style="color:#f60;;">暂停</span>
+                    <%/if%>
+        </td>
+        <td class="wbg_clicknum">{SD[SD_ClickNum]}</td>
+        <td class="orange"><a href="{config.WebURL}user/receivemessagelist.{config.Suffix}?type=venture&InfoID={SD[SD_ID]}"><em class="wbg_messageNum">{SD[SD_MessageNum]}</em></a> 条&nbsp;</td>
+       <td><input type ="button" class ="button"  value ="修改" onclick ="location.href='{config.WebURL}user/adv_post.{config.Suffix}?ename={pageinfo.ModuleFlag}&flag={SD[SD_Flag]}&info_ID={SD[SD_ID]}';"></td>
+      </tr>
+    <%/loop%>
+    </tbody>
+    </table>
+    <table class="content_action">
+    <tr >
+    <td>
+    <input id="chkAll" name="chkAll" type="checkbox" value="" onclick="CheckedAll();"/>全选
+    <input name="Supply"  type="submit" class="button" value="启用"  onclick ="return resh(3);"/>
+    <input name="Supply"  type="submit" class="button" value="暂停" onclick ="return resh(2);" />
+    <input name="refurbish"  class="button" type="submit" value="刷新" onclick="return resh(1);"/>
+    <input name="Supply"  class="button" type="submit" value="删除"  onclick="return bntDelete()"/>&nbsp;
+    </td>
+    </tr>
+    </table>
+
+    <div class="page">当前是第 <span>{pageinfo.PageIndex}</span> 页 &nbsp;（共 <span>{pageinfo.PageCount}</span> 页）&nbsp;{pageinfo.FirstPage}&nbsp;{pageinfo.PreviousPage}&nbsp;{pageinfo.NextPage}&nbsp;{pageinfo.LastPage}</div>
+    <input type="hidden" id="isSetPause" name="isSetPause" value=""/>
+    <input type="hidden" id="isDelete" name="isDelete" value="" />
+
+
+    </form>
+</div>
+
+
+<%Include _footer%>

@@ -1,0 +1,154 @@
+﻿<%Include _head%>
+
+<div class="location fia"><a href="index.{config.Suffix}">个人中心</a> &gt;  留言收藏 &gt;  收藏的商业信息</div>
+
+<%Include _menu%>
+
+<!--左边导航  end-->
+
+<div id="right">
+    <form method ="post">
+        <h2><span></span>我收藏的所以商业信息列表</h2>
+        <div class="ly_100">
+        <div class="ly_tit3">
+        <ul>
+        <li class="out"><a   href ="{config.WebURL}user/favoritelist.{config.Suffix}">所有信息</a></li>
+        <li class="on"><a   href ="{config.WebURL}user/favoriteallbusinesslist.{config.Suffix}">商业信息</a></li>
+        <li class="out"><a   href ="{config.WebURL}user/favoriteotherlist.{config.Suffix}">其它信息</a></li>
+        </ul>
+        </div>
+
+
+        <table class="ly_tab2 ly_w1">
+
+        <thead><tr><td></td><td>信息标题</td><td>联系人和公司名称</td></tr></thead>
+        <%loop (DataRow)  SDD infolist%>
+        <tr>
+        <td><input id="sd_id" name="sd_id" type="checkbox" value="{SDD[Fa_ID]}" /></td>
+        <td> 
+        <%if {SDD[HTMLPage]}==""%>
+        <%if {SDD[flag]}=="1"%>
+        <%if config.BogusStatic==true%>
+        <a href="{config.WebURL}search/sell-offer-{SDD[DescTabID]}.{config.Suffix}" target ="_blank">供应<%left(SDD[title],20)%></a>
+        <%else%>  
+        <a href="{config.WebURL}search/sell.{config.Suffix}?flag=offer&infoid={SDD[DescTabID]}" title ="{SDD[title]}" target ="_blank">供应<%left(SDD[title],20)%></a>
+        <%/if%>      
+        <%/if%>  
+        <%if {SDD[flag]}=="2"%>
+        <%if config.BogusStatic==true%>
+        <a href="{config.WebURL}search/buy-offer-{SDD[DescTabID]}.{config.Suffix}" target ="_blank">求购<%left(SDD[title],20)%></a>
+        <%else%>  
+        <a href="{config.WebURL}search/buy.{config.Suffix}?flag=offer&infoid={SDD[DescTabID]}" title ="{SDD[title]}" target ="_blank">求购<%left(SDD[title],20)%></a>
+        <%/if%>      
+        <%/if%>  
+        <%if {SDD[flag]}=="3"%>
+        <%if config.BogusStatic==true%>
+        <a href="{config.WebURL}search/buy-offer-{SDD[DescTabID]}.{config.Suffix}" target ="_blank">紧急求购<%left(SDD[title],20)%></a>
+        <%else%>  
+        <a href="{config.WebURL}search/buy.{config.Suffix}?flag=offer&infoid={SDD[DescTabID]}" title ="{SDD[title]}" target ="_blank">紧急求购<%left(SDD[title],40)%></a>
+        <%/if%>      
+        <%/if%>   
+
+
+        <%if {SDD[flag]}=="4"%>
+        <%if config.BogusStatic==true%>
+        <a href="{config.WebURL}search/sell-venture-{SDD[DescTabID]}.{config.Suffix}" target ="_blank">提供<%left(SDD[title],20)%>加工</a>
+        <%else%>  
+        <a href="{config.WebURL}search/sell.{config.Suffix}?flag=venture&infoid={SDD[DescTabID]}" title ="{SDD[title]}" target ="_blank">提供<%left(SDD[title],20)%>加工</a>
+        <%/if%>
+        <%/if%>
+
+        <%if {SDD[flag]}=="5"%>
+        <%if config.BogusStatic==true%>
+        <a href="{config.WebURL}search/buy-offer-{SDD[DescTabID]}.{config.Suffix}" target ="_blank">寻求<%left(SDD[title],20)%>加工</a>
+        <%else%>  
+        <a href="{config.WebURL}search/buy.{config.Suffix}?flag=venture&infoid={SDD[DescTabID]}" title ="{SDD[title]}" target ="_blank">寻求<%left(SDD[title],20)%>加工</a>
+        <%/if%>
+        <%/if%>
+
+        <%if {SDD[flag]}=="6"%>
+        <%if config.BogusStatic==true%>
+        <a href="{config.WebURL}search/buy-venture-{SDD[DescTabID]}.{config.Suffix}" target ="_blank">紧急寻求<%left(SDD[title],20)%>加工</a>
+        <%else%>  
+        <a href="{config.WebURL}search/buy.{config.Suffix}?flag=venture&infoid={SDD[DescTabID]}" title ="{SDD[title]}" target ="_blank">紧急寻求<%left(SDD[title],20)%>加工</a>
+        <%/if%>
+        <%/if%>
+
+
+        <%if {SDD[flag]}=="7"%>
+        <%if config.BogusStatic==true%>
+        <a href="{config.WebURL}search/sell-investment-{SDD[DescTabID]}.{config.Suffix}" target ="_blank">诚招<%left(SDD[title],20)%>代理加盟</a>
+        <%else%>  
+        <a href="{config.WebURL}search/sell.{config.Suffix}?flag=investment&infoid={SDD[DescTabID]}" title ="{SDD[title]}" target ="_blank">诚招<%left(SDD[title],40)%>代理加盟</a>
+        <%/if%>
+        <%/if%>
+
+        <%if {SDD[flag]}=="8"%>
+        <%if config.BogusStatic==true%>
+        <a href="{config.WebURL}search/buy-investment-{SDD[DescTabID]}.{config.Suffix}" target ="_blank">愿做<%left(SDD[title],20)%>代理加盟</a>
+        <%else%>  
+        <a href="{config.WebURL}search/buy.{config.Suffix}?flag=investment&infoid={SDD[DescTabID]}" title ="{SDD[title]}" target ="_blank">愿做<%left(SDD[title],40)%>代理加盟</a>
+        <%/if%>
+        <%/if%>  
+
+
+        <%if {SDD[flag]}=="9"%>
+        <%if config.BogusStatic==true%>
+        <a href="{config.WebURL}search/sell-service-{SDD[DescTabID]}.{config.Suffix}" target ="_blank">提供<%left(SDD[title],20)%>服务</a>
+        <%else%>  
+        <a href="{config.WebURL}search/sell.{config.Suffix}?flag=service&infoid={SDD[DescTabID]}" title ="{SDD[title]}" target ="_blank">提供<%left(SDD[title],40)%>服务</a>
+        <%/if%>
+        <%/if%>
+
+        <%if {SDD[flag]}=="10"%>
+        <%if config.BogusStatic==true%>
+        <a href="{config.WebURL}search/buy-service-{SDD[DescTabID]}.{config.Suffix}" target ="_blank">紧急求购<%left(SDD[title],20)%></a>
+        <%else%>  
+        <a href="{config.WebURL}search/buy.{config.Suffix}?flag=service&infoid={SDD[DescTabID]}" title ="{SDD[title]}" target ="_blank">寻求 <%left(SDD[title],40)%>服务</a>
+        <%/if%>
+        <%/if%>
+        <%if {SDD[flag]}=="11"%>
+        <%if config.BogusStatic==true%>
+        <a href="{config.WebURL}search/buy-service-{SDD[DescTabID]}.{config.Suffix}" target ="_blank">紧急求购<%left(SDD[title],20)%></a>
+        <%else%>  
+        <a href="{config.WebURL}search/buy.{config.Suffix}?flag=service&infoid={SDD[DescTabID]}" title ="{SDD[title]}" target ="_blank">紧急寻求<%left(SDD[title],40)%>服务</a>
+        <%/if%>       
+        <%/if%>     
+        <%else%>
+        <a href="{SDD[HTMLPage]}" title ="{SDD[title]}" target ="_blank"><%left(SDD[title],40)%></a>
+        <%/if%><br/>{SDD[AddTime]}
+        </td>
+        <td><%if config.IsDomain==true%>
+        <a href="http://{SDD[U_Name]}{pageinfo.DomainHost}/" target ="_blank">
+        <%else%>
+        <a href="{config.WebURL}shop/{SDD[U_Name]}/index.{config.Suffix}" target ="_blank">
+        <%/if%>
+        {SDD[UI_LinkMan]}</a><br />
+        <%if config.IsDomain==true%>
+        <a href="http://{SDD[U_Name]}{pageinfo.DomainHost}/" target ="_blank">
+        <%else%>
+        <a href="{config.WebURL}shop/{SDD[U_Name]}/index.{config.Suffix}" target ="_blank">
+        <%/if%>{SDD[UI_Name]}</a></td>
+        </tr>
+        <%/loop%>
+        </table>
+        <table class="content_action">
+        <tr >
+        <td>
+        <input id="chkAll" name="chkAll" type="checkbox" value="" onclick="CheckedAll();"/>全选
+        <input name="buy"  class="button" type="submit" value="删除" id="buy" onclick=" return bntDelete();"/>
+        </td>
+        </tr>
+        </table>
+        <div class="page">
+        当前是第 <span>{pageinfo.PageIndex}</span> 页 &nbsp;（共 <span>{pageinfo.PageCount}</span> 页） &nbsp;{pageinfo.FirstPage} &nbsp;{pageinfo.PreviousPage} &nbsp;{pageinfo.NextPage} &nbsp;{pageinfo.LastPage}
+        </div>
+
+
+
+        </div>
+    </form> 
+</div>
+
+<%Include _footer%>
+

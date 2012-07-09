@@ -1,0 +1,192 @@
+<%if pageinfo.PageError==1%>
+<%Include _msgbox%>
+<%end%>
+<%/if%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>快速录入商业信息</title>
+    <link href="/common/css/XYLib.css" type="text/css" rel="Stylesheet" />
+    <link href="/templates/{config.TemplatePath}/css/global.css" type="text/css" rel="Stylesheet" />
+    <link href="/templates/{config.TemplatePath}/css/post.css" type="text/css" rel="Stylesheet" />
+    <script language="javascript" type="text/javascript" src="/common/js/base.js"></script>
+    <script language="javascript" type="text/javascript" src="/common/js/UploadControl.js"></script>
+    <script language="javascript" type="text/javascript" src="/templates/{config.TemplatePath}/js/post.js"></script>
+    <script language="javascript" type="text/javascript" src="/templates/{config.TemplatePath}/js/login.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("btnStep1").onclick = function () {
+                var msg = document.getElementById("codeflag").value;
+                if (CheckValuebuy()) {
+                    if (msg == 'error') {
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+                document.forms[0].submit();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="head">
+        <div class="logo">
+            <a href="/">
+                <img src="{config.weblogo}" alt="返回首页" border="0" /></a></div>
+        <div class="nav">
+            <a href="/">网站首页</a>|{pageinfo.LoginStatus}</div>
+    </div>
+    <form action="quickbuy.{config.suffix}" method="post" id="frmQuickPostInfo">
+    <div class="guest_post">
+        <!--游客联系信息-->
+        <table class="tab_step2">
+        </table>
+        <!--信息提示区-->
+        <div id="step_msg" class="step_msg">
+        </div>
+        <!--游客录入信息区域-->
+        <table class="tab_step2" id="tab_guest_info">
+            <tr>
+                <th>
+                    求购状态：<em>*</em>
+                </th>
+                <td>
+                    <input type="radio" name="jinji" id="jinji0" value="0" checked="checked">普通求购&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <input type="radio" name="jinji" id="jinji1" value="1">紧急求购
+                    <br />
+                    <em>你要求购的产品标题，很重要，请正确填写。</em>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    标题：<em>*</em>
+                </th>
+                <td>
+                    <input type="text" name="title" id="title" maxlength="45" size="20" style="width: 250px;" /><br />
+                    <em>你要求购的产品标题，很重要，请正确填写。</em>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    关键字：<em>*</em>
+                </th>
+                <td>
+                    <input type="text" name="keyword" id="keyword" maxlength="25" size="20" style="width: 250px;" /><br />
+                    <em>尽量简短，正确描述，有利于商家搜索到你，如：压力变送器</em>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    数量：<em>*</em>
+                </th>
+                <td>
+                    <input type="text" name="num" id="num" maxlength="25" size="20" onblur="IsNum(this)"
+                        style="width: 250px;" /><br />
+                    <em>求购数量</em>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    所在地区*</th>
+                <td>
+                      <div id="classType">
+                            </div>
+                            <input type="hidden" id="citytypeid" name="citytypeid" />
+                            <input type="hidden" id="provinceid" name="provinceid" />
+                            <input type="hidden" id="areatypeid" name="areatypeid"  />
+                            <script type="text/javascript">
+                                var cla = new ClassType("cla", 'area', 'classType', 'areatypeid');
+                                cla.Mode = "select";
+                                cla.Init();
+                            </script>
+                   </td>
+            </tr>
+            <tr>
+                <th>
+                    产品要求：<em>*</em>
+                </th>
+                <td>
+                    <script language="javascript" type="text/javascript" src="{config.WebURL}common/fckeditor/fckeditor.js"></script>
+                    <script language="javascript" type="text/javascript">
+                        var oFCKeditor = new FCKeditor('xyecom');
+                        oFCKeditor.BasePath = '/Common/fckeditor/';
+                        oFCKeditor.ToolbarSet = 'Basic';
+                        oFCKeditor.Width = "100%";
+                        oFCKeditor.Height = "400";
+                        oFCKeditor.Value = '';
+                        oFCKeditor.Create();
+                    </script>
+                    <br />
+                    <em>必填，描述清楚</em>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    联系人：<em>*</em>
+                </th>
+                <td>
+                    <input type="text" name="linkman" id="linkman" maxlength="20" size="10" style="width: 250px;" />
+                    <br />
+                    <em>必填，让客户联系到你</em>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    电话：<em>*</em>
+                </th>
+                <td>
+                    <input type="text" name="tel" id="tel" maxlength="100" size="50" style="width: 250px;" /><br />
+                    <em>多个号码之间用,号隔开;格式：010-88888888</em>
+                </td>
+            </tr>
+        </table>
+
+        <table class="tab_step2">
+            <tr>
+                <th>
+                    验证码：<em>*</em>
+                </th>
+                <td>
+                    <input id="vcode" type="text" name="vcode" style="width: 50px" />
+                    <img src="/Common/ValidateCode.ashx" alt="看不清点我" id="imgCode" onclick="this.src='/Common/ValidateCode.ashx?='+Math.random();"
+                        style="cursor: pointer; vertical-align: middle;" />
+                    <br />
+                    <em id="codeerror"></em>
+                </td>
+            </tr>
+        </table>
+        <script type="text/javascript">
+
+            var validateFun = function () {
+                var val = document.getElementById("vcode").value;
+                if (val.length < 1) {
+                    document.getElementById("codeflag").value = "error";
+                    document.getElementById("codeerror").innerHTML = "请输入验证码！";
+                    return false;
+                } else {
+                    document.getElementById("codeerror").innerHTML = "";
+                }
+                var ajax = new Ajax("xy200", "&vcode=" + val);
+                ajax.onSuccess = function () {
+                    if (ajax.state.result == 0 && ajax.data.content == "err") {
+                        document.getElementById("codeflag").value = "error";
+                        document.getElementById("codeerror").innerHTML = "请输入正确验证码！";
+                    } else if (ajax.state.result == 1) {
+                        document.getElementById("codeflag").value = "";
+                        document.getElementById("codeerror").innerHTML = "";
+                    }
+                }
+            }
+            document.getElementById("vcode").onmouseout = validateFun;
+        </script>
+ 
+        <input type="hidden" id="codeflag" />
+        <div class="step_next">
+            <input type="button" value="写好了提交" id="btnStep1" />          
+        </div>
+    </div>
+    </form>
+    Copyright &copy; 2008 {XY_Copyright}.All right reserved.
+</body>
+</html>

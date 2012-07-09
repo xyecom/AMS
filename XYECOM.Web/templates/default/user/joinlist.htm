@@ -1,0 +1,87 @@
+
+<%Include _head%>
+ <div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;  在线加盟</div>
+<%Include _menu%>
+
+
+ <div id="right">
+<form method="post" id="news">
+<h2>
+<span><a href="?nosee=0"><img src="{config.WebURL}templates/{config.TemplatePath}/user/images/ly_img3.gif" />未读</a> | <a href="?nosee=1"><img src="{config.WebURL}templates/{config.TemplatePath}/user/images/ly_img2.gif" />已读</a></span>
+在线加盟
+</h2>
+<div class="ly_100">
+<div class="ly_tit3">
+ 
+ <ul>
+ <li class="on"><a  href ="?">所有留言</a></li>
+ </ul>
+</div>
+<div class="ly_tit32">
+<select name="HasReply" id="HasReply">
+  <option value="0">未读</option>
+  <option value="1">已读</option>
+</select>
+<select name="datemes" id="datemes" >
+  <option value="1">一个月内的信息</option>
+<option value="2">二个月内的信息</option>
+<option value="3">三个月内的信息</option>
+</select>
+<input type="submit" class ="button" name="msg" value="查询"/>
+</div>
+</div>
+<table class="ly_tab2 ly_w1" id="joinlist">
+<thead><tr><td></td><td></td><td>标题</td><td><%if "receive"==type%>发信人<%else%>收信人<%/if%></td></tr></thead>
+<tbody>
+<%loop (DataRow)  s infolist%>
+ <tr>
+  <td><input name="ckid" type="checkbox" value="{s[ID]}"  name ="sd_id"/></td>
+  <td valign="top">
+  <%if "receive"==type%>
+  <%if {s[HasReply]}=="False"%>
+  <img src="{config.WebURL}templates/{config.TemplatePath}/user/images/ly_img3.gif" />
+  <%else%>
+   <img src="{config.WebURL}templates/{config.TemplatePath}/user/images/ly_img2.gif" />
+   <%/if%>
+   <%else%>
+  <%if {s[HasReply]}=="False"%>
+  <span>对方未读</span>
+  <%else%>
+   <span>
+    对方已读
+    </span>
+   <%/if%>
+   <%/if%>
+  </td>
+  <td>
+    <a href="{config.WebURL}user/joinshow.{config.Suffix}?id={s[ID]}">{s[Title]}</a><br />{s[AddTime]}
+</td>
+<td>
+    <%if "receive"==type%>
+    {s[UI_LinkMan]}
+    <%else%>
+    {s[InfoLinkMan]}
+    <%/if%>
+   </td>
+ </tr>
+ <%/loop%>
+ </tbody> 
+</table>
+
+<table class="content_action">
+<tr>
+    <td>
+        <input id="chkAll" name="chkAll" type="checkbox" value="" onclick="SelectAll('joinlist',this);"/>全选 <input name="message"  class="button" type="submit" value="删除"  onclick="return Delete('joinlist')"/>
+    </td>
+</tr>
+</table>
+
+<div class="page">
+当前是第 <span>{pageinfo.PageIndex}</span> 页 &nbsp;（共 <span>{pageinfo.PageCount}</span> 页） &nbsp;{pageinfo.FirstPage} &nbsp;{pageinfo.PreviousPage} &nbsp;{pageinfo.NextPage} &nbsp;{pageinfo.LastPage}
+ </div>
+
+<input type="hidden" id="isDelete" name="isDelete" value="" />
+</form>
+</div> 
+
+<%Include _footer%>

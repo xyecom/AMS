@@ -1,0 +1,36 @@
+﻿<%Include _head%>
+<div id="ubox">
+    <!--左边导航-->
+    <div id="uleftnav">
+        <%Include _left%>
+    </div>
+    <!--左边导航  end-->
+    <!--右边主要内容-->
+    <div id="uright">
+        <!--站点导航-->
+        <div style="display: none;">
+            <em id="clicknum1" style="display: none"></em><em id="clicknum" style="display: none">
+            </em><em id="linkmessage" style="display: none"></em><em id="msy" style="display: none">
+            </em><em id="messnum" style="display: none"></em>
+        </div>
+        <div class="rcon">
+            <div id="rtxt">
+                <%loop (DataRow) info infolist%>
+                <div class="rtxtq">
+                    <%set str = GetUrl(info["InfoId"],info["HtmlPage"])%>
+                    <ul>
+                        <li class="bg"><span class="font14s"><a href="{str}">【<%if info["InfoFlag"].ToString()=="1"%>融资<%else%>投资<%/if%>】{info[infoTitle]}</a></span>
+                            ( 发布时间：{info[addtime]} )</li>
+                        <li class="border">
+                            <%left(info[details],300)%></li>
+                    </ul>
+                </div>
+                <%/loop%>
+            </div>
+            <div class="pg">
+                当前是第 <span class="colorf00s">{pageinfo.PageIndex}</span> 页(共 {pageinfo.PageCount}
+                页){pageinfo.FirstPage}&nbsp;{pageinfo.PreviousPage}&nbsp;{pageinfo.NextPage}&nbsp;{pageinfo.LastPage}</div>
+        </div>
+    </div>
+</div>
+<%Include _footer%>

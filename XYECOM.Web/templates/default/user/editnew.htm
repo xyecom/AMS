@@ -1,0 +1,127 @@
+﻿<%Include _head%>
+<div class="location fia">
+    <a href="index.{config.Suffix}">商务中心</a> &gt; <a href="#">基本设置</a> &gt; 公司动态修改</div>
+<%Include _menu%>
+<div id="right">
+    <form method="post">
+    <table class="contentl">
+        <caption>
+            修改资讯<span>（*为必填项）</span></caption>
+        <tr>
+            <th>
+                标题：<em class="red">*</em>
+            </th>
+            <td>
+                <input name="title" type="text" value="{newsinfo.Title}" id="title" maxlength="90"
+                    size="60" />
+            </td>
+        </tr>
+         <tr>
+        <th>副标题：<em class="red">*</em></th>
+        <td><input  name="othertitle"  type="text" id="othertitle" maxlength="100" size="50"  value="{newsinfo.SubTitle}"/></td>
+    </tr>
+        <tr>
+            <th>
+                选择栏目：<em class="red">*</em>
+            </th>
+            <td>
+                <div id="customerType">
+                </div>
+                <input id="selectId" name="selectId" type="hidden" value="{newsinfo.UserTitleInfoId}"/>
+                <input id="flag" type="hidden" value="usertitleinfo" />
+                <script type="text/javascript">
+                    var cla = new ClassType("cla", 'flag', 'customerType', 'selectId', 999, 'xy001', 'uid:{userinfo.userid}');
+                    cla.Mode = "select";
+                    cla.Init();
+                </script>
+            </td>
+        </tr>
+        <tr>
+        <th>关键字：<em class="red">*</em></th>
+        <td><input name="newskeyword" type="text" id="newskeyword" maxlength="100" size="50" value="{newsinfo.Keyword}" />多个请以“，”隔开
+        </td>
+    </tr>
+    <tr>
+        <th>资讯作者：<em class="red">*</em></th>
+        <td><input name="txtauthor" type="text" id="txtauthor" maxlength="100" size="20" value="{newsinfo.Author}"/></td>
+    </tr>
+    <tr>
+        <th>资讯来源：<em class="red">*</em></th>
+        <td><input  name="txtOrigin"  type ="text" id="txtOrigin" maxlength="100" size="20" value="{newsinfo.Origin}"/></td>
+    </tr>
+    <tr>
+        <th>资讯导读：<em class="red">*</em></th>
+        <td><input  type="text" maxlength="90" size="90" name="txtLess" id="txtLess" value="{newsinfo.Leadin}" /></td>
+    </tr>
+        <tr>
+            <th>
+                内容：<em class="red">*</em>
+            </th>
+            <td>
+                <!--Editer Start-->
+                <textarea id="_content_body" style="display: none;" cols="0" rows="0">{newsinfo.Content}</textarea>
+                <script language="javascript" type="text/javascript" src="{config.WebURL}common/fckeditor/fckeditor.js"></script>
+                <script language="javascript" type="text/javascript">
+                    var oFCKeditor = new FCKeditor('xyecom');
+                    oFCKeditor.BasePath = '/Common/fckeditor/';
+                    oFCKeditor.ToolbarSet = 'Basic';
+                    oFCKeditor.Width = '100%';
+                    oFCKeditor.Height = '400';
+                    oFCKeditor.Value = document.getElementById("_content_body").value;
+                    oFCKeditor.Create();
+                </script>
+                <!--Editer End-->
+            </td>
+        </tr>
+    </table>
+    <!--<div id="divIsContributor" style="display:none;">
+<table class="contentl">
+    <tr>
+        <th>副标题：<em class="red">*</em></th>
+        <td><input  name="othertitle"  type="text" id="othertitle" maxlength="100" size="50"  value="{newsinfo.SubTitle}"/></td>
+    </tr>
+    <tr>
+        <th>选择栏目：<em class="red">*</em></th>
+         <td>
+            <input id="Hidden1"  name="Hidden1" type="hidden" />
+            <input id="hidTypeId"  name="hidTypeId" type="hidden"  value="{newsinfo.TypeIds}"/>
+            <input type="hidden" id="hidMoueleName" />
+            <div id="classType"></div>
+            <script type="text/javascript">
+            //var cla = new ClassType("cla",'news','classType','hidTypeId');
+            cla.CustomEvent = GetFieldInnerHTML;
+            cla.Init();
+            </script>
+         </td>
+    </tr>
+    <tr>
+        <th>关键字：<em class="red">*</em></th>
+        <td><input name="newskeyword" type="text" id="newskeyword" maxlength="100" size="50" value="{newsinfo.Keyword}" /></td>
+    </tr>
+    <tr>
+        <th>新闻作者：<em class="red">*</em></th>
+        <td><input name="author" type="text" id="author" maxlength="100" size="50" value="{userinfo.unitname}" readonly="readonly"/></td>
+    </tr>
+    <tr>
+        <th>新闻来源：<em class="red">*</em></th>
+        <td><input  name="laiyuan"  type ="text" id="laiyuan" maxlength="100" size="50" value="{userinfo.unitname}" readonly="readonly"/></td>
+    </tr>
+    <tr>
+        <th>新闻导读：<em class="red">*</em></th>
+        <td><input  type="text" maxlength="90" size="90" name="daodu" id="daodu" value="{newsinfo.Leadin}" /></td>
+    </tr>
+    <tr>
+        <th>是否容许评论：</th>
+        <td><input  type="checkbox" id="ispinglun" name="ispinglun" onclick="Ispinglun();" value="1"/></td>
+    </tr>
+</table>
+</div>-->
+    <div class="content_action">
+        <input type="checkbox" id="IsContributor" name="IsContributor" value="0" style="display: none;" />
+        <input name="" type="submit" value="修改" onclick="return  getnews();" class="button" />
+        <input name="but02" type="button" value="取消" onclick="window.location.href='{config.WebURL}user/newlist.{config.Suffix}';"
+            class="button" />
+    </div>
+    </form>
+</div>
+<%Include _footer%>

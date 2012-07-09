@@ -1,0 +1,27 @@
+﻿
+<%Include _head%>
+<div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;  <a href="{config.WebURL}user/searchkeyword.{config.Suffix}">交易管理</a> &gt;  给{bargaining}留言</div>
+<%Include _menu%>
+
+<div id="right">
+  <form method ="post">
+   <table  class="contentl">
+  <caption>给{bargaining}留言<span>(*为必填项)</span></caption>
+  <tr>
+  <th >留言标题：<em class="red">*</em></th>
+  <td >
+      <input id="messtitle" style="width: 380px" type="text" name ="messtitle"  maxlength ="400" value="{msgTitle}" readonly="readonly" /></td>
+  </tr>
+  <tr>
+    <th>留言内容：<em class="red">*</em></th>
+    <td>
+        <textarea id="admincontent" cols="65" rows="15" name="admincontent"></textarea></td>
+  </tr>
+   </table>
+<div class="content_action"><input name="" type ="submit" value=" 确定" onclick ="return getpostadministrator();" class ="button" />
+<input name="but02" type="button" value="取消" onclick ="window.location.href='/user/index.aspx';"  class ="button"/>
+</div>
+</form>
+</div>
+
+<%Include _footer%>

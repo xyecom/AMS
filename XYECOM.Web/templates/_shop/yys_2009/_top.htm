@@ -1,0 +1,15 @@
+    <div class="glass">
+        <ul>
+<%set str=GetLinkPrefix()%>
+        <li class="glass_left">
+            <a href="{config.weburl}" target=_blank>{config.webname} </a>| 
+            <a onclick="javascript:this.style.behavior='url(#default#homepage)';this.setHomePage('{str}');"   href="#" target="_self">设为首页</a> |
+            <a href="javascript:window.external.addFavorite('{str}','{config.webname}')">添加到收藏夹</a> 
+        </li>
+        <li class="glass_right">
+            {pageinfo.LoginStatus} | 
+            <a href="{config.weburl}user">发布信息</a> | 
+            <a href="http://www.yylm.org/contents/859/11418.html" target="_blank">联系我们</a>
+        </li>
+        </ul>
+    </div>

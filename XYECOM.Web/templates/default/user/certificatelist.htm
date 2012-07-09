@@ -1,0 +1,87 @@
+﻿
+
+<%Include _head%>
+
+<div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt; 证书列表</div>
+
+<%Include _menu%>
+
+  <div id="right">
+    
+     <form   method="post">
+     
+  <table  class="content" width="100%">
+   <div class="ly_tit3"> 
+        <ul>
+            <li class="on"><a href ="#">企业证书</a> </li>
+        </ul>
+    </div>
+    <div class="ly_tit32">
+        证书类别：<select id="txttype" name="txttype">
+                <option value="">请选择证书类别</option> 
+                <option value="1">营业执照</option>
+                <option value="2">税务登记类</option>
+                <option value="3">经营许可类</option>
+                <option value="4">其它类</option>
+                </select>
+        <input name="inquire" id="inquire" class="button" type="submit" value="查看"  />
+    </div>
+
+  <thead>
+	  <tr>
+        <th style="height: 20px">选择</th>
+        <th style="height: 20px">证书名称</th>
+        <th style="height: 20px" >所属类别</th>
+        <th style="height: 20px" >生效日期</th>
+        <th style="height: 20px" >截至日期</th>
+        <th style="height: 20px">状态</th>
+        <th style="height: 20px">操作</th>
+	  </tr>
+  </thead>
+  <tbody>
+  <%loop (DataRow) sd infolist%>
+  <tr>  
+    <td ><input id="sd_id" name="sd_id" type="checkbox" value="{sd[CE_ID]}" /></td> 
+    <td>{sd[CE_Name]}</td> 
+    <td>
+        <%if {sd[CE_Type]}=="1"%>营业执照<%/if%>
+        <%if {sd[CE_Type]}=="2"%>税务登记类<%/if%> 
+        <%if {sd[CE_Type]}=="3"%>经营许可类<%/if%> 
+        <%if {sd[CE_Type]}=="4"%>其它类<%/if%>    
+    </td>    
+    <td> <%formatdatetime(sd[CE_Begin],yyyy-MM-dd)%></td>
+    <td ><%formatdatetime(sd[CE_Upto],yyyy-MM-dd)%></td>
+    <td class="orange">
+        <%if {sd[AuditingState]}=="True"%>已审核 / <%/if%>
+        <%if {sd[AuditingState]}=="False"%>未通过审核  / <%/if%>
+        <%if {sd[AuditingState]}==""%>审核中... / <%/if%>
+        <%if {sd[CE_Isopen]}=="True"%>启用<%/if%>
+        <%if {sd[CE_Isopen]}=="False"%>隐藏<%/if%>
+    </td>
+    <td >
+     <a href="{config.WebURL}user/certificateinfo.{config.Suffix}?ce_id={sd[CE_ID]}" title="请点击">修改</a>/
+     <a href="{config.WebURL}user/certificateinfo.{config.Suffix}?ce_id={sd[CE_ID]}" title="请点击">查看</a>      
+    </td>
+   
+    </tr> 
+     
+  <%/loop%>
+  </tbody>
+</table>
+<table class="content_action">
+<tr >
+<td>
+<input id="chkAll" name="chkAll" type="checkbox" value="" onclick="CheckedAll();"/>全选
+<input name="Deletes" id="Deletes" class="button" type="submit" value="删除"  onclick="return bntDelete()"/>
+<input name ="business"id="notopen" type="submit" class="button" value="隐藏" onclick="return bntisopen(this);" />
+<input name="business" id="open" type="submit" class="button" value="启用" onclick="return bntisopen(this);"/>
+<input id="isDelete" name="isDelete" type="hidden" /><input type="hidden" id="isSetPause" name="isSetPause" value=""/>
+<input name="barnd"  class="button" type="button" value="新增" onclick="window.location.href='{config.WebURL}user/certificateadd.{config.Suffix}'"/>
+</td>
+</tr>
+</table>
+<div class="page">当前是第 <span>{pageinfo.PageIndex}</span> 页 &nbsp;（共 <span>{pageinfo.PageCount}</span> 页）&nbsp;{pageinfo.FirstPage}&nbsp;{pageinfo.PreviousPage}&nbsp;{pageinfo.NextPage}&nbsp;{pageinfo.LastPage}</div>
+</form>
+</div>
+
+<%Include _footer%>

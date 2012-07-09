@@ -1,0 +1,47 @@
+/*顶部样式*/
+body{ margin:0 auto; text-align:center;}
+
+.head{ width:700px; text-align:left; overflow:hidden; margin:0 auto;margin-top:10px;}
+.head .logo{ float:left; vertical-align:top; font-size:14px;}
+.head .nav{ float:right; vertical-align:top;}
+.head .nav a{font-size:14px; padding-left:4px; padding-right:4px;}
+
+.guest_post{ width:700px;margin:0 auto;margin-top:20px;}
+
+/*第二步表格样式*/
+.guest_post .tab_step2{ text-align:center; width:700px;border-collapse:collapse; 
+ border-spacing:0; 
+}
+
+.guest_post .tab_step2 th{font-size:14px; font-weight:normal; vertical-align:top; width:120px; text-align:right; background-color:#ffffff;padding:5px; border-bottom:1px solid #f2f2f2;}
+.guest_post .tab_step2 th em{ color:#ff6600;}
+.guest_post .tab_step2 td{ text-align:left; padding:5px;border-bottom:1px solid #f2f2f2;}
+.guest_post .tab_step2 td em{ padding-left:4px; color:#666666;}
+
+.guest_post .tab_step2 td input[type="text"],input[type="password"]
+{ border:1px solid #ccc;background-color:#fff;padding-left:5px; padding:3px; }
+.guest_post .tab_step2 td textarea
+{ border:1px solid #ccc;background-color:#fff;padding-left:5px; padding:3px; }
+.guest_post .step_link{ margin-top:15px;width:700px;  text-align:left; font-family:黑体; font-weight:lighter; font-size:15px; margin-bottom:20px; color:#3791d4; border-bottom:1px solid #3791d4; padding-bottom:10px;}
+
+/*消息提示*/
+.guest_post .step_msg{ width:700px;color:#ff0000; font-size:14px;}
+
+/*导航标题*/
+.guest_post .step_title{width:700px; text-align:left; font-family:黑体; font-weight:lighter; font-size:20px; margin-bottom:20px; color:#3791d4; border-bottom:2px solid #3791d4; padding-bottom:10px;}
+
+/*下一步*/
+.guest_post .step_next{width:700px;  margin-top:10px; padding-top:10px; padding-bottom:10px;border-top:1px solid #cccccc; background-color:#f8f8f8;}
+.guest_post .step_next input{ width:100px; font-size:14px;}
+
+/*选择信息类型*/
+.guest_post .step_select{ width:700px;}
+
+.guest_post .step_select p{ text-align:left; font-size:14px; font-weight:bold; padding-left:5px;}
+
+.guest_post .step_select li{border-bottom:1px solid #f2f2f2; text-align:left; font-size:14px; padding:5px;}
+
+.guest_post .step_select li span{ font-size:14px;}
+
+
+.guest_post .step_result .msg{ font-family:黑体; font-size:16px; font-weight:lighter; color:#F60;}

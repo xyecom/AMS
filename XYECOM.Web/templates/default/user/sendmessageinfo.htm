@@ -1,0 +1,33 @@
+﻿
+<%Include _head%>
+<div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;  <a href="{config.WebURL}user/sendmessagelist.aspx">留言收藏</a> &gt;  我发出的留言</div>
+<%Include _menu%>
+
+
+
+<div id="right">
+<form method ="post">
+<h2>我发出的留言</h2>
+<div id="ly_box1">
+  <div class="titles">&nbsp;</div>
+  <ul>
+    <li class="xline">
+	 <strong>主题：{title}</strong><br />
+	 时间：{messagetime}
+    </li>
+	<li>
+	  <strong>主要内容：</strong>
+	  <p>{content}</p>
+	</li>
+    </li>
+	
+  </ul>
+</div>
+</form>
+</div>
+
+<%Include _footer%>
+
+
+
+

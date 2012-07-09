@@ -1,0 +1,94 @@
+﻿body 
+{margin:0; overflow:auto;background:url(../images/nry_03.jpg) repeat-x;font-size:13px;font-family:Tahoma, Arial, Helvetica, Sans-serif;}
+table{border-collapse:collapse;/*细线表格*/}
+#top{ height:34px; width:1000px;margin:0 auto;}
+#top1{font-size:12px; line-height:34px;float:left; width:500px;}
+#top2{width:400px; float:right; text-align:right; margin-right:30px;font-size:12px; line-height:34px;}
+#top a{ color:#333; text-decoration:none}
+#top a:hover{color:#f00; text-decoration:underline}
+
+/*---------------------首页top--------------------------*/
+#header{width:1000px; height:108px;background:#fff; margin:0 auto }
+#header .logo{width:270px; float:left;height:67px; margin:0 auto;background:url('../images/logo.gif') no-repeat left bottom;}
+#header .loginmiddle{ width:199px; float:left; text-align:center}
+#header .loginmiddle h3{ margin-top:10px; color:#CC3300; margin-bottom: 7px;}
+#header .logoright{ width:202px; float:right; height:67px; text-align:right; padding-right:30px; line-height:40px;}
+/*---------------------菜单样式---------------------------------*/
+#menu{height:32px; font-size:14px; width:1000px;margin:0 auto; background-color:#D6000C; float:left}
+#menu ul{margin-left:10px; width:564px;height:32px;list-style-type:none; padding:0px; margin-top:0px; margin-bottom:0px;}
+.m_li{float:left; width:114px; line-height:32px;  text-align:center; margin-right:-2px; margin-left:-2px;}
+.m_li a{display:block; color:#FFFFFF; width:114px;}
+.m_line{float:left; width:1px; height:32px;line-height:32px;   /*ff下有效(图片垂直居中)*/}
+.m_line img{margin-top:8px;   /*ie下有效(图片垂直居中)*/}
+.m_li_a{float:left; width:114px; line-height:32px; text-align:center; padding-top:3px; font-weight:bold;background-image: url(../images/menu_bg.jpg); position:relative; height:32px; margin-top:-3px; margin-right:-2px; margin-left:-2px;}
+.m_li_a a{display:block; color:#FF0000; width:114px;}
+
+#middle{width:1000px; height:auto; overflow:hidden;margin:10px auto}
+
+/*------------------------------left----------------------------------*/
+#left{ width:160px; height:auto; overflow:hidden;float:left}
+#left1{width:158px; margin:5px auto;height:auto; background:#FBFBF9; border:1px solid #ddd}
+#left1 h3{ font-size:14px; margin:0}
+.rolinList{ width:158px; height:auto;text-align:left; margin:0; padding:0}
+.rolinList li{margin-bottom:1px;border:1px solid #DADADA; }
+.rolinList li h2{ width:158px; height:30px;  background:#fff; font-size:14px; line-height:30px;color:#333; cursor:pointer; text-align:center; margin:0}
+.leftul{ height:auto;width:158px; overflow:hidden;  background:#fff;  background:#FAFAFA;}
+.leftul p{ margin:8px}
+.leftul p a{ color:#111; text-decoration:none; font-size:13px;}
+.leftul p a:hover{ text-decoration:underline; color:#900}
+/*------------------------左菜单------------------------------------*/
+#vertmenu h1 {width:145px; height:30px;font-size:14px; line-height:30px;color:#000000;cursor:pointer; padding-left:10px;margin:0; background-image:url(../images/border_bg.jpg); border-top:1px solid #ddd}
+#vertmenu ul {list-style: none;margin: 0px;padding: 0px;border: none;}
+#vertmenu ul li {margin: 0px;padding: 0px;}
+#vertmenu ul li a {display: block;padding: 8px 0px 5px 4px;text-decoration: none; padding-left:10px;color: #666666;width:150px;}
+#vertmenu ul li a:hover, #vertmenu ul li a:focus {color: #000000;background-color: #eeeeee;}
+/*------------------------------right---------------------------------*/
+#right{ width:835px;margin-top:5px;float:right}
+#rightmsg{height:200px; border:1px solid #ddd; margin-bottom:5px; background:#FFF7DE}
+#msgimg{ width:140px; height:180px; float:left; text-align:center; padding-top:20px}
+#line{ width:1px; background:#ddd; height:170px; float:left; margin-top:10px;}
+#msgmain{width:680px; margin-top:10px; margin-left:10px; float:left}
+#msgmain strong{ font-size:16px; color:#c00; width:auto}
+#msgmain font{ color:#999; font-size:12px;}
+#msgmain p{ margin:6px 0;color:#666;}
+#msgtb{width:600px;color:#666}
+#msgtb2{ width:650px;}
+#msgtb2 td{color:#666; height:25px; line-height:25px; padding-left:20px;}
+#rightzqlist{height:auto; overflow:hidden; border:1px solid #ddd}
+#rightzqlist h2{font-size:17px;color:#C00; margin:10px 10px; width:810px;}
+.rhr{ background:#C00; height:2px;}
+#list { width:835px; height:auto; overflow:hidden;}
+
+#list table{ width:100%;border-top:1px solid #ddd; cellpadding:0; cellspacing:0} 
+#trtop{height:30px; background-image:url(../images/border_bg.jpg); font-size:13px;color:#333}
+#trmidd #tdtitle{text-align:left;border-bottom: solid 1px #ccc; border-right: solid 1px #ddd; padding-left:10px; }
+#trmidd #tdtitle a{color:#333; text-decoration:none}
+#trmidd #tdtitle a:hover{color:#C00; text-decoration:underline}
+#trmidd td{border-bottom: solid 1px #ddd; border-right: solid 1px #ddd; text-align:center}
+
+#rightzqmain{height:auto; overflow:hidden; border:1px solid #ddd; margin:5px auto}
+#rightzqmain h2{font-size:17px;color:#C00; margin:10px 10px; width:810px;}
+
+.divtext{height:auto; float:left; display:inline; margin:10px 30px; }
+.divtext p{ padding:10px 20px;}
+
+.tab{border:1px solid #ddd;color:#555;width:760px; margin-bottom:10px;}
+.tab td{padding:3px 5px;color:#555;border:1px solid #ddd;line-height:22px;}
+.info_lei3{width:130px;height:22px;padding:2px 5px;background-color:#f3f3f3;}
+.info_lei2{width:250px; }
+h4{ font-size:13px;margin:0;height:20px;}
+
+/*---------------------bottom----------------------------------*/
+#bottom{ width:1000px;margin:5px auto;height:auto;border:1px solid #D9D9D9; background:#F9F9F9; padding-bottom:5px;overflow:hidden}
+#bottom a{ text-decoration:none; color:#666; font-size:13px;}
+#bottom a:hover{ text-decoration:underline; color:#f00}
+#bottom ul{list-style:none; width:192px;float:left; margin:0; padding:0}
+#bottom ul li{ font-size:14px; line-height:23px; text-align:left; padding-left:60px;}
+/*---------------------footer----------------------------------*/
+#footer{ font-size:13px;width:1002px;height:150px;text-align:center; margin:2px auto}
+#footer a{ font-size:13px; text-decoration:none; color:#333; font-weight:bold}
+#footer img{ float:right;}
+#footer h2{ float:left; font-size:14px;color:#cc0000; font-weight:bold;}
+#footer table{ width:1002px; height:50px; border:1px solid #ddd}
+#footer table td{ width:160px;}
+#footer p{ margin:10px;color:#666; width:900px}

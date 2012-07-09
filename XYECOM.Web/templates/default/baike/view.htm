@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="html">
+<head>
+<%Include _head%>
+</head>
+<body onload="{pageinfo.OnLoadEvents}">
+<div id="wrap">
+ <%include _login_bar%>
+        <%Include _top%>
+		<%Include _search%>
+<div class="main">
+<div id="map" class="bor-gray-das"><a href="{config.WebURL}baike/index.{config.Suffix}">网站百科</a> &raquo;<a href="{config.WebURL}baike/list.{config.Suffix}">百科列表</a>
+	
+</div>
+<h1 class="bor-gray ct-title">
+<span class="l blue" ><span id='changename'>{info.LemmaName}</span>
+</span>
+<a href="#" class="r font14"></a>
+</h1>
+<div id="main" class="main mar-t8">
+	<div class="content_1 wordcut">
+    <img src="{info.FilePath}" alt="" />
+	<h3><span class="texts">英文：{info.EnName}</span><a href="{config.WebURL}baike/list.{config.Suffix}">回列表</a></h3>
+		
+			
+	<div class="content_topp">
+	<P>{info.Content}</P>
+	</div>
+	
+		</div>
+</div>
+<p class="main l mar-t8">&#8594;如果您认为本词条还有待完善，请 <a href="{config.WebURL}baike/lemmaedit.{config.Suffix}?lid={info.LemmaId}" class="font14">编辑词条</a></p>
+
+<p class="main l ct-label" ><span class="bold">扩展阅读:</span>
+<span name="nonetag">{info.ExtendRead}</span>
+</p>
+
+
+<div  class="main l mar-t8">
+  <input type="hidden" id="txtInfoId" name="txtInfoId" value="{info.LemmaId}" />
+        <input type="hidden" id="txtUserId" name="txtUserId" value="{UserId}" />
+	<span class="bold">收藏此词条: </span><input type="button" onclick="FavoriteLemma();" value="收藏" /> &nbsp;	
+</div>
+<div id="pop" style="padding-bottom:10px;background-color:#FFFFFF;border:1px solid #AAAAAA;color:#777777;font-size:14px;text-align:left;display:none;position:absolute">
+	<div id="poptitle" style="border-bottom:1px solid #DDDDDD; color:#333333; overflow:hidden; border-bottom:1px solid #DDDDDD; color:#FFFFFF; height:20px; overflow:hidden; padding-left:10px; padding-left:10px; background-color: #336699;">
+		词条管理
+	</div>
+	<div>
+		<div id="popmsg" align="center" style="clear: both;margin-top: 20px;"></div>
+	</div>
+</div>
+</div>
+<div id="right" class="viewdoc">
+
+
+<div id="ct-info" class="columns basic-info">
+
+	<ul class="col-ul a-c">
+		<li class="bor-gray-das">更新时间: {info.CreateTime}</li>
+	</ul>
+		<dl class="col-ul a-c">
+		<dd class="a-r"><label class="l">词条创建者：{info.Creator}</label></dd>
+	</dl>
+		</div>
+
+</div>
+
+<div class="clear"></div>
+<%Include _footer%>
+</div>
+</body>
+</html>

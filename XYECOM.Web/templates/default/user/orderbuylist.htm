@@ -1,0 +1,134 @@
+﻿
+<%Include _head%>
+
+ <div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;  <a href="{config.WebURL}user/orderbuylist.{config.Suffix}">交易管理</a> &gt;  买家 正在进行的交易</div>
+
+<%Include _menu%>
+
+
+  <div id="right">
+ <form   method="post">
+   <div class="ly_100">
+    <div class="ly_tit3">
+     <ul>
+     <li class="on"><a href ="{config.WebURL}user/orderbuylist.{config.Suffix}">正在进行的交易</a> </li>
+     <li class="out"><a href ="{config.WebURL}user/orderbuythrulist.{config.Suffix}">已完成的交易</a></li> 
+     </ul>
+    </div>
+    <div class="ly_tit32">
+			&nbsp;开始时间： 
+				<select name="txtTime">
+							<option value="0" selected="selected" 	>全部时间段</option>
+				<option value="3" 	>最近3天</option>
+				<option value="5" 	>最近5天</option>
+				<option value="15" 	>最近15天</option>
+				<option value="30" 	 >最近一个月</option>
+				<option value="60" 	>最近两个月</option>
+				<option value="90" 	>最近三个月</option>
+					</select> 
+                 &nbsp;交易状态：
+				<select name="txtType">
+				<option value="0" 	>所有交易</option>
+				<option value="1" 	>等待卖家补充运费</option>
+				<option value="2" 	>等待您确认运费并付款</option>
+				<option value="3" 	>等待卖家确认付款</option>
+				<option value="4" 	>等待卖家确认发货</option>
+				<option value="5" 	>等待您确认收货</option>
+				<option value="6" 	>您已确认收货</option>
+				<option value="7" 	>您要求退货</option>
+				<option value="8" 	>卖家同意退货</option>
+					</select> 
+						<input name="searchbutton" class="button" type="submit" value="查 看" />
+</div>
+</div>
+  
+  <table  class="content" width="100%">
+  <caption> 共有<em>({counts})</em>符合条件！</caption>
+  <thead>
+	  <tr>
+	      <th style="height: 20px;">序号</th>
+	      <th style="height: 20px">订单编号</th>
+		  <th style="height: 20px" >货品名称</th>
+		  <th style="height: 20px" >卖家</th>
+		  <th style="height: 20px" > 交易金额</th>
+		  <th style="height: 20px">开始时间</th>		  
+		  <th style="height: 20px" >交易状态</th>
+          <th style="height: 20px">操作</th>
+           <th style="height: 20px;">查看</th>
+	  </tr>
+  </thead>
+  <tbody>
+  <%loop (DataRow) sd infolist%>
+  <tr>  
+    <td >{sd__loop__id}</td> 
+    <td>{sd[OF_Code]}</td>   
+    <td>
+    <%set str = GetInfoUrl("offer","1",sd["SD_ID"].ToString())%>
+    <a href="{str}" target="_blank" ><%left(sd[SD_Title],10)%></a>
+    </td>    
+    <td>  
+        <a href="{config.WebURL}shop/{sd[U_Name]}/index.{config.Suffix}" target="_blank" ><%left(sd[UI_Name1],10)%></a>
+    </td>
+    <td class="orange">{sd[OF_Money]}</td>
+    <td>{sd[OF_BeginTime]}</td>
+    <td >
+    <%if {sd[OF_Type]}=="1"%>
+    等待卖家添加运费
+    <%/if%>
+      <%if {sd[OF_Type]}=="2"%>
+    等待您付款
+    <%/if%> 
+     <%if {sd[OF_Type]}=="3"%>
+    等待卖家确认付款
+    <%/if%>
+      <%if {sd[OF_Type]}=="4"%>
+    等待卖家发货
+    <%/if%> 
+     <%if {sd[OF_Type]}=="5"%>
+   卖家已经发货
+    <%/if%>  
+     <%if {sd[OF_Type]}=="6"%>
+   您已经确认收货
+    <%/if%> 
+      <%if {sd[OF_Type]}=="7"%>
+   您要求退货
+    <%/if%>
+    </td>
+    <td>
+   
+  
+   <%if {sd[OF_Type]}=="1"%>
+   <a href="{config.WebURL}user/orderbuyinfo.{config.Suffix}?OF_ID={sd[OF_ID]}" title="点击修改订货数量">修改订货数量</a>
+    <%/if%> 
+      <%if {sd[OF_Type]}=="2"%>
+   <a href="{config.WebURL}user/orderbuyinfo.{config.Suffix}?OF_ID={sd[OF_ID]}&&Type=2" title="点击确认运费并付款">确认运费并付款</a>
+    <%/if%> 
+     <%if {sd[OF_Type]}=="5"%>
+    <a href="#"onclick="onupdateof({sd[OF_ID]},5)" title="点击确认收货"> 确认收货</a>
+    <%/if%>
+     <%if {sd[OF_Type]}=="6"%>
+     <a href="#"onclick="onupdateof({sd[OF_ID]},6)" title="点击确认交易成功" > 确认交易成功</a>/
+    <a  href="#"onclick="onupdateof({sd[OF_ID]},7)" title="点击要求退货"> 要求退货</a>  
+    <%/if%></td><td >
+    <a href="{config.WebURL}user/orderlist.{config.Suffix}?OF_ID={sd[OF_ID]}"> 查看</a>
+    </td>
+    </tr>    
+  <%/loop%>
+  </tbody>
+</table>
+
+<div class="page">当前是第 <span>{pageinfo.PageIndex}</span> 页 &nbsp;（共 <span>{pageinfo.PageCount}</span> 页）&nbsp;{pageinfo.FirstPage}&nbsp;{pageinfo.PreviousPage}&nbsp;{pageinfo.NextPage}&nbsp;{pageinfo.LastPage}</div>
+<div class="ly_tx">
+ <h4>请注意</h4>
+ <ul>
+ <li>· 产品订购后，请及时处理，"30"天未处理则转为过期订单。</li>
+ <li>· 产品订购后订单不能删除 。</li>
+ <li>· 在交易过程中，卖家确认添加运费和优惠后产品数量、送货地址等不能再次修改。</li>
+ <li>· 在交易过程中，买家确认付款后请卖家及时确认收款并发货。</li>
+ </ul>
+</div>
+
+</form>
+</div>
+
+<%Include _footer%>

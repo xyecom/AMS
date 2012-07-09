@@ -1,0 +1,40 @@
+﻿<%Include _head%>
+<div id="ubox">
+<!--左边导航-->
+<div id="uleftnav">
+	<%Include _left%>
+</div>
+<!--左边导航  end-->
+
+<!--右边主要内容-->
+<div id="uright">
+<div style="display:none;"><em id="clicknum1" style ="display :none"></em> <em id="clicknum" style ="display :none"></em><em id="linkmessage" style ="display :none"></em><em id="msy" style ="display :none"></em><em id="messnum" style ="display :none"></em></div>
+	<!--品牌-->
+	 <div class="rcon topimg pb15">
+	 <h2>品牌介绍</h2>
+	 <ul> 
+	  <%set data = GetBrand()%>
+        <%loop (DataRow) info data%>
+        <%set str = GetInfoUrl("brandinfo",info["InfoId"].ToString(),"")%>
+        <%set str1 = GetInfoImgHref("brand",info["InfoId"])%>
+	 <li>
+	 	<!--图片--> 
+       <a href="{str}">
+      <img src="{str1}" alt="{info[InfoTitle]}" width="120" height="120" />       
+      </a><br />	
+	  <!--标题-->	 
+	  <a href="{str}">
+	    <%left(info[InfoTitle],18)%>
+	    </a>	
+	</li>
+
+	 <%/loop%>
+	 </ul>
+
+	 <!--分页-->
+     <div class="pg">当前是第 <span class="colorf00s">{pageinfo.PageIndex}</span> 页(共 {pageinfo.PageCount} 页){pageinfo.FirstPage}&nbsp;{pageinfo.PreviousPage}&nbsp;{pageinfo.NextPage}&nbsp;{pageinfo.LastPage}</div>
+	<!--分页完-->
+</div>		
+</div>
+</div>
+<%Include _footer%>

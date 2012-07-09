@@ -1,0 +1,106 @@
+<%Include _head%>
+<div id="ubox">
+    <!--左边导航-->
+    <div id="uleftnav">
+        <%Include _left%>
+    </div>
+    <!--左边导航  end-->
+    <!--右边主要内容-->
+    <div id="uright">
+        <!--站点导航-->
+        <div style="display: none;">
+            <em id="clicknum1" style="display: none"></em><em id="clicknum" style="display: none">
+            </em><em id="linkmessage" style="display: none"></em><em id="msy" style="display: none">
+            </em><em id="messnum" style="display: none"></em>
+        </div>
+        <!--公司介绍-->
+        <div class="rcon">
+            <h2>
+                公司介绍</h2>
+            <p class="font142">
+                <%if shopuserinfo.imgurl!=""%><img alt="{shopuserinfo.loginname}" src="{shopuserinfo.imgurl}" /><%else%><img
+                    alt="{shopuserinfo.loginname}" src="{config.WebURL}templates/{config.TemplatePath}/images/WelcomeInfro_32.gif" /><%/if%>
+                {shopuserinfo.synopsis}
+            </p>
+        </div>
+        <div class="rcon">
+            <h2>
+                详细信息</h2>
+            <div class="rcont">
+                <table class="table_infos">
+                    <tr>
+                        <th class="line1">
+                            公司名称：
+                        </th>
+                        <td>
+                            {shopuserinfo.unitname}
+                        </td>
+                        <th class="line1">
+                            成立时间：
+                        </th>
+                        <td>
+                            {shopuserinfo.regyear}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="line1">
+                            经营模式：
+                        </th>
+                        <td>
+                            {shopuserinfo.mode}
+                        </td>
+                        <th class="line1">
+                            供应的产品和服务：
+                        </th>
+                        <td>
+                            {shopuserinfo.supplypro}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="line1">
+                            公司主页：
+                        </th>
+                        <td>
+                            <a href="{shopuserinfo.homepage}">{shopuserinfo.homepage}</a>
+                        </td>
+                        <th class="line1">
+                            注册资本：
+                        </th>
+                        <td>
+                            {shopuserinfo.registeredcapital}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="line1 colorFF7300">
+                            企业类型：
+                        </th>
+                        <td>
+                            {shopuserinfo.unittype}
+                        </td>
+                        <th class="line1 colorFF7300">
+                            公司性质：
+                        </th>
+                        <td>
+                            {shopuserinfo.character}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="line1">
+                            员工人数：
+                        </th>
+                        <td>
+                            {shopuserinfo.employeetotal}人
+                        </td>
+                        <th class="line1 colorFF7300">
+                            公司注册地：
+                        </th>
+                        <td>
+                            {shopuserinfo.regarea}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<%Include _footer%>

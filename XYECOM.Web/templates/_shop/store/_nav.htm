@@ -1,0 +1,27 @@
+﻿<!--导航-->
+<div class="dh_full">
+    <div class="menu">
+        <ul class="cd">
+            <%loop (DataRow) row1 customtypelist%>
+            <li><a href='{shopuserinfo.domain}category-{row1[Id]}.{config.suffix}'
+                target="_self" class="menu">{row1[PtName]} </a></li>
+            <%/loop%>
+            <li><a href='{shopuserinfo.domain}venturelist.{config.suffix}'
+                target="_blank" class="menu">融资信息</a></li>
+            <li><a href='{shopuserinfo.domain}category.{config.suffix}'
+                target="_blank" class="menu">所有分类</a></li>
+        </ul>
+        <div class="list" style="_overflow: hidden">
+            <div class="listcart">
+                <a href="#" target="_blank" id="showCard">查看购物车去结账 </a>
+                <div class="listCartDetail" id="listCartDetail">
+                    <p>
+                        您一共选购了 <em>{mycart.SupplyCount}</em> 件商品,共计 <em>{mycart.OrderAllPrice}</em>元</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear">
+</div>
+<!--导航 end-->

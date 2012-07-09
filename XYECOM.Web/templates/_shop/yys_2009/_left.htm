@@ -1,0 +1,53 @@
+<div id="bodyleft">
+    <div class="leftkuang">
+        <div class="lefttitle">网站公告</div>
+        <div class="gonggaoContContent">
+            <marquee onmouseover=this.stop() onmouseout=this.start() scrollAmount=1 scrollDelay=0 direction=up height=80 align="center">{shopuserinfo.shopannounce}</marquee>
+        </div>
+    </div>
+    <div class="leftkuang">
+        <div class="lefttitle">服务分类</div>
+        <div class="bodyContContent">
+            <ul>
+            <%set data = GetCompanyProType()%> 
+            <%loop (DataRow) type data%> 
+		        <li>
+			        <a href="javascript:pturls({type[id]},'{shopuserinfo.loginname}')">{type[ptname]}</a>
+		        </li>
+            <%/loop%> 
+            </ul>
+        </div>
+    </div>
+    <div class="leftkuang">
+        <div class="lefttitle">联系方式</div>
+        <div class="linksContContent">
+            <ul>
+                <li>联系人：{shopuserinfo.linkman}</li> 
+                <li>手  机：{shopuserinfo.mobile} </li>
+                <li>电  话：{shopuserinfo.telephone}</li>
+                <li>传  真：{shopuserinfo.fax}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="leftkuang">
+        <div class="lefttitle">友情链接</div>
+        <div class="linksContContent">
+            <ul>
+                <li title="中国营养联盟">·<a href="http://www.yylm.org" target="_blank">中国营养联盟</a>
+                <li title="营养联盟-成员商务平台">·<a href="{config.weburl}" target="_blank">营养联盟-成员商务平台</a></li>
+                <%set data = GetLink()%> 
+                <%loop (DataRow) link data%> 
+                <li title="{link[SiteName]}">·<a href="{link[Url]}" target="_blank">{link[SiteName]}</a></li>
+                <%/loop%>
+            </ul>
+        </div>
+    </div>
+    <div class="leftkuang">
+        <div class="lefttitle">站内搜索</div>
+        
+        <div class="bodyContContent">
+            <input  size="13" value="" name="Products" id="Products"/>
+            <input name="button" type="button" onclick="xy_Shop_Search();" value="搜索"/>
+        </div>
+    </div>
+</div>

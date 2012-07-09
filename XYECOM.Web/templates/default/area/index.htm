@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>{seo.Title}</title>
+	<meta name="description" content="{seo.Description}" />
+	<meta name="keywords" content="{seo.Keywords}" />
+	<meta name="robots" content="all"  />
+	<meta http-equiv="Content-Type" content="text/html; charset="gb2312" />
+	<link href="{config.WebURL}templates/{config.TemplatePath}/css/global.css" rel="stylesheet" type="text/css" />
+	<link href="{config.WebURL}templates/{config.TemplatePath}/css/channel.css" rel="stylesheet" type="text/css" />
+    <link href="{config.WebURL}templates/{config.TemplatePath}/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="{config.WebURL}templates/{config.TemplatePath}/css/news.css" rel="stylesheet" type="text/css" />
+    	
+    <script type="text/javascript" src="{config.WebURL}common/js/base.js" language="javascript"></script>	
+	<script type="text/javascript" src="{config.WebURL}templates/{config.TemplatePath}/js/login.js" language="javascript"></script>
+	
+</head>
+<body>
+
+
+<div id="wrapper">
+
+    <%include _login_bar%>
+
+    <%Include _top%>
+
+    <%Include _search%>
+
+    <%include _menu%>
+    
+	<div id="best_cmpy">
+		<ul>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_1.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_2.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_3.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_4.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_3.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_4.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_1.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_2.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_1.jpg" width="191" height="62" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_2.jpg" width="191" height="62" alt="" /></a></li>
+		</ul>
+	</div>
+
+	<div id="city_cnt">
+		<div id="lt_cnt">
+			<div id="left_A">
+				<div id="news_slide">
+				{XY_SlideTop5ByNewsIndex}
+				</div>
+				<div class="spacer height6"></div>
+				<div class="MTitle_01">
+					<h2 id="h2_1" class=""><a target="_blank" class="big" href="#"><strong>{areaname}农业资讯</strong></a></h2>
+				</div>
+				<div id="x_box1" class="Mblk_01" style="display:none;">
+					<div class="pictext">
+						<div class="clr"></div>
+					</div>
+					<div class="com_pages">
+						<ul>
+							{XY_AreaZiXunListLeft}
+						</ul>
+					</div>
+				</div>
+				
+				
+
+
+				<div class="spacer height6"></div>
+				<div class="MTitle_01">
+				<h2 id="h2_2" class=""><a target="_blank" class="big" href="#"><strong>{areaname}名优企业</strong></a></h2>
+				</div>
+				<div id="y_box1" class="Mblk_01" style="border-bottom:0; display:block;">
+					<div class="rank_compy">
+						<ul>
+							{XY_Index_MingYouQiYe}
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="left_B">
+                <!-- 地方站要闻-->
+				<div id="headline">
+					{XY_AreaYaoWenTop}
+				</div>
+				<div class="clear"></div>
+				<ul class="mid_ul">
+					{XY_AreaYaoWenZiXun}
+				</ul>
+
+				<div class="spacer city_rt_spacer6"></div>
+
+				<div class="MTitle_01">
+					<h2 id="h201" class=""><a target="_blank" class="big" href="#"><strong>推荐信息</strong></a></h2>
+				</div>
+				<div id="con01" class="Mblk_01">
+					<ul class="photo_news">
+						{XY_AreaGongYingXinXiIMG}
+						<div class="clr"></div>
+					</ul>
+					<div class="com_pages">
+						<ul>
+							{XY_AreaGongYingXinXiFont}
+						</ul>
+					</div>
+				</div>
+
+				<div class="spacer city_rt_spacer6"></div>
+
+				<div class="MTitle_01">
+					<h2 id="h201" class=""><a target="_blank" class="big" href="#"><strong>最新供求</strong></a></h2>
+				</div>
+				<div id="con01" class="Mblk_01" style="border-bottom:0;">
+					<div class="com_pages" style="width:45%;float:left;">
+						<ul>
+							{XY_ZuiXinGongQiu6}
+						</ul>
+					</div>
+					<div class="com_pages" style="width:45%;float:left;">
+						<ul>
+							{XY_ZuiXinQiuGou6}
+						</ul>
+					</div>
+				</div>
+
+
+			</div>
+			<div class="clr"></div>
+
+			<div class="spacer" id="city_spacer_1"></div>
+
+			<div id="offers" style="margin:0;">
+				<div id="tit">
+					<ul>
+						<li class="current" onmouseover="document.getElementById('remcd_offer').style.display='none';document.getElementById('remcd_supply').style.display='block';document.getElementById('tab_supply').className='current';document.getElementById('tab_offer').className='';" id="tab_supply">推荐供应</li>
+						<li onmouseover="document.getElementById('remcd_supply').style.display='none';document.getElementById('remcd_offer').style.display='block';document.getElementById('tab_supply').className='';document.getElementById('tab_offer').className='current';" id="tab_offer">推荐求购</li>
+						<div class="clr"></div>
+					</ul>
+				</div>
+
+				<div id="remcd_supply">
+					<div id="pic_cnts">
+						<ul>
+							{XY_Index_TuiJianGongYingIMG}
+							<div class="clr"></div>
+						</ul>
+					</div>
+					<div class="cnts">
+						<ul>
+							{XY_Index_TuiJianGongYingFont}
+							<div class="clr"></div>
+						</ul>
+					</div>
+					<div class="hasty_offer">
+						<div class="h_lt">紧急求购：</div>
+						<div class="h_rt">
+							<ul>
+								{XY_Index_JinJiQiuGou}
+							</ul>
+						</div>
+						<div class="clr"></div>
+					</div>
+				</div>
+
+
+				<div id="remcd_offer" style="display:none;">
+					<div id="pic_cnts">
+						<ul>
+							{XY_Index_TuiJianQiuGouIMG}
+							<div class="clr"></div>
+						</ul>
+					</div>
+					<div class="cnts">
+						<ul>
+							{XY_Index_TuiJianQiuGouFont}
+							<div class="clr"></div>
+						</ul>
+					</div>
+					<div class="hasty_offer">
+						<div class="h_lt">紧急求购：</div>
+						<div class="h_rt">
+							<ul>
+								{XY_Index_JinJiQiuGou}
+							</ul>
+						</div>
+						<div class="clr"></div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="spacer" id="city_spacer_2"></div>
+
+			<div class="area1" style="background:white;border-bottom:0;">
+				<div class="hd">
+					<div class="tit">
+						<span class="fright"><a href="" class="black">更多&raquo;</a></span>
+						<a href="" class="h2_news"><h2>热点资讯</h2></a>
+					</div>
+				</div>
+				<div class="cnt">
+					<div class="info_lt">
+						<a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_8.jpg" width="220" height="110" alt="" /></a>
+						<ul>
+							{XY_Index_ReDianZiXunLeft}
+						</ul>
+					</div>
+					<div class="info_rt">
+
+						<div class="Bm_1">
+							{XY_Index_ReDianZiXunRight}
+						</div>
+						<div class="Bm_11">
+							{XY_Index_ReDianZiXuntop1}
+							<ul class="Bm_12 fia">
+							{XY_Index_ReDianZiXuncenter}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+            <div class="spacer" id="city_spacer_2"></div>
+		</div>
+		<div id="rt_cnt">
+			<div class="MTitle_01">
+				<h2 id="h201" class=""><a target="_blank" href="#"><strong>{areaname}简介</strong></a></h2>
+			</div>
+			<div id="con01" class="Mblk_01">
+
+				<div class="commonBoxCont">
+					<div class="siteRecommendImg"><img src="{config.WebURL}templates/{config.TemplatePath}/images/hangzhou.gif" alt="杭州介绍" /></div>
+					<div class="siteRecommendDetail">
+						<p>
+							长江三角洲重要中心城市和中国东南部交通枢纽。 自秦时设县治以来，已有2200多年历史。早在5500年前，就有人类在此繁衍生息，并产生了被称为文明曙光的良渚文化。杭州是我国的七大古都之一。
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="spacer city_rt_spacer6"></div>
+
+			<div class="MTitle_01">
+				<h2 id="h201" class=""><a target="_blank" href="#"><strong>{areaname}农产品：</strong></a></h2>
+			</div>
+			<div id="con01" class="Mblk_01" style="width:221px;overflow:hidden;">
+				<div class="cnt" id="price">
+					<dl>
+						<dt><h4><a href="">笔记本电脑</a></h4></dt>
+						<dd>
+							<ul>
+								<li>联想</li>
+								<li>惠普</li>
+								<li>华硕</li>
+								<li>东芝</li>
+								<li>惠普</li>
+								<li>华硕</li>
+								<li>东芝</li>
+								<li>IBM</li>
+								<li>戴尔</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt><h4><a href="">笔记本电脑</a></h4></dt>
+						<dd>
+							<ul>
+								<li>联想</li>
+								<li>惠普</li>
+								<li>华硕</li>
+								<li>东芝</li>
+								<li>IBM</li>
+								<li>戴尔</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt><h4><a href="">笔记本电脑</a></h4></dt>
+						<dd>
+							<ul>
+								<li>联想</li>
+								<li>惠普</li>
+								<li>华硕</li>
+								<li>东芝</li>
+								<li>IBM</li>
+								<li>戴尔</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt><h4><a href="">笔记本电脑</a></h4></dt>
+						<dd>
+							<ul>
+								<li>联想</li>
+								<li>惠普</li>
+								<li>华硕</li>
+								<li>东芝</li>
+								<li>IBM</li>
+								<li>戴尔</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt><h4><a href="">笔记本电脑</a></h4></dt>
+						<dd>
+							<ul>
+								<li>联想</li>
+								<li>惠普</li>
+								<li>华硕</li>
+								<li>东芝</li>
+								<li>IBM</li>
+								<li>戴尔</li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt><h4><a href="">笔记本电脑</a></h4></dt>
+						<dd>
+							<ul>
+								<li>联想</li>
+								<li>惠普</li>
+								<li>华硕</li>
+								<li>东芝</li>
+								<li>惠普</li>
+								<li>华硕</li>
+								<li>东芝</li>
+								<li>IBM</li>
+								<li>戴尔</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</div>
+
+			<div class="spacer city_rt_spacer6"></div>
+
+			<div class="MTitle_01">
+				<h2 id="h201" class=""><a target="_blank" href="#"><strong>{areaname}动态</strong></a></h2>
+			</div>
+			<div id="con01" class="Mblk_01" style="border-bottom:0;">
+				<div class="com_pages">
+					<ul>
+						{XY_WangZhanDongTai}
+					</ul>
+				</div>
+			</div>
+
+
+
+		</div>
+		<div class="clr"></div>
+		<div class="spacer" id="city_spacer_3"></div>
+	</div>
+
+	<div class="hy_brand clr">
+		<div class="tit">行业推荐品牌</div>
+		<div class="brand_pic">
+			<ul>
+				{XY_Index_HangYePinPai}
+				<div class="clr"></div>
+			</ul>
+			<div class="clr"></div>
+		</div>
+
+	</div>
+
+    <%include _footer%>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<%Include _head%>
+
+<div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;<a href="{config.WebURL}user/userfirendlinkedit.{config.Suffix}">添加友情链接</a></div>
+
+<%Include _menu%>
+ <!--右边区域-->
+
+<div id="right">
+<form action="#" id="" method="post"> 
+  <table class="contentl">
+   <caption>友情链接管理<span></span></caption>
+  <tr>
+    <th>网站名称：
+    </th>
+    <td><input name="SiteName" type="text" value="" size="30"  maxlength="40" />
+    <em>请输入完整地址,如:http://www.xyecom.com</em>  
+    </td>
+  </tr>
+  <tr>
+   <th>网站地址：</th>
+    <td><input name="Url" type="text" size="50" maxlength="50" value="" />
+	<em>请输入完整地址,如:http://www.xyecom.com/logo.gif</em>  
+	</td>
+  </tr>
+  <tr>
+    <th>Logo地址：</th>
+    <td>
+	<input name="LogoUrl" type="text"  size="30" value=""  maxlength="40"/>
+	</td>
+  </tr>
+  </table>
+    <div class="content_action">
+     <input name="submit"  type="submit" class="button" value="确认" onclick="javascript:return userfirendlinkinfo()"/> 
+      <input name="submit"  type="button" class="button" value="取消" onclick="window.location.href='{config.WebURL}user/userfirendlink.{config.Suffix}';"/> 
+    </div>
+ </form>
+</div>
+
+<%Include _footer%>
+
+

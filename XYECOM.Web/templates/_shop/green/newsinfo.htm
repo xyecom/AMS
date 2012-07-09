@@ -1,0 +1,26 @@
+<%Include _head%>
+<div id="ubox">
+<!--左边导航-->
+<div id="uleftnav">
+<%Include _left%>
+</div>
+<!--左边导航  end-->
+
+<!--右边主要内容-->
+<div id="uright">
+
+    <!--站点导航-->
+	<div style="display:none;"><em id="clicknum1" style ="display :none"></em> <em id="clicknum" style ="display :none"></em><em id="linkmessage" style ="display :none"></em><em id="msy" style ="display :none"></em><em id="messnum" style ="display :none"></em></div>
+	<!--公司介绍-->
+	
+	<div class="rcon font14">
+	<h2>公司动态</h2>
+		<div class="news font14">
+		 <h3 class="font14">{news.Title}</h3>	
+            {news.Content}
+        <div class="txtlink">{news.AddTime}</div>
+		</div>
+	</div>
+	</div>
+</div>
+<%Include _footer%>

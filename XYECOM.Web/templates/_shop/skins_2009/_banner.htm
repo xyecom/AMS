@@ -1,0 +1,20 @@
+    <div class="head" id=DIV1>
+        <%if shopuserinfo.logo!=""%>
+            <div class="logo"><IMG src="{shopuserinfo.logo}" onload='SetImgSize(this,60,60);' ></div>
+        <%/if%>
+        <h1>{shopuserinfo.unitname}</h1>
+        <p>主营产品：{shopuserinfo.supplypro}</p>
+        <div class="gold_year">
+            <div class="gold_wz">
+                <table cellSpacing="0" cellPadding="0" width="100%" border="0">
+                <tbody>
+                <tr>
+                    <td align="left" width="52%" style="padding-left:4px; padding-top:5px;"><font color="#9a2502">{shopuserinfo.gradename}</font></a></td>
+                    <td align="middle" width="6%">&nbsp;</td>
+                    <td align="middle" width="45%" class="year">第<span>{shopuserinfo.years}</span>年</td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

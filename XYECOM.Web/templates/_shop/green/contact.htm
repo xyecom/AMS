@@ -1,0 +1,33 @@
+<%Include _head%>
+<div id="ubox">
+<!--左边导航-->
+<div id="uleftnav">
+	<%Include _left%>
+</div>
+<!--左边导航  end-->
+
+<!--右边主要内容-->
+<div id="uright">
+
+<div class="rcon">
+<h2>联系方式</h2>
+
+<!--联系方式-->
+<div  class="infoAbout">
+ <a name="link"></a>
+ <div id="linkmessage"></div>
+</div>
+</div>
+<input type ="hidden" id="infotype"  value ="5"/>
+
+
+<!--- 留言模块参数 ---->
+<input type ="hidden" id="_param_message_module" value="company" />
+<input type ="hidden" id="_param_message_title" value="{titleinfo}" />
+<input type ="hidden" id="_param_message_parent_module" value ="{infotype}" />
+<input type ="hidden" id="_param_message_infoid" value ="{infoid}"/>
+<input type ="hidden" id="_param_message_userid" value ="{shopuserinfo.userid}" />
+<%include _message%>
+</div>
+</div>
+<%Include _footer%> 

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <%Include _head%>
+</head>
+
+<body onload="{pageinfo.OnLoadEvents}">
+    <%Include _top%>
+    
+        <div class=layout950_100 style="BACKGROUND-IMAGE: url({config.WebURL}templates/_shop/skins_2009/{shopuserinfo.template}/images/stylebg1.jpg)">
+
+    <%Include _banner%>
+        
+    <div class="clr"></div>
+    <div class="layout950">
+
+    <%Include _menu%>
+    
+    <div class="clr"></div>
+    <div class="where">你现在的位置：首页 &gt; 工作室介绍</div>
+
+    <%Include _left%>
+
+
+    <!--工作室介绍-->
+    <div id="bodyright">
+        <div class="leftkuang">
+            <div class="righttitle">
+                <ul>
+                    <li>工作室介绍</li>
+                </ul>
+            </div>
+            <div class="tuijian_company">
+                <div class="picbox1">
+                <img alt="{shopuserinfo.unitname}" src="{shopuserinfo.imgurl}"/>
+                </div>
+                <p>{shopuserinfo.synopsis}</p>
+            </div>
+            <div class="clr"></div>
+            
+            <div class="righttitle">
+                <ul>
+                    <li>
+                        详细信息
+                    </li>
+                </ul>
+            </div>
+            
+            <table cellSpacing="1" cellPadding="4" width="100%" align="center" bgColor="#ffffff" border="0">
+            <tbody>
+            <tr>
+                <td width="18%" bgColor="#f0f0f0" height="25"><div align="right"><strong>主营产品或服务：</strong></div></td>
+                <td width="35%" bgColor="#ffffff">{shopuserinfo.supplypro}</td>
+                <td width="16%" bgColor="#f0f0f0"><div align=right> <strong>企业类型：</strong> </div></td>
+                <td width="31%" bgColor="#ffffff">{shopuserinfo.character}</td>
+            </tr>
+            <tr>
+                <td bgColor=#f0f0f0 height=25><div align=right><strong>经营模式：</strong></div></td>
+                <td bgColor=#ffffff>{shopuserinfo.mode}</td>
+                <td bgColor=#f0f0f0><div align=right> <strong>注册资本： </strong></div></td>
+                <td bgColor=#ffffff>{shopuserinfo.registeredcapital}</td>
+            </tr>
+            <tr>
+                <td bgColor=#f0f0f0 height=25><div align=right><strong>工作室成立时间：</strong></div></td>
+                <td bgColor=#ffffff>{shopuserinfo.regyear}</td>
+                <td bgColor=#f0f0f0><div align=right><strong>员工人数：</strong></div></td>
+                <td bgColor=#ffffff>{shopuserinfo.employeetotal}</td>
+            </tr>
+            <tr>
+                <td bgColor=#f0f0f0 height=25><div align=right><strong>主要市场：</FONT></strong> </div></td>
+                <td bgColor=#ffffff>{shopuserinfo.manageaddress}</td>
+                <td align=right bgColor=#f0f0f0><strong>工作室主页：</strong></td>
+                <td bgColor=#ffffff><a href="{shopuserinfo.homepage}" target=_blank>{shopuserinfo.homepage}</a></td>
+            </tr>
+            </tbody>
+            </table>
+
+            <div class="clr"></div>
+            </div>
+        </div>
+        <!--工作室介绍结束-->
+        <div class="clr"></div>
+        </div>
+        <%Include _footer%>
+    </div>
+</body>
+</html>

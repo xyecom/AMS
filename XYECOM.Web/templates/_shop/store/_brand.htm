@@ -1,0 +1,20 @@
+﻿<div id="xzpp">
+    <!-- 选择品牌 -->
+    <div id="xzpp_top">
+        选择品牌
+    </div>
+    <div id="xzpp_all">
+        <a href="{shopuserinfo.domain}brandlist.{config.suffix}">所有品牌</a>
+    </div>
+    <div id="xzpp_box">
+        <ul>
+            <%loop (DataRow) brand brandlist%>
+            <li><a href='{shopuserinfo.domain}brandlist-{brand[Id]}.{config.suffix}'
+                target="_self">{brand[BrandName]} </a></li>
+            <%if brand__loop__id==10%>
+            <%break%>
+            <%/if%>
+            <%/loop%>
+        </ul>
+    </div>
+</div>

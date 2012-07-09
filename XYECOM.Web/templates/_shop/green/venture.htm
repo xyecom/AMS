@@ -1,0 +1,24 @@
+﻿<%Include _head%>
+<div id="ubox">
+    <!--左边导航-->
+    <div id="uleftnav">
+        <%Include _left%>
+    </div>
+    <!--左边导航  end-->
+    <!--右边主要内容-->
+    <div id="uright">
+        <h3>
+            【<%if info.InfoType==1%>融资<%else%>投资<%/if%>】{info.Title}
+        </h3>
+        投融资规模：{info.Price}<br />
+        投融资类型：{info.TypeName}<br />
+        投融资领域：{info.Trade}<br />
+        地区：{info.Area}<br />
+        项目网址：{info.WebSite}<br />
+        项目摘要：{info.Summary}<br />
+        项目发布时间：{info.PublishTime}<br />
+        有效期至：{info.EndTime}<br />
+        详细描述：{info.InfoContent}<br />
+    </div>
+</div>
+<%Include _footer%>

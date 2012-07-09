@@ -1,0 +1,131 @@
+﻿<%if pageinfo.PageError==1%>
+<%Include _msgbox%>
+<%end%>
+<%/if%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <%include _head%>
+</head>
+<body onload="{pageinfo.OnLoadEvents}">
+    <div id="wrapper">
+        <%Include _login_bar%>
+        <%Include _top%>
+        <%Include _search%>
+        <div id="gq_guide">
+            {pageinfo.Navigation}
+        </div>
+        <div id="layout">
+            <div id="layoutLeft">
+                <div id="LeftProBorder">
+                    <div id="ProTitle">
+                        {offerinfo.Title}</div>
+                    <div id="ProText">
+                        <div class="clr">
+                            <table width="691" border="0" cellpadding="6" cellspacing="1" bgcolor="#AACCEE">
+                                <tr>
+                                    <td width="58%" align="left" bgcolor="#FFFFFF">
+                                        <strong>标&nbsp;&nbsp;&nbsp; 题</strong>：{offerinfo.Title}
+                                    </td>
+                                    <td rowspan="7" align="center" bgcolor="#FFFFFF" class="fgray" style="width: 42%">
+                                        &nbsp; 广告位
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" bgcolor="#FFFFFF">
+                                        <strong>紧急求购</strong>：<br />
+                                        <%if offerinfo.Emergency==1%>
+                                        紧急求购
+                                        <%else%>
+                                        非紧急求购
+                                        <%/if%>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" bgcolor="#FFFFFF">
+                                        <strong>需 求 量</strong>： {offerinfo.BuyNum}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" bgcolor="#FFFFFF">
+                                        <strong>发布时间</strong>： {offerinfo.Time}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" bgcolor="#FFFFFF">
+                                        <strong>信息所在地区</strong> ：{areanames}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" bgcolor="#FFFFFF">
+                                        <strong>关 键 词</strong>： {offerinfo.KeyWord}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" bgcolor="#FFFFFF">
+                                        <strong>联 系 人</strong>： {offerinfo.U_name}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="left" bgcolor="#FFFFFF" height="25">
+                                        <div id="Div1">
+                                            <strong>详细信息:</strong></div>
+                                        <div class="ProDesText">
+                                            <table width="95%" border="0" align="center" cellpadding="1" cellspacing="1" class="typelist">
+                                            </table>
+                                            {offerinfo.Contents}
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="ProDesTitle">
+                            <strong>联系方式:</strong>
+                            <input id="userid" type="hidden" value="{userinfo2.userid}" />
+                            <input id="uugid" type="hidden" value="{userinfo2.gradeid}" />
+                            <div id="divtel" style="display: none; width: 100%;">
+                                {offerinfo.Tel}
+                            </div>
+                        </div>
+                        <div class="ProDesText" id="linkmessage">
+                        </div>
+                    </div>
+                </div>
+                <div id="ProFind">
+                    <span>
+                        <img src="{config.WebURL}templates/{config.TemplatePath}/images/icon1.gif" width="20"
+                            height="14" /><a href="javascript:void(null);" onclick="Favorite();">收藏此信息</a>&nbsp;&nbsp;&nbsp;
+                        <img src="{config.WebURL}templates/{config.TemplatePath}/images/icon2.gif" width="21"
+                            height="11" /><a href="#">推荐给朋友</a>&nbsp;&nbsp;&nbsp;
+                        <img src="{config.WebURL}templates/{config.TemplatePath}/images/icon3.gif" height="16" /><a
+                            href="{config.weburl}feedback.{config.suffix}">举报此信息</a> </span><strong class="orange">
+                                还没有找到合适的产品?</strong> 赶快<a href="{config.weburl}user/" target="_blank">发布求购信息</a>，让供应商主动来找您！
+                </div>
+                </form>
+                <div id="SayInfo">
+                    <strong>免责声明</strong>：以上信息由相关企业自行提供，该企业负责信息内容的真实性、准确性和合法性。
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{config.webname}对此不承担任何保证责任。
+                </div>
+            </div>
+            <div class="MTitle_01">
+                <center>
+                    <a target="_blank" href="#" class="red"><strong>加入我们，享受更多服务</strong></a></center>
+            </div>
+            <div class="Mblk_01">
+                <div id="jointous">
+                    <ul>
+                        <li><a href="">· 结交贸易伙伴，拓展网络商圈</a></li>
+                        <li><a href="">· 成为会员，免费发布供求信息</a></li>
+                        <li><a href="">
+                            <img src="{config.WebURL}templates/{config.TemplatePath}/images/btn_gq_reg.gif" width="130"
+                                height="29" alt="" /></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%include _footer%>
+    </div>
+</body>
+</html>

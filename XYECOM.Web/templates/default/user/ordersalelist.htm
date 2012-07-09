@@ -1,0 +1,146 @@
+﻿
+<%Include _head%>
+<div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;  <a href="{config.WebURL}user/orderbuylist.{config.Suffix}">交易管理</a> &gt;  卖家 已卖出的宝贝</div>
+<%Include _menu%>
+
+  <div id="right">
+   <form   method="post">
+
+   
+   <div class="ly_100">
+<div class="ly_tit3">
+ <ul>
+ <li class="on"><a href ="{config.WebURL}user/ordersalelist.{config.Suffix}">正在进行的交易</a> </li>
+ <li class="out"><a href ="{config.WebURL}user/ordersalethrulist.{config.Suffix}">已完成的交易</a></li> 
+ </ul>
+</div>
+<div class="ly_tit32">
+						&nbsp;开始时间： 
+				<select name="txtTime">
+							<option value="0" selected="selected" 	>全部时间段</option>
+				<option value="3" 	>最近3天</option>
+				<option value="5" 	>最近5天</option>
+				<option value="15" 	>最近15天</option>
+				<option value="30" 	 >最近一个月</option>
+				<option value="60" 	>最近两个月</option>
+				<option value="90" 	>最近三个月</option>
+					</select> 
+                 &nbsp;交易状态：
+				<select name="txtType">
+				<option value="0" 	>所有交易</option>
+				<option value="1" 	>等待您补充运费</option>
+				<option value="2" 	>等待买家付款</option>
+				<option value="3" 	>等待您确认付款</option>
+				<option value="4" 	>等待您发货</option>
+				<option value="5" 	>等待买家确认收货</option>
+				<option value="6" 	>买家已确认收货</option>
+				<option value="7" 	>买家要求退货</option>
+				<option value="8" 	>您确认退货</option>
+					</select> 
+						<input name="searchbutton" class="button" type="submit" value="查 看" />
+</div>
+</div>  
+  <table  class="content" width="100%">
+  <caption> 共有<em>({count})</em>符合条件！</caption>
+  <thead>
+	  <tr>
+	    <th style="height: 20px">序号</th>
+	     <th style="height: 20px">订单编号</th>
+		  <th style="height: 20px" >货品名称</th>
+		  <th style="height: 20px" >买家</th>
+		  <th style="height: 20px" >交易金额</th>
+		  <th style="height: 20px">开始时间</th>		  
+		  <th style="height: 20px" >交易状态</th>
+           <th style="height: 20px">操作</th>
+           <th style="height: 20px">查看</th>
+	  </tr>
+  </thead>
+  <tbody>
+  <%loop (DataRow)  sd infolist%>
+  <tr>  
+    <td >{sd__loop__id}</td> 
+    <td>{sd[OF_Code]}</td> 
+     <td><a href=" <%if {sd[SD_HTMLPage]}!=""%>{sd[SD_HTMLPage]}
+  <%else%> 
+     <%if config.BogusStatic==true%>{config.WebURL}search/sell-offer-{sd[SD_ID]}.{config.Suffix} <%else%>{config.WebURL}search/sell.{config.Suffix}?flag=offer&infoid={sd[SD_ID]}<%/if%>  
+    <%/if%>
+ 
+  " target="_blank" ><%left(sd[SD_Title],10)%></a></td>    
+    <td>  <a href="
+  <%if {sd[U_HtmlPage1]}!=""%>{sd[U_HtmlPage1]}
+  <%else%>
+  <%if config.IsDomain==true%> http://{sd[U_Name1]}domainhost/<%else%> {config.WebURL}shop/{sd[U_Name1]}/index.{config.Suffix}<%/if%>
+  <%/if%>
+  " target="_blank" ><%left(sd[UI_Name],10)%></a></td>
+    <td class="orange">{sd[OF_Money]}</td>
+    <td>{sd[OF_BeginTime]}</td>
+    <td >
+    <%if {sd[OF_Type]}=="1"%>
+    等待您补充运费
+    <%/if%>     
+     <%if {sd[OF_Type]}=="2"%>
+    等待买家确认运费并付款
+    <%/if%>
+      <%if {sd[OF_Type]}=="3"%>
+    等待您确认收款
+    <%/if%>  
+    <%if {sd[OF_Type]}=="4"%>
+    等待您确认发货
+    <%/if%>   
+    <%if {sd[OF_Type]}=="5"%>
+    等待买家确认收货
+    <%/if%> 
+    <%if {sd[OF_Type]}=="6"%>
+    买家已确认收货
+    <%/if%>
+     <%if {sd[OF_Type]}=="7"%>
+    买家要求退货
+    <%/if%>
+     <%if {sd[OF_Type]}=="8"%>
+    您已经同意退货
+    <%/if%>
+    </td>
+    <td>   
+     
+     <%if {sd[OF_Type]}=="1"%>
+   <a href="{config.WebURL}user/ordersaleinfo.{config.Suffix}?OF_ID={sd[OF_ID]}" title="点击补充运费">补充运费</a>
+    <%/if%>     
+     <%if {sd[OF_Type]}=="2"%>
+    <a href="{config.WebURL}user/ordersaleinfo.{config.Suffix}?OF_ID={sd[OF_ID]}"title="点击修改运费">修改运费</a>
+    <%/if%>
+      <%if {sd[OF_Type]}=="3"%>
+    <a href="#"onclick="onupdateof({sd[OF_ID]},3)" title="点击确认收款">确认收款</a>
+    <%/if%>  
+    <%if {sd[OF_Type]}=="4"%>
+   <a href="#"onclick="onupdateof({sd[OF_ID]},4)" title="点击确认发货" >确认发货</a>
+    <%/if%>   
+     <%if {sd[OF_Type]}=="7"%>
+   <a href="#" onclick="onupdateof({sd[OF_ID]},8)" title="点击同意退货" >同意退货</a>/
+   <a href="#"onclick="onupdateof({sd[OF_ID]},12)" title="点击拒绝退货">拒绝退货</a>
+    <%/if%>
+    <%if {sd[OF_Type]}=="8"%>
+   <a href="#"onclick="onupdateof({sd[OF_ID]},9)" title="点击退货成功">退货成功</a>
+    <%/if%></td> <td>
+    <a href="{config.WebURL}user/orderlist.{config.Suffix}?OF_ID={sd[OF_ID]}"> 查看</a>
+    </td>
+    </tr>    
+  <%/loop%>
+  </tbody>
+</table>
+
+<div class="page">当前是第 <span>{pageinfo.PageIndex}</span> 页 &nbsp;（共 <span>{pageinfo.PageCount}</span> 页）&nbsp;{pageinfo.FirstPage}&nbsp;{pageinfo.PreviousPage}&nbsp;{pageinfo.NextPage}&nbsp;{pageinfo.LastPage}</div>
+<div class="ly_tx">
+ <h4>请注意</h4>
+ <ul>
+  <li>· 产品订购后，请及时处理，"30"天未处理则转为过期订单。</li>
+ <li>· 产品订购后订单不能删除 。</li>
+ <li>· 在交易过程中，卖家确认添加运费和优惠后产品数量、送货地址等不能再次修改。</li>
+ <li>· 在交易过程中，买家确认付款后请卖家及时确认收款并发货。</li>
+
+ </ul>
+</div>
+
+</form>
+</div>
+
+<%Include _footer%>

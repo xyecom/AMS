@@ -1,0 +1,93 @@
+﻿<%Include _head%>
+<div class="location fia">
+    <a href="index.{config.suffix}">会员中心</a> &gt; 查看信息
+</div>
+<%Include _menu%>
+<!--右边区域-->
+<div id="right">
+    <form method="post">
+    <table class="contentl">
+        <caption>
+            <span>个人基本信息（*为必填项）</span></caption>
+        <tr>
+            <th>
+                用户名：
+            </th>
+            <td>
+                {userinfo.loginname}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                真实姓名：<span></span>
+            </th>
+            <td>
+                {userinfo.realname}({userinfo.sex})
+            </td>
+        </tr>
+        <tr>
+            <th>
+                注册邮箱：
+            </th>
+            <td>
+                {userinfo.email}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                身份证号：
+            </th>
+            <td>
+                {userinfo.idcode}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                联系电话：
+            </th>
+            <td>
+                {userinfo.telephone}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                手机：
+            </th>
+            <td>
+                {userinfo.mobile} &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <th>
+                所在地区：
+            </th>
+            <td>
+                {userinfo.areaname}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                邮编：
+            </th>
+            <td>
+                {userinfo.zipcode}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                联系地址：
+            </th>
+            <td>
+                {userinfo.address}
+            </td>
+        </tr>
+    </table>
+    <div class="content_action">
+        <input name="but01" type="button" value="修改个人信息" onclick="window.location.href='{config.WebURL}person/individualinfo.{config.Suffix}'"
+            class="button" />
+        <input name="but02" type="button" value="返回" onclick="window.location.href='{config.WebURL}person/index.{config.Suffix}'"
+            class="button" />
+    </div>
+    </form>
+</div>
+<%Include _footer%>

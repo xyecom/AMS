@@ -1,0 +1,43 @@
+﻿<div class="top">
+    <div class="logo">
+        <img src="{config.WebURL}Common/Images/logo.jpg" />
+    </div>
+    <div class="submenu">
+        <div class="login">
+            <%if islogin%>
+            <!--已登陆-->
+            您好{userinfo.loginname}，欢迎来到亿家商城！<a href="/logout.aspx" target="_self">[退出]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+                href="/user/index.aspx" target="_blank">我的帐户</a> | <a href="/user/BuyerOrderList.aspx"
+                    target="_blank">我的订单</a> | <a href="#" target="_blank">帮助中心</a>
+            <%else%>
+            <!--未登陆-->
+            您好，欢迎来到亿家商城！<a href="/login.aspx" target="_blank">[请登陆]</a><a href="/register.aspx"
+                target="_blank">[免费注册]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/user/index.aspx" target="_blank">我的帐户</a>
+            | <a href="/user/BuyerOrderList.aspx" target="_self">我的订单</a> | <a href="#" target="_blank">
+                帮助中心</a>
+            <%/if%>
+        </div>
+        <div class="dh">
+            <ul>
+                <li>
+                    <h1 class="h1">
+                        <a href="{shopuserinfo.domain}product.{config.suffix}" target="_self" class="h1">商城购物</a></h1>
+                </li>
+                <li>
+                    <h1>
+                        <a href="{shopuserinfo.domain}brandlist.{config.suffix}" target="_self" class="h1">品牌专区</a></h1>
+                </li>
+                <li>
+                    <h1>
+                        <a href="{shopuserinfo.domain}tbindex----.{config.suffix}" target="_self" class="h1">团购商品</a></h1>
+                </li>
+                <li>
+                    <h1>
+                        <a href="{shopuserinfo.domain}offerlist-------.{config.suffix}" target="_self" class="h1">积分换购</a></h1>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div style="clear: both">
+    </div>
+</div>

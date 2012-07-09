@@ -1,0 +1,240 @@
+<%if pageinfo.PageError==1%>
+    <%Include _msgbox%>
+    <%end%>
+<%/if%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>快速录入商业信息</title>
+    <link href="/common/css/XYLib.css" type="text/css" rel="Stylesheet" />
+    <link href="/templates/{config.TemplatePath}/css/global.css" type="text/css" rel="Stylesheet" />
+    <link href="/templates/{config.TemplatePath}/css/post.css" type="text/css" rel="Stylesheet" />
+    <script language ="javascript" type ="text/javascript" src ="/common/js/base.js"></script> 
+    <script language ="javascript" type="text/javascript"  src="/common/js/UploadControl.js"></script>
+    <script language ="javascript" type="text/javascript"  src="/templates/{config.TemplatePath}/js/post.js"></script>
+    <script language ="javascript" type ="text/javascript" src ="/templates/{config.TemplatePath}/js/login.js"></script>
+</head>
+<body>
+
+<div class="head">
+    <div class="logo"><a href="/"><img src="{config.weblogo}" alt="返回首页" border="0" /></a></div>
+    <div class="nav"><a href="/">网站首页</a>|{pageinfo.LoginStatus}</div>
+</div>
+<form action="post_result.{config.suffix}" method="post" id="frmQuickPostInfo">
+<div class="guest_post">
+    <div class="step_title">第二步:录入详细信息</div>
+    
+    <div>
+    
+    <table  class="tab_step2" onkeydown="if(event.keyCode == 13) $('btnNext').onclick();">
+    <tr>
+        <th>信息类型：<em>*</em></th>
+        <td>
+        <%loop (ModuleItemInfo) item module.Item%>
+            <%if item__loop__id==1%>
+                
+                <%set initvalue=item.Prefix%>
+                <%set infotypestr = item.InfoTypeStr%>
+                
+                <input type="radio" name="items" value="{item.ID}"  checked ="checked" onclick="SetElementValue('infotitle,hidInfoType','{item.Prefix}');InitInfoAddPageForm('{module.EName}','{module.PEName}','{item.InfoTypeStr}');"/>{item.Prefix}{item.Postfix}
+            <%else%>
+                <input type="radio" name="items" value="{item.ID}" onclick="SetElementValue('infotitle,hidInfoType','{item.Prefix}');InitInfoAddPageForm('{module.EName}','{module.PEName}','{item.InfoTypeStr}');"/>{item.Prefix}{item.Postfix}
+            <%/if%>
+        <%/loop%>
+        </td>
+      </tr>   
+      <tr id="ptname">
+       <th>信息名称：<em>*</em></th>
+       <td  class="two"><input id="infotitle" name="infotitle" type="text" size="35"  maxlength="40" value="{initvalue}"/>
+       <em id="txt0" class="three">信息标题中请勿出现特殊字符。</em>
+       </td>
+      </tr>
+  
+  <tr id="prodpt">
+    
+  <input type="hidden" name="hidInfoTypeStr" id="hidInfoTypeStr" value="{infotypestr}" />
+  <input type="hidden" name="hidInfoType" id="hidInfoType" value="{initvalue}" />
+  <input type="hidden" name="hidModuleName" id="hidModuleName" value="{module.EName}" />
+  <input type="hidden" name="hidTypeId" id="hidTypeId"  name="hidTypeId"/>
+  
+   <th>选择信息类别：<em>*</em></th>
+   <td>
+   <div id="classType"></div>
+    <script type="text/javascript">
+    var cla = new ClassType("cla",'hidModuleName','classType','hidTypeId');
+    cla.Mode ="select";
+    cla.OnChange = GetFieldInnerHTML;
+    cla.Init();
+    </script>
+   </td>
+  </tr>
+  
+  <tr>
+<th> 信息属性：<em>*</em></th>
+<td id="tabFieldBody">
+
+</td>
+</tr>
+ <tr>
+ <th>详细说明：<em>*</em></th>
+ <td>
+<script language ="javascript" type="text/javascript"  src="{config.WebURL}common/fckeditor/fckeditor.js"></script>
+  <script language="javascript" type="text/javascript">
+var oFCKeditor = new FCKeditor('xyecom') ;
+oFCKeditor.BasePath = '/Common/fckeditor/' ;
+oFCKeditor.ToolbarSet = 'Basic' ;
+oFCKeditor.Width = '100%' ;
+oFCKeditor.Height = '300' ;
+oFCKeditor.Value = '' ;
+oFCKeditor.Create() ;
+ </script>
+ </td>
+ </tr>
+<tr>
+<th>上传图片：</th>
+<td ><%include _UploadControl%></td>
+</tr>
+<%if config.DateType==false%>
+<tr>
+<th>信息有效期：<em class="red">*</em></th>
+<td > 
+<input onclick="getDateString(this);" id="EndDate" maxlength="15" readonly="readonly" name ="EndDate" readonly="readonly"/>
+</td>
+</tr>
+<%else%>
+<tr>
+<th>信息有效期：<em class="red">*</em></th>
+<td ><input  type ="radio"  value ="10" name ="rad"/>10天
+<input  type ="radio"   value ="20"  name ="rad"/>20天
+<input  type ="radio"  value ="30"  name ="rad"/>1个月
+<input  type ="radio"  value ="90"  name ="rad"/>3个月
+<input  type ="radio"  value ="180"  name ="rad" checked ="checked"/>6个月
+<input id="Text1"  readonly="readonly" style="display:none;" />
+</td>
+</tr>
+<%/if%>
+</table>
+<input id="datetype"  type="hidden" value="{config.DateType}" />
+
+<%if module.EName=="offer"||module.PEName=="offer"%>
+<table class="tab_step2 mt8">
+<tr>
+<th >单价：</th>
+<td><input maxlength="10"  name ="txtsprice" id="txtsprice" value="0"/>元<em>注：（0位面议，只能填数字）</em></td>
+</tr>
+<tr>
+<th >计量单位：</th>
+<td><input maxlength="10"  name ="txtsunit"/></td>
+</tr>
+<tr>
+<th >最小起定量：</th>
+<td><input maxlength="6"  id ="txtssmallnum" name ="txtssmallnum" value="0"/><em>注：（0为无限量，只能填数字）</em></td>
+</tr>
+<tr>
+<th >货物总量：</th>
+<td><input maxlength="6"  id ="txtscountnum" name ="txtscountnum" value="0"/><em>注：（0为无限量，只能填数字）</em></td>
+</tr>
+<%if ispayment==true%>
+<tr>
+<th >是否支持在线交易：<em class="red">*</em></th>
+<td><input type="radio" value="1" name="rbIsPayMent" />支持<input type="radio" value="0" name="rbIsPayMent" checked="checked" />不支持</td>
+</tr>
+<%/if%>
+</table>
+<%/if%>
+<%if module.EName=="venture"||module.PEName=="venture"%>
+<table class="tab_step2 mt8">
+<tr>
+<th >单价：<em class="red">*</em></th>
+<td><input maxlength="10" id="txtcprice"  name ="txtcprice" value="0"/>元<em>注：（0为面议，只能填数字）</em></td>
+</tr>
+<tr>
+<th >计量单位：<em class="red">*</em></th>
+<td><input maxlength="10"  name ="txtcunit"/></td>
+</tr>
+<tr>
+<th >最小起定量：<em class="red">*</em></th>
+<td><input maxlength="6"  name ="txtcsmallnum" value="0"/><em>注：（0为无限量，只能填数字）</em></td>
+</tr>
+<tr>
+<th >货物总量：<em class="red">*</em></th>
+<td><input maxlength="6"  name ="txtccountnum" value="0"/><em>注：（0为无限量，只能填数字）</em></td>
+</tr>
+</table>
+<%/if%>
+<%if module.EName=="investment"||module.PEName=="investment"%>
+
+<table class="tab_step2 mt8" >
+<tr>
+<th>准备代理(招商)的地区：</th>
+<td>
+    <input type="radio"  id="citys" name ="citys" onclick ="showcityname(1);" checked value ="全国"/>全国
+    <input type="radio" id="cityl"  name="cityl"  onclick ="showcityname(2);" value=""/> 其它</td>
+ </tr>
+<tr style ="display :none" id="cityls">
+    <td></td>
+      <td id="divarea">
+     <input type ="hidden" id="city"  name="city"/>
+     </td>
+</tr>
+</table>
+<script type="text/javascript">
+var claarea = new ClassTypes("claarea",'area','divarea','city');
+claarea.Init();
+</script>
+    
+
+<table class="tab_step2" id="tabInvestmentSell" style="display:none; border-top:0px;">
+<tr>
+<th >招商支持：</th>
+<td>
+    <textarea id="txtsupport" name ="txtsupport" cols="80" rows="7"></textarea></td>
+</tr>
+<tr>
+<th >招商要求：</th>
+<td> <textarea id="txtdemand" name ="txtdemand" cols="80" rows="7"></textarea></td>
+</tr>
+<tr>
+<th >展示网址：</th>
+<td><input maxlength="95"  name ="pageurl" id="pageurl"/></td>
+</tr>
+</table>
+
+
+<table class="tab_step2" id="tabInvestmentBuy" style="display:none;border-top:0px;">
+<tr>
+<th >代理过的品牌：</th>
+<td><input type="text"  name ="txtbrand" style="width: 255px" id="txtbrand"/></td>
+</tr>
+</table>
+<%/if%>
+
+ <!--很重要，不能删除-->
+ <script language="javascript" type="text/javascript">
+    InitInfoAddPageForm('{module.EName}','{module.PEName}','{infotypestr}');
+ </script>
+ 
+
+
+<%if config.IsEnabledVCode("quickpost")%>
+<table class="tab_step2">
+<tr>
+    <th>验证码：<em>*</em></th>
+    <td>
+        {pageinfo.GetValidateCodeHTML()}
+    </td>
+</tr>
+</table>
+<%/if%>
+
+    </div>    
+    <div class="step_next">
+    <input type="button" value="提交信息" id="btnStep2" onclick ="return CheckInfoEditFrom('{module.EName}','{module.PEName}');"/>
+    <input type="button" value="返回" id="btnBack" onclick="history.back();" />
+    </div>
+</div>
+</form>
+Copyright &copy; 2008 {XY_Copyright}.All right reserved. 
+</body>
+</html>

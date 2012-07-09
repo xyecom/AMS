@@ -1,0 +1,183 @@
+﻿<%Include _pagehead%>
+<style type="text/css">
+    #Tab2
+    {
+        clear: both;
+        width: 980px;
+        margin: 0px;
+        padding: 0px;
+        margin: 0 auto;
+    }
+    
+    .Menubox
+    {
+        width: 100%;
+        height: 28px;
+        line-height: 28px;
+        border-bottom: 2px solid #b80733;
+        height: 29px;
+    }
+    .Menubox ul
+    {
+        margin: 0px;
+        padding: 0px;
+    }
+    .Menubox li
+    {
+        float: left;
+        display: block;
+        cursor: pointer;
+        width: 90px;
+        margin-right: 5px;
+        height: 26px;
+        text-align: center;
+        background: url(images/navtab1.gif) no-repeat scroll 0 0 transparent;
+        color: #333;
+        padding-top: 5px;
+    }
+    .Menubox li.hover
+    {
+        color: #fff;
+        text-decoration: none;
+        background-attachment: scroll;
+        background-color: transparent;
+        background-image: url(images/navtab.gif);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+    }
+    .Contentbox
+    {
+        clear: both;
+        margin-top: 0px;
+        border: 2px solid #b80733;
+        border-top: none;
+        text-align: center;
+        padding-top: 8px;
+    }
+    .main
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 3px solid #FA9B4D;
+        position: relative;
+        width: 978px;
+    }
+    #plist ul
+    {
+        display: table-row-group;
+    }
+    #plist li
+    {
+        display: table-cell;
+        list-style: none;
+        margin-left: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        float: left;
+        width: 220px;
+        text-align: center;
+    }
+</style>
+<script type="text/javascript" src="/Common/js/forebase.js"></script>
+<link rel="stylesheet" href="/common/css/XYLib.css" type="text/css" media="screen" />
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var size = '{pagesize}'
+        if (size == '0') {
+            size = 20;
+        }
+        $("#txtpagesize").val(size);
+        $("#txtText").val('{keyword}');
+    });
+
+    function bntSearch(style) {
+        var url = '{shopuserinfo.domain}' + "tbindex";
+
+        var keyword = $("#txtText").val();
+        var pagesize = $("#txtpagesize").val();
+        var pageindex = $("#cpage").val();
+
+        if (keyword != '') {
+            url += "-" + keyword;
+        } else {
+            url += "-";
+        }
+
+        if (style != '') {
+            url += "-" + style;
+        } else {
+            url += "-{showstyle}";
+        }
+        if (pagesize != '') {
+            if (!IsNum(pagesize)) {
+                return alertmsg(false, '每页显示页数必须是数字！');
+            }
+            url += "-" + pagesize;
+        } else {
+            url += "-{pagesize}";
+        }
+        if (pageindex != '') {
+            url += "-" + pageindex;
+        } else {
+            url += "-{pageindex}";
+        }
+        window.location.href = url + "." + config.Suffix;
+    }
+</script>
+<%Include _header%>
+<div id="ubox">
+    <!--左边导航-->
+    <div id="uleftnav">
+        <%Include _left%>
+    </div>
+    <!--左边导航  end-->
+    <!--右边主要内容-->
+    <div id="uright">
+        <!--站点导航-->
+        <div style="display: none;">
+            <em id="clicknum1" style="display: none"></em><em id="clicknum" style="display: none">
+            </em><em id="linkmessage" style="display: none"></em><em id="msy" style="display: none">
+            </em><em id="messnum" style="display: none"></em>
+        </div>
+        <!--公司介绍-->
+        <div class="rcon">
+            <h2>
+                团购信息</h2>
+            <div class="newslist">
+                <div class="tabcon cur">
+                    请输入团购关键字
+                    <input id="txtText" name="txtText" type="text" />
+                    每页显示条数<input id="txtpagesize" name="txtpagesize" type="text" />
+                    <input id="btnSearch" type="button" value="搜索" onclick="bntSearch('')" />
+                    <br />
+                    <input id="Text1" type="button" onclick="bntSearch('1')" value="样式1" />
+                    <input id="Text2" type="button" onclick="bntSearch('2')" value="样式2" />
+                    <input id="Text3" type="button" onclick="bntSearch('3')" value="样式3" />
+                </div>
+                <div class="main">
+                    <div id="plist" class="rbox" style="overflow: hidden; width: 978px;">
+                        <ul>
+                            {XY_团购_团购信息}
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="pg">
+                <div id="splitPage">
+                    {pageinfo.PreviousPage}{pageinfo.NumPage}{pageinfo.NextPage} &nbsp;&nbsp;&nbsp;
+                    直接转到&nbsp;
+                    <input name="pageformat" type="hidden" value=".html /">
+                    <input name="page" id="cpage" size="3" maxlength="3" style="height: 13px;" value="{pageinfo.PageIndex}" />&nbsp;页&nbsp;
+                    <input type="submit" value="确定>>" style="height: 20px;" onclick="xy_GoToPage(cpage.value);" />
+                    <input type="hidden" id="totalPage" value="{pageinfo.PageCount}" />
+                    <span style="font-size: 14px;">共 <strong class="orange">{pageinfo.TotalRecord}</strong>
+                        条记录&nbsp;&nbsp;&nbsp;当前为第 <strong class="orange">{pageinfo.PageIndex}</strong> 页&nbsp;&nbsp;&nbsp;共
+                        <strong class="orange">{pageinfo.PageCount}</strong> 页&nbsp;&nbsp;&nbsp;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%Include _footer%>

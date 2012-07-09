@@ -1,0 +1,131 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <%Include _head%>
+</head>
+<body>
+    <!--登录条-->
+    <%Include _login_bar%>
+    <!--内容开始-->
+    <div id="index">
+        <!--头部-->
+        <div id="reg_nav">
+            <strong>您现在的位置：</strong> <a href="{config.WebURL}" class="blue">网站首页</a> &raquo;<a href="{config.WebURL}baike/index.{config.Suffix}" class="blue">网站百科</a> &raquo;<a href="{config.WebURL}baike/list.{config.Suffix}">百科列表</a> &raquo;<a href="{config.WebURL}baike/view.{config.Suffix}?lid={info.LemmaId}">返回</a>
+        </div>
+
+            <form action="" method="post" id="frmlemma">
+			<div class="table_left">
+            <table width="290" align="center" cellpadding="6" cellspacing="5">
+                <tr>
+                    <td width="293" valign="top">
+					 词条名称<span class="red">*</span></br>
+                        <input class="input_1" name="lemmaname" readonly="readonly" type="text" size="31" id="lemmaname" maxlength="20" class="regOutInput" value="{info.LemmaName}" />
+                    </td>
+                </tr>
+				  <tr>
+                    <td width="293" valign="top">
+					英文翻译</br>
+                        <input class="input_1" name="enname" type="text" size="31" maxlength="20" class="regOutInput" value="{info.EnName}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td width="293" valign="top">
+				  词条分类<span class="red">*</span></br>
+                        <div id="divtitle">
+                        </div>
+                        <input id="typeId" name="typeIds" type="text" style="display: none" value="{XYECOM.Core.Utils.RemoveComma(info.LemmaCategory)}" />
+
+                        <script type="text/javascript">
+                            var cla = new ClassTypes("cla",'baike','divtitle','typeId');
+                            cla.Init();
+                        </script>
+
+                    </td>
+                </tr>
+                <tr>  
+                    <td width="293" valign="top">
+			          同义词</br>
+                        <input class="input_1" name="synonyms" type="text" size="31" id="txt1" maxlength="20" class="regOutInput"
+                            value="{info.Synonyms}" />
+                    </td>
+                </tr>
+      
+                <!--<tr>
+                    <td align="right" valign="top" style="padding-top: 12px;">
+                        <strong class="Font14_1">内容</strong> <span class="red">*</span>
+                    </td>
+                    <td valign="top">
+                        <textarea id="_content_body" style="display: none;" cols="0" rows="0">{info.Content}</textarea>
+
+                        <script language="javascript" type="text/javascript" src="{config.WebURL}common/fckeditor/fckeditor.js"></script>
+
+                        <script language="javascript" type="text/javascript">
+                            var oFCKeditor = new FCKeditor('xyecom') ;
+                            oFCKeditor.BasePath = '/Common/fckeditor/' ;
+                            oFCKeditor.ToolbarSet = 'BaiKe';
+                            oFCKeditor.Width = '100%' ;
+                            oFCKeditor.Height = '400' ;
+                            oFCKeditor.Value = document.getElementById("_content_body").value;
+                            oFCKeditor.Create() ;
+                        </script>
+
+                    </td>
+                </tr>-->
+                <!--<tr>
+                    <td align="right">
+                        <strong class="Font14_1">上传图片</strong> <span class="red">*</span>
+                    </td>
+                    <td>
+                        <%Include _UploadControl%>
+                </tr>-->
+                <tr>  
+                    <td>
+					参考资料</br>
+                        <textarea name="reference" rows="6" cols="50" class="regOutInput">{info.Reference}</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       扩展阅读</br>
+                        <textarea name="extendread" rows="6" cols="50" class="regOutInput">{info.ExtendRead}</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        修改原因</br>
+                        <textarea name="modifyReason" id="modifyReason" rows="4" cols="50" class="regOutInput"></textarea>
+                    </td>
+                </tr>
+				<tr>
+				<td>
+				<input class="tijiao" name="" type="button" value=" 提交 " id="btnBasicSubmit" onclick="return lemmaedit() ;" />&nbsp;&nbsp;
+               <input class="quxiao" name="" type="reset" value=" 取消 " id="Reset4" onclick="window.location.href='{config.WebURL}index.{config.Suffix}'" />
+				</td>
+				</tr>
+            </table>
+			 
+			</div>
+			<div style="float:left">
+			<table width="1020" border="0" align="center" cellpadding="0" cellspacing="0">
+			<tr>
+			<textarea id="_content_body" style="display: none;" cols="0" rows="0">{info.Content}</textarea>
+
+                        <script language="javascript" type="text/javascript" src="{config.WebURL}common/fckeditor/fckeditor.js"></script>
+
+                        <script language="javascript" type="text/javascript">
+                            var oFCKeditor = new FCKeditor('xyecom') ;
+                            oFCKeditor.BasePath = '/Common/fckeditor/' ;
+                            oFCKeditor.ToolbarSet = 'BaiKe';
+                            oFCKeditor.Width = '100%' ;
+                            oFCKeditor.Height = '625' ;
+                            oFCKeditor.Value = document.getElementById("_content_body").value;
+                            oFCKeditor.Create() ;
+                        </script>
+			</tr>
+		</table>
+	    </div>
+            </form>
+
+    </div>
+</body>
+</html>

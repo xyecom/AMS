@@ -1,0 +1,92 @@
+﻿<%Include _head%>
+<style>
+    #right .content_xz input[name='module']
+    {
+        cursor: pointer;
+        float: left;
+    }
+    
+    #right .content_xz label
+    {
+        cursor: pointer;
+        float: left;
+    }
+</style>
+<div class="location fia">
+    <a href="index.{config.Suffix}">商务中心</a> &gt; 发布商业信息
+</div>
+<!--左边导航-->
+<%Include _menu%>
+<!--右边区域-->
+<div id="right">
+    <table class="content_xz">
+        <thead>
+            <tr>
+                <th>
+                    请选择您发布的信息类型
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="tr0" class="xuanze">
+                <td>
+                    <input type="radio" id="Radio0" name="module" checked="checked" value="/user/ChooseProductType.aspx"
+                        onclick="selectinfotype('tr0',this);" />
+                    <label for="Radio0">
+                        <span class="labeltext">发布产品</span>
+                    </label>
+                </td>
+            </tr>
+            <tr id="tr1">
+                <td>
+                    <input type="radio" id="Radio1" name="module" value="/user/ChooseProductType.aspx?IsContractVouch=1"
+                        onclick="selectinfotype('tr1',this);" />
+                    <label for="Radio1">
+                        <span class="labeltext">发布合同担保交易</span>
+                    </label>
+                </td>
+            </tr>
+            <tr id="tr2">
+                <td>
+                    <input type="radio" id="Radio2" name="module" value="/user/Venture/AddFinancingInfo.aspx"
+                        onclick="selectinfotype('tr2',this);" />
+                    <label for="Radio2">
+                        <span class="labeltext">发布融资信息</span>
+                    </label>
+                </td>
+            </tr>
+            <tr id="tr3">
+                <td>
+                    <input type="radio" id="Radio3" name="module" value="/user/Venture/AddInvestmentInfo.aspx"
+                        onclick="selectinfotype('tr3',this);" />
+                    <label for="Radio3">
+                        <span class="labeltext">发布投资信息</span>
+                    </label>
+                </td>
+            </tr>
+            <tr id="tr4">
+                <td>
+                    <input type="radio" id="Radio4" name="module" value="/user/dis_post_step.aspx?ename=service"
+                        onclick="selectinfotype('tr4',this);" />
+                    <label for="Radio4">
+                        <span class="labeltext">发布服务信息</span>
+                    </label>
+                </td>
+            </tr>
+            <tr id="tr5">
+                <td>
+                    <input type="radio" id="Radio5" name="module" value="/user/dis_post_step.aspx?ename=investment"
+                        onclick="selectinfotype('tr5',this);" />
+                    <label for="Radio5">
+                        <span class="labeltext">发布招商代理信息</span>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="content_action">
+        <input type="hidden" id="selected" value="/user/ChooseProductType.aspx" />
+        <input name="submit" type="button" value="选好了，继续" class="button" onclick="selectpage();" />
+    </div>
+</div>
+<%Include _footer%>

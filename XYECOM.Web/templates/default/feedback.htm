@@ -1,0 +1,83 @@
+<%if pageinfo.PageError==1%>
+    <%Include _msgbox%>
+    <%end%>
+<%/if%>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>意见反馈</title>
+    <link href="/common/css/XYLib.css" type="text/css" rel="Stylesheet" />
+    <link href="/templates/{config.TemplatePath}/css/global.css" type="text/css" rel="Stylesheet" />
+    <link href="/templates/{config.TemplatePath}/css/post.css" type="text/css" rel="Stylesheet" />
+    <script language ="javascript" type ="text/javascript" src ="/common/js/base.js"></script> 
+    <script language ="javascript" type="text/javascript"  src="/templates/{config.TemplatePath}/js/post.js"></script>
+    <script language ="javascript" type ="text/javascript" src ="/templates/{config.TemplatePath}/js/login.js"></script>
+    <script language ="javascript" type ="text/javascript" src ="/templates/{config.TemplatePath}/js/validate.js"></script> 
+</head>
+<body>
+<div class="head">
+    <div class="logo"><a href="/"><img src="{config.weblogo}" alt="返回首页" border="0" /></a></div>
+    <div class="nav"><a href="/">网站首页</a>|{pageinfo.LoginStatus}</div>
+</div>
+
+<div class="guest_post">
+    <div class="step_title">用户投诉</div> 
+<form method ="post" action="{config.WebURL}feedback.{config.Suffix}" > 
+<table class="tab_step2">
+<tr>
+<th>类型：<em class="red">*</em></th>
+<td>
+<input type="radio" name="type" value="1"/>求助
+<input type="radio" name="type" value="2"/>建议
+<input type="radio" name="type" value="3" checked="checked"/>投诉
+<input type="radio" name="type" value="4"/>表扬
+<input type="radio" name="type" value="5"/>业务联系
+</td>
+</tr>
+    <tr>
+        <th>主题：<em class="red">*</em></th>
+        <td><input  name="title"  type ="text" id="title" maxlength="100" size="50" /> </td>
+    </tr>
+    <tr>
+        <th>姓名：<em class="red">*</em></th>
+        <td><input name="Name" type="text" id="Name" maxlength="100" size="50" /></td>
+    </tr>
+    <tr>
+        <th>电话：<em class="red">*</em></th>
+        <td><input name="telephone" type="text" id="telephone" maxlength="100" size="50"/></td>
+    </tr>
+    <tr>
+        <th>E-Mail：<em class="red">*</em></th>
+        <td><input  name="email"  type ="text" id="email" maxlength="100" size="50"/></td>
+    </tr>
+    <tr>
+        <th>内容：<em class="red">*</em></th>
+        <td><textarea name="xyecom" rows="8" cols="60" id="xyecom"></textarea>
+    </td>
+    </tr>
+ </table>
+<input id="userId" name="userId" type="hidden" value="{ComplaintId}" />
+<input id="infoFlag" name="infoFlag" type="hidden" value="{infoFlag}" />
+<input id="infoId" name="infoId" type="hidden" value="{infoId}" />
+
+<%if config.IsEnabledVCode("quickpost")%>
+<table class="tab_step2">
+<tr>
+    <th>验证码：<em>*</em></th>
+    <td>
+        {pageinfo.GetValidateCodeHTML()}
+    </td>
+</tr>
+</table>
+<%/if%>  
+    <div class="step_next">
+     <input name="" type ="submit" value=" 确定" onclick ="return CheckFeedback();" class ="button" />
+<input name="but02" type="button" value="取消" onclick ="window.location.href='{config.WebURL}';"  class ="button"/>
+    </div>
+</form>
+</div>
+Copyright &copy; 2008 {XY_Copyright}.All right reserved. 
+</body>
+</html>

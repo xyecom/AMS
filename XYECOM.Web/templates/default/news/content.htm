@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <%include _head%>
+    <style type="text/css">
+        #txtBuyNum
+        {
+            width: 49px;
+        }
+    </style>
+</head>
+<body onload="{pageinfo.OnLoadEvents}">
+    <div id="wrapper">
+        <%include _login_bar%>
+        <%Include _top%>
+        <%Include _search%>
+        <%include _menu%>
+        <div id="news_bread" style="width: 100%; border: 0; margin-top: 6px;">
+            <em>您现在的位置：{pageinfo.Navigation}</em>
+        </div>
+        <div id="news_pages2">
+            <div id="lt_cnt2">
+                <div class="newsMain">
+                    <div class="article">
+                        <div class="text">
+                            <h1>
+                                {newsinfo.Title}</h1>
+                            <ul class="info">
+                                <%if newsinfo.Author!=""%><li class="artist">作者:<span>{newsinfo.Author}</span></li><%/if%>
+                                <li class="date">时间:<span>{newsinfo.AddTime}</span></li>
+                                <li class="reader">阅读:<span>{newsinfo.ClickNumber}</span></li>
+                                <li class="option"><span>文字选择:</span><a href="#">大</a><a href="#">中</a><a href="#">小</a></li>
+                            </ul>
+                            <%if newsinfo.Tags!=""%>
+                            <div class="relat_words">
+                                <img src="{config.WebURL}templates/{config.TemplatePath}/images/bg_news_relat.gif"
+                                    align="absmiddle" />
+                                {newsinfo.Tags}
+                            </div>
+                            <%/if%>
+                            <%if newsinfo.Leadin!=""%>
+                            <div class="clr summary">
+                                {newsinfo.Leadin}
+                            </div>
+                            <%/if%>
+                            <div class="content" id="content">
+                                {newsinfo.Content}
+                                <%if Scheme_Flag%>
+                                <h3>
+                                    相关产品</h3>
+                                <%loop (string) item ProIdsArry%>
+                                <%set ProInfo = GetProInfo({item})%>
+                                <%set supplyinfo_PicUrl = PicUrl({item})%>
+                                <%set ProTypeInfo = GetProTypeInfo({ProInfo.SortID}.ToString())%>
+                                <%set Uinfo_Name = GetProUserInfo({ProInfo.UserID}.ToString())%>
+                              
+                                <%if IsNull({item})%>
+                                <li>
+                                    <%if ProInfo.IsContractVouch%>
+                                    <input disabled="disabled" type="checkbox" id='Checkbox1' value="{item}" />
+                                    <%else%>
+                                    <input type="checkbox" id='ProId_{item}' value="{item}" />
+                                    <%/if%>
+                                    &nbsp;<image src="supplyinfo_PicUrl"></image>
+                                    &nbsp;[{ProTypeInfo.PT_Name}] &nbsp;<a href="{config.WebURL}shop/{Uinfo_Name}/offerdetail-{item}.{config.Suffix}">{ProInfo.Title}</a>
+                                    &nbsp;现价:<font color="red">{ProInfo.Price}</font>/{ProInfo.Unit} &nbsp;最小起订量:{ProInfo.LeastNum}{ProInfo.Unit}
+                                    &nbsp;库存:{ProInfo.CountNum}{ProInfo.Unit}
+                                    <%if ProInfo.IsContractVouch%>
+                                    <a href="{config.WebURL}shop/{Uinfo_Name}/offerdetail-{item}.{config.Suffix}">[签订合同]</a>
+                                    <%else%>
+                                    &nbsp;<a href="{config.WebURL}common/initcart.{config.suffix}?pids={item}">[立即购买]</a><!--<input type="text" value="{ProInfo.LeastNum}" id="txtBuyNum" onclick="ShowPriceRange({item})"
+                                        onblur="UnShowPriceRange({item})" />
+                                        <input type="hidden" id="LeastNum_{item}" value="{ProInfo.LeastNum}" />-->
+                                   <!-- <span id="PriceRange_{item}" style="border: 1px solid #000; index-z: 999; position: absolute;
+                                        display: none; background-color: #fff">
+                                        <ul>
+                                            <li id="jg_title"><span class="jg_num">数量 </span><span class="jg_price">价格(元) </span>
+                                            </li>
+                                            <%loop (XYECOM.Model.PriceRangeInfo) ProInfo_item ProInfo.PriceRange%>
+                                            <li><span class="jg_num">
+                                                <%if ProInfo_item.RangeNum!=-1%>
+                                                {ProInfo_item.OrderNum}-{ProInfo_item.RangeNum}
+                                                <%else%>
+                                                >={ProInfo_item.OrderNum}
+                                                <%/if%>
+                                            </span><span class="jg_price">{ProInfo_item.Price} </span></li>
+                                            <%/loop%>
+                                        </ul>
+                                    </span>{ProInfo.Unit}-->
+                                    <!--<div id="PriceRange_{item}" style="index-z:999;height:100px;width:100px">dsa</div>-->
+                                    <%/if%>
+                                </li>
+                                <%/loop%>
+                                <%/if%>
+                                <%if IsShowbtn()%>
+                                <li>&nbsp;&nbsp;&nbsp;<input type="button" value="批量购买" class="Okbuy" onclick="return News_Buy();" />
+                                </li>
+                                <%/if%>
+                                <%/if%>
+                            </div>
+                            <div class="via">
+                            </div>
+                        </div>
+                        <ul class="pages">
+                            {pageinfo.NumPage}
+                        </ul>
+                        <%if newsinfo.Tags!=""%>
+                        <ul>
+                            Tags:{newsinfo.Tags}
+                        </ul>
+                        <%/if%>
+                        <ul>
+                            {newsinfo.Adjunct}
+                        </ul>
+                        <ul class="other">
+                            <li>【<a class="highlight" href="#">投稿</a>】</li>
+                            <li>【<a href="#">收藏</a>】</li>
+                            <li>【<a href="#">大</a><a class="midsize" href="#">中</a><a href="#">小</a>】</li>
+                            <li>【<a href="#">打印</a>】</li>
+                        </ul>
+                    </div>
+                    <div class="mutuality">
+                        <h3>
+                            相关新闻</h3>
+                        <div class="ci">
+                            <%set str = GetAboutInfo()%>
+                            {str}
+                        </div>
+                    </div>
+                    <input type="hidden" id="NewsId" value="{newsinfo.NewsId}" />
+                    <%if newsinfo.IsAllowComment%>
+                    <div class="mutuality">
+                        <h3>
+                            评论列表&nbsp;&nbsp;<em><a href="{config.WebURL}news/comment.{config.Suffix}?ns_id={newsinfo.NewsId}">更多</a></em></h3>
+                        <div class="ci">
+                            <dl class="message" id="listst">
+                            </dl>
+                            <div class="">
+                                <ul class="public">
+                                    <li>
+                                        <textarea name="" id="CommentBody" class="it" cols="40"></textarea>
+                                    </li>
+                                </ul>
+                                <ul class="publog">
+                                    <li>
+                                        <input type="checkbox" class="ic" name="" id="IsHiddenIP" /><label>匿名</label></li>
+                                    <%if config.IsEnabledVCode("comment")%>
+                                    <li>{pageinfo.GetValidateCodeHTML()}&nbsp;</li>
+                                    <%/if%>
+                                    <li>
+                                        <input type="button" value="发表评论" class="isu" onclick="InsertComment();" /></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <%/if%>
+                </div>
+            </div>
+            <div id="mid_cnt2">
+                最权威的农业行业门户网站
+            </div>
+            <div id="rt_cnt2" style="width: 270px;">
+                <div class="pages_bnr">
+                    <a href="">
+                        <img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_bnr_6.gif" width="267"
+                            height="241" alt="" /></a></div>
+                <div id="gold_user" style="margin: 0">
+                    <div class="top">
+                        <div class="tit">
+                            <span class="fright">更多></span><h2>
+                                金牌商家展示</h2>
+                        </div>
+                        <div class="slogan">
+                            <a href="" class="red big"><strong>马上入住金牌商家，商机无限>></strong></a></div>
+                    </div>
+                    <div id="slidetexts" class="mid">
+                        <ul>
+                            {XY_Index_JinPaiShangJiaZhanShi}
+                        </ul>
+                    </div>
+                    <script type="text/javascript">
+				<!--
+                        try {
+                            slideLine('slidetexts', 3000, 5, 40);
+                        } catch (e) { }
+				//-->
+                    </script>
+                    <div class="btm spacer">
+                    </div>
+                </div>
+                <div class="spacer height6">
+                </div>
+                <div class="MTitle_01">
+                    <h2 id="h201" class="">
+                        <a target="_blank" href="#" class="big"><strong>业界资讯</strong></a></h2>
+                </div>
+                <div id="con01" class="Mblk_01">
+                    <div class="com_pages">
+                        <ul>
+                            <li><a target="_blank" href="#">多国暴发甲型H1N1流感</a></li>
+                            <li><a target="_blank" href="#">胡锦涛出席上合峰会</a></li>
+                            <li><a target="_blank" href="#">伊朗大选引发政局动荡</a></li>
+                            <li><a target="_blank" href="#">成都公交车发生燃烧</a></li>
+                            <li><a target="_blank" href="#">法航空客A330客机坠毁</a></li>
+                            <li><a target="_blank" href="#">成都公交车发生燃烧</a></li>
+                            <li><a target="_blank" href="#">法航空客A330客机坠毁</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="spacer height6">
+                </div>
+                <div class="MTitle_01">
+                    <h2 id="h201" class="">
+                        <a target="_blank" href="#">名优企业</a></h2>
+                    <h2 id="h202" class="selected">
+                        <a target="_blank" href="#">最新企业</a></h2>
+                </div>
+                <div id="con01" class="Mblk_01">
+                    <div class="pictext2">
+                        <div id="lt">
+                            <a href="">
+                                <img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_14.gif"
+                                    width="80" height="60" alt="" /></a></div>
+                        <div id="rt">
+                            <h4>
+                                <a href="">江苏上海手机上网资费大</a></h4>
+                            <p>
+                                中国对其拥有不可置疑的所有权，这些文物理应归还</p>
+                        </div>
+                        <div class="clr">
+                        </div>
+                    </div>
+                    <div class="com_pages">
+                        <ul>
+                            <li><a target="_blank" href="#">朝鲜进行第二次核试验</a></li>
+                            <li><a target="_blank" href="#">我国多省市普降暴雨</a></li>
+                            <li><a target="_blank" href="#">成都公交车发生燃烧</a></li>
+                            <li><a target="_blank" href="#">法航空客A330客机坠毁</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="spacer height6">
+                </div>
+                <div class="MTitle_01">
+                    <h2 id="h201" class="">
+                        <a target="_blank" href="#">图片资讯</a></h2>
+                </div>
+                <div id="con01" class="Mblk_01" style="border-bottom: 0;">
+                    <ul class="photo_news">
+                        <li><a href="#">
+                            <img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic1.jpg" width="85"
+                                height="90" alt="" /><br />
+                            东工大采用GPU构造</a></li>
+                        <li><a href="#">
+                            <img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic2.jpg" width="85"
+                                height="90" alt="" /><br />
+                            东工大采用GPU构造</a></li>
+                        <div class="clr">
+                        </div>
+                    </ul>
+                    <div class="com_pages">
+                        <ul>
+                            <li><a target="_blank" href="#">朝鲜进行第二次核试验</a></li>
+                            <li><a target="_blank" href="#">我国多省市普降暴雨</a></li>
+                            <li><a target="_blank" href="#">成都公交车发生燃烧</a></li>
+                            <li><a target="_blank" href="#">法航空客A330客机坠毁</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clr">
+            </div>
+        </div>
+        <div id="news_pages_btm2" class="spacer">
+        </div>
+        <%include _footer%>
+    </div>
+</body>
+</html>

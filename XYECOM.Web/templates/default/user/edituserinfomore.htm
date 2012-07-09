@@ -1,0 +1,129 @@
+﻿
+
+<%Include _head%>
+
+<div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;  <a href="/user/edituserinfo.{config.Suffix}">基本设置</a> &gt;  补充公司资料</div>
+
+<%Include _menu%>
+
+ <!--右边区域-->
+<div id="right">
+   <form method ="post">
+  <table  class="contentl">
+  <caption>补充公司资料<span>（*为必填项）补充公司资料，将会增加公司资料完成率</span></caption>
+    <tr>
+    <th style="width:160px">企业名称：<em class="red">*</em></th>
+    <td>
+     <input   type="text" value="{userinfo.unitname}" id="companyname" maxlength="20" size="55"  name ="companyname"/><br /> <em>填写与工商注册完全一致的全称。<br/>个体经营者填写执照上的姓名，并注明个体经营。如张三(个体经营)。</em></td>
+  </tr>
+      <tr>
+    <th style="width:160px">经营模式：<em class="red">*</em></th>
+    <td>
+        <%loop (DataRow)  md modelist%>
+        <input  type="checkbox"  value="{md[M_Type]}" name ="modetype"/>{md[M_Type]}
+        <%/loop%>
+        <em>最多只能选择两种经营模式</em>
+        </td>
+  </tr>
+     <tr>
+    <th style="width:160px">注册资本：<em class="red">*</em></th>
+    <td>
+      <select id="moneytype" style="width: 97px" name ="moneytype">
+        <option value ="人民币">人民币</option>
+        </select> <input id="money" type="text"  name ="money" maxlength ="20" style="width: 83px" value ="{userinfo.registeredcapital}"/> 万</td>
+  </tr>
+    <tr>
+    <th style="width:160px">公司成立年份：<em class="red">*</em></th>
+    <td>
+        <input id="companynian" type="text" name ="companynian" value ="{userinfo.regyear}" size="6" maxlength="4"/> 
+        <em>成立年份，如:2005 </em></td>
+  </tr>
+<tr>
+<th style="width:160px">
+公司注册地：<em class="red">*</em></th>
+<td>
+<div id="classType"></div>
+<input type ="hidden" id="citytypeid"  name="citytypeid"/> 
+<input type ="hidden" id="provinceid"  name="provinceid" /> 
+<input type ="hidden" id="areatypeid"  name="areatypeid" value="{userinfo.regareaid}" />
+<script type="text/javascript">
+var cla = new ClassType("cla",'area','classType','areatypeid');
+cla.Mode = "select";
+cla.Init();
+</script>
+</td>
+</tr>
+   <tr>
+    <th style="width:160px">主要经营地点：<em class="red">*</em></th>
+    <td>
+     <input  name="address" type="text"  id="address" maxlength="100" size="60"  value ="{userinfo.manageaddress}"/>
+     <em>请填写业务部门所在营业地</em>
+     </td>
+  </tr>
+  <tr>
+    <th style="width:160px">公司人数：<em class="red">*</em></th>
+    <td>
+    <select name="employeetotal" id="employeetotal">
+        <option value="0">请选择公司人数</option>
+        <option value="50以下">50以下</option>
+        <option value="50 ~ 100">50 ~ 100</option>
+        <option value="100 ~ 200">100 ~ 200</option>
+        <option value="200以上">200以上</option>
+    </select></td>
+  </tr>
+<tr>
+    <th style="width:160px">主营产品或服务：<em class="red">*</em></th>
+    <td class="unline">
+     <input  name="pt" type="text"  id="pt" maxlength="10" size="18"  value="{pt}"/> <input  name="pt1" type="text"  id="pt1" maxlength="10" size="18" value="{pt1}"/>  <input  name="pt2" type="text"  id="pt2" maxlength="10" size="18" value="{pt2}"/>   <input  name="pt3" type="text"  id="pt3" maxlength="10" size="18" value="{pt3}"/><br />
+      <input  name="pt4" type="text" id="pt4" maxlength="10" size="18" value="{pt4}"/> <input  name="pt5" type="text"  id="pt5" maxlength="10" size="18" value="{pt5}"/>  <input  name="pt6" type="text"  id="pt6" maxlength="10" size="18" value="{pt6}"/>   <input  name="pt7" type="text"  id="pt7" maxlength="10" size="18" value="{pt7}"/><br />
+      <input  name="pt8" type="text"  id="pt8" maxlength="10" size="18" value="{pt8}"/> <input  name="pt9" type="text"  id="pt9" maxlength="10" size="18" value="{pt9}"/>  <input  name="pt10" type="text"  id="pt10" maxlength="10" size="18" value="{pt10}"/>   <input  name="pt11" type="text"  id="pt11" maxlength="10" size="18" value="{pt11}"/> <a  href="javascript:;"  onclick ="getmore();"><br>更多</a><br />   
+      
+      <div style="display :none;width:100% " id="pmore"> 
+
+      <input  name="pt12" type="text" id="pt12" maxlength="10" size="18" value="{pt12}"/>
+      <input  name="pt13" type="text"  id="pt13" maxlength="10" size="18" value="{pt13}"/>  
+      <input  name="pt14" type="text"  id="pt14" maxlength="10" size="18" value="{pt14}"/>   
+      <input  name="pt15" type="text" id="pt15" maxlength="10" size="18" value="{pt15}"/><br />
+      <input  name="pt16" type="text"  id="pt16" maxlength="10" size="18" value="{pt16}"/> 
+      <input  name="pt17" type="text"  id="pt17" maxlength="10" size="18" value="{pt17}"/>  
+      <input  name="pt18" type="text"  id="pt18" maxlength="10" size="18" value="{pt18}" />   
+      <input  name="pt19" type="text"  id="pt19" maxlength="10" size="18" value="{pt19}"/><br />
+      <input  name="pt20" type="text"  id="pt20" maxlength="10" size="18" value="{pt20}"/> 
+      <input  name="pt21" type="text"  id="pt21" maxlength="10" size="18" value="{pt21}"/>  
+      <input  name="pt22" type="text"  id="pt22" maxlength="10" size="18" value="{pt22}"/>   
+      <input  name="pt23" type="text"  id="pt23" maxlength="10" size="18" value="{pt23}"/><br />    
+      </div><br />
+      <em>(每空限填1种产品名称,建议10字母以下,如；毛绒玩具)</em>
+    </td>
+  </tr>
+
+
+
+  
+  <tr>
+    <th >简介：<em class="red">*</em></th>
+    <td>
+        <textarea id="lbjianjie" cols="81" rows="9" name="lbjianjie">{userinfo.synopsis}</textarea>
+        <br />· 请用中文详细说明贵公司的成立的历史,主营产品, 品牌,服务等优势。
+        <br />· 如果内容过于简单或填写单纯的产品介绍，将有可能无法通过审核。
+        <br />· 联系方式（电话，传真，手机，电子邮件等）请在会员资料中填写，此处请勿重复填写。
+     </td>
+  </tr>
+  </table>
+  <input type ="hidden"  id="getmode"/>
+  <table width="100%">
+    <tr>
+        <td>
+            <div class="content_action">
+          <input name="but01" type ="submit" value=" 确定" onclick ="return personinfo();" class ="button" />
+            <input name="but02" type="button" value="取消" onclick ="window.location.href='{config.WebURL}user/index.{config.Suffix}'"  class ="button"/>    
+            </div>
+        </td>
+    </tr>
+  </table>
+</form>
+</div> 
+
+<%Include _footer%>
+
+

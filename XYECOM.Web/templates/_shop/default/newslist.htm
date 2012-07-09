@@ -1,0 +1,33 @@
+<%Include _head%>
+<div id="ubox">
+    <!--左边导航-->
+    <div id="uleftnav">
+        <%Include _left%>
+    </div>
+    <!--左边导航  end-->
+    <!--右边主要内容-->
+    <div id="uright">
+        <!--站点导航-->
+        <div style="display: none;">
+            <em id="clicknum1" style="display: none"></em><em id="clicknum" style="display: none">
+            </em><em id="linkmessage" style="display: none"></em><em id="msy" style="display: none">
+            </em><em id="messnum" style="display: none"></em>
+        </div>
+        <!--公司介绍-->
+        <div class="rcon">
+            <h2>
+                公司动态</h2>
+            <div class="newslist">
+                <%loop (DataRow) info infolist%>
+                <%set infourl = GetInfoUrl("newsinfo",info["Newsid"])%>
+                <a href="{infourl}">{info[NewsTitle]}</a>({info[Addtime]})
+                <br />
+                <%/loop%>
+            </div>
+            <div class="pg">
+                当前是第 <span class="colorf00s">{pageinfo.PageIndex}</span> 页(共 {pageinfo.PageCount}
+                页){pageinfo.FirstPage}&nbsp;{pageinfo.PreviousPage}&nbsp;{pageinfo.NextPage}&nbsp;{pageinfo.LastPage}</div>
+        </div>
+    </div>
+</div>
+<%Include _footer%>

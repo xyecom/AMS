@@ -1,0 +1,128 @@
+<html>
+
+<head>
+<title>订单确认-{$WI_Name$}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css"><!--
+BODY {FONT-SIZE: 14px; COLOR: #000; FONT-FAMILY: 宋体}
+TD {FONT-SIZE: 14px; COLOR: #000; FONT-FAMILY: 宋体}
+SELECT {FONT-SIZE: 12px}
+INPUT {FONT-SIZE: 12px}
+A:link {COLOR: #3d362b}
+A:visited {COLOR: #3d362b}
+A:hover {COLOR: #f60}
+.AW:link {COLOR: #3d362b}
+.AW:visited {COLOR: #3d362b}
+.AW:hover {COLOR: #fff}
+.NOL {TEXT-DECORATION: none}
+
+.GR{color:#666}
+.GR:LINK{color:#666}
+.GR:VISITED{color:#666}
+
+.l{font:18px 宋体;FONT-FAMILY: 黑体}
+.M{font:bold 14.8px 宋体}
+.C{font-size:14.8px}
+.S{font-size:12px}
+
+.lh13 {line-height: 130%;}
+.lh15 {line-height: 150%;}
+select{font-size:12px}
+input{font-size:12px}
+.STYLE1 {color: #0000FF}
+.style2 {color: #FF0000}
+.indetail {border-top: 1px solid #E2E2E2;height:26px;font-size:12px;line-height:150%;}
+.style3 {color: #000099}
+.style5 {color: #FF6600}
+.style6 {border-top: 1px solid #E2E2E2; height: 26px; font-size: 12px; line-height: 150%; color: #FF6600; }
+--></style>
+</head>
+
+<body text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="background-repeat: repeat-x;">
+
+<center>
+  <table width="570" border="0" cellpadding="15" cellspacing="0" style="BORDER-BOTTOM: #ff7300 5px solid; BORDER-TOP: #ff7300 5px solid; BORDER-LEFT: #ff7300 5px solid; BORDER-right: #ff7300 5px solid">
+    <tr> 
+      <td align="center" bgcolor="#FFFFFF"><br> <table width="94%" border="0" cellspacing="0" cellpadding="0">
+          <tr> 
+            <td align="center" class="l">订单{$OFCode$}{$type$}<br> 
+            <hr width="100%" size="2" color="#FF7300"></td>
+          </tr>
+          <tr> 
+            <td class="lh13"><br>
+              尊敬的会员:{$username$}<br> <br> 
+              <table width="96%" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr> 
+                  <td height="30" class="m" style="background-color:#FFF8EE; border:#FFCB99 1px solid;">&nbsp;&nbsp;订单<span class="lh15">{$OFCode$}{$type$}：</span></td>
+                </tr>
+              </table>
+              <table width="96%" border="0" align="center" cellpadding="0" cellspacing="0" style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 0px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid;&gt;
+          &lt;tr align=" left=""><td colspan="4"> <table width="94%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr align="left"> 
+                      <td height="30" class="s">货品名称：</td>
+                      <td width="374" height="30" valign="middle" class="s"><a href="{$SD_url$}" target="_blank">{$SD_Title$}</a></td>
+                    </tr>
+                    <tr align="left"> 
+                      <td height="30" class="indetail">货品单价：</td>
+                      <td width="374" height="30" valign="middle" class="indetail">{$OF_Price$} 元/{$SD_Unit$}</td>
+                    </tr>
+					<tr align="left"> 
+                        <td width="73" height="30" class="indetail">购买数量：</td>
+                        <td height="30" valign="middle" class="indetail">{$OF_Number$}{$SD_Unit$}</td>
+                    </tr>
+					                    <tr align="left"> 
+                        <td height="30" class="indetail">货品总价：</td>
+                        <td height="30" valign="middle" class="indetail">{$OF_Money$} 元 </td>
+                    </tr>
+                    <tr align="left"> 
+                        <td height="30" class="indetail">成交时间：</td>
+                        <td height="30" valign="middle" class="indetail">{$OF_AddDate$}</td>
+                    </tr>
+                  </table></td>
+                </table></td></tr>
+              </table>
+              <br>
+              <table width="96%" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr> 
+                  <td height="30" class="lh13">&nbsp;&nbsp;&nbsp;&nbsp;更多详细信息请登陆<a href="{$SD_url$}" target="_blank">{$WI_Name$}</a>，<span class="style2">只有在您确认收货并同意支付货款后</span>，卖家才能拿到货款，安全快捷！<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;请您立即与卖家进行沟通，商定货运方式、运费等相关信息。目前订单的状态是<span class="style2">{$type$}</span>。</td>
+                </tr>
+              </table>
+			  <br>
+			  <table width="96%" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr> 
+                  <td height="30" class="m" style="background-color:#FFF8EE; border:#FFCB99 1px solid;">联系方式</td>
+                </tr>
+              </table>
+              <table width="96%" border="0" align="center" cellpadding="0" cellspacing="0" style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 0px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid;&gt;
+          &lt;tr align=" left=""><td colspan="4"> <table width="94%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr align="left"> 
+                        <td width="66" height="30" class="indetail">公司名：</td>
+                        <td height="30" valign="middle" class="indetail">{$companyname$}</td>
+                    </tr>
+                    <tr align="left"> 
+                        <td height="30" class="indetail">联系人：</td>
+                        <td height="30" valign="middle" class="indetail">{$linkman$}</td>
+                    </tr>					
+					<tr align="left"> 
+                      <td height="30" class="indetail">联系电话：</td>
+                      <td height="30" valign="middle" class="indetail">{$tephone$}</td>
+                    </tr>
+                    <tr align="left"> 
+                      <td height="30" class="indetail">{$LinkAddtype$}：</td>
+                      <td height="30" valign="middle" class="indetail">{$LinkAddress$}</td>
+                    </tr>
+                  </table></td>
+                </table></td></tr>
+              </table> 
+          
+        
+        <p>&nbsp;</p>
+    
+  
+  
+  </center>
+
+</body>
+
+</html>

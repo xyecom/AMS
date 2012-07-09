@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+
+	
+
+
+/*Ö÷Ìå*/
+
+#login_nav{
+	border-bottom:1px solid #ccc;
+	height:27px;
+	line-height:27px;
+}
+	#layout{width:960px;margin:0 auto;padding:30px 0 0 0;}
+		#layoutL{float:left;width:380px;text-align:right;padding:30px 35px 40px 0;border-right:1px solid #DADADA;}
+			.leftList{padding-bottom:15px}
+		#layoutR{float:left;width:500px;padding-left:35px;padding-top:12px;}
+			.InputOff{height:18px;padding-top:2px;border:1px solid #B7B7B7;}
+			.InputOn{height:18px;padding-top:2px;border:1px solid #FF7700;background-color:#FFF4EB;}
+
+
+#reg_nav{
+	height:27px;
+	line-height:27px;
+}
+
+
+.regBg{width:978px;margin:0 auto;margin-bottom:20px;background:url(../images/reginput1.gif) repeat-x;border:1px solid #E3E3E3;padding:25px 0;font-size:14px;}
+
+.regBg td{font-size:14px;}
+
+
+.regOutInput{border:1px solid #ccc;background-color:#fff;height:22px;line-height:22px;padding-left:5px;}
+
+.regOutInputS{border:1px solid #ccc;background-color:#fff;height:18px;padding-left:5px;}
+
+.regOverInput{border:1px solid #FF8800;background-color:#FBF8E9;}
+.regOutTip{font-size:12px; border:1px solid #fff;color:#777;line-height:140%;padding:3px;}
+
+.regOverTip{font-size:12px; border:1px solid #FEC600;color:#777;line-height:140%;background-color:#FBF8E9;padding:3px;}
+
+.regRedFont{color:#f00;}
+
+.right{color:#01A4A2;}
+.wrong{color:#CB0A0A; }
+.write{color:#B37B00; }

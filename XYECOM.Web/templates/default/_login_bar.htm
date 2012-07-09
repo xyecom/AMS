@@ -1,0 +1,35 @@
+<div id="hd_info">
+    <div id="cnts">
+        <div id="site_cang">
+            <img src="{config.WebURL}templates/{config.TemplatePath}/images/ico_idx.gif" width="16"
+                height="16" alt="" align="absmiddle" />
+            <a href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('{config.WebURL}');">
+                设为首页</a>&nbsp;&nbsp;
+            <img src="{config.WebURL}templates/{config.TemplatePath}/images/ico_cang.gif" width="16"
+                height="16" alt="" align="absmiddle" />
+            <a style="cursor: hand" onclick="window.external.addFavorite('{config.WebURL}','纵横易商软件')">
+                加为收藏</a>
+        </div>
+        <div id="log_info">
+            <div id="login">
+                用户名：<input type="text" class="com" name="top_username" id="top_username" onkeydown="_xy_KeyNext('top_password');" />
+                密码：<input type="password" name="top_password" class="com" id="top_password" onkeydown="_xy_KeyPress('_btnTopLogin');" />
+                <%if config.IsEnabledVCode("login")%>
+                验证码： {pageinfo.GetValidateCodeHTML("top_vcode","top_vimg")}
+                <%/if%>
+                <input id="_btnTopLogin" type="button" class="top_login" onclick="return xy_TopLogin();" />
+                &nbsp;&nbsp;<a href="{config.WebURL}register.{config.Suffix}">注册</a> | <a href="{config.WebURL}getPassword.{config.Suffix}">
+                    忘记密码</a> | <a href="##">[VIP会员]</a> | <a href="##">帮助中心</a>| <a style="color:Red" href="{config.WebURL}quickbuy.{config.Suffix}">快速发布求购</a>
+            </div>
+        </div>
+        <span id="logined" style="display: none;">欢迎您，<font id="uname"></font> | <a id="ucenter">
+            我的用户中心</a>| <a href="{config.weburl}logout.{config.suffix}">[退出]</a> <font id="logined_user"
+                style="display: none;">企业用户相关内容</font> <font id="logined_person" style="display: none;">
+                    个人用户相关内容</font> </span>
+        <div class="clr">
+        </div>
+    </div>
+</div>
+<div class="clr">
+</div>
+<script>    Login2();</script>

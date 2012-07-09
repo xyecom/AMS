@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<%include _head%>
+</head>
+<body onload="{pageinfo.OnLoadEvents}">
+
+<div id="wrapper">
+
+    <%include _login_bar%>
+
+    <%Include _top%>
+
+    <%include _search%>
+
+	<div id="idx_cnt2">
+		<div id="left">
+
+			<div class="area1">
+				<div class="hd">
+					<div class="tit">
+						<span class="fright"></span>
+						<a href="" class="h2_hr3"><h2>人才信息</h2></a>
+					</div>
+				</div>
+				<table  class="jobList"> 
+				    <tr> 
+				        <th width=10%>姓名</th> 
+				        <th width=13%>期望城市</th> 
+				        <th width=12%>工作年限</th> 
+				        <th width=20%>职位</th> 
+				        <th width=15%>薪水要求</th> 
+				        <th width=10%>学历</th> 
+				        <th width=10%>详细</th> 
+				     </tr> 
+			
+				    {XY_ResumeList}
+					<tr>
+				        <td colspan="5" align="center">{pageinfo.PreviousPage}{pageinfo.NumPage}{pageinfo.NextPage} </td>
+				    </tr>
+				</table>
+			</div>
+
+
+		</div>
+		<div id="right">
+           
+			<div class="MTitle_01">
+				<h2 id="h201" class=""><a target="_blank" href="#"><strong>人才搜索</strong></a></h2>
+			</div>
+			<div id="con01" class="Mblk_01">
+			    
+				<div class="expo_sch">
+							<table>
+				    <tr>
+					        <td>职位关键字:</td>
+					        <td><input type="text" id="jobkeyword" onblur="isnonull();"/></td>
+					</tr>
+					<tr>
+						    <td>毕业学校:</td>
+						    <td><input type="text" id="schoolname"  onblur="isnonull();"/></td>					    
+					</tr>
+					<tr>
+					    <td>期望城市:</td>
+					    <td><span id="Span2"></span>
+					    <input type ="hidden" id="hopecityid"  name="hopecityid" />
+                        <script type="text/javascript">
+                        var claArea1 = new ClassType("claArea1",'area','Span2','hopecityid',1);
+                        claArea1.Mode = "select";
+                        claArea1.Init();
+                        </script>
+                        </td>
+                    </tr>
+                    <tr>
+					    <td>教育程度:</td>
+					     <td>
+					     <select id="Schoolage">
+	                     <option value="1" selected>不限</option>
+	                     <option value="初中">初中</option>
+                         <option value="中专">中专</option>
+                         <option value="高中">高中</option>
+                         <option value="大专">大专</option>
+                         <option value="本科" >本科</option>
+                         <option value="硕士">硕士</option>
+                         <option value="博士">博士</option>
+                         <option value="更高">更高</option>
+	                     </select>
+	                     </td>
+					</tr>
+					<tr>
+					    <td>工作年限:</td>
+					    <td>
+					        <select id="JobYear">
+	                        <option value="1" Selected>不限</option>
+	                        <option value="在读学生">在读学生</option>
+                            <option value="应届毕业生">应届毕业生</option>
+                            <option value="一年以上" >一年以上</option>
+                            <option value="二年以上">二年以上</option>
+                            <option value="三年以上">三年以上</option>
+                            <option value="五年以上">五年以上</option>
+                            <option value="八年以上">八年以上</option>
+                            <option value="十年以上">十年以上</option>
+	                        </select>
+	                    </td>
+					</tr>
+					<tr>
+						<td>薪水要求:</td>
+						<td><input type="text" name="Intentpay1" maxlength="6" size="6"/>~<input type="text" name="Intentpay2" maxlength="6" size="6"/></td>
+					</tr>
+					<tr>
+					    <td colspan=2>　　
+					        <img  onclick="ResumeListSearch();" src="{config.WebURL}templates/{config.TemplatePath}/images/btn_expo_sch.gif" />
+					    </td>
+				    </tr>
+				</table>
+				</div>
+				
+			</div>
+			
+			
+			<div id="hr_btns">
+				<a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/btn_hr_1.gif" width="125" height="37" alt="" /></a> &nbsp; <a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/btn_hr_2.gif" width="125" height="37" alt="" /></a>
+			</div>
+
+			<div class="MTitle_01" style="margin-top:6px;">
+				<h2 id="h2_2" class=""><a target="_blank" href="#"><strong>优秀人才</strong></a></h2>
+			</div>
+			<div class="Mblk_01">
+				<div id="hr_best_p">
+					<ul class="ci">
+						{XY_JobIndex_YouXiuRenCai2}
+					</ul>
+				</div>
+
+			</div>
+
+
+		</div>
+		<div class="clr" style="height:10px;"></div>
+	</div>
+
+    
+    <%include _footer%>
+
+</div>
+
+</body>
+</html>

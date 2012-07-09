@@ -1,0 +1,41 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+    <title>XYECS Management System</title>
+    <script language="javascript" type="text/javascript" src="/common/js/base.js"></script>
+    <script type="text/javascript" src="javascript/CheckedAll.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="head">
+        <tr>
+            <td class="logo">
+                <img src="images/manage_logo.GIF" alt="后台管理" />
+            </td>
+            <td class="head_right topmenu">
+                <div class="version">
+                    <em><a href="/" target="_blank">查看网站首页</a></em> <a href="outlogin.aspx" target="_parent">
+                        退出</a></div>
+                <ul>
+                    <li id="basic" class="on"><a href="basic/WebInfo.aspx" onclick="menuchange(1);" target="main">
+                        基本设置</a> </li>
+                    <li id="business"><a href="Ams/CreditList.aspx" onclick="menuchange(2);" target="main">
+                        信息管理</a></li>
+                    <li id="news"><a href="news/NewsList.aspx" onclick="menuchange(3);" target="main">资讯管理</a></li>
+                    <li id="users"><a href="UserManage/UserListManger.aspx" onclick="menuchange(4);"
+                        target="main">用户管理</a> </li>
+                    <li id="templte"><a href="LabelManage/List.aspx" onclick="menuchange(5);" target="main">
+                        模板标签</a> </li>
+                    <li id="advance"><a href="MessageManage/ReceiveEmail.aspx" onclick="menuchange(6);"
+                        target="main">消息管理</a> </li>
+                    <li id="tools"><a href="Global/UpdateCache.aspx" onclick="menuchange(7);" target="main">
+                        系统工具</a> </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

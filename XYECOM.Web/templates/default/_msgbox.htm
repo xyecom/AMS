@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>消息提示</title>
+{pageinfo.Meta}
+<link rel="stylesheet" href="{config.WebURL}templates/{config.TemplatePath}/css/global.css" type="text/css" media="screen" />
+</head>
+<body style="background-color:#f2f2f2">
+
+<div id="sysMsgbox">
+	<ul>
+	    <li class="msg">{pageinfo.MsgboxText}</li>
+        <li><a href="{pageinfo.MsgboxURL}">{pageinfo.MsgboxURL}</a></li>
+         <li><a href="#" onclick="history.back();">返回继续操作</a></li>
+        <li><a href="/">返回首页</a> | <a href="#" onclick="window.close();">关闭本页</a></li>
+    </ul>
+    <div id="r_f">2000-2009　{XY_Copyright}　版权所有　</div>
+</div>
+
+</body>
+</html>

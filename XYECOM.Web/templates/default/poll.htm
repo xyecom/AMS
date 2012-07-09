@@ -1,0 +1,31 @@
+<%if pageinfo.PageError==1%>
+    <%Include _msgbox%>
+    <%end%>
+<%/if%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Í¶Æ±½á¹û</title>
+    <link rel="stylesheet" href="{config.WebURL}templates/{config.TemplatePath}/css/poll.css" type="text/css"/>
+</head>
+<body>
+<div class="con">
+{pollbody}
+</div>
+<div class="rst">
+    <table cellpadding="1" cellspacing="0">
+    <%loop (DataRow) data polldata%>
+        <tr>
+            <td class="t1">{data[option]}</td>
+            <td class="t2">{data[total]}Æ±</td>
+            <td class="t3">{data[percent]}%</td>
+            <td class="t4">
+                <div style="width:{data[percent]}%; background-color:#009f00; height:10px;"></div>
+            </td>
+        </tr>
+    <%/loop%>
+    </table>
+</div>
+</body>
+</html>

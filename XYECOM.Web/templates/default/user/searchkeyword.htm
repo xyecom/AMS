@@ -1,0 +1,88 @@
+﻿<%Include _head%>
+
+<div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;  <a href="{config.WebURL}user/searchkeyword.{config.Suffix}">关键字排名</a> &gt;  搜索关键字</div>
+
+<%Include _menu%>
+
+
+<div id="right">
+    <form   method="post" action="">
+    <div class="ly_100">
+        <div class="ly_tit3">
+            <ul>
+                <li class="on"><a href="{config.WebURL}user/searchkeyword.{config.Suffix}">选词</a></li>
+            </ul>
+        </div>
+        
+        <div class="ly_tit32">
+            关键词:<input type="text" name="keyword" id="keyword" size="30" value="{keyword}"/> 
+            <input  class="button" type="submit" value="搜索"  onclick="return __xy_SearchKeyword();"/>
+        </div>
+    </div>
+    
+    <%if keyData.Rows.Count>0%>
+    <table class="ly_tab2 ly_w1">
+        <thead>
+            <tr>
+                <td>关键字</td>
+                <td>相关信息</td>
+            </tr>
+        </thead>
+        <%loop (DataRow) key keyData%>
+        <tr>
+            <td>{key[SK_Name]}</td>
+            <td>
+                <%set data = GetRankingData(key["SK_ID"].ToString())%>
+                <%if data.Rows.Count>0%>
+                    <table width="100%">
+                        <tr>
+                            <th>名次</th>
+                            <th>状态信息</th>
+                            <th>购买</th>
+                        </tr>
+                        <%loop (DataRow) rdata data%>
+                        <tr>
+                            <td>{rdata[rank]}</td>
+                            <td>{rdata[state]}</td>
+                            <td>{rdata[link]}</td>
+                        </tr>
+                        <%/loop%>
+                    </table>
+                <%/if%>
+            </td>
+        </tr>
+        <%/loop%>
+     </table>
+    <%/if%>
+    </form>
+    
+    <table class="hotkeyword">
+        <tr><th>热门关键词</th></tr>
+        <tr>
+            <td>
+                 <%set data = GetHotKeyword(20)%>
+	            <ul>
+			    <%loop (DataRow) hotkey data%>
+			    <li><a href="?keyword={hotkey[SK_Name]}" target="_self">{hotkey[SK_Name]}</a><span>({hotkey[SK_Count]})</span></li>
+                <%/loop%>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    
+    <table class="hotkeyword">
+        <tr><th>最新关键词</th></tr>
+        <tr>
+            <td>
+                 <%set data = GetNewKeyword(20)%>
+	            <ul>
+			    <%loop (DataRow) newkey data%>
+			    <li><a href="?keyword={newkey[SK_Name]}" target="_self">{newkey[SK_Name]}</a><span>({newkey[SK_Count]})</span></li>
+                <%/loop%>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<%Include _footer%>

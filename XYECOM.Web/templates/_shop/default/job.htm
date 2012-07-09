@@ -1,0 +1,95 @@
+<%Include _head%>
+<div id="ubox">
+<!--左边导航-->
+<div id="uleftnav">
+<%Include _left%>
+</div>
+<!--左边导航  end-->
+
+<!--右边主要内容-->
+<div id="uright">
+
+    <!--站点导航-->
+	<div style="display:none;"><em id="clicknum" style="display :none "></em><em id="msy" style="display :none "></em><em id="clicknum1" style="display :none "></em><em id="messnum" style="display :none "></em> </div>
+	<!--公司介绍职位-->
+	<div class="rcon">
+	<h2>职位介绍</h2>
+		<table class="table_infos">
+  <tr>
+    <th class="line1">职位名称：</th>
+    <td>{jobinfo.JobTitle}</td>
+	<th class="line1">招聘人数：</th>
+    <td>{jobinfo.Number} 人</td>
+  </tr>
+   <tr>
+    <th class="line1">工作性质：</th>
+    <td>{jobinfo.JobType}</td>
+	<th class="line1">性别要求：</th>
+    <td>{jobinfo.Sex}</td>
+  </tr>
+  <tr>
+    <th class="line1">学历要求：</th>
+    <td>{jobinfo.Education}</td>
+	<th class="line1">年龄要求：</th>
+    <td>{jobinfo.Age} 岁</td>
+  </tr>
+   <tr>
+    <th class="line1">工作经验：</th>
+    <td>{jobinfo.Experience}</td>
+	<th class="line1">待遇：</th>
+    <td>{jobinfo.Pay}</td>
+  </tr>
+  <tr>
+    <th class="line1">工作地点：</th>
+    <td>{jobinfo.WorkAreaInfo.FullName}</td>
+	<th class="line1">结束时间：</th>
+    <td>{jobinfo.EndDate.ToShortDateString()}</td>
+  </tr>
+  <tr>
+    <th class="line1">职位说明：</th>
+    <td class="w650" colspan="3">{jobinfo.Request}</td>
+  </tr>
+  <tr>
+    <th></th>
+    <td class="w650" colspan="3"><a href="javascript:ApplyJob();">申请该职位</a></td>
+  </tr>
+</table>
+     <h4>该企业其它职位</h4>
+	 <div class="jobqt"> 
+   <%set data = GetOtherJob()%>
+   <%loop (DataRow) job data%>
+    <%set infourl = GetInfoUrl("job",job["EI_ID"],job["EI_HTMLPage"])%>
+	 <span>
+    <a href="{infourl}">{job[EI_Job]}</a></span>
+  <%/loop%>
+	 </div>
+	</div>
+		<!--联系方式-->
+    <div class="rcon">
+    <h2>联系方式</h2>
+    <!--联系方式-->
+    <div  class="infoAbout">
+     <a name="link"></a>
+     <div id="linkmessage"></div>
+    </div>
+    </div>
+	 <!--推荐给好友-->
+	<div class="rcon pb15">
+     <h2>推荐给好友</h2>
+     <div class="commentList">
+      <ul>
+        <li><label>您的姓名：<em>*</em></label><input type="text" size="30" id="txtFromName"  maxlength ="200"/></li>
+        <li><label>
+        您的邮箱：<em>*</em></label><input type="text" size="30" id="txtFromEmail"  maxlength ="200"/></li>
+        <li><label>您朋友邮箱：<em>*</em></label><input type="text" size="30" id="txtToEmail"  maxlength ="200"/><i> 多个邮箱以","隔开</i></li>
+        <li><input name="" type="button" class="button" value="确 定" onclick ="CommendJob();"/> 
+        <input type="button" name="Submit"  class="button" value="清 空"   onclick ="emptycommend();" /></li>
+  </ul>
+ </div> 
+    </div>
+</div>
+<input type="hidden" id ="JobId" value="{jobinfo.JobId}" />
+<input type="hidden" id="txtjobname" value="{jobinfo.JobTitle}" />
+</div>
+	
+<%Include _footer%>

@@ -1,0 +1,170 @@
+﻿<%Include _pagehead%>
+<link rel="stylesheet" type="text/css" href="{config.WebURL}templates/_shop/store/css/tuangou.css" />
+<script type="text/javascript" src="{config.WebURL}templates/_shop/store/js/jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        <%if info.SupplyCount>info.SellCount%>
+        var endtime = new Date('{enddate}'); // 结束日期  
+        var thisTime = new Date('{now}'); // 当前服务器时间 
+        var nowtime = thisTime.getTime(); // 服务器当前时间总的秒数  
+        var leftsecond = 0;
+        var sh;
+        function _fresh() {
+            nowtime = nowtime + 1000; //间隔1秒，毫秒加1000  
+            leftsecond = parseInt((endtime.getTime() - nowtime) / 1000);
+            __d = parseInt(leftsecond / 3600 / 24) <= 9 ? +"0" + parseInt(leftsecond / 3600 / 24).toString() : parseInt(leftsecond / 3600 / 24);
+            __h = parseInt((leftsecond / 3600) % 24) <= 9 ? +"0" + parseInt((leftsecond / 3600) % 24).toString() : parseInt((leftsecond / 3600) % 24);
+            __m = parseInt((leftsecond / 60) % 60) <= 9 ? +"0" + parseInt((leftsecond / 60) % 60).toString() : parseInt((leftsecond / 60) % 60);
+            __s = parseInt(leftsecond % 60) <= 9 ? +"0" + parseInt(leftsecond % 60).toString() : parseInt(leftsecond % 60);
+            $("#clearInterval").html("" + __d + "天" + __h + "时" + __m + "分" + __s + "秒");
+            if (leftsecond <= 0) {
+                $("#clearInterval").html("特价已结束");
+                $("#orderbuy").html("特价已结束");
+                clearInterval(sh);
+            }
+        }
+        _fresh()
+        sh = setInterval(_fresh, 1000);
+        <%else%>
+            $("#orderbuy").html("賣光了");
+            $("#clearInterval").html("特价已结束");                
+        <%/if%>
+    });
+</script>
+<%Include _header%>
+<!--main start-->
+<div id="main">
+    <!--left start-->
+    <div class="i_fl">
+        <!-- 商品主介绍 -->
+        <div class="main">
+            <h2>
+                <span class="c2">济南团购：</span>{info.Title}</h2>
+            <div class="mmain">
+                <div class="lmain">
+                    <table class="discount" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <th>
+                                    原价
+                                </th>
+                                <th>
+                                    折扣
+                                </th>
+                                <th>
+                                    节省
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    ￥{info.MarketPrice}
+                                </td>
+                                <td>
+                                    {info.Discount}
+                                </td>
+                                <td>
+                                    <span class="c2">￥{info.Saved}</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="buyinfo">
+                        <p class="buynum">
+                            <span class="c2">{info.CurrentJoin}</span>人已购买<br />
+                            数量有限，下单要快哟</p>
+                        <p class="timeleft">
+                            距离本次团购结束还有：<br />
+                            <span id="clearInterval" class="showTime"></span>
+                        </p>
+                        <p class="waiting">
+                            成团人数：{info.SucPeopleNum},当前参与：{info.CurrentJoin}有效期至({info.EndDate})
+                        </p>
+                        <%if info.CurrentJoin>=info.SucPeopleNum%>
+                        <p class="success">
+                            团购已成功，可继续购买</p>
+                        <%else%>
+                        <p class="failed">
+                            人数不足，不能成团</p>
+                        <%/if%>
+                        <p class="failed" style="display: none;">
+                            卖光了</p>
+                    </div>
+                    <div class="order buy" id="orderbuy">
+                        <a href="{config.WebURL}MyTeamOrder.{config.suffix}?teamId={info.Id}">抢购</a><em>￥{info.CurrentPrice}</em></div>
+                </div>
+                <div class="rmain">
+                    <img src="{info.ImagePath}" width="440" height="267" alt="" />
+                    <div class="buytips">
+                        <div class="quote">
+                            <span style="color: #333333">★ 多种款式，五种样式任选<br />
+                                ★ 麦斯特蛋糕，儿童之首选<br />
+                                ★ 市区二环以内免费送货</span></div>
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+        <!-- 商品主介绍 end -->
+        <!-- 商品详情 -->
+        <div class="xq">
+            <ul class="xqlist c3">
+                <li class="cur"><a>商品详情</a></li></ul>
+            <div class="details">
+                {info.Description}
+            </div>
+            <div class="buy-bottom">
+                <dl class="item-prices">
+                    <dt class="price">原 价</dt>
+                    <dt class="juprice">折 扣</dt>
+                    <dt class="save">节 省</dt>
+                    <dd class="price">
+                        <del>￥{info.MarketPrice}</del></dd>
+                    <dd class="juprice">
+                        {info.Discount}</dd>
+                    <dd class="save">
+                        ￥{info.Saved}</dd>
+                </dl>
+                <!-- 购买按钮 -->
+                <div class="item-buy avil">
+                    价格：<span>{info.CurrentPrice}</span> <strong class="J_juPrices"><b>￥</b>{info.CurrentPrice}</strong>
+                    <form id="frmjointeam" method="post" action="/common/initcart.{config.suffix}">
+                    <input type="hidden" name="count" value="1" />
+                    <input value="{info.ProductId}" type="hidden" name="pid" />
+                    <input value="{info.Id}" type="hidden" name="teamid" />
+                    <input type="image" class="buy" title="参团" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- 商品详情 end -->
+    </div>
+    <!--left end-->
+    <!--right start-->
+    <div class="i_fr">
+        <div id="plist" class="rbox">
+            <h3>
+                今日其它团购</h3>
+            <ul>
+                {XY_团购_其他团购}
+            </ul>
+        </div>
+    </div>
+    <!--right end-->
+</div>
+<%loop (XYECOM.Model.TeamBuyPriceRangeInfo) item info.TeamBuyPriceRanges%>
+<div class="jg_list">
+    <div class="jg_num">
+        <%if item.OrderUpNum!=-1%>
+        {item.OrderNum}-{item.OrderUpNum}
+        <%else%>
+        >={item.OrderNum}
+        <%/if%>
+    </div>
+    <div class="jg_price">
+        <span>{item.Price}</span>
+    </div>
+</div>
+<%/loop%>
+<!--main end-->
+<%Include _footer%>

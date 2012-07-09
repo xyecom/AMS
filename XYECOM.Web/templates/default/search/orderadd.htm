@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>{seo.Title}</title>
+	<meta name="description" content="{seo.Description}" />
+	<meta name="keywords" content="{seo.Keywords}" />
+	<meta name="robots" content="all"  />
+	<meta http-equiv="Content-Type" content="text/html;" charset="gb2312" />
+	<link rel="stylesheet" href="{config.WebURL}common/css/XYLib.css" type="text/css" media="screen" />
+	<link href="{config.WebURL}templates/{config.TemplatePath}/css/global.css" rel="stylesheet" type="text/css" />
+    <link href="{config.WebURL}templates/{config.TemplatePath}/css/gongqiu.css" rel="stylesheet" type="text/css" />
+
+		
+    <script type="text/javascript" src="{config.WebURL}common/js/base.js" language="javascript"></script>	
+	<script type="text/javascript" src="{config.WebURL}templates/{config.TemplatePath}/js/login.js" language="javascript"></script>
+    <script type="text/javascript" src="{config.WebURL}templates/{config.TemplatePath}/js/validate.js" language="javascript"></script>
+        
+</head>
+<body onload="{pageinfo.OnLoadEvents}">
+
+
+<div id="wrapper">
+
+      
+     <%Include _login_bar%>
+
+	 <%Include _top%>
+	 
+	<div id="gq_guide">
+		<a href="">您当前所在位置：<a href="/">首页</a> > 在线订购 </em>
+	</div>
+
+	<div id="layout">
+	
+		<div id="orderLeft">
+			<div id="LeftProBorder">
+				<div id="ProTitle"><span><a href="/buyer/list/14.html">返回一次性杯子产品中心</a></span>订购{offerinfo.Title}</div>
+				<div id="ProText">
+					<div id="ProPic">
+						<div id="ProPicBorder">
+							<a href="{offerinfo.MorePicUrl}" id="viewbigURL" target="_blank">
+							<img src="{offerinfo.SmallImg[2]}" alt="{offerinfo.Title}" border="0" id="viewbigpic" onload="LoadImg(180,180,this)" /></a>
+						</div>
+
+						<div id="ProPicName">
+						    <img src="{config.WebURL}templates/{config.TemplatePath}/images/big.gif" style="vertical-align:middle" /> 
+						    <a href="{offerinfo.MorePicUrl}" target="_blank">{offerinfo.Title}</a>
+						</div>
+					</div>
+					<div id="ProInfo">
+						<div id="ProInfoB">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td  height="24" colspan="2">
+										<%if offerinfo.Price==0%>
+                                            当前价格：<span>面议</span>{offerinfo.Unit}
+                                        <%else%>
+                                            当前价格：<span>{offerinfo.Price}</span> 元/{offerinfo.Unit} 
+                                        <%/if%>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+										</td>
+									</tr>
+									<tr>
+									    <td width="50%">最小起订：{offerinfo.LeastNum} {offerinfo.Unit}</td>
+									</tr>
+									<tr>
+	
+										<td width="50%">需求总量：{offerinfo.CountNum} {offerinfo.Unit}</td>
+									</tr>
+									<tr>
+										<td height="24">有效期至：{offerinfo.EndTime.ToShortDateString()}</td>
+									</tr>
+									<tr>
+										<td>发布时间：{offerinfo.PublishTime.ToShortDateString()}</td>
+									</tr>
+                                    
+							</table>
+						</div>
+						
+						
+						
+						
+						<div class="blank5"></div>
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="47%"><span class="Font14">有问题请联系</span>：<strong class="orange" style="font-family:Tahoma,'宋体';">86-0599-6329616</strong></td>
+								<td width="23%"></td>
+							</tr>
+						</table>
+					</div>
+					<div class="clr"></div>
+					<div id="ProDesTitle"><strong>详细信息:</strong></div>
+					<div class="ProDesText">
+					     <table width="95%" border="0" align="center" cellpadding="1" cellspacing="1" class="typelist"></table>
+					     {offerinfo.InfoContent}
+					</div>
+
+				</div>
+
+			</div>
+            
+		 </form>
+
+			<div id="SayInfo">
+				<strong>免责声明</strong>：以上信息由相关企业自行提供，该企业负责信息内容的真实性、准确性和合法性。
+				<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{config.webname}对此不承担任何保证责任。
+			</div>
+
+
+		</div>
+	
+	    <div id="orderRight">
+	    
+	        <table>
+	            <caption>确认收货信息:</caption>
+	            <tr>
+	                <th>联系人：</th>
+	            </tr>
+	            <tr>
+	                <td><input type="text" id="txtLinkMan" value="{userinfo.linkman}"/></td>
+	            </tr>
+	            
+	            <tr>
+	                <th>联系电话：</th>
+	            </tr>
+	            <tr>
+	                <td><textarea id="txtLinkTelphone" rows="3" cols="40">{userinfo.telephone}</textarea></td>
+	            </tr>
+	            
+	            <tr>
+	                <th>送货地址：</th>
+	            </tr>
+	            <tr>
+	                <td><textarea id="txtLinkAddress" rows="4" cols="40">{userinfo.address}</textarea></td>
+	            </tr>
+	        </table>
+	        
+	        <table>
+	            <caption>确认购买数量:</caption>
+	            <tr>
+	                 <th width="30%">当前价：</th>
+	                 <td width="70%"><span>{offerinfo.Price}</span>元/{offerinfo.Unit}<input  name="ProductPrice" id="ProductPrice" type="hidden" value="{offerinfo.Price}" /></td>
+	            </tr>
+	            
+	            <tr>
+	                <th>订购数量：</th>
+	                <td>
+	                    <input type="text" name="txtNumber" id="txtNumber"  onchange="getMoney(this)" class="inputtext"  maxlength="5" size="5"/> {offerinfo.Unit}
+                        <input  name="ProductSmallNum" id="ProductSmallNum" type="hidden" value="{offerinfo.LeastNum}" />	
+	               </td>
+	            </tr>
+	            
+	            <tr>
+	                <th>总价：</th>
+	                <td>
+	                    <span id="OrderMoney" >0 </span>元<input  name="cp_id" id="cp_id" type="hidden" value="{offerinfo.InfoID}" />
+	               </td>
+	            </tr>
+	            <%if config.IsEnabledVCode("order")%>
+	            <tr>
+	                <th>验证码：</th>
+	                <td>{pageinfo.GetValidateCodeHTML()}</td>
+	            </tr>
+                <%/if%>
+                <tr>
+                    <td colspan="2"><input name="" type="submit" onclick ="return InsertOrder();" value="确定无误，购买" /></td>
+                </tr>
+	        </table>
+
+	    </div>
+	</div>
+     
+     <%include _footer%>
+
+
+</div>
+
+</body>
+</html>

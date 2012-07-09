@@ -1,0 +1,119 @@
+@charset "utf-8";
+/* CSS Document */
+
+.redfont{color:#f60;}
+.whitefont{color:#fff;}
+.bluefont{color:#0066CC;}
+.font14{font-size:14px;}
+a{color:#f60;}
+
+#layoutHead{margin:0px auto;width:897px;height:126px;background:url(../images/bg_rank_header.jpg) bottom left repeat-x;}
+
+#rank_header{
+	width:897px;
+	margin:0 auto;
+	padding-top:13px;
+	height:68px;
+	position:relative;
+}
+
+#rank_nav{
+	width:897px;
+	margin:0 auto;
+	margin-top:10px;
+	height:28px;
+	line-height:28px;
+}
+
+#quick_link{
+	position:absolute;
+	right:0;
+	top:10px;
+}
+
+#rank_nav li{
+	float:left;
+	margin-left:35px;
+}
+
+#rank_nav li a{color:white;}
+#rank_nav li a.current{color:black;font-weight:700;background:url(../images/bg_rank_cur_nav.gif) no-repeat top left;float:left;display:block;padding-left:15px;}
+#rank_nav li a.current span{background:url(../images/bg_rank_cur_nav.gif) no-repeat top right;float:left;display:block;padding-right:15px;}
+
+#rank_nav li a span{font-size:14px;}
+
+#layoutBnner{margin:10px auto;width:897px;height:250px;background:transparent url(../images/fixbanner.jpg) no-repeat}
+#layoutBnnerT{padding-left:680px;padding-right:22px;line-height:160%;color:#fff;padding-top:55px;font-size:12px;}
+
+#layoutMain{clear:left;margin:10px auto;width:897px;}
+#layoutMainL{width:650px;float:left;}
+	#Lsearch{padding-left:20px;height:54px;padding-top:15px;margin-bottom:10px;background:#fff url(../images/fix_searchbg.gif) no-repeat left top;}
+	.keyclass{height:21px;width:410px;margin-right:5px;border:1px solid #F99E1C;padding-top:9px;font-size:14px;padding-left:5px;}
+	.keybut{width:158px;height:33px;background:#fff url(../images/fix_searchbut.gif) no-repeat left top;border-width:0px;}
+	
+	#Lfix_xg{background:#fff url(../images/fix_xg.gif) no-repeat 0px 0px;height:48px;}	
+	#Lfix_xg1{border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;padding-top:10px;height:1%;font-size:12px;}
+		#Lfix_xg1L{float:left;padding:5px 15px;}
+		#Lfix_xg1R{float:left;padding-top:10px;padding-right:5px;font-size:12px;line-height:180%;}
+	#Lfix_xg2{background:#fff url(../images/fix_xg2.gif) no-repeat 0px 0px;height:11px;overflow:hidden;}
+	
+	#Lfix_show{padding-top:10px;}
+	#Lfix_show1{float:left;width:319px;}
+	#Lfix_show2{width:628px;}
+		.Lfix_showLine{border-left:1px solid #D3D3D3;border-right:1px solid #D3D3D3;height:1%;}
+		#hotkey{padding:0 10px;}
+		#hotkey a{display:block;width:90px;padding-left:5px;line-height:24px;height:24px;float:left;font-size:14px;color:#333;text-decoration:none;overflow:hidden;}
+		#hotkey a:hover{color:#f60;background-color:#f2f2f2;text-decoration:underline;}
+		#hotShow{padding:0 10px;}
+		.hotkeylink{display:block;width:120px;height:24px;line-height:24px;overflow:hidden;float:left;font-size:14px;text-decoration:none;font-weight:bold;}
+		.hotkeylink1{display:block;width:170px;height:24px;line-height:24px;overflow:hidden;float:left;font-size:12px;text-decoration:none;color:#333}
+		.hotkeylink:hover{color:#f00;}
+		.hotkeylink1:hover{color:#f60}
+		
+#layoutMainR{width:234px;float:right;overflow:hidden;}
+	.RightTopBg{background:#fff url(../images/fix_r1.gif) no-repeat 0 0;height:14px;overflow:hidden;}
+	.RightMidBg{border-left:1px solid #C8C8C8;border-right:1px solid #C8C8C8;height:1%;padding:0 10px;font-size:12px;line-height:180%;}
+	.RightEndBg{background:#fff url(../images/fix_r2.gif) no-repeat 0 0;height:16px;overflow:hidden;}
+	
+	
+	
+#layoutBottom{clear:left;margin:10px auto;width:897px;border-top:1px solid #ddd;}
+#Binfo{background:#fff url(../images/logo_gray.gif) no-repeat left top;margin:15px 30px;height:51px;padding-left:260px;font-size:12px;line-height:160%;font-family: Verdana, Arial;color:#333;}
+#Binfo a{color:#333;}
+#Binfo a:hover{color:#f60;}
+
+.rk_cate{
+	background:url(../images/bg_rank_cate.gif) no-repeat;
+	width:204px;
+	margin:0 auto;
+	height:29px;
+	text-align:center;
+	line-height:29px;
+	margin-bottom:9px;
+}
+
+.rk_cate h2{
+	color:white;
+	font-size:14px;
+}
+
+.rk_item{
+	margin-bottom:5px;
+	background:url(../images/bg_line.gif) bottom left repeat-x;
+	padding-bottom:5px;
+}
+
+.rankTable{ font-size:14px; border:1px solid #ccc;}
+.rankTable th,.rankTable td{padding:5px;}
+.rankTable .cTable{ background-color:#f8f8f8;}
+.rankTable .k{ font-weight:bold;}
+.rankTable .title{ background-color:#f8f8f8; color:#f60; font-weight:bold;}
+
+
+.tabHotKey{font-size:14px; border:1px solid #ccc; margin-top:10px;}
+.tabHotKey th,.tabHotKey td{padding:5px;}
+.tabHotKey th{background-color:#f8f8f8; color:#f60; font-weight:bold; text-align:left;}
+.tabHotKey td li{width:100px;padding-left:5px;line-height:24px;height:24px;float:left;}
+
+.tabHotKey td a{font-size:14px;color:#333;text-decoration:none;overflow:hidden; margin-bottom:10px;}
+.tabHotKey td a:hover{color:#f60;background-color:#f2f2f2;text-decoration:underline;}

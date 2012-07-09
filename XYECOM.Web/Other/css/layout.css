@@ -1,0 +1,25 @@
+﻿body{background-color:#fff;background:url(../images/yindao_bg.gif) repeat-x top; font-family:Arial, Helvetica, sans-serif; font-size: 12px; color: #333333; margin:0}
+
+.logo{width:263px; height:70px; float:left;}
+#all{width:920px; height:auto; margin:0 auto;}
+#top{width:795px;height:70px; margin:0 auto;}
+.p1{float:right; font-size:12px; margin-top:5px;
+    width: 254px;
+}
+.p1 a{color:#666;}
+.p1 a:hover{color:#d80606}
+h2{font-size:14px; font-weight:bold; color:#d80606; height:28px; line-height:28px;  padding-left:30px; border-bottom:2px solid #d80606;
+    width: 672px;
+}
+h2 a{color:#888;}
+
+/*---------------------注册页----------------------------------*/
+#middle{ width:850px; height:auto; overflow:hidden; margin:10px auto}
+#regleft{ width:300px; height:400px; float:left}
+#regright{ width:540px; height:400px; float:left}
+.sle{width:600px; margin-left:60px; height:30px; }
+.fuwu h3{font-size:13px; color:red; font-weight:bold;width:133px;
+text-align:left; float:left;  height: 21px;
+}
+.span1{ color:#666; font-size:12px; margin-left:15px;}
+.ming{text-align:right; font-size:13px;}

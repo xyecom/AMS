@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+        
+        <%include _head%>
+        
+</head>
+<body onload="{pageinfo.OnLoadEvents}">
+
+
+<div id="wrapper">
+
+     
+     <%Include _login_bar%>
+
+	 <%Include _top%>
+	 
+	 <%Include _search%>
+
+    <%if pageinfo.ModuleFlag=="offer"%>
+        <%Include _buy_offer%>
+    <%/if%>
+
+    <%if pageinfo.ModuleFlag=="venture"%>
+        <%Include _buy_machining%>
+    <%/if%>
+
+    <%if pageinfo.ModuleFlag=="investment"%>
+        <%Include _buy_investment%>
+    <%/if%>
+
+    <%if pageinfo.ModuleFlag=="service"%>
+        <%Include _buy_service%>
+    <%/if%>  
+    
+     
+     <%include _footer%>
+
+
+</div>
+
+</body>
+</html>

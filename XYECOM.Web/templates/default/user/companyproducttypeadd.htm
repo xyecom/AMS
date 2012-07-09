@@ -1,0 +1,25 @@
+
+<%Include _head%>
+
+     <div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;添加分类</div>
+     
+<%Include _menu%>
+
+<!--右边区域-->
+
+<div id="right">
+<form action="#" id="" method="post"> 
+<table class="contentl">
+<caption>添加分类<span>(*为必填项)</span></caption>
+<tr>
+<th>分类名称：<em class="red">*</em></th>
+<td ><input id="name" name="name" type="text"  size="30" maxlength="50" value="{name}" /></td>
+</tr>
+</table>
+<div class="content_action"><input name="but01" type ="submit" value=" 确定" onclick ="return typeadd();" class ="button" />
+<input name="but02" type="button" value="取消" onclick ="window.location.href='{config.WebURL}user/companyproducttype.{config.Suffix}';"  class ="button"/>
+</div>
+</form>
+</div>
+
+<%Include _footer%>

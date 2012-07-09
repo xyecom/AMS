@@ -1,0 +1,450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<title> 信息图片 - {config.webname}</title>
+	<meta name="description" content="xyecom" />
+	<meta name="keywords" content="xyecom" />
+	<meta name="robots" content="all"  />
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<link href="{config.WebURL}common/css/xylib.css" rel="stylesheet" type="text/css" />
+	<link href="{config.WebURL}templates/{config.TemplatePath}/css/global.css" rel="stylesheet" type="text/css" />
+	<link href="{config.WebURL}templates/{config.TemplatePath}/css/search.css" rel="stylesheet" type="text/css" />
+	
+	<script type="text/javascript" src="{config.WebURL}common/js/base.js" language="javascript"></script>
+	<script type="text/javascript" src="{config.WebURL}templates/{config.TemplatePath}/js/login.js" language="javascript"></script>
+	<script type="text/javascript" src="{config.WebURL}templates/{config.TemplatePath}/js/ShowImg.js" language="javascript"></script>
+</head>
+<body>
+
+<div id="wrapper">
+
+	<%Include _login_bar%>
+	
+	<div id="gq_guide">
+		您现在的位置：<a href="{config.weburl}">首页</a> > 图片展示
+	</div>
+
+    <div id="s_body">
+<%if pageinfo.ModuleFlag=="offer"%>
+<!--供求信息-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="compareTab">
+    <tr>
+        <td valign="top">
+            <table>
+                    <!--类别 -->
+                    <tr>
+                        <th class="title">信息标题</th>     
+                    </tr>
+                    <!--类别内容 --> 
+                    <tr>
+                        <td style="height:110px;">信息图片
+                        </td>
+                    </tr>
+                    <tr>
+                         <td class="gray">价格</td>
+                    </tr>
+                    <!--类别 -->     
+                    <tr>
+                         <th class="title">基本参数</th>
+                    </tr>
+                    <tr>
+                         <td>信息类别</td>
+                    </tr>
+                    <tr>
+                         <td class="graybg">最小起定量</td>
+                    </tr>
+                     <tr>
+                        <td>货物数量</td>
+                    </tr>
+                    <tr>
+                    <td class="graybg">发布时间</td>
+                    </tr> 
+                    <tr>
+                        <td>有效时间</td>
+                    </tr>   
+                    <tr>
+                        <td class="graybg">信息描述</td>
+                    </tr>         
+            </table>
+        </td>
+        <%loop (SupplyInfo) info list%>
+        <td valign="top">
+            <table>
+                    <!--类别 -->
+                    <tr>
+                        <th class="title"><%filter(info.UserID,info.Title)%></th>     
+                    </tr>
+                    <!--类别内容 --> 
+                    <tr>
+                        <td style="height:110px;">
+                            <%if {info.SmallImg[0]}==""%>
+                            <img src="{config.WebURL}templates/{config.TemplatePath}/images/WelcomeInfro_32.gif" alt="pro" />
+                            <%else%>
+                            <img width="110px" height="100px;" src="{info.SmallImg[0]}" alt="pro" /> 
+                            <%/if%> 
+                        </td>
+                    </tr>
+                    <tr>
+                         <td class="gray">
+                            <%if {(Convert.ToInt32(info.Price)).ToString()}=="0"%>
+                            面议
+                            <%else%>
+                            {info.Price.ToString()} 元
+                            <%/if%>
+                         </td>
+                    </tr>
+                    <!--类别 -->     
+                    <tr>
+                         <th class="title">基本参数</th>
+                    </tr>
+                    <tr>
+                         <td>{info.SortName}</td>
+                    </tr>
+                    <tr>
+                         <td class="graybg">{info.LeastNum}{info.Unit}</td>
+                    </tr>
+                     <tr>
+                        <td>{info.CountNum}{info.Unit}</td>
+                    </tr>
+                    <tr>
+                    <td class="graybg">{info.PublishTime}</td>
+                    </tr> 
+                    <tr>
+                        <td>{info.UseFulDate}</td>
+                    </tr>   
+                    <tr>
+                        <td class="graybg"><%filter(info.UserID,info.InfoContent)%></td>
+                    </tr>         
+            </table>
+        </td>
+        <%/loop%> 
+    </tr>
+</table>
+<%/if%>
+<!-- 加工 -->
+<%if pageinfo.ModuleFlag=="venture"%>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="compareTab">
+    <tr>
+        <td valign="top">
+            <table>
+                    <!--类别 -->
+                    <tr>
+                        <th class="title">信息标题</th>     
+                    </tr>
+                    <!--类别内容 --> 
+                    <tr>
+                        <td style="height:110px;">信息图片
+                        </td>
+                    </tr>
+                    <tr>
+                         <td class="gray">价格</td>
+                    </tr>
+                    <!--类别 -->     
+                    <tr>
+                         <th class="title">基本参数</th>
+                    </tr>
+                    <tr>
+                         <td>信息类别</td>
+                    </tr>
+                    <tr>
+                         <td class="graybg">最小起定量</td>
+                    </tr>
+                     <tr>
+                        <td>货物数量</td>
+                    </tr>
+                    <tr>
+                    <td class="graybg">发布时间</td>
+                    </tr> 
+                    <tr>
+                        <td>有效时间</td>
+                    </tr>   
+                    <tr>
+                        <td class="graybg">信息描述</td>
+                    </tr>         
+            </table>
+        </td>
+        <%loop (DemandInfo) dinfo list%>
+            <td valign="top">
+            <table>
+                    <!--类别 -->
+                    <tr>
+                        <th class="title"><%filter(dinfo.UserID,dinfo.Title)%></th>     
+                    </tr>
+                    <!--类别内容 --> 
+                    <tr>
+                        <td style="height:110px;">
+                            <%if {dinfo.SmallImg[0]}==""%>
+                            <img src="{config.WebURL}templates/{config.TemplatePath}/images/WelcomeInfro_32.gif" alt="pro" />
+                            <%else%>
+                            <img width="110px" height="100px;" src="{dinfo.SmallImg[0]}" alt="pro" /> 
+                            <%/if%> 
+                        </td>
+                    </tr>
+                    <tr>
+                         <td class="gray">
+                            <%if {(Convert.ToInt32(dinfo.Price)).ToString()}=="0"%>
+                            面议
+                            <%else%>
+                            {dinfo.Price.ToString()} 元
+                            <%/if%>
+                         </td>
+                    </tr>
+                    <!--类别 -->     
+                    <tr>
+                         <th class="title">基本参数</th>
+                    </tr>
+                    <tr>
+                         <td>{dinfo.SortName}</td>
+                    </tr>
+                    <tr>
+                         <td class="graybg">{dinfo.LeastNum}{dinfo.Unit}</td>
+                    </tr>
+                     <tr>
+                        <td>{dinfo.CountNum}{dinfo.Unit}</td>
+                    </tr>
+                    <tr>
+                    <td class="graybg">{dinfo.PublishTime}</td>
+                    </tr> 
+                    <tr>
+                        <td>{dinfo.UseFulDate}</td>
+                    </tr>   
+                    <tr>
+                        <td class="graybg"><%filter(dinfo.UserID,dinfo.InfoContent)%></td>
+                    </tr>         
+            </table>
+        </td>
+        <%/loop%> 
+    </tr>
+</table>
+<%/if%>
+
+<%if pageinfo.ModuleFlag=="investment"%>
+<!--招商代理信息-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="compareTab">
+    <tr>
+        <td valign="top">
+            <table>
+                    <!--类别 -->
+                    <tr>
+                        <th class="title">信息标题</th>     
+                    </tr>
+                    <!--类别内容 --> 
+                    <tr>
+                        <td style="height:110px;">信息图片
+                        </td>
+                    </tr>
+                    <tr>
+                         <td class="gray">信息类别</td>
+                    </tr>
+                    <!--类别 -->     
+                    <tr>
+                         <th class="title">基本参数</th>
+                    </tr>
+                    <tr>
+                         <td>招商区域</td>
+                    </tr>
+                    <tr>
+                        <td>发布时间</td>
+                    </tr> 
+                    <tr>
+                        <td class="graybg">有效时间</td>
+                    </tr>   
+                    <tr>
+                        <td>信息描述</td>
+                    </tr>         
+            </table>
+        </td>
+        <%loop (XYECOM.Model.InviteBusinessmanInfo) iinfo list%>
+        <td valign="top">
+            <table>
+                    <!--类别 -->
+                    <tr>
+                        <th class="title"><%filter(iinfo.UserID,iinfo.Title)%></th>     
+                    </tr>
+                    <!--类别内容 --> 
+                    <tr>
+                        <td style="height:110px;">
+                            <%if {iinfo.SmallImg[0]}==""%>
+                            <img src="{config.WebURL}templates/{config.TemplatePath}/images/WelcomeInfro_32.gif" alt="pro" />
+                            <%else%>
+                            <img width="110px" height="100px;" src="{iinfo.SmallImg[0]}" alt="pro" /> 
+                            <%/if%> 
+                        </td>
+                    </tr>
+                    <tr>
+                         <td class="gray">{iinfo.SortName}</td>
+                    </tr>
+                    <!--类别 -->     
+                    <tr>
+                         <th class="title">基本参数</th>
+                    </tr>
+                    <tr>
+                        <%if {iinfo.A_Area}==""%>
+                        <td>没有填写</td>
+                        <%else%>
+                         <td>{iinfo.A_Area}</td>
+                         <%/if%>
+                    </tr>
+                    <tr>
+                        <td>{iinfo.PublishTime}</td>
+                    </tr> 
+                    <tr>
+                        <td  class="graybg">{iinfo.UseFulDate}</td>
+                    </tr>   
+                    <tr>
+                        <td><%filter(iinfo.UserID,iinfo.InfoContent)%></td>
+                    </tr>         
+            </table>
+        </td>
+        <%/loop%> 
+    </tr>
+</table>
+<%/if%>
+
+<%if pageinfo.ModuleFlag=="service"%>
+<!--服务信息-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="compareTab">
+    <tr>
+        <td valign="top">
+            <table>
+                    <!--类别 -->
+                    <tr>
+                        <th class="title">信息标题</th>     
+                    </tr>
+                    <!--类别内容 --> 
+                    <tr>
+                        <td style="height:110px;">信息图片
+                        </td>
+                    </tr>
+                    <!--类别 -->     
+                    <tr>
+                         <th class="title">基本参数</th>
+                    </tr>
+                    <tr>
+                         <td>信息类别</td>
+                    </tr>
+                    <tr>
+                    <td class="graybg">发布时间</td>
+                    </tr> 
+                    <tr>
+                        <td>有效时间</td>
+                    </tr>   
+                    <tr>
+                        <td class="graybg">信息描述</td>
+                    </tr>         
+            </table>
+        </td>
+        <%loop (XYECOM.Model.ServiecInfo) seinfo list%>
+        <td valign="top">
+            <table>
+                    <!--类别 -->
+                    <tr>
+                        <th class="title"><%filter(seinfo.UserID,seinfo.Title)%></th>     
+                    </tr>
+                    <!--类别内容 --> 
+                    <tr>
+                        <td style="height:110px;">
+                            <%if {seinfo.SmallImg[0]}==""%>
+                            <img src="{config.WebURL}templates/{config.TemplatePath}/images/WelcomeInfro_32.gif" alt="pro" />
+                            <%else%>
+                            <img width="110px" height="100px;" src="{seinfo.SmallImg[0]}" alt="pro" /> 
+                            <%/if%> 
+                        </td>
+                    </tr>
+                    <!--类别 -->     
+                    <tr>
+                         <th class="title">基本参数</th>
+                    </tr>
+                    <tr>
+                         <td>{seinfo.SortName}</td>
+                    </tr>
+                    <tr>
+                    <td class="graybg">{seinfo.PublishTime}</td>
+                    </tr> 
+                    <tr>
+                        <td>{seinfo.UseFulDate}</td>
+                    </tr>   
+                    <tr>
+                        <td class="graybg"><%filter(seinfo.UserID,seinfo.InfoContent)%></td>
+                    </tr>         
+            </table>
+        </td>
+        <%/loop%> 
+    </tr>
+</table>
+<%/if%>
+
+<%if pageinfo.ModuleFlag=="brand"%>
+<!--品牌信息-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="compareTab">
+    <tr>
+        <td valign="top">
+            <table>
+                    <!--类别 -->
+                    <tr>
+                        <th class="title">信息标题</th>     
+                    </tr>
+                    <!--类别内容 --> 
+                    <tr>
+                        <td style="height:110px;">信息图片
+                        </td>
+                    </tr>
+                    <!--类别 -->     
+                    <tr>
+                         <th class="title">基本参数</th>
+                    </tr>
+                    <tr>
+                         <td>信息类别</td>
+                    </tr>
+                    <tr>
+                    <td class="graybg">发布时间</td>
+                    </tr>    
+                    <tr>
+                        <td>信息描述</td>
+                    </tr>         
+            </table>
+        </td>
+        <%loop (BrandInfo) binfo list%>
+        <td valign="top">
+            <table>
+                    <!--类别 -->
+                    <tr>
+                        <th class="title"><%filter(binfo.UserID,binfo.Title)%></th>     
+                    </tr>
+                    <!--类别内容 --> 
+                    <tr>
+                        <td style="height:110px;">
+                            <%if {binfo.SmallImg[0]}==""%>
+                            <img src="{config.WebURL}templates/{config.TemplatePath}/images/WelcomeInfro_32.gif" alt="pro" />
+                            <%else%>
+                            <img width="110px" height="100px;" src="{binfo.SmallImg[0]}" alt="pro" /> 
+                            <%/if%> 
+                        </td>
+                    </tr>
+                    <!--类别 -->     
+                    <tr>
+                         <th class="title">基本参数</th>
+                    </tr>
+                    <tr>
+                         <td>{binfo.SortName}</td>
+                    </tr>
+                    <tr>
+                    <td class="graybg">{binfo.PublishTime}</td>
+                    </tr>    
+                    <tr>
+                        <td><%filter(binfo.UserID,binfo.InfoContent)%></td>
+                    </tr>         
+            </table>
+        </td>
+        <%/loop%> 
+    </tr>
+</table>
+<%/if%>
+
+</div>
+    <%include _footer%>
+
+</div>
+
+</body>
+</html>

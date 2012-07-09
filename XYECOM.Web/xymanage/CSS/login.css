@@ -1,0 +1,15 @@
+/* CSS Document */
+body{ text-align:left; font-size:14px; }
+#login{ width:360px; position:absolute; left:150px; top:210px; background-color:#ffffff;}
+
+#login table{ margin:20px 0 0 20px; color:#1E435C; }
+#login th{ font-weight:normal;}
+#login td{ padding:3px 0;}
+#copyright{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size:10px; color:#000;}
+
+#copyright strong{font-size:10px; }
+#copyright a{ color:#000;font-size:10px; text-decoration:underline;}
+#copyright a:hover{ color:#f60;font-size:10px; text-decoration:none;}
+
+.button_login{ vertical-align:top;}
+.button_login img{ margin:10px 0 0 20px;}

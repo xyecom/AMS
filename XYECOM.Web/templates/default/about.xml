@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<about>
+  <template name="default"
+       author="XYECS!B2B"
+       createdate = "2009-07-01"
+       ver="1.0"
+       copyright="Copyright 2009 Xyecom Inc." />
+</about>

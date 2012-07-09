@@ -1,0 +1,16 @@
+body
+{
+	width:600px; margin:0 auto; font-size:12px;
+}
+
+.con{ border:1px solid #000000; padding:10px; margin-top:10px; background-color:#ffffe1}
+.con .poll_title{ font-weight:bold;}
+.con ul{ list-style:none; margin-left:0px;}
+
+.rst{border:1px solid #999999; padding:10px; margin-top:10px; background-color:#f8f8f8}
+.rst table{ width:100%;}
+.rst .t1{ width:50%;}
+.rst .t2{ width:10%;}
+.rst .t3{ width:10%;}
+.rst .t4{ width:30%;}
+.rst td{ border-bottom:1px dashed #999999; padding-top:5px; padding-bottom:5px;}

@@ -1,0 +1,99 @@
+<%if pageinfo.PageError==1%>
+    <%Include _msgbox%>
+    <%end%>
+<%/if%>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>资讯投稿</title>
+    <link href="/common/css/XYLib.css" type="text/css" rel="Stylesheet" />
+    <link href="/templates/{config.TemplatePath}/css/global.css" type="text/css" rel="Stylesheet" />
+    <link href="/templates/{config.TemplatePath}/css/post.css" type="text/css" rel="Stylesheet" />
+    <script language="javascript" type="text/javascript" src="{config.WebURL}config/js/config.js"></script>
+    <script language ="javascript" type ="text/javascript" src ="/common/js/base.js"></script> 
+    <script language ="javascript" type="text/javascript"  src="/templates/{config.TemplatePath}/js/post.js"></script>
+    <script language ="javascript" type ="text/javascript" src ="/templates/{config.TemplatePath}/js/login.js"></script>
+    <script language ="javascript" type ="text/javascript" src ="/templates/{config.TemplatePath}/js/news.js"></script> 
+</head>
+<body>
+<div class="head">
+    <div class="logo"><a href="/"><img src="{config.weblogo}" alt="返回首页" border="0" /></a></div>
+    <div class="nav"><a href="/">网站首页</a>|{pageinfo.LoginStatus}</div>
+</div>
+
+<div class="guest_post">
+    <div class="step_title">资讯投稿</div> 
+<form method ="post" action="{config.WebURL}contributor.{config.Suffix}" > 
+<table class="tab_step2">
+<tr>
+ <th>标题：<em class="red">*</em></th>
+ <td>
+  <input  name="title"  type ="text" id="title" maxlength="100" size="50" /> </td>
+  </tr>
+    <tr>
+        <th>选择栏目：<em class="red">*</em></th>
+         <td>
+            <input id="hidTypeId"  name="hidTypeId" type="hidden" />
+            <input type="hidden" id="hidMoueleName" />
+            <div id="classType"></div>
+            <script type="text/javascript">
+            var cla = new ClassType("cla",'news','classType','hidTypeId',null,null,"contribut:0|hidden:0");
+            cla.Mode="select";
+            cla.Init();
+            </script>
+         </td>
+    </tr>
+    <tr>
+        <th>关键字：<em class="red">*</em></th>
+        <td><input name="newskeyword" type="text" id="newskeyword" maxlength="100" size="50" />       多个请以“,”隔开</td>
+    </tr>
+    <tr>
+        <th>新闻作者：<em class="red">*</em></th>
+        <td><input name="author" type="text" id="author" maxlength="100" size="50" value="{author}" /></td>
+    </tr>
+    <tr>
+        <th>新闻来源：<em class="red">*</em></th>
+        <td><input  name="origin"  type ="text" id="laiyuan" maxlength="100" size="50" value="{origin}"/></td>
+    </tr>
+    <tr>
+        <th>是否容许评论：</th>
+        <td><input  type="checkbox" id="iscomment" name="iscomment" checked value="1"/></td>
+    </tr>
+  <tr>
+ <th>内容：<em class="red">*</em></th>
+ <td><div>
+<script language ="javascript" type="text/javascript"  src="{config.WebURL}Common/fckeditor/fckeditor.js"></script>
+  <script language="javascript" type="text/javascript">
+var oFCKeditor = new FCKeditor('xyecom') ;
+oFCKeditor.BasePath = '/Common/fckeditor/' ;
+oFCKeditor.ToolbarSet = 'Basic' ;
+oFCKeditor.Width = '100%' ;
+oFCKeditor.Height = '400' ;
+oFCKeditor.Value = '';
+oFCKeditor.Create() ;
+ </script></div>
+ </td>
+ </tr>
+ </table>
+ 
+<%if config.IsEnabledVCode("quickpost")%>
+<table class="tab_step2">
+<tr>
+    <th>验证码：<em>*</em></th>
+    <td>
+        {pageinfo.GetValidateCodeHTML()}
+    </td>
+</tr>
+</table>
+<%/if%>  
+    <div class="step_next">
+     <input name="" type ="submit" value=" 确定" onclick ="return CheckContributorNews();" class ="button" />
+<input name="but02" type="button" value="取消" onclick ="window.location.href='{config.WebURL}';"  class ="button"/>
+    </div>
+</form>
+</div>
+Copyright &copy; 2008 {XY_Copyright}.All right reserved. 
+</body>
+</html>

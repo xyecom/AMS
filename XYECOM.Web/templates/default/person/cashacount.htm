@@ -1,0 +1,68 @@
+﻿<%Include _head%>
+<div class="location fia">
+    <a href="index.{config.suffix}">会员中心</a> &gt; 现金帐号管理
+</div>
+<%Include _menu%>
+<div id="right">
+    <form id="Consumption" action="#" method="post">
+    <div class="ly_100">
+        <div class="ly_tit3">
+            <ul>
+                <li class="on"><a href="{config.WebURL}person/cashacount.{config.Suffix}">现金帐户明细</a></li>
+                <li class="out"><a href="{config.WebURL}person/fictitiouacount.{config.Suffix}">网站币帐户</a></li>
+                <li class="out"><a href="{config.WebURL}person/inputmoney.{config.Suffix}">充值明细</a></li>
+               <!-- <li class="out"><a href="{config.WebURL}person/consumptioninfo.{config.Suffix}">现金消费明细</a></li>-->
+                <li class="out"><a href="{config.WebURL}person/FictitiouConsumptionInfo.{config.Suffix}">
+                    网站币消费明细</a></li>
+            </ul>
+        </div>
+    </div>
+    <table class="content">
+        <caption>
+            现金帐户</caption>
+        <thead>
+            <tr>
+                <th>
+                    时间/流水号
+                </th>
+                <th>
+                    方式
+                </th>
+                <th>
+                    金额
+                </th>
+                <th>
+                    说明
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <%loop (DataRow) row infolist%>
+            <tr>
+                <td>
+                    {row[OperateDate]}</br>
+                    <font style="font-size:10px">{row[SerialNumber]}</font>
+                </td>
+                <td>
+                    {row[Type]}
+                </td>
+                <td>
+                <%if row["InputMoney"].ToString()=="0.00"%>
+                <b style="color:#f60">{row[PayFor]}</b>
+                <%else%>
+                <b style="color:#f60">{row[InputMoney]}</b>
+                <%/if%>
+                </td>
+                <td>
+                    {row[OperateDescription]}
+                </td>
+            </tr>
+            <%/loop%>
+        </tbody>
+    </table>
+    <div class="page">
+        当前是第 <span>{pageinfo.PageIndex}</span> 页 &nbsp;（共 <span>{pageinfo.PageCount}</span>
+        页）&nbsp;{pageinfo.FirstPage}&nbsp;{pageinfo.PreviousPage}&nbsp;{pageinfo.NextPage}&nbsp;{pageinfo.LastPage}</div>
+    </form>
+</div>
+<%Include _footer%>

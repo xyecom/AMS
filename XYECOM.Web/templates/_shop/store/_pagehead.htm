@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>{UserSEO.Title}</title>
+    <meta name="description" content="{UserSEO.Description}" />
+    <meta name="keywords" content="{UserSEO.Keywords}" />
+    <%if seo.Robots==true%>
+    <meta name="robots" content="all" />
+    <%/if%>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta name="author" content="www.xyecs.com" />
+    <meta name="Copyright" content="copyright (c) www.xyecs.com.版权所有." />
+    <link rel="stylesheet" charset="utf-8" href="{config.WebURL}common/css/css.css" type="text/css" />
+    
+    <script type="text/javascript" src="{config.WebURL}common/js/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="{config.WebURL}templates/_shop/store/js/search.js"></script>
+    <script type="text/javascript" src="{config.WebURL}common/js/forebase.js" language="javascript"></script>	
+    <script type="text/javascript" src="{config.WebURL}common/js/date.js" language="javascript"></script>
+    <%if pageinfo.PageError==1%>
+    <%Include _msgbox%>
+    <%end%>
+    <%/if%>
+</head>

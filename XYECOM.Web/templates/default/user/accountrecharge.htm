@@ -1,0 +1,31 @@
+
+<%Include _head%>
+<div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt; 在线充值</div>
+<%Include _menu%>
+
+<div id="right">
+  <form action="" method="post" target="_blank">
+      <table  class="contentl">
+          <caption>在线充值<span>（*为必填项）</span></caption>
+          <tr>
+            <th>充值金额：<em class="red">*</em></th>
+            <td>
+	        <input name="txtAmount" type="text" id="txtAmount" maxlength="8" size="10"/><em>注：请输入整数金额</em></td>
+          </tr>
+      </table>
+      <div class="content_action">
+        <input name="but01" type ="submit" value=" 确定" onclick ="return CheckAccountRecharge('smallLay');" class ="button" />
+        <input name="but02" type="button" value="取消" onclick ="back()"  class ="button"/>
+      </div>
+  </form>  
+</div>
+<div id="smallLay" class="smallLay_pay" style="display: none;">
+        <ul>
+            <li class="smallLay_pay_t"><h4>系统提示</h4></li>
+            <li class="smallLay_pay_c">正在充值，充值完成请点击关闭。注意：如充值失败，请重新输入金额进行充值！</li>
+            <li class="smallLay_pay_b">
+                <input type="button" id="close_pay" value="关闭" />
+            </li>
+        </ul>
+    </div>
+<%Include _footer%>

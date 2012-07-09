@@ -1,0 +1,24 @@
+
+/* 公共样式 */
+body{ margin:0; padding:0;text-align:center; color:#333; font-family:"宋体",Verdana, Arial, Helvetica, sans-serif;font-size:12px;line-height:20px;
+background:#D5D3D4; height:100%; } 
+*{ padding:0; margin:0;}
+
+
+a:link{ color:#1E6993; text-decoration:none;}
+a:visited{ color:#1E6993; text-decoration:none;}
+a:hover{ color:#f60; text-decoration:underline;}
+
+div#loginm{position:absolute;top:50%;left:50%;margin:-200px 0 0 -200px;width:464px;height:275px;background: url(../images/loginm_bg.gif) #1C7023 no-repeat left top;}
+
+div#loginm table{ position:absolute; top:90px; left:30px; color:#D5D3D4;}
+.lefttd{ width:75px; text-align:right; height:30px;}
+.righttd{ text-align:left; padding-left:8px;}
+.input{ background:#D1D1D3; padding:2px 5px; height:13px; border-top:1px solid #446544; border-right:1px solid #8B8B8D; border-bottom:0; border-left:0; color:#445C22;}
+
+
+.button_td{ text-align:left;height:35px;}
+button{ background: url(../images/button.gif) #F8CF01 no-repeat left top; color:#374512; text-align:center; height:18px; width:83px; margin:0 5px 0; border:0;}
+
+
+ table img{ margin:0 5px; height:19px;}

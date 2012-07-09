@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <%Include _head%>
+</head>
+<body onload="{pageinfo.OnLoadEvents}">
+
+     <%Include _top%>
+ 
+ 
+    <div class="layout950_100" style="BACKGROUND-IMAGE: url({config.WebURL}templates/_shop/skins_2009/{shopuserinfo.template}/images/stylebg1.jpg)">
+
+    <%Include _banner%>
+     
+    <div class="clr"></div>
+    <div class="layout950">
+    
+    <%Include _menu%>
+    
+    <div class="clr"></div>
+    <div class="where">你现在的位置：首页 </div>
+      
+    <%Include _left%>
+    <!--推荐产品-->
+    <div id="bodyright">
+        <div class="leftkuang">
+            <div class="righttitle">
+                <ul>
+                    <li>推荐产品 </li>
+                    <li class="more">
+                    <a href="offer.{config.suffix}">更多&gt;&gt;</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tuijian_product">
+                <div class="scrollW" id="demo" style="MARGIN-LEFT: 17px">
+                    <div id="indemo">
+                        <div id="demo1">
+                            <ul>
+                                <%set data =  GetShopIndexPro(10)%>
+                                <%loop (DataRow) info data%>
+                                <li>
+                                    <%set str = GetInfoUrl("offer",info["InfoFlag"],info["InfoId"],info["htmlpage"])%>
+                                    <%set str1 = GetInfoImgHref("offer",info["InfoId"])%>
+                                    <div class="picBox"><a href="{str}" target="_blank"><img alt="{info[InfoTitle]}"  src="{str1}" border="0" onload='SetImgSize(this,100,100);'></a></div>
+                                    <div class="textBox"> <a target="_blank" href='{str}'> {info[InfoTitle]} </a> </div>
+                                </li>
+                                <%/loop%>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="clr"></div>
+        </div>
+    </div>
+    <!--推荐产品结束-->
+    
+
+    
+    <!--工作室介绍-->
+    <div id="bodyright">
+    <div class="leftkuang">
+        <div class="righttitle">
+            <ul>
+              <li>工作室简介 </li>
+              <li class="more"></li>
+            </ul>
+        </div>
+        <div class="tuijian_company">
+            <div class="picbox1">
+                <img alt="{shopuserinfo.unitname}" src="{shopuserinfo.imgurl}"/>
+            </div>
+            <p>{shopuserinfo.synopsis}</p>
+            <div class="clr"></div>
+        </div>
+        <div class="clr"></div>
+    </div>
+    </div>
+    <!--工作室介绍结束-->
+    
+    
+    <!--供应信息-->
+    <div id="bodyright">
+        <div class="leftkuang">
+            <div class="righttitle">
+            <ul>
+                <li>最新供应 </li>
+                <li class="more"><a href="offer.{config.suffix}">更多&gt;&gt;</a></li>
+            </ul>
+            </div>
+
+            <div class="tuijian_product">
+            <ul>
+                <%set data =  GetNewPro(10)%>
+                <%loop (DataRow) newdata data%>
+                    <%set str = GetInfoUrl("offer",newdata["InfoFlag"],newdata["InfoId"],newdata["htmlpage"])%>
+                    <%set str1 = GetInfoImgHref("offer",newdata["InfoId"])%>
+                    <li>
+                        <div class="picBox"><a href="{str}" target="_blank"><img alt="" src="{str1}" border="0" onload='SetImgSize(this,100,100);'></a></div>
+                        <div class="textBox"><a href="{str}" target="_blank">{newdata[infoTitle]}</a></div>
+                    </li>
+                <%/loop%>
+            </ul>
+            </div>
+
+            <div class="clr"></div>
+        </div>
+    </div>
+    <!--供应信息结束-->
+    <div class="clr"></div>
+    </div>  
+    
+    <%Include _footer%>
+
+</div>
+</body>
+</html>
+
+

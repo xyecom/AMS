@@ -1,0 +1,96 @@
+<%if pageinfo.PageError==1%>
+<%Include _msgbox%>
+<%end%>
+<%/if%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>{userinfo.name}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <meta content="个人中心" name="keywords">
+    <meta content="" name="description">
+    <link href="{config.WebURL}templates/{config.TemplatePath}/user/css/main.css" rel="stylesheet"
+        type="text/css" />
+    <link href="/common/css/XYLib.css" type="text/css" rel="Stylesheet" />
+    <script language="javascript" type="text/javascript" src="{config.WebURL}config/js/config.js"></script>
+
+    <script language="javascript" type="text/javascript" src="{config.WebURL}common/js/base.js"></script>
+
+    <script language="javascript" type="text/javascript" src="{config.WebURL}common/js/UploadControl.js"></script>
+
+    <script language="javascript" type="text/javascript" src="{config.WebURL}common/js/date.js"></script>
+
+    <script language="javascript" type="text/javascript" src="{config.WebURL}templates/{config.TemplatePath}/user/js/common.js"></script>
+
+    <script language="javascript" type="text/javascript" src="{config.WebURL}templates/{config.TemplatePath}/user/js/validate.js"></script>
+
+    {pageinfo.Meta}
+</head>
+<body onload="{pageinfo.OnLoadEvents}">
+    <div class="div_body">
+        <div class="New_top">
+            <div class="more">
+                <ul>
+                    <li><a class="zeroc" href="{config.weburl}">首页</a> </li>
+                    <li><a class="zeroc" href="{config.weburl}news/">行业资讯</a> </li>
+                    <li><a class="zeroc" href="{config.weburl}offer/">产品库</a> </li>
+                    <li><a class="zeroc" href="{config.weburl}investment/">招商加盟</a> </li>
+                    <li><a class="zeroc" href="{config.weburl}exhibition/">展会</a> </li>
+                    <li><a class="zeroc" href="{config.weburl}job/">人才</a> </li>
+                </ul>
+            </div>
+            <div class="r">
+                <a href="{config.weburl}user/index.{config.suffix}" style="font-weight: bold; text-decoration: underline;">
+                    {userinfo.loginname}</a> | <a href="{userinfo.shopindex}" target="_blank">我的商铺</a>
+                | <a href="{config.weburl}logout.{config.suffix}">退出</a> | <a href="">帮助</a>&nbsp;
+            </div>
+        </div>
+    </div>
+    <div class="Head">
+        <div class="Head_1">
+            <img src="/templates/{config.TemplatePath}/user/images/logo.gif" /></div>
+        <div class="Head_2 mt8">
+            {userinfo.name}</div>
+        <div class="Head_3">
+            <input value="" id="txtsearchkey" /><a href="#" onclick="searchClick();">搜索</a>
+        </div>
+        <div class="Head_4">
+            <div class="index">
+                <div class="act" id="_m_index">
+                    <a href="index.{config.suffix}">主 页</a></div>
+            </div>
+            <div onmouseover="document.getElementById('frend').style.display='block';" onmouseout="document.getElementById('frend').style.display='none';">
+                <div>
+                    <div class="menu" id="frend" style="z-index: 999;">
+                        <a href="infoselect.{config.suffix}">发布信息</a> <a href="addnews.{config.suffix}">发布资讯</a>
+                        <a href="engageadd.{config.suffix}">发布招聘</a> <a href="cashacount.{config.suffix}">账户管理</a>
+                    </div>
+                </div>
+                <div class="nor" id="_m_quick">
+                    <a class="more" id="f_a" href="infoselect.{config.suffix}">快捷菜单</a></div>
+            </div>
+            <div onmouseover="document.getElementById('msg').style.display='block';" onmouseout="document.getElementById('msg').style.display='none';">
+                <div>
+                    <div class="menu" id="msg" style="z-index: 999">
+                        <a href="receivemessagelist.{config.suffix}">收件箱</a> <a href="sendmessagelist.{config.suffix}">
+                            已发送消息</a> <a href="postadministratormessage.{config.suffix}">给管理员留言</a> <a href="joinlist.{config.suffix}">
+                                收加盟信息</a> <a href="joinlist.{config.suffix}?type=send">已发加盟信息</a>
+                    </div>
+                </div>
+                <div class="nor" id="_m_msg">
+                    <a class="more" id="m_a" href="receivemessagelist.{config.suffix}">短消息({userinfo.messagecount})</a></div>
+            </div>
+            <div class="nor" id="_m_userinfo">
+                <a href="{config.weburl}user/edituserinfo.{config.suffix}">企业资料</a></div>
+            <div class="nor" id="_m_safe">
+                <a href="{config.weburl}user/edituserpassword.{config.suffix}">安全设置</a></div>
+        </div>
+
+        <script>xy_Sel_CurTopMenu();</script>
+
+    </div>
+    <div class="div_body" style="width: 994px">
+        <div class="body_bg">
+            <div>
+                <img src="{config.WebURL}templates/{config.TemplatePath}/user/images/p1.jpg"></div>
+            <div class="bodyW">

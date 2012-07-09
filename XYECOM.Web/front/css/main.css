@@ -1,0 +1,148 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ margin:0; overflow:auto;background:url(../images/nry_03.jpg) repeat-x;font-size:13px;font-family:Tahoma, Arial, Helvetica, Sans-serif;}
+li{ list-style:none}
+table{border-collapse:collapse;/*细线表格*/}
+/*------------------------------top----------------------------------*/
+#top{ height:34px; width:1000px;margin:0 auto;}
+#top1{font-size:12px; line-height:34px;float:left; width:500px;}
+#top2{width:400px; float:right; text-align:right; margin-right:30px;font-size:12px; line-height:34px;}
+#top a{ color:#333; text-decoration:none}
+#top a:hover{color:#f00; text-decoration:underline}
+#middle{width:1000px; height:auto; overflow:hidden;margin:10px auto}
+
+#navigation { height: 42px; background:url(../images/nav.gif) no-repeat;  font-size: 12px; line-height: 42px; width:1000px; float:left; margin:0; padding:0;}
+#navigation li { float: left; display: inline; list-style-type: none; padding-right: 3px; padding-left:10px; }
+#navigation li a { float: left; display: inline; color:#fff; text-decoration: none; padding-left: 17px; font-weight:bold;}
+#navigation li a span { float: left; display: inline; padding-right: 17px; background-position: right 0 !important; }
+#navigation li a:hover,
+#navigation li a.active,
+#navigation li a:hover span,
+#navigation li a.active span { color: #e0e0e0; background: url(../images/topb.gif) no-repeat 0 0; }
+
+#topbar{ width:1000px; margin:5px auto; height:69px;}
+.loginmiddle{ width:199px; float:left; text-align:center}
+.loginmiddle h3{ margin-top:10px; color:#CC3300; margin-bottom: 7px;}
+/*------------------------------left----------------------------------*/
+#left{ width:160px; height:auto; overflow:hidden;float:left}
+#left1{width:158px; margin:5px auto;height:auto; background:#FBFBF9; border:1px solid #ddd}
+#left1 h3{ font-size:14px; margin:0}
+.rolinList{ width:158px; height:auto;text-align:left; margin:0; padding:0}
+.rolinList li{margin-bottom:1px;border:1px solid #DADADA; }
+.rolinList li h2{ width:158px; height:30px;  background:#fff; font-size:14px; line-height:30px;color:#333; cursor:pointer; text-align:center; margin:0}
+.leftul{ height:auto;width:158px; overflow:hidden;  background:#fff;  background:#FAFAFA;}
+.leftul p{ margin:8px}
+.leftul p a{ color:#111; text-decoration:none; font-size:13px;}
+.leftul p a:hover{ text-decoration:underline; color:#900}
+
+/*------------------------------right---------------------------------*/
+#right{ width:835px;margin-top:5px;float:right;overflow:hidden }
+
+#rightmsg{height:200px; border:1px solid #ddd; margin-bottom:5px; background:#FFF7DE}
+#msgimg{ width:140px; height:180px; float:left; text-align:center; padding-top:20px}
+#line{ width:1px; background:#ddd; height:170px; float:left; margin-top:10px;}
+#msgmain{width:680px; margin-top:10px; margin-left:10px; float:left}
+#msgmain strong{ font-size:16px; color:#c00; width:auto}
+#msgmain font{ color:#999; font-size:12px;}
+#msgmain p{ margin:6px 0;color:#666;}
+#msgtb{width:600px;color:#666}
+#msgtb2{ width:650px;}
+#msgtb2 td{color:#666; height:25px; line-height:25px; padding-left:20px;}
+
+#rightzqlist{height:auto; overflow:hidden; border:1px solid #ddd}
+#rightzqlist h2{font-size:17px;color:#C00; margin:10px 10px; width:810px;}
+.rhr{ background:#C00; height:2px;}
+.serchl{ margin:10px auto; width:799px;}
+#list { width:835px; height:auto; overflow:hidden;}
+
+#list table{ width:100%;border-top:1px solid #ddd; cellpadding:0; cellspacing:0} 
+#trtop{height:30px; background-image:url(../images/border_bg.jpg); font-size:13px;color:#333}
+#trmidd #tdtitle{text-align:left;border-bottom: solid 1px #ccc; border-right: solid 1px #ddd; padding-left:10px; }
+#trmidd #tdtitle a{color:#333; text-decoration:none}
+#trmidd #tdtitle a:hover{color:#C00; text-decoration:underline}
+#trmidd td{border-bottom: solid 1px #ddd; border-right: solid 1px #ddd; text-align:center}
+
+#rightdzwplist{height:auto; overflow:hidden; border:1px solid #ddd; margin:5px auto}
+#rightdzwplist h2{font-size:17px;color:#C00; margin:10px 10px; width:810px;}
+#rightdzmain{height:auto; overflow:hidden; border:1px solid #ddd; margin:5px auto}
+#rightdzmain h2{font-size:17px;color:#C00; margin:10px 10px; width:810px;}
+
+#dzbase{ margin:8px 0}
+.dzbasetb{ width:800px; margin:8px auto}
+.dzbasetb td{ border:1px solid #F3F2F0; height:20px;}
+.dzbasetb .info1{width:120px; background:#FFF7DE;}
+
+#dzbasepic{ width:800px; margin:5px auto}
+#dzbasepic img{width:100px; height:100px;border:1px solid #ddd; margin:10px 10px}
+#basetbjj table{ width:835px;}
+#basetbjj table td{border-bottom:1px solid #F3F2F0}
+
+#baseinfo{width:830px;}
+.basetb{width:750px; margin:5px auto;border:1px solid #ddd;}
+.basetb td{padding:3px 5px;color:#555;border:1px solid #ddd;line-height:22px;}
+
+#rightzqmain{height:auto; overflow:hidden; border:1px solid #ddd; margin:5px auto}
+#rightzqmain h2{font-size:17px;color:#C00; margin:10px 10px; width:810px;}
+
+.divtext{height:auto; float:left; display:inline; margin:10px 30px}
+.divtext p{ padding:10px 20px;}
+
+.tab{border:1px solid #ddd;color:#555;width:760px}
+.info_lei3{width:130px;line-height:22px;padding:2px 5px;background-color:#f3f3f3;border:1px solid #ddd;}
+.info_lei2{width:250px;line-height:22px; border:1px solid #ddd;padding:2px 5px;}
+#heng{width:630px; height:auto; overflow:hidden;padding:2px 5px;}/*tabke中独占三列的tb*/
+.serverlist{  font-size:13px;}
+h4{ font-size:13px;margin:0;height:20px;}
+h4 a{ color:#232323;text-decoration:none}
+h4 a:hover{ color:#f00;text-decoration:underline}
+
+
+#rightpart{height:auto; overflow:hidden; border:1px solid #ddd}
+#rightpart h2{font-size:17px;color:#C00; margin:10px 10px; width:810px;}
+#rightpart table{ width:100%}
+
+.pjtb{ width:683px; text-align:center; margin:8px auto}
+/*------------------------左菜单------------------------------------*/
+#vertmenu h1 {width:145px; height:30px;font-size:14px; line-height:30px;color:#000000;cursor:pointer; padding-left:10px;margin:0; background-image:url(../images/border_bg.jpg); border-top:1px solid #ddd}
+#vertmenu ul {list-style: none;margin: 0px;padding: 0px;border: none;}
+#vertmenu ul li {margin: 0px;padding: 0px;}
+#vertmenu ul li a {display: block;padding: 8px 0px 5px 4px;text-decoration: none; padding-left:10px;color: #666666;width:150px;}
+
+#vertmenu ul li a:hover, #vertmenu ul li a:focus {color: #000000;background-color: #eeeeee;}
+
+/*---------------------bottom----------------------------------*/
+#bottom{ width:1000px;margin:5px auto;height:auto;border:1px solid #D9D9D9; background:#F9F9F9; padding-bottom:5px;overflow:hidden}
+#bottom a{ text-decoration:none; color:#666; font-size:13px;}
+#bottom a:hover{ text-decoration:underline; color:#f00}
+#bottom ul{list-style:none; width:186px;float:left; margin-top:16px;}
+#bottom ul li{ font-size:14px; line-height:23px; text-align:left; padding-left:60px;}
+#bottomtel{height: 90px;margin:20px 10px; width: 191px; float:left}
+/*---------------------footer----------------------------------*/
+#footer{ font-size:13px;width:1002px;height:150px;text-align:center; margin:2px auto}
+#footer a{ font-size:13px; text-decoration:none; color:#333; font-weight:bold}
+#footer img{ float:right;}
+#footer h2{ float:left; font-size:14px;color:#cc0000; font-weight:bold;}
+#footer table{ width:1002px; height:50px; border:1px solid #ddd}
+#footer table td{ width:160px;}
+#footer p{ margin:10px;color:#666; width:900px}
+
+/*---------------------顶部搜索框----------------------------------*/
+
+.searchinput{border-width: 0px; padding-left: 3px;width: 237px;font-family: arial; float: left; color: #a8a4a3; margin-left: 4px;font-size: 12px; vertical-align: middle;margin-right: 3px;height: 18px;}
+.tab_search{border: #cccccc 1px solid;height: 25px;margin:20px auto;width:300px; float:right}
+.searchaction{width: 21px;float: left;height: 17px;}
+/*---------------------抵债物品列表----------------------------------*/
+
+#dztb{ width:787px;margin:3px auto}
+#dztb td{ border-bottom:1px dotted #ccc; width:350px; padding-bottom:5px;}
+#dztb td img{ width:100px;height:100px; border:1px solid #ddd; float:left}
+#dztb strong{ color:#f60000}
+#dztb font{ font-size:13px;}
+#dztb a{ float:right; text-decoration:underline}
+#dztb p{ width:200px; float:left; margin:4px 10px}
+
+/*-----------------------------------------------------------------------------------*/
+.divmsg{height:auto; float:left; display:inline; margin:10px 30px; }
+.divmsg p{margin:3px 20px}
+.divmsg p strong{color:#D92B26}

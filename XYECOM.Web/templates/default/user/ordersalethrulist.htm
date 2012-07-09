@@ -1,0 +1,116 @@
+﻿
+<%Include _head%>
+
+ <div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;  <a href="{config.WebURL}user/orderbuylist.{config.Suffix}">交易管理</a> &gt;  卖家 出售中的宝贝</div>
+
+<%Include _menu%>
+
+
+  <div id="right">
+ <form   method="post">
+  
+ <div class="ly_100">
+<div class="ly_tit3">
+ <ul>
+ <li class="out"><a href ="{config.WebURL}user/ordersalelist.{config.Suffix}">正在进行的交易</a> </li>
+ <li class="on"><a href ="{config.WebURL}user/ordersalethrulist.{config.Suffix}">已完成的交易</a></li> 
+ </ul>
+</div>
+<div class="ly_tit32">
+								&nbsp;开始时间： 
+				<select name="txtTime">
+							<option value="0" selected="selected" 	>全部时间段</option>
+				<option value="3" 	>最近3天</option>
+				<option value="5" 	>最近5天</option>
+				<option value="15" 	>最近15天</option>
+				<option value="30" 	 >最近一个月</option>
+				<option value="60" 	>最近两个月</option>
+				<option value="90" 	>最近三个月</option>
+					</select> 
+                 &nbsp;交易状态：
+				<select name="txtType">
+				<option value="0" 	>所有交易</option>
+				<option value="10" 	>交易成功</option>
+				<option value="11" 	>交易失效</option>
+				<option value="9" 	>退货成功</option>
+				<option value="12" 	>退货失败</option>
+				
+					</select> 
+						<input name="searchbutton" class="button" type="submit" value="查 看" />
+</div>
+</div>  
+ 
+ 
+  <table  class="content" width="100%">
+  <caption> 共有<em>({count})</em>符合条件！</caption>
+  <thead>
+	  <tr>
+	      <th  style="height: 20px">序号</th>
+		  <th  style="height: 20px">订单编号</th>
+		  <th style="height: 20px" >货品名称</th>
+		  <th style="height: 20px" >买家</th>
+		  <th style="height: 20px" > 交易金额</th>
+		  <th style="height: 20px">结束时间</th>		  
+		  <th style="height: 20px" >交易状态</th>
+           <th style="height: 20px">查看</th>
+	  </tr>
+  </thead>
+  <tbody>
+  <%loop (DataRow)  sd infolist%>
+  <tr>  
+    <td >{sd__loop__id}</td> 
+    <td>{sd[OF_Code]}</td>  
+    <td><a href=" <%if {sd[SD_HTMLPage]}!=""%>{sd[SD_HTMLPage]}
+  <%else%> 
+     <%if config.BogusStatic==true%>{config.WebURL}search/sell-offer-{sd[SD_ID]}.{config.Suffix} <%else%>{config.WebURL}search/sell.{config.Suffix}?flag=offer&infoid={sd[SD_ID]}<%/if%>  
+    <%/if%>
+ 
+  " target="_blank" ><%left(sd[SD_Title],10)%></a></td>    
+    <td>  <a href="
+  <%if {sd[U_HtmlPage1]}!=""%>{sd[U_HtmlPage1]}
+  <%else%>
+  <%if config.IsDomain==true%> http://{sd[U_Name1]}domainhost/<%else%> {config.WebURL}shop/{sd[U_Name1]}/index.{config.Suffix}<%/if%>
+  <%/if%>
+  " target="_blank" ><%left(sd[UI_Name],10)%></a></td>
+    <td class="orange">{sd[OF_Money]}</td>
+    <td>{sd[OF_AdateTime]}</td>
+    <td >
+    <%if {sd[OF_Type]}=="11"%>
+    交易失效
+    <%/if%>
+   
+     <%if {sd[OF_Type]}=="10"%>
+   成功完成
+    <%/if%>
+    <%if {sd[OF_Type]}=="12"%>
+    您拒绝退货
+    <%/if%>
+    <%if {sd[OF_Type]}=="9"%>
+    您同意退货
+    <%/if%>   
+    </td>
+    <td>
+   
+   <a href="{config.WebURL}user/orderlist.{config.Suffix}?OF_ID={sd[OF_ID]}"> 查看</a>
+ </td>
+    </tr>    
+  <%/loop%>
+  </tbody>
+</table>
+
+<div class="page">当前是第 <span>{pageinfo.PageIndex}</span> 页 &nbsp;（共 <span>{pageinfo.PageCount}</span> 页）&nbsp;{pageinfo.FirstPage}&nbsp;{pageinfo.PreviousPage}&nbsp;{pageinfo.NextPage}&nbsp;{pageinfo.LastPage}</div>
+<div class="ly_tx">
+ <h4>请注意</h4>
+ <ul>
+  <li>· 产品订购后，请及时处理，"30"天未处理则转为过期订单。</li>
+ <li>· 产品订购后订单不能删除 。</li>
+ <li>· 在交易过程中，卖家确认添加运费和优惠后产品数量、送货地址等不能再次修改。</li>
+ <li>· 在交易过程中，买家确认付款后请卖家及时确认收款并发货。</li>
+
+ </ul>
+</div>
+
+</form>
+</div>
+
+<%Include _footer%>

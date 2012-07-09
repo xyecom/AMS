@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="html">
+<head>
+<%Include _head%>
+<link href="hdwiki.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload="{pageinfo.OnLoadEvents}">
+<div id="wrap">
+ <%include _login_bar%>
+        <%Include _top%>
+		<%Include _search%>
+<div class="clear"></div>
+<div id="map" class="bor-gray-das warp"><a href="{config.WebURL}" class="blue">网站首页</a> &raquo;<a href="{config.WebURL}baike/index.{config.Suffix}" class="blue">网站百科</a></div>
+
+<div id="left">
+<div id="bkfl" class="columns">
+	<h2 class="col-h2">百科资讯</h2>
+	<div class="bor-white-t"></div>
+	</div>
+
+<div id="azmsx" class="columns">
+	<h2 class="col-h2">优秀词条</h2>
+	<ul class="col-ul">
+		<li><a href="#" >词条一词条一词条一词条一</a></li>
+		<li><a href="#" >词条一词条一词条一词条一</a></li>
+		<li><a href="#" >词条一词条一词条一词条一</a></li>
+		<li><a href="#" >词条一词条一词条一词条一</a></li>
+		
+	</ul>
+</div>
+</div>
+
+<div id="fenlei" class="search a-mar8">
+  <div id="typeid"></div>
+	<span id="sea-title"><span class="l font14">词条列表</span><a href="{config.WebURL}baike/lemmaadd.{config.Suffix}" class="r underline">创建词条</a></span>
+		{XY_Wikipedialist}
+
+		<div id="fenye">
+		{pageinfo.PreviousPage}{pageinfo.NumPage}{pageinfo.NextPage}
+		</div>
+</div>
+
+<div class="clear"></div>
+<%Include _footer%>
+</div>
+</body>
+</html>

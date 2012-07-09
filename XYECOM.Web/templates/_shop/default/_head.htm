@@ -1,0 +1,53 @@
+<%Include _pagehead%>
+<body onLoad="{pageinfo.OnLoadEvents}">
+
+<!--头部搜索 header-->
+<div id="head">
+    <div id="TopInfo"><span>
+    {pageinfo.LoginStatus}
+    |<a href="http://www.yylm.org/contents/859/11418.html">联系我们</a></span><a href="http://www.yylm.org" target="_blank" style="color:#00f;text-decoration: underline;;">中国营养联盟</a>——中国营养健康行业服务第一品牌</div>
+	<div id="htop">
+		<a href="{config.WebURL}"><img src="{config.WebLogo}" alt="返回首页" /></a>
+		<div id="hri">
+		   <ul id="nav">
+		    <li id="ssoffer" class="on"><a href="javascript:shoptopflag(1);">供求</a></li>
+			<li id="ssmachining" ><a href="javascript:shoptopflag(2);">加工</a></li>
+			<li id="ssinvestment" ><a href="javascript:shoptopflag(3);">招商</a></li>
+			<li id="ssservice" ><a href="javascript:shoptopflag(4);">服务</a></li>
+			<li id="ssexhibition" ><a href="javascript:shoptopflag(5);">展会</a></li>
+			<li id="ssbrand" ><a href="javascript:shoptopflag(6);">品牌</a></li>
+		   </ul>
+		   <ul id="nav2">
+		    <li><input type="text" class="button_text1" size="43" maxlength="50" id="shopsearchkey" /> <input type="button" class="button_search1 button" value="搜索" onclick="shoptopsearch();" /></li>
+		   </ul>
+		</div>
+	</div>
+    <div id="hcen">{shopuserinfo.unitname}</div>
+    
+	<div id="hbot">
+		<em class="colorFF7B00"><a href="javascript:Favorite();">加入收藏</a></em>
+		<span>
+		<%if shopuserinfo.gradeimgurl!=""%>
+		    <img src="{shopuserinfo.gradeimgurl}" alt=""  width ="17px" height ="19px"/>、
+	    <%else%>
+	        <img src="{config.WebURL}templates/{config.TemplatePath}/images/WelcomeInfro_32.gif" alt=""  width ="17px" height ="19px"/>
+	    <%/if%> 
+	    {shopuserinfo.gradename} 
+	    第 <span class="colorFF7B00s">{year}</span> 年 </span>		
+	    
+        <input type ="hidden" id="_param_userinfo_parent_module" value ="company" />
+<input type ="hidden" id="_param_userinfo_infoid" value ="{infoid}"/>
+<input type ="hidden" id="_param_userinfo_userid" value ="{shopuserinfo.userid}" />
+    
+    
+    <input id="weburl" name ="weburl" type ="hidden" value ="{config.WebURL}" />
+     <input id="suffix" name ="suffix" type ="hidden" value ="{config.Suffix}" />	
+     <input id="hidlinkmodule" name="suffix" type="hidden" value="company" />
+     <input id="bogusstatic" name="suffix" type="hidden" value="{config.BogusStatic}" />
+     <input id="hidshopsearchflag" type="hidden" value="offer" />
+     <input id="_param_message_parent_module" type="hidden" value="company" />
+     <input id="_param_message_infoid" type="hidden" value="{infoid}" />
+     <input id="_param_message_userid" type="hidden" value="{shopuserinfo.userid}" />
+	</div>
+	
+</div>

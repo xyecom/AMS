@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+      <%include _head%>
+	
+</head>
+<body>
+
+
+<div id="wrapper">
+	
+             <%include _login_bar%>
+
+             <%Include _top%>
+
+             <%Include _search%>
+
+             <%include _menu%>
+             
+	<div id="news_pages">
+		<div id="lt_cnt">
+			<div id="news_bread">
+				<strong>您的位置：{pageinfo.Navigation}
+			</div>
+
+			<ul class="list14blu">
+				{XY_NewsIndex_XinWenList}
+				<li class="line"></li>
+			</ul>
+
+			<div class="pages_cut">
+				<span class="com">上一页</span>
+				<span class="com">1</span>
+				<a href="##" class="com num">2</a>
+				<a href="##" class="com num">3</a>
+				<a href="##" class="com num">4</a>
+				<a href="##" class="com num">5</a>
+				<a href="##" class="com num">6</a>
+				<a href="##" class="com num">7</a>
+				<a href="##" class="com num">8</a>
+				<a href="##" class="com num">9</a>
+				<a href="##" class="com num">10</a>
+				<a href="##" class="com">下一页</a>
+			</div>
+
+
+		</div>
+		<div id="mid_cnt">
+			　　 最权威的五金行业门户网站
+		</div>
+		<div id="rt_cnt">
+			<div class="pages_bnr"><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_bnr_6.gif" width="267" height="241" alt="" /></a></div>
+
+			<div class="MTitle_01">
+				<h2 id="h201" class=""><a target="_blank" href="#" class="big"><strong>业界资讯</strong></a></h2>
+			</div>
+			<div id="con01" class="Mblk_01">
+				<div class="com_pages2">
+					<ul>
+						{XY_Index_YeJieZIXun}
+					</ul>
+				</div>
+			</div>
+
+			<div class="spacer height6"></div>
+
+			<div class="MTitle_01">
+				<h2 id="h201" class=""><a target="_blank" href="#">名优企业</a></h2>
+				<h2 id="h202" class="selected"><a target="_blank" href="#">最新企业</a></h2>
+			</div>
+			<div id="con01" class="Mblk_01">
+				<div class="pictext2">
+					<div id="lt"><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_pic_14.gif" width="80" height="60" alt="" /></a></div>
+					<div id="rt">
+						<h4><a href="">江苏上海手机上网资费大</a></h4>
+						<p>中国对其拥有不可置疑的所有权，这些文物理应归还</p>
+					</div>
+					<div class="clr"></div>
+				</div>
+				<div class="com_pages">
+					<ul>
+						{XY_Index_MingYouQiYe}
+					</ul>
+				</div>
+			</div>
+
+			<div class="spacer height6"></div>
+
+			<div class="MTitle_01">
+				<h2 id="h201" class=""><a target="_blank" href="#">图片资讯</a></h2>
+			</div>
+
+			<div id="con01" class="Mblk_01" style="border-bottom:0;">
+				<ul class="photo_news">
+					{XY_NewsIndex_TuPianZiXun2}
+					<div class="clr"></div>
+				</ul>
+				<div class="com_pages">
+					<ul>
+						{XY_NewsIndex_TuPianZiXunFont4}
+					</ul>
+				</div>
+			</div>
+
+
+
+
+		</div>
+		<div class="clr"></div>
+	</div>
+	<div id="news_pages_btm" class="spacer"></div>
+
+    <%include _footer%>
+
+</div>
+
+</body>
+</html>

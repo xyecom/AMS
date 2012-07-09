@@ -1,0 +1,865 @@
+DIV#MainPromotionBanner1 {
+	FLOAT: left;
+	WIDTH: 250px;
+	HEIGHT: auto;
+	padding: 2px;
+	border: 1px solid #333333;
+		background-color: #FFFFFF;
+
+}
+#MainPromotionBanner1 #SlidePlayer {
+	MARGIN: 0px auto;
+	POSITION: relative;
+	text-align: center;
+}
+#MainPromotionBanner1 .Slides {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 200px
+}
+#MainPromotionBanner1 .Slides LI {
+	FLOAT: left; WIDTH: 250px; HEIGHT: 200px
+}
+#MainPromotionBanner1 .Slides IMG {
+	BORDER-TOP-WIDTH: 0px; DISPLAY: block; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 250px; BORDER-RIGHT-WIDTH: 0px
+}
+#MainPromotionBanner1 .SlideTriggers {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; Z-INDEX: 10; RIGHT: 5px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; POSITION: absolute; TOP: 175px; HEIGHT: 25px
+}
+#MainPromotionBanner1 .SlideTriggers LI {
+	DISPLAY: inline; FONT-SIZE: 0.9em; BACKGROUND: url(http://www.glass.cn/adimages/homenews/slide_trigger.gif) no-repeat center center; FLOAT: left; MARGIN: 3px; OVERFLOW: hidden; WIDTH: 16px; CURSOR: pointer; COLOR: #0066CC; LINE-HEIGHT: 16px; FONT-FAMILY: Arial; HEIGHT: 16px; TEXT-ALIGN: center
+}
+#MainPromotionBanner1 .SlideTriggers LI.Current {
+	BORDER-TOP-WIDTH: 0px; FONT-WEIGHT: bold; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 1.4em; BACKGROUND: url(http://www.glass.cn/adimages/homenews/slide_trigger_c.gif) no-repeat center center; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px 3px; WIDTH: 21px; COLOR: #fff; LINE-HEIGHT: 21px; HEIGHT: 21px; BORDER-RIGHT-WIDTH: 0px}
+
+.tuijian_company {
+	PADDING-BOTTOM: 5px;
+	PADDING-TOP: 5px;
+	line-height: 180%;
+	width: 100%;
+	text-align: left;
+}
+.tuijian_company p {
+	margin-top: 14px;
+	margin-right: 10px;
+	text-indent: 20px;
+	margin-bottom: 7px;
+	margin-left: 20px;
+}
+BODY {
+	BORDER-TOP-WIDTH: 0px;
+	BORDER-LEFT-WIDTH: 0px;
+	FONT-SIZE: 12px;
+	BORDER-BOTTOM-WIDTH: 0px;
+	MARGIN: 0px;
+	BORDER-RIGHT-WIDTH: 0px;
+	padding: 0px;
+
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL {
+PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+div,form,ul,ol,li,dl,dt,p,h1,h2,h3,dd 
+{margin:0; padding:0; border:0; color:#CCCCCC;
+}
+.clr {
+	CLEAR: both
+}
+
+.picBox {
+	display: table-cell;
+	vertical-align:middle;
+	clear: both;
+	/*设置水平居中*/
+	text-align:center;
+	/* 针对IE的Hack */
+	*display: block;
+	*font-size: 87px;/*约为高度的0.873，200*0.873 约为175*/
+	*font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/
+	width:102px;
+	height:102px;
+	border: 1px solid #666666;
+	background-color: #FFFFFF;
+}
+.picBox IMG {
+	VERTICAL-ALIGN: middle
+}
+.head {
+	height: 100px;
+	width: 950px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	background-color: #000000;
+}
+.head h1 {
+	font-family: "黑体";
+	font-size: 30px;
+	color: #FFFFFF;
+	padding-top: 30px;
+	padding-bottom: 7px;
+	margin-left: 20px;
+}
+.head p {
+	color: #FFFFFF;
+	text-indent: 2px;
+	margin-left: 20px;
+}
+a:link{color: #FFFFFF;text-decoration: none;}
+a:visited{color: #FFFFFF;text-decoration: none;}
+a:hover{color: #FF0000;text-decoration: underline;}
+.layout950_100 {
+	margin-right: auto;
+	margin-left: auto;
+	width: 100%;
+	height: auto;
+	background-position: top;
+	background-repeat: repeat;
+}
+.layout950 {
+	margin-right: auto;
+	margin-left: auto;
+	width: 950px;
+	position: relative;
+	background-color: #131313;
+}
+.banner {
+	width: 950px;
+	background-color: #FFFFFF;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-image: url(bgimages/style14.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px -115px;
+	height: 180px;
+}
+.banner IMG {
+	VERTICAL-ALIGN: middle;
+	POSITION: relative;
+	text-align: center;
+}
+.nav {
+	height: 31px;
+	width: 930px;
+	margin-right: auto;
+	text-align: center;
+	padding-left: 20px;
+	background-repeat: no-repeat;
+	background-image: url(bgimages/style14.jpg);
+}
+.nav li {
+	float: left;
+	width: 101px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-align: center;
+	padding-top: 9px;
+
+}
+.nav li A:link {
+	text-decoration:none;
+	color: #FFFFFF;
+}
+.nav li A:visited {
+	color: #FFFFFF; 	
+	text-decoration:none;
+}
+.nav li A:hover {
+	text-decoration:underline;
+}
+.nav .hover {
+	height: 22px;
+	padding-top: 5px;
+	background-color: #FFFFFF;
+	margin-top: 4px;
+	color: #000000;
+	background-image: url(bgimages/style14.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px -85px;
+}
+.nav .hover A:link {
+	text-decoration:none;
+	color: #FFFFFF;
+}
+.nav .hover A:visited {
+	color: #FFFFFF; 	
+	text-decoration:none;
+}
+.nav .hover A:hover {
+	text-decoration:underline;
+	color: #FFFFFF;
+}
+.leftkuang {
+	border: 1px solid #333333;
+	padding-bottom: 7px !important;
+	padding-bottom: 1px;
+	background-color: #131313;
+	margin-bottom: 7px;
+	color: #FFFFFF;
+}
+.factorykuang {
+	FONT-SIZE: 90px;
+	WIDTH: 200px;
+	LINE-HEIGHT: 90px;
+	TEXT-ALIGN: center;
+	border: 1px dashed #CCCCCC;
+	height: 160px;
+	padding: 2px;
+}
+
+.lefttitle {
+	font-size: 12px;
+	color: #ffffff;
+	height: 18px;
+	padding-top: 4px;
+	padding-left: 15px;
+	font-weight: bold;
+	background-image: url(bgimages/style14.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px -35px;
+}
+.righttitle {
+	font-size: 12px;
+	color: #ffffff;
+	height: 18px;
+	padding-top: 4px;
+	padding-left: 10px;
+	font-weight: bold;
+	background-image: url(bgimages/style14.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px -60px;
+}
+.righttitle .more {
+	float: left;
+	font-size: 12px;
+	color: #ffffff;
+	font-weight: normal;
+	text-align: right;
+
+}
+.righttitle .more A:link {
+	text-decoration:none;
+	color: #ffffff;
+}
+.righttitle .more A:visited {
+	color: #ffffff; 	
+	text-decoration:none;
+}
+.righttitle .more A:hover {
+	text-decoration:underline;
+	color: #ffffff;
+}
+.righttitle li {
+	float: left;
+	width: 360px;
+	color: #ffffff;
+}
+
+.rightkuang {
+	border: 1px solid #00CC66;
+}
+.gonggaoContContent {
+	PADDING-BOTTOM: 5px;
+	PADDING-TOP: 5px;
+	TEXT-ALIGN: left;
+	padding-left: 10px;
+	line-height: 160%;
+}
+.bodyContContent {
+	PADDING-BOTTOM: 5px;
+	PADDING-TOP: 5px;
+	TEXT-ALIGN: left;
+	padding-left: 10px;
+	line-height: 160%;
+}
+.bodyContContent li {
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #333333;
+	line-height: 200%;
+	padding-left: 18px;
+	background-image: url(../images/icon_arrow.gif);
+	background-repeat: no-repeat;
+	background-position: 5px 7px;
+	font-size: 12px;
+	font-weight: bold;
+	width: 160px;
+}
+.linksContContent {
+	PADDING-BOTTOM: 7px;
+	PADDING-TOP: 7px;
+	TEXT-ALIGN: left;
+	padding-left: 10px;
+	line-height: 160%;
+
+}
+.linksContContent li {
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #333333;
+	line-height: 200%;
+}
+.lefttitle span {
+	float: left;
+	padding-left: 500px;
+}
+.lefttitle li {
+	float: left;
+	width: 360px;
+	color: #FFFFFF;
+}
+.factoryBox {
+	WIDTH: 180px;
+	WORD-BREAK: break-all;
+	TEXT-ALIGN: center;
+	margin-right: auto;
+	margin-left: auto;
+	line-height: 130%;
+	margin-top: 7px;
+	margin-bottom: 0px;
+}
+.textBox {
+	WIDTH: 114px;
+	WORD-BREAK: break-all;
+	TEXT-ALIGN: center;
+	margin-right: auto;
+	margin-left: auto;
+	line-height: 130%;
+	margin-top: 7px;
+	margin-bottom: 0px;
+}
+.jiageBox {
+	WIDTH: 114px;
+	WORD-BREAK: break-all;
+	TEXT-ALIGN: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 3px;
+}
+.jiageBox span {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FF0000;
+	font-weight: bold;
+}
+.jobTextColor {
+	font-size: 14px;
+	line-height: 300%;
+	font-weight: normal;
+}
+.contact_kuang {
+	font-size: 18px;
+	margin-top: 14px;
+	margin-left: 50px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #CCCCCC;
+	margin-bottom: 7px;
+	padding-bottom: 7px;
+	height: 30px;
+	padding-top: 14px;
+	padding-left: 30px;
+	font-family: "黑体";
+	color: #fffffff;
+}
+.contactkuang{
+	line-height: 200%;
+	font-size: 14px;
+}
+.where {
+	height: 18px;
+	padding-top: 5px;
+	padding-left: 10px;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #131313;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	border: 1px solid #333333;
+}
+.tradetitle {
+	font-family: "宋体";
+	font-size: 25px;
+	font-weight: bold;
+	margin-top: 10px;
+	width: 95%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #F6FFF8;
+	border: 1px solid #F6FFF8;
+	padding: 10px;
+	color: #02091C;
+}
+.tradejiage span {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #FF3300;
+}
+.fangda {
+	text-align: center;
+}
+
+.fenglei {
+	line-height: 200%;
+	width: 95%;
+	margin-right: auto;
+	margin-left: auto;
+}
+.fenglei li {
+	float: left;
+	width: 125px;
+	margin-right: 10px;
+	font-size: 12px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.tradejiage {
+	float: left;
+	height: 200px;
+	width: 400px;
+	margin-left: 20px;
+	padding-top: 10px;
+}
+.tradejiage li {
+	font-size: 14px;
+	line-height: 200%;
+	padding-bottom: 7px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #CCCCCC;
+}
+.tradexiangxi {
+	width: 95%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+.tradexiangxi p {
+	font-size: 12px;
+	line-height: 200%;
+	text-indent: 24px;
+}
+/*报价*/
+.sell_infor {
+	BORDER-RIGHT: #ffcb99 1px solid;
+	PADDING-RIGHT: 6px;
+	BORDER-TOP: #ffcb99 1px solid;
+	PADDING-LEFT: 6px;
+	BACKGROUND: #fff8ee;
+	PADDING-BOTTOM: 6px;
+	BORDER-LEFT: #ffcb99 1px solid;
+	WORD-BREAK: break-all;
+	BORDER-BOTTOM: #ffcb99 1px solid;
+	font-size: 14px;
+	font-weight: normal;
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+.no_infor_len2 {
+	WIDTH: 80%;
+	height: 40px;
+}
+.bt02_arrow {
+	PADDING-RIGHT: 16px; DISPLAY: block; PADDING-LEFT: 32px; FONT-WEIGHT: bold; FONT-SIZE: 16px; BACKGROUND: url(http://www.glass.cn/glass/biz/bt02_arrow.gif); FLOAT: left; WIDTH: 68px; LINE-HEIGHT: 30px; HEIGHT: 30px
+}
+.bt02_arrow:link {
+	COLOR: #ffffff
+}
+.bt02_arrow:visited {
+	COLOR: #ffffff
+}
+.bt02_arrow:hover {
+	BACKGROUND: url(http://www.glass.cn/glass/biz/bt02_arrow.gif) 0px -30px; COLOR: #fff; TEXT-DECORATION: none
+}
+.left {
+	FLOAT: left
+}
+.right {
+	FLOAT: right
+}
+.center {
+	TEXT-ALIGN: center
+}
+.pd {
+	MARGIN-TOP: 10px
+}
+.pd2 {
+	MARGIN-TOP: 14px
+}
+.pd_2h {
+	PADDING-LEFT: 14px
+}
+.pd_3h {
+	PADDING-LEFT: 20px
+}
+.row uo span {
+	font-size: 16px;
+	font-weight: bold;
+	color: #FF3300;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.copyright {
+	height: 60px;
+	width: 950px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	padding-top: 10px;
+	color: #cccccc;
+	background-color: #131313;
+	border: 1px solid #333333;
+}
+.copyright A:link {
+	text-decoration:none;
+	color: #cccccc; 	
+}
+.copyright A:visited {
+	color: #cccccc; 	
+	text-decoration:none;
+}
+.copyright A:hover {
+	text-decoration:underline;
+	color: #ffffff; 	
+}
+.page {
+	PADDING-RIGHT: 0px;
+	MARGIN-TOP: 15px;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 10px;
+	OVERFLOW: hidden;
+	COLOR: #ffffff;
+	PADDING-TOP: 15px;
+	ZOOM: 1;
+	font-size: 1.3em;
+	text-align: center;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	word-spacing: 2pt;
+	margin-bottom: 10px;
+	border-top-width: 1px;
+	border-top-style: dashed;
+	border-top-color: #CCCCCC;
+}
+.currentpage {
+	PADDING-RIGHT: 2px;
+	PADDING-LEFT: 2px;
+	BACKGROUND: #ff7300;
+	PADDING-BOTTOM: 1px;
+	COLOR: #fff;
+	PADDING-TOP: 1px;
+	width: 20px;
+	height: 20px;
+}
+
+
+
+
+
+
+
+
+#demo {
+	OVERFLOW: hidden
+}
+#indemo {
+	FLOAT: left; WIDTH: 900px
+}
+#demo1 {
+	FLOAT: left
+}
+#demo2 {
+	FLOAT: left
+}
+
+
+
+
+
+
+
+
+
+.tuijian_company {
+	PADDING-BOTTOM: 5px; WIDTH: 100%; LINE-HEIGHT: 180%; PADDING-TOP: 5px; TEXT-ALIGN: left
+}
+.tuijian_company P {
+	MARGIN: 14px 10px 7px 20px; TEXT-INDENT: 20px
+}
+.filter {
+	FILTER: Alpha(opacity=95); moz-opacity: .95; opacity: 0.95
+}
+.filter2 {
+	FILTER: Alpha(opacity=70); moz-opacity: .70; opacity: 0.70
+}
+.filter3 {
+	FILTER: Alpha(opacity=0); moz-opacity: .0; opacity: 0.0
+}
+.logo {
+	MARGIN-TOP: 26px; DISPLAY: block; FONT-SIZE: 52px; FLOAT: left; MARGIN-LEFT: 7px; VERTICAL-ALIGN: middle; WIDTH: 100px; MARGIN-RIGHT: 14px; FONT-FAMILY: Arial; HEIGHT: 60px; TEXT-ALIGN: center
+}
+.logo IMG {
+	VERTICAL-ALIGN: middle
+}
+.logo1 {
+	Z-INDEX: 6; BACKGROUND-IMAGE: url(http://images.glass.cn/logo/200810/anlanlogo.jpg); WIDTH: 295px; LINE-HEIGHT: 20px; BACKGROUND-REPEAT: no-repeat; POSITION: absolute; HEIGHT: 55px
+}
+.logo1 {
+	LEFT: 470px; TOP: 30px
+}
+.gold_year {
+	Z-INDEX: 6; BACKGROUND-IMAGE: url(../images/gold_bg.gif); WIDTH: 157px; LINE-HEIGHT: 20px; BACKGROUND-REPEAT: no-repeat; POSITION: absolute; HEIGHT: 59px
+}
+.gold_year {
+	LEFT: 780px; TOP: 0px
+}
+#bodyleft {
+	FLOAT: left; WIDTH: 200px
+}
+#bodyright {
+	FLOAT: right; WIDTH: 738px
+}
+.glass {
+	BACKGROUND-IMAGE: url(../images/topbg.gif); MARGIN-LEFT: auto; WIDTH: 100%; MARGIN-RIGHT: auto; PADDING-TOP: 7px; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 20px
+}
+.glass A:link {
+	COLOR: #003399; TEXT-DECORATION: none
+}
+.glass A:visited {
+	COLOR: #003399; TEXT-DECORATION: none
+}
+.glass A:hover {
+	COLOR: #ff3300; TEXT-DECORATION: underline
+}
+.glass UL {
+	MARGIN-LEFT: auto; WIDTH: 950px; MARGIN-RIGHT: auto
+}
+.glass LI {
+	FLOAT: left
+}
+.glass .glass_left {
+	FLOAT: left; WIDTH: 400px; COLOR: #999999
+}
+.glass .glass_right {
+	FLOAT: right; WIDTH: 400px; COLOR: #999999; TEXT-ALIGN: right
+}
+
+
+.gold_wz {
+	MARGIN-TOP: 22px; FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff
+}
+.gold_wz TD {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; LINE-HEIGHT: 15px
+}
+
+.gold_wz .gn{ width:30px; color:#8c2001; text-align:center;}
+.gold_wz .year 
+{
+	color:#fff; margin-top:4px; text-align:center;
+}
+
+.gold_wz SPAN {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; FONT-SIZE: 16px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; 
+}
+
+
+.newsleft_pic {
+	CLEAR: both; BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 2px; FLOAT: left; PADDING-BOTTOM: 2px; MARGIN: 10px 20px 20px 10px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 220px; PADDING-TOP: 2px; BORDER-BOTTOM: #cccccc 1px solid
+}
+.newsleft_pic_big {
+	CLEAR: both; BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 2px; FLOAT: left; PADDING-BOTTOM: 2px; MARGIN: 10px 20px 20px 10px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 220px; PADDING-TOP: 2px; BORDER-BOTTOM: #cccccc 1px solid
+}
+.product_big {
+	FLOAT: left; MARGIN: 10px 20px 10px 7px; TEXT-ALIGN: center
+}
+DIV#MainPromotionBanner {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FLOAT: left; BORDER-LEFT: #cccccc 1px solid; WIDTH: 250px; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: auto
+}
+#MainPromotionBanner #SlidePlayer {
+	MARGIN: 0px auto; POSITION: relative; TEXT-ALIGN: center
+}
+#MainPromotionBanner .Slides {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 250px
+}
+#MainPromotionBanner .Slides LI {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FLOAT: left; BORDER-LEFT: #cccccc 1px solid; WIDTH: 250px; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 250px; BACKGROUND-COLOR: #ffffff
+}
+#MainPromotionBanner .Slides IMG {
+	BORDER-TOP-WIDTH: 0px; DISPLAY: block; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 250px; BORDER-RIGHT-WIDTH: 0px
+}
+#MainPromotionBanner .SlideTriggers {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; Z-INDEX: 10; RIGHT: 5px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; POSITION: absolute; TOP: 225px; HEIGHT: 25px
+}
+#MainPromotionBanner .SlideTriggers LI {
+	DISPLAY: inline; FONT-SIZE: 0.9em; BACKGROUND: url(http://www.glass.cn/adimages/homenews/slide_trigger.gif) no-repeat center center; FLOAT: left; MARGIN: 3px; OVERFLOW: hidden; WIDTH: 16px; CURSOR: pointer; COLOR: #0066cc; LINE-HEIGHT: 16px; FONT-FAMILY: Arial; HEIGHT: 16px; TEXT-ALIGN: center
+}
+#MainPromotionBanner .SlideTriggers LI.Current {
+	BORDER-TOP-WIDTH: 0px; FONT-WEIGHT: bold; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 1.4em; BACKGROUND: url(http://www.glass.cn/adimages/homenews/slide_trigger_c.gif) no-repeat center center; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px 3px; WIDTH: 21px; COLOR: #fff; LINE-HEIGHT: 21px; HEIGHT: 21px; BORDER-RIGHT-WIDTH: 0px
+}
+.img_title {
+	FONT-SIZE: 12px; COLOR: #999999; LINE-HEIGHT: 140%; TEXT-ALIGN: center
+}
+.pd {
+	MARGIN-TOP: 7px
+}
+.cent {
+	TEXT-ALIGN: center
+}
+.clr {
+	CLEAR: both
+}
+.company_kuang {
+	MARGIN-LEFT: auto; WIDTH: 100%; MARGIN-RIGHT: auto; HEIGHT: 210px
+}
+.factory {
+	MARGIN-LEFT: auto; WIDTH: 100%; MARGIN-RIGHT: auto; PADDING-TOP: 7px
+}
+.factory LI {
+	MARGIN-TOP: 7px; FLOAT: left; MARGIN-LEFT: 14px; WIDTH: 200px; MARGIN-RIGHT: 15px; HEIGHT: 200px; TEXT-ALIGN: center
+}
+.trade_product {
+	PADDING-BOTTOM: 5px; WIDTH: 100%; LINE-HEIGHT: 180%; PADDING-TOP: 5px
+}
+.tuijian_product {
+	PADDING-BOTTOM: 5px; WIDTH: 100%; LINE-HEIGHT: 180%; PADDING-TOP: 5px; TEXT-ALIGN: left
+}
+.tuijian_product P {
+	MARGIN: 14px 10px 7px 20px; TEXT-INDENT: 20px
+}
+.tuijian_product LI {
+	MARGIN-TOP: 7px; FLOAT: left; MARGIN-LEFT: 12px; WIDTH: 120px; MARGIN-RIGHT: 10px; HEIGHT: 170px; TEXT-ALIGN: center
+}
+.newslist {
+	MARGIN-BOTTOM: 20px; MARGIN-LEFT: auto; WIDTH: 100%; MARGIN-RIGHT: auto; PADDING-TOP: 10px
+}
+.newslist SPAN {
+	PADDING-LEFT: 20px; FONT-SIZE: 13px; COLOR: #666666
+}
+.newslist LI {
+	PADDING-LEFT: 14px; FONT-SIZE: 14px; PADDING-BOTTOM: 14px; WIDTH: 95%; PADDING-TOP: 14px; BORDER-BOTTOM: #cccccc 1px dashed
+}
+.contact {
+	MARGIN-BOTTOM: 7px; PADDING-BOTTOM: 5px; COLOR: #666666; PADDING-TOP: 5px; BORDER-BOTTOM: #cccccc 1px dashed; HEIGHT: 20px
+}
+.mainTextColor {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FONT-SIZE: 14px; BORDER-LEFT: #cccccc 1px solid; LINE-HEIGHT: 250%; BORDER-BOTTOM: #cccccc 1px solid; TEXT-ALIGN: center
+}
+.title12 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-BOTTOM: 7px; COLOR: #000000
+}
+.picbox1 {
+	PADDING-RIGHT: 1px; MARGIN-TOP: 5px; PADDING-LEFT: 1px; FLOAT: left; PADDING-BOTTOM: 1px; MARGIN-LEFT: 15px; WIDTH: 250px; MARGIN-RIGHT: 20px; PADDING-TOP: 1px
+}
+.space7 {
+	LINE-HEIGHT: 7px; HEIGHT: 7px
+}
+
+
+
+ul{list-style:none;padding:0;margin:0}
+img{border:0px}
+form{margin:0px;}a.titleA:link{color:#1B5494;text-decoration:none;}a.titleA:visited{color:#1B5494;text-decoration:none;}a.titleA:hover{color:#1B5494;text-decoration:none;}.ECS{font-size:12px;position:absolute;top:2000px;}.ECStitle{width:201px;height:21px;background:url(http://img.china.alibaba.com/images/cn/market/ecs/titleBg.gif) no-repeat;}.ECStitle .ELeft{float:left;font-weight:bold;padding:4px 0px 0px 5px;color:#1B5494;}.ECStitle .ERight{float:right;padding:3px 5px 0px 0px;}a.EToMin{display:inline-block;padding:1px 9px !important;padding:1px 8px;}a.EToMin:link{text-decoration:none;background:url(http://img.china.alibaba.com/images/cn/market/ecs/toMin.gif) no-repeat;}a.EToMin:visited{text-decoration:none;background:url(http://img.china.alibaba.com/images/cn/market/ecs/toMin.gif) no-repeat;}a.EToMin:hover{text-decoration:none;background:url(http://img.china.alibaba.com/images/cn/market/ecs/toMinHover.gif) no-repeat;}a.EToMax{display:inline-block;padding:1px 9px !important;padding:1px 8px;}a.EToMax:link{text-decoration:none;background:url(http://img.china.alibaba.com/images/cn/market/ecs/toMax.gif) no-repeat;}a.EToMax:visited{text-decoration:none;background:url(http://img.china.alibaba.com/images/cn/market/ecs/toMax.gif) no-repeat;}a.EToMax:hover{text-decoration:none;background:url(http://img.china.alibaba.com/images/cn/market/ecs/toMaxHover.gif) no-repeat;}#ECS .ECScontent .EMiddle{height:280px;}.ECScontent{background:#EDF6FF;}.ECScontent .ETop{height:63px;width:199px;border-left:1px solid #859DBC;border-right:1px solid #859DBC;}.ECScontent .ETop ul li{float:left;}.ECScontent .ETop .left{padding:7px 6px 0px 9px;}.ECScontent .ETop .right{width:120px;margin-top:7px;color:#1B5494;line-height:130%;}.ECScontent .EMiddle{width:199px;padding-top:7px !important;padding-bottom:5px;padding-top:4px;border-left:1px solid #859DBC;border-right:1px solid #859DBC;}.ECScontent .EList{border:1px solid #95BBE1;width:172px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;height:130px !important;height:130px;margin-left:9px;padding:3px;overflow-y:auto;}.ECScontent .EList ul li{text-align:left;}.ECScontent .EList .shenglie_king{display:inline-block;width:98px;cursor:pointer;white-space:nowrap;text-overflow:ellipsis;overflow: hidden;}.ECScontent .EList .shenglie{display:inline-block;width:130px;cursor:pointer;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}.ECScontent .EList a{width:172px;display:block;padding:3px 0px;}.ECScontent .EList a:link{width:172px;text-decoration:none;color:#1B5494;}.ECScontent .EList a:visited{width:172px;text-decoration:none;color:#1B5494;}.ECScontent .EList a:hover{width:170px;text-decoration:none;color:#1B5494;padding:2px 0px;border:1px solid #CCE5FB;background:#EDFBFF;}.ECScontent .EList a.black:link{color:#A3ADB6;}.ECScontent .EList a.black:visited{color:#A3ADB6;}.ECScontent .EList a.black:hover{color:#A3ADB6;}.ECScontent .EList a.mainId:link{color:#ff7300;}.ECScontent .EList a.mainId:visited{color:#ff7300;}.ECScontent .EList a.mainId:hover{color:#ff7300;}.ECScontent .EList img{padding-left:6px;padding-right:4px;margin-top:-1px;}.ECScontent .EList a:hover img{padding-left:5px;padding-right:4px;}.ECScontent .EList span{display:inline-block;margin-top:3px;}.ECScontent .EBottom{height:5px;width:201px;background:url(http://img.china.alibaba.com/images/cn/market/ecs/bottom.gif) no-repeat;overflow:hidden;}.ECScontent textarea{width:173px;font-size:12px;height:100px;overflow:hidden;color:#A3ADB6;margin-left:10px;border:1px solid #80AFDD;}.ECScontent .dis{color:#A3ADB6;font-size:12px;margin-left:7px;margin-top:5px;}.ECScontent .name{color:#205394;font-size:12px;margin-left:10px;margin-top:7px;}.ECScontent .submit{text-align:right;margin-right:14px;margin-top:7px;}.ECScontent input{height:14px;border:1px solid #80AFDD;}.ECScontent .inputConfir{width:35px;margin-right:5px;}.ECScontent .inputPhone{width:107px;}.ECScontent .inputName{width:137px;}.ECScontent .inputName_error{border:1px solid #FD6138;}.ECScontent .error_msg{margin-left:10px;margin-top:7px;color:#FD6138;display:none}.ECScontent .error_msg img{margin-top:-3px;}.EBorder{border:1px solid #97BCE1;}
+
+
+
+/************** new add ******************/
+
+.infotitle 
+{
+	BACKGROUND-POSITION: 0px -35px; 
+	PADDING-LEFT: 10px;  
+	FONT-SIZE: 14px; 
+	BACKGROUND-IMAGE: url(bgimages/style1.jpg); 
+	COLOR: #ffffff; PADDING-TOP: 4px;  
+	background-repeat:repeat;
+	HEIGHT: 18px;
+}
+
+.infotitle .more {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: left; COLOR: #333333; TEXT-ALIGN: right
+}
+.infotitle LI {
+	FLOAT: left; WIDTH: 100px; COLOR: #f23304; FONT-WEIGHT: bold;
+}
+.infotitle LI a{
+	FONT-WEIGHT:normal;
+}
+
+.infolist ul{width:95%; padding-left:10px;}
+.infolist li{ height:90px; border-bottom:1px dashed #ccc; margin-top:5px; overflow:hidden;}
+.infolist .pBox{ float:left; width:75px; height:75px; border:1px solid #eee; padding:3px; text-align:center;}
+.infolist .tBox{ float:left; margin-left:10px;width:580px;text-align:left; line-height:150%; margin-top:0px;}
+.infolist .tBox h2{ font-size:14px; font-weight:bold; }
+.infolist .tBox h2 span{ font-size:12px; font-weight:normal;}
+
+
+.newsdetails{ padding:10px; line-height:180%;}
+.newsdetails h1{ font-size:20px; padding:5px; border-bottom:1px dashed #ccc; text-align:center; margin-bottom:10px;}
+.newsdetails h1 span{ font-size:12px; margin-left:15px;}
+
+
+.table_value{ border-collapse:collapse;  width:95%; margin-bottom:10px;}
+.table_value{BORDER: #cccccc 1px solid;FONT-SIZE: 14px; LINE-HEIGHT: 250%;}
+.table_value th{ background-color:#F0F0F0; font-weight:normal; text-align:right; width:120px;}
+.table_value .line1{ border-bottom:1px solid #fff;}
+.table_value .line2{ border-bottom:1px solid #F7F7F7;}
+.table_value th, .table_value td{ padding:4px 8px;}
+.table_value td img{ height:22px; vertical-align:top; border:none; margin:0; padding:0; float:none;}
+.table_value td label{ height:15px; background:url(bgimages/bg_rate.gif) #fff repeat-x left top; border:1px solid #525252; width:200px; line-height:15px; padding:0; text-align:left; display:block; float:left;}
+.table_value td label img{ height:16px;}
+.table_value td i{ float:left; padding-left:6px; color:#f00; width:60px; display:block;}
+
+.jobinfo table{BORDER: #cccccc 1px solid;FONT-SIZE: 14px; LINE-HEIGHT: 250%; margin-top:10px; margin-bottom:10px; background-color:#eee;}
+
+.jobinfo table th{ background-color:#f8f8f8; width:100px;}
+.jobinfo table td{ background-color:#fff; padding-left:5px;}
+
+
+#linkmessage{ text-align:center;margin-top:10px; margin-bottom:10px;FONT-SIZE: 14px;}
+
+#linkmessage  table{BORDER: #cccccc 1px solid; LINE-HEIGHT: 250%;  background-color:#eee; width:95%;}
+
+#linkmessage  table th{ background-color:#f8f8f8; text-align:right;}
+#linkmessage  table td{ background-color:#fff; padding-left:5px; text-align:left;}
+
+.message{ width:95%; margin:0 auto; margin-top:20px;}
+
+.message .comment{ font-size:14px; border-bottom:1px solid #ccc; overflow:hidden;height:26px}
+.message .comment li{ float:left; width:100px; text-align:center; padding:5px;}
+.message .comment .choiceon{ background-color: #f2f2f2; font-weight:bold;}
+
+
+/*留言内容*/
+.commentList{ padding-right:18px; margin:0 auto 0 0; background:#fff; padding-top:10px;}
+.commentList p{ text-align:left; padding-left:0;  text-indent:0; background: url(bgimages/line_hr.gif) repeat-x left bottom; font-size:14px; padding-bottom:5px;}
+.commentList p span{ margin-left:15px; font-size:14px; color:#666;}
+.commentList  h3{ font-size:12px; color:#f60; padding:0; text-indent:0; clear:both; text-align:left; padding:6px 0; border-bottom:1px dashed #ddd;}
+.commentList .line{  background: url(bgimages/line_hr.gif) repeat-x left bottom; padding-bottom:9px; }
+.commentList li i{color:#999; font-style:normal; margin:0; padding:0;}
+.commentList li .left{float:left;}
+.commentList li .left span{ display:block; padding-top:0;}
+.commentList li .ks{ padding-left:6px; float:left;}
+
+.commentList li{ padding-left:90px; text-align:left;  padding-top:8px; clear:both;}
+.commentList li label{ margin-left:-90px; width:85px; float:left; text-align:right;}
+.commentList li em{ font-weight:normal; font-size:12px; font-style:normal; color:#f60;}
+
+.commentList li span{  margin-left:5px; padding-top:1px;  }
+
+.commentList li span.cue{  padding-left:10px; color:#6D6D6D;}
+.commentList li span.wrong{ padding-left:10px; color:#f23304;  }
+.commentList li span.right{ padding-left:10px;}
+
+.commentList li span.pone{ float:right; width:230px; min-height:30px; line-height:15px; padding-right:140px;}
+
+.commentList a.orangelink:link,
+.commentList a.orangelink:visited{ color:#f50; text-decoration:underline;font-size:14px; font-weight:bold;}
+.commentList a.orangelink:hover{ color:#333; text-decoration:none;}
+
+
+.commentList li i{ color:#999;}
+

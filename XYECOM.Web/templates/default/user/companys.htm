@@ -1,0 +1,94 @@
+<%Include _head%>
+
+    <div class="location fia"><a href="index.{config.Suffix}">商务中心</a> &gt;  <a href="{config.WebURL}user/engagelist.{config.Suffix}">公司信息管理</a>  &gt;  公司信息</div>
+
+<%Include _menu%>
+
+
+
+
+<div id="right">
+    <form action="#" id="" method="post">
+      
+
+    
+    <div class="ly_100">
+    <div class="ly_tit3"> 
+        <ul>
+            <li class="on"><a href ="#">收藏企业信息</a></li>
+        </ul>
+    </div>
+
+    <div class="ly_tit32">
+     <table class="enter_search">
+        <tr>
+            <th>关键字：</th>
+            <td><input type="text"  id="key" name ="key" value="{key}"/></td>
+            <th>主营产品/服务：</th>
+            <td><input type="text"  id="product" name ="product" value="{product}"/></td>
+        </tr>
+        <tr>
+            <th>&nbsp;&nbsp;企业类别：</th>
+            <td>
+                <div id="classTypecompany"></div>
+                <input type ="hidden" id="companyid"  name="companyid" value="{companyid}"/>
+                <script type="text/javascript">
+                var clacompany = new ClassType("clacompany",'company','classTypecompany','companyid');
+                clacompany.Mode = "select";
+                clacompany.Init();
+                </script> 
+            </td>
+            <th>所在地区：</th>
+            <td>
+                <div id="classType"></div>
+                <input type ="hidden" id="areatypeid"  name="areatypeid" value="{areatypeid}" />
+                <script type="text/javascript">
+                var cla = new ClassType("cla",'area','classType','areatypeid');
+                cla.Mode = "select";
+                cla.Init();
+                </script>
+            </td>
+            
+       </tr>   
+       <tr>
+        <th></th>
+        <td colspan="3"><input type="submit" name="submit_search" value="查询" class ="button"/></td>
+       </tr>
+      </table>
+    </div>
+  </div>
+  <table class="content">    
+  <thead>
+	  <tr>
+	      <th width="55%">公司名称</th>
+		  <th width="15%">所在区域</th>
+		  <th width="20%">企业类别</th>
+		  <th width="10%">查看</th>
+	  </tr>
+  </thead>
+  <tbody>
+  
+  <%loop (DataRow)  user infolist%>
+    <tr>
+       <td>{user[UI_Name]}&nbsp;</td>
+       <td>
+       <%set str=GetAreaName(user["Area_Id"])%>
+       {str}&nbsp;
+       </td>   
+       <td>
+       <%set str=GetUserTypeName(user["UT_ID"])%>
+       {str}&nbsp;
+       </td>
+       <td><a href="{config.WebURL}user/companysee.{config.Suffix}?seeuid={user[u_id]}">查看</a></td>
+    </tr>
+  <%/loop%>
+  </tbody>
+</table>
+<div class="page">当前是第 <span>{pageinfo.PageIndex}</span> 页 &nbsp;（共 <span>{pageinfo.PageCount}</span> 页）&nbsp;{pageinfo.FirstPage}&nbsp;{pageinfo.PreviousPage}&nbsp;{pageinfo.NextPage}&nbsp;{pageinfo.LastPage}</div>
+    </form>
+</div>
+
+
+
+
+<%Include _footer%>

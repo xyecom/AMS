@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+       <%include _head%>	
+
+</head>
+<body>
+
+
+<div id="wrapper">
+
+	<div id="hd_info">
+		<div id="cnts">
+			<div id="site_cang">
+				{pageinfo.LoginStatus}
+			</div>
+			<div id="log_info">
+				<a href="{config.weburl}">首页</a> <a href="{config.weburl}offer/">产品库</a> <a href="{config.weburl}news/">行业资讯</a> <a href="{config.weburl}exhibition/">展会</a> <a href="{config.weburl}job/">人才</a>
+			</div>
+			<div class="clr"></div>
+		</div>
+	</div>
+	<div class="clr"></div>
+
+	<div id="zs_header">
+		<div id="zs_logo"><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/logo.gif" width="219" height="50" alt="" /></a></div>
+		<div id="zs_search">
+			<select id="">
+				<option value="" selected="selected">展会</option>
+				<option value="">品牌</option>
+			</select>
+			<input maxLength="20" name="keyword" onFocus="this.value='';this.focus()" value="输入关键词" class="search_text2" />
+			<button value="搜索" id="DoSearch" name="DoSearch" class="btsearch2" />搜索</button>
+
+		</div>
+	</div>
+
+	<div id="zs_bnr_hd"><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_bnr_5.gif" width="980" height="72" alt="" /></a></div>
+
+	<div id="zs_nav">
+		<div class="guide"><a href="">运动休闲类</a>  |  <a href="">皮鞋类品牌</a>  |  <a href="">童鞋类品牌</a>  |  <a href="">箱包类品牌</a>  |  <a href="">服装服饰类</a>  |  <a href="">鞋机鞋材类</a>  |  <a href="">功能鞋品牌</a>  |  <a href="">其他品牌</a></div>
+		<div class="text">
+			<strong>热点招商：</strong>
+			<ul>
+				{XY_InvestmentIndex_ReDianZhaoShang}
+				<div class="clr"></div>
+			</ul>
+			<div class="clr"></div>
+		</div>
+	</div>
+
+	<div id="zhaoshang_medal">
+		<div id="tit"><span class="fright"><a href="#">名门玉酒，酒中之玉——玉酒(玉典)全国总经销：四川玖玖酒业</a>&nbsp;&nbsp;</span></div>
+		<table width="980" border="0" cellspacing="1" cellpadding="2" align="center" bgcolor="#91B7DE">
+			<tr bgcolor="white">
+				<td><a href="">渝新干锅辣鸭头</a></td>
+				<td><a href="">以酒会友诚交天下客</a></td>
+				<td><a href="">发掘传统美食精华</a></td>
+				<td><a href="">渝新干锅辣鸭头</a></td>
+				<td><a href="">新鲜屋精致无糖苹果醋饮</a></td>
+			</tr>
+			<tr bgcolor="white">
+				<td><a href="">渝新干锅辣鸭头</a></td>
+				<td><a href="">以酒会友诚交天下客</a></td>
+				<td><a href="">发掘传统美食精华</a></td>
+				<td><a href="">渝新干锅辣鸭头诚邀加盟</a></td>
+				<td><a href="">新鲜屋精致无糖苹果醋饮</a></td>
+			</tr>
+			<tr bgcolor="white">
+				<td><a href="">渝新干锅辣鸭头</a></td>
+				<td><a href="">以酒会友诚交天下客</a></td>
+				<td><a href="">发掘传统美食精华</a></td>
+				<td><a href="">渝新干锅辣鸭头 诚邀加盟</a></td>
+				<td><a href="">新鲜屋精致无糖苹果醋饮</td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="idx_cnt2">
+		<div id="left">
+
+			<div class="area1" id="zs_area1">
+				<div class="hd">
+					<div class="tit">
+						<span class="fright"><a href="" class="black">更多&raquo;</a></span>
+						<a href="" class="h2_zs"><h2>推荐招商</h2></a>
+					</div>
+				</div>
+				<div class="cnt">
+					<div class="g_item">
+						<div class="gq_pics">
+							<ul>
+								{XY_InvestmentIndex_TuiJianZhaoShangIMG}
+							</ul>
+						</div>
+
+						<ul class="clr">
+							{XY_InvestmentIndex_TuiJianZhaoShang}
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="area1" id="zs_area2">
+				<div class="hd">
+					<div class="tit">
+						<span class="fright"><a href="" class="black">更多&raquo;</a></span>
+						<a href="" class="h2_jm"><h2>推荐加盟</h2></a>
+					</div>
+				</div>
+				<div class="cnt">
+					<div class="g_item">
+						<div class="gq_pics">
+							<ul>
+								{XY_InvestmentIndex_TuiJianJiaMengIMG}
+							</ul>
+						</div>
+
+						<ul class="clr">
+							{XY_InvestmentIndex_TuiJianJiaMeng}
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="clr"></div>
+
+
+		</div>
+		<div id="right">
+			<div class="MTitle_01">
+				<h2 id="h201" class=""><a target="_blank" href="#"><strong>地区导航</strong></a></h2>
+			</div>
+
+			<div id="con01" class="Mblk_01">
+				<div class="city_sel">
+					<ul>
+						{XY_CLS_InvestmentDiQu}
+						<div class="clr"></div>
+					</ul>
+					<div class="clr"></div>
+				</div>
+			</div>
+
+			<div class="MTitle_01" style="margin-top:6px;">
+				<h2 id="y_tab1" class="" onmouseover="xy_selectBox(2,1,'y','selected');"><a target="_blank" href="#">名优企业</a></h2>
+			    <h2 id="y_tab2" class="selected" onmouseout="xy_selectBox(2,2,'y','selected');"><a target="_blank" href="#">最新企业</a></h2>
+			</div>
+			<div id="y_box1" class="Mblk_01" style="margin-bottom:0;height:158px; display:none;">
+				<div class="rank_compy">
+					<ul>
+						{XY_Index_ZuiXinQiYe}
+					</ul>
+				</div>
+			</div>
+
+
+            <div id="y_box2" class="Mblk_01" style="margin-bottom:0;height:158px;">
+				<div class="rank_compy">
+					<ul>
+						{XY_Index_ZuiXinQiYe}
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<div class="clr"></div>
+	</div>
+	<div class="clr"></div>
+
+	<div class="zs_cate">
+		<span class="fright">更多></span>
+		<h2><a href="">服装</a></h2>
+	</div>
+	<div class="zs_cnt">
+		<ul>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_1.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_2.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_3.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_4.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_5.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_5.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_6.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_7.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_8.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_9.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_10.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_3.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_4.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_6.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_5.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_1.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_10.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_7.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_9.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_8.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_2.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_8.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_9.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_10.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_3.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_4.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_6.gif" width="100" height="100" alt="" /></a></li>
+		</ul>
+	</div>
+
+	<div class="zs_cate">
+		<span class="fright">更多></span>
+		<h2><a href="">服装</a></h2>
+	</div>
+	<div class="zs_cnt">
+		<ul>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_1.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_2.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_3.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_4.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_5.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_5.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_6.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_7.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_8.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_9.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_10.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_3.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_4.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_6.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_5.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_1.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_10.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_7.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_9.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_8.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_2.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_8.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_9.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_10.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_3.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_4.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_6.gif" width="100" height="100" alt="" /></a></li>
+		</ul>
+	</div>
+
+	<div class="zs_cate">
+		<span class="fright">更多></span>
+		<h2><a href="">服装</a></h2>
+	</div>
+	<div class="zs_cnt">
+		<ul>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_1.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_2.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_3.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_4.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_5.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_5.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_6.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_7.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_8.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_9.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_10.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_3.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_4.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_6.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_5.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_1.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_10.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_7.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_9.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_8.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_2.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_8.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_9.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_10.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_3.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_4.gif" width="100" height="100" alt="" /></a></li>
+			<li><a href=""><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/zs_pic_6.gif" width="100" height="100" alt="" /></a></li>
+		</ul>
+	</div>
+
+	<div class="spacer" style="height:8px;"></div>
+
+    <%include _footer%>
+
+</div>
+
+</body>
+</html>

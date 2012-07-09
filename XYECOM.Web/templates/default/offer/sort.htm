@@ -1,0 +1,676 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	
+	    <%include _head%>
+	
+</head>
+<body>
+
+
+<div id="wrapper">
+
+     <%Include _login_bar%>
+
+	 <%Include _top%>
+	 
+	 <%Include _search%>
+
+
+	<div id="search_nav">
+		<strong>您现在的位置：</strong> <a href="" class="blue">网站首页</a> &raquo; <a href="" class="blue">产品列表</a>
+	</div>
+
+
+	<div id="search_main">
+		<div id="left">
+
+
+			<div class="sch_cates">
+				<h2><img src="{config.WebURL}templates/{config.TemplatePath}/images/bg_invest_tit.gif" width="12" height="12" alt="" align="absmiddle" /> 类目选择：</h2>
+				<div class="sch_cnts">
+					<a href="##">益智玩具(7)</a>
+					<a href="##">电动玩具(2)</a>
+					<a href="##">传统玩具(2)</a>
+					<a href="##">模型玩具(2)</a>
+					<a href="##">传统玩具(2)</a>
+					<a href="##">模型玩具(2)</a>
+				</div>
+			</div>
+
+			<div id="FilterDiv">
+				<div id="FilterDivA">
+
+					<form name="Filter" method="get" action="/search.html">
+					<span>每页显示数量:
+					<select name="pageNum" id="pageNum" onchange="SelectItem()">
+					<option value="10" >10</option>
+					<option value="20" selected="selected">20</option>
+
+					<option value="30" >30</option>
+					<option value="50" >50</option>
+					</select>
+					<img src="{config.WebURL}templates/{config.TemplatePath}/images/Page_PreNo.gif" border="0"> <a href="/buyer/list/296-p2.html" title="下一页"><img src="{config.WebURL}templates/{config.TemplatePath}/images/Page_Nextyes.gif" border="0" /></a></span>
+					<strong class="Font14 redLink">缩小范围:</strong>
+					<script language="JavaScript" src="/js/Area.js" type="text/javascript"></script>
+
+					<select name="Province" onChange="ChangeChild(value, ArrayCatalog1, 'City');">
+					<option value="">选择省份</option>
+					</select>
+					<select name="City"></select>
+					<script language="javascript">Init(ArrayCatalog1, 'Province', 'City');</script>
+
+					<select name="postTime" id="postTime">
+					<option value="0">选择产品发布时间范围</option>
+					<option value="1">显示今日最新</option>
+					<option value="3">显示最近3天</option>
+					<option value="5">显示最近5天</option>
+
+					<option value="7">显示最近7天</option>
+					<option value="15">显示最近15天</option>
+					<option value="30">显示最近30天</option>
+					<option value="60">显示最近60天</option>
+					<option value="180">显示最近半年</option>
+					<option value="36500" >显示所有产品</option>
+					</select>
+					<input type="submit" name="Submit" value="筛选" onclick="SelectItem()" />
+					<input name="SmallClassID" type="hidden" id="SmallClassID" value="296" />
+
+					</form>
+				</div>
+				<div id="FilterDivB">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="4%" style="padding-left:4px;"><img src="{config.WebURL}templates/{config.TemplatePath}/images/list_than.gif" width="13" height="13" /></td>
+							<td width="14%"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquire.gif" width="79" height="22" style="cursor:pointer;" onclick="inquire()" /></td>
+							<td width="51%"><img src="{config.WebURL}templates/{config.TemplatePath}/images/list_Order_icon.gif" width="9" height="12" style="position:relative;top:1px;" /> <a href="/buyer/list/296.html">默认排序</a>&nbsp; <img src="{config.WebURL}templates/{config.TemplatePath}/images/list_Order_icon.gif" width="9" height="12" style="position:relative;top:1px;" /> <a href="/buyer/list/layer/296.html">按会员级别</a>&nbsp; <img src="{config.WebURL}templates/{config.TemplatePath}/images/list_Order_icon.gif" width="9" height="12" style="position:relative;top:1px;" /> <a href="/buyer/list/date/296.html">按发布时间</a>&nbsp; <img src="{config.WebURL}templates/{config.TemplatePath}/images/list_Order_icon.gif" width="9" height="12" style="position:relative;top:1px;" /> <a href="/buyer/list/hits/296.html">按活跃数</a></td>
+							<td width="31%" align="right"><a href="#" class="orange" target="_blank">| 申请固定排名,让您的产品排在前三位</a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div id="FixName"></div>
+			<div id="FixText">
+				<!-- 以下为程序提取静态块 -->
+				<div class="ProList">
+
+					<div class="ProCheckBox">
+						<input name="ProID" type="checkbox" value="203379" />
+					</div>
+					<div class="ProPhoto">
+						<div class="ProPhotoBG_108"><a href="/detail/203379.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic15.jpg" alt="" border="0" onload="LoadImg(100,100,this)" /></a></div>
+						<div class="ProResults">[<a href="/search.html?UserID=fzhsj" target="_blank">共有156个相关产品</a>]</div>
+
+					</div>
+					<div class="ProInfo">
+						<strong><a href="/detail/203379.html" class="ProInfoTitleA" target="_blank">好施洗洁巾</a></strong><br />…<br />
+						<a href="#" target="_blank" class="ProInfoKeyA"><strong>福州杰仕日用品有限公司</strong></a> [福建&nbsp;福州]&nbsp;&nbsp;<a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/contactIcon.gif" alt="查看联系方式" width="69" height="21" border="0" style="vertical-align:middle" /></a><br />
+						<a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/goldIcon.gif" border="0" style="position:relative;top:5px;" /></a> [关键词：<a href="/search.html?keyword=洗洁巾" target="_blank" class="ProInfoKeyA">洗洁巾</a>, <a href="/search.html?keyword=抹布" target="_blank" class="ProInfoKeyA">抹布</a>, <a href="/search.html?keyword=洗碗布" target="_blank" class="ProInfoKeyA">洗碗布</a>]
+					</div>
+
+					<div class="ProContact">
+						<br />
+						<a href="/send/203379/fzhsj.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquireIcon.gif" width="69" height="21" border="0" /></a><br />
+						<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=281044974&amp;Site=福州杰仕日用品有限公司&amp;Menu=yes" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/QQ.gif" alt="QQ交谈" border="0" /></a>
+						<a href="http://amos1.taobao.com/msg.ww?v=2&amp;uid=蒋宜钗&amp;s=2" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/alitalk.gif" alt="阿里旺旺交谈" border="0" /></a>
+					</div>
+					<div style="clear:left;" class="ProLine"></div>
+				</div>
+				<!-- 以上为程序提取静态块 -->
+
+	      <div class="ProList">
+
+        <div class="ProCheckBox"><input name="ProID" type="checkbox" value="205890" />
+        </div>
+        <div class="ProPhoto">
+
+			<div class="ProPhotoBG_108"><a href="/detail/205890.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic16.jpg" alt="" border="0" onload="LoadImg(100,100,this)" /></a></div>
+			<div class="ProResults">[<a href="/search.html?UserID=baozi" target="_blank">共有67个相关产品</a>]</div>
+
+		</div>
+        <div class="ProInfo">
+			<strong><a href="/detail/205890.html" class="ProInfoTitleA" target="_blank">洗洁巾</a></strong><br />
+
+我公司专业生产各种系列清洁布,清洁用品,纹胸护理袋,欢迎前来定购
+…<br />
+		  <a href="#" target="_blank" class="ProInfoKeyA"><strong>邵武市宝姿日用品制造有限公司</strong></a> [福建&nbsp;南平]&nbsp;&nbsp;<a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/contactIcon.gif" alt="查看联系方式" width="69" height="21" border="0" style="vertical-align:middle" /></a><br />
+          <a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/goldIcon.gif" border="0" style="position:relative;top:5px;" /></a> [关键词：<a href="/search.html?keyword=清洁用品" target="_blank" class="ProInfoKeyA">清洁用品</a>, <a href="/search.html?keyword=洗洁布" target="_blank" class="ProInfoKeyA">洗洁布</a>, <a href="/search.html?keyword=清洁巾" target="_blank" class="ProInfoKeyA">清洁巾</a>, <a href="/search.html?keyword=洗洁布" target="_blank" class="ProInfoKeyA">洗洁布</a>]</div>
+
+        <div class="ProContact"><br />
+
+          <a href="/send/205890/baozi.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquireIcon.gif" width="69" height="21" border="0" /></a><br />
+
+<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=783632611&amp;Site=邵武市宝姿日用品制造有限公司&amp;Menu=yes" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/QQ.gif" alt="QQ交谈" border="0" /></a>
+
+
+		  </div>
+<div style="clear:left;" class="ProLine"></div>
+      </div>
+
+	</div>
+
+	<!--普通列表-->
+
+	<div id="ProDiv">
+
+	      <div class="ProList">
+        <div class="ProCheckBox"><input name="ProID" type="checkbox" value="204869" />
+        </div>
+        <div class="ProPhoto">
+
+			<div class="ProPhotoBG_108"><a href="/detail/204869.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic17.jpg" alt="" border="0" onload="LoadImg(100,100,this)" /></a></div>
+			<div class="ProResults">[<a href="/search.html?UserID=chinayajie" target="_blank">共有137个相关产品</a>]</div>
+
+		</div>
+
+        <div class="ProInfo">
+			<strong><a href="/detail/204869.html" class="ProInfoTitleA" target="_blank">提花擦洗块YJ-8015</a></strong><br />
+我公司是一家专业生产新一代高品质的厨房清洁用品原料及成品；刷洗大王，百洁布，擦洗块,洗碗布,揩布,洗洁布,海绵擦洗块，金…<br />
+		  <a href="#" target="_blank" class="ProInfoKeyA"><strong>东阳市雅洁卫生保健品有限公司</strong></a> [浙江&nbsp;金华]&nbsp;&nbsp;<a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/contactIcon.gif" alt="查看联系方式" width="69" height="21" border="0" style="vertical-align:middle" /></a><br />
+          <a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/goldIcon.gif" border="0" style="position:relative;top:5px;" /></a> [关键词：<a href="/search.html?keyword=清洁用品" target="_blank" class="ProInfoKeyA">清洁用品</a>, <a href="/search.html?keyword=洗洁布" target="_blank" class="ProInfoKeyA">洗洁布</a>, <a href="/search.html?keyword=洗碗布" target="_blank" class="ProInfoKeyA">洗碗布</a>, <a href="/search.html?keyword=洗洁布" target="_blank" class="ProInfoKeyA">洗洁布</a>, <a href="/search.html?keyword=擦洗块" target="_blank" class="ProInfoKeyA">擦洗块</a>]</div>
+
+        <div class="ProContact"><br />
+
+          <a href="/send/204869/chinayajie.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquireIcon.gif" width="69" height="21" border="0" /></a><br />
+
+<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=188958622&amp;Site=东阳市雅洁卫生保健品有限公司&amp;Menu=yes" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/QQ.gif" alt="QQ交谈" border="0" /></a>
+
+
+		  </div>
+<div style="clear:left;" class="ProLine"></div>
+      </div>
+
+	      <div class="ProList">
+        <div class="ProCheckBox"><input name="ProID" type="checkbox" value="207137" />
+        </div>
+
+        <div class="ProPhoto">
+
+			<div class="ProPhotoBG_108"><a href="/detail/207137.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic18.jpg" alt="" border="0" onload="LoadImg(100,100,this)" /></a></div>
+			<div class="ProResults">[<a href="/search.html?UserID=dannijia" target="_blank">共有212个相关产品</a>]</div>
+
+		</div>
+        <div class="ProInfo">
+			<strong><a href="/detail/207137.html" class="ProInfoTitleA" target="_blank">洗洁巾</a></strong><br />
+公司产品主要有刷洗大王系列、百洁布、洗碗布、清洁球、海绵制品、沐浴花、浴帽、围裙等。…<br />
+		  <a href="#" target="_blank" class="ProInfoKeyA"><strong>金华市丹妮日用品有限公司</strong></a> [浙江&nbsp;金华]&nbsp;&nbsp;<a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/contactIcon.gif" alt="查看联系方式" width="69" height="21" border="0" style="vertical-align:middle" /></a><br />
+
+          <a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/goldIcon.gif" border="0" style="position:relative;top:5px;" /></a> [关键词：<a href="/search.html?keyword=洗洁布" target="_blank" class="ProInfoKeyA">洗洁布</a>, <a href="/search.html?keyword=抹布" target="_blank" class="ProInfoKeyA">抹布</a>, <a href="/search.html?keyword=揩布" target="_blank" class="ProInfoKeyA">揩布</a>]</div>
+        <div class="ProContact"><br />
+
+          <a href="/send/207137/dannijia.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquireIcon.gif" width="69" height="21" border="0" /></a><br />
+
+<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=244043699&amp;Site=金华市丹妮日用品有限公司&amp;Menu=yes" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/QQ.gif" alt="QQ交谈" border="0" /></a>
+
+
+		  </div>
+
+<div style="clear:left;" class="ProLine"></div>
+      </div>
+
+	      <div class="ProList">
+        <div class="ProCheckBox"><input name="ProID" type="checkbox" value="206566" />
+        </div>
+        <div class="ProPhoto">
+
+			<div class="ProPhotoBG_108"><a href="/detail/206566.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic15.jpg" alt="" border="0" onload="LoadImg(100,100,this)" /></a></div>
+			<div class="ProResults">[<a href="/search.html?UserID=fenfang" target="_blank">共有134个相关产品</a>]</div>
+
+		</div>
+
+        <div class="ProInfo">
+			<strong><a href="/detail/206566.html" class="ProInfoTitleA" target="_blank">洗碗巾</a></strong><br />
+ …<br />
+		  <a href="#" target="_blank" class="ProInfoKeyA"><strong>瑞安市芬芳日用品有限公司</strong></a> [浙江&nbsp;金华]&nbsp;&nbsp;<a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/contactIcon.gif" alt="查看联系方式" width="69" height="21" border="0" style="vertical-align:middle" /></a><br />
+          <a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/goldIcon.gif" border="0" style="position:relative;top:5px;" /></a> [关键词：<a href="/search.html?keyword=洗碗巾" target="_blank" class="ProInfoKeyA">洗碗巾</a>, <a href="/search.html?keyword=抹布" target="_blank" class="ProInfoKeyA">抹布</a>, <a href="/search.html?keyword=清洁巾" target="_blank" class="ProInfoKeyA">清洁巾</a>]</div>
+
+        <div class="ProContact"><br />
+
+          <a href="/send/206566/fenfang.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquireIcon.gif" width="69" height="21" border="0" /></a><br />
+
+<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=120332995&amp;Site=瑞安市芬芳日用品有限公司&amp;Menu=yes" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/QQ.gif" alt="QQ交谈" border="0" /></a>
+
+
+		  </div>
+<div style="clear:left;" class="ProLine"></div>
+      </div>
+
+	      <div class="ProList">
+        <div class="ProCheckBox"><input name="ProID" type="checkbox" value="226688" />
+        </div>
+
+        <div class="ProPhoto">
+
+			<div class="ProPhotoBG"><a href="/detail/226688.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic16.jpg" alt="" border="0" onload="LoadImg(100,100,this)" /></a></div>
+
+		</div>
+        <div class="ProInfo">
+			<strong><a href="/detail/226688.html" class="ProInfoTitleA" target="_blank">洗洁布</a></strong><br />
+本厂主要生产各类毛巾,清洁巾,浴裙,宠物巾,汽车美容巾等产品.…<br />
+		  <a href="#" target="_blank" class="ProInfoKeyA"><strong>义乌市通海经编有限公司</strong></a> [浙江&nbsp;义乌市]&nbsp;&nbsp;<a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/contactIcon.gif" alt="查看联系方式" width="69" height="21" border="0" style="vertical-align:middle" /></a><br />
+
+          <a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/goldIcon.gif" border="0" style="position:relative;top:5px;" /></a> [关键词：<a href="/search.html?keyword=洗洁布" target="_blank" class="ProInfoKeyA">洗洁布</a>, <a href="/search.html?keyword=抹布" target="_blank" class="ProInfoKeyA">抹布</a>, <a href="/search.html?keyword=揩布" target="_blank" class="ProInfoKeyA">揩布</a>]</div>
+        <div class="ProContact"><br />
+
+          <a href="/send/226688/tonghai.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquireIcon.gif" width="69" height="21" border="0" /></a><br />
+
+<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=1093708331"584631591&amp;Site=义乌市通海经编有限公司&amp;Menu=yes" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/QQ.gif" alt="QQ交谈" border="0" /></a>
+
+<a href="msnim:chat?contact=thjbdonna19870126@hotmail.com" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/msn.gif" alt="MSN交谈" border="0" /></a>
+
+
+		  </div>
+
+<div style="clear:left;" class="ProLine"></div>
+      </div>
+
+	      <div class="ProList">
+        <div class="ProCheckBox"><input name="ProID" type="checkbox" value="209858" />
+        </div>
+        <div class="ProPhoto">
+
+			<div class="ProPhotoBG_108"><a href="/detail/209858.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic17.jpg" alt="" border="0" onload="LoadImg(100,100,this)" /></a></div>
+			<div class="ProResults">[<a href="/search.html?UserID=sunday" target="_blank">共有82个相关产品</a>]</div>
+
+		</div>
+
+        <div class="ProInfo">
+			<strong><a href="/detail/209858.html" class="ProInfoTitleA" target="_blank">新迪日用品</a></strong><br />
+能有效清洁…<br />
+		  <a href="#" target="_blank" class="ProInfoKeyA"><strong>义乌市盈福百洁布厂</strong></a> [浙江&nbsp;金华]&nbsp;&nbsp;<a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/contactIcon.gif" alt="查看联系方式" width="69" height="21" border="0" style="vertical-align:middle" /></a><br />
+          <a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/goldIcon.gif" border="0" style="position:relative;top:5px;" /></a> [关键词：<a href="/search.html?keyword=洗洁布" target="_blank" class="ProInfoKeyA">洗洁布</a>, <a href="/search.html?keyword=百货" target="_blank" class="ProInfoKeyA">百货</a>, <a href="/search.html?keyword=清洁用品" target="_blank" class="ProInfoKeyA">清洁用品</a>]</div>
+
+        <div class="ProContact"><br />
+
+          <a href="/send/209858/sunday.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquireIcon.gif" width="69" height="21" border="0" /></a><br />
+
+<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=574974603,8692800&amp;Site=义乌市盈福百洁布厂&amp;Menu=yes" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/QQ.gif" alt="QQ交谈" border="0" /></a>
+
+<a href="msnim:chat?contact=sunday1945@hotmail.com" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/msn.gif" alt="MSN交谈" border="0" /></a>
+
+<a href="http://amos1.taobao.com/msg.ww?v=2&amp;uid=JUDEE&amp;s=2" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/alitalk.gif" alt="阿里旺旺交谈" border="0" /></a>
+
+
+		  </div>
+<div style="clear:left;" class="ProLine"></div>
+      </div>
+
+	      <div class="ProList">
+        <div class="ProCheckBox"><input name="ProID" type="checkbox" value="211844" />
+
+        </div>
+        <div class="ProPhoto">
+
+			<div class="ProPhotoBG_108"><a href="/detail/211844.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic18.jpg" alt="" border="0" onload="LoadImg(100,100,this)" /></a></div>
+			<div class="ProResults">[<a href="/search.html?UserID=oulejie" target="_blank">共有128个相关产品</a>]</div>
+
+		</div>
+        <div class="ProInfo">
+			<strong><a href="/detail/211844.html" class="ProInfoTitleA" target="_blank">洗洁布</a></strong><br />
+  …<br />
+
+		  <a href="#" target="_blank" class="ProInfoKeyA"><strong>揭西县欧乐洁日用品有限公司</strong></a> [浙江&nbsp;金华]&nbsp;&nbsp;<a href="http://oulejie.ryp.cn/contactus.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/contactIcon.gif" alt="查看联系方式" width="69" height="21" border="0" style="vertical-align:middle" /></a><br />
+          <a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/goldIcon.gif" border="0" style="position:relative;top:5px;" /></a> [关键词：<a href="/search.html?keyword=洗洁布" target="_blank" class="ProInfoKeyA">洗洁布</a>, <a href="/search.html?keyword=抹布" target="_blank" class="ProInfoKeyA">抹布</a>, <a href="/search.html?keyword=洗碗布" target="_blank" class="ProInfoKeyA">洗碗布</a>]</div>
+        <div class="ProContact"><br />
+
+
+          <a href="/send/211844/oulejie.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquireIcon.gif" width="69" height="21" border="0" /></a><br />
+
+<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=443252659&amp;Site=揭西县欧乐洁日用品有限公司&amp;Menu=yes" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/QQ.gif" alt="QQ交谈" border="0" /></a>
+
+<a href="http://amos1.taobao.com/msg.ww?v=2&amp;uid=gddjryp&amp;s=2" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/alitalk.gif" alt="阿里旺旺交谈" border="0" /></a>
+
+
+		  </div>
+<div style="clear:left;" class="ProLine"></div>
+      </div>
+
+	      <div class="ProList">
+        <div class="ProCheckBox"><input name="ProID" type="checkbox" value="123475" />
+        </div>
+        <div class="ProPhoto">
+
+
+			<div class="ProPhotoBG_108"><a href="/detail/123475.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic16.jpg" alt="" border="0" onload="LoadImg(100,100,this)" /></a></div>
+			<div class="ProResults">[<a href="/search.html?UserID=ofcourse" target="_blank">共有133个相关产品</a>]</div>
+
+		</div>
+        <div class="ProInfo">
+			<strong><a href="/detail/123475.html" class="ProInfoTitleA" target="_blank">洗洁布</a></strong><br />
+…<br />
+		  <a href="#" target="_blank" class="ProInfoKeyA"><strong>东阳市欧科仕家居日用品有限公司</strong></a> [浙江&nbsp;金华]&nbsp;&nbsp;<a href="http://ofcourse.ryp.cn/contactus.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/contactIcon.gif" alt="查看联系方式" width="69" height="21" border="0" style="vertical-align:middle" /></a><br />
+
+          <a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/goldIcon.gif" border="0" style="position:relative;top:5px;" /></a> [关键词：<a href="/search.html?keyword=洗碗布" target="_blank" class="ProInfoKeyA">洗碗布</a>, <a href="/search.html?keyword=洗洁布" target="_blank" class="ProInfoKeyA">洗洁布</a>, <a href="/search.html?keyword=抹布" target="_blank" class="ProInfoKeyA">抹布</a>]</div>
+        <div class="ProContact"><br />
+
+          <a href="/send/123475/ofcourse.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquireIcon.gif" width="69" height="21" border="0" /></a><br />
+
+<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=345935235&amp;Site=东阳市欧科仕家居日用品有限公司&amp;Menu=yes" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/QQ.gif" alt="QQ交谈" border="0" /></a>
+
+<a href="msnim:chat?contact=dysponge@hotmail.com" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/msn.gif" alt="MSN交谈" border="0" /></a>
+
+
+		  </div>
+
+<div style="clear:left;" class="ProLine"></div>
+      </div>
+
+	      <div class="ProList">
+        <div class="ProCheckBox"><input name="ProID" type="checkbox" value="205891" />
+        </div>
+        <div class="ProPhoto">
+
+			<div class="ProPhotoBG_108"><a href="/detail/205891.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic17.jpg" alt="" border="0" onload="LoadImg(100,100,this)" /></a></div>
+			<div class="ProResults">[<a href="/search.html?UserID=baozi" target="_blank">共有67个相关产品</a>]</div>
+
+		</div>
+
+        <div class="ProInfo">
+			<strong><a href="/detail/205891.html" class="ProInfoTitleA" target="_blank">洗洁巾</a></strong><br />
+我公司专业生产各种系列清洁布,清洁用品,纹胸护理袋,欢迎前来定购
+…<br />
+		  <a href="#" target="_blank" class="ProInfoKeyA"><strong>邵武市宝姿日用品制造有限公司</strong></a> [福建&nbsp;南平]&nbsp;&nbsp;<a href="http://baozi.ryp.cn/contactus.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/contactIcon.gif" alt="查看联系方式" width="69" height="21" border="0" style="vertical-align:middle" /></a><br />
+          <a href="http://www.ryp.cn/about/JPmember.htm" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/goldIcon.gif" border="0" style="position:relative;top:5px;" /></a> [关键词：<a href="/search.html?keyword=清洁用品" target="_blank" class="ProInfoKeyA">清洁用品</a>, <a href="/search.html?keyword=洗洁布" target="_blank" class="ProInfoKeyA">洗洁布</a>, <a href="/search.html?keyword=清洁巾" target="_blank" class="ProInfoKeyA">清洁巾</a>]</div>
+
+        <div class="ProContact"><br />
+
+          <a href="/send/205891/baozi.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquireIcon.gif" width="69" height="21" border="0" /></a><br />
+
+<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=783632611&amp;Site=邵武市宝姿日用品制造有限公司&amp;Menu=yes" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/QQ.gif" alt="QQ交谈" border="0" /></a>
+
+
+		  </div>
+<div style="clear:left;" class="ProLine"></div>
+      </div>
+
+	      <div class="ProList">
+        <div class="ProCheckBox"><input name="ProID" type="checkbox" value="205939" />
+        </div>
+
+        <div class="ProPhoto">
+
+			<div class="ProPhotoBG_108"><a href="/detail/205939.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic18.jpg" alt="" border="0" onload="LoadImg(100,100,this)" /></a></div>
+			<div class="ProResults">[<a href="/search.html?UserID=cnsanqing" target="_blank">共有271个相关产品</a>]</div>
+
+		</div>
+        <div class="ProInfo">
+			<strong><a href="/detail/205939.html" class="ProInfoTitleA" target="_blank">三清超细纤维清洁巾</a></strong><br />
+
+ 规格：40cm×40cm
+ 数量：60包/箱…<br />
+
+		  <a href="" target="_blank" class="ProInfoKeyA"><strong>福建省邵武市三清日用品有限公司</strong></a> [福建&nbsp;南平]&nbsp;&nbsp;<a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/contactIcon.gif" alt="查看联系方式" width="69" height="21" border="0" style="vertical-align:middle" /></a><br />
+          <a href="http://www.ryp.cn/about/JPmember.htm" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/goldIcon.gif" border="0" style="position:relative;top:5px;" /></a> [关键词：<a href="/search.html?keyword=清洁用品" target="_blank" class="ProInfoKeyA">清洁用品</a>, <a href="/search.html?keyword=洗洁布" target="_blank" class="ProInfoKeyA">洗洁布</a>, <a href="/search.html?keyword=抹布" target="_blank" class="ProInfoKeyA">抹布</a>, <a href="/search.html?keyword=揩布" target="_blank" class="ProInfoKeyA">揩布</a>, <a href="/search.html?keyword=清洁巾" target="_blank" class="ProInfoKeyA">清洁巾</a>]</div>
+
+        <div class="ProContact"><br />
+
+          <a href="/send/205939/cnsanqing.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquireIcon.gif" width="69" height="21" border="0" /></a><br />
+
+<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=782263539&amp;Site=福建省邵武市三清日用品有限公司&amp;Menu=yes" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/QQ.gif" alt="QQ交谈" border="0" /></a>
+
+
+		  </div>
+<div style="clear:left;" class="ProLine"></div>
+      </div>
+
+	      <div class="ProList">
+        <div class="ProCheckBox"><input name="ProID" type="checkbox" value="157257" />
+        </div>
+
+        <div class="ProPhoto">
+
+			<div class="ProPhotoBG_108"><a href="/detail/157257.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic15.jpg" alt="" border="0" onload="LoadImg(100,100,this)" /></a></div>
+			<div class="ProResults">[<a href="/search.html?UserID=ywltt" target="_blank">共有259个相关产品</a>]</div>
+
+		</div>
+        <div class="ProInfo">
+			<strong><a href="/detail/157257.html" class="ProInfoTitleA" target="_blank">天使漫舞抹布</a></strong><br />
+…<br />
+		  <a href="" target="_blank" class="ProInfoKeyA"><strong>义乌市乐淘淘日用品批发网</strong></a> [浙江&nbsp;金华]&nbsp;&nbsp;<a href="http://ywltt.ryp.cn/contactus.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/contactIcon.gif" alt="查看联系方式" width="69" height="21" border="0" style="vertical-align:middle" /></a><br />
+
+          <a href="http://www.ryp.cn/about/JPmember.htm" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/goldIcon.gif" border="0" style="position:relative;top:5px;" /></a> [关键词：<a href="/search.html?keyword=抹布" target="_blank" class="ProInfoKeyA">抹布</a>, <a href="/search.html?keyword=清洁布" target="_blank" class="ProInfoKeyA">清洁布</a>, <a href="/search.html?keyword=洗洁布" target="_blank" class="ProInfoKeyA">洗洁布</a>]</div>
+        <div class="ProContact"><br />
+
+          <a href="/send/157257/ywltt.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquireIcon.gif" width="69" height="21" border="0" /></a><br />
+
+<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=458310146&amp;Site=义乌市乐淘淘日用品批发网&amp;Menu=yes" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/QQ.gif" alt="QQ交谈" border="0" /></a>
+
+
+		  </div>
+
+<div style="clear:left;" class="ProLine"></div>
+      </div>
+
+	      <div class="ProList">
+        <div class="ProCheckBox"><input name="ProID" type="checkbox" value="203505" />
+        </div>
+        <div class="ProPhoto">
+
+			<div class="ProPhotoBG_108"><a href="/detail/203505.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic16.jpg" alt="" border="0" onload="LoadImg(100,100,this)" /></a></div>
+			<div class="ProResults">[<a href="/search.html?UserID=fzhsj" target="_blank">共有156个相关产品</a>]</div>
+
+		</div>
+
+        <div class="ProInfo">
+			<strong><a href="/detail/203505.html" class="ProInfoTitleA" target="_blank">好杰仕洗洁布 </a></strong><br />
+…<br />
+		  <a href="#" target="_blank" class="ProInfoKeyA"><strong>福州杰仕日用品有限公司</strong></a> [福建&nbsp;福州]&nbsp;&nbsp;<a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/contactIcon.gif" alt="查看联系方式" width="69" height="21" border="0" style="vertical-align:middle" /></a><br />
+          <a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/goldIcon.gif" border="0" style="position:relative;top:5px;" /></a> [关键词：<a href="/search.html?keyword=洗洁巾" target="_blank" class="ProInfoKeyA">洗洁巾</a>, <a href="/search.html?keyword=抹布" target="_blank" class="ProInfoKeyA">抹布</a>, <a href="/search.html?keyword=洗碗布" target="_blank" class="ProInfoKeyA">洗碗布</a>]</div>
+
+        <div class="ProContact"><br />
+
+          <a href="/send/203505/fzhsj.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquireIcon.gif" width="69" height="21" border="0" /></a><br />
+
+<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=281044974&amp;Site=福州杰仕日用品有限公司&amp;Menu=yes" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/QQ.gif" alt="QQ交谈" border="0" /></a>
+
+<a href="http://amos1.taobao.com/msg.ww?v=2&amp;uid=蒋宜钗&amp;s=2" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/alitalk.gif" alt="阿里旺旺交谈" border="0" /></a>
+
+
+		  </div>
+<div style="clear:left;" class="ProLine"></div>
+      </div>
+
+	      <div class="ProList">
+        <div class="ProCheckBox"><input name="ProID" type="checkbox" value="97779" />
+        </div>
+
+        <div class="ProPhoto">
+
+			<div class="ProPhotoBG_108"><a href="/detail/97779.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic17.jpg" alt="" border="0" onload="LoadImg(100,100,this)" /></a></div>
+			<div class="ProResults">[<a href="/search.html?UserID=Hongliang" target="_blank">共有45个相关产品</a>]</div>
+
+		</div>
+        <div class="ProInfo">
+			<strong><a href="/detail/97779.html" class="ProInfoTitleA" target="_blank">洗洁布</a></strong><br />
+供应清洁用品…<br />
+		  <a href="http://Hongliang.ryp.cn" target="_blank" class="ProInfoKeyA"><strong>东阳市洪良日用品有限公司</strong></a> [浙江&nbsp;金华]&nbsp;&nbsp;<a href="http://Hongliang.ryp.cn/contactus.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/contactIcon.gif" alt="查看联系方式" width="69" height="21" border="0" style="vertical-align:middle" /></a><br />
+
+          <a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/goldIcon.gif" border="0" style="position:relative;top:5px;" /></a> [关键词：<a href="/search.html?keyword=洗洁布" target="_blank" class="ProInfoKeyA">洗洁布</a>, <a href="/search.html?keyword=擦布" target="_blank" class="ProInfoKeyA">擦布</a>]</div>
+        <div class="ProContact"><br />
+
+          <a href="/send/97779/Hongliang.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquireIcon.gif" width="69" height="21" border="0" /></a><br />
+
+<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=549718696&amp;Site=东阳市洪良日用品有限公司&amp;Menu=yes" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/QQ.gif" alt="QQ交谈" border="0" /></a>
+
+
+		  </div>
+<div style="clear:left;" class="ProLine"></div>
+      </div>
+
+	      <div class="ProList">
+        <div class="ProCheckBox"><input name="ProID" type="checkbox" value="200589" />
+        </div>
+        <div class="ProPhoto">
+
+			<div class="ProPhotoBG_108"><a href="/detail/200589.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic15.jpg" alt="" border="0" onload="LoadImg(100,100,this)" /></a></div>
+			<div class="ProResults">[<a href="/search.html?UserID=jintu" target="_blank">共有118个相关产品</a>]</div>
+
+		</div>
+        <div class="ProInfo">
+
+			<strong><a href="/detail/200589.html" class="ProInfoTitleA" target="_blank">洗洁巾</a></strong><br />
+    …<br />
+		  <a href="#" target="_blank" class="ProInfoKeyA"><strong>金华市金兔日用工艺品厂</strong></a> [浙江&nbsp;金华]&nbsp;&nbsp;<a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/contactIcon.gif" alt="查看联系方式" width="69" height="21" border="0" style="vertical-align:middle" /></a><br />
+          <a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/goldIcon.gif" border="0" style="position:relative;top:5px;" /></a> [关键词：<a href="/search.html?keyword=洗洁巾" target="_blank" class="ProInfoKeyA">洗洁巾</a>, <a href="/search.html?keyword=抹布" target="_blank" class="ProInfoKeyA">抹布</a>, <a href="/search.html?keyword=揩布" target="_blank" class="ProInfoKeyA">揩布</a>]</div>
+
+        <div class="ProContact"><br />
+
+          <a href="/send/200589/jintu.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquireIcon.gif" width="69" height="21" border="0" /></a><br />
+
+<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=405822749&amp;Site=金华市金兔日用工艺品厂&amp;Menu=yes" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/QQ.gif" alt="QQ交谈" border="0" /></a>
+
+<a href="Skype:wujingtu35207?call" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/Skype.gif" alt="Skype交谈" border="0" /></a>
+
+
+		  </div>
+<div style="clear:left;" class="ProLine"></div>
+      </div>
+
+	      <div class="ProList">
+        <div class="ProCheckBox"><input name="ProID" type="checkbox" value="204823" />
+        </div>
+
+        <div class="ProPhoto">
+
+			<div class="ProPhotoBG_108"><a href="/detail/204823.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic18.jpg" alt="" border="0" onload="LoadImg(100,100,this)" /></a></div>
+			<div class="ProResults">[<a href="/search.html?UserID=ywyuhui" target="_blank">共有33个相关产品</a>]</div>
+
+		</div>
+        <div class="ProInfo">
+			<strong><a href="/detail/204823.html" class="ProInfoTitleA" target="_blank">清洁布</a></strong><br />
+ 浙江煜辉日用品有限公司位于义乌市江东街道（青口）东苑工业园区，主要生产以下系列产品：PP、PVC餐垫、台垫、PEVA、…<br />
+
+		  <a href="http://ywyuhui.ryp.cn" target="_blank" class="ProInfoKeyA"><strong>义乌煜辉日用品厂</strong></a> [浙江&nbsp;金华]&nbsp;&nbsp;<a href="http://ywyuhui.ryp.cn/contactus.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/contactIcon.gif" alt="查看联系方式" width="69" height="21" border="0" style="vertical-align:middle" /></a><br />
+          <a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/goldIcon.gif" border="0" style="position:relative;top:5px;" /></a> [关键词：<a href="/search.html?keyword=清洁用品" target="_blank" class="ProInfoKeyA">清洁用品</a>, <a href="/search.html?keyword=洗洁布" target="_blank" class="ProInfoKeyA">洗洁布</a>, <a href="/search.html?keyword=抹布" target="_blank" class="ProInfoKeyA">抹布</a>]</div>
+        <div class="ProContact"><br />
+
+
+          <a href="/send/204823/ywyuhui.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquireIcon.gif" width="69" height="21" border="0" /></a><br />
+
+
+		  </div>
+<div style="clear:left;" class="ProLine"></div>
+      </div>
+
+	      <div class="ProList">
+        <div class="ProCheckBox"><input name="ProID" type="checkbox" value="205366" />
+        </div>
+        <div class="ProPhoto">
+
+
+			<div class="ProPhotoBG_108"><a href="/detail/205366.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp/pic17.jpg" alt="" border="0" onload="LoadImg(100,100,this)" /></a></div>
+			<div class="ProResults">[<a href="/search.html?UserID=lefu" target="_blank">共有22个相关产品</a>]</div>
+
+		</div>
+        <div class="ProInfo">
+			<strong><a href="/detail/205366.html" class="ProInfoTitleA" target="_blank">抹布</a></strong><br />
+企业由针织制衣厂、无纺布及无纺布制品厂、高科技无纺材料公司等组成，素以“产品科技含量高、生产加工精”见长。同时不断努力开…<br />
+		  <a href="#" target="_blank" class="ProInfoKeyA"><strong>浙江乐芙技术纺织品有限公司</strong></a> [浙江&nbsp;绍兴]&nbsp;&nbsp;<a href="http://lefu.ryp.cn/contactus.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/contactIcon.gif" alt="查看联系方式" width="69" height="21" border="0" style="vertical-align:middle" /></a><br />
+
+          <a href="#" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/goldIcon.gif" border="0" style="position:relative;top:5px;" /></a> [关键词：<a href="/search.html?keyword=清洁用品" target="_blank" class="ProInfoKeyA">清洁用品</a>, <a href="/search.html?keyword=洗洁布" target="_blank" class="ProInfoKeyA">洗洁布</a>, <a href="/search.html?keyword=揩布" target="_blank" class="ProInfoKeyA">揩布</a>, <a href="/search.html?keyword=洗洁布" target="_blank" class="ProInfoKeyA">洗洁布</a>, <a href="/search.html?keyword=擦洗布" target="_blank" class="ProInfoKeyA">擦洗布</a>]</div>
+        <div class="ProContact"><br />
+
+          <a href="/send/205366/lefu.html" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquireIcon.gif" width="69" height="21" border="0" /></a><br />
+
+<a href="msnim:chat?contact=vinaxu@msn.com" target="_blank"><img src="{config.WebURL}templates/{config.TemplatePath}/images/msn.gif" alt="MSN交谈" border="0" /></a>
+
+
+		  </div>
+<div style="clear:left;" class="ProLine"></div>
+
+
+
+      </div>
+
+
+	  </div>
+<!--普通列表结束-->
+	<div id="ProFind"><strong class="orange">还没有找到合适的产品?</strong>  赶快<a href="#" target="_blank">发布求购信息</a>，让供应商主动来找您！</div>
+
+	<div id="ProThan">
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="4%" style="padding-left:4px;"><span style="padding-left:4px;"><img src="{config.WebURL}templates/{config.TemplatePath}/images/list_than.gif" width="13" height="13" /></span></td>
+          <td width="12%"><img src="{config.WebURL}templates/{config.TemplatePath}/images/inquire.gif" width="79" height="22" style="cursor:pointer;" onclick="inquire()" /></td>
+          <td width="3%">或</td>
+          <td width="57%"><img src="{config.WebURL}templates/{config.TemplatePath}/images/than.gif" width="79" height="22"  style="cursor:pointer;" onclick="thanpro()" /></td>
+          <td width="24%" align="right"><a href="/buyer/7.html">↑返回到清洁用品行业</a></td>
+
+        </tr>
+      </table>
+	</div>
+
+	</form>
+		<div id="splitPage"><form method="get" onsubmit="document.location = '/buyer/list/296-p'+this.page.value+'.html';return false;"><img src="{config.WebURL}templates/{config.TemplatePath}/images/list_previous.gif" border="0" style="position:relative;top:5px;">&nbsp;<a href="/buyer/list/296-p1.html" class="thispage">1</a><span style="color:#D7D7D7">|</span> <a href="/buyer/list/296-p2.html">2</a><span style="color:#D7D7D7">|</span> <a href="/buyer/list/296-p3.html">3</a><span style="color:#D7D7D7">|</span> <a href="/buyer/list/296-p4.html">4</a><span style="color:#D7D7D7">|</span> <a href="/buyer/list/296-p5.html">5</a><span style="color:#D7D7D7">|</span> <a href="/buyer/list/296-p6.html">6</a><span style="color:#D7D7D7">|</span> <a href="/buyer/list/296-p7.html">7</a><span style="color:#D7D7D7">|</span> <a href="/buyer/list/296-p8.html">8</a><span style="color:#D7D7D7">|</span> <a href="/buyer/list/296-p9.html">9</a><span style="color:#D7D7D7">|</span> <a href="/buyer/list/296-p10.html">10</a>&nbsp;&nbsp;<a href="/buyer/list/296-p2.html" title="下一页"><img src="{config.WebURL}templates/{config.TemplatePath}/images/list_next.gif" border="0" style="position:relative;top:5px;"></a>&nbsp;&nbsp;&nbsp;<span style="font-size:14px;">直接转到</span>&nbsp;<input name="pageformat" type="hidden" value=".html"><input name=page size=3 style="height:13px;" value=1>&nbsp;<span style="font-size:14px;">页</span>&nbsp;<input type=submit value="确定>>" style="height:20px;"><br><br><span style="font-size:14px;">共 <strong class="orange">490</strong> 条记录&nbsp;&nbsp;&nbsp;当前为第 <strong class="orange">1</strong> 页&nbsp;&nbsp;&nbsp;共 <strong class="orange">25</strong> 页&nbsp;&nbsp;&nbsp;<strong class="orange">20</strong> 条/页</span></form></div>
+
+
+	<!-- 左侧结束 -->
+	</div>
+		<div id="right">
+
+
+			<div class="MTitle_01">
+				<center><a target="_blank" href="#" class="red big"><strong>黄金展位</strong></a></center>
+			</div>
+			<div class="Mblk_01">
+				<br />
+				<div class="news_exhi">
+					<ul>
+						<li><a href="#" ><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_meeting_11.gif" alt='展会合作'></a></li>
+						<li><a href="#" ><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_meeting_22.gif" alt='展会合作'></a></li>
+						<li><a href="#" ><img src="{config.WebURL}templates/{config.TemplatePath}/images/temp_meeting_33.gif" alt='展会合作'></a></li>
+						<div class="clr"></div>
+					</ul>
+
+				</div>
+
+
+			</div>
+
+
+			<div class="MTitle_01">
+				<h2 id="h201" class=""><a target="_blank" href="#"><strong>怎样推广我的产品？</strong></a></h2>
+			</div>
+			<div id="con01" class="Mblk_01">
+				<div class="com_pages">
+					<ul>
+						<li><a target="_blank" href="#">多国暴发甲型H1N1流感</a></li>
+						<li><a target="_blank" href="#">胡锦涛出席上合峰会</a></li>
+						<li><a target="_blank" href="#">伊朗大选引发政局动荡</a></li>
+						<li><a target="_blank" href="#">成都公交车发生燃烧</a></li>
+						<li><a target="_blank" href="#">法航空客A330客机坠毁</a></li>
+						<li><a target="_blank" href="#">成都公交车发生燃烧</a></li>
+						<li><a target="_blank" href="#">法航空客A330客机坠毁</a></li>
+					</ul>
+				</div>
+			</div>
+
+
+			<div class="MTitle_01">
+				<h2 id="h201" class=""><a target="_blank" href="#"><strong>展会技巧</strong></a></h2>
+			</div>
+			<div id="con01" class="Mblk_01">
+				<div class="com_pages">
+					<ul>
+						<li><a target="_blank" href="#">多国暴发甲型H1N1流感</a></li>
+						<li><a target="_blank" href="#">胡锦涛出席上合峰会</a></li>
+						<li><a target="_blank" href="#">伊朗大选引发政局动荡</a></li>
+						<li><a target="_blank" href="#">成都公交车发生燃烧</a></li>
+						<li><a target="_blank" href="#">法航空客A330客机坠毁</a></li>
+						<li><a target="_blank" href="#">成都公交车发生燃烧</a></li>
+						<li><a target="_blank" href="#">法航空客A330客机坠毁</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<div class="clr"></div>
+	</div>
+
+    <%include _footer%>
+    
+</div>
+
+</body>
+</html>
