@@ -1,0 +1,188 @@
+.shidden{display:none;}
+.smove, .smove td {cursor:move;}
+.sleft{float:left;}
+.sright{float:right;}
+.spointer{cursor:pointer;}
+
+/*****************************  最新弹出对话框CSS *******************************************/
+
+.msgbg {
+	position:absolute;
+	background-color:#000;
+	width:100%;
+	left:0;
+	top:0;
+	display:none;
+	z-index:1;
+	filter:Alpha(opacity=30);   /* IE */
+	-moz-opacity:0.3;      /* Moz + FF */
+	opacity: 0.3;           /* CSS3*/
+}
+
+.xyAlertBoxBox {
+	position:absolute;
+	
+	z-index:3;
+	width:494px;
+	padding-bottom: 24px;
+	background: url('../images/bg-box-bottom.png') bottom left no-repeat !important;
+	background: url('../images/bg-box-bottom.gif') bottom left no-repeat;
+}
+.xyAlertBoxInBox {
+	padding-top: 15px;
+	background: url('../images/bg-box-top.png') top left no-repeat !important;
+	background: url('../images/bg-box-top.gif') top left no-repeat;
+}
+.xyAlertBoxBoxContent {
+	background: url('../images/bg-box-body.png') top left repeat-y !important;
+	background: url('../images/bg-box-body.gif') top left repeat-y;
+	padding: 0px 20px;
+	width:455px;
+}
+.xyAlertBoxBoxContenedor {
+	background: url('../images/dialog-information.png') top left no-repeat;
+	padding: 0px 0px 5px 55px;
+	text-align: left;
+	font-family:Verdana;
+	font-size:12px;
+	color:#000;
+	height:100%;
+	display:block;
+	width:100%;
+}
+.xyAlertBoxBoxTitle{
+	text-align: left;
+	font-family:Verdana;
+	font-size:14px;
+	color:#000;
+	font-weight:bold;
+	line-height:20px;
+	margin:0px;
+	padding:0px;
+	display:block;
+}
+.xyAlertBoxBoxContenedor em { line-height:10px; font-family:Verdana; font-style:italic;}
+.xyAlertBoxBoxContenedor p { margin-top:10px;}
+.xyAlertBoxButtons {
+	text-align:right;
+}
+
+.xyAlertBoxButtons
+{
+	width:100%;
+	text-align:right;
+	}
+.xyAlertBoxButtons input {
+	margin: 10px 10px;
+	padding:2px 5px; BORDER-RIGHT: #7b9ebd 1px solid; BORDER-TOP: #7b9ebd 1px solid; FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#cecfde); BORDER-LEFT: #7b9ebd 1px solid; CURSOR: hand; COLOR: black; BORDER-BOTTOM: #7b9ebd 1px solid;
+}
+/******************************************************************/
+
+
+
+/***********************   类别选择 *********************************/
+/*单选层模式样式*/
+.SelectClassTypeItem {
+	list-style:none;	
+	text-align: left;
+}
+.SelectClassTypeItem li {
+	float:left;	
+	margin-left:5px;
+	cursor:hand;
+	background:url(../images/bg_select.gif) no-repeat left top;
+}
+.SelectClassTypeItem li a{
+	width:90px;
+	padding:0px 5px;
+	display: block;
+}
+.SelectClassType{
+    z-index:99;
+	position: absolute;
+	border:1px solid #FCC187;
+	background: #FFFEFB;
+	text-align:left;
+}	
+.SelectClassType li
+{
+  height: 19px;
+  text-align: left;
+  float:left;
+  margin-bottom: 5px;
+}
+.SelectClassType ul a{padding-left:8px; width:110px; float:left; margin:0;}
+.SelectClassType span{ text-align:right; width:98%; margin:0;}
+
+/*多选样式*/
+.SelectClassTypesbg {
+	position:absolute;
+	background-color:#000;
+	width:100%;
+	left:0;
+	top:0;
+	display:none;
+	z-index:1;
+	filter:Alpha(opacity=30);   /* IE */
+	-moz-opacity:0.3;      /* Moz + FF */
+	opacity: 0.3;           /* CSS3*/
+}
+.SelectClassTypesmain {
+	background:#FFF;
+	position:absolute;
+	top:0px;
+	left:center;
+	border:1px solid #000;
+	overflow:hidden;
+	margin-top:10px;
+	width:400px;
+	z-index:2;
+}
+.SelectClassTypestit {background:#CCC;line-height:20px;height:20px;margin:1px;padding-left:10px; overflow:hidden; width:98%;}
+.SelectClassTypestit h2{margin:0px;padding:0px;font-size:12px;font-weight:bold;line-height:20px;height:20px;}
+.SelectClassTypescls{clear:both;font-size:0px;height:0px;overflow:hidden;}
+.SelectClassTypescont {padding:10px; width:98%; overflow:hidden;}
+.SelectClassTypespreview{margin:1px;border:1px solid #CCC; height:100%; overflow:hidden;width:100%;}
+.SelectClassTypespreviewtit {line-height:20px;height:20px;margin:1px;padding-left:10px;background:#CCC;color:#999; overflow:hidden; width:100%;}
+.SelectClassTypescont div { width:100%;}
+.SelectClassTypescont ul{ float:left; clear:right; width:100%; padding:0;}
+.SelectClassTypescont li { text-align:left!important; margin:0!important; padding:0!important; float:left!important; list-style:none; width:160px!important; clear:none!important; font-size:12px!important; line-height:25px!important;}
+/********************************************************************/
+
+
+/***********************   上传文件 *********************************/
+
+.upload_bg {
+	position:absolute;
+	background-color:#000;
+	margin:auto;
+	left:0;
+	top:0;
+	display:none;
+	z-index:30;
+	filter:Alpha(opacity=30);   /* IE */
+	-moz-opacity:0.3;      /* Moz + FF */
+	opacity: 0.3;           /* CSS3*/
+}
+
+.upload_frm {position:absolute; display:none; z-index:40;}
+
+.upload_fileitem{ padding:5px;margin-left:5px; float:left; text-align:center; border:solid 1px #eee;}
+.upload_fileitem ul{}
+.upload_fileitem li{}
+.Upload_img { }
+a.Upload_btn:link {}
+
+
+.upload_fileitem_byfile{width:80%; float:left; text-align:center; }
+.Upload_File{width:100%;}
+.Upload_File li{height:22px; line-height:22px; text-align:left;margin-top:5px;border:solid 1px #eee;padding:5px; background-color:#f8f8f8;}
+.Upload_File li em{float:left;}
+.Upload_File li span{float:right;}
+
+
+
+
+
+
+/********************************************************************/

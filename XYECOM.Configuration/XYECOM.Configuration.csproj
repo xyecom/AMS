@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{540FDE63-2A53-497A-B9F0-387E6BD15F3C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XYECOM.Configuration</RootNamespace>
+    <AssemblyName>XYECOM.Configuration</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\XYECOM.Configuration.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseConfig.cs" />
+    <Compile Include="Cache.cs" />
+    <Compile Include="ClassAds.cs" />
+    <Compile Include="CustomConfigField.cs" />
+    <Compile Include="Enum\InfoType.cs" />
+    <Compile Include="Enum\RankingMoneyType.cs" />
+    <Compile Include="Enum\ValidateCodeItem.cs" />
+    <Compile Include="FreeCode.cs" />
+    <Compile Include="HTML.cs" />
+    <Compile Include="JsInterface.cs" />
+    <Compile Include="Model\AlipayInfo.cs" />
+    <Compile Include="Model\ChinaBankInfo.cs" />
+    <Compile Include="Model\ClassAdsPriceInfo.cs" />
+    <Compile Include="Model\CustomConfigFieldInfo.cs" />
+    <Compile Include="Model\IMInfo.cs" />
+    <Compile Include="Model\JsInterfaceInfo.cs" />
+    <Compile Include="Model\ModuleInfo.cs" />
+    <Compile Include="Model\ModuleItemInfo.cs" />
+    <Compile Include="Model\RankingPriceInfo.cs" />
+    <Compile Include="Model\SEOInfo.cs" />
+    <Compile Include="Model\ServiceConfigInfo.cs" />
+    <Compile Include="Model\_99BillInfo.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="Payment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ranking.cs" />
+    <Compile Include="Security.cs" />
+    <Compile Include="SEO.cs" />
+    <Compile Include="ServiceConfig.cs" />
+    <Compile Include="Shop.cs" />
+    <Compile Include="Template.cs" />
+    <Compile Include="WebConfig.cs" />
+    <Compile Include="WebInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XYECOM.Core\XYECOM.Core.csproj">
+      <Project>{E016207A-542C-4E18-B188-A2569C5D51C5}</Project>
+      <Name>XYECOM.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
