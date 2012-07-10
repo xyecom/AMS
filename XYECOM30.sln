@@ -31,7 +31,6 @@ Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 16
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://192.168.1.111:8080/tfs/%e5%b1%b1%e4%b8%9c%e4%ba%bf%e5%ae%b6%e5%95%86%e5%9f%8e
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = XYECOM.Configuration\\XYECOM.Configuration.csproj
 		SccProjectName1 = XYECOM.Configuration
