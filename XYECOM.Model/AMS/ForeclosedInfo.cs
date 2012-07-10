@@ -35,7 +35,7 @@ namespace XYECOM.Model.AMS
             get;
             set;
         }
-        
+
         /// <summary>
         /// 目前最高价
         /// </summary>
@@ -129,6 +129,24 @@ namespace XYECOM.Model.AMS
         /// 说明
         /// </summary>
         public string Description
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 类型
+        /// </summary>
+        public string TypeName
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 类型编号（扩展字段）
+        /// </summary>
+        public int? TypeID
         {
             get;
             set;

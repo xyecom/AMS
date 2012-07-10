@@ -10,14 +10,14 @@ using XYECOM.Model.AMS;
 
 namespace XYECOM.SQLServer.AMS
 {
-    public partial class ForeclosedAccess
+    public class ForeclosedAccess
     {
         public int InsertForeclosed(ForeclosedInfo info)
         {
             string sql = @"insert into ForeclosedInfo (Title,IdentityNumber,HighPrice,Address,AreaId,EndDate,CreateDate,State,
-                                    PassDate,UserId,DepartmentId,LinePrice,description)
+                                    PassDate,UserId,DepartmentId,LinePrice,description,TypeName,TypeID)
                                     values (@Title,@Identitynumber,@Highprice,@Address,@AreaId,@EndDate,@CreateDate,@State,@PassDate,@UserId,
-                                    @DepartmentId,@LinePrice,Description)";
+                                    @DepartmentId,@LinePrice,@Description,@TypeName,@TypeID)";
             SqlParameter[] param = new SqlParameter[]
             {
                 new SqlParameter("@Title",info.Title),
@@ -32,7 +32,9 @@ namespace XYECOM.SQLServer.AMS
                 new SqlParameter("@UserId",info.UserId==0?null:info.UserId),
                 new SqlParameter("@DepartmentId",info.DepartmentId==0?null:info.DepartmentId),
                 new SqlParameter("@LinePrice",info.LinePrice),
-                new SqlParameter("@Description",info.Description)
+                new SqlParameter("@Description",info.Description),
+                new SqlParameter("@TypeName",info.TypeName),
+                new SqlParameter("@TypeID",info.TypeID)
             };
             int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, param);
             return rowAffected;
