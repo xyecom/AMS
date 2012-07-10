@@ -5,6 +5,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using XYECOM.Model.AMS;
 using XYECOM.Core;
+using XYECOM.Model;
 
 namespace XYECOM.Web.Creditor
 {
@@ -15,6 +16,20 @@ namespace XYECOM.Web.Creditor
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public static string GetUniqueNo()
+        {
+            //todo: 为实现
+            Random r = new Random();
+            var number = r.Next(9999);
+            string no ="FLS"+ number.ToString();
+            if (no.Length < 7)
+            {
+                int length = 7 - no.Length;
+                no.PadRight(length, '0');
+            }
+            return no;
         }
 
         protected void btnOK_Click(object sender, EventArgs e)
@@ -28,15 +43,18 @@ namespace XYECOM.Web.Creditor
             string description = this.fckDescription.Value;
 
             ForeclosedInfo info = new ForeclosedInfo();
+            info.IdentityNumber = GetUniqueNo();
             info.Title = title;
             info.LinePrice = linePrice;
             info.AreaId = areaId;
-            info.TypeName = typeName;
+            info.ForeColseTypeName = typeName;
             info.Address = address;
             info.EndDate = date;
             info.Description = description;
+            info.State = (int)AuditingState.Null;
             //info.UserId = userinfo;   //TODO:缺少所属公司编号
             info.UserId = userinfo.userid;
+            info.CreateDate = DateTime.Now;
 
             bool isOK = foreclosedManager.InsertForeclosed(info);
 

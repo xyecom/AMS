@@ -10,7 +10,7 @@ namespace XYECOM.Model
     public enum AuditingState
     {
         /// <summary>
-        /// ÎªÉóºË
+        /// Î´ÉóºË
         /// </summary>
         Null = -1,
         /// <summary>

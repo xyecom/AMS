@@ -57,7 +57,7 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 地区
         /// </summary>
-        public int AreaId
+        public int? AreaId
         {
             get;
             set;
@@ -75,7 +75,7 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 创建时间
         /// </summary>
-        public string CreateDate
+        public DateTime CreateDate
         {
             get;
             set;
@@ -137,7 +137,7 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 类型
         /// </summary>
-        public string TypeName
+        public string ForeColseTypeName
         {
             get;
             set;
@@ -146,7 +146,7 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 类型编号（扩展字段）
         /// </summary>
-        public int? TypeID
+        public int? ForeCloseTypeId
         {
             get;
             set;
