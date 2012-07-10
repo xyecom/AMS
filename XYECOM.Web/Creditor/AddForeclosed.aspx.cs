@@ -10,6 +10,8 @@ namespace XYECOM.Web.Creditor
 {
     public partial class AddForeclosed : XYECOM.Web.AppCode.UserCenter.Creditor
     {
+        XYECOM.Business.AMS.ForeclosedManager foreclosedManager = new Business.AMS.ForeclosedManager();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -33,6 +35,20 @@ namespace XYECOM.Web.Creditor
             info.Address = address;
             info.EndDate = date;
             info.Description = description;
+            //info.UserId = userinfo;   //TODO:缺少所属公司编号
+            info.UserId = userinfo.userid;
+
+            bool isOK = foreclosedManager.InsertForeclosed(info);
+
+            if (isOK)
+            {
+                string gotoUrl = "/Creditor/index.aspx";
+                GotoMsgBoxPageForDynamicPage("添加抵债信息成功！", 1, gotoUrl);
+            }
+            else
+            {
+                Alert("添加抵债信息失败！");
+            }
         }
     }
 }

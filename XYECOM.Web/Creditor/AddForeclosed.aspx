@@ -15,7 +15,7 @@
             <!--基本信息 start-->
             【物品基本信息】
             <hr />
-            <table class="dzbasetb"> 
+            <table class="dzbasetb">
                 <tr>
                     <td class="info1">
                         名称：
@@ -103,5 +103,10 @@
             <asp:Button runat="server" ID="btnOK" Width="80px" Height="25px" Text="确定" OnClick="btnOK_Click" />
         </div>
     </div>
+    <script type="text/javascript">
+        var claarea = new ClassType("claarea", 'area', 'divarea', 'city');
+        claarea.Mode = "select";
+        claarea.Init();
+    </script>
     <!--right end-->
 </asp:Content>
