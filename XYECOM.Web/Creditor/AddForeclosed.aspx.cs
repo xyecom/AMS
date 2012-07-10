@@ -46,7 +46,8 @@ namespace XYECOM.Web.Creditor
             info.IdentityNumber = GetUniqueNo();
             info.Title = title;
             info.LinePrice = linePrice;
-            info.AreaId = areaId;
+            //info.AreaId = areaId;
+            info.AreaId = 10;
             info.ForeColseTypeName = typeName;
             info.Address = address;
             info.EndDate = date;

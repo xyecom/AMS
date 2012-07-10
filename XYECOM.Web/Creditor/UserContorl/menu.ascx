@@ -180,14 +180,14 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(document).ready(function () {
-        $('#nav-menu .menu > li').hover(function () {
-            $(this).find('.children').animate({ opacity: 'show', height: 'show' }, 300);
-            $(this).find('.xialaguang').addClass('navhover');
-        }, function () {
-            $('.children').stop(true, true).hide();
-            $('.xialaguang').removeClass('navhover');
-        }
-).slice(-3, -1).find('.children').addClass('sleft');
-    });    
+//    JQuery(document).ready(function () {
+//        JQuery('#nav-menu .menu > li').hover(function () {
+//            JQuery(this).find('.children').animate({ opacity: 'show', height: 'show' }, 300);
+//            JQuery(this).find('.xialaguang').addClass('navhover');
+//        }, function () {
+//            JQuery('.children').stop(true, true).hide();
+//            JQuery('.xialaguang').removeClass('navhover');
+//        }
+//).slice(-3, -1).find('.children').addClass('sleft');
+//    });    
 </script>

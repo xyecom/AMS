@@ -57,7 +57,7 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 地区
         /// </summary>
-        public int? AreaId
+        public int AreaId
         {
             get;
             set;
@@ -102,7 +102,7 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 所属公司
         /// </summary>
-        public int? UserId
+        public int UserId
         {
             get;
             set;
@@ -111,7 +111,7 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 所属用户、部门
         /// </summary>
-        public int? DepartmentId
+        public int DepartmentId
         {
             get;
             set;
@@ -146,7 +146,7 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 类型编号（扩展字段）
         /// </summary>
-        public int? ForeCloseTypeId
+        public int ForeCloseTypeId
         {
             get;
             set;

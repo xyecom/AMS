@@ -35,7 +35,7 @@
                         地区：
                     </td>
                     <td>
-                        <div id="div1">
+                        <div id="divarea">
                             <input type="hidden" id="city" name="city" runat="server" />
                         </div>
                     </td>
