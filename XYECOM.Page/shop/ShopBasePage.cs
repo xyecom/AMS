@@ -77,7 +77,7 @@ namespace XYECOM.Page.shop
             shopuserinfo.banner = Business.Attachment.GetInfoDefaultImgHref(XYECOM.Model.AttachmentItem.Banner, userRegInfo.UserId, "");
 
             shopuserinfo.logo = Business.Attachment.GetInfoDefaultImgHref(XYECOM.Model.AttachmentItem.Logo, userRegInfo.UserId, "");
-            year = shopuserinfo.years;
+
 
             IList<string> list = GetSlidesByUserId(shopuserinfo.userid);
             if (list.Count > 0)

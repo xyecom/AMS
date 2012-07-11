@@ -132,6 +132,11 @@ namespace XYECOM.Business
             }
             return DAL.GetCompNameByUId(uid);
         }
+
+        public int UpdateBaseInfo(Model.GeneralUserInfo userinfo)
+        {   
+            return DAL.UpdateBaseInfo(userinfo);
+        }
     }
 }
 

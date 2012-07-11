@@ -361,7 +361,7 @@ namespace XYECOM.SQLServer
         /// <returns>¹«Ë¾Ãû³Æ</returns>
         public string GetCompNameByUId(int uid)
         {
-            string sql = "select ui_name from u_userinfo where u_id = "+uid+"";
+            string sql = "select ui_name from u_userinfo where u_id = " + uid + "";
             object obj = XYECOM.Core.Data.SqlHelper.ExecuteScalar(sql);
             if (obj != null)
             {
@@ -371,6 +371,21 @@ namespace XYECOM.SQLServer
             {
                 return string.Empty;
             }
+        }
+
+        public int UpdateBaseInfo(Model.GeneralUserInfo userinfo)
+        {
+            string sqlfmt = @"update u_userinfo set UI_Name='{0}',U_Address='{1}',Email='{2}',Description='{3}',FAX='{4}',Telphone='{5}',UI_LinkMan='{6}' where U_ID={7}";
+            string sql = string.Format(sqlfmt, userinfo.name, userinfo.address, userinfo.Email, userinfo.Description, userinfo.OtherContact, userinfo.Telphone, userinfo.linkman, userinfo.CompanyId);
+
+
+            string sqlfmt2 = @"{5};Update u_user set LayerName='{0}', Description='{1}', Telphone='{2}', OtherContact='{3}' where CompanyId ={4}";
+
+            string sql2 = string.Format(sqlfmt2, userinfo.name, userinfo.Description, userinfo.Description, userinfo.OtherContact, userinfo.CompanyId, sql);
+
+
+            return SqlHelper.ExecuteNonQuery(sql2);
+
         }
     }
 }

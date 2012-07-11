@@ -70,6 +70,10 @@ namespace XYECOM.Page
             }
 
             base.OnLoad(e);
+            if (!IsPostBack)
+            {
+                BindData();
+            }
         }
 
         #region 用户中心分页
@@ -261,5 +265,7 @@ namespace XYECOM.Page
             }
         }
         #endregion
+
+        protected virtual void BindData() { }
     }
 }
