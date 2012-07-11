@@ -35,9 +35,14 @@
                         地区：
                     </td>
                     <td>
-                        <div id="divarea">
-                            <input type="hidden" id="city" name="city" runat="server" />
+                        <div id="divArea">
                         </div>
+                        <input type="hidden" id="areaid" name="areaid" runat="server" />
+                        <script type="text/javascript">
+                            var cla = new ClassType("cla", 'area', 'divArea', '<%=areaid.ClientID %>');
+                            cla.Mode = "select";
+                            cla.Init();
+                        </script>
                     </td>
                     <td class="info1">
                         物品类型：
@@ -103,10 +108,5 @@
             <asp:Button runat="server" ID="btnOK" Width="80px" Height="25px" Text="确定" OnClick="btnOK_Click" />
         </div>
     </div>
-    <script type="text/javascript">
-        var claarea = new ClassType("claarea", 'area', 'divarea', 'city');
-        claarea.Mode = "select";
-        claarea.Init();
-    </script>
     <!--right end-->
 </asp:Content>

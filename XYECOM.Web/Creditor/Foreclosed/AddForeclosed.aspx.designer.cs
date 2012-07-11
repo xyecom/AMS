@@ -31,13 +31,13 @@ namespace XYECOM.Web.Creditor {
         protected global::System.Web.UI.WebControls.TextBox txtLinePrice;
         
         /// <summary>
-        /// city control.
+        /// areaid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden city;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden areaid;
         
         /// <summary>
         /// droTypeName control.

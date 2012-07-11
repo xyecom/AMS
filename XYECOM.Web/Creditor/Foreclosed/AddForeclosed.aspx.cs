@@ -36,7 +36,7 @@ namespace XYECOM.Web.Creditor
         {
             string title = this.txtTitle.Text.Trim();
             decimal linePrice = MyConvert.GetDecimal(this.txtLinePrice.Text.Trim());
-            int areaId = MyConvert.GetInt32(this.city.Value);
+            int areaId = MyConvert.GetInt32(this.areaid.Value);
             string typeName = this.droTypeName.SelectedValue;
             string address = this.txtAddress.Text.Trim();
             DateTime date = MyConvert.GetDateTime(this.endDate.Value);

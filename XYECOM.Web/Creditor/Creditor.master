@@ -5,7 +5,7 @@
 <%@ Register Src="UserContorl/left.ascx" TagName="left" TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script language="javascript" type="text/javascript" src="/common/js/date.js"></script>
-    <script language="javascript" type="text/javascript" src="/Common/js/base.js"></script>
+    <script language="javascript" type="text/javascript" src="/Common/js/forebase.js"></script>
     <script language="javascript" type="text/javascript" src="/config/js/config.js"></script>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
     </asp:ContentPlaceHolder>
