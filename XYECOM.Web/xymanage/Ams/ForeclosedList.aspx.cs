@@ -62,7 +62,7 @@ namespace XYECOM.Web.xymanage.Creditor.Foreclosed
 
             this.lbmanage.Text = "";
 
-            string strwhere = string.Empty;
+            string strwhere = " 1=1";
             //标题
             if (this.txtKeyword.Text.Trim() != "")
             {
@@ -127,7 +127,7 @@ namespace XYECOM.Web.xymanage.Creditor.Foreclosed
                 e.Row.Attributes.Add("onmouseover", "javascript:__XY_GV_Row_MouseOver(this)");
                 e.Row.Attributes.Add("onmouseout", "javascript:__XY_GV_Row_MouseOut(this);");
 
-                LinkButton LB = (LinkButton)e.Row.Cells[7].Controls[0];
+                LinkButton LB = (LinkButton)e.Row.Cells[6].Controls[0];
                 string state = LB.Text.Trim();
                 if (state == "1")
                 {
