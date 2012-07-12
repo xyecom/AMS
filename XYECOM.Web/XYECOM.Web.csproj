@@ -257,13 +257,6 @@
     <Compile Include="xymanage\Ams\CreditList.aspx.designer.cs">
       <DependentUpon>CreditList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="xymanage\Ams\ForeclosedList.aspx.cs">
-      <DependentUpon>ForeclosedList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="xymanage\Ams\ForeclosedList.aspx.designer.cs">
-      <DependentUpon>ForeclosedList.aspx</DependentUpon>
-    </Compile>
     <Compile Include="xymanage\Basic\Administrator.aspx.cs">
       <DependentUpon>Administrator.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -488,11 +481,18 @@
     <Compile Include="xymanage\Certificate\certificatelist.aspx.designer.cs">
       <DependentUpon>certificatelist.aspx</DependentUpon>
     </Compile>
-    <Compile Include="xymanage\Foreclosed\ForeclosedList.aspx.cs">
+    <Compile Include="xymanage\Ams\ForeclosedInfo.aspx.cs">
+      <DependentUpon>ForeclosedInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xymanage\Ams\ForeclosedInfo.aspx.designer.cs">
+      <DependentUpon>ForeclosedInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xymanage\Ams\ForeclosedList.aspx.cs">
       <DependentUpon>ForeclosedList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="xymanage\Foreclosed\ForeclosedList.aspx.designer.cs">
+    <Compile Include="xymanage\Ams\ForeclosedList.aspx.designer.cs">
       <DependentUpon>ForeclosedList.aspx</DependentUpon>
     </Compile>
     <Compile Include="xymanage\err.aspx.cs">
@@ -3919,7 +3919,6 @@
     <Content Include="templates\default\__ranking.htm" />
     <Content Include="UploadImage.aspx" />
     <Content Include="xymanage\Ams\CreditList.aspx" />
-    <Content Include="xymanage\Ams\ForeclosedList.aspx" />
     <Content Include="xymanage\Basic\Administrator.aspx" />
     <Content Include="xymanage\Basic\AreaAdd.aspx" />
     <Content Include="xymanage\Basic\AreaList.aspx" />
@@ -3952,7 +3951,8 @@
     <Content Include="xymanage\Basic\WebInfo.aspx" />
     <Content Include="xymanage\Certificate\certificateinfo.aspx" />
     <Content Include="xymanage\Certificate\certificatelist.aspx" />
-    <Content Include="xymanage\Foreclosed\ForeclosedList.aspx" />
+    <Content Include="xymanage\Ams\ForeclosedInfo.aspx" />
+    <Content Include="xymanage\Ams\ForeclosedList.aspx" />
     <Content Include="xymanage\CSS\admin.css" />
     <Content Include="xymanage\CSS\bgimages\add.gif" />
     <Content Include="xymanage\CSS\bgimages\addbtn.gif" />

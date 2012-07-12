@@ -137,6 +137,20 @@ namespace XYECOM.Business
         {   
             return DAL.UpdateBaseInfo(userinfo);
         }
+
+        /// <summary>
+        /// 根据用户编号获取用户名称
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public string GetUserNameByID(int userId)
+        {
+            if (userId <= 0)
+            {
+                return string.Empty;
+            }
+            return DAL.GetUserNameByID(userId);
+        }
     }
 }
 

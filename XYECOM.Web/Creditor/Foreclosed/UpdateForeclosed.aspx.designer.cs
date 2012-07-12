@@ -31,13 +31,13 @@ namespace XYECOM.Web.Creditor.Foreclosed {
         protected global::System.Web.UI.WebControls.TextBox txtLinePrice;
         
         /// <summary>
-        /// city control.
+        /// areaid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden city;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden areaid;
         
         /// <summary>
         /// droTypeName control.
@@ -76,6 +76,15 @@ namespace XYECOM.Web.Creditor.Foreclosed {
         protected global::FredCK.FCKeditorV2.FCKeditor fckDescription;
         
         /// <summary>
+        /// supplyImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::XYECOM.Web.xymanage.UserControl.UploadImage supplyImages;
+        
+        /// <summary>
         /// btnOK control.
         /// </summary>
         /// <remarks>
@@ -83,5 +92,14 @@ namespace XYECOM.Web.Creditor.Foreclosed {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnOK;
+        
+        /// <summary>
+        /// hiddID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hiddID;
     }
 }

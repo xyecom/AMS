@@ -86,6 +86,27 @@ namespace XYECOM.SQLServer.AMS
             return rowAffected;
         }
 
+        /// <summary>
+        /// 删除多条记录
+        /// </summary>
+        /// <param name="Ids"></param>
+        /// <returns></returns>
+        public int Deletes(string Ids)
+        {
+            string sql = "DELETE ForeclosedInfo WHERE ForeclosedId in ( @Id )";
+            SqlParameter[] param = new SqlParameter[] 
+            { 
+                new SqlParameter("@Id",Ids),
+            };
+            int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, param);
+            return rowAffected;
+        }
+
+        /// <summary>
+        /// 根据抵债ID获取抵债信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ForeclosedInfo GetForeclosedInfoById(int id)
         {
             string sql = "SELECT * FROM dbo.ForeclosedInfo WHERE ForeclosedId = @Id";
@@ -100,7 +121,7 @@ namespace XYECOM.SQLServer.AMS
                 if (reader.Read())
                 {
                     info = new ForeclosedInfo();
-                    
+
                     info.ForeclosedId = id;
                     info.Title = reader["Title"].ToString();
                     info.IdentityNumber = reader["IdentityNumber"].ToString();
@@ -111,61 +132,58 @@ namespace XYECOM.SQLServer.AMS
                     info.State = Core.MyConvert.GetInt32(reader["State"].ToString());
                     info.PassDate = Core.MyConvert.GetDateTime(reader["PassDate"].ToString());
                     info.UserId = Core.MyConvert.GetInt32(reader["UserId"].ToString());
-                    //info.DepartmentId = reader["SD_HTMLPage"].ToString();
-                    //info.ClickNum = Core.MyConvert.GetInt64(reader["SD_ClickNum"].ToString());
-                    //info.IsCommend = reader["SD_Vouch"].ToString() == "1";
-                    //info.MessageNum = Core.MyConvert.GetInt32(reader["SD_MessageNum"].ToString());
-                    //info.NotReadingNum = Core.MyConvert.GetInt32(reader["SD_NoMessgeNum"].ToString());
-                    //info.UseFulDate = Core.MyConvert.GetInt32(reader["SD_Date"].ToString());
-                    //info.InfoType = Core.MyConvert.GetInt32(reader["SD_Flag"].ToString());
-                    //info.IsPause = Core.MyConvert.GetBoolean(reader["SD_IsSupply"].ToString());
-                    //info.Unit = reader["SD_Unit"].ToString();
-                    //info.LeastNum = Core.MyConvert.GetInt32(reader["SD_SmallNum"].ToString());
-                    //info.CountNum = Core.MyConvert.GetInt32(reader["SD_CountNum"].ToString());
-                    //info.IsPayMent = Core.MyConvert.GetBoolean(reader["SD_IsPayMent"].ToString());
-                    //info.Isshop = Core.MyConvert.GetBoolean(reader["isshop"].ToString());
-                    //info.CompanyProductTypeId = Core.MyConvert.GetInt32(reader["companyproducttypeid"].ToString());
-
-                    ////基于山东亿家商城新增的属性 王振
-                    //info.BrandId = Core.MyConvert.GetInt32(reader["BrandId"].ToString());
-                    //info.MeasuringUnitId = Core.MyConvert.GetInt32(reader["MeasuringUnitId"].ToString());
-                    //info.DepotId = Core.MyConvert.GetInt32(reader["DepotId"].ToString());
-                    //info.Stocks = Core.MyConvert.GetInt32(reader["Stocks"].ToString());
-                    //info.SalesVolume = Core.MyConvert.GetInt32(reader["SalesVolume"].ToString());
-                    //info.IsDeleted = Core.MyConvert.GetBoolean(reader["IsDeleted"].ToString());
-                    //info.Tags = reader["Tags"].ToString();
-                    //info.Summary = reader["Summary"].ToString();
-                    //info.IsPayBail = Core.MyConvert.GetBoolean(reader["IsPayBail"].ToString());
-                    //info.FreightType = Core.MyConvert.GetInt32(reader["FreightType"].ToString());
-                    //info.MarketPrice = Core.MyConvert.GetDecimal(reader["MarketPrice"].ToString());
-                    //info.ProductType = new ProductType().GetProTypeById(XYECOM.Core.MyConvert.GetInt32(info.SortID.ToString()));
-                    //info.LockCount = Core.MyConvert.GetInt32(reader["LockCount"].ToString());
-                    //info.IsContractVouch = Core.MyConvert.GetBoolean(reader["IsContractVouch"].ToString());
-                    //info.MarginRefund = Core.MyConvert.GetDecimal(reader["MarginRefund"].ToString());
-
-                    //info.AttachInfo = new Attachment().GetItems(info.InfoID, "i_supply");
-                    //info.PriceRange = new XYECOM.SQLServer.PriceRangeAccess().GetPriceRangeByProductId(id);
-                    //if (info.BrandId > 0)
-                    //{
-                    //    info.BrandInfo = new XYECOM.SQLServer.BrandAccess().GetItem(info.BrandId);
-                    //}
-                    //if (info.DepotId > 0)
-                    //{
-                    //    info.DepotInfo = new XYECOM.SQLServer.DepotAccess().GetItem(info.DepotId);
-                    //}
-
-                    //if (info.FreightType == (int)Model.FreightType.SelfDelivery || info.FreightType == (int)Model.FreightType.BuyerPayAndSelfDelivery)
-                    //{
-                    //    info.SupportLogitsticsTypes = new XYECOM.SQLServer.ProductLogisticsEnterpriseAccess().GetItemsByProductId(info.InfoID);
-                    //}
-
-                    //if (info.ProductType != null)
-                    //{
-                    //    info.FieldValues = new FieldValueAccess().GetItems(info);
-                    //}
+                    info.AreaId = Core.MyConvert.GetInt32(reader["AreaId"].ToString());
+                    info.DepartmentId = Core.MyConvert.GetInt32(reader["DepartmentId"].ToString());
+                    info.Description = reader["Description"].ToString();
+                    info.ForeCloseTypeId = Core.MyConvert.GetInt32(reader["ForeCloseTypeId"].ToString());
+                    info.ForeColseTypeName = reader["ForeColseTypeName"].ToString();
+                    info.LinePrice = Core.MyConvert.GetDecimal(reader["LinePrice"].ToString());
+                    info.PassDate = Core.MyConvert.GetDateTime(reader["PassDate"].ToString());
                 }
             }
             return info;
+        }
+
+        /// <summary>
+        /// 单条审核操作
+        /// </summary>
+        /// <param name="fId">抵债信息编号</param>
+        /// <param name="state">审核通过or审核不通过</param>
+        /// <returns></returns>
+        public int AuditById(int fId, bool state)
+        {
+            string sql = string.Empty;
+            if (state)
+            {
+                sql = "UPDATE dbo.ForeclosedInfo SET State = 1 WHERE ForeclosedId= " + fId;
+            }
+            else
+            {
+                sql = "UPDATE dbo.ForeclosedInfo SET State = 0 WHERE ForeclosedId= " + fId;
+            }
+            int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
+            return rowAffected;
+        }
+
+        /// <summary>
+        /// 多条审核操作
+        /// </summary>
+        /// <param name="fIds">抵债信息编号</param>
+        /// <param name="state">审核通过or审核不通过</param>
+        /// <returns></returns>
+        public int AuditByIds(string fIds, bool state)
+        {
+            string sql = string.Empty;
+            if (state)
+            {
+                sql = "UPDATE dbo.ForeclosedInfo SET State = 1 WHERE ForeclosedId in (" + fIds + ")";
+            }
+            else
+            {
+                sql = "UPDATE dbo.ForeclosedInfo SET State = 0 WHERE ForeclosedId in (" + fIds + ")";
+            }
+            int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
+            return rowAffected;
         }
     }
 }

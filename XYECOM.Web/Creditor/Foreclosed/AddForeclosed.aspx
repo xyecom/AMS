@@ -91,13 +91,8 @@
                     选择图片：
                 </p>
                 <p>
-                    <input type="file" size="20" onchange="upimg(this);" />
-                </p>
-                <p>
-                    <input type="file" size="20" onchange="upimg(this);" />
-                </p>
-                <p>
-                    <input type="file" size="20" onchange="upimg(this);" />
+                    <XYECOM:UploadImage ID="supplyImages" runat="server" Iswatermark="false" MaxAmount="3"
+                        TableName="i_supply" IsCreateThumbnailImg="true" />
                 </p>
             </div>
         </div>
