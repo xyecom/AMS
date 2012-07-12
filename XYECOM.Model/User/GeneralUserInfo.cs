@@ -52,10 +52,6 @@ namespace XYECOM.Model
         /// 性别bool型
         /// </summary>
         public bool sexbool = true;
-        /// <summary>
-        /// 邮件
-        /// </summary>
-        public string email = "";
 
         /// <summary>
         /// 注册日期
@@ -82,11 +78,6 @@ namespace XYECOM.Model
         public string zipcode = "";
 
         /// <summary>
-        /// [公司或个人]所在地Id
-        /// </summary>
-        public int areaid = 0;
-
-        /// <summary>
         /// [公司或个人]所在地名称
         /// </summary>
         public string areaname = "";
@@ -103,24 +94,6 @@ namespace XYECOM.Model
         /// </summary>
         public int linkmannum = 0;
 
-        /// <summary>
-        /// 积分
-        /// </summary>
-        public int mark = 0;
-        /// <summary>
-        /// 等级名称
-        /// </summary>
-        public string gradename = "";
-
-        /// <summary>
-        /// 等级Id
-        /// </summary>
-        public int gradeid = 0;
-
-        /// <summary>
-        /// 当前会员等级第几年
-        /// </summary>
-        public string years = "";
         /// <summary>
         /// 企业形象图片
         /// </summary>
@@ -150,12 +123,7 @@ namespace XYECOM.Model
         /// 邮箱是否已经激活
         /// </summary>
         public bool activation = false;
-
-        /// <summary>
-        /// 企业名称
-        /// </summary>
-        public string unitname = "";
-
+        
         /// <summary>
         /// 企业名称(用于取代unitname)
         /// </summary>
@@ -336,5 +304,49 @@ namespace XYECOM.Model
         public decimal creditintegral;
 
         public Model.CreditLeavlInfo creditleavl;
+
+        public string IdentityNumber { get; set; }
+
+        public int DelState { get; set; }
+
+        public int UserType { get; set; }
+
+        public bool IsExport { get; set; }
+
+        public int AreaId { get; set; }
+
+        public string LayerId { get; set; }
+
+        public string IdNumber { get; set; }
+
+        public bool Sex { get; set; }
+
+        public string OtherContact { get; set; }
+
+        public string Telphone { get; set; }
+
+        public string Description { get; set; }
+
+        public string LayerName { get; set; }
+
+        public bool IsPrimary { get; set; }
+
+        public string Email { get; set; }
+
+        public bool IsBoundMobile { get; set; }
+
+        public bool IsBoundEmail { get; set; }
+
+        public int Point { get; set; }
+
+        public bool IsReal { get; set; }
+
+        public int GoodTimes { get; set; }
+
+        public int MidTimes { get; set; }
+
+        public int BadTimes { get; set; }
+
+        public long CompanyId { get; set; }
     }
 }

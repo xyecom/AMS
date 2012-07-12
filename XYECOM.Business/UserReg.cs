@@ -705,7 +705,7 @@ namespace XYECOM.Business
 
             #region 添加企业用户信息
             userInfo.UserId = userId;
-
+            userInfo.Email = userRegInfo.Email;
             XYECOM.Business.UserInfo userInfoBLL = new XYECOM.Business.UserInfo();
 
             _result = userInfoBLL.Insert(userInfo);
@@ -895,7 +895,7 @@ namespace XYECOM.Business
             //---------------------------------------------------------------------
 
             string strUserType = "user";
-            
+
             if (isSaveInfo)
             {
                 XYECOM.Core.Utils.WriteCookie("U_Name", userInfo.LoginName.ToString(), 1, cookieDomain);
