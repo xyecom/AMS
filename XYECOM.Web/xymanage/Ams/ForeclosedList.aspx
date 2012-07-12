@@ -135,7 +135,7 @@
                                         <asp:TemplateField HeaderText="查看">
                                             <ItemStyle Width="5%" />
                                             <ItemTemplate>
-                                                <a href='../Foreclosed/ForeclosedInfo.aspx?ID=<%# Eval("ForeclosedId") %>'>
+                                                <a href='../Foreclosed/ForeclosedInfo.aspx?ID=<%# Eval("ForeclosedId") %>&backURL=<%# backURL %>'>
                                                     <img src="../images/look.GIF" alt="查看详细" /></a> &nbsp; <a href='../Foreclosed/ForeclosedInfo.aspx?ID=<%# Eval("ForeclosedId") %>'>
                                                         <img src="../images/look.GIF" alt="查看竞价" /></a>
                                             </ItemTemplate>

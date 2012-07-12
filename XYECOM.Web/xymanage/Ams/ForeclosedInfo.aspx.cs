@@ -7,19 +7,16 @@ using System.Data;
 
 namespace XYECOM.Web.xymanage.Foreclosed
 {
-    public partial class ForeclosedInfo : System.Web.UI.Page
+    public partial class ForeclosedInfo : XYECOM.Web.BasePage.ManagePage
     {
         #region 页面加载
         public int productId = 0;
         public string title = "";
-        private XYECOM.Business.FieldManager fielBLL = new FieldManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-            CheckRole("offer");
-
             backURL = XYECOM.Core.XYRequest.GetQueryString("backURL");
 
-            productId = XYECOM.Core.XYRequest.GetQueryInt("SD_ID", 0);
+            productId = XYECOM.Core.XYRequest.GetQueryInt("ID", 0);
 
             if (!IsPostBack)
             {
@@ -195,18 +192,6 @@ namespace XYECOM.Web.xymanage.Foreclosed
         }
         #endregion
 
-
-        /// <summary>
-        /// 根据分类编号获取属性信息
-        /// </summary>
-        /// <param name="typeId">分类编号</param>
-        /// <returns>分类属性</returns>
-        private IList<XYECOM.Model.FieldValueInfo> InitInsert(int typeId)
-        {
-            if (typeId < 1) return new List<XYECOM.Model.FieldValueInfo>();
-
-            return fielBLL.GetItems(typeId);
-        }
 
 
         /// <summary>
