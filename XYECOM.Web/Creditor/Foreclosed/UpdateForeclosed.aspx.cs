@@ -7,7 +7,7 @@ using XYECOM.Model.AMS;
 using XYECOM.Core;
 using XYECOM.Model;
 
-namespace XYECOM.Web.Creditor.Foreclosed
+namespace XYECOM.Web.Creditor
 {
     public partial class UpdateForeclosed : XYECOM.Web.AppCode.UserCenter.Creditor
     {

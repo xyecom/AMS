@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Creditor/Creditor.master" AutoEventWireup="true"
-    CodeBehind="UpdateForeclosed.aspx.cs" Inherits="XYECOM.Web.Creditor.Foreclosed.UpdateForeclosed" %>
+    CodeBehind="UpdateForeclosed.aspx.cs" Inherits="XYECOM.Web.Creditor.UpdateForeclosed" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
@@ -91,9 +91,8 @@
                     选择图片：
                 </p>
                 <p>
-                    <XYECOM:UploadImage ID="supplyImages" runat="server" Iswatermark="false" MaxAmount="3"
+                    &nbsp;<XYECOM:UploadImage ID="supplyImages" runat="server" Iswatermark="false" MaxAmount="3"
                         TableName="i_supply" IsCreateThumbnailImg="true" />
-                </p>
             </div>
         </div>
         <!--rightzqmain end-->

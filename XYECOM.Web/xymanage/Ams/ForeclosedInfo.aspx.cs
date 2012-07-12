@@ -98,7 +98,7 @@ namespace XYECOM.Web.xymanage.Foreclosed
             }
 
             string strwhere = " where SD_ID=" + SD_ID.ToString();
-            DataTable DT = Function.GetDataTable(strwhere, "", " XYV_Supply");
+            //DataTable DT = Function.GetDataTable(strwhere, "", " XYV_Supply");
         }
         #endregion
 

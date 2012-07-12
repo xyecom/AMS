@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace XYECOM.Web.Creditor.Foreclosed {
+namespace XYECOM.Web.Creditor {
     
     
     public partial class UpdateForeclosed {
