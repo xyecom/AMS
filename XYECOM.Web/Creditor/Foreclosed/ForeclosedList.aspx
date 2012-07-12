@@ -1,110 +1,71 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Creditor/Creditor.master" AutoEventWireup="true" CodeBehind="ForeclosedList.aspx.cs" Inherits="XYECOM.Web.Creditor.Foreclosed.ForeclosedList" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Creditor/Creditor.master" AutoEventWireup="true"
+    CodeBehind="ForeclosedList.aspx.cs" Inherits="XYECOM.Web.Creditor.Foreclosed.ForeclosedList" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link rel="stylesheet" type="text/css" href="/user/css/post.css" />
+    <script src="/Common/Js/Newvalidate.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript" src="../../xymanage/Javascript/CheckedAll.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
-    <!--right start-->
-    <div id="right">
-        <!--rightzqmain start-->
-        <div id="rightzqmain">
-            <h2>
-                添加抵债物品</h2>
-            <div class="rhr">
+    <div id="right_guanli">
+        <div class="guanli_box">
+            <div class="glb_ss">
+                标题：<asp:TextBox ID="txtTitle" runat="server"></asp:TextBox>
+                &nbsp;物品类型<asp:DropDownList ID="ddlVenType" runat="server">
+                </asp:DropDownList><asp:Button runat="server" ID="btnSearch" />
             </div>
-            <!--基本信息 start-->
-            【物品基本信息】
-            <hr />
-            <table class="dzbasetb">
-                <tr>
-                    <td class="info1">
-                        名称：
-                    </td>
-                    <td>
-                        <asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
-                    </td>
-                    <td class="info1">
-                        拍卖底价：
-                    </td>
-                    <td>
-                        <asp:TextBox runat="server" ID="txtLinePrice"></asp:TextBox><span>元</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="info1">
-                        地区：
-                    </td>
-                    <td>
-                        <div id="divArea">
+            <div class="glb_top">
+                <div class="glb_tp">
+                    标题</div>
+                <div class="glb_bt">
+                    低价</div>
+                <div class="glb_jg">
+                    物品类型</div>
+                <div class="glb_lx">
+                    结束时间</div>
+                <div class="glb_sj">
+                    审核状态</div>
+                <div class="glb_cz">
+                    操作</div>
+            </div>
+            <asp:Repeater ID="gdlist" runat="server">
+                <ItemTemplate>
+                    <div class="glb_li" style="background-color: #fff;" onmouseout="this.style.background='#fff'"
+                        onmouseover="this.style.background='#deeffa'">
+                        <div class="glb_tp">
+                            <input id="chkExport" type="checkbox" runat="server" value='<%# Eval("ForeclosedId") %>' />
+                            <%# Eval("Title") %>
                         </div>
-                        <input type="hidden" id="areaid" name="areaid" runat="server" />
-                        <script type="text/javascript">
-                            var cla = new ClassType("cla", 'area', 'divArea', '<%=areaid.ClientID %>');
-                            cla.Mode = "select";
-                            cla.Init();
-                        </script>
-                    </td>
-                    <td class="info1">
-                        物品类型：
-                    </td>
-                    <td>
-                        <asp:DropDownList runat="server" ID="droTypeName" Width="135px">
-                            <asp:ListItem Value="房屋" Text="房屋"></asp:ListItem>
-                            <asp:ListItem Value="汽车" Text="汽车"></asp:ListItem>
-                            <asp:ListItem Value="金条" Text="金条"></asp:ListItem>
-                        </asp:DropDownList>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="info1">
-                        详细地址：
-                    </td>
-                    <td colspan="3">
-                        <asp:TextBox runat="server" ID="txtAddress"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="info1">
-                        结束竞拍时间：
-                    </td>
-                    <td colspan="3">
-                        <input id="endDate" runat="server" size="10" type="text" readonly="readonly" onclick="getDateString(this);" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="info1">
-                        物品详细描述：
-                    </td>
-                    <td colspan="3">
-                        <FCKeditorV2:FCKeditor ID="fckDescription" runat="server" BasePath="/Common/fckeditor/"
-                            ToolbarSet="News" Height="200px">
-                        </FCKeditorV2:FCKeditor>
-                    </td>
-                </tr>
-            </table>
-            【物品相关图片】
-            <hr />
-            <div id="dzbasepic">
-                <div id="picshow">
-                </div>
-                <p>
-                    选择图片：
-                </p>
-                <p>
-                    <input type="file" size="20" onchange="upimg(this);" />
-                </p>
-                <p>
-                    <input type="file" size="20" onchange="upimg(this);" />
-                </p>
-                <p>
-                    <input type="file" size="20" onchange="upimg(this);" />
-                </p>
-            </div>
+                        <div class="glb_bt">
+                            <%# Eval("LinePrice")%>
+                        </div>
+                        <div class="glb_jg">
+                            <span>
+                                <%# Eval("ForeColseTypeName")%></span></div>
+                        <div class="glb_lx">
+                            <%# Eval("Trade")%>
+                        </div>
+                        <div class="glb_sj">
+                            <%# Eval("EndDate")%>
+                        </div>
+                        <div class="glb_cz">
+                            <a href='<%# string.Format("AddFinancingInfo.{0}?operator=1&Id={1}",webInfo.WebSuffix,Eval("SD_ID")) %>'>
+                                <img alt="" src="/user/image/guanli_07.jpg" /></a>&nbsp;&nbsp;
+                            <asp:Button ID="btnDel" CssClass="buttonSkinB" runat="server" Text="删除" CommandArgument='<%# Eval("SD_ID") %>'
+                                OnClientClick="return window.confirm('确认要删除！')" OnClick="btnDel_Click" />
+                        </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
+            <p style="text-align: center;">
+                <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
+            </p>
         </div>
-        <!--rightzqmain end-->
-        <div style="width: 812px; height: 40px; line-height: 40px; text-align: center">
-            <%--  <input type="button" value="确 定" style="background: url(../images/yes.gif); width: 80px;
-                height: 25px; border: none; cursor: pointer; color: #FFF" />--%>
-            <asp:Button runat="server" ID="btnOK" Width="80px" Height="25px" Text="确定" OnClick="btnOK_Click" />
+        <div class="guanli_bott">
+            <input id="chkAll" name="chkAll" onclick="chkAll_true()" type="checkbox" />全选
+            <asp:ImageButton ImageUrl="/user/image/guanli_09.jpg" ID="btnDelete" OnClientClick="return del();"
+                runat="server" OnClick="btnDelete_Click" CssClass="buttonSkinB" />
+            <XYECOM:Page ID="mypage" runat="server" PageSize="10" OnPageChanged="mypage_PageChanaged" />
         </div>
     </div>
-    <!--right end-->
 </asp:Content>

@@ -127,7 +127,7 @@ namespace XYECOM.Web.xymanage.Creditor.Foreclosed
                 e.Row.Attributes.Add("onmouseover", "javascript:__XY_GV_Row_MouseOver(this)");
                 e.Row.Attributes.Add("onmouseout", "javascript:__XY_GV_Row_MouseOut(this);");
 
-                LinkButton LB = (LinkButton)e.Row.Cells[6].Controls[0];
+                LinkButton LB = (LinkButton)e.Row.Cells[7].Controls[0];
                 string state = LB.Text.Trim();
                 if (state == "1")
                 {
@@ -194,7 +194,7 @@ namespace XYECOM.Web.xymanage.Creditor.Foreclosed
         #endregion
 
         /// <summary>
-        /// 审核操作
+        /// 审核通过操作
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -217,6 +217,29 @@ namespace XYECOM.Web.xymanage.Creditor.Foreclosed
         }
 
         /// <summary>
+        /// 审核不通过操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnNotIsPass_Click(object sender, EventArgs e)
+        {
+            int infoId = 0;
+            foreach (GridViewRow GR in this.GV1.Rows)
+            {
+                if (((CheckBox)(GR.FindControl("chkExport"))).Checked == true)
+                {
+                    infoId = XYECOM.Core.MyConvert.GetInt32(GV1.DataKeys[GR.DataItemIndex].Value.ToString());
+
+                    if (infoId <= 0) continue;
+
+                    foreManage.AuditById(infoId, false);
+                }
+            }
+
+            BindData();
+        }
+
+        /// <summary>
         /// 搜索
         /// </summary>
         /// <param name="sender"></param>
@@ -231,52 +254,22 @@ namespace XYECOM.Web.xymanage.Creditor.Foreclosed
         {
             //获取该行的行号
             int iRowNo = Convert.ToInt32(e.CommandArgument);
-            //long userId = 0;
-            //string userEmail = "";
-            //string title = "";
 
             //获取该行的主键
             int ID = Convert.ToInt32(GV1.DataKeys[iRowNo].Value);
 
-            //if (GV1.DataKeys[Convert.ToInt32(e.CommandArgument)]["U_ID"].ToString() != "")
-            //{
-            //    userId = Convert.ToInt64(GV1.DataKeys[Convert.ToInt32(e.CommandArgument)]["U_ID"].ToString());
-            //}
-            //if (GV1.DataKeys[Convert.ToInt32(e.CommandArgument)]["U_Email"].ToString() != "")
-            //{
-            //    userEmail = GV1.DataKeys[Convert.ToInt32(e.CommandArgument)]["U_Email"].ToString();
-            //}
-            //if (GV1.DataKeys[Convert.ToInt32(e.CommandArgument)]["SD_Title"].ToString() != "")
-            //{
-            //    title = GV1.DataKeys[Convert.ToInt32(e.CommandArgument)]["SD_Title"].ToString();
-            //}
             if (e.CommandName == "shenhe")
             {
-                LinkButton LB = (LinkButton)GV1.Rows[iRowNo].Cells[6].Controls[0];
+                LinkButton LB = (LinkButton)GV1.Rows[iRowNo].Cells[7].Controls[0];
 
                 if (LB.Text == "通过审核")
                 {
                     int JJ = foreManage.AuditById(ID, false);
-                    //if (JJ >= 0)
-                    //{
-                    //    //给用户留言
-                    //    if (userId.ToString() != "")
-                    //    {
-                    //        SendToMessage(userId);
-                    //    }
-
-                    //    //给用户发短信
-                    //    if (userEmail.ToString() != "")
-                    //    {
-                    //        SendToEmail(title, userEmail);
-                    //    }
-                    //}
                 }
                 else if (LB.Text == "审核未通过" || LB.Text == "未审核" || LB.Text.ToString() == "")
                 {
                     foreManage.AuditById(ID, true);
                 }
-
                 BindData();
             }
         }

@@ -155,11 +155,11 @@ namespace XYECOM.SQLServer.AMS
             string sql = string.Empty;
             if (state)
             {
-                sql = "UPDATE dbo.ForeclosedInfo SET State = 1 WHERE ForeclosedId= " + fId;
+                sql = "UPDATE dbo.ForeclosedInfo SET State = 1,PassDate=getDate() WHERE ForeclosedId= " + fId;
             }
             else
             {
-                sql = "UPDATE dbo.ForeclosedInfo SET State = 0 WHERE ForeclosedId= " + fId;
+                sql = "UPDATE dbo.ForeclosedInfo SET State = 0,PassDate=getDate() WHERE ForeclosedId= " + fId;
             }
             int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
             return rowAffected;

@@ -22,66 +22,57 @@ namespace XYECOM.Web.Creditor.Foreclosed {
         protected global::System.Web.UI.WebControls.TextBox txtTitle;
         
         /// <summary>
-        /// txtLinePrice control.
+        /// ddlVenType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLinePrice;
+        protected global::System.Web.UI.WebControls.DropDownList ddlVenType;
         
         /// <summary>
-        /// areaid control.
+        /// btnSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden areaid;
+        protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
-        /// droTypeName control.
+        /// gdlist control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList droTypeName;
+        protected global::System.Web.UI.WebControls.Repeater gdlist;
         
         /// <summary>
-        /// txtAddress control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAddress;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
-        /// endDate control.
+        /// btnDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText endDate;
+        protected global::System.Web.UI.WebControls.ImageButton btnDelete;
         
         /// <summary>
-        /// fckDescription control.
+        /// mypage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FredCK.FCKeditorV2.FCKeditor fckDescription;
-        
-        /// <summary>
-        /// btnOK control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOK;
+        protected global::xymanage_UserControl_page mypage;
     }
 }

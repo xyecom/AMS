@@ -135,9 +135,9 @@
                                         <asp:TemplateField HeaderText="查看">
                                             <ItemStyle Width="5%" />
                                             <ItemTemplate>
-                                                <a href='../Foreclosed/ForeclosedInfo.aspx?ID=<%# Eval("ForeclosedId") %>&backURL=<%# backURL %>'>
-                                                    <img src="../images/look.GIF" alt="查看详细" /></a> &nbsp; <a href='../Foreclosed/ForeclosedInfo.aspx?ID=<%# Eval("ForeclosedId") %>'>
-                                                        <img src="../images/look.GIF" alt="查看竞价" /></a>
+                                                <a href='ForeclosedInfo.aspx?ID=<%# Eval("ForeclosedId") %>&backURL=<%# backURL %>'>
+                                                    查看详细</a> &nbsp; <a href='ForeclosedInfo.aspx?ID=<%# Eval("ForeclosedId") %>'>
+                                                        查看竞价</a>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:BoundField DataField="AuditingState" HeaderText="AuditingState" Visible="False" />
@@ -153,7 +153,7 @@
                                 <input id="chkAll" onclick="chkAll_true()" type="checkbox" name="chkAll" />全选&nbsp;<asp:Button
                                     ID="Button2" runat="server" CssClass="button" OnClick="btnDelete_Click" Text="删除" />
                                 <asp:Button ID="btnIsPass" runat="server" CssClass="button" Text="审核通过" OnClick="btnIsPass_Click" />
-                                <asp:Button ID="btnNotIsPass" runat="server" CssClass="button" Text="审核不通过" OnClick="btnIsPass_Click" />
+                                <asp:Button ID="btnNotIsPass" runat="server" CssClass="button" Text="审核不通过" OnClick="btnNotIsPass_Click" />
                             </td>
                         </tr>
                     </table>
