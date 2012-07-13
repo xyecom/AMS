@@ -1482,6 +1482,7 @@
     <Content Include="Common\Images\i_18.jpg" />
     <Content Include="Common\Images\logo.gif" />
     <Content Include="Common\Images\logo.jpg" />
+    <Content Include="Common\Images\okhank.gif" />
     <Content Include="Common\Images\public_ensure.gif" />
     <Content Include="Common\Images\test.bmp" />
     <Content Include="Common\Images\top_border.jpg" />

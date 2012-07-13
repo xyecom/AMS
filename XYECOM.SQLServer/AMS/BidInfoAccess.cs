@@ -33,6 +33,11 @@ namespace XYECOM.SQLServer.AMS
                 new SqlParameter("@Remark",info.Remark)
             };
             int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, param);
+            if (rowAffected > 0)
+            {
+                sql = "UPDATE dbo.ForeclosedInfo SET HighPrice=(select top 1 Price from bidinfo where foreclosedid = " + info.ForeclosedId + " order by price desc) WHERE ForeclosedId=" + info.ForeclosedId;
+                rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, param);
+            }
             return rowAffected;
         }
 

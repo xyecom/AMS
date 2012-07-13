@@ -164,7 +164,7 @@
                                             <%# GetContact(Eval("Contact").ToString())%>
                                         </td>
                                         <td>
-                                            <img src="../images/okhank.gif" />领先
+                                            <img src="/Common/images/okhank.gif" />领先
                                         </td>
                                     </tr>
                                 </ItemTemplate>
@@ -188,7 +188,7 @@
                                             <%# GetContact(Eval("Contact").ToString())%>
                                         </td>
                                         <td>
-                                            <img src="../images/okhank.gif" />出局
+                                            出局
                                         </td>
                                     </tr>
                                 </ItemTemplate>
@@ -236,7 +236,7 @@
                                     </div>
                                     <div style="margin: 8px 10px;">
                                         我的出价：
-                                        <asp:TextBox runat="server" ID="txtPrice" Width="254px"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txtPrice" Width="254px"></asp:TextBox>元
                                     </div>
                                     <div style="margin: 8px 10px;">
                                         我的留言：

@@ -133,10 +133,10 @@
                                             <ItemStyle CssClass="action" Width="10%" />
                                         </asp:ButtonField>
                                         <asp:TemplateField HeaderText="查看">
-                                            <ItemStyle Width="5%" />
+                                            <ItemStyle Width="10%" />
                                             <ItemTemplate>
                                                 <a href='ForeclosedInfo.aspx?ID=<%# Eval("ForeclosedId") %>&backURL=<%# backURL %>'>
-                                                    查看详细</a> &nbsp; <a href='ForeclosedInfo.aspx?ID=<%# Eval("ForeclosedId") %>'>
+                                                    查看详细</a> &nbsp; <a href='/ForeclosedDetail.aspx?Id=<%# Eval("ForeclosedId") %>'>
                                                         查看竞价</a>
                                             </ItemTemplate>
                                         </asp:TemplateField>

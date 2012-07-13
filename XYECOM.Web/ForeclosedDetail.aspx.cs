@@ -52,7 +52,7 @@ namespace XYECOM.Web
                 this.labAreid.Text = new Area().GetItem(info.AreaId).FullNameAll;
                 this.labTitle.Text = info.Title;
                 this.labIdentityNumber.Text = info.IdentityNumber;
-                this.labEndDate.Text = info.EndDate.ToString();
+                this.labEndDate.Text = info.EndDate.ToString("yyyy-MM-dd");
                 this.labHighPrice.Text = info.HighPrice.ToString();
                 this.labLinePrice.Text = info.LinePrice.ToString();
                 this.spnDescription.InnerHtml = info.Description;

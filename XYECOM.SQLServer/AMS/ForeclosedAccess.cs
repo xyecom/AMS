@@ -51,8 +51,9 @@ namespace XYECOM.SQLServer.AMS
         /// <returns></returns>
         public int UpdateForeclosedByID(ForeclosedInfo info)
         {
-            string sql = @"UPDATE ForeclosedInfo SET Title =                                                                                                              @Title,Address=@Address,AreaId=@AreaId,EndDate=@EndDate,LinePrice=@LinePrice,Description=@Description,
-                            ForeColseTypeName=@ForeColseTypeName WHERE ForeclosedId=@Id";
+            string sql = @"UPDATE ForeclosedInfo SET Title =                                                                                                              
+                                    @Title,Address=@Address,AreaId=@AreaId,EndDate=@EndDate,LinePrice=@LinePrice,Description=@Description,
+                                    ForeColseTypeName=@ForeColseTypeName WHERE ForeclosedId=@Id";
 
             SqlParameter[] param = new SqlParameter[]
             {
