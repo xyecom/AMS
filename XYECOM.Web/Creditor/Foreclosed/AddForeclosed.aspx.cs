@@ -55,7 +55,7 @@ namespace XYECOM.Web.Creditor
 
             if (isOK)
             {
-                string gotoUrl = "/Creditor/index.aspx";
+                string gotoUrl = "ForeclosedList.aspx";
                 GotoMsgBoxPageForDynamicPage("添加抵债信息成功！", 1, gotoUrl);
             }
             else

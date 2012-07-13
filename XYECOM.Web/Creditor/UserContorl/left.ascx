@@ -14,6 +14,12 @@
             <li><a tabindex="2" href="#">发布债权</a></li>
             <li><a tabindex="3" href="#">管理债权</a></li></ul>
         <h1>
+            抵债业务</h1>
+        <ul>
+            <li><a tabindex="1" href="/Creditor/Foreclosed/AddForeclosed.aspx">发布抵债信息</a></li>
+            <li><a tabindex="2" href="/Creditor/Foreclosed/ForeclosedList.aspx">抵债信息管理</a></li>
+        </ul>
+        <h1>
             其他设置</h1>
         <ul>
             <li><a tabindex="1" href="#">资料修改</a></li>

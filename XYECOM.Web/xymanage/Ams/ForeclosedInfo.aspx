@@ -13,7 +13,7 @@
     <script language="javascript" type="text/javascript" src="../javascript/CheckedAll.js"></script>
     <script language="javascript" type="text/javascript" src="/common/js/UploadControl.js"></script>
 </head>
-<body onload="GetTable(1);">
+<body>
     <form id="form1" runat="server">
     <h1>
         <a href="../index.aspx">后台管理首页</a> >> 抵债详细信息</h1>

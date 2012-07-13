@@ -7,10 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace XYECOM.Web.Creditor.Foreclosed {
+namespace XYECOM.Web.Creditor {
     
     
     public partial class ForeclosedList {
+        
+        /// <summary>
+        /// droTypeName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList droTypeName;
         
         /// <summary>
         /// txtTitle control.
@@ -22,15 +31,6 @@ namespace XYECOM.Web.Creditor.Foreclosed {
         protected global::System.Web.UI.WebControls.TextBox txtTitle;
         
         /// <summary>
-        /// ddlVenType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlVenType;
-        
-        /// <summary>
         /// btnSearch control.
         /// </summary>
         /// <remarks>
@@ -40,13 +40,22 @@ namespace XYECOM.Web.Creditor.Foreclosed {
         protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
-        /// gdlist control.
+        /// rptList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater gdlist;
+        protected global::System.Web.UI.WebControls.Repeater rptList;
+        
+        /// <summary>
+        /// Page1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::xymanage_UserControl_page Page1;
         
         /// <summary>
         /// lblMessage control.
@@ -56,23 +65,5 @@ namespace XYECOM.Web.Creditor.Foreclosed {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMessage;
-        
-        /// <summary>
-        /// btnDelete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnDelete;
-        
-        /// <summary>
-        /// mypage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::xymanage_UserControl_page mypage;
     }
 }

@@ -39,9 +39,9 @@ namespace XYECOM.Web.Creditor
             this.txtLinePrice.Text = info.LinePrice.ToString();
             this.areaid.Value = info.AreaId.ToString();
             this.fckDescription.Value = info.Description;
-            this.endDate.Value = info.EndDate.ToString();
+            this.endDate.Value = info.EndDate.ToString("yyyy-MM-dd");
             this.droTypeName.SelectedValue = info.ForeColseTypeName;
-            supplyImages.InfoID = info.ForeclosedId;
+            //supplyImages.InfoID = info.ForeclosedId;
         }
 
         protected void btnOK_Click(object sender, EventArgs e)

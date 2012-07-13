@@ -91,8 +91,8 @@
                     选择图片：
                 </p>
                 <p>
-                    &nbsp;<XYECOM:UploadImage ID="supplyImages" runat="server" Iswatermark="false" MaxAmount="3"
-                        TableName="i_supply" IsCreateThumbnailImg="true" />
+                    <%--&nbsp;<XYECOM:UploadImage ID="supplyImages" runat="server" Iswatermark="false" MaxAmount="3"
+                        TableName="i_supply" IsCreateThumbnailImg="true" />--%>
             </div>
         </div>
         <!--rightzqmain end-->

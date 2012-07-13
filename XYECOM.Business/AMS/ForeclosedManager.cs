@@ -42,6 +42,10 @@ namespace XYECOM.Business.AMS
 
         public ForeclosedInfo GetForeclosedInfoById(int id)
         {
+            if (id <= 0)
+            {
+                return null;
+            }
             return DAL.GetForeclosedInfoById(id);
         }
 
@@ -52,7 +56,20 @@ namespace XYECOM.Business.AMS
         /// <returns></returns>
         public int Deletes(string Ids)
         {
+            if (string.IsNullOrEmpty(Ids))
+            {
+                return 0;    
+            }
             return DAL.Deletes(Ids);
+        }
+
+        public int Delete(int id)
+        {
+            if (id <= 0)
+            {
+                return 0;
+            }
+            return DAL.Delete(id);
         }
 
         /// <summary>
@@ -83,6 +100,20 @@ namespace XYECOM.Business.AMS
                 return 0;
             }
             return DAL.AuditByIds(fIds,state);
+        }
+
+                /// <summary>
+        /// 关闭抵债信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int ClosedByID(int id)
+        {
+            if (id <= 0)
+            {
+                return 0;
+            }
+            return DAL.ClosedByID(id);
         }
     }
 }

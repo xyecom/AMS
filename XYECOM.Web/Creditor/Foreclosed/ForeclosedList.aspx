@@ -1,71 +1,95 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Creditor/Creditor.master" AutoEventWireup="true"
-    CodeBehind="ForeclosedList.aspx.cs" Inherits="XYECOM.Web.Creditor.Foreclosed.ForeclosedList" %>
+    CodeBehind="ForeclosedList.aspx.cs" Inherits="XYECOM.Web.Creditor.ForeclosedList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" type="text/css" href="/user/css/post.css" />
-    <script src="/Common/Js/Newvalidate.js" type="text/javascript"></script>
-    <script language="javascript" type="text/javascript" src="../../xymanage/Javascript/CheckedAll.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
-    <div id="right_guanli">
-        <div class="guanli_box">
-            <div class="glb_ss">
-                标题：<asp:TextBox ID="txtTitle" runat="server"></asp:TextBox>
-                &nbsp;物品类型<asp:DropDownList ID="ddlVenType" runat="server">
-                </asp:DropDownList><asp:Button runat="server" ID="btnSearch" />
+    <!--right start-->
+    <div id="right">
+        <!--rightpart start-->
+        <div id="rightpart">
+            <h2>
+                抵债信息管理</h2>
+            <div class="rhr">
             </div>
-            <div class="glb_top">
-                <div class="glb_tp">
-                    标题</div>
-                <div class="glb_bt">
-                    低价</div>
-                <div class="glb_jg">
-                    物品类型</div>
-                <div class="glb_lx">
-                    结束时间</div>
-                <div class="glb_sj">
-                    审核状态</div>
-                <div class="glb_cz">
-                    操作</div>
+            <!--serch start-->
+            <div class="serchl">
+                &nbsp;&nbsp; 物品类型：
+                <asp:DropDownList runat="server" ID="droTypeName" CssClass="select1" Width="150px">
+                    <asp:ListItem Value="所有" Text="----所有----"></asp:ListItem>
+                    <asp:ListItem Value="房屋" Text="房屋"></asp:ListItem>
+                    <asp:ListItem Value="汽车" Text="汽车"></asp:ListItem>
+                    <asp:ListItem Value="金条" Text="金条"></asp:ListItem>
+                </asp:DropDownList>
+                &nbsp;&nbsp; &nbsp;&nbsp; 标题：<asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
+                <asp:Button runat="server" ID="btnSearch" Text="查询" OnClick="btnSearch_Click" />
             </div>
-            <asp:Repeater ID="gdlist" runat="server">
-                <ItemTemplate>
-                    <div class="glb_li" style="background-color: #fff;" onmouseout="this.style.background='#fff'"
-                        onmouseover="this.style.background='#deeffa'">
-                        <div class="glb_tp">
-                            <input id="chkExport" type="checkbox" runat="server" value='<%# Eval("ForeclosedId") %>' />
-                            <%# Eval("Title") %>
-                        </div>
-                        <div class="glb_bt">
-                            <%# Eval("LinePrice")%>
-                        </div>
-                        <div class="glb_jg">
-                            <span>
-                                <%# Eval("ForeColseTypeName")%></span></div>
-                        <div class="glb_lx">
-                            <%# Eval("Trade")%>
-                        </div>
-                        <div class="glb_sj">
-                            <%# Eval("EndDate")%>
-                        </div>
-                        <div class="glb_cz">
-                            <a href='<%# string.Format("AddFinancingInfo.{0}?operator=1&Id={1}",webInfo.WebSuffix,Eval("SD_ID")) %>'>
-                                <img alt="" src="/user/image/guanli_07.jpg" /></a>&nbsp;&nbsp;
-                            <asp:Button ID="btnDel" CssClass="buttonSkinB" runat="server" Text="删除" CommandArgument='<%# Eval("SD_ID") %>'
-                                OnClientClick="return window.confirm('确认要删除！')" OnClick="btnDel_Click" />
-                        </div>
+            <!--serch end-->
+            <!--列表 start-->
+            <div id="list">
+                <asp:Repeater ID="rptList" runat="server">
+                    <HeaderTemplate>
+                        <table>
+                            <tr id="trtop">
+                                <td align="center" width="20%">
+                                    档案标题
+                                </td>
+                                <td align="center" width="20%">
+                                    结束时间
+                                </td>
+                                <td align="center" width="20%">
+                                    物品类型
+                                </td>
+                                <td align="center" width="15%">
+                                    审核状态
+                                </td>
+                                <td align="center" width="25%">
+                                    操作菜单
+                                </td>
+                            </tr>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr id="trmidd" style="height: 28px; border-top: 1px solid #ccc" onmousemove="this.style.backgroundColor='#F7F7F7'"
+                            onmouseout="this.style.backgroundColor='#ffffff'">
+                            <td id="tdtitle">
+                                <%# Eval("Title") %>
+                            </td>
+                            <td>
+                                <span style="color: Red" >
+                                    <%# GetEndDate(Eval("EndDate"))%></span>
+                            </td>
+                            <td>
+                                <%# Eval("ForeColseTypeName")%>
+                            </td>
+                            <td>
+                                <%# GetAuditingState(XYECOM.Core.MyConvert.GetInt32(Eval("State").ToString()))%>
+                            </td>
+                            <td>
+                                <asp:HyperLink ID="hlUpdate" runat="server" NavigateUrl='<%# "UpdateForeclosed.aspx?Id=" + Eval("ForeclosedId") %>'>修改</asp:HyperLink>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:LinkButton runat="server" ID="lbtnDelete" Text="删除" OnClick="lbtnDelete_Click"
+                                    CommandArgument='<%# Eval("ForeclosedId")%>' OnClientClick="return confirm('确定删除吗？');"></asp:LinkButton>
+                                <asp:LinkButton runat="server" ID="LinkClose" Text="关闭" OnClick="lbtnClose_Click"
+                                    CommandArgument='<%# Eval("ForeclosedId")%>' OnClientClick="return confirm('确定关闭吗？');"></asp:LinkButton>
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </table></FooterTemplate>
+                </asp:Repeater>
+                <div style="height: 30px;">
+                    <div align="center">
+                        <XYECOM:Page ID="Page1" runat="server" PageSize="20" OnPageChanged="Page1_PageChanged" />
                     </div>
-                </ItemTemplate>
-            </asp:Repeater>
-            <p style="text-align: center;">
-                <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
-            </p>
+                </div>
+                <div>
+                    <p style="text-align: center;">
+                        <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></p>
+                </div>
+            </div>
+            <!--列表 end-->
         </div>
-        <div class="guanli_bott">
-            <input id="chkAll" name="chkAll" onclick="chkAll_true()" type="checkbox" />全选
-            <asp:ImageButton ImageUrl="/user/image/guanli_09.jpg" ID="btnDelete" OnClientClick="return del();"
-                runat="server" OnClick="btnDelete_Click" CssClass="buttonSkinB" />
-            <XYECOM:Page ID="mypage" runat="server" PageSize="10" OnPageChanged="mypage_PageChanaged" />
-        </div>
+        <!--rightpart end-->
     </div>
+    <!--right end-->
 </asp:Content>

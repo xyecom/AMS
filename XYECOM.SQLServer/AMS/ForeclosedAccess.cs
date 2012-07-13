@@ -185,5 +185,17 @@ namespace XYECOM.SQLServer.AMS
             int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
             return rowAffected;
         }
+
+        /// <summary>
+        /// 关闭抵债信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int ClosedByID(int id)
+        {
+            string sql = "UPDATE dbo.ForeclosedInfo SET EndDate = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' WHERE ForeclosedId = " + id;
+            int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
+            return rowAffected;
+        }
     }
 }

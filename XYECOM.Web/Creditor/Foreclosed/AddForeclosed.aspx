@@ -68,7 +68,7 @@
                         结束竞拍时间：
                     </td>
                     <td colspan="3">
-                        <input id="endDate" runat="server" size="10" type="text" readonly="readonly" onclick="getDateString(this);" />
+                        <input id="endDate" style="width:120px" runat="server" size="10" type="text" readonly="readonly" onclick="getDateString(this);" />
                     </td>
                 </tr>
                 <tr>
@@ -77,7 +77,7 @@
                     </td>
                     <td colspan="3">
                         <FCKeditorV2:FCKeditor ID="fckDescription" runat="server" BasePath="/Common/fckeditor/"
-                            ToolbarSet="News" Height="200px">
+                            ToolbarSet="News" Height="500px">
                         </FCKeditorV2:FCKeditor>
                     </td>
                 </tr>
@@ -91,8 +91,8 @@
                     选择图片：
                 </p>
                 <p>
-                    <XYECOM:UploadImage ID="supplyImages" runat="server" Iswatermark="false" MaxAmount="3"
-                        TableName="i_supply" IsCreateThumbnailImg="true" />
+                    <%--<XYECOM:UploadImage ID="supplyImages" runat="server" Iswatermark="false" MaxAmount="3"
+                        TableName="i_supply" IsCreateThumbnailImg="true" />--%>
                 </p>
             </div>
         </div>
@@ -101,6 +101,7 @@
             <%--  <input type="button" value="确 定" style="background: url(../images/yes.gif); width: 80px;
                 height: 25px; border: none; cursor: pointer; color: #FFF" />--%>
             <asp:Button runat="server" ID="btnOK" Width="80px" Height="25px" Text="确定" OnClick="btnOK_Click" />
+            <input type="button" value="返回" onclick="javascript:history.back();" />
         </div>
     </div>
     <!--right end-->
