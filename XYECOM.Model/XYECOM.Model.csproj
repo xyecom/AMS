@@ -55,6 +55,7 @@
     <Compile Include="AdPlaceInfo.cs" />
     <Compile Include="AdPlaceTypeInfo.cs" />
     <Compile Include="AdTrafficLogInfo.cs" />
+    <Compile Include="AMS\CreditState.cs" />
     <Compile Include="AMS\BidInfo.cs" />
     <Compile Include="AMS\CreditInfo.cs" />
     <Compile Include="AMS\Evaluation.cs" />

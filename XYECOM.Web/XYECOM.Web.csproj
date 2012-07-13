@@ -123,11 +123,18 @@
     <Compile Include="Common\XYOutInvoke.aspx.designer.cs">
       <DependentUpon>XYOutInvoke.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Creditor\Foreclosed\AddForeclosed.aspx.cs">
+    <Compile Include="Creditor\AddCreditInfo.aspx.cs">
+      <DependentUpon>AddCreditInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\AddCreditInfo.aspx.designer.cs">
+      <DependentUpon>AddCreditInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\AddForeclosed.aspx.cs">
       <DependentUpon>AddForeclosed.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Creditor\Foreclosed\AddForeclosed.aspx.designer.cs">
+    <Compile Include="Creditor\AddForeclosed.aspx.designer.cs">
       <DependentUpon>AddForeclosed.aspx</DependentUpon>
     </Compile>
     <Compile Include="Creditor\BaseEdit.aspx.cs">
@@ -144,18 +151,18 @@
     <Compile Include="Creditor\Creditor.master.designer.cs">
       <DependentUpon>Creditor.master</DependentUpon>
     </Compile>
-    <Compile Include="Creditor\Foreclosed\ForeclosedList.aspx.cs">
+    <Compile Include="Creditor\ForeclosedList.aspx.cs">
       <DependentUpon>ForeclosedList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Creditor\Foreclosed\ForeclosedList.aspx.designer.cs">
+    <Compile Include="Creditor\ForeclosedList.aspx.designer.cs">
       <DependentUpon>ForeclosedList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Creditor\Foreclosed\UpdateForeclosed.aspx.cs">
+    <Compile Include="Creditor\UpdateForeclosed.aspx.cs">
       <DependentUpon>UpdateForeclosed.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Creditor\Foreclosed\UpdateForeclosed.aspx.designer.cs">
+    <Compile Include="Creditor\UpdateForeclosed.aspx.designer.cs">
       <DependentUpon>UpdateForeclosed.aspx</DependentUpon>
     </Compile>
     <Compile Include="Creditor\Index.aspx.cs">
@@ -1501,9 +1508,10 @@
     <Content Include="Copyright.htm" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Creditor\Foreclosed\AddForeclosed.aspx" />
-    <Content Include="Creditor\Foreclosed\ForeclosedList.aspx" />
-    <Content Include="Creditor\Foreclosed\UpdateForeclosed.aspx" />
+    <Content Include="Creditor\AddCreditInfo.aspx" />
+    <Content Include="Creditor\AddForeclosed.aspx" />
+    <Content Include="Creditor\ForeclosedList.aspx" />
+    <Content Include="Creditor\UpdateForeclosed.aspx" />
     <Content Include="Creditor\BaseEdit.aspx" />
     <Content Include="Creditor\Index.aspx" />
     <Content Include="Creditor\UserContorl\left.ascx" />
