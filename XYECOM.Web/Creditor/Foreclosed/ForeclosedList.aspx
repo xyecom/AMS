@@ -26,8 +26,8 @@
             </div>
             <!--serch end-->
             <!--列表 start-->
-            <div id="list">
-                <asp:Repeater ID="rptList" runat="server">
+            <div id="list">                
+                <asp:Repeater ID="rptList" runat="server" >
                     <HeaderTemplate>
                         <table>
                             <tr id="trtop">
@@ -55,7 +55,7 @@
                                 <%# Eval("Title") %>
                             </td>
                             <td>
-                                <span style="color: Red" >
+                                <span style="color: Red">
                                     <%# GetEndDate(Eval("EndDate"))%></span>
                             </td>
                             <td>
@@ -66,11 +66,6 @@
                             </td>
                             <td>
                                 <asp:HyperLink ID="hlUpdate" runat="server" NavigateUrl='<%# "UpdateForeclosed.aspx?Id=" + Eval("ForeclosedId") %>'>修改</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:LinkButton runat="server" ID="lbtnDelete" Text="删除" OnClick="lbtnDelete_Click"
-                                    CommandArgument='<%# Eval("ForeclosedId")%>' OnClientClick="return confirm('确定删除吗？');"></asp:LinkButton>
-                                <asp:LinkButton runat="server" ID="LinkClose" Text="关闭" OnClick="lbtnClose_Click"
-                                    CommandArgument='<%# Eval("ForeclosedId")%>' OnClientClick="return confirm('确定关闭吗？');"></asp:LinkButton>
                             </td>
                         </tr>
                     </ItemTemplate>

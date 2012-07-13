@@ -179,12 +179,26 @@
     <Compile Include="Creditor\UserContorl\menu.ascx.designer.cs">
       <DependentUpon>menu.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ForeclosedDetail.aspx.cs">
+      <DependentUpon>ForeclosedDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForeclosedDetail.aspx.designer.cs">
+      <DependentUpon>ForeclosedDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GetPassWord.aspx.cs">
       <DependentUpon>GetPassWord.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GetPassWord.aspx.designer.cs">
       <DependentUpon>GetPassWord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -1493,6 +1507,7 @@
     <Content Include="Creditor\Index.aspx" />
     <Content Include="Creditor\UserContorl\left.ascx" />
     <Content Include="Creditor\UserContorl\menu.ascx" />
+    <Content Include="ForeclosedDetail.aspx" />
     <Content Include="front\css\layout.css" />
     <Content Include="front\css\main.css" />
     <Content Include="front\css\nav.css" />
@@ -1585,6 +1600,7 @@
     <Content Include="front\js\zd.js" />
     <Content Include="front\js\zu.js" />
     <Content Include="GetPassWord.aspx" />
+    <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="LogOut.aspx" />
     <Content Include="My97DatePicker\calendar.js" />

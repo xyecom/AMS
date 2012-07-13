@@ -140,6 +140,8 @@ namespace XYECOM.URL
                 context.Response.End();
             }
 
+            return;
+
             //如果是注册或登陆直接进入
             if (input.StartsWith("/login.aspx") || input.StartsWith("/register.aspx") || input.StartsWith("/getpassword.aspx") || input.StartsWith("/logout.aspx"))
             {

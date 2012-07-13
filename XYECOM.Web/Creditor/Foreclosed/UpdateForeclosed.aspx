@@ -100,6 +100,7 @@
             <%--  <input type="button" value="确 定" style="background: url(../images/yes.gif); width: 80px;
                 height: 25px; border: none; cursor: pointer; color: #FFF" />--%>
             <asp:Button runat="server" ID="btnOK" Width="80px" Height="25px" Text="确定" OnClick="btnOK_Click" />
+            <input type="button" value="返回" onclick="javascript:history.back();" />
         </div>
         <input type="hidden" id="hiddID" runat="server" />
     </div>

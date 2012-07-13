@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Data;
+using System.Data.SqlClient;
+using XYECOM.Core.Data;
+using XYECOM.Core;
+using XYECOM.Model.AMS;
+
+namespace XYECOM.SQLServer.AMS
+{
+    /// <summary>
+    /// 竞价
+    /// </summary>
+    public class BidInfoAccess
+    {
+        /// <summary>
+        /// 新增报价信息
+        /// </summary>
+        /// <param name="info"></param>
+        /// <returns></returns>
+        public int InserBidInfo(BidInfo info)
+        {
+            string sql = @"insert into bidinfo (Price,ForeclosedId,PriceDate,FromAddress,Contact,Remark)
+                                    values (@Price,@ForeclosedId,@PriceDate,@FromAddress,@Contact,@Remark)";
+            SqlParameter[] param = new SqlParameter[]
+            {
+                new SqlParameter("@Price",info.Price),
+                new SqlParameter("@ForeclosedId",info.ForeclosedId),
+                new SqlParameter("@PriceDate",info.PriceDate),
+                new SqlParameter("@FromAddress",info.FromAddress),
+                new SqlParameter("@Contact",info.Contact),
+                new SqlParameter("@Remark",info.Remark)
+            };
+            int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, param);
+            return rowAffected;
+        }
+
+        /// <summary>
+        /// 获取领先信息
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetLingXian(int ForeclosedId)
+        {
+            string sql = "select top 3 * from bidinfo where ForeclosedId = " + ForeclosedId + " order by Price desc";
+            return SqlHelper.ExecuteTable(CommandType.Text, sql, null);
+        }
+
+
+    }
+}

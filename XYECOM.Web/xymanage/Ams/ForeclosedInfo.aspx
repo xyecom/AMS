@@ -139,7 +139,7 @@
                                     <asp:Button ID="btnPass" runat="server" CssClass="button" Text="通过审核" OnClick="btnPass_Click" />
                                     <asp:Button ID="btnNoPass" runat="server" CssClass="button" Text="通过不审核" OnClick="btnNoPass_Click" />
                                     <asp:Button ID="Button3" runat="server" Text="返回" CssClass="button" OnClick="Button3_Click" />
-                                    <input type="hidden"  runat="server" id="hidID"/>
+                                    <input type="hidden" runat="server" id="hidID" />
                                 </label>
                             </td>
                         </tr>
