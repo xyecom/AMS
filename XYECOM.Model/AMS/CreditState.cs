@@ -12,41 +12,46 @@ namespace XYECOM.Model
         /// <summary>
         /// 草稿
         /// </summary>
-        Draft,
+        Draft =0,
 
         /// <summary>
         /// 未审核
         /// </summary>
-        Null,
+        Null =-1,
 
         /// <summary>
         /// 审核未通过
         /// </summary>
-        NoPass,
+        NoPass = 1,
 
         /// <summary>
         /// 投标中
         /// </summary>
-        Tender,
+        Tender =2,
 
         /// <summary>
         /// 案件进行中
         /// </summary>
-        InProgress,
+        InProgress = 3,
 
         /// <summary>
         /// 服务商案件完成等待债权人确认
         /// </summary>
-        CreditConfirm,
+        CreditConfirm = 4,
 
         /// <summary>
         ///案件结束
         /// </summary>
-        CreditEnd,
+        CreditEnd = 5,
 
         /// <summary>
         /// 债权人取消案件
         /// </summary>
-        Canceled
+        Canceled= 6,
+
+        /// <summary>
+        /// 已删除
+        /// </summary>
+        Delete = 7
     }
 }

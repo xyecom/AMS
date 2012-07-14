@@ -21,10 +21,10 @@
                 <table style="margin-top: 2px;" class="tab">
                     <tr>
                         <td class="info_lei3">
-                            案件标题
+                             <span class="red">*</span>案件标题
                         </td>
                         <td colspan="3">
-                            <asp:TextBox runat="server" ID="txtTitle" Width="600px"></asp:TextBox>
+                           <asp:TextBox runat="server" ID="txtTitle" Width="600px"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>

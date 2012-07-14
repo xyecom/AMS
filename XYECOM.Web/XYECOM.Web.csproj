@@ -144,6 +144,13 @@
     <Compile Include="Creditor\BaseEdit.aspx.designer.cs">
       <DependentUpon>BaseEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Creditor\CreditInfoList.aspx.cs">
+      <DependentUpon>CreditInfoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\CreditInfoList.aspx.designer.cs">
+      <DependentUpon>CreditInfoList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Creditor\Creditor.master.cs">
       <DependentUpon>Creditor.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1510,6 +1517,7 @@
   <ItemGroup>
     <Content Include="Creditor\AddCreditInfo.aspx" />
     <Content Include="Creditor\AddForeclosed.aspx" />
+    <Content Include="Creditor\CreditInfoList.aspx" />
     <Content Include="Creditor\ForeclosedList.aspx" />
     <Content Include="Creditor\UpdateForeclosed.aspx" />
     <Content Include="Creditor\BaseEdit.aspx" />
