@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>债权人注册</title>
-    <link href="/front/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="/Other/css/layout.css" rel="stylesheet" type="text/css" />
     <link href="/common/css/xylib.css" type="text/css" rel="stylesheet" />
     <script language="javascript" type="text/javascript" src="/Common/js/base.js"></script>
     <script language="javascript" type="text/javascript" src="/config/js/config.js"></script>
@@ -15,7 +15,7 @@
         <!----------头部开始----------------->
         <div id="top">
             <div class="logo">
-                <img src="/front/images/logo.png" /></div>
+                <img src="/Other/images/logo.png" /></div>
             <p class="p1">
                 <a href="#">关于我们</a> | <a href="#">安全承诺</a> | <a href="#">加入收藏</a> | <a href="#">设为首页</a></p>
         </div>

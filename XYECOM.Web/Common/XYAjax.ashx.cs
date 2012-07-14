@@ -1252,7 +1252,7 @@ namespace XYECOM.Web.Common
             if (Business.CheckUser.CheckUserLogin())
             {
                 info.U_ID = Business.CheckUser.UserInfo.userid;
-                info.U_Name = Business.CheckUser.UserInfo.loginname;
+                info.U_Name = Business.CheckUser.UserInfo.LoginName;
             }
 
             info.ND_IsShow = true;

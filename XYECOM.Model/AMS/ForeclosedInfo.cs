@@ -102,7 +102,7 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 所属公司
         /// </summary>
-        public int UserId
+        public long CompanyId
         {
             get;
             set;

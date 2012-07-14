@@ -292,14 +292,7 @@ namespace XYECOM.Model
             get { return _ac_id; }
             set { _ac_id = value; }
         }
-        /// <summary>
-        /// 主要经营地区
-        /// </summary>
-        public string BusinessAddress
-        {
-            get { return _u_address; }
-            set { _u_address = value; }
-        }
+
         /// <summary>
         /// 主营产品或服务
         /// </summary>

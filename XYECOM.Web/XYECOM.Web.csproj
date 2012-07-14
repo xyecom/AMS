@@ -11,10 +11,14 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XYECOM.Web</RootNamespace>
     <AssemblyName>XYECOM.Web</AssemblyName>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>4.0</OldToolsVersion>
@@ -144,12 +148,47 @@
     <Compile Include="Creditor\Creditor.master.designer.cs">
       <DependentUpon>Creditor.master</DependentUpon>
     </Compile>
+    <Compile Include="Creditor\EditPartInfo.aspx.cs">
+      <DependentUpon>EditPartInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\EditPartInfo.aspx.designer.cs">
+      <DependentUpon>EditPartInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Creditor\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Creditor\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\ModifyPwd.aspx.cs">
+      <DependentUpon>ModifyPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\ModifyPwd.aspx.designer.cs">
+      <DependentUpon>ModifyPwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\PartIndex.aspx.cs">
+      <DependentUpon>PartIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\PartIndex.aspx.designer.cs">
+      <DependentUpon>PartIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\PartList.aspx.cs">
+      <DependentUpon>PartList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\PartList.aspx.designer.cs">
+      <DependentUpon>PartList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\SetQuestion.aspx.cs">
+      <DependentUpon>SetQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\SetQuestion.aspx.designer.cs">
+      <DependentUpon>SetQuestion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Creditor\UserContorl\left.ascx.cs">
       <DependentUpon>left.ascx</DependentUpon>
@@ -193,6 +232,20 @@
     <Compile Include="Other\UserCenter.Master.designer.cs">
       <DependentUpon>UserCenter.Master</DependentUpon>
     </Compile>
+    <Compile Include="Other\UserContorl\ModifyPwd.ascx.cs">
+      <DependentUpon>ModifyPwd.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Other\UserContorl\ModifyPwd.ascx.designer.cs">
+      <DependentUpon>ModifyPwd.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Other\UserContorl\SetQuestion.ascx.cs">
+      <DependentUpon>SetQuestion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Other\UserContorl\SetQuestion.ascx.designer.cs">
+      <DependentUpon>SetQuestion.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -201,6 +254,13 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Server\BaseEdit.aspx.cs">
+      <DependentUpon>BaseEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\BaseEdit.aspx.designer.cs">
+      <DependentUpon>BaseEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Server\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -208,12 +268,33 @@
     <Compile Include="Server\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Server\ModifyPwd.aspx.cs">
+      <DependentUpon>ModifyPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\ModifyPwd.aspx.designer.cs">
+      <DependentUpon>ModifyPwd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Server\Server.master.cs">
       <DependentUpon>Server.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Server\Server.master.designer.cs">
       <DependentUpon>Server.master</DependentUpon>
+    </Compile>
+    <Compile Include="Server\SetQuestion.aspx.cs">
+      <DependentUpon>SetQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\SetQuestion.aspx.designer.cs">
+      <DependentUpon>SetQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Server\UpLoadPicture.aspx.cs">
+      <DependentUpon>UpLoadPicture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\UpLoadPicture.aspx.designer.cs">
+      <DependentUpon>UpLoadPicture.aspx</DependentUpon>
     </Compile>
     <Compile Include="Server\UserContorl\left.ascx.cs">
       <DependentUpon>left.ascx</DependentUpon>
@@ -1328,12 +1409,19 @@
     <Compile Include="xymanage\UserManage\LivenessInfo.aspx.designer.cs">
       <DependentUpon>LivenessInfo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="xymanage\UserManage\ResumeList.aspx.cs">
-      <DependentUpon>ResumeList.aspx</DependentUpon>
+    <Compile Include="xymanage\UserManage\PartInfo.aspx.cs">
+      <DependentUpon>PartInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="xymanage\UserManage\ResumeList.aspx.designer.cs">
-      <DependentUpon>ResumeList.aspx</DependentUpon>
+    <Compile Include="xymanage\UserManage\PartInfo.aspx.designer.cs">
+      <DependentUpon>PartInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xymanage\UserManage\SubUserList.aspx.cs">
+      <DependentUpon>SubUserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xymanage\UserManage\SubUserList.aspx.designer.cs">
+      <DependentUpon>SubUserList.aspx</DependentUpon>
     </Compile>
     <Compile Include="xymanage\UserManage\UserDomainManage.aspx.cs">
       <DependentUpon>UserDomainManage.aspx</DependentUpon>
@@ -1467,100 +1555,14 @@
   <ItemGroup>
     <Content Include="Creditor\AddForeclosed.aspx" />
     <Content Include="Creditor\BaseEdit.aspx" />
+    <Content Include="Creditor\EditPartInfo.aspx" />
     <Content Include="Creditor\Index.aspx" />
+    <Content Include="Creditor\ModifyPwd.aspx" />
+    <Content Include="Creditor\PartIndex.aspx" />
+    <Content Include="Creditor\PartList.aspx" />
+    <Content Include="Creditor\SetQuestion.aspx" />
     <Content Include="Creditor\UserContorl\left.ascx" />
     <Content Include="Creditor\UserContorl\menu.ascx" />
-    <Content Include="front\css\layout.css" />
-    <Content Include="front\css\main.css" />
-    <Content Include="front\css\nav.css" />
-    <Content Include="front\css\sercss.css" />
-    <Content Include="front\css\serverinfo.css" />
-    <Content Include="front\css\style.css" />
-    <Content Include="front\css\vipnew_home_20110412.css" />
-    <Content Include="front\images\.doc.PNG" />
-    <Content Include="front\images\.gif.PNG" />
-    <Content Include="front\images\1.gif" />
-    <Content Include="front\images\11.gif" />
-    <Content Include="front\images\1212.gif" />
-    <Content Include="front\images\2.gif" />
-    <Content Include="front\images\20111221C.gif" />
-    <Content Include="front\images\22.gif" />
-    <Content Include="front\images\3.gif" />
-    <Content Include="front\images\33.gif" />
-    <Content Include="front\images\4343.gif" />
-    <Content Include="front\images\723280_121819740000_2.gif" />
-    <Content Include="front\images\ads1.jpg" />
-    <Content Include="front\images\bg3.gif" />
-    <Content Include="front\images\bg4.gif" />
-    <Content Include="front\images\border_bg.jpg" />
-    <Content Include="front\images\cctv.gif" />
-    <Content Include="front\images\cj.gif" />
-    <Content Include="front\images\erji_titlebg.gif" />
-    <Content Include="front\images\hw.gif" />
-    <Content Include="front\images\ifocus_btn_bg.gif" />
-    <Content Include="front\images\jian.gif" />
-    <Content Include="front\images\jshead.gif" />
-    <Content Include="front\images\left1.gif" />
-    <Content Include="front\images\line.gif" />
-    <Content Include="front\images\line1.gif" />
-    <Content Include="front\images\lit.gif" />
-    <Content Include="front\images\logo.gif" />
-    <Content Include="front\images\logo.png" />
-    <Content Include="front\images\logo1.gif" />
-    <Content Include="front\images\lszl.gif" />
-    <Content Include="front\images\magglass.gif" />
-    <Content Include="front\images\man.GIF" />
-    <Content Include="front\images\menubg1.gif" />
-    <Content Include="front\images\menu_bg.jpg" />
-    <Content Include="front\images\nav.gif" />
-    <Content Include="front\images\nry_03.jpg" />
-    <Content Include="front\images\ok.gif" />
-    <Content Include="front\images\okhank.gif" />
-    <Content Include="front\images\quit.gif" />
-    <Content Include="front\images\ryjzs.gif" />
-    <Content Include="front\images\serch.PNG" />
-    <Content Include="front\images\sjyes.gif" />
-    <Content Include="front\images\tb.gif" />
-    <Content Include="front\images\tel.gif" />
-    <Content Include="front\images\tjbg.gif" />
-    <Content Include="front\images\topb.gif" />
-    <Content Include="front\images\vip_template_10.jpg" />
-    <Content Include="front\images\yes.gif" />
-    <Content Include="front\images\yindao_bg.gif" />
-    <Content Include="front\images\yxno.gif" />
-    <Content Include="front\images\zhzt.gif" />
-    <Content Include="front\images\zk.jpg" />
-    <Content Include="front\images\zoom\closebox.png" />
-    <Content Include="front\images\zoom\spacer.gif" />
-    <Content Include="front\images\zoom\zoom-caption-fill.png" />
-    <Content Include="front\images\zoom\zoom-caption-l.png" />
-    <Content Include="front\images\zoom\zoom-caption-r.png" />
-    <Content Include="front\images\zoom\zoom-shadow1.png" />
-    <Content Include="front\images\zoom\zoom-shadow2.png" />
-    <Content Include="front\images\zoom\zoom-shadow3.png" />
-    <Content Include="front\images\zoom\zoom-shadow4.png" />
-    <Content Include="front\images\zoom\zoom-shadow5.png" />
-    <Content Include="front\images\zoom\zoom-shadow6.png" />
-    <Content Include="front\images\zoom\zoom-shadow7.png" />
-    <Content Include="front\images\zoom\zoom-shadow8.png" />
-    <Content Include="front\images\zoom\zoom-spin-1.png" />
-    <Content Include="front\images\zoom\zoom-spin-10.png" />
-    <Content Include="front\images\zoom\zoom-spin-11.png" />
-    <Content Include="front\images\zoom\zoom-spin-12.png" />
-    <Content Include="front\images\zoom\zoom-spin-2.png" />
-    <Content Include="front\images\zoom\zoom-spin-3.png" />
-    <Content Include="front\images\zoom\zoom-spin-4.png" />
-    <Content Include="front\images\zoom\zoom-spin-5.png" />
-    <Content Include="front\images\zoom\zoom-spin-6.png" />
-    <Content Include="front\images\zoom\zoom-spin-7.png" />
-    <Content Include="front\images\zoom\zoom-spin-8.png" />
-    <Content Include="front\images\zoom\zoom-spin-9.png" />
-    <Content Include="front\js\FancyZoom.js" />
-    <Content Include="front\js\FancyZoomHTML.js" />
-    <Content Include="front\js\jquery.js" />
-    <Content Include="front\js\update8.js" />
-    <Content Include="front\js\zd.js" />
-    <Content Include="front\js\zu.js" />
     <Content Include="GetPassWord.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="LogOut.aspx" />
@@ -1589,6 +1591,10 @@
     <Content Include="My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
     <Content Include="My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
     <Content Include="My97DatePicker\开发包\skin\whyGreen\img.gif" />
+    <Content Include="Other\js\ForeUploadControl.js" />
+    <Content Include="Other\js\login.js" />
+    <Content Include="Other\UserContorl\ModifyPwd.ascx" />
+    <Content Include="Other\UserContorl\SetQuestion.ascx" />
     <Content Include="Register.aspx" />
     <Content Include="Other\css\layout.css" />
     <Content Include="Other\css\main.css" />
@@ -1669,6 +1675,7 @@
     <Content Include="Other\images\zoom\zoom-spin-7.png" />
     <Content Include="Other\images\zoom\zoom-spin-8.png" />
     <Content Include="Other\images\zoom\zoom-spin-9.png" />
+    <Content Include="Server\BaseEdit.aspx" />
     <Content Include="Server\Index.aspx" />
     <Content Include="Other\js\FancyZoom.js" />
     <Content Include="Other\js\FancyZoomHTML.js" />
@@ -1676,24 +1683,12 @@
     <Content Include="Other\js\update8.js" />
     <Content Include="Other\js\zd.js" />
     <Content Include="Other\js\zu.js" />
+    <Content Include="Server\ModifyPwd.aspx" />
+    <Content Include="Server\SetQuestion.aspx" />
+    <Content Include="Server\UpLoadPicture.aspx" />
     <Content Include="Server\UserContorl\left.ascx" />
     <Content Include="Server\UserContorl\menu.ascx" />
     <Content Include="templates\default\js\attribute.js" />
-    <Content Include="templates\default\js\SupplyBuyValidate.js" />
-    <Content Include="templates\default\person\accountrecharge.htm" />
-    <Content Include="templates\default\person\adv_postbuy.htm" />
-    <Content Include="templates\default\person\supplybuy.htm" />
-    <Content Include="templates\default\person\supplybuydoing.htm" />
-    <Content Include="templates\default\person\supplybuynopass.htm" />
-    <Content Include="templates\default\quickbuy.htm" />
-    <Content Include="templates\default\search\buyinfo.htm" />
-    <Content Include="templates\default\search\buy_search.htm" />
-    <Content Include="templates\default\teambuy\details.htm" />
-    <Content Include="templates\default\teambuy\index.htm" />
-    <Content Include="templates\default\user\adv_postbuy.htm" />
-    <Content Include="templates\default\user\supplybuy.htm" />
-    <Content Include="templates\default\user\supplybuydoing.htm" />
-    <Content Include="templates\default\user\supplybuynopass.htm" />
     <Content Include="templates\_shop\default\about.gif" />
     <Content Include="templates\_shop\default\about.xml" />
     <Content Include="templates\_shop\default\brandinfo.htm" />
@@ -1743,7 +1738,6 @@
     <Content Include="templates\_shop\default\offer.htm" />
     <Content Include="templates\_shop\default\product.htm" />
     <Content Include="templates\_shop\default\service.htm" />
-    <Content Include="templates\default\teambuy\list.htm" />
     <Content Include="templates\_shop\default\venture.htm" />
     <Content Include="templates\_shop\default\venturelist.htm" />
     <Content Include="templates\_shop\default\_footer.htm" />
@@ -3048,19 +3042,6 @@
     <Content Include="templates\default\about.xml" />
     <Content Include="templates\default\activation.htm" />
     <Content Include="templates\default\area\index.htm" />
-    <Content Include="templates\default\baike\index.htm" />
-    <Content Include="templates\default\baike\lemmaadd.htm" />
-    <Content Include="templates\default\baike\lemmaedit.htm" />
-    <Content Include="templates\default\baike\list.htm" />
-    <Content Include="templates\default\baike\view.htm" />
-    <Content Include="templates\default\baike\_head.htm" />
-    <Content Include="templates\default\baike\_search.htm" />
-    <Content Include="templates\default\baike\_top.htm" />
-    <Content Include="templates\default\brand\index.htm" />
-    <Content Include="templates\default\brand\info.htm" />
-    <Content Include="templates\default\brand\_head.htm" />
-    <Content Include="templates\default\cate\index.htm" />
-    <Content Include="templates\default\company\info.htm" />
     <Content Include="templates\default\css\baike.css" />
     <Content Include="templates\default\css\channel.css" />
     <Content Include="templates\default\css\common.css" />
@@ -3362,130 +3343,13 @@
     <Content Include="templates\default\images\tit_news_guide.gif" />
     <Content Include="templates\default\images\tit_zhaoshang_medal.gif" />
     <Content Include="templates\default\images\wa.jpg" />
-    <Content Include="templates\default\keyword\index.htm" />
     <Content Include="templates\default\news\content.htm" />
-    <Content Include="templates\default\person\css\bgimages\a0.gif" />
-    <Content Include="templates\default\person\css\bgimages\a0.jpg" />
-    <Content Include="templates\default\person\css\bgimages\a11.gif" />
-    <Content Include="templates\default\person\css\bgimages\a12.gif" />
-    <Content Include="templates\default\person\css\bgimages\a13.gif" />
-    <Content Include="templates\default\person\css\bgimages\a14.gif" />
-    <Content Include="templates\default\person\css\bgimages\a17.gif" />
-    <Content Include="templates\default\person\css\bgimages\a18.gif" />
-    <Content Include="templates\default\person\css\bgimages\a19.gif" />
-    <Content Include="templates\default\person\css\bgimages\a2.jpg" />
-    <Content Include="templates\default\person\css\bgimages\a20.gif" />
-    <Content Include="templates\default\person\css\bgimages\a31.gif" />
-    <Content Include="templates\default\person\css\bgimages\a32.gif" />
-    <Content Include="templates\default\person\css\bgimages\a36.jpg" />
-    <Content Include="templates\default\person\css\bgimages\a37.jpg" />
-    <Content Include="templates\default\person\css\bgimages\a39.gif" />
-    <Content Include="templates\default\person\css\bgimages\a40.gif" />
-    <Content Include="templates\default\person\css\bgimages\a41.gif" />
-    <Content Include="templates\default\person\css\bgimages\a42.gif" />
-    <Content Include="templates\default\person\css\bgimages\a43.gif" />
-    <Content Include="templates\default\person\css\bgimages\a46.gif" />
-    <Content Include="templates\default\person\css\bgimages\act0.jpg" />
-    <Content Include="templates\default\person\css\bgimages\act01.jpg" />
-    <Content Include="templates\default\person\css\bgimages\act02.jpg" />
-    <Content Include="templates\default\person\css\bgimages\act2.jpg" />
-    <Content Include="templates\default\person\css\bgimages\add.gif" />
-    <Content Include="templates\default\person\css\bgimages\bg.jpg" />
-    <Content Include="templates\default\person\css\bgimages\bg0.jpg" />
-    <Content Include="templates\default\person\css\bgimages\bg1.gif" />
-    <Content Include="templates\default\person\css\bgimages\bg1.jpg" />
-    <Content Include="templates\default\person\css\bgimages\bg2.gif" />
-    <Content Include="templates\default\person\css\bgimages\bg3.gif" />
-    <Content Include="templates\default\person\css\bgimages\bg5.jpg" />
-    <Content Include="templates\default\person\css\bgimages\bg_menu.jpg" />
-    <Content Include="templates\default\person\css\bgimages\buzhun.gif" />
-    <Content Include="templates\default\person\css\bgimages\email.gif" />
-    <Content Include="templates\default\person\css\bgimages\foot.jpg" />
-    <Content Include="templates\default\person\css\bgimages\head.jpg" />
-    <Content Include="templates\default\person\css\bgimages\hov0.jpg" />
-    <Content Include="templates\default\person\css\bgimages\hov01.jpg" />
-    <Content Include="templates\default\person\css\bgimages\l50_bg_s.gif" />
-    <Content Include="templates\default\person\css\bgimages\ln.gif" />
-    <Content Include="templates\default\person\css\bgimages\ln1.gif" />
-    <Content Include="templates\default\person\css\bgimages\new.gif" />
-    <Content Include="templates\default\person\css\bgimages\nor0.jpg" />
-    <Content Include="templates\default\person\css\bgimages\nor01.jpg" />
-    <Content Include="templates\default\person\css\bgimages\nor02.jpg" />
-    <Content Include="templates\default\person\css\bgimages\nor2.jpg" />
-    <Content Include="templates\default\person\css\bgimages\nor3.jpg" />
-    <Content Include="templates\default\person\css\bgimages\online.gif" />
-    <Content Include="templates\default\person\css\bgimages\pbg.gif" />
-    <Content Include="templates\default\person\css\bgimages\pbg0.gif" />
-    <Content Include="templates\default\person\css\bgimages\set.gif" />
-    <Content Include="templates\default\person\css\bgimages\title_listbg.gif" />
-    <Content Include="templates\default\person\css\bgimages\zhun.gif" />
-    <Content Include="templates\default\person\css\main.css" />
-    <Content Include="templates\default\person\images\1.gif" />
-    <Content Include="templates\default\person\images\2.gif" />
-    <Content Include="templates\default\person\images\200811261702401944203237_s.jpg" />
-    <Content Include="templates\default\person\images\200811261711531011878697_s.jpg" />
-    <Content Include="templates\default\person\images\3.gif" />
-    <Content Include="templates\default\person\images\4.gif" />
-    <Content Include="templates\default\person\images\5.gif" />
-    <Content Include="templates\default\person\images\99bill.gif" />
-    <Content Include="templates\default\person\images\a10.gif" />
-    <Content Include="templates\default\person\images\a15.gif" />
-    <Content Include="templates\default\person\images\a21%281%29.gif" />
-    <Content Include="templates\default\person\images\a21.gif" />
-    <Content Include="templates\default\person\images\a22%281%29.gif" />
-    <Content Include="templates\default\person\images\a22.gif" />
-    <Content Include="templates\default\person\images\a23.gif" />
-    <Content Include="templates\default\person\images\a4.gif" />
-    <Content Include="templates\default\person\images\a5.gif" />
-    <Content Include="templates\default\person\images\a6.gif" />
-    <Content Include="templates\default\person\images\a7.gif" />
-    <Content Include="templates\default\person\images\a8.gif" />
-    <Content Include="templates\default\person\images\a9.gif" />
-    <Content Include="templates\default\person\images\ac01.gif" />
-    <Content Include="templates\default\person\images\ac2.gif" />
-    <Content Include="templates\default\person\images\ac3.gif" />
-    <Content Include="templates\default\person\images\ac4.gif" />
-    <Content Include="templates\default\person\images\ac5.gif" />
-    <Content Include="templates\default\person\images\alipay.gif" />
-    <Content Include="templates\default\person\images\answer.gif" />
-    <Content Include="templates\default\person\images\blog_bg.gif" />
-    <Content Include="templates\default\person\images\btn_write.gif" />
-    <Content Include="templates\default\person\images\buyer.gif" />
-    <Content Include="templates\default\person\images\chinabank.gif" />
-    <Content Include="templates\default\person\images\close_err.gif" />
-    <Content Include="templates\default\person\images\fix_r3.gif" />
-    <Content Include="templates\default\person\images\indexpoint.gif" />
-    <Content Include="templates\default\person\images\invitef.gif" />
-    <Content Include="templates\default\person\images\logo.gif" />
-    <Content Include="templates\default\person\images\p1.jpg" />
-    <Content Include="templates\default\person\images\p2.jpg" />
-    <Content Include="templates\default\person\images\pee.gif" />
-    <Content Include="templates\default\person\images\time_star.gif" />
-    <Content Include="templates\default\person\images\zoler_100.jpg" />
-    <Content Include="templates\default\person\js\main.js" />
-    <Content Include="templates\default\person\_menu.htm" />
-    <Content Include="templates\default\poll.htm" />
-    <Content Include="templates\default\search\_head.htm" />
-    <Content Include="templates\default\survey\index.htm" />
-    <Content Include="templates\default\trade\index.htm" />
-    <Content Include="templates\default\user\baikefav.htm" />
-    <Content Include="templates\default\user\baikeiuserinfo.htm" />
-    <Content Include="templates\default\user\bindingdomain.htm" />
-    <Content Include="templates\default\user\buyclassads.htm" />
-    <Content Include="templates\default\user\buy_classad_1.htm" />
-    <Content Include="templates\default\user\buy_classad_2.htm" />
-    <Content Include="templates\default\user\buy_key_2.htm" />
-    <Content Include="templates\default\company\index.htm" />
-    <Content Include="templates\default\company\_head.htm" />
     <Content Include="templates\default\contributor.htm" />
     <Content Include="templates\default\css\index.css" />
     <Content Include="templates\default\css\login.css" />
     <Content Include="templates\default\css\news.css" />
     <Content Include="templates\default\css\post.css" />
     <Content Include="templates\default\css\search.css" />
-    <Content Include="templates\default\exhibition\index.htm" />
-    <Content Include="templates\default\exhibition\info.htm" />
-    <Content Include="templates\default\exhibition\_head.htm" />
     <Content Include="templates\default\feedback.htm" />
     <Content Include="templates\default\getPassword.htm" />
     <Content Include="templates\default\images\buyask.gif" />
@@ -3493,407 +3357,27 @@
     <Content Include="templates\default\images\qq.gif" />
     <Content Include="templates\default\images\rate.gif" />
     <Content Include="templates\default\images\update.gif" />
-    <Content Include="templates\default\index.htm" />
-    <Content Include="templates\default\investment\index.htm" />
-    <Content Include="templates\default\investment\_head.htm" />
-    <Content Include="templates\default\job\index.htm" />
-    <Content Include="templates\default\job\list.htm" />
-    <Content Include="templates\default\job\resume.htm" />
-    <Content Include="templates\default\job\resumelist.htm" />
-    <Content Include="templates\default\job\_head.htm" />
     <Content Include="templates\default\js\common.js" />
     <Content Include="templates\default\js\date.js" />
     <Content Include="templates\default\js\focus.js" />
     <Content Include="templates\default\js\focus.swf" />
-    <Content Include="templates\default\js\login.js" />
     <Content Include="templates\default\js\news.js" />
-    <Content Include="templates\default\js\onlinejoin.js" />
-    <Content Include="templates\default\js\post.js" />
-    <Content Include="templates\default\js\register.js" />
     <Content Include="templates\default\js\search.js" />
     <Content Include="templates\default\js\ShowImg.js" />
     <Content Include="templates\default\js\validate.js" />
-    <Content Include="templates\default\login.htm" />
-    <Content Include="templates\default\logout.htm" />
     <Content Include="templates\default\news\channel.htm" />
     <Content Include="templates\default\news\comment.htm" />
     <Content Include="templates\default\news\index.htm" />
     <Content Include="templates\default\news\_head.htm" />
-    <Content Include="templates\default\offer\index.htm" />
-    <Content Include="templates\default\offer\sort.htm" />
-    <Content Include="templates\default\offer\_head.htm" />
-    <Content Include="templates\default\person\cashacount.htm" />
-    <Content Include="templates\default\person\consumptioninfo.htm" />
-    <Content Include="templates\default\person\css\bgimages\01.gif" />
-    <Content Include="templates\default\person\css\bgimages\02.gif" />
-    <Content Include="templates\default\person\css\bgimages\03.gif" />
-    <Content Include="templates\default\person\css\bgimages\adress_bg.gif" />
-    <Content Include="templates\default\person\css\bgimages\allow_help.gif" />
-    <Content Include="templates\default\person\css\bgimages\arow.gif" />
-    <Content Include="templates\default\person\css\bgimages\arrow_choice.gif" />
-    <Content Include="templates\default\person\css\bgimages\bg_arrow.gif" />
-    <Content Include="templates\default\person\css\bgimages\bg_close_cueoff.gif" />
-    <Content Include="templates\default\person\css\bgimages\bg_close_cueon.gif" />
-    <Content Include="templates\default\person\css\bgimages\bg_graybutton.gif" />
-    <Content Include="templates\default\person\css\bgimages\bg_reg.gif" />
-    <Content Include="templates\default\person\css\bgimages\bg_rfooter.gif" />
-    <Content Include="templates\default\person\css\bgimages\bg_shrink.gif" />
-    <Content Include="templates\default\person\css\bgimages\bg_spread.gif" />
-    <Content Include="templates\default\person\css\bgimages\choice_close_off.gif" />
-    <Content Include="templates\default\person\css\bgimages\choice_close_on.gif" />
-    <Content Include="templates\default\person\css\bgimages\company_icon.gif" />
-    <Content Include="templates\default\person\css\bgimages\contact_01.gif" />
-    <Content Include="templates\default\person\css\bgimages\con_hbg.gif" />
-    <Content Include="templates\default\person\css\bgimages\cue_button_bg.gif" />
-    <Content Include="templates\default\person\css\bgimages\cue_close.gif" />
-    <Content Include="templates\default\person\css\bgimages\cue_close_bg.gif" />
-    <Content Include="templates\default\person\css\bgimages\cue_close_off.gif" />
-    <Content Include="templates\default\person\css\bgimages\cue_close_on.gif" />
-    <Content Include="templates\default\person\css\bgimages\cue_footer.gif" />
-    <Content Include="templates\default\person\css\bgimages\cue_header.gif" />
-    <Content Include="templates\default\person\css\bgimages\footerzbg.gif" />
-    <Content Include="templates\default\person\css\bgimages\green.gif" />
-    <Content Include="templates\default\person\css\bgimages\headnav_bg.gif" />
-    <Content Include="templates\default\person\css\bgimages\head_bg.gif" />
-    <Content Include="templates\default\person\css\bgimages\help_info.gif" />
-    <Content Include="templates\default\person\css\bgimages\icon.gif" />
-    <Content Include="templates\default\person\css\bgimages\icon_announce.gif" />
-    <Content Include="templates\default\person\css\bgimages\icon_arrow.gif" />
-    <Content Include="templates\default\person\css\bgimages\icon_arrow02.gif" />
-    <Content Include="templates\default\person\css\bgimages\icon_primary.gif" />
-    <Content Include="templates\default\person\css\bgimages\icon_secondary.gif" />
-    <Content Include="templates\default\person\css\bgimages\input_bg.gif" />
-    <Content Include="templates\default\person\css\bgimages\issue_05.gif" />
-    <Content Include="templates\default\person\css\bgimages\line_dotted_bg.gif" />
-    <Content Include="templates\default\person\css\bgimages\loadbar_05.gif" />
-    <Content Include="templates\default\person\css\bgimages\ly_tit1.gif" />
-    <Content Include="templates\default\person\css\bgimages\ly_tit2.gif" />
-    <Content Include="templates\default\person\css\bgimages\ly_tit3.gif" />
-    <Content Include="templates\default\person\css\bgimages\nav_bg.gif" />
-    <Content Include="templates\default\person\css\bgimages\nav_bg02.gif" />
-    <Content Include="templates\default\person\css\bgimages\pic_arrow.gif" />
-    <Content Include="templates\default\person\css\bgimages\pic_arrow2.gif" />
-    <Content Include="templates\default\person\css\bgimages\pic_help.gif" />
-    <Content Include="templates\default\person\css\bgimages\pic_join.gif" />
-    <Content Include="templates\default\person\css\bgimages\pic_line.gif" />
-    <Content Include="templates\default\person\css\bgimages\pic_regline.gif" />
-    <Content Include="templates\default\person\css\bgimages\pic_search.gif" />
-    <Content Include="templates\default\person\css\bgimages\pic_warn.gif" />
-    <Content Include="templates\default\person\css\bgimages\pic_warn01.gif" />
-    <Content Include="templates\default\person\css\bgimages\pic_write.gif" />
-    <Content Include="templates\default\person\css\bgimages\products_1.gif" />
-    <Content Include="templates\default\person\css\bgimages\reg_right.gif" />
-    <Content Include="templates\default\person\css\bgimages\reg_write.gif" />
-    <Content Include="templates\default\person\css\bgimages\reg_wrong.gif" />
-    <Content Include="templates\default\person\css\bgimages\remessage01.gif" />
-    <Content Include="templates\default\person\css\bgimages\remessage03.gif" />
-    <Content Include="templates\default\person\css\bgimages\step_1_down.gif" />
-    <Content Include="templates\default\person\css\bgimages\step_1_up.gif" />
-    <Content Include="templates\default\person\css\bgimages\step_2_down.gif" />
-    <Content Include="templates\default\person\css\bgimages\step_2_up.gif" />
-    <Content Include="templates\default\person\css\bgimages\title_hbg.gif" />
-    <Content Include="templates\default\person\css\bgimages\top_bg.gif" />
-    <Content Include="templates\default\person\css\bgimages\UserMHeader_01.gif" />
-    <Content Include="templates\default\person\css\bgimages\UserMLeft_02.gif" />
-    <Content Include="templates\default\person\css\bgimages\UserMLeft_04.gif" />
-    <Content Include="templates\default\person\css\bgimages\WelcomeInfro_00.gif" />
-    <Content Include="templates\default\person\css\bgimages\WelcomeInfro_28.gif" />
-    <Content Include="templates\default\person\css\bgimages\WelcomeInfro_35.gif" />
-    <Content Include="templates\default\person\edituserpassword.htm" />
-    <Content Include="templates\default\person\fictitiouacount.htm" />
-    <Content Include="templates\default\person\FictitiouConsumptionInfo.htm" />
-    <Content Include="templates\default\person\images\ly_fuifu.gif" />
-    <Content Include="templates\default\person\images\ly_img1.gif" />
-    <Content Include="templates\default\person\images\ly_img2.gif" />
-    <Content Include="templates\default\person\images\ly_img3.gif" />
-    <Content Include="templates\default\person\images\ly_img4.gif" />
-    <Content Include="templates\default\person\images\ly_img5.gif" />
-    <Content Include="templates\default\person\images\ly_img6.gif" />
-    <Content Include="templates\default\person\images\ly_laji.gif" />
-    <Content Include="templates\default\person\images\ly_lianxi.gif" />
-    <Content Include="templates\default\person\images\ly_search.gif" />
-    <Content Include="templates\default\person\images\ly_tit1.gif" />
-    <Content Include="templates\default\person\images\ly_tit2.gif" />
-    <Content Include="templates\default\person\images\ly_tit3.gif" />
-    <Content Include="templates\default\person\images\ly_xiny.gif" />
-    <Content Include="templates\default\person\images\ly_z.gif" />
-    <Content Include="templates\default\person\images\WelcomeInfro_32.gif" />
-    <Content Include="templates\default\person\index.htm" />
-    <Content Include="templates\default\person\individualinfo.htm" />
-    <Content Include="templates\default\person\individuallist.htm" />
-    <Content Include="templates\default\person\inputmoney.htm" />
-    <Content Include="templates\default\person\invoice.htm" />
-    <Content Include="templates\default\person\js\common.js" />
-    <Content Include="templates\default\person\js\date.js" />
-    <Content Include="templates\default\person\js\validate.js" />
-    <Content Include="templates\default\person\postadministratormessage.htm" />
-    <Content Include="templates\default\person\receiveinvestmentmessagelist.htm" />
-    <Content Include="templates\default\person\receivemessageinfo.htm" />
-    <Content Include="templates\default\person\receivemessagelist.htm" />
-    <Content Include="templates\default\person\receiveoffermessagelist.htm" />
-    <Content Include="templates\default\person\remit.htm" />
-    <Content Include="templates\default\person\resume.htm" />
-    <Content Include="templates\default\person\resumesend.htm" />
-    <Content Include="templates\default\person\sendmessageinfo.htm" />
-    <Content Include="templates\default\person\sendmessagelist.htm" />
-    <Content Include="templates\default\person\_footer.htm" />
-    <Content Include="templates\default\person\_head.htm" />
-    <Content Include="templates\default\post.htm" />
-    <Content Include="templates\default\post_input.htm" />
-    <Content Include="templates\default\post_result.htm" />
-    <Content Include="templates\default\register.htm" />
-    <Content Include="templates\default\search\advanced_search.htm" />
-    <Content Include="templates\default\search\buy.htm" />
-    <Content Include="templates\default\search\buyer_search.htm" />
-    <Content Include="templates\default\search\compare.htm" />
-    <Content Include="templates\default\search\news_search.htm" />
-    <Content Include="templates\default\search\orderadd.htm" />
-    <Content Include="templates\default\search\picture.htm" />
-    <Content Include="templates\default\search\sell.htm" />
-    <Content Include="templates\default\search\seller_search.htm" />
-    <Content Include="templates\default\search\_buy_investment.htm" />
-    <Content Include="templates\default\search\_buy_machining.htm" />
-    <Content Include="templates\default\search\_buy_offer.htm" />
-    <Content Include="templates\default\search\_buy_service.htm" />
-    <Content Include="templates\default\search\_sell_investment.htm" />
-    <Content Include="templates\default\search\_sell_machining.htm" />
-    <Content Include="templates\default\search\_sell_offer.htm" />
-    <Content Include="templates\default\search\_sell_service.htm" />
-    <Content Include="templates\default\user\accountrecharge.htm" />
-    <Content Include="templates\default\user\addnews.htm" />
-    <Content Include="templates\default\user\adv_post.htm" />
-    <Content Include="templates\default\user\barndisauditinglist.htm" />
-    <Content Include="templates\default\user\barndnotauditinglist.htm" />
-    <Content Include="templates\default\user\brandadd.htm" />
-    <Content Include="templates\default\user\brandlist.htm" />
-    <Content Include="templates\default\user\brandupdate.htm" />
-    <Content Include="templates\default\user\businessdated.htm" />
-    <Content Include="templates\default\user\businessisauditinglist.htm" />
-    <Content Include="templates\default\user\businesslist.htm" />
-    <Content Include="templates\default\user\businessnotaudtiinglist.htm" />
-    <Content Include="templates\default\user\buylist.htm" />
-    <Content Include="templates\default\user\buylistdated.htm" />
-    <Content Include="templates\default\user\buylistisauditing.htm" />
-    <Content Include="templates\default\user\buylistnotauditing.htm" />
-    <Content Include="templates\default\user\buy_key_1.htm" />
-    <Content Include="templates\default\user\cashacount.htm" />
-    <Content Include="templates\default\user\certificateadd.htm" />
-    <Content Include="templates\default\user\certificateinfo.htm" />
-    <Content Include="templates\default\user\certificatelist.htm" />
-    <Content Include="templates\default\user\companyproducttype.htm" />
-    <Content Include="templates\default\user\companyproducttypeadd.htm" />
-    <Content Include="templates\default\user\companys.htm" />
-    <Content Include="templates\default\user\companysee.htm" />
-    <Content Include="templates\default\user\consumptioninfo.htm" />
-    <Content Include="templates\default\user\contributenewslist.htm" />
-    <Content Include="templates\default\user\css\bgimages\a0.gif" />
-    <Content Include="templates\default\user\css\bgimages\a0.jpg" />
-    <Content Include="templates\default\user\css\bgimages\a11.gif" />
-    <Content Include="templates\default\user\css\bgimages\a12.gif" />
-    <Content Include="templates\default\user\css\bgimages\a13.gif" />
-    <Content Include="templates\default\user\css\bgimages\a14.gif" />
-    <Content Include="templates\default\user\css\bgimages\a17.gif" />
-    <Content Include="templates\default\user\css\bgimages\a18.gif" />
-    <Content Include="templates\default\user\css\bgimages\a19.gif" />
-    <Content Include="templates\default\user\css\bgimages\a2.jpg" />
-    <Content Include="templates\default\user\css\bgimages\a20.gif" />
-    <Content Include="templates\default\user\css\bgimages\a31.gif" />
-    <Content Include="templates\default\user\css\bgimages\a32.gif" />
-    <Content Include="templates\default\user\css\bgimages\a36.jpg" />
-    <Content Include="templates\default\user\css\bgimages\a37.jpg" />
-    <Content Include="templates\default\user\css\bgimages\a39.gif" />
-    <Content Include="templates\default\user\css\bgimages\a40.gif" />
-    <Content Include="templates\default\user\css\bgimages\a41.gif" />
-    <Content Include="templates\default\user\css\bgimages\a42.gif" />
-    <Content Include="templates\default\user\css\bgimages\a43.gif" />
-    <Content Include="templates\default\user\css\bgimages\a46.gif" />
-    <Content Include="templates\default\user\css\bgimages\act0.jpg" />
-    <Content Include="templates\default\user\css\bgimages\act01.jpg" />
-    <Content Include="templates\default\user\css\bgimages\act02.jpg" />
-    <Content Include="templates\default\user\css\bgimages\act2.jpg" />
-    <Content Include="templates\default\user\css\bgimages\action.gif" />
-    <Content Include="templates\default\user\css\bgimages\add.gif" />
-    <Content Include="templates\default\user\css\bgimages\alarm.png" />
-    <Content Include="templates\default\user\css\bgimages\bg.jpg" />
-    <Content Include="templates\default\user\css\bgimages\bg0.jpg" />
-    <Content Include="templates\default\user\css\bgimages\bg1.gif" />
-    <Content Include="templates\default\user\css\bgimages\bg1.jpg" />
-    <Content Include="templates\default\user\css\bgimages\bg2.gif" />
-    <Content Include="templates\default\user\css\bgimages\bg3.gif" />
-    <Content Include="templates\default\user\css\bgimages\bg_menu.jpg" />
-    <Content Include="templates\default\user\css\bgimages\buzhun.gif" />
-    <Content Include="templates\default\user\css\bgimages\email.gif" />
-    <Content Include="templates\default\user\css\bgimages\foot.jpg" />
-    <Content Include="templates\default\user\css\bgimages\head.jpg" />
-    <Content Include="templates\default\user\css\bgimages\hov0.jpg" />
-    <Content Include="templates\default\user\css\bgimages\hov01.jpg" />
-    <Content Include="templates\default\user\css\bgimages\l50_bg_s.gif" />
-    <Content Include="templates\default\user\css\bgimages\ln.gif" />
-    <Content Include="templates\default\user\css\bgimages\ln1.gif" />
-    <Content Include="templates\default\user\css\bgimages\new.gif" />
-    <Content Include="templates\default\user\css\bgimages\nor0.jpg" />
-    <Content Include="templates\default\user\css\bgimages\nor01.jpg" />
-    <Content Include="templates\default\user\css\bgimages\nor02.jpg" />
-    <Content Include="templates\default\user\css\bgimages\nor2.jpg" />
-    <Content Include="templates\default\user\css\bgimages\nor3.jpg" />
-    <Content Include="templates\default\user\css\bgimages\online.gif" />
-    <Content Include="templates\default\user\css\bgimages\pbg.gif" />
-    <Content Include="templates\default\user\css\bgimages\pbg0.gif" />
-    <Content Include="templates\default\user\css\bgimages\pm.gif" />
-    <Content Include="templates\default\user\css\bgimages\poll.gif" />
-    <Content Include="templates\default\user\css\bgimages\set.gif" />
-    <Content Include="templates\default\user\css\bgimages\title_listbg.gif" />
-    <Content Include="templates\default\user\css\bgimages\zhun.gif" />
-    <Content Include="templates\default\user\css\main.css" />
-    <Content Include="templates\default\user\curclassads.htm" />
-    <Content Include="templates\default\user\customranking.htm" />
-    <Content Include="templates\default\user\dis_post_step.htm" />
-    <Content Include="templates\default\user\dis_post_step_2.htm" />
-    <Content Include="templates\default\user\editclassads.htm" />
-    <Content Include="templates\default\user\editnew.htm" />
-    <Content Include="templates\default\user\edituserinfo.htm" />
-    <Content Include="templates\default\user\edituserinfomore.htm" />
-    <Content Include="templates\default\user\edituserpassword.htm" />
-    <Content Include="templates\default\user\engageadd.htm" />
-    <Content Include="templates\default\user\engageedit.htm" />
-    <Content Include="templates\default\user\engageinfo.htm" />
-    <Content Include="templates\default\user\engagelist.htm" />
-    <Content Include="templates\default\user\favoriteallbusinesslist.htm" />
-    <Content Include="templates\default\user\favoritelist.htm" />
-    <Content Include="templates\default\user\favoriteotherlist.htm" />
-    <Content Include="templates\default\user\FictitiouConsumptionInfo.htm" />
-    <Content Include="templates\default\user\getgift.htm" />
-    <Content Include="templates\default\user\hisclassads.htm" />
-    <Content Include="templates\default\user\images\1.gif" />
-    <Content Include="templates\default\user\images\2.gif" />
-    <Content Include="templates\default\user\images\3.gif" />
-    <Content Include="templates\default\user\images\4.gif" />
-    <Content Include="templates\default\user\images\5.gif" />
-    <Content Include="templates\default\user\images\99bill.gif" />
-    <Content Include="templates\default\user\images\a10.gif" />
-    <Content Include="templates\default\user\images\a15.gif" />
-    <Content Include="templates\default\user\images\a21%281%29.gif" />
-    <Content Include="templates\default\user\images\a22%281%29.gif" />
-    <Content Include="templates\default\user\images\a22.gif" />
-    <Content Include="templates\default\user\images\a4.gif" />
-    <Content Include="templates\default\user\images\a5.gif" />
-    <Content Include="templates\default\user\images\a6.gif" />
-    <Content Include="templates\default\user\images\a7.gif" />
-    <Content Include="templates\default\user\images\a8.gif" />
-    <Content Include="templates\default\user\images\a9.gif" />
-    <Content Include="templates\default\user\images\ac01.gif" />
-    <Content Include="templates\default\user\images\ac2.gif" />
-    <Content Include="templates\default\user\images\ac3.gif" />
-    <Content Include="templates\default\user\images\ac4.gif" />
-    <Content Include="templates\default\user\images\ac5.gif" />
-    <Content Include="templates\default\user\images\alipay.gif" />
-    <Content Include="templates\default\user\images\answer.gif" />
-    <Content Include="templates\default\user\images\blog_bg.gif" />
-    <Content Include="templates\default\user\images\btn_write.gif" />
-    <Content Include="templates\default\user\images\buyer.gif" />
-    <Content Include="templates\default\user\images\cert.gif" />
-    <Content Include="templates\default\user\images\cert2.gif" />
-    <Content Include="templates\default\user\images\chinabank.gif" />
-    <Content Include="templates\default\user\images\close_err.gif" />
-    <Content Include="templates\default\user\images\fix_r3.gif" />
-    <Content Include="templates\default\user\images\indexpoint.gif" />
-    <Content Include="templates\default\user\images\invitef.gif" />
-    <Content Include="templates\default\user\images\logo.gif" />
-    <Content Include="templates\default\user\images\logox.gif" />
-    <Content Include="templates\default\user\images\ly_fuifu.gif" />
-    <Content Include="templates\default\user\images\ly_img1.gif" />
-    <Content Include="templates\default\user\images\ly_img2.gif" />
-    <Content Include="templates\default\user\images\ly_img3.gif" />
-    <Content Include="templates\default\user\images\ly_lianxi.gif" />
-    <Content Include="templates\default\user\images\ly_xiny.gif" />
-    <Content Include="templates\default\user\images\ly_z.gif" />
-    <Content Include="templates\default\user\images\money.gif" />
-    <Content Include="templates\default\user\images\note.gif" />
-    <Content Include="templates\default\user\images\p1.jpg" />
-    <Content Include="templates\default\user\images\p2.jpg" />
-    <Content Include="templates\default\user\images\pee.gif" />
-    <Content Include="templates\default\user\images\rate.gif" />
-    <Content Include="templates\default\user\images\shopindex.gif" />
-    <Content Include="templates\default\user\images\step_1_down.gif" />
-    <Content Include="templates\default\user\images\step_1_up.gif" />
-    <Content Include="templates\default\user\images\step_2_down.gif" />
-    <Content Include="templates\default\user\images\step_2_up.gif" />
-    <Content Include="templates\default\user\images\step_3_down.gif" />
-    <Content Include="templates\default\user\images\step_3_up.gif" />
-    <Content Include="templates\default\user\images\time_star.gif" />
-    <Content Include="templates\default\user\images\vm.png" />
-    <Content Include="templates\default\user\images\WelcomeInfro_32.gif" />
-    <Content Include="templates\default\user\images\zoler_100.jpg" />
-    <Content Include="templates\default\user\index.htm" />
-    <Content Include="templates\default\user\infoselect.htm" />
-    <Content Include="templates\default\user\inputmoney.htm" />
-    <Content Include="templates\default\user\invoice.htm" />
-    <Content Include="templates\default\user\invoicelist.htm" />
-    <Content Include="templates\default\user\joinlist.htm" />
-    <Content Include="templates\default\user\joinshow.htm" />
-    <Content Include="templates\default\user\js\common.js" />
-    <Content Include="templates\default\user\js\validate.js" />
-    <Content Include="templates\default\user\historyranking.htm" />
-    <Content Include="templates\default\user\curranking.htm" />
-    <Content Include="templates\default\user\mygift.htm" />
-    <Content Include="templates\default\user\newlist.htm" />
-    <Content Include="templates\default\user\orderbuyinfo.htm" />
-    <Content Include="templates\default\user\orderbuylist.htm" />
-    <Content Include="templates\default\user\orderbuythrulist.htm" />
-    <Content Include="templates\default\user\orderlist.htm" />
-    <Content Include="templates\default\user\ordermessageinfo.htm" />
-    <Content Include="templates\default\user\ordersaleinfo.htm" />
-    <Content Include="templates\default\user\ordersalelist.htm" />
-    <Content Include="templates\default\user\ordersalethrulist.htm" />
-    <Content Include="templates\default\user\ordertypeupdate.htm" />
-    <Content Include="templates\default\user\part.htm" />
-    <Content Include="templates\default\user\partlist.htm" />
-    <Content Include="templates\default\user\paymentreturn.htm" />
-    <Content Include="templates\default\user\postadministratormessage.htm" />
-    <Content Include="templates\default\user\receiveinvestmentmessagelist.htm" />
-    <Content Include="templates\default\user\receivemessageinfo.htm" />
-    <Content Include="templates\default\user\receivemessagelist.htm" />
-    <Content Include="templates\default\user\receiveoffermessagelist.htm" />
-    <Content Include="templates\default\user\registerinfo.htm" />
-    <Content Include="templates\default\user\rematching.htm" />
-    <Content Include="templates\default\user\remit.htm" />
-    <Content Include="templates\default\user\resumeinfo.htm" />
-    <Content Include="templates\default\user\resumelist.htm" />
-    <Content Include="templates\default\user\searchkeyword.htm" />
-    <Content Include="templates\default\user\selectshoptemp.htm" />
-    <Content Include="templates\default\user\sendmessageinfo.htm" />
-    <Content Include="templates\default\user\sendmessagelist.htm" />
-    <Content Include="templates\default\user\servicelistdated.htm" />
-    <Content Include="templates\default\user\supplyisauditing.htm" />
-    <Content Include="templates\default\user\supplylist.htm" />
-    <Content Include="templates\default\user\supplylistdated.htm" />
-    <Content Include="templates\default\user\supplynotauditing.htm" />
-    <Content Include="templates\default\user\surrogateisauditinglist.htm" />
-    <Content Include="templates\default\user\surrogatelist.htm" />
-    <Content Include="templates\default\user\surrogatenotauditinglist.htm" />
-    <Content Include="templates\default\user\uploadbanner.htm" />
-    <Content Include="templates\default\user\uploadimage.htm" />
-    <Content Include="templates\default\user\uploadlogo.htm" />
-    <Content Include="templates\default\user\userannounce.htm" />
-    <Content Include="templates\default\user\userfirendlink.htm" />
-    <Content Include="templates\default\user\userfirendlinkadd.htm" />
-    <Content Include="templates\default\user\userfirendlinkedit.htm" />
-    <Content Include="templates\default\user\_footer.htm" />
-    <Content Include="templates\default\user\_head.htm" />
-    <Content Include="templates\default\user\_menu.htm" />
-    <Content Include="templates\default\vote.htm" />
     <Content Include="templates\default\_footer.htm" />
     <Content Include="templates\default\_head.htm" />
     <Content Include="templates\default\_login_bar.htm" />
     <Content Include="templates\default\_login_box.htm" />
     <Content Include="templates\default\_message.htm" />
     <Content Include="templates\default\_msgbox.htm" />
-    <Content Include="templates\default\_onlinejoin.htm" />
-    <Content Include="templates\default\_search.htm" />
     <Content Include="templates\default\_top.htm" />
     <Content Include="templates\default\_UploadControl.htm" />
     <Content Include="templates\default\_userinfo.htm" />
-    <Content Include="templates\default\__ranking.htm" />
     <Content Include="UploadImage.aspx" />
     <Content Include="xymanage\Ams\CreditList.aspx" />
     <Content Include="xymanage\Ams\ForeclosedList.aspx" />
@@ -4229,7 +3713,8 @@
     <Content Include="xymanage\UserManage\EnterUserCenter.aspx" />
     <Content Include="xymanage\UserManage\IndividualList.aspx" />
     <Content Include="xymanage\UserManage\LivenessInfo.aspx" />
-    <Content Include="xymanage\UserManage\ResumeList.aspx" />
+    <Content Include="xymanage\UserManage\PartInfo.aspx" />
+    <Content Include="xymanage\UserManage\SubUserList.aspx" />
     <Content Include="xymanage\UserManage\UserDomainManage.aspx" />
     <Content Include="xymanage\UserManage\UserInfo.aspx" />
     <Content Include="xymanage\UserManage\UserListManger.aspx" />
@@ -4377,10 +3862,7 @@
   <ItemGroup>
     <Folder Include="aspx\" />
     <Folder Include="cache\" />
-    <Folder Include="templates\default\cp\" />
     <Folder Include="templates\default\icon\" />
-    <Folder Include="templates\default\service\" />
-    <Folder Include="templates\default\venture\" />
     <Folder Include="templates\_shop\skins_2009\001\css\bgimages\" />
     <Folder Include="templates\_shop\store\css\bgimages\" />
     <Folder Include="templates\_shop\yys_2009\001\css\bgimages\" />
@@ -4400,7 +3882,7 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
+          <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>8100</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://127.0.0.1:8100/</IISUrl>

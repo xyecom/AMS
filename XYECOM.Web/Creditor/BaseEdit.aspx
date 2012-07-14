@@ -34,13 +34,13 @@
                                 用户名：
                             </td>
                             <td style="color: #999" class="info_lei2">
-                                <asp:TextBox ID="txtUserName" Enabled="true" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtUserName" Enabled="false" runat="server"></asp:TextBox>
                             </td>
                             <td class="info_lei3">
                                 E-Mail：
                             </td>
                             <td class="info_lei2">
-                                <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtEmail" Enabled="false" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -48,7 +48,7 @@
                                 所在地区：
                             </td>
                             <td style="color: #999" class="info_lei2">
-                                <asp:TextBox ID="txtArea" Enabled="true" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtArea" Enabled="false" runat="server"></asp:TextBox>
                             </td>
                             <td class="info_lei3">
                                 法人代表：
@@ -109,8 +109,7 @@
             </table>
             <div style="text-align: center; width: 812px; margin-bottom: 20px; height: 47px;
                 padding-top: 18px">
-                <asp:Button ID="btnOk" CssClass="btnok" runat="server" Text="确定" 
-                    onclick="btnOk_Click" />
+                <asp:Button ID="btnOk" CssClass="btnok" runat="server" Text="确定" OnClick="btnOk_Click" />
             </div>
         </div>
         <!--rightzqlist end-->

@@ -36,7 +36,7 @@
                     </td>
                     <td>
                         <div id="divarea">
-                            <input type="hidden" id="city" name="city" runat="server" />
+                            <input type="hidden" id="city" runat="server" />
                         </div>
                     </td>
                     <td class="info1">
@@ -104,7 +104,7 @@
         </div>
     </div>
     <script type="text/javascript">
-        var claarea = new ClassType("claarea", 'area', 'divarea', 'city');
+        var claarea = new ClassType("claarea", 'area', 'divarea', '<%= this.city.ClientID  %>');
         claarea.Mode = "select";
         claarea.Init();
     </script>

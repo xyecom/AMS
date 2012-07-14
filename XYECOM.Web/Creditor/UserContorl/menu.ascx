@@ -6,7 +6,7 @@
                 <ul class="menu">
                     <li class="stmenu">
                         <h3>
-                            <a class="xialaguang" href="#"><span>首页</span></a></h3>
+                            <a class="xialaguang" href="/"><span>首页</span></a></h3>
                     </li>
                     <!--企业简介-->
                     <li class="stmenu">

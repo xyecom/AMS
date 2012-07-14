@@ -44,7 +44,7 @@ namespace XYECOM.SQLServer
                 new SqlParameter("@U_Mode",info .Mode ),
                 new SqlParameter("@U_Money",info .RegisteredCapital ),
                 new SqlParameter("@U_Year",info.RegYear ),
-                new SqlParameter("@U_Address",info .BusinessAddress ),
+                new SqlParameter("@U_Address",info .Address ),
                 new SqlParameter("@U_PType",info .MainProduct ),
                 new SqlParameter("@U_MoneyType",info .MoneyType ),
                 new SqlParameter("@Area_ID",info.AreaId ),
@@ -91,7 +91,7 @@ namespace XYECOM.SQLServer
                 new SqlParameter ("@U_Mode",info .Mode ),
                 new SqlParameter ("@U_Money",info .RegisteredCapital ),
                 new SqlParameter ("@U_Year",info .RegYear ),
-                new SqlParameter ("@U_Address",info .BusinessAddress ),
+                new SqlParameter ("@U_Address",info .Address ),
                 new SqlParameter ("@U_PType",info .MainProduct ),
                 new SqlParameter ("@U_MoneyType",info .MoneyType ),
                 new SqlParameter ("@Area_ID",info .AreaId ),
@@ -178,7 +178,7 @@ namespace XYECOM.SQLServer
                     info.Mode = reader["U_Mode"].ToString();
                     info.RegisteredCapital = Core.MyConvert.GetDecimal(reader["U_Money"].ToString());
                     info.RegYear = Core.MyConvert.GetInt32(reader["U_Year"].ToString());
-                    info.BusinessAddress = reader["U_Address"].ToString();
+                    info.Address = reader["U_Address"].ToString();
                     info.MainProduct = reader["U_PType"].ToString();
                     info.MoneyType = reader["U_MoneyType"].ToString();
 
@@ -190,6 +190,7 @@ namespace XYECOM.SQLServer
 
                     info.IM = reader["IM"].ToString();
                     info.TradeIds = Core.Utils.RemoveComma(reader["tradeIds"].ToString());
+
                 }
             }
             return info;
@@ -375,13 +376,13 @@ namespace XYECOM.SQLServer
 
         public int UpdateBaseInfo(Model.GeneralUserInfo userinfo)
         {
-            string sqlfmt = @"update u_userinfo set UI_Name='{0}',U_Address='{1}',Email='{2}',Description='{3}',FAX='{4}',Telphone='{5}',UI_LinkMan='{6}' where U_ID={7}";
-            string sql = string.Format(sqlfmt, userinfo.name, userinfo.address, userinfo.Email, userinfo.Description, userinfo.OtherContact, userinfo.Telphone, userinfo.linkman, userinfo.CompanyId);
+            string sqlfmt = @"update u_userinfo set UI_Name='{0}',U_Address='{1}',Email='{2}',Description='{3}',FAX='{4}',Telephone='{5}',UI_LinkMan='{6}' where U_ID={7}";
+            string sql = string.Format(sqlfmt, userinfo.CompanyName, userinfo.Address, userinfo.Email, userinfo.Description, userinfo.OtherContact, userinfo.Telphone, userinfo.LinkMan, userinfo.CompanyId);
 
 
-            string sqlfmt2 = @"{5};Update u_user set LayerName='{0}', Description='{1}', Telphone='{2}', OtherContact='{3}' where CompanyId ={4}";
+            string sqlfmt2 = @"{5};Update u_user set LayerName='{0}', Description='{1}', Telphone='{2}', OtherContact='{3}',PartManagerName='{6}',Sex={7},LayerId='{8}',IdNumber='{9}' where CompanyId ={4}";
 
-            string sql2 = string.Format(sqlfmt2, userinfo.name, userinfo.Description, userinfo.Description, userinfo.OtherContact, userinfo.CompanyId, sql);
+            string sql2 = string.Format(sqlfmt2, userinfo.LayerName, userinfo.Description, userinfo.Telphone, userinfo.OtherContact, userinfo.CompanyId, sql, userinfo.LinkMan, userinfo.Sex ? 1 : 0, userinfo.LayerId, userinfo.IdNumber);
 
 
             return SqlHelper.ExecuteNonQuery(sql2);

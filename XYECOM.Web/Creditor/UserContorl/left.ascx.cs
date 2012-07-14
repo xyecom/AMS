@@ -10,7 +10,19 @@ namespace XYECOM.Web.Creditor.UserContorl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (XYECOM.Business.CheckUser.UserInfo != null)
+            {
+                if (XYECOM.Business.CheckUser.UserInfo.IsPrimary)
+                {
+                    this.hlInfo.NavigateUrl = "/Creditor/BaseEdit.aspx";
+                }
+                else
+                {
+                    this.hlInfo.NavigateUrl = "/Creditor/EditPartInfo.aspx?ac=u";
+                }
+            }
 
+            //<a tabindex="1" href="/Creditor/BaseEdit.aspx">资料修改</a>
         }
     }
 }

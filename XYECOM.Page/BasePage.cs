@@ -1039,6 +1039,12 @@ namespace XYECOM.Page
                 BindData();
             }
         }
+
+        protected virtual void BindData()
+        {
+
+        }
+
         protected string FormatDate(object scDate)
         {
             string sc = string.Empty;
@@ -1059,35 +1065,6 @@ namespace XYECOM.Page
             return string.Empty;
 
         }
-        protected virtual void BindData()
-        {
-
-        }
-
-        #region 属性 用户中心登陆用户的全局对象
-
-        /// <summary>
-        /// 是否登陆 登陆为true未登陆为false
-        /// </summary>
-        protected bool islogin
-        {
-            get
-            {
-                return XYECOM.Business.CheckUser.CheckUserLogin();
-            }
-        }
-
-        /// <summary>
-        /// 用户中心登陆用户的全局对象
-        /// </summary>
-        protected internal virtual XYECOM.Model.GeneralUserInfo userinfo
-        {
-            get
-            {
-                return Business.CheckUser.UserInfo;
-            }
-        }
-        #endregion
         /// <summary>
         /// 返回长度为三的一个列表，1为标题，2为连接，3为图片路径
         /// </summary>

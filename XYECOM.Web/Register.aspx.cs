@@ -80,7 +80,7 @@ namespace XYECOM.Web
             userInfo.LinkMan = chief;
 
             userInfo.Address = string.Empty;
-            userInfo.BusinessAddress = string.Empty;
+            userInfo.Address = string.Empty;
             userInfo.BuyPro = string.Empty;
             userInfo.License = string.Empty;
             userInfo.Character = string.Empty;
@@ -100,7 +100,7 @@ namespace XYECOM.Web
             userInfo.Mode = string.Empty;
             userInfo.RegisteredCapital = decimal.Zero;
             userInfo.RegYear = 1;
-            userInfo.BusinessAddress = string.Empty;
+            userInfo.Address = string.Empty;
             userInfo.MainProduct = string.Empty;
             userInfo.MoneyType = string.Empty;
             userInfo.IM = string.Empty;

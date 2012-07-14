@@ -122,13 +122,14 @@ namespace XYECOM.Business
             //是否是认证专家	IsExport	bit			FALSE	FALSE	FALSE
             _templateuserinfo.IsExport = userRegInfo.IsPrimary;
             //企业类型（企业&个人&律师&非律师））	UserType	int			FALSE	FALSE	FALSE
-            _templateuserinfo.UserType = userRegInfo.UserType;
+            _templateuserinfo.UserType = (Model.UserType)userRegInfo.UserType;
             //删除状态	DelState	int			FALSE	FALSE	FALSE
             _templateuserinfo.DelState = userRegInfo.DelState;
             //唯一标示	IdentityNumber	varchar(50)	50		FALSE	FALSE	FALSE
             _templateuserinfo.IdentityNumber = userRegInfo.IdentityNumber;
 
-
+            _templateuserinfo.PartManagerName = userRegInfo.PartManagerName;
+            _templateuserinfo.PartManagerTel = userRegInfo.PartManagerTel;
 
             _templateuserinfo.accountid = userRegInfo.AccountId;
             _templateuserinfo.creditintegral = userRegInfo.CreditIntegral;
@@ -136,7 +137,7 @@ namespace XYECOM.Business
 
             _templateuserinfo.userid = userRegInfo.UserId;
 
-            _templateuserinfo.loginname = userRegInfo.LoginName;
+            _templateuserinfo.LoginName = userRegInfo.LoginName;
 
             _templateuserinfo.regdate = userRegInfo.RegDate;
 
@@ -151,11 +152,11 @@ namespace XYECOM.Business
             _templateuserinfo.Email = userRegInfo.Email;
 
             if (userRegInfo.IsHasImage)
-                _templateuserinfo.imgurl = Business.Attachment.GetInfoDefaultImgHref(XYECOM.Model.AttachmentItem.User, _templateuserinfo.userid);
+                _templateuserinfo.LayerPicture = Business.Attachment.GetInfoDefaultImgHref(XYECOM.Model.AttachmentItem.User, _templateuserinfo.userid);
             else
-                _templateuserinfo.imgurl = SYS_NOIMAGE_PATH;
+                _templateuserinfo.LayerPicture = SYS_NOIMAGE_PATH;
 
-            XYECOM.Model.UserInfo _UserInfo = new XYECOM.Business.UserInfo().GetItem(userRegInfo.UserId);
+            XYECOM.Model.UserInfo _UserInfo = new XYECOM.Business.UserInfo().GetItem(userRegInfo.CompanyId);
 
             if (_UserInfo != null)
             {
@@ -173,7 +174,7 @@ namespace XYECOM.Business
                 _templateuserinfo.MidTimes = _UserInfo.MidTimes;
                 //差评数	BadTimes	int			FALSE	FALSE	FALSE
                 _templateuserinfo.BadTimes = _UserInfo.BadTimes;
-                
+
                 _templateuserinfo.template = userRegInfo.TemplateName;
 
                 if (_templateuserinfo.template.IndexOf("|") != -1)
@@ -187,26 +188,11 @@ namespace XYECOM.Business
 
                 _templateuserinfo.commonerr = userRegInfo.CommonErr;
 
-                _templateuserinfo.linkman = _UserInfo.LinkMan.ToString();
+                _templateuserinfo.LinkMan = _UserInfo.LinkMan.ToString();
+                                                
+                _templateuserinfo.CompanyName = _UserInfo.Name.ToString();
 
-                _templateuserinfo.sexbool = _UserInfo.Sex;
-
-                _templateuserinfo.manageaddress = _UserInfo.BusinessAddress;
-
-                if (_UserInfo.Sex)
-                    _templateuserinfo.sex = "先生";
-                else
-                    _templateuserinfo.sex = "女士";
-
-                _templateuserinfo.name = _UserInfo.Name.ToString();
-
-                _templateuserinfo.mobile = _UserInfo.Mobile;
-
-                _templateuserinfo.telephone = _UserInfo.Telephone;
-
-                _templateuserinfo.fax = _UserInfo.Fax;
-
-                _templateuserinfo.synopsis = _UserInfo.Synopsis;
+                _templateuserinfo.Fax = _UserInfo.Fax;
 
                 _templateuserinfo.homepage = _UserInfo.HomePage;
 
@@ -220,16 +206,16 @@ namespace XYECOM.Business
                 _templateuserinfo.employeetotal = _UserInfo.EmployeeTotal;
 
                 _templateuserinfo.regareaid = _UserInfo.RegAreaId;
-                
+
                 if (_UserInfo.AreaId > 0)
                 {
                     Model.AreaInfo areainfo = new Business.Area().GetItem(_UserInfo.AreaId);
                     if (null != areainfo)
-                        _templateuserinfo.areaname = areainfo.FullNameAll;
+                        _templateuserinfo.AreaName = areainfo.FullNameAll;
                 }
 
-                _templateuserinfo.address = _UserInfo.Address;
-                
+                _templateuserinfo.Address = _UserInfo.Address;
+
                 _templateuserinfo.mode = _UserInfo.Mode;
 
                 _templateuserinfo.regyear = _UserInfo.RegYear.ToString();

@@ -16,8 +16,10 @@
         <h1>
             其他设置</h1>
         <ul>
-            <li><a tabindex="1" href="#">资料修改</a></li>
-            <li><a tabindex="2" href="#">部门管理</a></li>
+            <li>
+                <asp:HyperLink ID="hlInfo" runat="server" TabIndex="1">资料修改</asp:HyperLink>
+            </li>
+            <li><a tabindex="2" href="/Creditor/PartList.aspx">部门管理</a></li>
             <li><a tabindex="3" href="#">站内信</a></li>
             <li><a tabindex="4" href="#">信用管理</a></li>
             <li><a tabindex="5" href="#">认证管理</a></li>

@@ -6,11 +6,16 @@ using System.Web.UI.WebControls;
 
 namespace XYECOM.Web.Server
 {
-    public partial class Index : System.Web.UI.Page
+    public partial class Index : XYECOM.Web.AppCode.UserCenter.Server
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected override void BindData()
+        {
+            this.imgPicture.ImageUrl = userinfo.LayerPicture;
         }
     }
 }

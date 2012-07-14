@@ -35,7 +35,7 @@ namespace XYECOM.SQLServer.AMS
                 new SqlParameter("@EndDate",info.EndDate),
                 new SqlParameter("@CreateDate",info.CreateDate),
                 new SqlParameter("@State",info.State),
-                new SqlParameter("@UserId",info.UserId),
+                new SqlParameter("@UserId",info.CompanyId),
                 new SqlParameter("@DepartmentId",info.DepartmentId),
                 new SqlParameter("@LinePrice",info.LinePrice),
                 new SqlParameter("@Description",info.Description),

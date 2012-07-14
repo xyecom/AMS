@@ -48,33 +48,6 @@ public partial class xymanage_UserManage_UserListManger {
     protected global::System.Web.UI.WebControls.TextBox txtcompany;
     
     /// <summary>
-    /// bgdate 控件。
-    /// </summary>
-    /// <remarks>
-    /// 自动生成的字段。
-    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlInputText bgdate;
-    
-    /// <summary>
-    /// egdate 控件。
-    /// </summary>
-    /// <remarks>
-    /// 自动生成的字段。
-    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlInputText egdate;
-    
-    /// <summary>
-    /// ddlState 控件。
-    /// </summary>
-    /// <remarks>
-    /// 自动生成的字段。
-    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.RadioButtonList ddlState;
-    
-    /// <summary>
     /// areatypeid 控件。
     /// </summary>
     /// <remarks>
@@ -82,33 +55,6 @@ public partial class xymanage_UserManage_UserListManger {
     /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
     /// </remarks>
     protected global::System.Web.UI.HtmlControls.HtmlInputHidden areatypeid;
-    
-    /// <summary>
-    /// ddlCreaditLeav 控件。
-    /// </summary>
-    /// <remarks>
-    /// 自动生成的字段。
-    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.DropDownList ddlCreaditLeav;
-    
-    /// <summary>
-    /// txtPageSize 控件。
-    /// </summary>
-    /// <remarks>
-    /// 自动生成的字段。
-    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtPageSize;
-    
-    /// <summary>
-    /// RangeValidator1 控件。
-    /// </summary>
-    /// <remarks>
-    /// 自动生成的字段。
-    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
     
     /// <summary>
     /// cbdays 控件。
@@ -136,6 +82,24 @@ public partial class xymanage_UserManage_UserListManger {
     /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
     /// </remarks>
     protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+    
+    /// <summary>
+    /// txtPageSize 控件。
+    /// </summary>
+    /// <remarks>
+    /// 自动生成的字段。
+    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox txtPageSize;
+    
+    /// <summary>
+    /// RangeValidator1 控件。
+    /// </summary>
+    /// <remarks>
+    /// 自动生成的字段。
+    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
     
     /// <summary>
     /// Button2 控件。
@@ -181,15 +145,6 @@ public partial class xymanage_UserManage_UserListManger {
     /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
     /// </remarks>
     protected global::System.Web.UI.WebControls.Button btnDelete;
-    
-    /// <summary>
-    /// btnIsPass 控件。
-    /// </summary>
-    /// <remarks>
-    /// 自动生成的字段。
-    /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Button btnIsPass;
     
     /// <summary>
     /// Page1 控件。

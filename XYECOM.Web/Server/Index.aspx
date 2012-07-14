@@ -8,9 +8,10 @@
         <!--rightmsg start-->
         <div id="rightmsg">
             <div id="msgimg">
-                <img src="/Other/images/man.GIF"><br>
+                <asp:Image ID="imgPicture" runat="server" Width="120" />
+                <br />
                 <br>
-                <a href="#">修改头像</a>
+                <a href="/Server/UpLoadPicture.aspx">修改头像</a>
             </div>
             <div id="line">
             </div>

@@ -47,29 +47,6 @@
                                     </tr>
                                     <tr>
                                         <th>
-                                            注册日期：
-                                        </th>
-                                        <td>
-                                            <input id="bgdate" type="text" runat="server" onclick="getDateString(this);" maxlength="10"
-                                                style="width: 80px;" readonly="readonly" />
-                                            到
-                                            <input id="egdate" type="text" runat="server" onclick="getDateString(this);" maxlength="10"
-                                                style="width: 80px;" readonly="readonly" />
-                                        </td>
-                                        <th>
-                                            审核状态：
-                                        </th>
-                                        <td>
-                                            <asp:RadioButtonList ID="ddlState" runat="server" RepeatDirection="Horizontal">
-                                                <asp:ListItem Value="-1" Selected="True">所有</asp:ListItem>
-                                                <asp:ListItem Value="null">未审核</asp:ListItem>
-                                                <asp:ListItem Value="1">通过审核</asp:ListItem>
-                                                <asp:ListItem Value="0">未通过审核</asp:ListItem>
-                                            </asp:RadioButtonList>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>
                                             企业区域：
                                         </th>
                                         <td>
@@ -83,11 +60,12 @@
                                             </script>
                                         </td>
                                         <th>
-                                            用户信誉度：
                                         </th>
                                         <td>
-                                            <asp:DropDownList ID="ddlCreaditLeav" runat="server">
-                                            </asp:DropDownList>
+                                            <asp:CheckBox runat="server" ID="cbdays" Checked="true" />
+                                            返回最近&nbsp;<asp:TextBox runat="server" CssClass="" ID="txtdays" Columns="2" Text="2"></asp:TextBox>&nbsp;天的全部数据
+                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtdays"
+                                                ErrorMessage="必须为数字" ValidationExpression="^[1-9]\d*$"></asp:RegularExpressionValidator>
                                         </td>
                                     </tr>
                                     <tr>
@@ -100,25 +78,11 @@
                                             <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txtPageSize"
                                                 ErrorMessage="介于1～100之间" MaximumValue="100" MinimumValue="1" Type="Integer"></asp:RangeValidator>
                                         </td>
-                                        <th>
-                                        </th>
-                                        <td>
-                                            <asp:CheckBox runat="server" ID="cbdays" Checked="true" />
-                                            返回最近&nbsp;<asp:TextBox runat="server" CssClass="" ID="txtdays" Columns="2" Text="2"></asp:TextBox>&nbsp;天的全部数据
-                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtdays"
-                                                ErrorMessage="必须为数字" ValidationExpression="^[1-9]\d*$"></asp:RegularExpressionValidator>
-                                        </td>
-                                    </tr>
-                                    <tr class="content_action">
                                         <td>
                                         </td>
                                         <td>
                                             <asp:Button ID="Button2" runat="server" Text="搜索" CssClass="button" OnClick="Button2_Click" />
                                             <input type="reset" value="重置" class="button" />
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
                                         </td>
                                     </tr>
                                 </table>
@@ -128,7 +92,7 @@
                             <td>
                                 <asp:GridView ID="gvlist" HeaderStyle-CssClass="gv_header_style" runat="server" AutoGenerateColumns="False"
                                     DataKeyNames="U_ID,U_Name,U_Email,UI_Name" Width="100%" OnRowDataBound="gvlist_RowDataBound"
-                                    OnRowCommand="gvlist_RowCommand" GridLines="None">
+                                    GridLines="None">
                                     <Columns>
                                         <asp:BoundField DataField="U_ID" HeaderText="U_ID" Visible="False" />
                                         <asp:TemplateField HeaderText="选择">
@@ -152,19 +116,22 @@
                                             <ItemStyle CssClass="gvLeft" Width="22%" />
                                             <ItemTemplate>
                                                 <div style="margin-top: 2px; color: #f60;">
-                                                    <%# Eval("UI_Name") %><br />
+                                                    <a href='<%# GetSubUserUrl(Eval("U_ID"),Eval("UserType")) %>'>
+                                                        <%# Eval("UI_Name") %></a>
                                                 </div>
-                                                <a href="<%# Eval("UI_Homepage") %>" target="_blank">
-                                                    <%# Eval("UI_Homepage") %></a>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                         <asp:TemplateField HeaderText="用户类型">
+                                            <HeaderStyle CssClass="gvLeft" />
+                                            <ItemStyle CssClass="gvLeft" Width="10%" />
+                                            <ItemTemplate>
+                                                <%# GetUserTypeName(Eval("UserType"))%>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:BoundField DataField="U_RegDate" HeaderText="注册时间">
                                             <HeaderStyle Width="12%" />
                                             <ItemStyle Width="12%" />
                                         </asp:BoundField>
-                                        <asp:ButtonField CommandName="shenhe" HeaderText="审核" DataTextField="UserAuditingState">
-                                            <ItemStyle CssClass="action" Width="10%" />
-                                        </asp:ButtonField>
                                         <asp:TemplateField HeaderText="详细">
                                             <ItemStyle CssClass="gvLeft" Width="10%" />
                                             <HeaderStyle CssClass="gvLeft" />
@@ -173,7 +140,6 @@
                                                     <img src="../images/look.gif" alt="编辑" /></a>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                       
                                     </Columns>
                                 </asp:GridView>
                                 <p style="text-align: center;">
@@ -185,7 +151,6 @@
                                 <input class="list_td04" id="chkAll" onclick="chkAll_true()" type="checkbox" name="chkAll"
                                     runat="server" />全选
                                 <asp:Button ID="btnDelete" runat="server" OnClick="btnDelete_Click" Text="删除" CssClass="button" />&nbsp;
-                                <asp:Button ID="btnIsPass" runat="server" CssClass="button" Text="通过审核" OnClick="btnIsPass_Click" />
                             </td>
                         </tr>
                     </table>

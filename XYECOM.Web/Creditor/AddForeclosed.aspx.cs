@@ -54,7 +54,7 @@ namespace XYECOM.Web.Creditor
             info.Description = description;
             info.State = (int)AuditingState.Null;
             //info.UserId = userinfo;   //TODO:缺少所属公司编号
-            info.UserId = userinfo.userid;
+            info.CompanyId = userinfo.userid;
             info.CreateDate = DateTime.Now;
 
             bool isOK = foreclosedManager.InsertForeclosed(info);
