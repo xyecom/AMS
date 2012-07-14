@@ -166,6 +166,21 @@ namespace XYECOM.Web.xymanage.Creditor.Foreclosed
             return new Business.UserInfo().GetCompNameByUId(uId);
         }
 
+        /// <summary>
+        ///获取竞价个数
+        /// </summary>
+        /// <param name="foreId"></param>
+        /// <returns></returns>
+        public int GetBidInfoCountByForeID(object foreId)
+        {
+            int id = XYECOM.Core.MyConvert.GetInt32(foreId.ToString());
+            if (id <= 0)
+            {
+                return 0;
+            }
+            return new XYECOM.Business.AMS.BidInfoManager().GetBidInfoCountByForeID(id);
+        }
+
         #region 删除操作
         protected void btnDelete_Click(object sender, EventArgs e)
         {

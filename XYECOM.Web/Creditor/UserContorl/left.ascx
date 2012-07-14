@@ -11,7 +11,7 @@
             债权业务</h1>
         <ul>
             <li><a tabindex="2" href="/Creditor/AddCreditInfo.aspx">发布债权</a></li>
-            <li><a tabindex="3" href="#">管理债权</a></li></ul>
+            <li><a tabindex="3" href="/Creditor/CreditInfoList.aspx">管理债权</a></li></ul>
         <h1>
             抵债业务</h1>
         <ul>

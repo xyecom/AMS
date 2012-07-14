@@ -2,6 +2,20 @@
     CodeBehind="ForeclosedList.aspx.cs" Inherits="XYECOM.Web.Creditor.ForeclosedList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script type="text/javascript">
+        var ConfirmForeclosed = function () {
+            if (window.confirm("确认关闭信息吗？")) {
+                return window.confirm("信息一旦关闭不能继续竞价，请确认？");
+            }
+            return false;
+        }
+        var DeleteForeclosed = function () {
+            if (window.confirm("确认删除案件吗？")) {
+                return window.confirm("只能删除未竞价的抵债信息？");
+            }
+            return false;
+        }    
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->
@@ -26,22 +40,25 @@
             </div>
             <!--serch end-->
             <!--列表 start-->
-            <div id="list">                
-                <asp:Repeater ID="rptList" runat="server" >
+            <div id="list">
+                <asp:Repeater ID="rptList" runat="server">
                     <HeaderTemplate>
                         <table>
                             <tr id="trtop">
                                 <td align="center" width="20%">
                                     档案标题
                                 </td>
-                                <td align="center" width="20%">
+                                <td align="center" width="15%">
                                     结束时间
                                 </td>
-                                <td align="center" width="20%">
+                                <td align="center" width="15%">
                                     物品类型
                                 </td>
                                 <td align="center" width="15%">
                                     审核状态
+                                </td>
+                                <td align="center" width="10%">
+                                    竞价个数
                                 </td>
                                 <td align="center" width="25%">
                                     操作菜单
@@ -65,8 +82,15 @@
                                 <%# GetAuditingState(XYECOM.Core.MyConvert.GetInt32(Eval("State").ToString()))%>
                             </td>
                             <td>
+                                <%# GetBidInfoCountByForeID(Eval("ForeclosedId"))%>
+                            </td>
+                            <td>
                                 <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# "UpdateForeclosed.aspx?Id=" + Eval("ForeclosedId") %>'>修改</asp:HyperLink>
                                 <asp:HyperLink ID="hlUpdate" runat="server" NavigateUrl='<%# "/ForeclosedDetail.aspx?Id=" + Eval("ForeclosedId") %>'>查看竞价</asp:HyperLink>
+                                <asp:LinkButton ID="lbtnClosed" runat="server" Text="关闭" OnClick="lbtnClose_Click"
+                                    OnClientClick="javascript:return ConfirmForeclosed();" CommandArgument='<%# Eval("ForeclosedId") %>'></asp:LinkButton>
+                                <asp:LinkButton ID="lbtnRelease" runat="server" Text="删除" OnClick="lbtnDelete_Click"
+                                    CommandArgument='<%# Eval("ForeclosedId") %>' OnClientClick="javascript:return DeleteForeclosed();"></asp:LinkButton>
                             </td>
                         </tr>
                     </ItemTemplate>

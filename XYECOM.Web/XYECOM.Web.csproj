@@ -165,6 +165,13 @@
     <Compile Include="Creditor\ForeclosedList.aspx.designer.cs">
       <DependentUpon>ForeclosedList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Creditor\UpdateCreditInfo.aspx.cs">
+      <DependentUpon>UpdateCreditInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\UpdateCreditInfo.aspx.designer.cs">
+      <DependentUpon>UpdateCreditInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Creditor\UpdateForeclosed.aspx.cs">
       <DependentUpon>UpdateForeclosed.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1519,6 +1526,7 @@
     <Content Include="Creditor\AddForeclosed.aspx" />
     <Content Include="Creditor\CreditInfoList.aspx" />
     <Content Include="Creditor\ForeclosedList.aspx" />
+    <Content Include="Creditor\UpdateCreditInfo.aspx" />
     <Content Include="Creditor\UpdateForeclosed.aspx" />
     <Content Include="Creditor\BaseEdit.aspx" />
     <Content Include="Creditor\Index.aspx" />

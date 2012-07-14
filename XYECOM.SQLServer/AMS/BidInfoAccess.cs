@@ -51,6 +51,16 @@ namespace XYECOM.SQLServer.AMS
             return SqlHelper.ExecuteTable(CommandType.Text, sql, null);
         }
 
-
+        /// <summary>
+        /// 根据抵债信息编号获取该抵债信息的竞价个数
+        /// </summary>
+        /// <param name="ForeID"></param>
+        /// <returns></returns>
+        public int GetBidInfoCountByForeID(int ForeID)
+        {
+            string sql = "select count(*) from bidInfo where foreclosedid = "+ForeID;
+            int count = (int)SqlHelper.ExecuteScalar(CommandType.Text, sql, null);
+            return count;
+        }
     }
 }

@@ -15,6 +15,9 @@ namespace XYECOM.Web.Creditor
         protected void Page_Load(object sender, EventArgs e)
         {
         }
+        /// <summary>
+        /// 绑定数据
+        /// </summary>
         protected override void BindData()
         {
             string typeName = this.droTypeName.SelectedValue;
@@ -55,20 +58,35 @@ namespace XYECOM.Web.Creditor
         }
         #endregion
 
+        /// <summary>
+        /// 搜索操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             BindData();
         }
 
+        /// <summary>
+        /// 删除操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void lbtnDelete_Click(object sender, EventArgs e)
         {
             LinkButton linkButton = (LinkButton)(sender as LinkButton);
             if (linkButton != null)
             {
                 int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
+                int count = GetBidInfoCountByForeID(Id);
+                if (count > 0)
+                {
+                    GotoMsgBoxPageForDynamicPage("该抵债信息已经有人竞价不能删除！", 1, "ForeclosedList.aspx");
+                }
                 if (Id > 0)
                 {
-                    int result = new Business.AMS.ForeclosedManager().Delete(Id);
+                    int result = manage.Delete(Id);
                     if (result > 0)
                     {
                         BindData();
@@ -77,6 +95,11 @@ namespace XYECOM.Web.Creditor
             }
         }
 
+        /// <summary>
+        /// 判断该抵债信息是否已过期
+        /// </summary>
+        /// <param name="endDate"></param>
+        /// <returns></returns>
         public string GetEndDate(object endDate)
         {
             DateTime date = XYECOM.Core.MyConvert.GetDateTime(endDate.ToString());
@@ -90,6 +113,11 @@ namespace XYECOM.Web.Creditor
             }
         }
 
+        /// <summary>
+        /// 关闭某抵债信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void lbtnClose_Click(object sender, EventArgs e)
         {
             LinkButton linkButton = (LinkButton)(sender as LinkButton);
@@ -98,13 +126,28 @@ namespace XYECOM.Web.Creditor
                 int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
                 if (Id > 0)
                 {
-                    int result = new Business.AMS.ForeclosedManager().ClosedByID(Id);
+                    int result = manage.ClosedByID(Id);
                     if (result > 0)
                     {
                         BindData();
                     }
                 }
             }
+        }
+
+        /// <summary>
+        ///获取竞价个数
+        /// </summary>
+        /// <param name="foreId"></param>
+        /// <returns></returns>
+        public int GetBidInfoCountByForeID(object foreId)
+        {
+            int id = XYECOM.Core.MyConvert.GetInt32(foreId.ToString());
+            if (id <= 0)
+            {
+                return 0;
+            }
+            return new XYECOM.Business.AMS.BidInfoManager().GetBidInfoCountByForeID(id);
         }
     }
 }

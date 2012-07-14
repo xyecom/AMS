@@ -48,7 +48,7 @@
                                 <td width="92">
                                     <%--                                    <input name="搜索" type="button" value="搜索" style="background: url(../images/yes.gif);
                                         width: 80px; height: 25px; border: none; cursor: pointer; color: #FFF" />--%>
-                                    <asp:Button runat="server" ID="btnSearch" Text="搜索" />
+                                    <asp:Button runat="server" ID="btnSearch" OnClick="btnSearch_Click" Text="搜索" />
                                 </td>
                             </tr>
                         </table>

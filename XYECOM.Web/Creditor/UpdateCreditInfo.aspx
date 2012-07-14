@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Creditor/Creditor.master" AutoEventWireup="true"
-    CodeBehind="AddCreditInfo.aspx.cs" Inherits="XYECOM.Web.Creditor.AddCreditInfo" %>
+    CodeBehind="UpdateCreditInfo.aspx.cs" Inherits="XYECOM.Web.Creditor.UpdateCreditInfo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
@@ -21,10 +21,10 @@
                 <table style="margin-top: 2px;" class="tab">
                     <tr>
                         <td class="info_lei3">
-                             <span class="red">*</span>案件标题
+                            <span class="red">*</span>案件标题
                         </td>
                         <td colspan="3">
-                           <asp:TextBox runat="server" ID="txtTitle" Width="600px"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtTitle" Width="600px"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -172,10 +172,10 @@
                         </td>
                         <td class="info_lei2" colspan="3">
                             <asp:CheckBoxList runat="server" ID="cheDebtObligation" RepeatDirection="Horizontal">
-                                <asp:ListItem Value="合同">合同</asp:ListItem>
-                                <asp:ListItem Value="发票">发票</asp:ListItem>
-                                <asp:ListItem Value="欠条">欠条</asp:ListItem>
-                                <asp:ListItem Value="发票其他凭证">发票其他凭证</asp:ListItem>
+                                <asp:ListItem Value="1">合同</asp:ListItem>
+                                <asp:ListItem Value="0">发票</asp:ListItem>
+                                <asp:ListItem Value="1">欠条</asp:ListItem>
+                                <asp:ListItem Value="0">发票其他凭证</asp:ListItem>
                             </asp:CheckBoxList>
                         </td>
                     </tr>
@@ -185,8 +185,8 @@
                         <tr>
                             <td align="center" colspan="2">
                                 <asp:RadioButtonList runat="server" ID="radSelect" RepeatDirection="Horizontal">
-                                    <asp:ListItem Value="发布">直接对外发布</asp:ListItem>
-                                    <asp:ListItem Value="草稿">存为债权草稿</asp:ListItem>
+                                    <asp:ListItem Value="发布">存为债权草稿</asp:ListItem>
+                                    <asp:ListItem Value="草稿">直接对外发布</asp:ListItem>
                                 </asp:RadioButtonList>
                             </td>
                         </tr>
@@ -197,6 +197,7 @@
                         height: 25px; border: none; cursor: pointer; color: #FFF" />--%>
                     <asp:Button runat="server" ID="btnOk" OnClick="btnOk_Click" Text="确定" />
                     <input type="button" value="返回" onclick="javascript:history.back();" />
+                    <input type="hidden" id="hiddID" runat="server" />
                 </div>
             </div>
         </div>

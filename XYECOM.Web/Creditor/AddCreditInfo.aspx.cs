@@ -34,11 +34,19 @@ namespace XYECOM.Web.Creditor
                 info.ApprovaStatus = (int)CreditState.Null;
             }
             info.AreaId = MyConvert.GetInt32(this.areaid.Value);
-            info.Arrears =MyConvert.GetDecimal(this.txtArrears.Text.Trim());
+            info.Arrears = MyConvert.GetDecimal(this.txtArrears.Text.Trim());
             info.Bounty = MyConvert.GetDecimal(this.txtBounty.Text.Trim());
             info.CollectionPeriod = this.txtCollectionPeriod.Text.Trim();
             info.CreateDate = DateTime.Now;
-            info.DebtObligation = this.cheDebtObligation.SelectedValue;
+            string debtObligation = string.Empty;
+            for (int i = 0; i < this.cheDebtObligation.Items.Count; i++)
+            {
+                if (this.cheDebtObligation.Items[i].Selected == true)
+                {
+                    debtObligation += this.cheDebtObligation.Items[i].Value + ",";
+                }
+            }
+            info.DebtObligation = debtObligation;
             info.DebtorName = this.txtDebtorName.Text.Trim();
             info.DebtorReason = this.txtDebtorReason.Text.Trim();
             info.DebtorTelpone = this.txtDebtorTelpone.Text.Trim();
@@ -61,7 +69,7 @@ namespace XYECOM.Web.Creditor
             }
             else
             {
-                Alert("添加债权信息失败！");
+                GotoMsgBoxPageForDynamicPage("添加债权信息失败！", 1, "Index.aspx");
             }
         }
     }

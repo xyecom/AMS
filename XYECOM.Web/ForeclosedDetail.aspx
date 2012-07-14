@@ -207,7 +207,8 @@
                             <div style="width: 710px; height: 40px; line-height: 40px; text-align: center">
                                 <div style="background: url(../images/yes.gif) no-repeat; width: 396px; height: 25px;
                                     float: right; line-height: 25px; text-align: left; padding-left: 10px; margin: 10px">
-                                    <a href="javascript:void(0)" onclick="showFloat()"><strong style="color: White">我要报价</strong></a></div>
+                                    <a href="javascript:void(0)" onclick="showFloat()"><strong style="color: White">我要报价</strong></a>
+                                </div>
                             </div>
                             <!--加一个半透明层-->
                             <div id="doing" style="filter: alpha(opacity=30); -moz-opacity: 0.3; opacity: 0.3;

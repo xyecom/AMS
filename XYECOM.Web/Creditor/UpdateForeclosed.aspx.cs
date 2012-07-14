@@ -32,7 +32,7 @@ namespace XYECOM.Web.Creditor
             ForeclosedInfo info = manager.GetForeclosedInfoById(id);
             if (info == null)
             {
-                return;
+                GotoMsgBoxPageForDynamicPage("该抵债信息不存在！", 1, "ForeclosedList.aspx");                    
             }
             this.txtTitle.Text = info.Title;
             this.txtAddress.Text = info.Address;
@@ -47,6 +47,10 @@ namespace XYECOM.Web.Creditor
         protected void btnOK_Click(object sender, EventArgs e)
         {
             int id = MyConvert.GetInt32(this.hiddID.Value);
+            if (id < 0)
+            {
+                GotoMsgBoxPageForDynamicPage("该抵债信息不存在！", 1, "ForeclosedList.aspx");                                
+            }
             ForeclosedInfo info = manager.GetForeclosedInfoById(id);
             if (info == null)
             {
@@ -78,7 +82,7 @@ namespace XYECOM.Web.Creditor
             }
             else
             {
-                Alert("抵债信息修改失败！");
+                GotoMsgBoxPageForDynamicPage("抵债信息修改失败！", 1, "ForeclosedList.aspx");
             }
         }
     }

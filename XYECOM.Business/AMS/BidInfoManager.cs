@@ -41,5 +41,19 @@ namespace XYECOM.Business.AMS
         {
             return DAL.GetLingXian(ForeclosedId);
         }
+
+        /// <summary>
+        /// 根据抵债信息编号获取该抵债信息的竞价个数
+        /// </summary>
+        /// <param name="ForeID"></param>
+        /// <returns></returns>
+        public int GetBidInfoCountByForeID(int ForeID)
+        {
+            if (ForeID <= 0)
+            {
+                return 0;
+            }
+            return DAL.GetBidInfoCountByForeID(ForeID);
+        }
     }
 }

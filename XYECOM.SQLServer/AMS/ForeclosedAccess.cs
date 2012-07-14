@@ -77,12 +77,16 @@ namespace XYECOM.SQLServer.AMS
         /// <returns></returns>
         public int Delete(int ID)
         {
-            string sql = "DELETE ForeclosedInfo WHERE ForeclosedId=@Id";
+            string sql = "delete bidinfo where foreclosedid =  @Id ";
             SqlParameter[] param = new SqlParameter[] 
             { 
                 new SqlParameter("@Id",ID),
             };
             int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, param);
+
+            sql = "DELETE ForeclosedInfo WHERE ForeclosedId=@Id";
+            rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, param);
+
             return rowAffected;
         }
 
@@ -93,12 +97,16 @@ namespace XYECOM.SQLServer.AMS
         /// <returns></returns>
         public int Deletes(string Ids)
         {
-            string sql = "DELETE ForeclosedInfo WHERE ForeclosedId in ( @Id )";
             SqlParameter[] param = new SqlParameter[] 
             { 
                 new SqlParameter("@Id",Ids),
             };
+            string sql = "delete bidinfo where foreclosedid in ( @Id )";
             int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, param);
+
+            sql = "DELETE ForeclosedInfo WHERE ForeclosedId in ( @Id )";
+            rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, param);
+
             return rowAffected;
         }
 

@@ -36,6 +36,9 @@
                     到
                     <input id="egdate" type="text" runat="server" readonly="readonly" onclick="getDateString(this);"
                         maxlength="10" style="width: 80px;" />
+                    <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="CompareValidator"
+                        ControlToCompare="bgdate" ControlToValidate="egdate" Operator="GreaterThan" Type="Date">截至日期必须大于生效日期
+                    </asp:CompareValidator>
                 </div>
                 &nbsp;&nbsp; 案件状态：<asp:DropDownList Width="150px" ID="drpState" runat="server">
                     <asp:ListItem Value="-2" Text="所有"></asp:ListItem>
@@ -67,10 +70,10 @@
                                     添加时间
                                 </td>
                                 <td align="center" width="15%">
-                                    付款状态
+                                    案件状态
                                 </td>
                                 <td align="center" width="25%">
-                                    操作菜单
+                                    操作
                                 </td>
                             </tr>
                     </HeaderTemplate>
@@ -89,13 +92,17 @@
                             <td>
                                 <asp:HiddenField ID="hidState" runat="server" Value='<%# Eval("ApprovaStatus")%>' />
                                 <asp:HiddenField ID="hidInfoId" runat="server" Value='<%# Eval("CreditId")%>' />
-                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# "UpdateForeclosed.aspx?Id=" + Eval("ForeclosedId") %>'>修改</asp:HyperLink>
-                                <asp:HyperLink ID="hlUpdate" runat="server" NavigateUrl='<%# "/ForeclosedDetail.aspx?Id=" + Eval("ForeclosedId") %>'>查看竞标</asp:HyperLink>
+                                <asp:HyperLink ID="hlUpdate" runat="server" NavigateUrl='<%# "UpdateCreditInfo.aspx?Id=" + Eval("CreditId") %>'>修改</asp:HyperLink>
+                                <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/ForeclosedDetail.aspx?Id=" + Eval("CreditId") %>'>查看竞标</asp:HyperLink>
+                                <asp:HyperLink ID="hlEvaluate" runat="server" NavigateUrl='<%# "/ForeclosedDetail.aspx?Id=" + Eval("CreditId") %>'>评价</asp:HyperLink>
+                                <asp:HyperLink ID="hlServerInfo" runat="server" NavigateUrl='<%# "/ForeclosedDetail.aspx?Id=" + Eval("CreditId") %>'>查看服务商信息</asp:HyperLink>
                                 <asp:LinkButton ID="lbtnCancel" runat="server" Text="取消案件" OnClick="lbtnCancel_Click"
                                     OnClientClick="javascript:return ConfirmCredit();" CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
-                                <asp:LinkButton ID="lbtnClosed" runat="server" Text="关闭案件" OnClick="lbtnCancel_Click"
+                                <asp:LinkButton ID="lbtnClosed" runat="server" Text="关闭案件" OnClick="lbtnClose_Click"
                                     OnClientClick="javascript:return ClosedCredit();" CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
-                                <asp:LinkButton ID="lbtnRelease" runat="server" Text="发布" OnClick="lbtnCancel_Click"
+                                <asp:LinkButton ID="lbtnRelease" runat="server" Text="发布" OnClick="lbtnRelease_Click"
+                                    CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
+                                <asp:LinkButton ID="lbtnDelete" runat="server" Text="删除" OnClick="lbtnDelete_Click"
                                     CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
                             </td>
                         </tr>

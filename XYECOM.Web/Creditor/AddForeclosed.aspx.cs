@@ -52,15 +52,15 @@ namespace XYECOM.Web.Creditor
             info.CreateDate = DateTime.Now;
 
             bool isOK = foreclosedManager.InsertForeclosed(info);
-
+            string gotoUrl = "ForeclosedList.aspx";
             if (isOK)
             {
-                string gotoUrl = "ForeclosedList.aspx";
+                
                 GotoMsgBoxPageForDynamicPage("添加抵债信息成功！", 1, gotoUrl);
             }
             else
             {
-                Alert("添加抵债信息失败！");
+                GotoMsgBoxPageForDynamicPage("添加抵债信息失败！", 1, gotoUrl);
             }
         }
     }

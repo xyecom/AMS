@@ -94,24 +94,24 @@
                                             <ItemTemplate>
                                                 <asp:CheckBox ID="chkExport" runat="server" />
                                             </ItemTemplate>
-                                            <ItemStyle Width="4%" />
+                                            <ItemStyle Width="5%" />
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="标题">
-                                            <ItemStyle CssClass="gvLeft" Width="25%" />
+                                            <ItemStyle CssClass="gvLeft" Width="20%" />
                                             <HeaderStyle CssClass="gvLeft" />
                                             <ItemTemplate>
                                                 <asp:Label runat="server" ID="labTitle" Text='<%# Eval("Title") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="公司名称">
-                                            <ItemStyle CssClass="gvLeft" Width="12%" />
+                                            <ItemStyle CssClass="gvLeft" Width="10%" />
                                             <HeaderStyle CssClass="gvLeft" />
                                             <ItemTemplate>
                                                 <%# GetComName(Eval("DepartmentId"))%>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="发布者">
-                                            <ItemStyle CssClass="gvLeft" Width="12%" />
+                                            <ItemStyle CssClass="gvLeft" Width="10%" />
                                             <HeaderStyle CssClass="gvLeft" />
                                             <ItemTemplate>
                                                 <%# GetUserName(Eval("DepartmentId"))%>
@@ -121,23 +121,28 @@
                                             <ItemTemplate>
                                                 <asp:Label ID="Label1" runat="server" Text='<%# Convert.ToDateTime(Eval("CreateDate")).ToString("yyyy-MM-dd") %>'></asp:Label>
                                             </ItemTemplate>
-                                            <ItemStyle Width="12%" />
+                                            <ItemStyle Width="10%" />
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="物品类型">
                                             <ItemTemplate>
                                                 <%# Eval("ForeColseTypeName")%>
                                             </ItemTemplate>
-                                            <ItemStyle Width="12%" CssClass="action" />
+                                            <ItemStyle Width="10%" CssClass="action" />
                                         </asp:TemplateField>
                                         <asp:ButtonField CommandName="shenhe" HeaderText="审核" DataTextField="State">
                                             <ItemStyle CssClass="action" Width="10%" />
                                         </asp:ButtonField>
+                                        <asp:TemplateField HeaderText="竞价个数">
+                                            <ItemTemplate>
+                                                <%# GetBidInfoCountByForeID(Eval("ForeclosedId"))%>
+                                            </ItemTemplate>
+                                            <ItemStyle Width="10%" CssClass="action" />
+                                        </asp:TemplateField>
                                         <asp:TemplateField HeaderText="查看">
-                                            <ItemStyle Width="10%" />
+                                            <ItemStyle Width="15%" />
                                             <ItemTemplate>
                                                 <a href='ForeclosedInfo.aspx?ID=<%# Eval("ForeclosedId") %>&backURL=<%# backURL %>'>
-                                                    查看详细</a> &nbsp; <a href='/ForeclosedDetail.aspx?Id=<%# Eval("ForeclosedId") %>'>
-                                                        查看竞价</a>
+                                                    查看详细</a> &nbsp; <a href='/ForeclosedDetail.aspx?Id=<%# Eval("ForeclosedId") %>'>查看竞价</a>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:BoundField DataField="AuditingState" HeaderText="AuditingState" Visible="False" />

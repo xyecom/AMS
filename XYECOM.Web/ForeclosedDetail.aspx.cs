@@ -113,6 +113,11 @@ namespace XYECOM.Web
             {
                 GotoMsgBoxPageForDynamicPage("该抵债信息不存在！", 1, "Index.aspx");
             }
+            DateTime date = XYECOM.Core.MyConvert.GetDateTime(labEndDate.Text);
+            if (date.CompareTo(DateTime.Now) < 0)
+            {
+                GotoMsgBoxPageForDynamicPage("该抵债信息已过期不能进行竞标！", 1, "Index.aspx");
+            }
             XYECOM.Model.AMS.ForeclosedInfo info = foreManage.GetForeclosedInfoById(foreId);
             if (userinfo != null && userinfo.userid == info.DepartmentId)
             {

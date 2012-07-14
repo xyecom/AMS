@@ -93,6 +93,11 @@ namespace XYECOM.Web.Creditor
             BindData();
         }
 
+        /// <summary>
+        /// 删除操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void lbtnDelete_Click(object sender, EventArgs e)
         {
             LinkButton linkButton = (LinkButton)(sender as LinkButton);
@@ -101,7 +106,7 @@ namespace XYECOM.Web.Creditor
                 int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
                 if (Id > 0)
                 {
-                    int result = new Business.AMS.ForeclosedManager().Delete(Id);
+                    int result = manage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.Delete);
                     if (result > 0)
                     {
                         BindData();
@@ -110,19 +115,56 @@ namespace XYECOM.Web.Creditor
             }
         }
 
-        public string GetEndDate(object endDate)
+        /// <summary>
+        /// 发布案件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void lbtnRelease_Click(object sender, EventArgs e)
         {
-            DateTime date = XYECOM.Core.MyConvert.GetDateTime(endDate.ToString());
-            if (date.CompareTo(DateTime.Now) < 0)
+            LinkButton linkButton = (LinkButton)(sender as LinkButton);
+            if (linkButton != null)
             {
-                return "已过期";
-            }
-            else
-            {
-                return date.ToString("yyyy-MM-dd");
+                int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
+                if (Id > 0)
+                {
+                    int result = manage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.Null);
+                    if (result > 0)
+                    {
+                        BindData();
+                    }
+                }
             }
         }
 
+        /// <summary>
+        /// 取消案件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void lbtnCancel_Click(object sender, EventArgs e)
+        {
+            LinkButton linkButton = (LinkButton)(sender as LinkButton);
+            if (linkButton != null)
+            {
+                int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
+                if (Id > 0)
+                {
+                    int result = manage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.Canceled);
+                    if (result > 0)
+                    {
+                        BindData();
+                    }
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// 关闭案件操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void lbtnClose_Click(object sender, EventArgs e)
         {
             LinkButton linkButton = (LinkButton)(sender as LinkButton);
@@ -131,7 +173,7 @@ namespace XYECOM.Web.Creditor
                 int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
                 if (Id > 0)
                 {
-                    int result = new Business.AMS.ForeclosedManager().ClosedByID(Id);
+                    int result = manage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.CreditEnd);
                     if (result > 0)
                     {
                         BindData();
@@ -185,120 +227,88 @@ namespace XYECOM.Web.Creditor
                 if (hidState == null) return;
                 int stateId = MyConvert.GetInt32(hidState.Value);
 
-                HyperLink hlPayment = (HyperLink)e.Item.FindControl("hlPayment");//立即支付
-                HyperLink hlDeliveryOrder = (HyperLink)e.Item.FindControl("hlDeliveryOrder");//生成提单
-                HyperLink hlInspectionObjection = (HyperLink)e.Item.FindControl("hlInspectionObjection");//验货异议
-                HyperLink hlOrderDiscuss = (HyperLink)e.Item.FindControl("hlOrderDiscuss");//评价
-                HyperLink hlInspectionConfirm = (HyperLink)e.Item.FindControl("hlInspectionConfirm");//验货确认
-                LinkButton lbtnCancel = (LinkButton)e.Item.FindControl("lbtnCancel");//取消订单
-                HyperLink hlLogisticsInfo = (HyperLink)e.Item.FindControl("hlLogisticsInfo");//查看物流信息
-                HyperLink hlFeedback = (HyperLink)e.Item.FindControl("hlFeedback");//投诉
+                HyperLink hlUpdate = (HyperLink)e.Item.FindControl("hlUpdate");//修改债权信息
+                HyperLink hlShowTender = (HyperLink)e.Item.FindControl("hlShowTender");//查看竞标
+                HyperLink hlEvaluate = (HyperLink)e.Item.FindControl("hlEvaluate");//评价
+                HyperLink hlServerInfo = (HyperLink)e.Item.FindControl("hlServerInfo");//查看服务商信息              
+                LinkButton lbtnCancel = (LinkButton)e.Item.FindControl("lbtnCancel");//取消债权信息
+                LinkButton lbtnClosed = (LinkButton)e.Item.FindControl("lbtnClosed");//关闭债权信息
+                LinkButton lbtnRelease = (LinkButton)e.Item.FindControl("lbtnRelease");//发布债权信息
+                LinkButton lbtnDelete = (LinkButton)e.Item.FindControl("lbtnDelete");//删除债权信息                
 
                 Model.CreditState sta = (Model.CreditState)stateId;
 
                 switch (sta)
                 {
-                    case XYECOM.Model.OrderStatus.WaitingForBuyerPayment:
-
+                    case Model.CreditState.Draft:
+                        hlUpdate.Visible = true;
+                        lbtnRelease.Visible = true;
+                        lbtnDelete.Visible = true;
+                        hlShowTender.Visible = false;
+                        hlEvaluate.Visible = false;
+                        hlServerInfo.Visible = false;
+                        lbtnCancel.Visible = false;
+                        lbtnClosed.Visible = false;
+                        break;
+                    case Model.CreditState.Null:
+                        hlUpdate.Visible = true;
+                        lbtnRelease.Visible = false;
+                        lbtnDelete.Visible = true;
+                        hlShowTender.Visible = false;
+                        hlEvaluate.Visible = false;
+                        hlServerInfo.Visible = false;
+                        lbtnCancel.Visible = false;
+                        lbtnClosed.Visible = false;
+                        break;
+                    case Model.CreditState.NoPass:
+                        hlUpdate.Visible = true;
+                        lbtnRelease.Visible = false;
+                        lbtnDelete.Visible = true;
+                        hlShowTender.Visible = false;
+                        hlEvaluate.Visible = false;
+                        hlServerInfo.Visible = false;
+                        lbtnCancel.Visible = false;
+                        lbtnClosed.Visible = false;
+                        break;
+                    case Model.CreditState.Tender:
+                        hlUpdate.Visible = false;
+                        lbtnRelease.Visible = false;
+                        lbtnDelete.Visible = false;
+                        hlShowTender.Visible = true;
+                        hlEvaluate.Visible = false;
+                        hlServerInfo.Visible = false;
                         lbtnCancel.Visible = true;
-
-                        hlDeliveryOrder.Visible = false;
-                        hlInspectionObjection.Visible = false;
-                        hlFeedback.Visible = false;
-                        hlOrderDiscuss.Visible = false;
-                        hlInspectionConfirm.Visible = false;
-                        hlLogisticsInfo.Visible = false;
+                        lbtnClosed.Visible = false;
                         break;
-                    case XYECOM.Model.OrderStatus.WaitingBuyerCheckGoods:
-                        hlPayment.Visible = false;
-                        lbtnCancel.Visible = false;
-
-                        hlDeliveryOrder.Visible = false;
-                        hlInspectionObjection.Visible = true;
-                        hlFeedback.Visible = true;
-                        hlOrderDiscuss.Visible = false;
-                        hlInspectionConfirm.Visible = true;
-                        hlLogisticsInfo.Visible = true;
+                    case Model.CreditState.InProgress:
+                        hlUpdate.Visible = false;
+                        lbtnRelease.Visible = false;
+                        lbtnDelete.Visible = false;
+                        hlShowTender.Visible = false;
+                        hlEvaluate.Visible = false;
+                        hlServerInfo.Visible = true;
+                        lbtnCancel.Visible = true;
+                        lbtnClosed.Visible = false;
                         break;
-                    case XYECOM.Model.OrderStatus.WaitingBuyerGeneralDeliveryOrder:
-                        hlPayment.Visible = false;
+                    case Model.CreditState.CreditConfirm:
+                        hlUpdate.Visible = false;
+                        lbtnRelease.Visible = false;
+                        lbtnDelete.Visible = false;
+                        hlShowTender.Visible = true;
+                        hlEvaluate.Visible = false;
+                        hlServerInfo.Visible = true;
                         lbtnCancel.Visible = false;
-                        hlLogisticsInfo.Visible = false;
-                        hlDeliveryOrder.Visible = true;
-                        hlInspectionObjection.Visible = false;
-                        hlFeedback.Visible = false;
-                        hlOrderDiscuss.Visible = false;
-                        hlInspectionConfirm.Visible = false;
+                        lbtnClosed.Visible = true;
                         break;
-                    case XYECOM.Model.OrderStatus.WaitingSellerCheckDeliveryOrder:
-                        hlPayment.Visible = false;
+                    case Model.CreditState.CreditEnd:
+                        hlUpdate.Visible = false;
+                        lbtnRelease.Visible = false;
+                        lbtnDelete.Visible = false;
+                        hlShowTender.Visible = false;
+                        hlEvaluate.Visible = true;
+                        hlServerInfo.Visible = true;
                         lbtnCancel.Visible = false;
-
-                        hlDeliveryOrder.Visible = false;
-
-                        hlInspectionObjection.Visible = false;
-                        hlFeedback.Visible = false;
-                        hlOrderDiscuss.Visible = false;
-                        hlInspectionConfirm.Visible = false;
-
-                        hlLogisticsInfo.Visible = false;
-                        break;
-                    case XYECOM.Model.OrderStatus.WaitingSellerSendGoods:
-                        hlPayment.Visible = false;
-                        lbtnCancel.Visible = false;
-
-                        hlDeliveryOrder.Visible = false;
-                        hlInspectionObjection.Visible = false;
-                        hlFeedback.Visible = false;
-                        hlOrderDiscuss.Visible = false;
-                        hlInspectionConfirm.Visible = false;
-                        hlLogisticsInfo.Visible = false;
-                        break;
-                    case XYECOM.Model.OrderStatus.WaitingForBuyerCheckGoodsObjection:
-                        hlPayment.Visible = false;
-                        lbtnCancel.Visible = false;
-
-                        hlDeliveryOrder.Visible = false;
-                        hlInspectionObjection.Visible = false;
-                        hlFeedback.Visible = false;
-                        hlOrderDiscuss.Visible = false;
-                        hlInspectionConfirm.Visible = true;
-                        hlLogisticsInfo.Visible = true;
-                        break;
-                    case XYECOM.Model.OrderStatus.WaitingForSellerConfirmCollection:
-                        hlPayment.Visible = false;
-                        lbtnCancel.Visible = false;
-                        hlLogisticsInfo.Visible = true;
-                        hlDeliveryOrder.Visible = false;
-                        hlInspectionObjection.Visible = false;
-                        hlFeedback.Visible = false;
-                        hlOrderDiscuss.Visible = true;
-                        hlInspectionConfirm.Visible = false;
-                        break;
-                    case XYECOM.Model.OrderStatus.Finish:
-                        hlLogisticsInfo.Visible = true;
-                        hlPayment.Visible = false;
-                        lbtnCancel.Visible = false;
-
-                        hlDeliveryOrder.Visible = false;
-                        hlInspectionObjection.Visible = false;
-                        hlFeedback.Visible = false;
-                        hlOrderDiscuss.Visible = true;
-                        hlInspectionConfirm.Visible = false;
-                        break;
-                    case XYECOM.Model.OrderStatus.Lock:
-                    case XYECOM.Model.OrderStatus.CancelByBuyer:
-                    case XYECOM.Model.OrderStatus.CancelBySupplier:
-                    case XYECOM.Model.OrderStatus.CancelBySystem:
-                        hlLogisticsInfo.Visible = false;
-                        hlPayment.Visible = false;
-                        lbtnCancel.Visible = false;
-
-                        hlDeliveryOrder.Visible = false;
-                        hlInspectionObjection.Visible = false;
-                        hlFeedback.Visible = false;
-                        hlOrderDiscuss.Visible = false;
-                        hlInspectionConfirm.Visible = false;
+                        lbtnClosed.Visible = false;
                         break;
                     default:
                         break;
