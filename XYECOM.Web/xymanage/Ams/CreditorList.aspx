@@ -1,10 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ForeclosedList.aspx.cs"
-    Inherits="XYECOM.Web.xymanage.Creditor.ForeclosedList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreditorList.aspx.cs" Inherits="XYECOM.Web.xymanage.CreditorList" %>
 
 <%@ Register Src="~/xymanage/UserControl/page.ascx" TagName="page" TagPrefix="uc2" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title>抵债信息</title>
     <link href="../CSS/style.css" type="text/css" rel="stylesheet" />
     <link href="/common/css/XYLib.css" type="text/css" rel="Stylesheet" />
@@ -16,7 +15,7 @@
 <body>
     <form id="Form1" method="post" runat="server">
     <h1>
-        <a href="../index.aspx">后台管理首页</a> >> 抵债信息管理</h1>
+        <a href="../index.aspx">后台管理首页</a> >> 债权信息管理</h1>
     <table width="100%">
         <tr>
             <td class="right">
@@ -41,15 +40,20 @@
                                     </tr>
                                     <tr>
                                         <th>
-                                            审核状态：
+                                            案件状态：
                                         </th>
                                         <td>
-                                            <asp:RadioButtonList ID="rblState" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
-                                                <asp:ListItem Value="-1" Selected="True">所有</asp:ListItem>
-                                                <asp:ListItem Value="1">未审核</asp:ListItem>
-                                                <asp:ListItem Value="2">审核通过</asp:ListItem>
-                                                <asp:ListItem Value="3">审核未通过</asp:ListItem>
-                                            </asp:RadioButtonList>
+                                            <asp:DropDownList ID="drpState" runat="server">
+                                                <asp:ListItem Value="-2" Text="所有"></asp:ListItem>
+                                                <asp:ListItem Value="-1" Text="未审核"></asp:ListItem>
+                                                <asp:ListItem Value="0" Text="草稿"></asp:ListItem>
+                                                <asp:ListItem Value="1" Text="审核未通过"></asp:ListItem>
+                                                <asp:ListItem Value="2" Text="投标中"></asp:ListItem>
+                                                <asp:ListItem Value="3" Text="案件进行中"></asp:ListItem>
+                                                <asp:ListItem Value="4" Text="服务商案件完成等待债权人确认"></asp:ListItem>
+                                                <asp:ListItem Value="5" Text="案件结束"></asp:ListItem>
+                                                <asp:ListItem Value="6" Text="债权人取消案件"></asp:ListItem>
+                                            </asp:DropDownList>
                                         </td>
                                     </tr>
                                     <tr>
@@ -86,7 +90,7 @@
                         <tr>
                             <td>
                                 <asp:GridView ID="GV1" HeaderStyle-CssClass="gv_header_style" runat="server" AutoGenerateColumns="False"
-                                    DataKeyNames="ForeclosedId" GridLines="None" OnRowCommand="GV1_RowCommand1" OnRowDataBound="GV1_RowDataBound1"
+                                    DataKeyNames="ForeclosedId" GridLines="None" OnRowDataBound="GV1_RowDataBound1"
                                     Width="100%">
                                     <Columns>
                                         <asp:BoundField DataField="ID" HeaderText="ID" Visible="False" />
@@ -107,14 +111,14 @@
                                             <ItemStyle CssClass="gvLeft" Width="10%" />
                                             <HeaderStyle CssClass="gvLeft" />
                                             <ItemTemplate>
-                                                <%# GetComName(Eval("DepartmentId"))%>
+                                                <%# GetComName(Eval("DepartId"))%>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="发布者">
                                             <ItemStyle CssClass="gvLeft" Width="10%" />
                                             <HeaderStyle CssClass="gvLeft" />
                                             <ItemTemplate>
-                                                <%# GetUserName(Eval("DepartmentId"))%>
+                                                <%# GetUserName(Eval("DepartId"))%>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="发布日期">
@@ -123,15 +127,12 @@
                                             </ItemTemplate>
                                             <ItemStyle Width="10%" />
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="物品类型">
+                                        <asp:TemplateField HeaderText="债权状态">
                                             <ItemTemplate>
-                                                <%# Eval("ForeColseTypeName")%>
+                                                <%# GetApprovaStatus(Eval("ApprovaStatus"))%>
                                             </ItemTemplate>
                                             <ItemStyle Width="10%" CssClass="action" />
                                         </asp:TemplateField>
-                                        <asp:ButtonField CommandName="shenhe" HeaderText="审核" DataTextField="State">
-                                            <ItemStyle CssClass="action" Width="10%" />
-                                        </asp:ButtonField>
                                         <asp:TemplateField HeaderText="竞价个数">
                                             <ItemTemplate>
                                                 <%# GetBidInfoCountByForeID(Eval("ForeclosedId"))%>
@@ -143,6 +144,10 @@
                                             <ItemTemplate>
                                                 <a href='ForeclosedInfo.aspx?ID=<%# Eval("ForeclosedId") %>&backURL=<%# backURL %>'>
                                                     查看详细</a> &nbsp; <a href='/ForeclosedDetail.aspx?Id=<%# Eval("ForeclosedId") %>'>查看竞价</a>
+                                                <asp:LinkButton ID="lbtnRelease" runat="server" Text="审核通过" OnClick="btnIsPass_Click"
+                                                    CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
+                                                <asp:LinkButton ID="lbtnDelete" runat="server" Text="审核不通过" OnClick="btnNotIsPass_Click"
+                                                    CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:BoundField DataField="AuditingState" HeaderText="AuditingState" Visible="False" />

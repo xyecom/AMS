@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace XYECOM.Web.xymanage.Foreclosed {
+namespace XYECOM.Web.xymanage {
     
     
     public partial class ForeclosedInfo {

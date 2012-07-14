@@ -224,23 +224,30 @@
                                         * 注意：请认真填写您的相关资料！
                                     </div>
                                     <div style="margin: 8px 10px;">
-                                        我的姓名：
+                                        <span style="color: Red">*</span>姓名：
                                         <asp:TextBox runat="server" ID="txtName" Width="254px"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtName"
+                                            ErrorMessage="姓名不能为空"></asp:RequiredFieldValidator>
                                     </div>
                                     <div style="margin: 8px 10px;">
-                                        我的电话：
+                                        <span style="color: Red">*</span>手机号码：
                                         <asp:TextBox runat="server" ID="txtContact" Width="254px"></asp:TextBox>
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtContact"
+                                            ErrorMessage="手机号码格式不正确" ValidationExpression="\s*((\d{2,3}-){0,1}\d{11})\s*"></asp:RegularExpressionValidator>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtContact"
+                                            ErrorMessage="手机号码不能为空"></asp:RequiredFieldValidator>
                                     </div>
                                     <div style="margin: 8px 10px;">
-                                        我的地址：
+                                        地址：
                                         <asp:TextBox runat="server" ID="txtAddress" Width="254px"></asp:TextBox>
                                     </div>
                                     <div style="margin: 8px 10px;">
-                                        我的出价：
-                                        <asp:TextBox runat="server" ID="txtPrice" Width="254px"></asp:TextBox>元
+                                        <span style="color: Red">*</span>出价：
+                                        <asp:TextBox runat="server" ID="txtPrice" Width="254px"></asp:TextBox>元<asp:RequiredFieldValidator
+                                            ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtPrice" ErrorMessage="报价不能为空"></asp:RequiredFieldValidator>
                                     </div>
                                     <div style="margin: 8px 10px;">
-                                        我的留言：
+                                        留言：
                                         <asp:TextBox runat="server" ID="txtRemark" Width="254px" TextMode="MultiLine" Rows="10"></asp:TextBox>
                                     </div>
                                     <br />

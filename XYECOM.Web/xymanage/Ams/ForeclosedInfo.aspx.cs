@@ -8,7 +8,7 @@ using XYECOM.Business.AMS;
 using XYECOM.Business;
 using XYECOM.Core;
 
-namespace XYECOM.Web.xymanage.Foreclosed
+namespace XYECOM.Web.xymanage
 {
     public partial class ForeclosedInfo : XYECOM.Web.BasePage.ManagePage
     {

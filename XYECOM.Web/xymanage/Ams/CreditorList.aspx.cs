@@ -14,11 +14,11 @@ using XYECOM.Core;
 using XYECOM.Business;
 using XYECOM.Business.AMS;
 
-namespace XYECOM.Web.xymanage.Creditor
+namespace XYECOM.Web.xymanage
 {
-    public partial class ForeclosedList : XYECOM.Web.BasePage.ManagePage
+    public partial class CreditorList : XYECOM.Web.BasePage.ManagePage
     {
-        ForeclosedManager foreManage = new ForeclosedManager();
+        CreditInfoManager coreManage = new CreditInfoManager();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,7 +34,7 @@ namespace XYECOM.Web.xymanage.Creditor
             {
                 SetValueByquery(Page1, "page");
                 SetValueByquery(txtKeyword, "keyword");
-                SetValueByquery(rblState, "state");
+                SetValueByquery(drpState, "state");
                 SetValueByquery(txtPageSize, "pagesize");
                 SetValueByquery(txtdays, "isdays");
                 SetValueByquery(cbdays, "cbday", "1");
@@ -49,12 +49,13 @@ namespace XYECOM.Web.xymanage.Creditor
         #region 绑定数据
         protected override void BindData()
         {
+            int state = MyConvert.GetInt32(this.drpState.SelectedValue);
             //设置编辑或查看后要返回当前页面的状态
             backURL = XYECOM.Core.Utils.JSEscape(
                 "ForeclosedList.aspx?" +
                 "page=" + Page1.CurPage.ToString() +
                 "&keyWord=" + txtKeyword.Text.Trim() +
-                "&State=" + rblState.Text.Trim() +
+                "&State=" + drpState.Text.Trim() +
                 "&pagesize=" + txtPageSize.Text +
                 "&cbday=" + cbdays.Checked.ToString().ToLower() +
                 "&Id=" + txtId.Text.Trim() +
@@ -68,26 +69,19 @@ namespace XYECOM.Web.xymanage.Creditor
             {
                 strwhere += " and  title like '%" + this.txtKeyword.Text.Trim() + "%' ";
             }
-            //审核状态
-            if (this.rblState.SelectedValue != "-1")
+            //案件状态
+            if (state == -2)
             {
-                switch (rblState.SelectedValue)
-                {
-                    case "1":
-                        strwhere += " and State = -1 ";
-                        break;
-                    case "2":
-                        strwhere += " and State = 1 ";
-                        break;
-                    case "3":
-                        strwhere += " and State = 0 ";
-                        break;
-                }
+                 strwhere +=" and ( ApprovaStatus ! =7)";
+            }
+            else
+            {
+                strwhere += " and (ApprovaStatus = " + state + ")";
             }
 
             if (txtId.Text.Trim() != "")
             {
-                strwhere += " and DepartmentId in (SELECT U_Id FROM dbo.u_User WHERE U_Name LIKE '%" + txtId.Text.Trim() + "%')";
+                strwhere += " and DepartId in (SELECT U_Id FROM dbo.u_User WHERE U_Name LIKE '%" + txtId.Text.Trim() + "%')";
             }
             else
             {
@@ -103,7 +97,7 @@ namespace XYECOM.Web.xymanage.Creditor
 
             int totalRecord = 0;
 
-            DataTable dt = XYECOM.Business.Utils.GetPaginationData("ForeclosedInfo", "ForeclosedId", "ForeclosedId,Title,IdentityNumber,HighPrice,EndDate,CreateDate,State,UserId,DepartmentId,LinePrice,ForeColseTypeName", "CreateDate desc", strwhere, XYECOM.Core.MyConvert.GetInt32(this.txtPageSize.Text), this.Page1.CurPage, out totalRecord);
+            DataTable dt = XYECOM.Business.Utils.GetPaginationData("CreditInfo", "CreditId", "*", "CreateDate desc", strwhere, XYECOM.Core.MyConvert.GetInt32(this.txtPageSize.Text), this.Page1.CurPage, out totalRecord);
 
             this.Page1.RecTotal = totalRecord;
 
@@ -119,6 +113,45 @@ namespace XYECOM.Web.xymanage.Creditor
             }
         }
         #endregion
+        /// <summary>
+        /// 获取债权状态
+        /// </summary>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        protected string GetApprovaStatus(object state)
+        {
+            int stateId = MyConvert.GetInt32(state.ToString());
+            Model.CreditState sta = (Model.CreditState)stateId;
+            string name = "";
+            switch (sta)
+            {
+                case XYECOM.Model.CreditState.Draft:
+                    name = "草稿";
+                    break;
+                case XYECOM.Model.CreditState.Null:
+                    name = "未审核";
+                    break;
+                case XYECOM.Model.CreditState.NoPass:
+                    name = "审核未通过";
+                    break;
+                case XYECOM.Model.CreditState.Tender:
+                    name = "投标中";
+                    break;
+                case XYECOM.Model.CreditState.InProgress:
+                    name = "案件进行中";
+                    break;
+                case XYECOM.Model.CreditState.CreditConfirm:
+                    name = "服务商案件完成等待债权人确认";
+                    break;
+                case XYECOM.Model.CreditState.CreditEnd:
+                    name = "案件结束";
+                    break;
+                case XYECOM.Model.CreditState.Canceled:
+                    name = "债权人取消案件";
+                    break;
+            }
+            return name;
+        }
 
         protected void GV1_RowDataBound1(object sender, GridViewRowEventArgs e)
         {
@@ -126,21 +159,6 @@ namespace XYECOM.Web.xymanage.Creditor
             {
                 e.Row.Attributes.Add("onmouseover", "javascript:__XY_GV_Row_MouseOver(this)");
                 e.Row.Attributes.Add("onmouseout", "javascript:__XY_GV_Row_MouseOut(this);");
-
-                LinkButton LB = (LinkButton)e.Row.Cells[7].Controls[0];
-                string state = LB.Text.Trim();
-                if (state == "1")
-                {
-                    LB.Text = "通过审核";
-                }
-                else if (state == "0")
-                {
-                    LB.Text = "审核未通过";
-                }
-                else if (state == "-1" || state == "")
-                {
-                    LB.Text = "未审核";
-                }
             }
         }
 
@@ -195,7 +213,7 @@ namespace XYECOM.Web.xymanage.Creditor
             if (j.IndexOf(",") == 0)
             {
                 j = j.Substring(1);
-                int i = foreManage.Deletes(j);
+                int i = coreManage.UpdateApprovaStatusByID(j,XYECOM.Model.CreditState.Delete);
                 if (i >= 0)
                 {
                     BindData();
@@ -224,7 +242,7 @@ namespace XYECOM.Web.xymanage.Creditor
 
                     if (infoId <= 0) continue;
 
-                    foreManage.AuditById(infoId, true);
+                    coreManage.UpdateApprovaStatusByID(infoId, XYECOM.Model.CreditState.Tender);
                 }
             }
 
@@ -247,7 +265,7 @@ namespace XYECOM.Web.xymanage.Creditor
 
                     if (infoId <= 0) continue;
 
-                    foreManage.AuditById(infoId, false);
+                    coreManage.UpdateApprovaStatusByID(infoId,XYECOM.Model.CreditState.NoPass);
                 }
             }
 
@@ -263,32 +281,6 @@ namespace XYECOM.Web.xymanage.Creditor
         {
             BindData();
         }
-
-        #region 审核
-        protected void GV1_RowCommand1(object sender, GridViewCommandEventArgs e)
-        {
-            //获取该行的行号
-            int iRowNo = Convert.ToInt32(e.CommandArgument);
-
-            //获取该行的主键
-            int ID = Convert.ToInt32(GV1.DataKeys[iRowNo].Value);
-
-            if (e.CommandName == "shenhe")
-            {
-                LinkButton LB = (LinkButton)GV1.Rows[iRowNo].Cells[7].Controls[0];
-
-                if (LB.Text == "通过审核")
-                {
-                    int JJ = foreManage.AuditById(ID, false);
-                }
-                else if (LB.Text == "审核未通过" || LB.Text == "未审核" || LB.Text.ToString() == "")
-                {
-                    foreManage.AuditById(ID, true);
-                }
-                BindData();
-            }
-        }
-        #endregion
 
         #region 定义分页事件
         protected override void OnInit(EventArgs e)

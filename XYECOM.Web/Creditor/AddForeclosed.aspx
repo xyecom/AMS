@@ -18,13 +18,13 @@
             <table class="dzbasetb">
                 <tr>
                     <td class="info1">
-                        名称：
+                        <span style="color: Red">*</span> 名称：
                     </td>
                     <td>
                         <asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
                     </td>
                     <td class="info1">
-                        拍卖底价：
+                        <span style="color: Red">*</span>拍卖底价：
                     </td>
                     <td>
                         <asp:TextBox runat="server" ID="txtLinePrice"></asp:TextBox><span>元</span>
@@ -39,13 +39,13 @@
                         </div>
                         <input type="hidden" id="areaid" name="areaid" runat="server" />
                         <script type="text/javascript">
-                            var cla = new ClassType("cla", 'area', 'divArea', '<%=areaid.ClientID %>');
+                            var cla = new ClassType("cla", 'area', 'divArea', '<%=areaid.ClientID %>', 1);
                             cla.Mode = "select";
                             cla.Init();
                         </script>
                     </td>
                     <td class="info1">
-                        物品类型：
+                        <span style="color: Red">*</span>物品类型：
                     </td>
                     <td>
                         <asp:DropDownList runat="server" ID="droTypeName" Width="135px">
@@ -65,10 +65,11 @@
                 </tr>
                 <tr>
                     <td class="info1">
-                        结束竞拍时间：
+                        <span style="color: Red">*</span>结束竞拍时间：
                     </td>
                     <td colspan="3">
-                        <input id="endDate" style="width:120px" runat="server" size="10" type="text" readonly="readonly" onclick="getDateString(this);" />
+                        <input id="endDate" style="width: 120px" runat="server" size="10" type="text" readonly="readonly"
+                            onclick="getDateString(this);" />
                     </td>
                 </tr>
                 <tr>

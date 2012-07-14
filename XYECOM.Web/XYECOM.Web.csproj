@@ -285,12 +285,12 @@
     <Compile Include="UploadImage.aspx.designer.cs">
       <DependentUpon>UploadImage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="xymanage\Ams\CreditList.aspx.cs">
-      <DependentUpon>CreditList.aspx</DependentUpon>
+    <Compile Include="xymanage\Ams\CreditorList.aspx.cs">
+      <DependentUpon>CreditorList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="xymanage\Ams\CreditList.aspx.designer.cs">
-      <DependentUpon>CreditList.aspx</DependentUpon>
+    <Compile Include="xymanage\Ams\CreditorList.aspx.designer.cs">
+      <DependentUpon>CreditorList.aspx</DependentUpon>
     </Compile>
     <Compile Include="xymanage\Basic\Administrator.aspx.cs">
       <DependentUpon>Administrator.aspx</DependentUpon>
@@ -3959,7 +3959,7 @@
     <Content Include="templates\default\_userinfo.htm" />
     <Content Include="templates\default\__ranking.htm" />
     <Content Include="UploadImage.aspx" />
-    <Content Include="xymanage\Ams\CreditList.aspx" />
+    <Content Include="xymanage\Ams\CreditorList.aspx" />
     <Content Include="xymanage\Basic\Administrator.aspx" />
     <Content Include="xymanage\Basic\AreaAdd.aspx" />
     <Content Include="xymanage\Basic\AreaList.aspx" />
