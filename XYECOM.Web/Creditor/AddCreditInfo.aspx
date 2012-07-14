@@ -82,7 +82,7 @@
                             催收期限
                         </td>
                         <td class="info_lei2">
-                            <asp:TextBox runat="server" ID="txtCollectionPeriod"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtCollectionPeriod"></asp:TextBox>天
                         </td>
                         <td class="info_lei3">
                             备注
@@ -125,7 +125,7 @@
                             账龄
                         </td>
                         <td class="info_lei2">
-                            <asp:TextBox runat="server" ID="txtAge"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtAge"></asp:TextBox>天
                         </td>
                         <td class="info_lei3">
                             是否在诉讼期

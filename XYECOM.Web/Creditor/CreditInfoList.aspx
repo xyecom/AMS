@@ -54,7 +54,7 @@
                 &nbsp;&nbsp; 标题：<asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
                 <%--<input type="text" value="请输入关键字" onfocus="this.value=''" onblur="if(!value){value=defaultValue;}"
                     style="color: #a8a4a3"><input name="" type="button" value="查 询" />--%>
-                <asp:Button runat="server" ID="btnSearch" Text="搜索" />
+                <asp:Button runat="server" ID="btnSearch" Text="搜索" OnClick="btnSearch_Click"/>
             </div>
             <!--serch end-->
             <!--列表 start-->
@@ -102,7 +102,7 @@
                                     OnClientClick="javascript:return ClosedCredit();" CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
                                 <asp:LinkButton ID="lbtnRelease" runat="server" Text="发布" OnClick="lbtnRelease_Click"
                                     CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
-                                <asp:LinkButton ID="lbtnDelete" runat="server" Text="删除" OnClick="lbtnDelete_Click"
+                                <asp:LinkButton ID="lbtnDelete" runat="server" Text="删除" OnClientClick="javascript:return confirm('确定删除吗？');"  OnClick="lbtnDelete_Click"
                                     CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
                             </td>
                         </tr>

@@ -155,7 +155,7 @@ namespace XYECOM.SQLServer.AMS
                     info.DebtorType = reader["DebtorType"].ToString();
                     info.DepartId = Core.MyConvert.GetInt32(reader["DepartId"].ToString());
                     info.Introduction = reader["Introduction"].ToString();
-                    info.IsConfirm = Core.MyConvert.GetBoolean(reader["IsConfirms"].ToString());
+                    info.IsConfirm = Core.MyConvert.GetBoolean(reader["IsConfirm"].ToString());
                     info.IsCreditEvaluation = Core.MyConvert.GetBoolean(reader["IsCreditEvaluation"].ToString());
                     info.IsInLitigation = Core.MyConvert.GetBoolean(reader["IsInLitigation"].ToString());
                     info.IsLitigationed = Core.MyConvert.GetBoolean(reader["IsLitigationed"].ToString());

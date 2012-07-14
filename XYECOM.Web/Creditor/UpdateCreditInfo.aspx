@@ -82,7 +82,7 @@
                             催收期限
                         </td>
                         <td class="info_lei2">
-                            <asp:TextBox runat="server" ID="txtCollectionPeriod"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtCollectionPeriod"></asp:TextBox>天
                         </td>
                         <td class="info_lei3">
                             备注
@@ -125,7 +125,7 @@
                             账龄
                         </td>
                         <td class="info_lei2">
-                            <asp:TextBox runat="server" ID="txtAge"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtAge"></asp:TextBox>天
                         </td>
                         <td class="info_lei3">
                             是否在诉讼期
@@ -172,10 +172,10 @@
                         </td>
                         <td class="info_lei2" colspan="3">
                             <asp:CheckBoxList runat="server" ID="cheDebtObligation" RepeatDirection="Horizontal">
-                                <asp:ListItem Value="1">合同</asp:ListItem>
-                                <asp:ListItem Value="0">发票</asp:ListItem>
-                                <asp:ListItem Value="1">欠条</asp:ListItem>
-                                <asp:ListItem Value="0">发票其他凭证</asp:ListItem>
+                                <asp:ListItem Value="合同">合同</asp:ListItem>
+                                <asp:ListItem Value="发票">发票</asp:ListItem>
+                                <asp:ListItem Value="欠条">欠条</asp:ListItem>
+                                <asp:ListItem Value="发票其他凭证">发票其他凭证</asp:ListItem>
                             </asp:CheckBoxList>
                         </td>
                     </tr>
@@ -185,8 +185,8 @@
                         <tr>
                             <td align="center" colspan="2">
                                 <asp:RadioButtonList runat="server" ID="radSelect" RepeatDirection="Horizontal">
-                                    <asp:ListItem Value="发布">存为债权草稿</asp:ListItem>
-                                    <asp:ListItem Value="草稿">直接对外发布</asp:ListItem>
+                                    <asp:ListItem Value="发布">直接对外发布</asp:ListItem>
+                                    <asp:ListItem Value="草稿">存为债权草稿</asp:ListItem>
                                 </asp:RadioButtonList>
                             </td>
                         </tr>
@@ -195,7 +195,7 @@
                 <div style="width: 756px; height: 50px; line-height: 50px; text-align: center">
                     <%--                    <input type="button" value="确 定" style="background: url(../images/yes.gif); width: 80px;
                         height: 25px; border: none; cursor: pointer; color: #FFF" />--%>
-                    <asp:Button runat="server" ID="btnOk" OnClick="btnOk_Click" Text="确定" />
+                    <asp:Button runat="server" ID="btnOk" OnClick="btnOK_Click" Text="确定" />
                     <input type="button" value="返回" onclick="javascript:history.back();" />
                     <input type="hidden" id="hiddID" runat="server" />
                 </div>

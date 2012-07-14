@@ -46,7 +46,7 @@ namespace XYECOM.Web.Creditor
             }
             else
             {
-                strWhere.Append(" and (ApprovaStatus = )" + state);
+                strWhere.Append(" and (ApprovaStatus = "+state+")");
             }
 
             //开始日期
@@ -62,7 +62,7 @@ namespace XYECOM.Web.Creditor
 
             if (!string.IsNullOrEmpty(title))
             {
-                strWhere.Append(" and (Title Title '%" + title + "%')");
+                strWhere.Append(" and (Title like '%" + title + "%')");
             }
             int totalRecord = 0;
             DataTable dt = XYECOM.Business.Utils.GetPaginationData("CreditInfo", "CreditId", "*", " CreateDate desc", strWhere.ToString(), this.Page1.PageSize, this.Page1.CurPage, out totalRecord);

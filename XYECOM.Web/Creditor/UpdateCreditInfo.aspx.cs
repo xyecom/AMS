@@ -34,11 +34,12 @@ namespace XYECOM.Web.Creditor
             {
                 GotoMsgBoxPageForDynamicPage("该债权信息不存在！", 1, "CreditInfoList.aspx");
             }
+            this.txtTitle.Text = info.Title;
             this.areaid.Value = info.AreaId.ToString();
             this.txtArrears.Text = info.Arrears.ToString();
             this.txtBounty.Text = info.Bounty.ToString();
             this.txtCollectionPeriod.Text = info.CollectionPeriod;
-            string[] debtObligation = info.DebtObligation.Split(new char[]{','},StringSplitOptions.RemoveEmptyEntries);
+            string[] debtObligation = info.DebtObligation.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (string str in debtObligation)
             {
                 for (int i = 0; i < cheDebtObligation.Items.Count; i++)
@@ -49,16 +50,17 @@ namespace XYECOM.Web.Creditor
                     }
                 }
             }
+            this.txtAge.Text = info.Age.ToString();
             this.cheDebtObligation.SelectedValue = info.DebtObligation;
             this.txtDebtorName.Text = info.DebtorName;
             this.txtDebtorReason.Text = info.DebtorReason;
             this.txtDebtorTelpone.Text = info.DebtorTelpone;
             this.txtDebtorType.Text = info.DebtorType;
             this.txtIntroduction.Text = info.Introduction;
-            this.radIsConfirm.SelectedValue = info.IsConfirm.ToString();
-            this.radIsInLitigation.SelectedValue = info.IsInLitigation.ToString();
-            this.radIsLitigationed.SelectedValue = info.IsLitigationed.ToString();
-            this.radIsSelfCollection.SelectedValue = info.IsSelfCollection.ToString();
+            this.radIsConfirm.SelectedValue = info.IsConfirm ? "1" : "0";
+            this.radIsInLitigation.SelectedValue = info.IsInLitigation ? "1" : "0";
+            this.radIsLitigationed.SelectedValue = info.IsLitigationed ? "1" : "0";
+            this.radIsSelfCollection.SelectedValue = info.IsSelfCollection ? "1" : "0";
             this.txtLicenseType.Text = info.LicenseType;
             this.txtRemark.Text = info.Remark;
         }
