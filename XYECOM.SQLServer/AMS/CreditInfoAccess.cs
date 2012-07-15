@@ -9,6 +9,9 @@ using XYECOM.Model.AMS;
 
 namespace XYECOM.SQLServer.AMS
 {
+    /// <summary>
+    /// 抵债信息数据访问类
+    /// </summary>
     public class CreditInfoAccess
     {
         /// <summary>

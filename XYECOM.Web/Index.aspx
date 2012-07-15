@@ -40,7 +40,7 @@
                                         <input type="hidden" id="city" name="city" runat="server" />
                                     </div>
                                     <script type="text/javascript">
-                                        var claarea = new ClassType("claarea", 'area', 'divarea', 'city');
+                                        var claarea = new ClassType("claarea", 'area', 'divarea', 'city',1);
                                         claarea.Mode = "select";
                                         claarea.Init();
                                     </script>

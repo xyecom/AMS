@@ -7,10 +7,13 @@ using System.Data;
 
 namespace XYECOM.Business.AMS
 {
+    /// <summary>
+    /// 竞价业务逻辑类
+    /// </summary>
     public class BidInfoManager
     {
-
         BidInfoAccess DAL = new BidInfoAccess();
+
         /// <summary>
         /// 新增报价信息
         /// </summary>

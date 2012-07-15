@@ -5,6 +5,9 @@ using XYECOM.Model.AMS;
 
 namespace XYECOM.Business.AMS
 {
+    /// <summary>
+    /// 抵债信息业务类
+    /// </summary>
     public class ForeclosedManager
     {
         XYECOM.SQLServer.AMS.ForeclosedAccess DAL = new SQLServer.AMS.ForeclosedAccess();
@@ -27,6 +30,11 @@ namespace XYECOM.Business.AMS
             }
         }
 
+        /// <summary>
+        /// 根据抵债编号修改抵债信息
+        /// </summary>
+        /// <param name="info"></param>
+        /// <returns></returns>
         public bool UpdateForeclosedByID(ForeclosedInfo info)
         {
             int result = DAL.UpdateForeclosedByID(info);
@@ -40,6 +48,11 @@ namespace XYECOM.Business.AMS
             }
         }
 
+        /// <summary>
+        /// 根据抵债信息编号获取抵债信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ForeclosedInfo GetForeclosedInfoById(int id)
         {
             if (id <= 0)
@@ -58,11 +71,16 @@ namespace XYECOM.Business.AMS
         {
             if (string.IsNullOrEmpty(Ids))
             {
-                return 0;    
+                return 0;
             }
             return DAL.Deletes(Ids);
         }
 
+        /// <summary>
+        /// 根据抵债信息编号删除抵债信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public int Delete(int id)
         {
             if (id <= 0)
@@ -99,10 +117,10 @@ namespace XYECOM.Business.AMS
             {
                 return 0;
             }
-            return DAL.AuditByIds(fIds,state);
+            return DAL.AuditByIds(fIds, state);
         }
 
-                /// <summary>
+        /// <summary>
         /// 关闭抵债信息
         /// </summary>
         /// <param name="id"></param>

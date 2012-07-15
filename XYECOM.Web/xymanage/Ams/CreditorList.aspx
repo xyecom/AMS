@@ -90,7 +90,7 @@
                         <tr>
                             <td>
                                 <asp:GridView ID="GV1" HeaderStyle-CssClass="gv_header_style" runat="server" AutoGenerateColumns="False"
-                                    DataKeyNames="ForeclosedId" GridLines="None" OnRowDataBound="GV1_RowDataBound1"
+                                    DataKeyNames="CreditId" GridLines="None" OnRowDataBound="GV1_RowDataBound1"
                                     Width="100%">
                                     <Columns>
                                         <asp:BoundField DataField="ID" HeaderText="ID" Visible="False" />
@@ -101,7 +101,7 @@
                                             <ItemStyle Width="5%" />
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="标题">
-                                            <ItemStyle CssClass="gvLeft" Width="20%" />
+                                            <ItemStyle CssClass="gvLeft" Width="10%" />
                                             <HeaderStyle CssClass="gvLeft" />
                                             <ItemTemplate>
                                                 <asp:Label runat="server" ID="labTitle" Text='<%# Eval("Title") %>'></asp:Label>
@@ -133,20 +133,20 @@
                                             </ItemTemplate>
                                             <ItemStyle Width="10%" CssClass="action" />
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="竞价个数">
+                                        <asp:TemplateField HeaderText="投标个数">
                                             <ItemTemplate>
-                                                <%# GetBidInfoCountByForeID(Eval("ForeclosedId"))%>
+                                                <%# GetTenderCountByCreditID(Eval("CreditId"))%>
                                             </ItemTemplate>
                                             <ItemStyle Width="10%" CssClass="action" />
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="查看">
-                                            <ItemStyle Width="15%" />
+                                        <asp:TemplateField HeaderText="操作">
+                                            <ItemStyle Width="20%" />
                                             <ItemTemplate>
-                                                <a href='ForeclosedInfo.aspx?ID=<%# Eval("ForeclosedId") %>&backURL=<%# backURL %>'>
-                                                    查看详细</a> &nbsp; <a href='/ForeclosedDetail.aspx?Id=<%# Eval("ForeclosedId") %>'>查看竞价</a>
-                                                <asp:LinkButton ID="lbtnRelease" runat="server" Text="审核通过" OnClick="btnIsPass_Click"
+                                                <a href='ForeclosedInfo.aspx?ID=<%# Eval("CreditId") %>&backURL=<%# backURL %>'>
+                                                    查看详细</a> &nbsp; <a href='/ForeclosedDetail.aspx?Id=<%# Eval("CreditId") %>'>查看竞价</a>
+                                                <asp:LinkButton ID="lbtnRelease" runat="server" Text="审核通过"  OnClick="lbtnYes_Click"
                                                     CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
-                                                <asp:LinkButton ID="lbtnDelete" runat="server" Text="审核不通过" OnClick="btnNotIsPass_Click"
+                                                <asp:LinkButton ID="lbtnDelete" runat="server" Text="审核不通过"  OnClick="lbtnNo_Click"
                                                     CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
                                             </ItemTemplate>
                                         </asp:TemplateField>

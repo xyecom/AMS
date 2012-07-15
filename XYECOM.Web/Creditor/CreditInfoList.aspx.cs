@@ -46,7 +46,7 @@ namespace XYECOM.Web.Creditor
             }
             else
             {
-                strWhere.Append(" and (ApprovaStatus = "+state+")");
+                strWhere.Append(" and (ApprovaStatus = " + state + ")");
             }
 
             //开始日期
@@ -310,10 +310,31 @@ namespace XYECOM.Web.Creditor
                         lbtnCancel.Visible = false;
                         lbtnClosed.Visible = false;
                         break;
+                    case Model.CreditState.Canceled:
+                        hlUpdate.Visible = true;
+                        lbtnRelease.Visible = true;
+                        lbtnDelete.Visible = true;
+                        hlShowTender.Visible = false;
+                        hlEvaluate.Visible = false;
+                        hlServerInfo.Visible = false;
+                        lbtnCancel.Visible = false;
+                        lbtnClosed.Visible = false;
+                        break;
                     default:
                         break;
                 }
             }
+        }
+
+        /// <summary>
+        /// 根据债权信息ID获取该债权信息的投标个数
+        /// </summary>
+        /// <param name="CreditID"></param>
+        /// <returns></returns>
+        public int GetTenderCountByCreditID(object CreditID)
+        {
+            int id = MyConvert.GetInt32(CreditID.ToString());
+            return new XYECOM.Business.AMS.TenderInfoManager().GetTenderCountByCreditID(id);
         }
     }
 }

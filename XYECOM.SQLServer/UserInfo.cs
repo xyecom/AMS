@@ -392,6 +392,25 @@ namespace XYECOM.SQLServer
             }
         }
 
+        /// <summary>
+        /// 根据用户编号获取用户邮箱
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public string GetEmailByID(int userId)
+        {
+            string sql = "SELECT U_Email FROM dbo.u_User WHERE U_Id = " + userId;
+            object obj = XYECOM.Core.Data.SqlHelper.ExecuteScalar(sql);
+            if (obj != null)
+            {
+                return obj.ToString();
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+
         public int UpdateBaseInfo(Model.GeneralUserInfo userinfo)
         {
             string sqlfmt = @"update u_userinfo set UI_Name='{0}',U_Address='{1}',Email='{2}',Description='{3}',FAX='{4}',Telphone='{5}',UI_LinkMan='{6}' where U_ID={7}";

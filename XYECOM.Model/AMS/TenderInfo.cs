@@ -57,10 +57,12 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 是否已中标
         /// </summary>
-        public int IsSuccess
+        public bool IsSuccess
         {
             get;
             set;
         }
+
+        //TODO:是否已中标改为bool类型
     }
 }

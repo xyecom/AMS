@@ -78,7 +78,7 @@ namespace XYECOM.Business
             return DAL.Delete(U_ID);
         }
         #endregion
-                
+
         #region 修改用户等级ID
         /// <summary>
         /// 修改用户等级
@@ -134,7 +134,7 @@ namespace XYECOM.Business
         }
 
         public int UpdateBaseInfo(Model.GeneralUserInfo userinfo)
-        {   
+        {
             return DAL.UpdateBaseInfo(userinfo);
         }
 
@@ -150,6 +150,20 @@ namespace XYECOM.Business
                 return string.Empty;
             }
             return DAL.GetUserNameByID(userId);
+        }
+
+        /// <summary>
+        /// 根据用户编号获取用户邮箱
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public string GetEmailByID(int userId)
+        {
+            if (userId <= 0)
+            {
+                return string.Empty;
+            }
+            return DAL.GetEmailByID(userId);
         }
     }
 }

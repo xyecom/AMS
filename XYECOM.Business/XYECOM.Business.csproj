@@ -61,6 +61,7 @@
     <Compile Include="AMS\BidInfoManager.cs" />
     <Compile Include="AMS\CreditInfoManager.cs" />
     <Compile Include="AMS\ForeclosedManager.cs" />
+    <Compile Include="AMS\TenderInfoManager.cs" />
     <Compile Include="Area.cs" />
     <Compile Include="AreaSite.cs" />
     <Compile Include="Attachment.cs" />

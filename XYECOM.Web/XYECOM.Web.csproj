@@ -123,6 +123,13 @@
     <Compile Include="Common\XYOutInvoke.aspx.designer.cs">
       <DependentUpon>XYOutInvoke.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CreditInfoDetail.aspx.cs">
+      <DependentUpon>CreditInfoDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreditInfoDetail.aspx.designer.cs">
+      <DependentUpon>CreditInfoDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Creditor\AddCreditInfo.aspx.cs">
       <DependentUpon>AddCreditInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -221,6 +228,13 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="IndexCreditList.aspx.cs">
+      <DependentUpon>IndexCreditList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexCreditList.aspx.designer.cs">
+      <DependentUpon>IndexCreditList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -257,6 +271,20 @@
     <Compile Include="Server\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Server\InProgressCreditList.aspx.cs">
+      <DependentUpon>InProgressCreditList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\InProgressCreditList.aspx.designer.cs">
+      <DependentUpon>InProgressCreditList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Server\RecommendCreditList.aspx.cs">
+      <DependentUpon>RecommendCreditList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\RecommendCreditList.aspx.designer.cs">
+      <DependentUpon>RecommendCreditList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Server\Server.master.cs">
       <DependentUpon>Server.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -284,6 +312,13 @@
     </Compile>
     <Compile Include="UploadImage.aspx.designer.cs">
       <DependentUpon>UploadImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="xymanage\Ams\CreditorInfo.aspx.cs">
+      <DependentUpon>CreditorInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xymanage\Ams\CreditorInfo.aspx.designer.cs">
+      <DependentUpon>CreditorInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="xymanage\Ams\CreditorList.aspx.cs">
       <DependentUpon>CreditorList.aspx</DependentUpon>
@@ -1522,6 +1557,7 @@
     <Content Include="Copyright.htm" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CreditInfoDetail.aspx" />
     <Content Include="Creditor\AddCreditInfo.aspx" />
     <Content Include="Creditor\AddForeclosed.aspx" />
     <Content Include="Creditor\CreditInfoList.aspx" />
@@ -1626,6 +1662,7 @@
     <Content Include="front\js\zu.js" />
     <Content Include="GetPassWord.aspx" />
     <Content Include="Index.aspx" />
+    <Content Include="IndexCreditList.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="LogOut.aspx" />
     <Content Include="My97DatePicker\calendar.js" />
@@ -1740,6 +1777,8 @@
     <Content Include="Other\js\update8.js" />
     <Content Include="Other\js\zd.js" />
     <Content Include="Other\js\zu.js" />
+    <Content Include="Server\InProgressCreditList.aspx" />
+    <Content Include="Server\RecommendCreditList.aspx" />
     <Content Include="Server\UserContorl\left.ascx" />
     <Content Include="Server\UserContorl\menu.ascx" />
     <Content Include="templates\default\js\attribute.js" />
@@ -3959,6 +3998,7 @@
     <Content Include="templates\default\_userinfo.htm" />
     <Content Include="templates\default\__ranking.htm" />
     <Content Include="UploadImage.aspx" />
+    <Content Include="xymanage\Ams\CreditorInfo.aspx" />
     <Content Include="xymanage\Ams\CreditorList.aspx" />
     <Content Include="xymanage\Basic\Administrator.aspx" />
     <Content Include="xymanage\Basic\AreaAdd.aspx" />

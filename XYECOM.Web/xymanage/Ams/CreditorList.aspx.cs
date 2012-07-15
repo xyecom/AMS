@@ -72,7 +72,7 @@ namespace XYECOM.Web.xymanage
             //案件状态
             if (state == -2)
             {
-                 strwhere +=" and ( ApprovaStatus ! =7)";
+                strwhere += " and ( ApprovaStatus ! =7  and  ApprovaStatus ! =0)";
             }
             else
             {
@@ -185,18 +185,14 @@ namespace XYECOM.Web.xymanage
         }
 
         /// <summary>
-        ///获取竞价个数
+        /// 根据债权信息ID获取该债权信息的投标个数
         /// </summary>
-        /// <param name="foreId"></param>
+        /// <param name="CreditID"></param>
         /// <returns></returns>
-        public int GetBidInfoCountByForeID(object foreId)
+        public int GetTenderCountByCreditID(object CreditID)
         {
-            int id = XYECOM.Core.MyConvert.GetInt32(foreId.ToString());
-            if (id <= 0)
-            {
-                return 0;
-            }
-            return new XYECOM.Business.AMS.BidInfoManager().GetBidInfoCountByForeID(id);
+            int id = MyConvert.GetInt32(CreditID.ToString());
+            return new XYECOM.Business.AMS.TenderInfoManager().GetTenderCountByCreditID(id);
         }
 
         #region 删除操作
@@ -213,7 +209,7 @@ namespace XYECOM.Web.xymanage
             if (j.IndexOf(",") == 0)
             {
                 j = j.Substring(1);
-                int i = coreManage.UpdateApprovaStatusByID(j,XYECOM.Model.CreditState.Delete);
+                int i = coreManage.UpdateApprovaStatusByID(j, XYECOM.Model.CreditState.Delete);
                 if (i >= 0)
                 {
                     BindData();
@@ -265,7 +261,7 @@ namespace XYECOM.Web.xymanage
 
                     if (infoId <= 0) continue;
 
-                    coreManage.UpdateApprovaStatusByID(infoId,XYECOM.Model.CreditState.NoPass);
+                    coreManage.UpdateApprovaStatusByID(infoId, XYECOM.Model.CreditState.NoPass);
                 }
             }
 
@@ -295,6 +291,41 @@ namespace XYECOM.Web.xymanage
             BindData();
         }
         #endregion
+
+        protected void lbtnNo_Click(object sender, EventArgs e)
+        {
+            LinkButton linkButton = (LinkButton)(sender as LinkButton);
+            if (linkButton != null)
+            {
+                int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
+                if (Id > 0)
+                {
+                    int result = coreManage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.NoPass);
+                    if (result > 0)
+                    {
+                        BindData();
+                    }
+                }
+            }
+        }
+
+        protected void lbtnYes_Click(object sender, EventArgs e)
+        {
+            LinkButton linkButton = (LinkButton)(sender as LinkButton);
+            if (linkButton != null)
+            {
+                int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
+                if (Id > 0)
+                {
+                    int result = coreManage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.Tender);
+                    if (result > 0)
+                    {
+                        BindData();
+                    }
+                }
+            }
+        }
+
 
         #region 审核商业信息失败给用户留言
         private void SendToMessage(long U_ID)

@@ -63,11 +63,14 @@
                     <HeaderTemplate>
                         <table>
                             <tr id="trtop">
-                                <td align="center" width="40%">
+                                <td align="center" width="20%">
                                     案件标题
                                 </td>
                                 <td align="center" width="20%">
                                     添加时间
+                                </td>
+                                <td align="center" width="20%">
+                                    投标个数
                                 </td>
                                 <td align="center" width="15%">
                                     案件状态
@@ -85,6 +88,9 @@
                             </td>
                             <td>
                                 <%# Eval("CreateDate")%>
+                            </td>
+                            <td>
+                                <%# GetTenderCountByCreditID("CreditId")%>
                             </td>
                             <td>
                                 <%# GetApprovaStatus(Eval("ApprovaStatus"))%>
