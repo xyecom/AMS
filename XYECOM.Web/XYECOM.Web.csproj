@@ -278,6 +278,13 @@
     <Compile Include="Server\InProgressCreditList.aspx.designer.cs">
       <DependentUpon>InProgressCreditList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Server\ParticipateCreditList.aspx.cs">
+      <DependentUpon>ParticipateCreditList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\ParticipateCreditList.aspx.designer.cs">
+      <DependentUpon>ParticipateCreditList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Server\RecommendCreditList.aspx.cs">
       <DependentUpon>RecommendCreditList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1778,6 +1785,7 @@
     <Content Include="Other\js\zd.js" />
     <Content Include="Other\js\zu.js" />
     <Content Include="Server\InProgressCreditList.aspx" />
+    <Content Include="Server\ParticipateCreditList.aspx" />
     <Content Include="Server\RecommendCreditList.aspx" />
     <Content Include="Server\UserContorl\left.ascx" />
     <Content Include="Server\UserContorl\menu.ascx" />

@@ -61,7 +61,7 @@
                                 <%# GetApprovaStatus(Eval("ApprovaStatus"))%>
                             </td>
                             <td>
-                                <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/ForeclosedDetail.aspx?Id=" + Eval("CreditId") %>'>查看竞标</asp:HyperLink>
+                                <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'>查看详细</asp:HyperLink>
                             </td>
                         </tr>
                     </ItemTemplate>

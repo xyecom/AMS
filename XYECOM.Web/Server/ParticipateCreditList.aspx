@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Server/Server.master" AutoEventWireup="true"
-    CodeBehind="InProgressCreditList.aspx.cs" Inherits="XYECOM.Web.Server.InProgressCreditList" %>
+    CodeBehind="ParticipateCreditList.aspx.cs" Inherits="XYECOM.Web.Server.ParticipateCreditList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
@@ -32,15 +32,18 @@
             <!--serch end-->
             <!--列表 start-->
             <div id="list">
-                <asp:Repeater ID="rptList" runat="server">
+                <asp:Repeater ID="rptList" runat="server" OnItemDataBound="rptList_ItemDataBound">
                     <HeaderTemplate>
                         <table>
                             <tr id="trtop">
-                                <td align="center" width="40%">
+                                <td align="center" width="20%">
                                     案件标题
                                 </td>
                                 <td align="center" width="20%">
                                     投标时间
+                                </td>
+                                <td align="center" width="20%">
+                                    案件状态
                                 </td>
                                 <td align="center" width="15%">
                                     催收期限
@@ -57,13 +60,18 @@
                                 <%# GetCreditInfoByCredID(Eval("CreditInfoId")).Title%>
                             </td>
                             <td>
+                                <%# GetApprovaStatus(Eval("CreditInfoId"))%>
+                            </td>
+                            <td>
                                 <%# Eval("TenderDate")%>
                             </td>
                             <td>
                                 <%# GetCreditInfoByCredID(Eval("CreditInfoId")).CollectionPeriod%>
                             </td>
                             <td>
+                                <asp:HiddenField ID="hidCreditInfoId" runat="server" Value='<%# Eval("CreditInfoId")%>' />
                                 <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'>查看详细</asp:HyperLink>
+                                <asp:HyperLink ID="hlEvaluate" runat="server" NavigateUrl='<%# "/ForeclosedDetail.aspx?Id=" + Eval("CreditId") %>'>评价</asp:HyperLink>
                             </td>
                         </tr>
                     </ItemTemplate>

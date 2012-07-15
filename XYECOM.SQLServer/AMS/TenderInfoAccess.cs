@@ -10,7 +10,7 @@ using XYECOM.Model.AMS;
 namespace XYECOM.SQLServer.AMS
 {
     /// <summary>
-    /// 套标数据访问类
+    /// 投标数据访问类
     /// </summary>
     public class TenderInfoAccess
     {
@@ -44,6 +44,53 @@ namespace XYECOM.SQLServer.AMS
             string sql = "select count(*) from TenderInfo where creditInfoId = "+CreditID;
             int count = (int)SqlHelper.ExecuteScalar(CommandType.Text, sql, null);
             return count;
+        }
+
+        /// <summary>
+        /// 判断某服务商是否已经对某债权信息投标
+        /// </summary>
+        /// <param name="credId"></param>
+        /// <returns></returns>
+        public bool CheckTenderByCredID(int credId,int serId)
+        {
+            string sql = "select count(*) from tenderInfo where CreditInfoId= " + credId + " and LayerId = "+serId;
+            int count = (int)SqlHelper.ExecuteScalar(CommandType.Text, sql, null);
+            if (count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 根据投标编号获取投标信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public TenderInfo GetTenderInfoByID(int id)
+        {
+            string sql = "select * from tenderInfo where TenderId=@Id";
+            SqlParameter[] param = new SqlParameter[] 
+            { 
+                new SqlParameter("@Id",id),
+            };
+            TenderInfo info = null;
+
+            using (SqlDataReader reader = XYECOM.Core.Data.SqlHelper.ExecuteReader(CommandType.Text, sql, param))
+            {
+                if (reader.Read())
+                {
+                    info = new TenderInfo();
+
+                    info.TenderId = id;
+                    info.Message = reader["Message"].ToString();
+                    info.CreditInfoId = Core.MyConvert.GetInt32(reader["CreditInfoId"].ToString());
+                    info.TenderDate = Core.MyConvert.GetDateTime(reader["TenderDate"].ToString());
+                    info.LayerId = Core.MyConvert.GetInt32(reader["LayerId"].ToString());
+                    info.IsSuccess = Core.MyConvert.GetInt32(reader["IsSuccess"].ToString());
+                }
+            }
+            return info;
         }
     }
 }

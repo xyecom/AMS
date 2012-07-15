@@ -4,7 +4,40 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>债权详细信息</title>
+    <script type="text/javascript" language="javascript">
+        function ShowNo()                        //隐藏两个层 
+        {
+            document.getElementById("doing").style.display = "none";
+            document.getElementById("divcj").style.display = "none";
+        }
+        function $(id) {
+            return (document.getElementById) ? document.getElementById(id) : document.all[id];
+        }
+        function showFloat()                    //根据屏幕的大小显示两个层 
+        {
+            var range = getRange();
+            $('doing').style.width = range.width + "px";
+            $('doing').style.height = range.height + "px";
+            $('doing').style.display = "block";
+            document.getElementById("divcj").style.display = "";
+        }
+        function getRange()                      //得到屏幕的大小 
+        {
+            var top = document.body.scrollTop;
+            var left = document.body.scrollLeft;
+            var height = document.body.clientHeight;
+            var width = document.body.clientWidth;
+
+            if (top == 0 && left == 0 && height == 0 && width == 0) {
+                top = document.documentElement.scrollTop;
+                left = document.documentElement.scrollLeft;
+                height = document.documentElement.clientHeight;
+                width = document.documentElement.clientWidth;
+            }
+            return { top: top, left: left, height: height, width: width };
+        } 
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -176,6 +209,99 @@
             </td>
         </tr>
     </table>
+    <asp:Repeater ID="rptList" runat="server" OnItemDataBound="rptList_ItemDataBound">
+        <HeaderTemplate>
+            <table>
+                <tr id="trtop">
+                    <td align="center" width="20%">
+                        服务商名称
+                    </td>
+                    <td align="center" width="20%">
+                        服务商公司名称
+                    </td>
+                    <td align="center" width="20%">
+                        投标日期
+                    </td>
+                    <td align="center" width="15%">
+                        是否中标
+                    </td>
+                    <td align="center" width="25%">
+                        操作
+                    </td>
+                </tr>
+        </HeaderTemplate>
+        <ItemTemplate>
+            <tr id="trmidd" style="height: 28px; border-top: 1px solid #ccc" onmousemove="this.style.backgroundColor='#F7F7F7'"
+                onmouseout="this.style.backgroundColor='#ffffff'">
+                <td id="tdtitle">
+                    <%# GetUserName(Eval("LayerId"))%>
+                </td>
+                <td>
+                    <%# GetComName(Eval("LayerId"))%>
+                </td>
+                <td>
+                    <%# Eval("TenderDate")%>
+                </td>
+                <td>
+                    <%# GetTenderState(Eval("IsSuccess"))%>
+                </td>
+                <td>
+                    <asp:HiddenField ID="hidCreditInfoId" runat="server" Value='<%# Eval("CreditInfoId")%>' />
+                    <asp:LinkButton ID="lbtnOK" runat="server" Text="选为此案件服务商" OnClientClick="javascript:return confirm('确定选为此案件服务商吗？');"
+                        OnClick="lbtnOK_Click" CommandArgument='<%# Eval("TenderId") %>'></asp:LinkButton>
+                    <asp:Label runat="server" ID="labTenderMessage">竞标已结束</asp:Label>
+                </td>
+            </tr>
+        </ItemTemplate>
+        <FooterTemplate>
+            </table></FooterTemplate>
+    </asp:Repeater>
+    <div style="width: 705px; height: 30px; line-height: 30px; text-align: center">
+        <XYECOM:Page ID="Page1" runat="server" PageSize="20" OnPageChanged="Page1_PageChanged" />
+    </div>
+    <div>
+        <p style="text-align: center;">
+            <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></p>
+    </div>
+    <input type="hidden" id="hidID" runat="server" />
+    <input type="hidden" id="hidStae" runat="server" />
+    <div style="width: 710px; height: 40px; line-height: 40px; text-align: center">
+        <div style="background: url(../images/yes.gif) no-repeat; width: 396px; height: 25px;
+            float: right; line-height: 25px; text-align: left; padding-left: 10px; margin: 10px">
+            <a href="javascript:void(0)" onclick="showFloat()"><strong style="color: White">我要投标</strong></a>
+        </div>
+    </div>
+    <!--加一个半透明层-->
+    <div id="doing" style="filter: alpha(opacity=30); -moz-opacity: 0.3; opacity: 0.3;
+        background-color: #000; width: 100%; height: 100%; z-index: 800; position: absolute;
+        left: 0; top: 0; display: none; overflow: hidden;">
+    </div>
+    <!--加一个层-->
+    <div id="divcj" style="border: solid 10px #898989; background: #fff; padding: 10px;
+        width: 600px; z-index: 800; position: absolute; display: none; top: 50%; left: 50%;
+        margin: 100px 0 0 -200px;">
+        <div style="padding: 3px 15px 3px 15px; text-align: center; vertical-align: middle;">
+            <div style="margin: 8px 10px; font-size: 13px; color: #f00">
+            </div>
+            <div style="margin: 8px 10px;">
+                留言：
+                <asp:TextBox runat="server" ID="txtRemark" Width="254px" TextMode="MultiLine" Rows="10"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtRemark"
+                    ErrorMessage="留言不能为空"></asp:RequiredFieldValidator>
+            </div>
+            <br />
+            <div>
+                &nbsp; &nbsp;
+                <%--<input id="bntok" type="button" value=" 确 定" style="background: url(../images/ok.gif);
+                                            width: 95px; height: 38px; border: none; cursor: pointer; font-size: 13px;" />--%>
+                <asp:Button runat="server" ID="btnOK" Text="确定投标" OnClick="btnTender_Click" />
+                &nbsp; &nbsp;
+                <input id="BttCancel" type="button" value=" 取 消 " onclick="ShowNo()" style="background: url(../images/quit.gif);
+                    width: 95px; height: 41px; border: none; cursor: pointer; font-size: 13px;" />
+            </div>
+        </div>
+    </div>
+    <!--半透明层结束-->
     </form>
 </body>
 </html>

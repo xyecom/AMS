@@ -10,7 +10,7 @@
 namespace XYECOM.Web.Server {
     
     
-    public partial class InProgressCreditList {
+    public partial class ParticipateCreditList {
         
         /// <summary>
         /// bgdate control.

@@ -9,7 +9,7 @@ using System.Data;
 
 namespace XYECOM.Web.Server
 {
-    public partial class InProgressCreditList : XYECOM.Web.AppCode.UserCenter.Server
+    public partial class ParticipateCreditList : XYECOM.Web.AppCode.UserCenter.Server
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,7 +36,7 @@ namespace XYECOM.Web.Server
             {
                 enddate = "";
             }
-            StringBuilder strWhere = new StringBuilder(" 1=1 and LayerId = " + userinfo.userid + "and CreditInfoId in (select creditId from dbo.CreditInfo where approvastatus = 3)");
+            StringBuilder strWhere = new StringBuilder(" 1=1 and LayerId = " + userinfo.userid);
             //开始日期
             if (begindate != "")
             {
@@ -94,6 +94,72 @@ namespace XYECOM.Web.Server
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             BindData();
+        }
+
+        /// <summary>
+        /// 根据债权编号获取债权状态
+        /// </summary>
+        /// <param name="credID"></param>
+        /// <returns></returns>
+        protected string GetApprovaStatus(object credID)
+        {
+            int id = MyConvert.GetInt32(credID.ToString());
+            XYECOM.Model.AMS.CreditInfo info = this.GetCreditInfoByCredID(id);
+            int stateId = MyConvert.GetInt32(info.ApprovaStatus.ToString());
+            Model.CreditState sta = (Model.CreditState)stateId;
+            string name = "";
+            switch (sta)
+            {
+                case XYECOM.Model.CreditState.Draft:
+                    name = "草稿";
+                    break;
+                case XYECOM.Model.CreditState.Null:
+                    name = "未审核";
+                    break;
+                case XYECOM.Model.CreditState.NoPass:
+                    name = "审核未通过";
+                    break;
+                case XYECOM.Model.CreditState.Tender:
+                    name = "投标中";
+                    break;
+                case XYECOM.Model.CreditState.InProgress:
+                    name = "案件进行中";
+                    break;
+                case XYECOM.Model.CreditState.CreditConfirm:
+                    name = "服务商案件完成等待债权人确认";
+                    break;
+                case XYECOM.Model.CreditState.CreditEnd:
+                    name = "案件结束";
+                    break;
+                case XYECOM.Model.CreditState.Canceled:
+                    name = "债权人取消案件";
+                    break;
+            }
+            return name;
+        }
+
+        protected void rptList_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                HiddenField hidInfoId = (HiddenField)e.Item.FindControl("hidCreditInfoId");//当前案件编号
+                if (hidInfoId == null) return;
+                int creditId = MyConvert.GetInt32(hidInfoId.Value);
+                XYECOM.Model.AMS.CreditInfo info = new XYECOM.Business.AMS.CreditInfoManager().GetCreditInfoById(creditId);
+
+                int stateId = info.ApprovaStatus;
+                HyperLink hlEvaluate = (HyperLink)e.Item.FindControl("hlEvaluate");//评价          
+
+                Model.CreditState sta = (Model.CreditState)stateId;
+                if (sta == Model.CreditState.CreditEnd)
+                {
+                    hlEvaluate.Visible = true;
+                }
+                else
+                {
+                    hlEvaluate.Visible = false;
+                }
+            }
         }
     }
 }
