@@ -18,13 +18,13 @@
             <table class="dzbasetb">
                 <tr>
                     <td class="info1">
-                        名称：
+                        <span style="color: Red">*</span> 名称：
                     </td>
                     <td>
                         <asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
                     </td>
                     <td class="info1">
-                        拍卖底价：
+                        <span style="color: Red">*</span>拍卖底价：
                     </td>
                     <td>
                         <asp:TextBox runat="server" ID="txtLinePrice"></asp:TextBox><span>元</span>
@@ -35,12 +35,17 @@
                         地区：
                     </td>
                     <td>
-                        <div id="divarea">
-                            <input type="hidden" id="city" runat="server" />
+                        <div id="divArea">
                         </div>
+                        <input type="hidden" id="areaid" name="areaid" runat="server" />
+                        <script type="text/javascript">
+                            var cla = new ClassType("cla", 'area', 'divArea', '<%=areaid.ClientID %>', 1);
+                            cla.Mode = "select";
+                            cla.Init();
+                        </script>
                     </td>
                     <td class="info1">
-                        物品类型：
+                        <span style="color: Red">*</span>物品类型：
                     </td>
                     <td>
                         <asp:DropDownList runat="server" ID="droTypeName" Width="135px">
@@ -60,10 +65,11 @@
                 </tr>
                 <tr>
                     <td class="info1">
-                        结束竞拍时间：
+                        <span style="color: Red">*</span>结束竞拍时间：
                     </td>
                     <td colspan="3">
-                        <input id="endDate" runat="server" size="10" type="text" readonly="readonly" onclick="getDateString(this);" />
+                        <input id="endDate" style="width: 120px" runat="server" size="10" type="text" readonly="readonly"
+                            onclick="getDateString(this);" />
                     </td>
                 </tr>
                 <tr>
@@ -72,7 +78,7 @@
                     </td>
                     <td colspan="3">
                         <FCKeditorV2:FCKeditor ID="fckDescription" runat="server" BasePath="/Common/fckeditor/"
-                            ToolbarSet="News" Height="200px">
+                            ToolbarSet="News" Height="500px">
                         </FCKeditorV2:FCKeditor>
                     </td>
                 </tr>
@@ -86,13 +92,8 @@
                     选择图片：
                 </p>
                 <p>
-                    <input type="file" size="20" onchange="upimg(this);" />
-                </p>
-                <p>
-                    <input type="file" size="20" onchange="upimg(this);" />
-                </p>
-                <p>
-                    <input type="file" size="20" onchange="upimg(this);" />
+                    <%--<XYECOM:UploadImage ID="supplyImages" runat="server" Iswatermark="false" MaxAmount="3"
+                        TableName="i_supply" IsCreateThumbnailImg="true" />--%>
                 </p>
             </div>
         </div>
@@ -101,12 +102,8 @@
             <%--  <input type="button" value="确 定" style="background: url(../images/yes.gif); width: 80px;
                 height: 25px; border: none; cursor: pointer; color: #FFF" />--%>
             <asp:Button runat="server" ID="btnOK" Width="80px" Height="25px" Text="确定" OnClick="btnOK_Click" />
+            <input type="button" value="返回" onclick="javascript:history.back();" />
         </div>
     </div>
-    <script type="text/javascript">
-        var claarea = new ClassType("claarea", 'area', 'divarea', '<%= this.city.ClientID  %>');
-        claarea.Mode = "select";
-        claarea.Init();
-    </script>
     <!--right end-->
 </asp:Content>

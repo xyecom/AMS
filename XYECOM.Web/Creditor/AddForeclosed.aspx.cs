@@ -23,12 +23,7 @@ namespace XYECOM.Web.Creditor
             //todo: 为实现
             Random r = new Random();
             var number = r.Next(9999);
-            string no ="FLS"+ number.ToString();
-            if (no.Length < 7)
-            {
-                int length = 7 - no.Length;
-                no.PadRight(length, '0');
-            }
+            string no = string.Format("{0}{1}", "FLS", DateTime.Now.ToString("yyyyMMddhhmmssfff").PadLeft(20 - 2, '0'));
             return no;
         }
 
@@ -36,7 +31,7 @@ namespace XYECOM.Web.Creditor
         {
             string title = this.txtTitle.Text.Trim();
             decimal linePrice = MyConvert.GetDecimal(this.txtLinePrice.Text.Trim());
-            int areaId = MyConvert.GetInt32(this.city.Value);
+            int areaId = MyConvert.GetInt32(this.areaid.Value);
             string typeName = this.droTypeName.SelectedValue;
             string address = this.txtAddress.Text.Trim();
             DateTime date = MyConvert.GetDateTime(this.endDate.Value);
@@ -46,27 +41,26 @@ namespace XYECOM.Web.Creditor
             info.IdentityNumber = GetUniqueNo();
             info.Title = title;
             info.LinePrice = linePrice;
-            //info.AreaId = areaId;
-            info.AreaId = 10;
+            info.AreaId = areaId;
             info.ForeColseTypeName = typeName;
             info.Address = address;
             info.EndDate = date;
             info.Description = description;
             info.State = (int)AuditingState.Null;
-            //info.UserId = userinfo;   //TODO:缺少所属公司编号
-            info.CompanyId = userinfo.userid;
+            info.DepartmentId = userinfo.userid;
+            info.UserId = MyConvert.GetInt32(userinfo.CompanyId.ToString());
             info.CreateDate = DateTime.Now;
 
             bool isOK = foreclosedManager.InsertForeclosed(info);
-
+            string gotoUrl = "ForeclosedList.aspx";
             if (isOK)
             {
-                string gotoUrl = "/Creditor/index.aspx";
+                
                 GotoMsgBoxPageForDynamicPage("添加抵债信息成功！", 1, gotoUrl);
             }
             else
             {
-                Alert("添加抵债信息失败！");
+                GotoMsgBoxPageForDynamicPage("添加抵债信息失败！", 1, gotoUrl);
             }
         }
     }
