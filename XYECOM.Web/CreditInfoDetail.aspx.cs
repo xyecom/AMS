@@ -166,11 +166,12 @@ namespace XYECOM.Web
             {
                 GotoMsgBoxPageForDynamicPage("该债权信息不能进行投标！", 1, "IndexCreditList.aspx");
             }
-            if (userinfo == null)
+            XYECOM.Model.GeneralUserInfo userInfo = Business.CheckUser.UserInfo;
+            if (userInfo == null)
             {
                 GotoMsgBoxPageForDynamicPage("请登录后进行投标！", 1, "IndexCreditList.aspx");
             }
-            if (userinfo.UserType != (int)XYECOM.Model.UserType.Layer && userinfo.UserType != (int)XYECOM.Model.UserType.NotLayer)
+            if (userInfo.UserType !=XYECOM.Model.UserType.Layer && userInfo.UserType != XYECOM.Model.UserType.NotLayer)
             {
                 GotoMsgBoxPageForDynamicPage("债权帐号不能进行投标！", 1, "IndexCreditList.aspx");
             }
@@ -178,7 +179,7 @@ namespace XYECOM.Web
             XYECOM.Model.AMS.TenderInfo info = new Model.AMS.TenderInfo();
             info.CreditInfoId = credId;
             info.IsSuccess = (int)XYECOM.Model.AMS.TenderState.Failure;
-            info.LayerId = userinfo.userid;
+            info.LayerId = (int)userInfo.userid;
             info.Message = this.txtRemark.Text.Trim();
             info.TenderDate = DateTime.Now;
             int result = new XYECOM.Business.AMS.TenderInfoManager().InsertTenderInfo(info);

@@ -47,8 +47,8 @@ namespace XYECOM.Web.Creditor
             info.EndDate = date;
             info.Description = description;
             info.State = (int)AuditingState.Null;
-            info.DepartmentId = userinfo.userid;
-            info.UserId = MyConvert.GetInt32(userinfo.CompanyId.ToString());
+            info.DepartmentId =MyConvert.GetInt32(userinfo.userid.ToString());
+            info.CompanyId = userinfo.CompanyId;
             info.CreateDate = DateTime.Now;
 
             bool isOK = foreclosedManager.InsertForeclosed(info);

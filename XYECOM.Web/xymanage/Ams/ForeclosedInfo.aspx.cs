@@ -46,7 +46,7 @@ namespace XYECOM.Web.xymanage
                 this.labAddress.Text = info.Address;
                 this.labAreaId.Text = new Area().GetItem(info.AreaId).FullNameAll;
                 this.labCreateDate.Text = info.CreateDate.ToString();
-                this.labCompanyName.Text = GetCompanyName(info.UserId);
+                this.labCompanyName.Text = GetCompanyName(info.CompanyId);
                 this.labUserName.Text = GetUserName(info.DepartmentId);
                 this.labTitle.Text = info.Title;
                 this.labTypeName.Text = info.ForeColseTypeName;

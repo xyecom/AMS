@@ -139,7 +139,7 @@ namespace XYECOM.SQLServer.AMS
                     info.CreateDate = Core.MyConvert.GetDateTime(reader["CreateDate"].ToString());
                     info.State = Core.MyConvert.GetInt32(reader["State"].ToString());
                     info.PassDate = Core.MyConvert.GetDateTime(reader["PassDate"].ToString());
-                    info.UserId = Core.MyConvert.GetInt32(reader["UserId"].ToString());
+                    info.CompanyId = Core.MyConvert.GetInt32(reader["UserId"].ToString());
                     info.AreaId = Core.MyConvert.GetInt32(reader["AreaId"].ToString());
                     info.DepartmentId = Core.MyConvert.GetInt32(reader["DepartmentId"].ToString());
                     info.Description = reader["Description"].ToString();
