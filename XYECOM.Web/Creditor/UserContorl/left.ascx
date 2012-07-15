@@ -6,7 +6,10 @@
             存储业务</h1>
         <ul>
             <li><a tabindex="1" href="#">存储业务</a></li>
-            <li><a tabindex="2" href="#">管理存储业务</a></li></ul>
+            <li><a tabindex="2" href="#">管理存储业务</a></li>
+            <li><a href="/Creditor/CaseTypeList.aspx">档案分类管理</a></li>
+            <li><a href="/Creditor/CaseList.aspx">档案管理</a></li>
+        </ul>
         <h1>
             债权业务</h1>
         <ul>

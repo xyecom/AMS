@@ -1,23 +1,28 @@
-﻿<%set str=GetLinkPrefix()%>
-<div>
-    <a href="{str}index.{config.Suffix}">网店首页</a></div>
-<div>
-    <a href="{str}introduction.{config.Suffix}">公司简介</a></div>
-<div>
-    <a href="{str}product.{config.Suffix}">产品展示</a></div>
-<div>
-    <a href="{str}venturelist.{config.Suffix}">投融资信息</a></div>
-<div>
-    <a href="{str}cred.{config.Suffix}">诚信档案</a></div>
-<div>
-    <a href="{str}brandlist.{config.Suffix}">品牌介绍</a></div>
-<div>
-    <a href="{str}newslist.{config.Suffix}">公司动态</a></div>
-<div>
-    <a href="{str}joblist.{config.Suffix}">人才招聘</a></div>
-<div>
-    <a href="{str}contact.{config.Suffix}">联系方式</a>
-</div>
-<div>
-    <a href="{str}list----.{config.Suffix}">团购信息</a>
+﻿<div id="left">
+    <div id="leftlszl">
+        <div id="lszl">
+            <p style="height: 110px; width: 91px; float: left; line-height: 120px">
+                <img src="{shopuserinfo.LayerPicture}" style="height: 76px; width: 86px" /></p>
+            <p style="height: 96px; width: 138px; float: left; padding-top: 10px">
+                <strong>{shopuserinfo.LayerName}</strong><br />
+                所在地区：{shopuserinfo.AreaName}<br />
+                电话：{shopuserinfo.Telphone}
+                <br />
+            </p>
+            ~~~~~~~~~~~~~~~~~~~~~~~~<br />
+            执业证号： {shopuserinfo.LayerId}<br />
+            执业机构： {shopuserinfo.CompanyName}<br />
+            E-mail： {shopuserinfo.Email}
+        </div>
+    </div>
+    <div id="leftpj">
+        <div id="menutop">
+            <h1>
+                用户评级</h1>
+        </div>
+        <p>
+            <strong>华众物流</strong> 共解决案件<strong>{shopuserinfo.Point}</strong>条<br />
+            其中：好评：{shopuserinfo.GoodTimes}个 差评：{shopuserinfo.BadTimes}个
+        </p>
+    </div>
 </div>

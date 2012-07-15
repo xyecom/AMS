@@ -37,7 +37,7 @@ table{border-collapse:collapse;/*细线表格*/}
 .leftul p a:hover{ text-decoration:underline; color:#900}
 
 /*------------------------------right---------------------------------*/
-#right{ width:835px;margin-top:5px;float:right}
+#right{ width:835px;margin-top:5px;float:right;overflow:hidden }
 
 #rightmsg{height:200px; border:1px solid #ddd; margin-bottom:5px; background:#FFF7DE}
 #msgimg{ width:140px; height:180px; float:left; text-align:center; padding-top:20px}
@@ -78,22 +78,20 @@ table{border-collapse:collapse;/*细线表格*/}
 #basetbjj table{ width:835px;}
 #basetbjj table td{border-bottom:1px solid #F3F2F0}
 
-#baseinfo{width:830px;
-}
+#baseinfo{width:830px;}
 .basetb{width:750px; margin:5px auto;border:1px solid #ddd;}
 .basetb td{padding:3px 5px;color:#555;border:1px solid #ddd;line-height:22px;}
 
 #rightzqmain{height:auto; overflow:hidden; border:1px solid #ddd; margin:5px auto}
 #rightzqmain h2{font-size:17px;color:#C00; margin:10px 10px; width:810px;}
 
-.divtext{height:auto; float:left; display:inline; margin:10px 30px; }
+.divtext{height:auto; float:left; display:inline; margin:10px 30px}
 .divtext p{ padding:10px 20px;}
 
 .tab{border:1px solid #ddd;color:#555;width:760px}
-.tab td{padding:3px 5px;color:#555;border:1px solid #ddd;line-height:22px;}
-.info_lei3{width:130px;height:22px;padding:2px 5px;background-color:#f3f3f3;}
-.info_lei2{width:250px; }
-
+.info_lei3{width:130px;line-height:22px;padding:2px 5px;background-color:#f3f3f3;border:1px solid #ddd;}
+.info_lei2{width:250px;line-height:22px; border:1px solid #ddd;padding:2px 5px;}
+#heng{width:630px; height:auto; overflow:hidden;padding:2px 5px;}/*tabke中独占三列的tb*/
 .serverlist{  font-size:13px;}
 h4{ font-size:13px;margin:0;height:20px;}
 h4 a{ color:#232323;text-decoration:none}
@@ -103,6 +101,8 @@ h4 a:hover{ color:#f00;text-decoration:underline}
 #rightpart{height:auto; overflow:hidden; border:1px solid #ddd}
 #rightpart h2{font-size:17px;color:#C00; margin:10px 10px; width:810px;}
 #rightpart table{ width:100%}
+
+.pjtb{ width:683px; text-align:center; margin:8px auto}
 /*------------------------左菜单------------------------------------*/
 #vertmenu h1 {width:145px; height:30px;font-size:14px; line-height:30px;color:#000000;cursor:pointer; padding-left:10px;margin:0; background-image:url(../images/border_bg.jpg); border-top:1px solid #ddd}
 #vertmenu ul {list-style: none;margin: 0px;padding: 0px;border: none;}
@@ -117,7 +117,7 @@ h4 a:hover{ color:#f00;text-decoration:underline}
 #bottom a:hover{ text-decoration:underline; color:#f00}
 #bottom ul{list-style:none; width:186px;float:left; margin-top:16px;}
 #bottom ul li{ font-size:14px; line-height:23px; text-align:left; padding-left:60px;}
-
+#bottomtel{height: 90px;margin:20px 10px; width: 191px; float:left}
 /*---------------------footer----------------------------------*/
 #footer{ font-size:13px;width:1002px;height:150px;text-align:center; margin:2px auto}
 #footer a{ font-size:13px; text-decoration:none; color:#333; font-weight:bold}
@@ -125,7 +125,7 @@ h4 a:hover{ color:#f00;text-decoration:underline}
 #footer h2{ float:left; font-size:14px;color:#cc0000; font-weight:bold;}
 #footer table{ width:1002px; height:50px; border:1px solid #ddd}
 #footer table td{ width:160px;}
-#footer p{ margin:10px;color:#666; width:900px}
+#footer p{ margin:10px;color:#666; width:980px}
 
 /*---------------------顶部搜索框----------------------------------*/
 

@@ -133,6 +133,11 @@ namespace XYECOM.URL
             {
                 return;
             }
+
+            if (input.StartsWith(text + "case/"))
+            {
+                return;
+            }
             //系统是否在运行状态
             if (!XYECOM.Configuration.WebInfo.Instance.IsRun)
             {

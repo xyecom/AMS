@@ -12,6 +12,16 @@ namespace XYECOM.Page.shop
     {
         protected XYECOM.Model.GeneralUserInfo shopuserinfo = new XYECOM.Model.GeneralUserInfo();
 
+        protected string editinfourl = string.Empty;
+        protected string modifypwdurl = string.Empty;
+        protected string loginname = string.Empty;
+
+        /// <summary>
+        /// ¡Ÿ ±±‰¡ø
+        /// </summary>
+        protected string str = string.Empty;
+
+        protected bool islogin = false;
 
         protected override void OnLoad(EventArgs e)
         {
@@ -47,12 +57,21 @@ namespace XYECOM.Page.shop
             }
 
             shopuserinfo = Business.CheckUser.GetUserInfo(userRegInfo);
+
+
+            islogin = XYECOM.Business.CheckUser.CheckUserLogin();
+
+            if (islogin)
+            {
+                Model.GeneralUserInfo userinfo = XYECOM.Business.CheckUser.UserInfo;
+                Model.UserType utype = (UserType)userinfo.UserType;
+
+                string folder = (utype == UserType.Layer || utype == UserType.NotLayer) ? "Server" : "Creditor";
+                editinfourl = "/" + folder + "/BaseEdit.aspx";
+                modifypwdurl = "/" + folder + "/ModifyPwd.aspx";
+                loginname = userinfo.LoginName;
+            }
             base.OnLoad(e);
-        }
-
-        protected override void BindData()
-        {
-
         }
     }
 }

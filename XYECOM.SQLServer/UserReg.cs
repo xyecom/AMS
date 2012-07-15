@@ -246,7 +246,12 @@ namespace XYECOM.SQLServer
                 info.DelState = Core.MyConvert.GetInt32(reader["DelState"].ToString());
                 info.Telphone = reader["Telphone"].ToString();
                 info.OtherContact = reader["OtherContact"].ToString();
-                info.Sex = bool.Parse(reader["Sex"].ToString());
+                string strSex = reader["Sex"].ToString();
+                if (!string.IsNullOrEmpty(strSex)) 
+                {
+                    info.Sex = bool.Parse(strSex);
+                }
+                
                 info.IdNumber = reader["IdNumber"].ToString();
 
                 info.AreaId = Core.MyConvert.GetInt32(reader["AreaId"].ToString());

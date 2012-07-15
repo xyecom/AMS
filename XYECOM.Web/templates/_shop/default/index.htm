@@ -1,6 +1,53 @@
-﻿11111111111111
-{shopuserinfo.LayerName}
-<br />
-{shopuserinfo.userid}
-<br />
-{shopuserinfo.LoginName}
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>服务商个人主页</title>
+    <link href="/Other/css/serverinfo.css" rel="stylesheet" type="text/css" />
+    <script src="/Other/js/jquery.js" type="text/javascript"></script>
+</head>
+<body>
+    <!--top start-->
+    <%Include _top%>
+    <!--top end-->
+    <%Include _banner%>
+    <!--menu start-->
+    <%Include _menu%>
+    <!--menu end-->
+    <!--middle start-->
+    <div id="middle">
+        <!--left start-->
+        <%Include _left%>
+        <!--left end-->
+        <!--right start-->
+        <div id="right">
+            <div class="lsjs">
+                <div class="jsh">
+                    <img src="/Other/images/jshead.gif" /></div>
+                <p>
+                    律师姓名：{shopuserinfo.LayerName} 律师执业证号：{shopuserinfo.LayerId}
+                </p>
+                <!--             <p>
+                    个人网址：公司网址：http://www.jdflzx.com</p>-->
+                <p>
+                    所属律所：秦都区司法局148法律服务所</p>
+                <p>
+                    {shopuserinfo.Description}
+                </p>
+            </div>
+            <div class="lsjs">
+                <div class="jsh">
+                    <img src="/Other/images/ryjzs.gif" /></div>
+                <p>
+                    <%loop (DataRow) info data%>
+                     <%set str = GetInfoImgHref(info["CE_ID"])%>
+                    <img src="{str}" alt='{info[CE_Name]}' style="width: 100px" />
+                    <%/loop%>
+                </p>
+            </div>
+        </div>
+        <!--right end-->
+    </div>
+    <!--middle end-->
+    <%Include _footer%>
+</body>
+</html>

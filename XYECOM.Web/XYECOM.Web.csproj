@@ -76,6 +76,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppCode\CaseUploadManager.cs" />
     <Compile Include="AppCode\Html\HtmlInfo.cs" />
     <Compile Include="AppCode\Html\HtmlManage.cs" />
     <Compile Include="AppCode\Manage\ManagePage.cs">
@@ -97,6 +98,9 @@
     </Compile>
     <Compile Include="Common\AdsClick.aspx.designer.cs">
       <DependentUpon>AdsClick.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\CaseUploadHandler.ashx.cs">
+      <DependentUpon>CaseUploadHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="Common\Controls\BaseUserControls.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -140,6 +144,27 @@
     </Compile>
     <Compile Include="Creditor\BaseEdit.aspx.designer.cs">
       <DependentUpon>BaseEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\CaseList.aspx.cs">
+      <DependentUpon>CaseList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\CaseList.aspx.designer.cs">
+      <DependentUpon>CaseList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\CaseTypeAdd.aspx.cs">
+      <DependentUpon>CaseTypeAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\CaseTypeAdd.aspx.designer.cs">
+      <DependentUpon>CaseTypeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\CaseTypeList.aspx.cs">
+      <DependentUpon>CaseTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\CaseTypeList.aspx.designer.cs">
+      <DependentUpon>CaseTypeList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Creditor\Creditor.master.cs">
       <DependentUpon>Creditor.master</DependentUpon>
@@ -189,6 +214,13 @@
     </Compile>
     <Compile Include="Creditor\SetQuestion.aspx.designer.cs">
       <DependentUpon>SetQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\UploadCase.aspx.cs">
+      <DependentUpon>UploadCase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\UploadCase.aspx.designer.cs">
+      <DependentUpon>UploadCase.aspx</DependentUpon>
     </Compile>
     <Compile Include="Creditor\UserContorl\left.ascx.cs">
       <DependentUpon>left.ascx</DependentUpon>
@@ -260,6 +292,27 @@
     </Compile>
     <Compile Include="Server\BaseEdit.aspx.designer.cs">
       <DependentUpon>BaseEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Server\CertificateAdd.aspx.cs">
+      <DependentUpon>CertificateAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\CertificateAdd.aspx.designer.cs">
+      <DependentUpon>CertificateAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Server\certificateinfo.aspx.cs">
+      <DependentUpon>certificateinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\certificateinfo.aspx.designer.cs">
+      <DependentUpon>certificateinfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Server\CertificateList.aspx.cs">
+      <DependentUpon>CertificateList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\CertificateList.aspx.designer.cs">
+      <DependentUpon>CertificateList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Server\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -1555,12 +1608,16 @@
   <ItemGroup>
     <Content Include="Creditor\AddForeclosed.aspx" />
     <Content Include="Creditor\BaseEdit.aspx" />
+    <Content Include="Creditor\CaseList.aspx" />
+    <Content Include="Creditor\CaseTypeAdd.aspx" />
+    <Content Include="Creditor\CaseTypeList.aspx" />
     <Content Include="Creditor\EditPartInfo.aspx" />
     <Content Include="Creditor\Index.aspx" />
     <Content Include="Creditor\ModifyPwd.aspx" />
     <Content Include="Creditor\PartIndex.aspx" />
     <Content Include="Creditor\PartList.aspx" />
     <Content Include="Creditor\SetQuestion.aspx" />
+    <Content Include="Creditor\UploadCase.aspx" />
     <Content Include="Creditor\UserContorl\left.ascx" />
     <Content Include="Creditor\UserContorl\menu.ascx" />
     <Content Include="GetPassWord.aspx" />
@@ -1591,8 +1648,22 @@
     <Content Include="My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
     <Content Include="My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
     <Content Include="My97DatePicker\开发包\skin\whyGreen\img.gif" />
+    <Content Include="Other\css\basecss.css" />
+    <Content Include="Other\css\serverinfo.css" />
+    <Content Include="Other\images\1359619_174309069902_2.gif" />
+    <Content Include="Other\images\5160202_091214089001_2.gif" />
+    <Content Include="Other\images\cj.gif" />
+    <Content Include="Other\images\hw.gif" />
+    <Content Include="Other\images\jshead.gif" />
+    <Content Include="Other\images\lszl.gif" />
+    <Content Include="Other\images\pic3.gif" />
+    <Content Include="Other\images\pic4.gif" />
+    <Content Include="Other\images\ryjzs.gif" />
+    <Content Include="Other\images\toplader.gif" />
+    <Content Include="Other\images\vip_template_10.jpg" />
     <Content Include="Other\js\ForeUploadControl.js" />
     <Content Include="Other\js\login.js" />
+    <Content Include="Other\js\validate.js" />
     <Content Include="Other\UserContorl\ModifyPwd.ascx" />
     <Content Include="Other\UserContorl\SetQuestion.ascx" />
     <Content Include="Register.aspx" />
@@ -1676,6 +1747,9 @@
     <Content Include="Other\images\zoom\zoom-spin-8.png" />
     <Content Include="Other\images\zoom\zoom-spin-9.png" />
     <Content Include="Server\BaseEdit.aspx" />
+    <Content Include="Server\CertificateAdd.aspx" />
+    <Content Include="Server\certificateinfo.aspx" />
+    <Content Include="Server\CertificateList.aspx" />
     <Content Include="Server\Index.aspx" />
     <Content Include="Other\js\FancyZoom.js" />
     <Content Include="Other\js\FancyZoomHTML.js" />
@@ -1691,10 +1765,7 @@
     <Content Include="templates\default\js\attribute.js" />
     <Content Include="templates\_shop\default\about.gif" />
     <Content Include="templates\_shop\default\about.xml" />
-    <Content Include="templates\_shop\default\brandinfo.htm" />
-    <Content Include="templates\_shop\default\brandlist.htm" />
     <Content Include="templates\_shop\default\certificateinfo.htm" />
-    <Content Include="templates\_shop\default\contact.htm" />
     <Content Include="templates\_shop\default\cred.htm" />
     <Content Include="templates\_shop\default\css\bgimages\bg_bt_search.gif" />
     <Content Include="templates\_shop\default\css\bgimages\bg_header.gif" />
@@ -1730,20 +1801,13 @@
     <Content Include="templates\_shop\default\images\rate.gif" />
     <Content Include="templates\_shop\default\index.htm" />
     <Content Include="templates\_shop\default\introduction.htm" />
-    <Content Include="templates\_shop\default\investment.htm" />
-    <Content Include="templates\_shop\default\job.htm" />
-    <Content Include="templates\_shop\default\joblist.htm" />
     <Content Include="templates\_shop\default\newsinfo.htm" />
     <Content Include="templates\_shop\default\newslist.htm" />
-    <Content Include="templates\_shop\default\offer.htm" />
-    <Content Include="templates\_shop\default\product.htm" />
-    <Content Include="templates\_shop\default\service.htm" />
-    <Content Include="templates\_shop\default\venture.htm" />
-    <Content Include="templates\_shop\default\venturelist.htm" />
+    <Content Include="templates\_shop\default\_banner.htm" />
     <Content Include="templates\_shop\default\_footer.htm" />
-    <Content Include="templates\_shop\default\_head.htm" />
     <Content Include="templates\_shop\default\_left.htm" />
-    <Content Include="templates\_shop\default\_pagehead.htm" />
+    <Content Include="templates\_shop\default\_menu.htm" />
+    <Content Include="templates\_shop\default\_top.htm" />
     <Content Include="templates\_shop\green\about.gif" />
     <Content Include="templates\_shop\green\about.xml" />
     <Content Include="templates\_shop\green\brandinfo.htm" />
@@ -3369,10 +3433,6 @@
     <Content Include="templates\default\news\comment.htm" />
     <Content Include="templates\default\news\index.htm" />
     <Content Include="templates\default\news\_head.htm" />
-    <Content Include="templates\default\_footer.htm" />
-    <Content Include="templates\default\_head.htm" />
-    <Content Include="templates\default\_login_bar.htm" />
-    <Content Include="templates\default\_login_box.htm" />
     <Content Include="templates\default\_message.htm" />
     <Content Include="templates\default\_msgbox.htm" />
     <Content Include="templates\default\_top.htm" />
@@ -3727,6 +3787,7 @@
     <Content Include="config\WebInfo.config" />
     <Content Include="Common\XYAjax.ashx" />
     <Content Include="Common\DownLoad.ashx" />
+    <Content Include="Common\CaseUploadHandler.ashx" />
     <None Include="Common\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.cfm" />
     <None Include="Common\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.php" />
     <None Include="Common\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.pl" />
