@@ -1727,6 +1727,8 @@
     <Content Include="Creditor\UserContorl\menu.ascx" />
     <Content Include="ForeclosedDetail.aspx" />
     <Content Include="GetPassWord.aspx" />
+    <Content Include="Index.aspx" />
+    <Content Include="IndexCreditList.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="LogOut.aspx" />
     <Content Include="My97DatePicker\calendar.js" />
