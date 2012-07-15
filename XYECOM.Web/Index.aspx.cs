@@ -11,12 +11,12 @@ using XYECOM.Business;
 
 namespace XYECOM.Web
 {
-    public partial class Index : ForeBasePage
+    public partial class Index1 : ForeBasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-        }
 
+        }
         protected override void BindData()
         {
             string typeName = this.droTypeName.SelectedValue;
@@ -31,7 +31,7 @@ namespace XYECOM.Web
             }
             if (aredId > 0)
             {
-                strWhere.Append(" and (AreaId =" + aredId+")");
+                strWhere.Append(" and (AreaId =" + aredId + ")");
             }
             int totalRecord = 0;
             DataTable dt = XYECOM.Business.Utils.GetPaginationData("ForeclosedInfo", "ForeclosedId", "*", " CreateDate desc", strWhere.ToString(), this.Page1.PageSize, this.Page1.CurPage, out totalRecord);

@@ -9,15 +9,14 @@ using System.Data;
 using XYECOM.Core;
 using XYECOM.Business;
 
-
 namespace XYECOM.Web
 {
-    public partial class IndexCreditList : ForeBasePage
+    public partial class IndexCreditList1 : ForeBasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-        }
 
+        }
         protected override void BindData()
         {
             this.lblMessage.Text = "";

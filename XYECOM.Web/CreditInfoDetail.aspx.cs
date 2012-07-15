@@ -240,5 +240,12 @@ namespace XYECOM.Web
                 }
             }
         }
+        #region 分页相关代码
+
+        protected void Page1_PageChanged(object sender, System.EventArgs e)
+        {
+            this.BindData();
+        }
+        #endregion
     }
 }
