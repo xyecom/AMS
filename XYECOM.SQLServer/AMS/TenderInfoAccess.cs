@@ -92,5 +92,19 @@ namespace XYECOM.SQLServer.AMS
             }
             return info;
         }
+
+        /// <summary>
+        /// 根据投标信息编号更改为已中标
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int UpdateTenderByID(int id,int creditId)
+        {
+            string sql = "update tenderInfo set issuccess = -1 where creditInfoId = "+creditId;
+            int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
+            sql = "update tenderInfo set issuccess = 1 where tenderid = "+id;
+            rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
+            return rowAffected;
+        }
     }
 }

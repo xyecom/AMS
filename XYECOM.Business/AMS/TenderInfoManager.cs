@@ -68,5 +68,19 @@ namespace XYECOM.Business.AMS
             }
             return DAL.GetTenderInfoByID(id);
         }
+
+        /// <summary>
+        /// 根据投标信息编号更改为已中标
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int UpdateTenderByID(int id,int credId)
+        {
+            if (id <= 0)
+            {
+                return 0;
+            }
+            return DAL.UpdateTenderByID(id,credId);
+        }
     }
 }

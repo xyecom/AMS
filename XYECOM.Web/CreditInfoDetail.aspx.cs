@@ -9,6 +9,7 @@ using System.Data;
 using XYECOM.Core;
 using XYECOM.Business.AMS;
 using XYECOM.Business;
+using XYECOM.Model.AMS;
 
 namespace XYECOM.Web
 {
@@ -16,6 +17,7 @@ namespace XYECOM.Web
     {
         CreditInfoManager manage = new CreditInfoManager();
 
+        TenderInfoManager tenderManage = new TenderInfoManager();
         #region 页面加载
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,7 +38,7 @@ namespace XYECOM.Web
         #region 获取数据
         public void BindData(int id)
         {
-            XYECOM.Model.AMS.CreditInfo info = manage.GetCreditInfoById(id);
+            CreditInfo info = manage.GetCreditInfoById(id);
             if (info == null)
             {
                 GotoMsgBoxPageForDynamicPage("该债权信息不存在！", 1, "IndexCreditList.aspx");
@@ -66,7 +68,7 @@ namespace XYECOM.Web
                 this.hidStae.Value = info.ApprovaStatus.ToString();
             }
 
-            StringBuilder strWhere = new StringBuilder(" 1=1 and  CreditInfoId = "+ id);
+            StringBuilder strWhere = new StringBuilder(" 1=1 and  CreditInfoId = " + id);
             int totalRecord = 0;
             DataTable dt = XYECOM.Business.Utils.GetPaginationData("TenderInfo", "TenderId", "*", " TenderDate desc", strWhere.ToString(), this.Page1.PageSize, this.Page1.CurPage, out totalRecord);
             this.Page1.RecTotal = totalRecord;
@@ -118,19 +120,24 @@ namespace XYECOM.Web
             return name;
         }
 
+        /// <summary>
+        /// 获取投标状态
+        /// </summary>
+        /// <param name="stateId"></param>
+        /// <returns></returns>
         protected string GetTenderState(object stateId)
-        {            
+        {
             Model.AMS.TenderState sta = (Model.AMS.TenderState)stateId;
             string name = "";
             switch (sta)
             {
-                case XYECOM.Model.AMS.TenderState.Failure:
+                case TenderState.Failure:
                     name = "未中标";
                     break;
-                case XYECOM.Model.AMS.TenderState.Success:
+                case TenderState.Success:
                     name = "中标";
                     break;
-                case XYECOM.Model.AMS.TenderState.Tender:
+                case TenderState.Tender:
                     name = "投标中";
                     break;
             }
@@ -171,18 +178,24 @@ namespace XYECOM.Web
             {
                 GotoMsgBoxPageForDynamicPage("请登录后进行投标！", 1, "IndexCreditList.aspx");
             }
-            if (userInfo.UserType !=XYECOM.Model.UserType.Layer && userInfo.UserType != XYECOM.Model.UserType.NotLayer)
+            if (userInfo.UserType != XYECOM.Model.UserType.Layer && userInfo.UserType != XYECOM.Model.UserType.NotLayer)
             {
                 GotoMsgBoxPageForDynamicPage("债权帐号不能进行投标！", 1, "IndexCreditList.aspx");
             }
             int credId = MyConvert.GetInt32(this.hidID.Value);
-            XYECOM.Model.AMS.TenderInfo info = new Model.AMS.TenderInfo();
+           //检查该服务商是否已经投标
+            bool isCheckTender = tenderManage.CheckTenderByCredID(credId, (int)userInfo.userid);
+            if (isCheckTender)
+            {
+                GotoMsgBoxPageForDynamicPage("不能重复投标，请耐心等待债权人选择！", 1, "IndexCreditList.aspx");                
+            }
+            TenderInfo info = new TenderInfo();
             info.CreditInfoId = credId;
-            info.IsSuccess = (int)XYECOM.Model.AMS.TenderState.Failure;
+            info.IsSuccess = (int)TenderState.Failure;
             info.LayerId = (int)userInfo.userid;
             info.Message = this.txtRemark.Text.Trim();
             info.TenderDate = DateTime.Now;
-            int result = new XYECOM.Business.AMS.TenderInfoManager().InsertTenderInfo(info);
+            int result = new TenderInfoManager().InsertTenderInfo(info);
             if (result > 0)
             {
                 GotoMsgBoxPageForDynamicPage("投标成功！", 1, "CreditInfoDetail.aspx");
@@ -199,7 +212,7 @@ namespace XYECOM.Web
                 HiddenField hidInfoId = (HiddenField)e.Item.FindControl("hidCreditInfoId");//当前案件编号
                 if (hidInfoId == null) return;
                 int creditId = MyConvert.GetInt32(hidInfoId.Value);
-                XYECOM.Model.AMS.CreditInfo info = new XYECOM.Business.AMS.CreditInfoManager().GetCreditInfoById(creditId);
+                CreditInfo info = new CreditInfoManager().GetCreditInfoById(creditId);
 
                 int stateId = info.ApprovaStatus;
                 LinkButton lbtnOk = (LinkButton)e.Item.FindControl("lbtnOK");//选择服务商
@@ -232,7 +245,16 @@ namespace XYECOM.Web
                 int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
                 if (Id > 0)
                 {
-                    int result = manage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.Delete);
+                    TenderInfo info = tenderManage.GetTenderInfoByID(Id);
+                    int result = tenderManage.UpdateTenderByID(Id,info.CreditInfoId);
+                    if (info == null)
+                    {
+                        GotoMsgBoxPageForDynamicPage("该投标信息不存在！", 1, "CreditInfoDetail.aspx");
+                    }
+                    if (result > 0)
+                    {
+                        result = manage.UpdateApprovaStatusByID(info.CreditInfoId, XYECOM.Model.CreditState.InProgress);
+                    }
                     if (result > 0)
                     {
                         BindData();
