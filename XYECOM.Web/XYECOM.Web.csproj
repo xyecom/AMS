@@ -145,6 +145,13 @@
     <Compile Include="Creditor\AddCreditInfo.aspx.designer.cs">
       <DependentUpon>AddCreditInfo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Creditor\AddEvaluation.aspx.cs">
+      <DependentUpon>AddEvaluation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\AddEvaluation.aspx.designer.cs">
+      <DependentUpon>AddEvaluation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Creditor\AddForeclosed.aspx.cs">
       <DependentUpon>AddForeclosed.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -193,6 +200,13 @@
     </Compile>
     <Compile Include="Creditor\Creditor.master.designer.cs">
       <DependentUpon>Creditor.master</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\EvaluationList.aspx.cs">
+      <DependentUpon>EvaluationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\EvaluationList.aspx.designer.cs">
+      <DependentUpon>EvaluationList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Creditor\ForeclosedList.aspx.cs">
       <DependentUpon>ForeclosedList.aspx</DependentUpon>
@@ -349,6 +363,13 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Server\AddEvaluation.aspx.cs">
+      <DependentUpon>AddEvaluation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\AddEvaluation.aspx.designer.cs">
+      <DependentUpon>AddEvaluation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Server\BaseEdit.aspx.cs">
       <DependentUpon>BaseEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -377,19 +398,19 @@
     <Compile Include="Server\CertificateList.aspx.designer.cs">
       <DependentUpon>CertificateList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Server\EvaluationList.aspx.cs">
+      <DependentUpon>EvaluationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\EvaluationList.aspx.designer.cs">
+      <DependentUpon>EvaluationList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Server\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Server\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Server\InProgressCreditList.aspx.cs">
-      <DependentUpon>InProgressCreditList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Server\InProgressCreditList.aspx.designer.cs">
-      <DependentUpon>InProgressCreditList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Server\ParticipateCreditList.aspx.cs">
       <DependentUpon>ParticipateCreditList.aspx</DependentUpon>
@@ -446,6 +467,13 @@
     </Compile>
     <Compile Include="Server\UserContorl\menu.ascx.designer.cs">
       <DependentUpon>menu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="showEvaluation.aspx.cs">
+      <DependentUpon>showEvaluation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="showEvaluation.aspx.designer.cs">
+      <DependentUpon>showEvaluation.aspx</DependentUpon>
     </Compile>
     <Compile Include="UploadImage.aspx.cs">
       <DependentUpon>UploadImage.aspx</DependentUpon>
@@ -1707,8 +1735,10 @@
   <ItemGroup>
     <Content Include="CreditInfoDetail.aspx" />
     <Content Include="Creditor\AddCreditInfo.aspx" />
+    <Content Include="Creditor\AddEvaluation.aspx" />
     <Content Include="Creditor\AddForeclosed.aspx" />
     <Content Include="Creditor\CreditInfoList.aspx" />
+    <Content Include="Creditor\EvaluationList.aspx" />
     <Content Include="Creditor\ForeclosedList.aspx" />
     <Content Include="Creditor\UpdateCreditInfo.aspx" />
     <Content Include="Creditor\UpdateForeclosed.aspx" />
@@ -1854,10 +1884,12 @@
     <Content Include="Other\images\zoom\zoom-spin-7.png" />
     <Content Include="Other\images\zoom\zoom-spin-8.png" />
     <Content Include="Other\images\zoom\zoom-spin-9.png" />
+    <Content Include="Server\AddEvaluation.aspx" />
     <Content Include="Server\BaseEdit.aspx" />
     <Content Include="Server\CertificateAdd.aspx" />
     <Content Include="Server\certificateinfo.aspx" />
     <Content Include="Server\CertificateList.aspx" />
+    <Content Include="Server\EvaluationList.aspx" />
     <Content Include="Server\Index.aspx" />
     <Content Include="Other\js\FancyZoom.js" />
     <Content Include="Other\js\FancyZoomHTML.js" />
@@ -1865,7 +1897,6 @@
     <Content Include="Other\js\update8.js" />
     <Content Include="Other\js\zd.js" />
     <Content Include="Other\js\zu.js" />
-    <Content Include="Server\InProgressCreditList.aspx" />
     <Content Include="Server\ParticipateCreditList.aspx" />
     <Content Include="Server\RecommendCreditList.aspx" />
     <Content Include="Server\ModifyPwd.aspx" />
@@ -1873,6 +1904,7 @@
     <Content Include="Server\UpLoadPicture.aspx" />
     <Content Include="Server\UserContorl\left.ascx" />
     <Content Include="Server\UserContorl\menu.ascx" />
+    <Content Include="showEvaluation.aspx" />
     <Content Include="templates\default\js\attribute.js" />
     <Content Include="templates\_shop\default\about.gif" />
     <Content Include="templates\_shop\default\about.xml" />

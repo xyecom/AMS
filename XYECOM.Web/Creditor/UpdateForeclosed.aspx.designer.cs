@@ -67,13 +67,13 @@ namespace XYECOM.Web.Creditor {
         protected global::System.Web.UI.HtmlControls.HtmlInputText endDate;
         
         /// <summary>
-        /// fckDescription control.
+        /// txtDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FredCK.FCKeditorV2.FCKeditor fckDescription;
+        protected global::System.Web.UI.WebControls.TextBox txtDescription;
         
         /// <summary>
         /// btnOK control.

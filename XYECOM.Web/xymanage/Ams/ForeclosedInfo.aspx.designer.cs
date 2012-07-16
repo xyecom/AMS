@@ -130,13 +130,13 @@ namespace XYECOM.Web.xymanage {
         protected global::System.Web.UI.WebControls.Label labUserName;
         
         /// <summary>
-        /// spDescription control.
+        /// labDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl spDescription;
+        protected global::System.Web.UI.WebControls.Label labDescription;
         
         /// <summary>
         /// labTypeName control.
@@ -182,5 +182,14 @@ namespace XYECOM.Web.xymanage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hidID;
+        
+        /// <summary>
+        /// hidUserId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hidUserId;
     }
 }

@@ -171,7 +171,7 @@
                     <!--信用评价-->
                     <li class="stmenu">
                         <h3>
-                            <a class="xialaguang" href="#"><span>信用评价</span></a></h3>
+                            <a class="xialaguang" href="/Creditor/EvaluationList.aspx"><span>信用评价</span></a></h3>
                     </li>
                     <li class="overlay"></li>
                 </ul>

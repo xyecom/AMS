@@ -56,6 +56,15 @@
                         <hr />
                         <table class="dzbasetb">
                             <tr>
+                                <td>
+                                    发布者：
+                                </td>
+                                <td colspan="3">
+                                    <a href='showEvaluation.aspx?UserId=<%# Eval("DepartmentId") %>' target="_blank">
+                                        <asp:Label runat="server" ID="labUserName"></asp:Label></a><span style="color: Red">点击发布者可查看其信用度</span>
+                                </td>
+                            </tr>
+                            <tr>
                                 <td class="info1">
                                     物品名称：
                                 </td>
@@ -104,7 +113,7 @@
                                     物品详细描述：
                                 </td>
                                 <td colspan="3">
-                                    <span runat="server" id="spnDescription"></span>
+                                    <asp:Label runat="server" ID="labDescription"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
@@ -112,7 +121,7 @@
                                     结束竞拍时间：
                                 </td>
                                 <td colspan="3">
-                                    <asp:Label ID="labEndDate" runat="server"></asp:Label>
+                                    <asp:Label ID="labEndDate" runat="server" ForeColor="Red"></asp:Label>
                                 </td>
                             </tr>
                         </table>

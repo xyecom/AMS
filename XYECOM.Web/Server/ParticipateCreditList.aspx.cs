@@ -6,6 +6,8 @@ using System.Web.UI.WebControls;
 using System.Text;
 using XYECOM.Core;
 using System.Data;
+using XYECOM.Model.AMS;
+using XYECOM.Business.AMS;
 
 namespace XYECOM.Web.Server
 {
@@ -20,6 +22,7 @@ namespace XYECOM.Web.Server
             string title = this.txtTitle.Text.Trim();
             string begindate = this.bgdate.Value;
             string enddate = this.egdate.Value;
+            int state = MyConvert.GetInt32(this.drpState.SelectedValue);
             try
             {
                 DateTime bgdate = Convert.ToDateTime(begindate);
@@ -51,6 +54,14 @@ namespace XYECOM.Web.Server
             {
                 strWhere.Append(" and CreditInfoId in (select creditId from dbo.CreditInfo where Title like '%" + title + "%')");
             }
+            if (state == -2)
+            {
+                strWhere.Append(" and  CreditInfoId in (select creditId from dbo.CreditInfo where ApprovaStatus !=7)");
+            }
+            else
+            {
+                strWhere.Append(" and  CreditInfoId in (select creditId from dbo.CreditInfo where ApprovaStatus = " + state + ")");                
+            }
             int totalRecord = 0;
             DataTable dt = XYECOM.Business.Utils.GetPaginationData("TenderInfo", "TenderId", "*", " TenderDate desc", strWhere.ToString(), this.Page1.PageSize, this.Page1.CurPage, out totalRecord);
             this.Page1.RecTotal = totalRecord;
@@ -72,15 +83,15 @@ namespace XYECOM.Web.Server
         /// </summary>
         /// <param name="credID"></param>
         /// <returns></returns>
-        public XYECOM.Model.AMS.CreditInfo GetCreditInfoByCredID(object credID)
+        public CreditInfo GetCreditInfoByCredID(object credID)
         {
             int id = XYECOM.Core.MyConvert.GetInt32(credID.ToString());
-            XYECOM.Model.AMS.CreditInfo info = new Model.AMS.CreditInfo();
+            CreditInfo info = new CreditInfo();
             if (id <= 0)
             {
                 return info;
             }
-            return new XYECOM.Business.AMS.CreditInfoManager().GetCreditInfoById(id);
+            return new CreditInfoManager().GetCreditInfoById(id);
         }
 
         #region 分页相关代码
@@ -104,7 +115,7 @@ namespace XYECOM.Web.Server
         protected string GetApprovaStatus(object credID)
         {
             int id = MyConvert.GetInt32(credID.ToString());
-            XYECOM.Model.AMS.CreditInfo info = this.GetCreditInfoByCredID(id);
+            CreditInfo info = this.GetCreditInfoByCredID(id);
             int stateId = MyConvert.GetInt32(info.ApprovaStatus.ToString());
             Model.CreditState sta = (Model.CreditState)stateId;
             string name = "";
@@ -138,20 +149,60 @@ namespace XYECOM.Web.Server
             return name;
         }
 
+        /// <summary>
+        /// 获取投标状态
+        /// </summary>
+        /// <param name="stateId"></param>
+        /// <returns></returns>
+        protected string GetTenderState(object stateId)
+        {
+            Model.AMS.TenderState sta = (Model.AMS.TenderState)stateId;
+            string name = "";
+            switch (sta)
+            {
+                case TenderState.Failure:
+                    name = "未中标";
+                    break;
+                case TenderState.Success:
+                    name = "中标";
+                    break;
+                case TenderState.Tender:
+                    name = "投标中";
+                    break;
+            }
+            return name;
+        }
+
         protected void rptList_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
-                HiddenField hidInfoId = (HiddenField)e.Item.FindControl("hidCreditInfoId");//当前案件编号
-                if (hidInfoId == null) return;
-                int creditId = MyConvert.GetInt32(hidInfoId.Value);
-                XYECOM.Model.AMS.CreditInfo info = new XYECOM.Business.AMS.CreditInfoManager().GetCreditInfoById(creditId);
+                HiddenField hidTenderId = (HiddenField)e.Item.FindControl("hidTenderId");//当前投标编号
+                if (hidTenderId == null) return;
+                int tenderId = MyConvert.GetInt32(hidTenderId.Value);
+                TenderInfo tenderInfo = new TenderInfoManager().GetTenderInfoByID(tenderId);
+                if (tenderInfo == null)
+                {
+                    return;
+                }
+
+                if (tenderInfo.IsSuccess != (int)TenderState.Success)
+                {
+                    return;
+                }
+
+                HiddenField hidCreditId = (HiddenField)e.Item.FindControl("hidCreditInfoId");//当前案件编号
+                if (hidCreditId == null) return;
+                int creditId = MyConvert.GetInt32(hidCreditId.Value);
+                CreditInfo info = new CreditInfoManager().GetCreditInfoById(creditId);
 
                 int stateId = info.ApprovaStatus;
                 HyperLink hlEvaluate = (HyperLink)e.Item.FindControl("hlEvaluate");//评价          
 
+                LinkButton lbtnCreditConfirm = (LinkButton)e.Item.FindControl("lbtnCreditConfirm");//服务商确认案件完成          
+
                 Model.CreditState sta = (Model.CreditState)stateId;
-                if (sta == Model.CreditState.CreditEnd)
+                if (sta == Model.CreditState.CreditEnd && !info.IsServerEvaluation)
                 {
                     hlEvaluate.Visible = true;
                 }
@@ -159,7 +210,39 @@ namespace XYECOM.Web.Server
                 {
                     hlEvaluate.Visible = false;
                 }
+                if (sta == Model.CreditState.InProgress)
+                {
+                    lbtnCreditConfirm.Visible = true;
+                }
+                else
+                {
+                    lbtnCreditConfirm.Visible = false;
+                }
             }
         }
+
+        /// <summary>
+        /// 服务商确认案件完成
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void lbtnCreditConfirm_Click(object sender, EventArgs e)
+        {
+            LinkButton linkButton = (LinkButton)(sender as LinkButton);
+            if (linkButton != null)
+            {
+                int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
+                if (Id > 0)
+                {
+                    CreditInfoManager credManage = new CreditInfoManager();
+                    int result = credManage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.CreditConfirm);
+                    if (result > 0)
+                    {
+                        BindData();
+                    }
+                }
+            }
+        }
+
     }
 }

@@ -174,5 +174,25 @@ namespace XYECOM.SQLServer.AMS
             return info;
         }
 
+        /// <summary>
+        /// 根据债权信息编号以及是否服务商修改债权信息是否被评价
+        /// </summary>
+        /// <param name="credId"></param>
+        /// <param name="isServer"></param>
+        /// <returns></returns>
+        public int UpdateEvaluationByCredId(int credId, bool isServer)
+        {
+            string sql = string.Empty;
+            if (isServer)
+            {
+                sql = "update creditinfo set IsServerEvaluation = 'True' where CreditId = "+credId;
+            }
+            else
+            {
+                sql = "update creditinfo set IsCreditEvaluation = 'True' where CreditId = "+credId;
+            }
+            int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
+            return rowAffected;
+        }
     }
 }

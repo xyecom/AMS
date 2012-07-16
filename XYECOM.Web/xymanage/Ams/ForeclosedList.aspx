@@ -117,9 +117,9 @@
                                                 <%# GetUserName(Eval("DepartmentId"))%>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="发布日期">
+                                        <asp:TemplateField HeaderText="结束日期">
                                             <ItemTemplate>
-                                                <asp:Label ID="Label1" runat="server" Text='<%# Convert.ToDateTime(Eval("CreateDate")).ToString("yyyy-MM-dd") %>'></asp:Label>
+                                                <asp:Label ForeColor="Red" ID="Label1" runat="server" Text='<%# GetEndDate(Eval("EndDate")) %>'></asp:Label>
                                             </ItemTemplate>
                                             <ItemStyle Width="10%" />
                                         </asp:TemplateField>

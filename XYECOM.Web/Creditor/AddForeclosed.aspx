@@ -21,7 +21,7 @@
                         <span style="color: Red">*</span> 名称：
                     </td>
                     <td>
-                        <asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtTitle" MaxLength="50"></asp:TextBox>
                     </td>
                     <td class="info1">
                         <span style="color: Red">*</span>拍卖底价：
@@ -60,7 +60,7 @@
                         详细地址：
                     </td>
                     <td colspan="3">
-                        <asp:TextBox runat="server" ID="txtAddress"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtAddress" Width="100%" MaxLength="25"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -77,9 +77,7 @@
                         物品详细描述：
                     </td>
                     <td colspan="3">
-                        <FCKeditorV2:FCKeditor ID="fckDescription" runat="server" BasePath="/Common/fckeditor/"
-                            ToolbarSet="News" Height="500px">
-                        </FCKeditorV2:FCKeditor>
+                        <asp:TextBox runat="server" ID="txtDescription" Width="100%" TextMode="MultiLine" Rows="15"></asp:TextBox>
                     </td>
                 </tr>
             </table>

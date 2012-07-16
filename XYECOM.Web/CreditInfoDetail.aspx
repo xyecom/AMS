@@ -234,7 +234,8 @@
             <tr id="trmidd" style="height: 28px; border-top: 1px solid #ccc" onmousemove="this.style.backgroundColor='#F7F7F7'"
                 onmouseout="this.style.backgroundColor='#ffffff'">
                 <td id="tdtitle">
-                    <%# GetUserName(Eval("LayerId"))%>
+                    <a href='showEvaluation.aspx?isServer=1&UserId=<%# Eval("LayerId") %>' target="_blank">
+                        <%# GetUserName(Eval("LayerId"))%></a><span style="color: Red">点击发布者可查看其信用度</span>
                 </td>
                 <td>
                     <%# GetComName(Eval("LayerId"))%>
@@ -247,9 +248,10 @@
                 </td>
                 <td>
                     <asp:HiddenField ID="hidCreditInfoId" runat="server" Value='<%# Eval("CreditInfoId")%>' />
-                    <asp:LinkButton ID="lbtnOK" runat="server" Text="选为此案件服务商" OnClientClick="javascript:return confirm('确定选为此案件服务商吗？');"
-                        OnClick="lbtnOK_Click" CommandArgument='<%# Eval("TenderId") %>'></asp:LinkButton>
-                    <asp:Label runat="server" ID="labTenderMessage">竞标已结束</asp:Label>
+                    <asp:LinkButton ID="lbtnConfirm" runat="server" Text="选为此案件服务商" OnClick="lbtnOK_Click"
+                        OnClientClick="javascript:return confirm('确定选为此案件服务商吗？');" CommandArgument='<%# Eval("TenderId") %>'></asp:LinkButton>
+                    <asp:Label runat="server" Visible="false" ID="labTenderMessage">竞标已结束</asp:Label>
+                    <asp:Label runat="server" Visible="false" ID="labToTender">投标中</asp:Label>
                 </td>
             </tr>
         </ItemTemplate>
@@ -286,8 +288,6 @@
             <div style="margin: 8px 10px;">
                 留言：
                 <asp:TextBox runat="server" ID="txtRemark" Width="254px" TextMode="MultiLine" Rows="10"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtRemark"
-                    ErrorMessage="留言不能为空"></asp:RequiredFieldValidator>
             </div>
             <br />
             <div>

@@ -280,6 +280,11 @@ namespace XYECOM.Web.xymanage.Creditor
                 if (LB.Text == "通过审核")
                 {
                     int JJ = foreManage.AuditById(ID, false);
+                    XYECOM.Model.AMS.ForeclosedInfo info = new ForeclosedManager().GetForeclosedInfoById(ID);
+                    if (info != null)
+                    {
+                        SendToMessage(info.DepartmentId);
+                    }
                 }
                 else if (LB.Text == "审核未通过" || LB.Text == "未审核" || LB.Text.ToString() == "")
                 {
@@ -322,8 +327,8 @@ namespace XYECOM.Web.xymanage.Creditor
                 em.M_Restore = false;
                 em.M_SenderType = "user";
 
-                em.M_Title = webInfo.AuditingInfoMessageTitle;
-                em.M_Content = webInfo.AuditingInfoMessageContent;
+                em.M_Title = "抵债信息审核不通过";
+                em.M_Content = "请详细检查抵债信息，不可描述不清";
 
                 em.M_UserName = "";
                 em.M_UserType = false;
@@ -352,5 +357,23 @@ namespace XYECOM.Web.xymanage.Creditor
             }
         }
         #endregion
+
+        /// <summary>
+        /// 获取结束时间
+        /// </summary>
+        /// <param name="endDate"></param>
+        /// <returns></returns>
+        public string GetEndDate(object endDate)
+        {
+            DateTime date = XYECOM.Core.MyConvert.GetDateTime(endDate.ToString());
+            if (date.CompareTo(DateTime.Now) < 0)
+            {
+                return "已过期";
+            }
+            else
+            {
+                return date.ToString("yyyy-MM-dd");
+            }
+        }
     }
 }

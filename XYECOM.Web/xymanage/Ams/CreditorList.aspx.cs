@@ -192,7 +192,7 @@ namespace XYECOM.Web.xymanage
         public int GetTenderCountByCreditID(object CreditID)
         {
             int id = MyConvert.GetInt32(CreditID.ToString());
-            return new XYECOM.Business.AMS.TenderInfoManager().GetTenderCountByCreditID(id);
+            return new TenderInfoManager().GetTenderCountByCreditID(id);
         }
 
         #region 删除操作

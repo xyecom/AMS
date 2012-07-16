@@ -78,7 +78,7 @@ namespace XYECOM.Business.AMS
             return DAL.GetCreditInfoById(id);
         }
 
-                /// <summary>
+        /// <summary>
         /// 修改债权信息
         /// </summary>
         /// <param name="info"></param>
@@ -90,6 +90,21 @@ namespace XYECOM.Business.AMS
                 return 0;
             }
             return DAL.UpdateCreditInfoByID(info);
+        }
+
+        /// <summary>
+        /// 根据债权信息编号以及是否服务商修改债权信息是否被评价
+        /// </summary>
+        /// <param name="credId"></param>
+        /// <param name="isServer"></param>
+        /// <returns></returns>
+        public int UpdateEvaluationByCredId(int credId, bool isServer)
+        {
+            if (credId <= 0)
+            {
+                return 0;
+            }
+            return DAL.UpdateEvaluationByCredId(credId, isServer);
         }
     }
 }

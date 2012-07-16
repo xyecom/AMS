@@ -40,5 +40,60 @@ namespace XYECOM.Business.AMS
             }
             return DAL.GetTenderCountByCreditID(CreditID);
         }
+
+        /// <summary>
+        /// 判断某服务商是否已经对某债权信息投标
+        /// </summary>
+        /// <param name="credId"></param>
+        /// <returns></returns>
+        public bool CheckTenderByCredID(int credId, int serId)
+        {
+            if (credId <= 0)
+            {
+                return true;
+            }
+            return DAL.CheckTenderByCredID(credId, serId);
+        }
+
+        /// <summary>
+        /// 根据投标编号获取投标信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public TenderInfo GetTenderInfoByID(int id)
+        {
+            if (id <= 0)
+            {
+                return null;
+            }
+            return DAL.GetTenderInfoByID(id);
+        }
+
+        /// <summary>
+        /// 根据投标信息编号更改为已中标
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int UpdateTenderByID(int id, int credId)
+        {
+            if (id <= 0)
+            {
+                return 0;
+            }
+            return DAL.UpdateTenderByID(id, credId);
+        }
+        /// <summary>
+        /// 根据债权信息获取投标成功的投标信息
+        /// </summary>
+        /// <param name="credId"></param>
+        /// <returns></returns>
+        public TenderInfo GetTenderByCredId(int credId)
+        {
+            if (credId <= 0)
+            {
+                return null;
+            }
+            return DAL.GetTenderByCredId(credId);
+        }
     }
 }

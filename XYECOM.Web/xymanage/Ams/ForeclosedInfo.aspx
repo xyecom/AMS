@@ -119,7 +119,7 @@
                                 详细描述：
                             </th>
                             <td>
-                                <span runat="server" id="spDescription"></span>
+                                <asp:Label runat="server" ID="labDescription"></asp:Label>
                             </td>
                         </tr>
                         <tr>
@@ -140,6 +140,7 @@
                                     <asp:Button ID="btnNoPass" runat="server" CssClass="button" Text="通过不审核" OnClick="btnNoPass_Click" />
                                     <asp:Button ID="Button3" runat="server" Text="返回" CssClass="button" OnClick="Button3_Click" />
                                     <input type="hidden" runat="server" id="hidID" />
+                                    <input type="hidden" runat="server" id="hidUserId" />
                                 </label>
                             </td>
                         </tr>

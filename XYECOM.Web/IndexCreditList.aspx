@@ -1,7 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IndexCreditList.aspx.cs" Inherits="XYECOM.Web.IndexCreditList1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IndexCreditList.aspx.cs"
+    Inherits="XYECOM.Web.IndexCreditList1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>债权信息资讯</title>
@@ -100,7 +100,8 @@
                                     <%# Eval("CreateDate")%>
                                 </td>
                                 <td>
-                                    <a href=""><%# GetUserName(Eval("DepartId"))%></a><span style="color:Red">点击发布者可查看其信用度</span>
+                                    <a href='showEvaluation.aspx?UserId=<%# Eval("DepartId") %>' target="_blank">
+                                        <%# GetUserName(Eval("DepartId"))%></a><span style="color: Red">点击发布者可查看其信用度</span>
                                 </td>
                                 <td>
                                     <%# Eval("Arrears")%>
@@ -135,4 +136,3 @@
     </form>
 </body>
 </html>
-

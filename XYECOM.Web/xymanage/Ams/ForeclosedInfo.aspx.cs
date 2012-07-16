@@ -48,6 +48,7 @@ namespace XYECOM.Web.xymanage
                 this.labCreateDate.Text = info.CreateDate.ToString();
                 this.labCompanyName.Text = GetCompanyName(info.CompanyId);
                 this.labUserName.Text = GetUserName(info.DepartmentId);
+                this.hidUserId.Value = info.DepartmentId.ToString();
                 this.labTitle.Text = info.Title;
                 this.labTypeName.Text = info.ForeColseTypeName;
                 this.labIdentityNumber.Text = info.IdentityNumber;
@@ -55,7 +56,7 @@ namespace XYECOM.Web.xymanage
                 this.labHighPrice.Text = info.HighPrice.ToString();
                 this.labLinePrice.Text = info.LinePrice.ToString();
                 this.labState.Text = GetAuditingState(info.State);
-                this.spDescription.InnerHtml = info.Description;
+                this.labDescription.Text = info.Description;
             }
         }
         #endregion
@@ -97,6 +98,36 @@ namespace XYECOM.Web.xymanage
         #endregion
 
 
+        #region 审核商业信息失败给用户留言
+        private void SendToMessage(long U_ID)
+        {
+            if (webInfo.IsAuditingInfoMessage)
+            {
+                XYECOM.Model.MessageInfo em = new XYECOM.Model.MessageInfo();
+                XYECOM.Business.Message m = new Message();
+                em.M_Adress = "";
+                em.M_CompanyName = "";
+                em.M_Email = "";
+                em.M_FHM = "";
+                em.M_HasReply = false;
+                em.M_Moblie = "";
+                em.M_PHMa = "";
+                em.M_RecverType = "administrator";
+                em.M_Restore = false;
+                em.M_SenderType = "user";
+
+                em.M_Title = "抵债信息审核不通过";
+                em.M_Content = "请详细检查抵债信息，不可描述不清";
+
+                em.M_UserName = "";
+                em.M_UserType = false;
+                em.U_ID = -1;
+                em.UR_ID = U_ID;
+                m.Insert(em);
+            }
+        }
+        #endregion
+
 
         /// <summary>
         /// 通过审核
@@ -106,14 +137,14 @@ namespace XYECOM.Web.xymanage
         protected void btnPass_Click(object sender, EventArgs e)
         {
             int id = MyConvert.GetInt32(this.hidID.Value);
-            int i = manage.AuditById(id,true);
+            int i = manage.AuditById(id, true);
             if (i > 0)
             {
                 Alert("审核成功", backURL);
             }
             else
             {
-                Alert("审核失败",backURL);
+                Alert("审核失败", backURL);
             }
         }
 
@@ -126,8 +157,10 @@ namespace XYECOM.Web.xymanage
         {
             int id = MyConvert.GetInt32(this.hidID.Value);
             int i = manage.AuditById(id, false);
+            int userId = MyConvert.GetInt32(this.hidUserId.Value);
             if (i > 0)
             {
+                SendToMessage(userId);
                 Alert("审核成功", backURL);
             }
             else

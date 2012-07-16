@@ -8,6 +8,7 @@ using System.Text;
 using System.Data;
 using XYECOM.Core;
 using XYECOM.Business;
+using XYECOM.Model;
 
 namespace XYECOM.Web
 {
@@ -23,7 +24,7 @@ namespace XYECOM.Web
                 int id = XYECOM.Core.XYRequest.GetInt("Id", 0);
                 if (id <= 0)
                 {
-                    GotoMsgBoxPageForDynamicPage("该抵债信息不存在！", 1, "ForeclosedList.aspx");
+                    GotoMsgBoxPageForDynamicPage("该抵债信息不存在！", 1, "Index.aspx");
                 }
                 this.hidId.Value = id.ToString();
                 BindData(id);
@@ -34,7 +35,8 @@ namespace XYECOM.Web
 
         protected void Page1_PageChanged(object sender, System.EventArgs e)
         {
-            this.BindData();
+            int foreId = MyConvert.GetInt32(this.hidId.Value);
+            this.BindData(foreId);
         }
         #endregion
 
@@ -43,9 +45,12 @@ namespace XYECOM.Web
             XYECOM.Model.AMS.ForeclosedInfo info = foreManage.GetForeclosedInfoById(id);
             if (info == null)
             {
-                GotoMsgBoxPageForDynamicPage("该抵债信息不存在！", 1, "ForeclosedList.aspx");
+                GotoMsgBoxPageForDynamicPage("该抵债信息不存在！", 1, "Index.aspx");
             }
-
+            if (info.State != (int)AuditingState.Passed)
+            {
+                GotoMsgBoxPageForDynamicPage("该抵债信息未通过审核！", 1, "Index.aspx");
+            }
             if (null != info)
             {
                 this.labAddress.Text = info.Address;
@@ -55,7 +60,8 @@ namespace XYECOM.Web
                 this.labEndDate.Text = info.EndDate.ToString("yyyy-MM-dd");
                 this.labHighPrice.Text = info.HighPrice.ToString();
                 this.labLinePrice.Text = info.LinePrice.ToString();
-                this.spnDescription.InnerHtml = info.Description;
+                this.labDescription.Text = info.Description;
+                this.labUserName.Text = GetUserName(info.DepartmentId);
             }
 
             DataTable dtLing = bidInfoManage.GetLingXian(id);
@@ -107,6 +113,11 @@ namespace XYECOM.Web
             }
         }
 
+        /// <summary>
+        /// 竞价操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnOK_Click(object sender, EventArgs e)
         {
             int foreId = MyConvert.GetInt32(this.hidId.Value);
@@ -147,6 +158,15 @@ namespace XYECOM.Web
                 GotoMsgBoxPageForDynamicPage("报价失败！", 1, "ForeclosedDetail.aspx?Id=" + foreId);
             }
         }
-
+        /// <summary>
+        /// 根据用户编号获取用户名称
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <returns></returns>
+        protected string GetUserName(object userID)
+        {
+            int uId = MyConvert.GetInt32(userID.ToString());
+            return new Business.UserInfo().GetCompNameByUId(uId);
+        }
     }
 }

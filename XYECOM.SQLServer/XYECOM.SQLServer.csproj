@@ -61,6 +61,7 @@
     <Compile Include="AdTrafficLog.cs" />
     <Compile Include="AMS\BidInfoAccess.cs" />
     <Compile Include="AMS\CreditInfoAccess.cs" />
+    <Compile Include="AMS\EvaluationAccess.cs" />
     <Compile Include="AMS\ForeclosedAccess.cs" />
     <Compile Include="AMS\TenderInfoAccess.cs" />
     <Compile Include="Area.cs">
