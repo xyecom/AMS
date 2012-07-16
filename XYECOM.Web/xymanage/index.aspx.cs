@@ -26,13 +26,7 @@ public partial class xymanage_index : XYECOM.Web.BasePage.ManagePage
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
-        {
-
-            this.headTip.InnerText = "感谢您选择纵横B2B电子商务系统商业版本，在使用过程中出现任何问题请联系技术支持人员！";
-
-
-            this.tdIframe.InnerHtml = "<iframe src=\"http://www.xyecom.com/version/index.html\" width=\"100%\" frameborder=\"0\" height=\"100px\"></iframe>";
-           
+        {           
             this.Button3.Attributes.Add("onclick", "javascript:return getmodulename();");
 
             getmodulelist();

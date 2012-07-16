@@ -76,15 +76,15 @@ namespace XYECOM.Web.Common
                     case "xy017":           //检测邮箱是否已被占用
                         IsExistsUserByEmail();
                         break;
-                    //case "xy018":           //新用户注册
-                    //    Register();
-                    //    break;
+                    case "xy018":           //新用户注册
+                        GetCaseList();
+                        break;
                     //case "xy019":
                     //    //用户退出
                     //    break;
                     case "xy020":
                         RetakePassword();   //重设密码
-                        break;                    
+                        break;
                     case "xy023":           //收藏信息
                         Favorite();
                         break;
@@ -144,6 +144,24 @@ namespace XYECOM.Web.Common
                         break;
                 }
             }
+        }
+
+        private void GetCaseList()
+        {
+            string customParams = XYECOM.Core.XYRequest.GetQueryString("Params");
+
+            string sql = sql = @"select Id,CaseName from CaseInfo where 1=1 ";
+
+            sql += customParams;
+
+            DataTable table = Core.Data.SqlHelper.ExecuteTable(sql);
+            StringBuilder sb = new StringBuilder();
+            
+            foreach (DataRow row in table.Rows)
+            {
+                sb.AppendFormat("<Item><ID>{0}</ID><Name>{1}</Name><HasSub>{2}</HasSub></Item>", row["Id"], Core.Utils.JSEscape(row["CaseName"].ToString()), "false");
+            }
+            ResponseXML(Result.Success, "", sb.ToString());
         }
 
         private void getFieldValuesForPtId()
@@ -1080,7 +1098,7 @@ namespace XYECOM.Web.Common
 
             #region 企业会员留言
             XYECOM.Business.UserInfo userInfoBLL = new XYECOM.Business.UserInfo();
-                        
+
 
             XYECOM.Model.UserInfo userInfo = userInfoBLL.GetItem(loginUserId);
 
@@ -1199,7 +1217,7 @@ namespace XYECOM.Web.Common
                                 + "<usertype>" + strUserType + "</usertype>"
                                 + "</userinfo>";
             //登录成功合并购物车信息
-            XYECOM.Model.GeneralUserInfo gernerUserInfo = Business.CheckUser.UserInfo;            
+            XYECOM.Model.GeneralUserInfo gernerUserInfo = Business.CheckUser.UserInfo;
 
             ResponseXML(Result.Success, message, xmlUserInfo);
 
@@ -1418,7 +1436,7 @@ namespace XYECOM.Web.Common
             if (_result == -3) ResponseXML(Result.Failed, "异常失败");
         }
         #endregion
-        
+
         #region 收藏
         private void Favorite()
         {
@@ -1550,7 +1568,7 @@ namespace XYECOM.Web.Common
             ResponseXML(result, "", strdata);
         }
         #endregion
-        
+
         #region 判断是否为免费新闻
         private void IsFreeNews()
         {

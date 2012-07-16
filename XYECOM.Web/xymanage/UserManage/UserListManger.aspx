@@ -121,7 +121,15 @@
                                                 </div>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                         <asp:TemplateField HeaderText="用户类型">
+                                        <asp:TemplateField HeaderText="是否是实名会员">
+                                            <HeaderStyle CssClass="gvLeft" />
+                                            <ItemStyle CssClass="gvLeft" Width="22%" />
+                                            <ItemTemplate>
+                                                <asp:LinkButton ID="btnSetIsReal" runat="server" CommandArgument='<%# string.Format("{0}|{1}",Eval("IsReal"),Eval("U_Id")) %>'
+                                                    OnClick="btnSetIsReal_Click">普通会员</asp:LinkButton>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="用户类型">
                                             <HeaderStyle CssClass="gvLeft" />
                                             <ItemStyle CssClass="gvLeft" Width="10%" />
                                             <ItemTemplate>
@@ -141,6 +149,7 @@
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>
+                                    <HeaderStyle CssClass="gv_header_style"></HeaderStyle>
                                 </asp:GridView>
                                 <p style="text-align: center;">
                                     <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></p>

@@ -44,6 +44,13 @@ namespace XYECOM.Web.Creditor
         {
             //先判断 该用户是否有档案信息及债权或抵债信息，若没有则删除，否则不能删除。
 
+            LinkButton btn = sender as LinkButton;
+
+            long uid = XYECOM.Core.MyConvert.GetInt64(btn.CommandArgument);
+
+            //判断是否有 抵债或债权信息
+
+            //判断是否有 档案信息
 
         }
     }
