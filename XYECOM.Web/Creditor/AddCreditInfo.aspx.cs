@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
@@ -51,7 +51,7 @@ namespace XYECOM.Web.Creditor
             info.DebtorReason = this.txtDebtorReason.Text.Trim();
             info.DebtorTelpone = this.txtDebtorTelpone.Text.Trim();
             info.DebtorType = this.txtDebtorType.Text.Trim();
-            info.DepartId = userinfo.userid;
+            info.DepartId =MyConvert.GetInt32(userinfo.userid.ToString());
             info.Introduction = this.txtIntroduction.Text.Trim();
             info.IsConfirm = MyConvert.GetBoolean(this.radIsConfirm.SelectedValue);
             info.IsCreditEvaluation = false;

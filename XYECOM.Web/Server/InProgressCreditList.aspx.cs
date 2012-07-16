@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
@@ -18,33 +18,41 @@ namespace XYECOM.Web.Server
         {
             this.lblMessage.Text = "";
             string title = this.txtTitle.Text.Trim();
-            string arrears = this.drpArrears.SelectedValue;
-            StringBuilder strWhere = new StringBuilder(" 1=1 and (AreaId = " + userinfo.AreaId + ")");
-            if (arrears != "所有")
+            string begindate = this.bgdate.Value;
+            string enddate = this.egdate.Value;
+            try
             {
-                if (arrears == "小于1万")
-                {
-                    strWhere.Append(" and ( Arrears <=10000)");
-                }
-                else if (arrears == "大于1万小于5万")
-                {
-                    strWhere.Append(" and (Arrears<=50000 and Arrears>=10000)");
-                }
-                else if (arrears == "大于5万小于10万")
-                {
-                    strWhere.Append(" and (Arrears<=100000 and Arrears>=50000)");
-                }
-                else if (arrears == "大于10万")
-                {
-                    strWhere.Append(" and (Arrears>=100000)");
-                }
+                DateTime bgdate = Convert.ToDateTime(begindate);
+            }
+            catch (Exception)
+            {
+                begindate = "";
+            }
+            try
+            {
+                DateTime eddate = Convert.ToDateTime(enddate);
+            }
+            catch (Exception)
+            {
+                enddate = "";
+            }
+            StringBuilder strWhere = new StringBuilder(" 1=1 and LayerId = " + userinfo.userid + "and CreditInfoId in (select creditId from dbo.CreditInfo where approvastatus = 3)");
+            //开始日期
+            if (begindate != "")
+            {
+                strWhere.Append(" and (TenderDate >= '" + begindate + "')");
+            }
+            //结束日期
+            if (enddate != "")
+            {
+                strWhere.Append(" and (TenderDate <= '" + enddate + "')");
             }
             if (!string.IsNullOrEmpty(title))
             {
-                strWhere.Append(" and (Title like '%" + title + "%')");
+                strWhere.Append(" and CreditInfoId in (select creditId from dbo.CreditInfo where Title like '%" + title + "%')");
             }
             int totalRecord = 0;
-            DataTable dt = XYECOM.Business.Utils.GetPaginationData("CreditInfo", "CreditId", "*", " CreateDate desc", strWhere.ToString(), this.Page1.PageSize, this.Page1.CurPage, out totalRecord);
+            DataTable dt = XYECOM.Business.Utils.GetPaginationData("TenderInfo", "TenderId", "*", " TenderDate desc", strWhere.ToString(), this.Page1.PageSize, this.Page1.CurPage, out totalRecord);
             this.Page1.RecTotal = totalRecord;
 
             if (dt.Rows.Count > 0)
@@ -57,6 +65,22 @@ namespace XYECOM.Web.Server
                 this.lblMessage.Text = "没有相关信息记录";
                 this.rptList.DataBind();
             }
+        }
+
+        /// <summary>
+        /// 根据债权ID获取债权信息
+        /// </summary>
+        /// <param name="credID"></param>
+        /// <returns></returns>
+        public XYECOM.Model.AMS.CreditInfo GetCreditInfoByCredID(object credID)
+        {
+            int id = XYECOM.Core.MyConvert.GetInt32(credID.ToString());
+            XYECOM.Model.AMS.CreditInfo info = new Model.AMS.CreditInfo();
+            if (id <= 0)
+            {
+                return info;
+            }
+            return new XYECOM.Business.AMS.CreditInfoManager().GetCreditInfoById(id);
         }
 
         #region 分页相关代码

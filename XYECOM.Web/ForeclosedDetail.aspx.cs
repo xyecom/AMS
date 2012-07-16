@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
@@ -96,7 +96,8 @@ namespace XYECOM.Web
             }
             int foreId = MyConvert.GetInt32(this.hidId.Value);
             XYECOM.Model.AMS.ForeclosedInfo info = foreManage.GetForeclosedInfoById(foreId);
-            if ((userinfo != null && userinfo.userid == info.DepartmentId) || adminID != 0)
+            XYECOM.Model.GeneralUserInfo userInfo = Business.CheckUser.UserInfo;
+            if ((userInfo != null && userInfo.userid == info.DepartmentId) || adminID != 0)
             {
                 return contact;
             }
@@ -119,7 +120,8 @@ namespace XYECOM.Web
                 GotoMsgBoxPageForDynamicPage("该抵债信息已过期不能进行竞标！", 1, "Index.aspx");
             }
             XYECOM.Model.AMS.ForeclosedInfo info = foreManage.GetForeclosedInfoById(foreId);
-            if (userinfo != null && userinfo.userid == info.DepartmentId)
+            XYECOM.Model.GeneralUserInfo userInfo = Business.CheckUser.UserInfo;
+            if (userInfo != null && userInfo.userid == info.DepartmentId)
             {
                 GotoMsgBoxPageForDynamicPage("不能对自己的抵债信息发布竞价！", 1, "Index.aspx");
             }

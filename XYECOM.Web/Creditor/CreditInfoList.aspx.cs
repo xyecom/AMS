@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
@@ -219,10 +219,6 @@ namespace XYECOM.Web.Creditor
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
-                HiddenField hidInfoId = (HiddenField)e.Item.FindControl("hidInfoId");//当前案件编号
-                if (hidInfoId == null) return;
-                int creditId = MyConvert.GetInt32(hidInfoId.Value);
-
                 HiddenField hidState = (HiddenField)e.Item.FindControl("hidState");//当前案件状态
                 if (hidState == null) return;
                 int stateId = MyConvert.GetInt32(hidState.Value);

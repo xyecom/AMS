@@ -110,11 +110,13 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 账龄
         /// </summary>
-        public int Age
+        public string Age
         {
             get;
             set;
         }
+        //TODO:把帐领修改为string类型
+
         /// <summary>
         /// 是否在诉讼期
         /// </summary>
@@ -227,7 +229,7 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 债权人是否已评价
         /// </summary>
-        public int IsCreditEvaluation
+        public bool IsCreditEvaluation
         {
             get;
             set;
@@ -235,10 +237,12 @@ namespace XYECOM.Model.AMS
         /// <summary>
         /// 服务商是否已评价
         /// </summary>
-        public int IsServerEvaluation
+        public bool IsServerEvaluation
         {
             get;
             set;
         }
+
+        //TODO:把是否评价修改为bool
     }
 }

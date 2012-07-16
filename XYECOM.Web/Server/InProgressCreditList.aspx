@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Server/Server.master" AutoEventWireup="true"
+<%@ Page Title="" Language="C#" MasterPageFile="~/Server/Server.master" AutoEventWireup="true"
     CodeBehind="InProgressCreditList.aspx.cs" Inherits="XYECOM.Web.Server.InProgressCreditList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -9,29 +9,24 @@
         <!--rightzqlist start-->
         <div id="rightzqlist">
             <h2>
-                系统推荐案件</h2>
+                进行中的案件</h2>
             <div class="rhr">
             </div>
             <!--serch start-->
             <div class="serchl">
-                &nbsp;&nbsp;
-                <select name="select1" style="width: 150px">
-                    <option value="1">标的额大于100万</option>
-                    <option value="1">标的额50万到100万之间</option>
-                    <option value="2">标的额<=1万</option>
-                    <option value="3">所有标的</option>
-                </select>
-                欠款金额：<asp:DropDownList runat="server" ID="drpArrears">
-                    <asp:ListItem Value="所有" Text="--所有--"></asp:ListItem>
-                    <asp:ListItem Value="小于1万" Text="0-1万"></asp:ListItem>
-                    <asp:ListItem Value="大于1万小于5万" Text="1万-5万"></asp:ListItem>
-                    <asp:ListItem Value="大于5万小于10万" Text="5万-十万"></asp:ListItem>
-                    <asp:ListItem Value="大于10万" Text=">=10万"></asp:ListItem>
-                </asp:DropDownList>
+                &nbsp;&nbsp; 投标日期：
+                <input id="bgdate" type="text" runat="server" readonly="readonly" onclick="getDateString(this);"
+                    maxlength="10" style="width: 80px;" />
+                到
+                <input id="egdate" type="text" runat="server" readonly="readonly" onclick="getDateString(this);"
+                    maxlength="10" style="width: 80px;" />
+                <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="CompareValidator"
+                    ControlToCompare="bgdate" ControlToValidate="egdate" Operator="GreaterThan" Type="Date">截至日期必须大于生效日期
+                </asp:CompareValidator>
                 &nbsp;&nbsp; &nbsp;&nbsp;
                 <%--<input type="text" value="请输入关键字" onfocus="this.value=''" onblur="if(!value){value=defaultValue;}"
                     style="color: #a8a4a3"><input name="" type="button" value="查 询" />--%>
-                标题：<asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
+                债权标题：<asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
                 <asp:Button runat="server" ID="btnSearch" Text="搜索" OnClick="btnSearch_Click" />
             </div>
             <!--serch end-->
@@ -45,10 +40,10 @@
                                     案件标题
                                 </td>
                                 <td align="center" width="20%">
-                                    发布时间
+                                    投标时间
                                 </td>
                                 <td align="center" width="15%">
-                                    付款状态
+                                    催收期限
                                 </td>
                                 <td align="center" width="25%">
                                     操作菜单
@@ -59,16 +54,16 @@
                         <tr id="trmidd" style="height: 28px; border-top: 1px solid #ccc" onmousemove="this.style.backgroundColor='#F7F7F7'"
                             onmouseout="this.style.backgroundColor='#ffffff'">
                             <td id="tdtitle">
-                                <%# Eval("Title") %>
+                                <%# GetCreditInfoByCredID(Eval("CreditInfoId")).Title%>
                             </td>
                             <td>
-                                <%# Eval("CreateDate")%>
+                                <%# Eval("TenderDate")%>
                             </td>
                             <td>
-                                <%# GetApprovaStatus(Eval("ApprovaStatus"))%>
+                                <%# GetCreditInfoByCredID(Eval("CreditInfoId")).CollectionPeriod%>
                             </td>
                             <td>
-                                <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/ForeclosedDetail.aspx?Id=" + Eval("CreditId") %>'>查看竞标</asp:HyperLink>
+                                <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'>查看详细</asp:HyperLink>
                             </td>
                         </tr>
                     </ItemTemplate>

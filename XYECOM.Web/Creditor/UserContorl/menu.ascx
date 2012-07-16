@@ -189,5 +189,5 @@
             $('.xialaguang').removeClass('navhover');
         }
 ).slice(-3, -1).find('.children').addClass('sleft');
-    });    
+    }); 
 </script>
