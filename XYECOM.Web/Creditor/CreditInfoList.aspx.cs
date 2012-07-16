@@ -300,8 +300,12 @@ namespace XYECOM.Web.Creditor
                         hlUpdate.Visible = false;
                         lbtnRelease.Visible = false;
                         lbtnDelete.Visible = false;
-                        hlShowTender.Visible = false;
-                        if (!isCreditEvaluation)
+                        hlShowTender.Visible = true;
+                        if (isCreditEvaluation)
+                        {
+                            hlEvaluate.Visible = false;
+                        }
+                        else
                         {
                             hlEvaluate.Visible = true;
                         }

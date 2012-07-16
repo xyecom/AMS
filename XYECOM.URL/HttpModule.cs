@@ -168,13 +168,13 @@ namespace XYECOM.URL
 
                 if (input == text)
                 {
-                    context.RewritePath("/aspx/" + curTmpName + "/index." + webInfo.WebSuffix);
+                   
                     return;
                 }
 
                 if (input.Substring(text.Length).IndexOf("/") == -1)
                 {
-                    context.RewritePath(text + "aspx/" + curTmpName + input.Substring(context.Request.Path.LastIndexOf("/")));
+                   
                     return;
                 }
 

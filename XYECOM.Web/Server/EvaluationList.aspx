@@ -15,7 +15,7 @@
             <!--serch start-->
             <div class="serchl">
                 <asp:RadioButtonList runat="server" ID="radEvaType">
-                    <asp:ListItem Value="credit">我对债权商的评价</asp:ListItem>
+                    <asp:ListItem Value="credit" Selected="True">我对债权商的评价</asp:ListItem>
                     <asp:ListItem Value="server">债权商对我的评价</asp:ListItem>
                 </asp:RadioButtonList>
                 <asp:Button runat="server" ID="btnSearch" Text="搜索" OnClick="btnSearch_Click" />
@@ -23,7 +23,7 @@
             <!--serch end-->
             <!--列表 start-->
             <div id="list">
-                <asp:Repeater ID="rptList" runat="server" OnItemDataBound="rptList_ItemDataBound">
+                <asp:Repeater ID="rptList" runat="server">
                     <HeaderTemplate>
                         <table>
                             <tr id="trtop">
@@ -57,7 +57,7 @@
                                 <%# GetCreditTitle(Eval("CreditInfoId"))%>
                             </td>
                             <td>
-                                <%# Eval("IsSuccess").ToString()=="1"?"好评":"差评"%>
+                                <%# Eval("Evaluation").ToString() == "1" ? "好评" : "差评"%>
                             </td>
                             <td>
                                 <%# Eval("Description")%>

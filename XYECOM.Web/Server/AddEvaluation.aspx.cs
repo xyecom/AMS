@@ -44,8 +44,8 @@ namespace XYECOM.Web.Server
         protected void btnOk_Click(object sender, EventArgs e)
         {
             int credId = MyConvert.GetInt32(this.hidCredId.Value);
-            TenderInfo tenderInfo = new TenderInfoManager().GetTenderByCredId(credId);
-            if (tenderInfo == null)
+            CreditInfo credInfo = new CreditInfoManager().GetCreditInfoById(credId);
+            if (credInfo == null)
             {
                 GotoMsgBoxPageForDynamicPage("请选择要评价的债权信息！", 1, "Index.aspx");
             }
@@ -54,10 +54,10 @@ namespace XYECOM.Web.Server
             info.CreditInfoId = credId;
             info.Description = this.txtDescription.Text.Trim();
             info.EvaluationResult = MyConvert.GetInt32(this.radEvaluationType.SelectedValue);
-            info.User2Id = tenderInfo.LayerId;
+            info.User2Id = credInfo.DepartId;
             info.UserId = (int)userinfo.userid;
             info.UserName = userinfo.LoginName;
-            info.User2Name = GetUserName(tenderInfo.LayerId);
+            info.User2Name = GetUserName(credInfo.DepartId);
             int result = manage.InsertEvaluation(info);
             if (result > 0)
             {
