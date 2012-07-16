@@ -98,6 +98,7 @@
                             <td>
                                 <asp:HiddenField ID="hidState" runat="server" Value='<%# Eval("ApprovaStatus")%>' />
                                 <asp:HiddenField ID="hidInfoId" runat="server" Value='<%# Eval("CreditId")%>' />
+                                <asp:HiddenField ID="hidIsCreditEvaluation" runat="server" Value='<%# Eval("IsCreditEvaluation")%>' />
                                 <asp:HyperLink ID="hlUpdate" runat="server" NavigateUrl='<%# "UpdateCreditInfo.aspx?Id=" + Eval("CreditId") %>'>修改</asp:HyperLink>
                                 <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/ForeclosedDetail.aspx?Id=" + Eval("CreditId") %>'>查看竞标</asp:HyperLink>
                                 <asp:HyperLink ID="hlEvaluate" runat="server" NavigateUrl='<%# "/ForeclosedDetail.aspx?Id=" + Eval("CreditId") %>'>评价</asp:HyperLink>

@@ -221,7 +221,13 @@ namespace XYECOM.Web.Creditor
             {
                 HiddenField hidState = (HiddenField)e.Item.FindControl("hidState");//当前案件状态
                 if (hidState == null) return;
+
+                HiddenField hidIsCreditEvaluation = (HiddenField)e.Item.FindControl("hidIsCreditEvaluation");//当前债权商是否已评价
+                if (hidIsCreditEvaluation == null) return;
+                bool isCreditEvaluation = MyConvert.GetBoolean(hidIsCreditEvaluation.Value);
+
                 int stateId = MyConvert.GetInt32(hidState.Value);
+
 
                 HyperLink hlUpdate = (HyperLink)e.Item.FindControl("hlUpdate");//修改债权信息
                 HyperLink hlShowTender = (HyperLink)e.Item.FindControl("hlShowTender");//查看竞标
@@ -301,7 +307,10 @@ namespace XYECOM.Web.Creditor
                         lbtnRelease.Visible = false;
                         lbtnDelete.Visible = false;
                         hlShowTender.Visible = false;
-                        hlEvaluate.Visible = true;
+                        if (!isCreditEvaluation)
+                        {
+                            hlEvaluate.Visible = true;
+                        }
                         hlServerInfo.Visible = true;
                         lbtnCancel.Visible = false;
                         lbtnClosed.Visible = false;

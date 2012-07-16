@@ -64,6 +64,7 @@
     <Compile Include="AdTrafficLog.cs" />
     <Compile Include="AMS\BidInfoManager.cs" />
     <Compile Include="AMS\CreditInfoManager.cs" />
+    <Compile Include="AMS\EvaluationManager.cs" />
     <Compile Include="AMS\ForeclosedManager.cs" />
     <Compile Include="AMS\TenderInfoManager.cs" />
     <Compile Include="Area.cs" />

@@ -77,10 +77,11 @@
                             <td>
                                 <asp:HiddenField ID="hidCreditInfoId" runat="server" Value='<%# Eval("CreditInfoId")%>' />
                                 <asp:HiddenField ID="hidTenderId" runat="server" Value='<%# Eval("TenderId")%>' />
-                                <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'>查看详细</asp:HyperLink>
-                                <asp:HyperLink Visible="false" ID="hlEvaluate" runat="server" NavigateUrl='<%# "/ForeclosedDetail.aspx?Id=" + Eval("CreditId") %>'>评价</asp:HyperLink>
-                                <asp:LinkButton ID="lbtnDelete" runat="server" Text="删除" OnClientClick="javascript:return confirm('确定删除吗？');"
-                                    OnClick="lbtnDelete_Click" CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
+                                <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditInfoId") %>'>查看详细</asp:HyperLink>
+                                <asp:HyperLink Visible="false" ID="hlEvaluate" runat="server" NavigateUrl='<%# "/ForeclosedDetail.aspx?Id=" + Eval("CreditInfoId") %>'>评价</asp:HyperLink>
+                                <asp:LinkButton Visible="false" ID="lbtnCreditConfirm" runat="server" Text="确认案件完成"
+                                    OnClientClick="javascript:return confirm('确定该案件执行完毕吗？');" OnClick="lbtnCreditConfirm_Click"
+                                    CommandArgument='<%# Eval("CreditInfoId") %>'></asp:LinkButton>
                             </td>
                         </tr>
                     </ItemTemplate>

@@ -176,6 +176,7 @@ namespace XYECOM.Web.Server
                 {
                     return;
                 }
+
                 if (tenderInfo.IsSuccess != (int)TenderState.Success)
                 {
                     return;
@@ -189,8 +190,10 @@ namespace XYECOM.Web.Server
                 int stateId = info.ApprovaStatus;
                 HyperLink hlEvaluate = (HyperLink)e.Item.FindControl("hlEvaluate");//评价          
 
+                LinkButton lbtnCreditConfirm = (LinkButton)e.Item.FindControl("lbtnCreditConfirm");//服务商确认案件完成          
+
                 Model.CreditState sta = (Model.CreditState)stateId;
-                if (sta == Model.CreditState.CreditEnd)
+                if (sta == Model.CreditState.CreditEnd && !info.IsServerEvaluation)
                 {
                     hlEvaluate.Visible = true;
                 }
@@ -198,7 +201,39 @@ namespace XYECOM.Web.Server
                 {
                     hlEvaluate.Visible = false;
                 }
+                if (sta == Model.CreditState.InProgress)
+                {
+                    lbtnCreditConfirm.Visible = true;
+                }
+                else
+                {
+                    lbtnCreditConfirm.Visible = false;
+                }
             }
         }
+
+        /// <summary>
+        /// 服务商确认案件完成
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void lbtnCreditConfirm_Click(object sender, EventArgs e)
+        {
+            LinkButton linkButton = (LinkButton)(sender as LinkButton);
+            if (linkButton != null)
+            {
+                int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
+                if (Id > 0)
+                {
+                    CreditInfoManager credManage = new CreditInfoManager();
+                    int result = credManage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.CreditConfirm);
+                    if (result > 0)
+                    {
+                        BindData();
+                    }
+                }
+            }
+        }
+
     }
 }
