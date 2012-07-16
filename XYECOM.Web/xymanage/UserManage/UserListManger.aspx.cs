@@ -83,7 +83,7 @@ public partial class xymanage_UserManage_UserListManger : XYECOM.Web.BasePage.Ma
         }
 
         int totalRecord = 0;
-        DataTable dt = XYECOM.Business.Utils.GetPaginationData("XYV_UserInfo", "U_ID", "U_ID,UI_Name,U_Name,U_RegDate,U_Email,UserType", orderField + " desc", strWhere, this.Page1.PageSize, this.Page1.CurPage, out totalRecord);
+        DataTable dt = XYECOM.Business.Utils.GetPaginationData("XYV_UserInfo", "U_ID", "U_ID,UI_Name,U_Name,U_RegDate,U_Email,UserType,IsReal", orderField + " desc", strWhere, this.Page1.PageSize, this.Page1.CurPage, out totalRecord);
 
         this.Page1.RecTotal = totalRecord;
 
@@ -232,5 +232,30 @@ public partial class xymanage_UserManage_UserListManger : XYECOM.Web.BasePage.Ma
                 break;
         }
         return result;
+    }
+
+    protected void btnSetIsReal_Click(object sender, EventArgs e)
+    {
+        LinkButton btn = sender as LinkButton;
+
+        string[] realId = btn.CommandArgument.Split(new char[] { '|' });
+        string real = realId[0];
+        string isreal = string.Empty;
+        if (real == "1")
+        {
+            isreal = "0";
+            btn.Text = "普通会员";
+        }
+        else
+        {
+            btn.Text = "实名会员";
+            isreal = "1";
+        }
+        string uid = realId[1];
+        string sql = "update u_userInfo Set IsReal=" + isreal + " where u_id=" + uid;
+
+        XYECOM.Core.Data.SqlHelper.ExecuteNonQuery(sql);
+
+        BindData();
     }
 }

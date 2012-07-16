@@ -204,6 +204,7 @@
     <Compile Include="RankingUserInfo.cs" />
     <Compile Include="ReceiveAddressInfo.cs" />
     <Compile Include="RecentlyVisitedInfo.cs" />
+    <Compile Include="RelatedCaseInfo.cs" />
     <Compile Include="ResumeInfo.cs">
       <SubType>Code</SubType>
     </Compile>

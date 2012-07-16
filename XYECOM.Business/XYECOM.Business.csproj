@@ -141,6 +141,7 @@
     <Compile Include="RankingLog.cs" />
     <Compile Include="RanKingUserInfo.cs" />
     <Compile Include="RecentlyVisitedManager.cs" />
+    <Compile Include="RelatedCaseInfoManager.cs" />
     <Compile Include="Resume.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="SearchKey.cs" />

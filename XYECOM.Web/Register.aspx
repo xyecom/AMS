@@ -8,6 +8,12 @@
     <link href="/common/css/xylib.css" type="text/css" rel="stylesheet" />
     <script language="javascript" type="text/javascript" src="/Common/js/base.js"></script>
     <script language="javascript" type="text/javascript" src="/config/js/config.js"></script>
+    <style type="text/css">
+        #divtitle h2
+        {
+            width: 100px;
+        }
+    </style>
 </head>
 <body>
     <form id="from1" runat="server">
@@ -59,8 +65,8 @@
                             </td>
                             <td>
                                 <asp:TextBox runat="server" ID="txtPwd1" TextMode="Password"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                                    ControlToValidate="txtPwd1" Display="Dynamic" ErrorMessage="*密码必须填写"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtPwd1"
+                                    Display="Dynamic" ErrorMessage="*密码必须填写"></asp:RequiredFieldValidator>
                                 <span class="span1">*长度为6-20个字符，区分大小写</span>
                             </td>
                         </tr>
@@ -70,9 +76,8 @@
                             </td>
                             <td>
                                 <asp:TextBox runat="server" ID="txtPwd2" TextMode="Password"></asp:TextBox>
-                                <asp:CompareValidator ID="CompareValidator1" runat="server" 
-                                    ControlToCompare="txtPwd1" ControlToValidate="txtPwd2" Display="Dynamic" 
-                                    ErrorMessage="两次密码输入不一致!"></asp:CompareValidator>
+                                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPwd1"
+                                    ControlToValidate="txtPwd2" Display="Dynamic" ErrorMessage="两次密码输入不一致!"></asp:CompareValidator>
                                 <span class="span1">*请注意与上面密码输入一致</span>
                             </td>
                         </tr>

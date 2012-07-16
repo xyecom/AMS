@@ -165,6 +165,7 @@
     <Compile Include="RankingUserInfo.cs" />
     <Compile Include="ReceiveAddressAccess.cs" />
     <Compile Include="RecentlyVisitedAccess.cs" />
+    <Compile Include="RelatedCaseInfoAccess.cs" />
     <Compile Include="Resume.cs">
       <SubType>Code</SubType>
     </Compile>
