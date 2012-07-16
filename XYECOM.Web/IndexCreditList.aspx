@@ -100,7 +100,7 @@
                                     <%# Eval("CreateDate")%>
                                 </td>
                                 <td>
-                                    <a href='showEvaluation.aspx?UserId=<%# Eval("DepartId") %>'>
+                                    <a href='showEvaluation.aspx?UserId=<%# Eval("DepartId") %>' target="_blank">
                                         <%# GetUserName(Eval("DepartId"))%></a><span style="color: Red">点击发布者可查看其信用度</span>
                                 </td>
                                 <td>

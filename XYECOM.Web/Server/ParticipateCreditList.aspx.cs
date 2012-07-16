@@ -22,6 +22,7 @@ namespace XYECOM.Web.Server
             string title = this.txtTitle.Text.Trim();
             string begindate = this.bgdate.Value;
             string enddate = this.egdate.Value;
+            int state = MyConvert.GetInt32(this.drpState.SelectedValue);
             try
             {
                 DateTime bgdate = Convert.ToDateTime(begindate);
@@ -52,6 +53,14 @@ namespace XYECOM.Web.Server
             if (!string.IsNullOrEmpty(title))
             {
                 strWhere.Append(" and CreditInfoId in (select creditId from dbo.CreditInfo where Title like '%" + title + "%')");
+            }
+            if (state == -2)
+            {
+                strWhere.Append(" and  CreditInfoId in (select creditId from dbo.CreditInfo where ApprovaStatus !=7)");
+            }
+            else
+            {
+                strWhere.Append(" and  CreditInfoId in (select creditId from dbo.CreditInfo where ApprovaStatus = " + state + ")");                
             }
             int totalRecord = 0;
             DataTable dt = XYECOM.Business.Utils.GetPaginationData("TenderInfo", "TenderId", "*", " TenderDate desc", strWhere.ToString(), this.Page1.PageSize, this.Page1.CurPage, out totalRecord);

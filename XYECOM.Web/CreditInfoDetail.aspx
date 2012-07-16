@@ -234,7 +234,7 @@
             <tr id="trmidd" style="height: 28px; border-top: 1px solid #ccc" onmousemove="this.style.backgroundColor='#F7F7F7'"
                 onmouseout="this.style.backgroundColor='#ffffff'">
                 <td id="tdtitle">
-                    <a href='showEvaluation.aspx?isServer=1&UserId=<%# Eval("LayerId") %>'>
+                    <a href='showEvaluation.aspx?isServer=1&UserId=<%# Eval("LayerId") %>' target="_blank">
                         <%# GetUserName(Eval("LayerId"))%></a><span style="color: Red">点击发布者可查看其信用度</span>
                 </td>
                 <td>

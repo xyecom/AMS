@@ -127,7 +127,8 @@
                             <span style="color: Red">*</span>案情简介
                         </td>
                         <td colspan="3">
-                            <asp:TextBox runat="server" ID="txtIntroduction" Width="100%" Rows="10"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtIntroduction" TextMode="MultiLine" Width="100%"
+                                Rows="10"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtIntroduction"
                                 ErrorMessage="案情简介不能为空"></asp:RequiredFieldValidator>
                         </td>

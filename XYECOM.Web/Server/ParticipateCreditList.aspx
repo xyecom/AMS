@@ -27,6 +27,14 @@
                 <%--<input type="text" value="请输入关键字" onfocus="this.value=''" onblur="if(!value){value=defaultValue;}"
                     style="color: #a8a4a3"><input name="" type="button" value="查 询" />--%>
                 债权标题：<asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
+                案件状态：<asp:DropDownList Width="150px" ID="drpState" runat="server">
+                    <asp:ListItem Value="-2" Text="所有"></asp:ListItem>
+                    <asp:ListItem Value="2" Text="投标中"></asp:ListItem>
+                    <asp:ListItem Value="3" Text="案件进行中"></asp:ListItem>
+                    <asp:ListItem Value="4" Text="服务商案件完成等待债权人确认"></asp:ListItem>
+                    <asp:ListItem Value="5" Text="案件结束"></asp:ListItem>
+                    <asp:ListItem Value="6" Text="债权人取消案件"></asp:ListItem>
+                </asp:DropDownList>
                 <asp:Button runat="server" ID="btnSearch" Text="搜索" OnClick="btnSearch_Click" />
             </div>
             <!--serch end-->

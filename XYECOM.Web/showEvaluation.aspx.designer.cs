@@ -112,6 +112,15 @@ namespace XYECOM.Web {
         protected global::System.Web.UI.WebControls.Repeater rptList;
         
         /// <summary>
+        /// hidId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hidId;
+        
+        /// <summary>
         /// Page1 control.
         /// </summary>
         /// <remarks>

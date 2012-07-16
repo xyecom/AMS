@@ -101,7 +101,7 @@
                                 <asp:HiddenField ID="hidIsCreditEvaluation" runat="server" Value='<%# Eval("IsCreditEvaluation")%>' />
                                 <asp:HyperLink ID="hlUpdate" runat="server" NavigateUrl='<%# "UpdateCreditInfo.aspx?Id=" + Eval("CreditId") %>'>修改</asp:HyperLink>
                                 <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'>查看竞标</asp:HyperLink>
-                                <asp:HyperLink ID="hlEvaluate" runat="server" NavigateUrl='<%# "/ForeclosedDetail.aspx?Id=" + Eval("CreditId") %>'>评价</asp:HyperLink>
+                                <asp:HyperLink ID="hlEvaluate" runat="server" NavigateUrl='<%# "AddCreditInfo.aspx?Id=" + Eval("CreditId") %>'>评价</asp:HyperLink>
                                 <asp:LinkButton ID="lbtnCancel" runat="server" Text="取消案件" OnClick="lbtnCancel_Click"
                                     OnClientClick="javascript:return ConfirmCredit();" CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
                                 <asp:LinkButton ID="lbtnClosed" runat="server" Text="关闭案件" OnClick="lbtnClose_Click"

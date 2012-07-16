@@ -76,9 +76,7 @@
                         物品详细描述：
                     </td>
                     <td colspan="3">
-                        <FCKeditorV2:FCKeditor ID="fckDescription" runat="server" BasePath="/Common/fckeditor/"
-                            ToolbarSet="News" Height="200px">
-                        </FCKeditorV2:FCKeditor>
+                        <asp:TextBox runat="server" ID="txtDescription" TextMode="MultiLine" Rows="15" Width="100%"></asp:TextBox>
                     </td>
                 </tr>
             </table>

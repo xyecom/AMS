@@ -70,5 +70,14 @@ namespace XYECOM.Web.Creditor
             int id = MyConvert.GetInt32(credId.ToString());
             return new CreditInfoManager().GetCreditInfoById(id).Title;
         }
+        protected void Page1_PageChanged(object sender, System.EventArgs e)
+        {
+            this.BindData();
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            BindData();
+        }
     }
 }

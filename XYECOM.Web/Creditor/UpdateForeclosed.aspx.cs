@@ -38,7 +38,7 @@ namespace XYECOM.Web.Creditor
             this.txtAddress.Text = info.Address;
             this.txtLinePrice.Text = info.LinePrice.ToString();
             this.areaid.Value = info.AreaId.ToString();
-            this.fckDescription.Value = info.Description;
+            this.txtDescription.Text = info.Description;
             this.endDate.Value = info.EndDate.ToString("yyyy-MM-dd");
             this.droTypeName.SelectedValue = info.ForeColseTypeName;
             //supplyImages.InfoID = info.ForeclosedId;
@@ -63,7 +63,7 @@ namespace XYECOM.Web.Creditor
             string typeName = this.droTypeName.SelectedValue;
             string address = this.txtAddress.Text.Trim();
             DateTime date = MyConvert.GetDateTime(this.endDate.Value);
-            string description = this.fckDescription.Value;
+            string description = this.txtDescription.Text;
             info.Title = title;
             info.LinePrice = linePrice;
             //info.AreaId = areaId;

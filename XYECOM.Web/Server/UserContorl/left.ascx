@@ -14,12 +14,13 @@
         <h1>
             案件管理</h1>
         <ul>
-            <li><a href="#">进行中案件</a></li>
-            <li><a href="#">已参与案件</a></li>
-            <h1>
-                案件资讯</h1>
-            <ul>
-                <li><a href="/Server/RecommendCreditList.aspx">系统推荐</a></li></ul>
+            <li><a href="/Server/ParticipateCreditList.aspx">已参与案件</a></li>
+            <li><a href="/Server/EvaluationList.aspx">评价管理</a></li>
+        </ul>
+        <h1>
+            案件资讯</h1>
+        <ul>
+            <li><a href="/Server/RecommendCreditList.aspx">系统推荐</a></li></ul>
         </ul>
     </div>
 </div>

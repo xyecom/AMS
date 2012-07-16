@@ -20,7 +20,7 @@ namespace XYECOM.Web
         protected override void BindData()
         {
             this.lblMessage.Text = "";
-            string areid = this.city.Value;
+            int areid =MyConvert.GetInt32(this.city.Value);
             string arrears = this.drpArrears.SelectedValue;
             string title = this.txtTitle.Text.Trim();
             StringBuilder strWhere = new StringBuilder(" 1=1 and ( ApprovaStatus  =2)");
@@ -46,6 +46,10 @@ namespace XYECOM.Web
             if (!string.IsNullOrEmpty(title))
             {
                 strWhere.Append(" and (Title like '%" + title + "%')");
+            }
+            if (areid > 0)
+            {
+                strWhere.Append(" and (AreaId = "+areid+")");
             }
             int totalRecord = 0;
             DataTable dt = XYECOM.Business.Utils.GetPaginationData("CreditInfo", "CreditId", "*", " CreateDate desc", strWhere.ToString(), this.Page1.PageSize, this.Page1.CurPage, out totalRecord);

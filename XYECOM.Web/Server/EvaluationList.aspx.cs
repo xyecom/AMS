@@ -16,7 +16,15 @@ namespace XYECOM.Web.Server
         protected void Page_Load(object sender, EventArgs e)
         {
         }
+        protected void Page1_PageChanged(object sender, System.EventArgs e)
+        {
+            this.BindData();
+        }
 
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            BindData();
+        }
         protected override void BindData()
         {
             StringBuilder strWhere = new StringBuilder(" 1=1");

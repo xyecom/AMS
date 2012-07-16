@@ -22,6 +22,15 @@ namespace XYECOM.Web {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// labUserName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labUserName;
+        
+        /// <summary>
         /// labTitle control.
         /// </summary>
         /// <remarks>
@@ -76,13 +85,13 @@ namespace XYECOM.Web {
         protected global::System.Web.UI.WebControls.Label labAddress;
         
         /// <summary>
-        /// spnDescription control.
+        /// labDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl spnDescription;
+        protected global::System.Web.UI.WebControls.Label labDescription;
         
         /// <summary>
         /// labEndDate control.

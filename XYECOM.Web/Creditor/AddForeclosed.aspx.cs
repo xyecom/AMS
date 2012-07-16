@@ -35,7 +35,7 @@ namespace XYECOM.Web.Creditor
             string typeName = this.droTypeName.SelectedValue;
             string address = this.txtAddress.Text.Trim();
             DateTime date = MyConvert.GetDateTime(this.endDate.Value);
-            string description = this.fckDescription.Value;
+            string description = this.txtDescription.Text.Trim();
 
             ForeclosedInfo info = new ForeclosedInfo();
             info.IdentityNumber = GetUniqueNo();

@@ -145,7 +145,6 @@ namespace XYECOM.URL
                 context.Response.End();
             }
 
-            return;
 
             //如果是注册或登陆直接进入
             if (input.StartsWith("/login.aspx") || input.StartsWith("/register.aspx") || input.StartsWith("/getpassword.aspx") || input.StartsWith("/logout.aspx") || input.StartsWith("/creditor/") || input.StartsWith("/server/"))
@@ -251,10 +250,11 @@ namespace XYECOM.URL
                     return;
                 }
 
-                context.RewritePath(text + "aspx/" + curTmpName + input.Substring(context.Request.Path.LastIndexOf("/")));
+                //context.RewritePath(text + "aspx/" + curTmpName + input.Substring(context.Request.Path.LastIndexOf("/")));
 
                 //add by botao 2010-04-21
-                context.Response.Flush();
+                //context.Response.Flush();
+                return;
             }
         }
 

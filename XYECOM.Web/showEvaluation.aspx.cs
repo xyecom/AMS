@@ -17,19 +17,24 @@ namespace XYECOM.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int isServer = XYECOM.Core.XYRequest.GetQueryInt("isServer", 0);
-            if (isServer == 1)
+            if (!IsPostBack)
             {
-                this.labTitle.Text = "服务商基本信息";
-            }
-            else
-            {
-                this.labTitle.Text = "债权商基本信息";
-            }
-            int userId = XYECOM.Core.XYRequest.GetQueryInt("UserId", 0);
-            if (userId <= 0)
-            {
-                GotoMsgBoxPageForDynamicPage("请选择要查看的用户！", 1, "Index.aspx");
+                int isServer = XYECOM.Core.XYRequest.GetQueryInt("isServer", 0);
+                if (isServer == 1)
+                {
+                    this.labTitle.Text = "服务商基本信息";
+                }
+                else
+                {
+                    this.labTitle.Text = "债权商基本信息";
+                }
+                int userId = XYECOM.Core.XYRequest.GetQueryInt("UserId", 0);
+                if (userId <= 0)
+                {
+                    GotoMsgBoxPageForDynamicPage("请选择要查看的用户！", 1, "Index.aspx");
+                }
+                this.hidId.Value = userId.ToString();
+                BindData(userId);
             }
         }
 
@@ -37,7 +42,7 @@ namespace XYECOM.Web
         {
             XYECOM.Model.GeneralUserInfo userInfo = Business.CheckUser.GetUserInfo(id);
             XYECOM.Model.GeneralUserInfo loginUserInfo = Business.CheckUser.UserInfo;
-            if (userInfo != null)
+            if (userInfo == null)
             {
                 GotoMsgBoxPageForDynamicPage("请选择要查看的用户！", 1, "Index.aspx");
             }
@@ -88,5 +93,14 @@ namespace XYECOM.Web
             int id = MyConvert.GetInt32(credId.ToString());
             return new CreditInfoManager().GetCreditInfoById(id).Title;
         }
+
+        #region 分页相关代码
+
+        protected void Page1_PageChanged(object sender, System.EventArgs e)
+        {
+            int id = MyConvert.GetInt32(this.hidId.Value);
+            this.BindData(id);
+        }
+        #endregion
     }
 }

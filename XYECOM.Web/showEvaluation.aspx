@@ -36,7 +36,7 @@
                                 所在地：
                             </th>
                             <td>
-                                <asp:Label ID="labAreaId" runat="server"></asp:Label>元
+                                <asp:Label ID="labAreaId" runat="server"></asp:Label>
                             </td>
                         </tr>
                     </table>
@@ -68,7 +68,7 @@
     </asp:Panel>
     <label>
         信用信息</label>
-    <asp:Repeater ID="rptList" runat="server" OnItemDataBound="rptList_ItemDataBound">
+    <asp:Repeater ID="rptList" runat="server">
         <HeaderTemplate>
             <table>
                 <tr id="trtop">
@@ -112,6 +112,7 @@
         <FooterTemplate>
             </table></FooterTemplate>
     </asp:Repeater>
+    <input runat="server" id="hidId" type="hidden" />
     <div style="width: 705px; height: 30px; line-height: 30px; text-align: center">
         <XYECOM:Page ID="Page1" runat="server" PageSize="20" OnPageChanged="Page1_PageChanged" />
     </div>
