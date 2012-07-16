@@ -74,13 +74,26 @@ namespace XYECOM.Business.AMS
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public int UpdateTenderByID(int id,int credId)
+        public int UpdateTenderByID(int id, int credId)
         {
             if (id <= 0)
             {
                 return 0;
             }
-            return DAL.UpdateTenderByID(id,credId);
+            return DAL.UpdateTenderByID(id, credId);
+        }
+        /// <summary>
+        /// 根据债权信息获取投标成功的投标信息
+        /// </summary>
+        /// <param name="credId"></param>
+        /// <returns></returns>
+        public TenderInfo GetTenderByCredId(int credId)
+        {
+            if (credId <= 0)
+            {
+                return null;
+            }
+            return DAL.GetTenderByCredId(credId);
         }
     }
 }

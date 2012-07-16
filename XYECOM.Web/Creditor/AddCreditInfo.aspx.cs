@@ -53,12 +53,10 @@ namespace XYECOM.Web.Creditor
             info.DebtorType = this.txtDebtorType.Text.Trim();
             info.DepartId =MyConvert.GetInt32(userinfo.userid.ToString());
             info.Introduction = this.txtIntroduction.Text.Trim();
-            info.IsConfirm = MyConvert.GetBoolean(this.radIsConfirm.SelectedValue);
-            info.IsCreditEvaluation = false;
-            info.IsInLitigation = MyConvert.GetBoolean(this.radIsInLitigation.SelectedValue);
-            info.IsLitigationed = MyConvert.GetBoolean(this.radIsLitigationed.SelectedValue);
-            info.IsSelfCollection = MyConvert.GetBoolean(this.radIsSelfCollection.SelectedValue);
-            info.IsServerEvaluation = false;
+            info.IsConfirm = this.radIsConfirm.SelectedValue == "1" ? true : false;
+            info.IsInLitigation = this.radIsInLitigation.SelectedValue == "1" ? true : false;
+            info.IsLitigationed = this.radIsLitigationed.SelectedValue == "1" ? true : false;
+            info.IsSelfCollection = this.radIsSelfCollection.SelectedValue == "1" ? true : false;
             info.LicenseType = this.txtLicenseType.Text.Trim();
             info.Remark = this.txtRemark.Text.Trim();
             info.UserId = MyConvert.GetInt32(userinfo.CompanyId.ToString());

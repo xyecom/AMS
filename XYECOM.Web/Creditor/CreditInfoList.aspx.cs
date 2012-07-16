@@ -6,12 +6,13 @@ using System.Web.UI.WebControls;
 using System.Text;
 using XYECOM.Core;
 using System.Data;
+using XYECOM.Business.AMS;
 
 namespace XYECOM.Web.Creditor
 {
     public partial class CreditInfoList : XYECOM.Web.AppCode.UserCenter.Creditor
     {
-        protected XYECOM.Business.AMS.CreditInfoManager manage = new Business.AMS.CreditInfoManager();
+        protected CreditInfoManager manage = new CreditInfoManager();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -103,7 +104,7 @@ namespace XYECOM.Web.Creditor
             LinkButton linkButton = (LinkButton)(sender as LinkButton);
             if (linkButton != null)
             {
-                int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
+                int Id = MyConvert.GetInt32(linkButton.CommandArgument);
                 if (Id > 0)
                 {
                     int result = manage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.Delete);
@@ -125,7 +126,7 @@ namespace XYECOM.Web.Creditor
             LinkButton linkButton = (LinkButton)(sender as LinkButton);
             if (linkButton != null)
             {
-                int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
+                int Id = MyConvert.GetInt32(linkButton.CommandArgument);
                 if (Id > 0)
                 {
                     int result = manage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.Null);
@@ -147,7 +148,7 @@ namespace XYECOM.Web.Creditor
             LinkButton linkButton = (LinkButton)(sender as LinkButton);
             if (linkButton != null)
             {
-                int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
+                int Id = MyConvert.GetInt32(linkButton.CommandArgument);
                 if (Id > 0)
                 {
                     int result = manage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.Canceled);
@@ -170,7 +171,7 @@ namespace XYECOM.Web.Creditor
             LinkButton linkButton = (LinkButton)(sender as LinkButton);
             if (linkButton != null)
             {
-                int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
+                int Id = MyConvert.GetInt32(linkButton.CommandArgument);
                 if (Id > 0)
                 {
                     int result = manage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.CreditEnd);
@@ -231,8 +232,7 @@ namespace XYECOM.Web.Creditor
 
                 HyperLink hlUpdate = (HyperLink)e.Item.FindControl("hlUpdate");//修改债权信息
                 HyperLink hlShowTender = (HyperLink)e.Item.FindControl("hlShowTender");//查看竞标
-                HyperLink hlEvaluate = (HyperLink)e.Item.FindControl("hlEvaluate");//评价
-                HyperLink hlServerInfo = (HyperLink)e.Item.FindControl("hlServerInfo");//查看服务商信息              
+                HyperLink hlEvaluate = (HyperLink)e.Item.FindControl("hlEvaluate");//评价         
                 LinkButton lbtnCancel = (LinkButton)e.Item.FindControl("lbtnCancel");//取消债权信息
                 LinkButton lbtnClosed = (LinkButton)e.Item.FindControl("lbtnClosed");//关闭债权信息
                 LinkButton lbtnRelease = (LinkButton)e.Item.FindControl("lbtnRelease");//发布债权信息
@@ -248,7 +248,6 @@ namespace XYECOM.Web.Creditor
                         lbtnDelete.Visible = true;
                         hlShowTender.Visible = false;
                         hlEvaluate.Visible = false;
-                        hlServerInfo.Visible = false;
                         lbtnCancel.Visible = false;
                         lbtnClosed.Visible = false;
                         break;
@@ -258,7 +257,6 @@ namespace XYECOM.Web.Creditor
                         lbtnDelete.Visible = true;
                         hlShowTender.Visible = false;
                         hlEvaluate.Visible = false;
-                        hlServerInfo.Visible = false;
                         lbtnCancel.Visible = false;
                         lbtnClosed.Visible = false;
                         break;
@@ -268,7 +266,6 @@ namespace XYECOM.Web.Creditor
                         lbtnDelete.Visible = true;
                         hlShowTender.Visible = false;
                         hlEvaluate.Visible = false;
-                        hlServerInfo.Visible = false;
                         lbtnCancel.Visible = false;
                         lbtnClosed.Visible = false;
                         break;
@@ -278,7 +275,6 @@ namespace XYECOM.Web.Creditor
                         lbtnDelete.Visible = false;
                         hlShowTender.Visible = true;
                         hlEvaluate.Visible = false;
-                        hlServerInfo.Visible = false;
                         lbtnCancel.Visible = true;
                         lbtnClosed.Visible = false;
                         break;
@@ -288,7 +284,6 @@ namespace XYECOM.Web.Creditor
                         lbtnDelete.Visible = false;
                         hlShowTender.Visible = false;
                         hlEvaluate.Visible = false;
-                        hlServerInfo.Visible = true;
                         lbtnCancel.Visible = true;
                         lbtnClosed.Visible = false;
                         break;
@@ -298,7 +293,6 @@ namespace XYECOM.Web.Creditor
                         lbtnDelete.Visible = false;
                         hlShowTender.Visible = true;
                         hlEvaluate.Visible = false;
-                        hlServerInfo.Visible = true;
                         lbtnCancel.Visible = false;
                         lbtnClosed.Visible = true;
                         break;
@@ -311,7 +305,6 @@ namespace XYECOM.Web.Creditor
                         {
                             hlEvaluate.Visible = true;
                         }
-                        hlServerInfo.Visible = true;
                         lbtnCancel.Visible = false;
                         lbtnClosed.Visible = false;
                         break;
@@ -321,7 +314,6 @@ namespace XYECOM.Web.Creditor
                         lbtnDelete.Visible = true;
                         hlShowTender.Visible = false;
                         hlEvaluate.Visible = false;
-                        hlServerInfo.Visible = false;
                         lbtnCancel.Visible = false;
                         lbtnClosed.Visible = false;
                         break;
@@ -339,7 +331,7 @@ namespace XYECOM.Web.Creditor
         public int GetTenderCountByCreditID(object CreditID)
         {
             int id = MyConvert.GetInt32(CreditID.ToString());
-            return new XYECOM.Business.AMS.TenderInfoManager().GetTenderCountByCreditID(id);
+            return new TenderInfoManager().GetTenderCountByCreditID(id);
         }
     }
 }

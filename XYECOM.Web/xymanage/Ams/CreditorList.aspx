@@ -143,7 +143,7 @@
                                             <ItemStyle Width="20%" />
                                             <ItemTemplate>
                                                 <a href='ForeclosedInfo.aspx?ID=<%# Eval("CreditId") %>&backURL=<%# backURL %>'>
-                                                    查看详细</a> &nbsp; <a href='/ForeclosedDetail.aspx?Id=<%# Eval("CreditId") %>'>查看竞价</a>
+                                                    查看详细</a> &nbsp; <a href='/CreditInfoDetail.aspx?Id=<%# Eval("CreditId") %>'>查看投标</a>
                                                 <asp:LinkButton ID="lbtnRelease" runat="server" Text="审核通过"  OnClick="lbtnYes_Click"
                                                     CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
                                                 <asp:LinkButton ID="lbtnDelete" runat="server" Text="审核不通过"  OnClick="lbtnNo_Click"

@@ -41,7 +41,7 @@ namespace XYECOM.SQLServer.AMS
         /// <returns></returns>
         public int GetTenderCountByCreditID(int CreditID)
         {
-            string sql = "select count(*) from TenderInfo where creditInfoId = "+CreditID;
+            string sql = "select count(*) from TenderInfo where creditInfoId = " + CreditID;
             int count = (int)SqlHelper.ExecuteScalar(CommandType.Text, sql, null);
             return count;
         }
@@ -51,9 +51,9 @@ namespace XYECOM.SQLServer.AMS
         /// </summary>
         /// <param name="credId"></param>
         /// <returns></returns>
-        public bool CheckTenderByCredID(int credId,int serId)
+        public bool CheckTenderByCredID(int credId, int serId)
         {
-            string sql = "select count(*) from tenderInfo where CreditInfoId= " + credId + " and LayerId = "+serId;
+            string sql = "select count(*) from tenderInfo where CreditInfoId= " + credId + " and LayerId = " + serId;
             int count = (int)SqlHelper.ExecuteScalar(CommandType.Text, sql, null);
             if (count > 0)
             {
@@ -98,13 +98,40 @@ namespace XYECOM.SQLServer.AMS
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public int UpdateTenderByID(int id,int creditId)
+        public int UpdateTenderByID(int id, int creditId)
         {
-            string sql = "update tenderInfo set issuccess = -1 where creditInfoId = "+creditId;
+            string sql = "update tenderInfo set issuccess = -1 where creditInfoId = " + creditId;
             int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
-            sql = "update tenderInfo set issuccess = 1 where tenderid = "+id;
+            sql = "update tenderInfo set issuccess = 1 where tenderid = " + id;
             rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
             return rowAffected;
+        }
+
+        /// <summary>
+        /// 根据债权信息获取投标成功的投标信息
+        /// </summary>
+        /// <param name="credId"></param>
+        /// <returns></returns>
+        public TenderInfo GetTenderByCredId(int credId)
+        {
+            string sql = "select * from dbo.TenderInfo where creditinfoid = " + credId + " and issuccess = 1";
+            TenderInfo info = null;
+
+            using (SqlDataReader reader = XYECOM.Core.Data.SqlHelper.ExecuteReader(CommandType.Text, sql, null))
+            {
+                if (reader.Read())
+                {
+                    info = new TenderInfo();
+
+                    info.TenderId = credId;
+                    info.Message = reader["Message"].ToString();
+                    info.CreditInfoId = Core.MyConvert.GetInt32(reader["CreditInfoId"].ToString());
+                    info.TenderDate = Core.MyConvert.GetDateTime(reader["TenderDate"].ToString());
+                    info.LayerId = Core.MyConvert.GetInt32(reader["LayerId"].ToString());
+                    info.IsSuccess = Core.MyConvert.GetInt32(reader["IsSuccess"].ToString());
+                }
+            }
+            return info;
         }
     }
 }

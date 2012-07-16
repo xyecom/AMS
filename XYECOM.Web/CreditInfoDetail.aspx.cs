@@ -18,10 +18,10 @@ namespace XYECOM.Web
         CreditInfoManager manage = new CreditInfoManager();
 
         TenderInfoManager tenderManage = new TenderInfoManager();
+
         #region 页面加载
         protected void Page_Load(object sender, EventArgs e)
         {
-
             int Id = XYECOM.Core.XYRequest.GetQueryInt("ID", 0);
             if (Id <= 0)
             {
@@ -29,8 +29,8 @@ namespace XYECOM.Web
             }
             if (!IsPostBack)
             {
-                BindData(Id);
                 this.hidID.Value = Id.ToString();
+                BindData(Id);
             }
         }
         #endregion
@@ -80,7 +80,7 @@ namespace XYECOM.Web
             }
             else
             {
-                this.lblMessage.Text = "没有相关信息记录";
+                this.lblMessage.Text = "还没有人进行投标";
                 this.rptList.DataBind();
             }
         }
@@ -183,26 +183,26 @@ namespace XYECOM.Web
                 GotoMsgBoxPageForDynamicPage("债权帐号不能进行投标！", 1, "IndexCreditList.aspx");
             }
             int credId = MyConvert.GetInt32(this.hidID.Value);
-           //检查该服务商是否已经投标
+            //检查该服务商是否已经投标
             bool isCheckTender = tenderManage.CheckTenderByCredID(credId, (int)userInfo.userid);
             if (isCheckTender)
             {
-                GotoMsgBoxPageForDynamicPage("不能重复投标，请耐心等待债权人选择！", 1, "IndexCreditList.aspx");                
+                GotoMsgBoxPageForDynamicPage("不能重复投标，请耐心等待债权人选择！", 1, "IndexCreditList.aspx");
             }
             TenderInfo info = new TenderInfo();
             info.CreditInfoId = credId;
-            info.IsSuccess = (int)TenderState.Failure;
+            info.IsSuccess = (int)TenderState.Tender;
             info.LayerId = (int)userInfo.userid;
             info.Message = this.txtRemark.Text.Trim();
             info.TenderDate = DateTime.Now;
             int result = new TenderInfoManager().InsertTenderInfo(info);
             if (result > 0)
             {
-                GotoMsgBoxPageForDynamicPage("投标成功！", 1, "CreditInfoDetail.aspx");
+                GotoMsgBoxPageForDynamicPage("投标成功！", 1, "CreditInfoDetail.aspx?Id=" + credId);
             }
             else
             {
-                GotoMsgBoxPageForDynamicPage("投标失败！", 1, "CreditInfoDetail.aspx");
+                GotoMsgBoxPageForDynamicPage("投标失败！", 1, "CreditInfoDetail.aspx?Id=" + credId);
             }
         }
         protected void rptList_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -215,19 +215,31 @@ namespace XYECOM.Web
                 CreditInfo info = new CreditInfoManager().GetCreditInfoById(creditId);
 
                 int stateId = info.ApprovaStatus;
-                LinkButton lbtnOk = (LinkButton)e.Item.FindControl("lbtnOK");//选择服务商
-                System.Web.UI.WebControls.Label label = (System.Web.UI.WebControls.Label)e.Item.FindControl("labTenderMessage");
+                LinkButton lbtnOk = (LinkButton)e.Item.FindControl("lbtnConfirm");//选择服务商
+                System.Web.UI.WebControls.Label labelMessage = (System.Web.UI.WebControls.Label)e.Item.FindControl("labTenderMessage");
+                System.Web.UI.WebControls.Label labelTender = (System.Web.UI.WebControls.Label)e.Item.FindControl("labToTender");
+                XYECOM.Model.GeneralUserInfo userInfo = Business.CheckUser.UserInfo;    //判断当前登录帐号信息
 
                 Model.CreditState sta = (Model.CreditState)stateId;
                 if (sta == Model.CreditState.Tender)
                 {
-                    lbtnOk.Visible = true;
-                    label.Visible = false;
+                    if (userInfo != null && info.DepartId == userInfo.userid)
+                    {
+                        lbtnOk.Visible = true;
+                        labelTender.Visible = false;
+                    }
+                    else
+                    {
+                        labelTender.Visible = true;
+                        lbtnOk.Visible = false;
+                    }
+                    labelMessage.Visible = false;
                 }
-                else
+                else if (sta != Model.CreditState.Tender)
                 {
                     lbtnOk.Visible = false;
-                    label.Visible = true;
+                    labelMessage.Visible = true;
+                    labelTender.Visible = false;
                 }
             }
         }
@@ -246,7 +258,7 @@ namespace XYECOM.Web
                 if (Id > 0)
                 {
                     TenderInfo info = tenderManage.GetTenderInfoByID(Id);
-                    int result = tenderManage.UpdateTenderByID(Id,info.CreditInfoId);
+                    int result = tenderManage.UpdateTenderByID(Id, info.CreditInfoId);
                     if (info == null)
                     {
                         GotoMsgBoxPageForDynamicPage("该投标信息不存在！", 1, "CreditInfoDetail.aspx");
@@ -257,7 +269,7 @@ namespace XYECOM.Web
                     }
                     if (result > 0)
                     {
-                        BindData();
+                        BindData(info.CreditInfoId);
                     }
                 }
             }
@@ -266,7 +278,8 @@ namespace XYECOM.Web
 
         protected void Page1_PageChanged(object sender, System.EventArgs e)
         {
-            this.BindData();
+            int credId = MyConvert.GetInt32(this.hidID.Value);
+            this.BindData(credId);
         }
         #endregion
     }

@@ -54,7 +54,7 @@
                 &nbsp;&nbsp; 标题：<asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
                 <%--<input type="text" value="请输入关键字" onfocus="this.value=''" onblur="if(!value){value=defaultValue;}"
                     style="color: #a8a4a3"><input name="" type="button" value="查 询" />--%>
-                <asp:Button runat="server" ID="btnSearch" Text="搜索" OnClick="btnSearch_Click"/>
+                <asp:Button runat="server" ID="btnSearch" Text="搜索" OnClick="btnSearch_Click" />
             </div>
             <!--serch end-->
             <!--列表 start-->
@@ -90,7 +90,7 @@
                                 <%# Eval("CreateDate")%>
                             </td>
                             <td>
-                                <%# GetTenderCountByCreditID("CreditId")%>
+                                <%# GetTenderCountByCreditID(Eval("CreditId"))%>
                             </td>
                             <td>
                                 <%# GetApprovaStatus(Eval("ApprovaStatus"))%>
@@ -100,17 +100,16 @@
                                 <asp:HiddenField ID="hidInfoId" runat="server" Value='<%# Eval("CreditId")%>' />
                                 <asp:HiddenField ID="hidIsCreditEvaluation" runat="server" Value='<%# Eval("IsCreditEvaluation")%>' />
                                 <asp:HyperLink ID="hlUpdate" runat="server" NavigateUrl='<%# "UpdateCreditInfo.aspx?Id=" + Eval("CreditId") %>'>修改</asp:HyperLink>
-                                <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/ForeclosedDetail.aspx?Id=" + Eval("CreditId") %>'>查看竞标</asp:HyperLink>
+                                <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'>查看竞标</asp:HyperLink>
                                 <asp:HyperLink ID="hlEvaluate" runat="server" NavigateUrl='<%# "/ForeclosedDetail.aspx?Id=" + Eval("CreditId") %>'>评价</asp:HyperLink>
-                                <asp:HyperLink ID="hlServerInfo" runat="server" NavigateUrl='<%# "/ForeclosedDetail.aspx?Id=" + Eval("CreditId") %>'>查看服务商信息</asp:HyperLink>
                                 <asp:LinkButton ID="lbtnCancel" runat="server" Text="取消案件" OnClick="lbtnCancel_Click"
                                     OnClientClick="javascript:return ConfirmCredit();" CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
                                 <asp:LinkButton ID="lbtnClosed" runat="server" Text="关闭案件" OnClick="lbtnClose_Click"
                                     OnClientClick="javascript:return ClosedCredit();" CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
                                 <asp:LinkButton ID="lbtnRelease" runat="server" Text="发布" OnClick="lbtnRelease_Click"
                                     CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
-                                <asp:LinkButton ID="lbtnDelete" runat="server" Text="删除" OnClientClick="javascript:return confirm('确定删除吗？');"  OnClick="lbtnDelete_Click"
-                                    CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
+                                <asp:LinkButton ID="lbtnDelete" runat="server" Text="删除" OnClientClick="javascript:return confirm('确定删除吗？');"
+                                    OnClick="lbtnDelete_Click" CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
                             </td>
                         </tr>
                     </ItemTemplate>

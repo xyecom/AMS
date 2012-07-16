@@ -34,7 +34,8 @@ namespace XYECOM.Web
 
         protected void Page1_PageChanged(object sender, System.EventArgs e)
         {
-            this.BindData();
+            int foreId = MyConvert.GetInt32(this.hidId.Value);
+            this.BindData(foreId);
         }
         #endregion
 
