@@ -6,10 +6,9 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Text;
 using XYECOM.Business.AMS;
-
 namespace XYECOM.Web.Creditor
 {
-    public partial class ForeclosedList : XYECOM.Web.AppCode.UserCenter.Creditor
+    public partial class DeparForeclosedList : XYECOM.Web.AppCode.UserCenter.Creditor
     {
         protected ForeclosedManager manage = new ForeclosedManager();
 

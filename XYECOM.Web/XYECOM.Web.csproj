@@ -201,6 +201,20 @@
     <Compile Include="Creditor\Creditor.master.designer.cs">
       <DependentUpon>Creditor.master</DependentUpon>
     </Compile>
+    <Compile Include="Creditor\DeparCreditList.aspx.cs">
+      <DependentUpon>DeparCreditList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\DeparCreditList.aspx.designer.cs">
+      <DependentUpon>DeparCreditList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\DeparForeclosedList.aspx.cs">
+      <DependentUpon>DeparForeclosedList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\DeparForeclosedList.aspx.designer.cs">
+      <DependentUpon>DeparForeclosedList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Creditor\EvaluationList.aspx.cs">
       <DependentUpon>EvaluationList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1738,6 +1752,8 @@
     <Content Include="Creditor\AddEvaluation.aspx" />
     <Content Include="Creditor\AddForeclosed.aspx" />
     <Content Include="Creditor\CreditInfoList.aspx" />
+    <Content Include="Creditor\DeparCreditList.aspx" />
+    <Content Include="Creditor\DeparForeclosedList.aspx" />
     <Content Include="Creditor\EvaluationList.aspx" />
     <Content Include="Creditor\ForeclosedList.aspx" />
     <Content Include="Creditor\UpdateCreditInfo.aspx" />
