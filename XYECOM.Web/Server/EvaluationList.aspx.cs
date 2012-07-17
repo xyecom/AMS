@@ -54,18 +54,6 @@ namespace XYECOM.Web.Server
             }
         }
 
-
-        /// <summary>
-        /// 根据用户编号获取公司名称
-        /// </summary>
-        /// <param name="userID"></param>
-        /// <returns></returns>
-        protected string GetComName(object userID)
-        {
-            int uId = MyConvert.GetInt32(userID.ToString());
-            return new Business.UserInfo().GetCompNameByUId(uId);
-        }
-
         /// <summary>
         /// 获取债权标题
         /// </summary>

@@ -76,9 +76,6 @@
                         评价人姓名
                     </td>
                     <td align="center" width="20%">
-                        评价人公司名称
-                    </td>
-                    <td align="center" width="20%">
                         债权信息标题
                     </td>
                     <td align="center" width="20%">
@@ -94,9 +91,6 @@
                 onmouseout="this.style.backgroundColor='#ffffff'">
                 <td id="tdtitle">
                     <%# Eval("UserName")%>
-                </td>
-                <td>
-                    <%# GetComName(Eval("UserId"))%>
                 </td>
                 <td>
                     <%# GetCreditTitle(Eval("CreditInfoId"))%>

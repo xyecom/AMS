@@ -30,17 +30,6 @@ namespace XYECOM.Web.Server
             }
         }
 
-        /// <summary>
-        /// 根据用户编号获取用户名称
-        /// </summary>
-        /// <param name="userID"></param>
-        /// <returns></returns>
-        protected string GetUserName(object userID)
-        {
-            int uId = MyConvert.GetInt32(userID.ToString());
-            return new Business.UserInfo().GetCompNameByUId(uId);
-        }
-
         protected void btnOk_Click(object sender, EventArgs e)
         {
             int credId = MyConvert.GetInt32(this.hidCredId.Value);
@@ -57,7 +46,7 @@ namespace XYECOM.Web.Server
             info.User2Id = credInfo.DepartId;
             info.UserId = (int)userinfo.userid;
             info.UserName = userinfo.LoginName;
-            info.User2Name = GetUserName(credInfo.DepartId);
+            info.User2Name = new Business.UserInfo().GetUserNameByID(credInfo.DepartId);
             int result = manage.InsertEvaluation(info);
             if (result > 0)
             {

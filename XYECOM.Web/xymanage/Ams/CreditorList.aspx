@@ -111,7 +111,7 @@
                                             <ItemStyle CssClass="gvLeft" Width="10%" />
                                             <HeaderStyle CssClass="gvLeft" />
                                             <ItemTemplate>
-                                                <%# GetComName(Eval("DepartId"))%>
+                                                <%# GetComName(Eval("UserId"))%>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="发布者">

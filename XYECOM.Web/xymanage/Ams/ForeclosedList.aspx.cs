@@ -149,10 +149,10 @@ namespace XYECOM.Web.xymanage.Creditor
         /// </summary>
         /// <param name="userID"></param>
         /// <returns></returns>
-        protected string GetComName(object userID)
+        protected string GetComName(object companyID)
         {
-            int uId = MyConvert.GetInt32(userID.ToString());
-            return new Business.UserInfo().GetCompNameByUId(uId);
+            int uId = MyConvert.GetInt32(companyID.ToString());
+            return GetCompanyName(uId); 
         }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace XYECOM.Web.xymanage.Creditor
         protected string GetUserName(object userID)
         {
             int uId = MyConvert.GetInt32(userID.ToString());
-            return new Business.UserInfo().GetCompNameByUId(uId);
+            return new Business.UserInfo().GetUserNameByID(uId);
         }
 
         /// <summary>

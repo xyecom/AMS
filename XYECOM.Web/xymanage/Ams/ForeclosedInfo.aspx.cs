@@ -69,7 +69,7 @@ namespace XYECOM.Web.xymanage
         protected string GetUserName(object userID)
         {
             int uId = MyConvert.GetInt32(userID.ToString());
-            return new Business.UserInfo().GetCompNameByUId(uId);
+            return new Business.UserInfo().GetUserNameByID(uId);
         }
 
         #region 返回

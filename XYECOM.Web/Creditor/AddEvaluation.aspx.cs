@@ -7,12 +7,14 @@ using XYECOM.Model.AMS;
 using XYECOM.Core;
 using XYECOM.Model;
 using XYECOM.Business.AMS;
+using XYECOM.Business;
 
 namespace XYECOM.Web.Creditor
 {
     public partial class AddEvaluation : XYECOM.Web.AppCode.UserCenter.Creditor
     {
         EvaluationManager manage = new EvaluationManager();
+        Business.UserInfo userInfoManage = new Business.UserInfo();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -31,17 +33,6 @@ namespace XYECOM.Web.Creditor
             }
         }
 
-        /// <summary>
-        /// 根据用户编号获取用户名称
-        /// </summary>
-        /// <param name="userID"></param>
-        /// <returns></returns>
-        protected string GetUserName(object userID)
-        {
-            int uId = MyConvert.GetInt32(userID.ToString());
-            return new Business.UserInfo().GetCompNameByUId(uId);
-        }
-
         protected void btnOk_Click(object sender, EventArgs e)
         {
             int credId = MyConvert.GetInt32(this.hidCredId.Value);
@@ -58,7 +49,7 @@ namespace XYECOM.Web.Creditor
             info.User2Id = tenderInfo.LayerId;
             info.UserId = (int)userinfo.userid;
             info.UserName = userinfo.LoginName;
-            info.User2Name = GetUserName(tenderInfo.LayerId);
+            info.User2Name = userInfoManage.GetUserNameByID(tenderInfo.LayerId);
             int result = manage.InsertEvaluation(info);
             if (result > 0)
             {

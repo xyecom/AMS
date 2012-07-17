@@ -356,13 +356,13 @@ namespace XYECOM.SQLServer
         }
 
         /// <summary>
-        /// 根据用户编号获取公司名称 王振添加（2011-04-15）
+        /// 根据公司编号获取公司名称 王振添加（2011-04-15）
         /// </summary>
         /// <param name="uid">用户编号</param>
         /// <returns>公司名称</returns>
         public string GetCompNameByUId(int uid)
         {
-            string sql = "select ui_name from u_userinfo where u_id = " + uid + "";
+            string sql = "select ui_name from dbo.u_UserInfo where U_id = " + uid;
             object obj = XYECOM.Core.Data.SqlHelper.ExecuteScalar(sql);
             if (obj != null)
             {
@@ -381,7 +381,7 @@ namespace XYECOM.SQLServer
         /// <returns></returns>
         public string GetUserNameByID(int userId)
         {
-            string sql = "SELECT U_Name FROM dbo.u_User WHERE U_Id = "+userId;
+            string sql = "SELECT U_Name FROM dbo.u_User WHERE U_Id = " + userId;
             object obj = XYECOM.Core.Data.SqlHelper.ExecuteScalar(sql);
             if (obj != null)
             {
@@ -392,6 +392,26 @@ namespace XYECOM.SQLServer
                 return string.Empty;
             }
         }
+
+        /// <summary>
+        /// 根据用户编号获取用户所在的部门名称
+        /// </summary>
+        /// <param name="PartId"></param>
+        /// <returns></returns>
+        public string GetPartNameById(int PartId)
+        {
+            string sql = "select LayerName from u_user  where u_id = " + PartId;
+            object obj = XYECOM.Core.Data.SqlHelper.ExecuteScalar(sql);
+            if (obj != null)
+            {
+                return obj.ToString();
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+
 
         /// <summary>
         /// 根据用户编号获取用户邮箱

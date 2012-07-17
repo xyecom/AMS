@@ -1,9 +1,9 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreditInfoDetail.aspx.cs"
-    Inherits="XYECOM.Web.CreditInfoDetail" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreditInfoDetail.aspx.cs" Inherits="XYECOM.Web.CreditInfoDetail" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title>债权详细信息</title>
     <script type="text/javascript" language="javascript">
         function ShowNo()                        //隐藏两个层 
@@ -73,7 +73,7 @@
                                 欠款人联系电话：
                             </th>
                             <td>
-                                <asp:Label ID="labDebtorTelpone" runat="server"></asp:Label>元
+                                <asp:Label ID="labDebtorTelpone" runat="server"></asp:Label>
                             </td>
                         </tr>
                         <tr>
@@ -81,7 +81,7 @@
                                 催收期限：
                             </th>
                             <td>
-                                <asp:Label ID="labCollectionPeriod" runat="server"></asp:Label>元
+                                <asp:Label ID="labCollectionPeriod" runat="server"></asp:Label>
                             </td>
                         </tr>
                         <tr>
@@ -89,7 +89,7 @@
                                 欠款原因：
                             </th>
                             <td>
-                                <asp:Label ID="labDebtorReason" runat="server"></asp:Label>
+                                <asp:Label ID="labDebtorReason" runat="server"></asp:Label>元
                             </td>
                         </tr>
                         <tr>
@@ -97,7 +97,7 @@
                                 欠款金额：
                             </th>
                             <td>
-                                <asp:Label ID="labArrears" runat="server"></asp:Label>
+                                <asp:Label ID="labArrears" runat="server"></asp:Label>元
                             </td>
                         </tr>
                         <tr>
@@ -217,9 +217,6 @@
                         服务商名称
                     </td>
                     <td align="center" width="20%">
-                        服务商公司名称
-                    </td>
-                    <td align="center" width="20%">
                         投标日期
                     </td>
                     <td align="center" width="15%">
@@ -236,9 +233,6 @@
                 <td id="tdtitle">
                     <a href='showEvaluation.aspx?isServer=1&UserId=<%# Eval("LayerId") %>' target="_blank">
                         <%# GetUserName(Eval("LayerId"))%></a><span style="color: Red">点击发布者可查看其信用度</span>
-                </td>
-                <td>
-                    <%# GetComName(Eval("LayerId"))%>
                 </td>
                 <td>
                     <%# Eval("TenderDate")%>
@@ -305,3 +299,4 @@
     </form>
 </body>
 </html>
+

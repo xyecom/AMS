@@ -13,22 +13,22 @@ namespace XYECOM.Web.Creditor.UserContorl {
     public partial class left {
         
         /// <summary>
-        /// hypCredManage control.
+        /// liCredManage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypCredManage;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liCredManage;
         
         /// <summary>
-        /// hypForeManage control.
+        /// liForeManage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypForeManage;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liForeManage;
         
         /// <summary>
         /// hlInfo control.

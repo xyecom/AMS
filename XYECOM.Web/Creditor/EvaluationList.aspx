@@ -31,9 +31,6 @@
                                     服务商姓名
                                 </td>
                                 <td align="center" width="20%">
-                                    服务商公司名称
-                                </td>
-                                <td align="center" width="20%">
                                     债权信息标题
                                 </td>
                                 <td align="center" width="20%">
@@ -49,9 +46,6 @@
                             onmouseout="this.style.backgroundColor='#ffffff'">
                             <td id="tdtitle">
                                 <%# isServer == true ? Eval("UserName") : Eval("User2Name")%>
-                            </td>
-                            <td>
-                                <%# isServer == true ? GetComName(Eval("UserId")) : GetComName(Eval("User2Id"))%>
                             </td>
                             <td>
                                 <%# GetCreditTitle(Eval("CreditInfoId"))%>

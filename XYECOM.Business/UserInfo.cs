@@ -120,9 +120,9 @@ namespace XYECOM.Business
         }
 
         /// <summary>
-        /// 根据用户编号获取公司名称 王振添加（2011-04-15）
+        /// 根据公司编号获取公司名称 王振添加（2011-04-15）
         /// </summary>
-        /// <param name="uid">用户编号</param>
+        /// <param name="uid">公司编号</param>
         /// <returns>公司名称</returns>
         public string GetCompNameByUId(int uid)
         {
@@ -164,6 +164,20 @@ namespace XYECOM.Business
                 return string.Empty;
             }
             return DAL.GetEmailByID(userId);
+        }
+
+                /// <summary>
+        /// 根据用户编号获取用户所在的部门名称
+        /// </summary>
+        /// <param name="PartId"></param>
+        /// <returns></returns>
+        public string GetPartNameById(int PartId)
+        {
+            if (PartId <= 0)
+            {
+                return string.Empty;
+            }
+            return DAL.GetPartNameById(PartId);
         }
     }
 }

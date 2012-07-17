@@ -15,14 +15,14 @@ namespace XYECOM.Web.Creditor.UserContorl
                 if (XYECOM.Business.CheckUser.UserInfo.IsPrimary)
                 {
                     this.hlInfo.NavigateUrl = "/Creditor/BaseEdit.aspx";
-                    this.hypCredManage.Visible = true;
-                    this.hypCredManage.Visible = true;
+                    this.liCredManage.Visible = true;
+                    this.liForeManage.Visible = true;
                 }
                 else
                 {
                     this.hlInfo.NavigateUrl = "/Creditor/EditPartInfo.aspx?ac=u";
-                    this.hypCredManage.Visible = false;
-                    this.hypCredManage.Visible = false;
+                    this.liForeManage.Visible = false;
+                    this.liCredManage.Visible = false;
                 }
             }
 

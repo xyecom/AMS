@@ -48,7 +48,10 @@
                                 <td align="center" width="20%">
                                     档案标题
                                 </td>
-                                <td align="center" width="15%">
+                                <td align="center" width="10%">
+                                    部门名称
+                                </td>
+                                <td align="center" width="10%">
                                     结束时间
                                 </td>
                                 <td align="center" width="15%">
@@ -72,11 +75,14 @@
                                 <%# Eval("Title") %>
                             </td>
                             <td>
-                                <span style="color: Red">
-                                    <%# GetEndDate(Eval("EndDate"))%></span>
+                                <%# GetDeparName(Eval("DepartmentId"))%>
                             </td>
                             <td>
                                 <%# Eval("ForeColseTypeName")%>
+                            </td>
+                            <td>
+                                <span style="color: Red">
+                                    <%# GetEndDate(Eval("EndDate"))%></span>
                             </td>
                             <td>
                                 <%# GetAuditingState(XYECOM.Core.MyConvert.GetInt32(Eval("State").ToString()))%>
@@ -85,10 +91,7 @@
                                 <%# GetBidInfoCountByForeID(Eval("ForeclosedId"))%>
                             </td>
                             <td>
-                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# "UpdateForeclosed.aspx?Id=" + Eval("ForeclosedId") %>'>修改</asp:HyperLink>
                                 <asp:HyperLink ID="hlUpdate" runat="server" NavigateUrl='<%# "/ForeclosedDetail.aspx?Id=" + Eval("ForeclosedId") %>'>查看竞价</asp:HyperLink>
-                                <asp:LinkButton ID="lbtnClosed" runat="server" Text="关闭" OnClick="lbtnClose_Click"
-                                    OnClientClick="javascript:return ConfirmForeclosed();" CommandArgument='<%# Eval("ForeclosedId") %>'></asp:LinkButton>
                                 <asp:LinkButton ID="lbtnRelease" runat="server" Text="删除" OnClick="lbtnDelete_Click"
                                     CommandArgument='<%# Eval("ForeclosedId") %>' OnClientClick="javascript:return DeleteForeclosed();"></asp:LinkButton>
                             </td>

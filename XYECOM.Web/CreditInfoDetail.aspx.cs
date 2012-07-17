@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
@@ -16,6 +16,8 @@ namespace XYECOM.Web
     public partial class CreditInfoDetail : ForeBasePage
     {
         CreditInfoManager manage = new CreditInfoManager();
+
+        Business.UserInfo userInfoManage = new UserInfo();
 
         TenderInfoManager tenderManage = new TenderInfoManager();
 
@@ -49,8 +51,8 @@ namespace XYECOM.Web
                 this.labAge.Text = info.Age.ToString();
                 this.labAreaId.Text = new Area().GetItem(info.AreaId).FullNameAll;
                 this.labCreateDate.Text = info.CreateDate.ToString();
-                this.labCompanyName.Text = GetComName(info.DepartId);
-                this.labUserName.Text = GetUserName(info.DepartId);
+                this.labCompanyName.Text =userInfoManage.GetCompNameByUId(info.UserId);
+                this.labUserName.Text =userInfoManage.GetUserNameByID(info.DepartId);
                 this.labTitle.Text = info.Title;
                 this.labArrears.Text = info.Arrears.ToString();
                 this.labBounty.Text = info.Bounty.ToString();
@@ -151,18 +153,7 @@ namespace XYECOM.Web
         protected string GetUserName(object userID)
         {
             int uId = MyConvert.GetInt32(userID.ToString());
-            return new Business.UserInfo().GetCompNameByUId(uId);
-        }
-
-        /// <summary>
-        /// 根据用户编号获取公司名称
-        /// </summary>
-        /// <param name="userID"></param>
-        /// <returns></returns>
-        protected string GetComName(object userID)
-        {
-            int uId = MyConvert.GetInt32(userID.ToString());
-            return new Business.UserInfo().GetCompNameByUId(uId);
+            return new Business.UserInfo().GetUserNameByID(uId);
         }
 
         protected void btnTender_Click(object sender, EventArgs e)

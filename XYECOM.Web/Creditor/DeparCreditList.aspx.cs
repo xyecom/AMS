@@ -16,6 +16,13 @@ namespace XYECOM.Web.Creditor
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (!userinfo.IsPrimary)
+                {
+                    GotoMsgBoxPageForDynamicPage("您无权操作该列表，请联系主账户！", 1, "Index.aspx");                    
+                }
+            }
         }
         protected override void BindData()
         {
@@ -40,7 +47,7 @@ namespace XYECOM.Web.Creditor
             {
                 enddate = "";
             }
-            StringBuilder strWhere = new StringBuilder(" 1=1 and (DepartId = " + userinfo.userid + ")");
+            StringBuilder strWhere = new StringBuilder(" 1=1 and (DepartId in (select u_id from dbo.u_User where companyid = "+userinfo.userid+" and isPrimary = 'false'))");
             if (state == -2)
             {
                 strWhere.Append(" and ( ApprovaStatus ! =7)");
@@ -116,72 +123,6 @@ namespace XYECOM.Web.Creditor
             }
         }
 
-        /// <summary>
-        /// 发布案件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void lbtnRelease_Click(object sender, EventArgs e)
-        {
-            LinkButton linkButton = (LinkButton)(sender as LinkButton);
-            if (linkButton != null)
-            {
-                int Id = MyConvert.GetInt32(linkButton.CommandArgument);
-                if (Id > 0)
-                {
-                    int result = manage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.Null);
-                    if (result > 0)
-                    {
-                        BindData();
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// 取消案件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void lbtnCancel_Click(object sender, EventArgs e)
-        {
-            LinkButton linkButton = (LinkButton)(sender as LinkButton);
-            if (linkButton != null)
-            {
-                int Id = MyConvert.GetInt32(linkButton.CommandArgument);
-                if (Id > 0)
-                {
-                    int result = manage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.Canceled);
-                    if (result > 0)
-                    {
-                        BindData();
-                    }
-                }
-            }
-        }
-
-
-        /// <summary>
-        /// 关闭案件操作
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void lbtnClose_Click(object sender, EventArgs e)
-        {
-            LinkButton linkButton = (LinkButton)(sender as LinkButton);
-            if (linkButton != null)
-            {
-                int Id = MyConvert.GetInt32(linkButton.CommandArgument);
-                if (Id > 0)
-                {
-                    int result = manage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.CreditEnd);
-                    if (result > 0)
-                    {
-                        BindData();
-                    }
-                }
-            }
-        }
         protected string GetApprovaStatus(object state)
         {
             int stateId = MyConvert.GetInt32(state.ToString());
@@ -216,116 +157,6 @@ namespace XYECOM.Web.Creditor
             }
             return name;
         }
-        protected void rptList_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
-            {
-                HiddenField hidState = (HiddenField)e.Item.FindControl("hidState");//当前案件状态
-                if (hidState == null) return;
-
-                HiddenField hidIsCreditEvaluation = (HiddenField)e.Item.FindControl("hidIsCreditEvaluation");//当前债权商是否已评价
-                if (hidIsCreditEvaluation == null) return;
-                bool isCreditEvaluation = MyConvert.GetBoolean(hidIsCreditEvaluation.Value);
-
-                int stateId = MyConvert.GetInt32(hidState.Value);
-
-
-                HyperLink hlUpdate = (HyperLink)e.Item.FindControl("hlUpdate");//修改债权信息
-                HyperLink hlShowTender = (HyperLink)e.Item.FindControl("hlShowTender");//查看竞标
-                HyperLink hlEvaluate = (HyperLink)e.Item.FindControl("hlEvaluate");//评价         
-                LinkButton lbtnCancel = (LinkButton)e.Item.FindControl("lbtnCancel");//取消债权信息
-                LinkButton lbtnClosed = (LinkButton)e.Item.FindControl("lbtnClosed");//关闭债权信息
-                LinkButton lbtnRelease = (LinkButton)e.Item.FindControl("lbtnRelease");//发布债权信息
-                LinkButton lbtnDelete = (LinkButton)e.Item.FindControl("lbtnDelete");//删除债权信息                
-
-                Model.CreditState sta = (Model.CreditState)stateId;
-
-                switch (sta)
-                {
-                    case Model.CreditState.Draft:
-                        hlUpdate.Visible = true;
-                        lbtnRelease.Visible = true;
-                        lbtnDelete.Visible = true;
-                        hlShowTender.Visible = false;
-                        hlEvaluate.Visible = false;
-                        lbtnCancel.Visible = false;
-                        lbtnClosed.Visible = false;
-                        break;
-                    case Model.CreditState.Null:
-                        hlUpdate.Visible = true;
-                        lbtnRelease.Visible = false;
-                        lbtnDelete.Visible = true;
-                        hlShowTender.Visible = false;
-                        hlEvaluate.Visible = false;
-                        lbtnCancel.Visible = false;
-                        lbtnClosed.Visible = false;
-                        break;
-                    case Model.CreditState.NoPass:
-                        hlUpdate.Visible = true;
-                        lbtnRelease.Visible = false;
-                        lbtnDelete.Visible = true;
-                        hlShowTender.Visible = false;
-                        hlEvaluate.Visible = false;
-                        lbtnCancel.Visible = false;
-                        lbtnClosed.Visible = false;
-                        break;
-                    case Model.CreditState.Tender:
-                        hlUpdate.Visible = false;
-                        lbtnRelease.Visible = false;
-                        lbtnDelete.Visible = false;
-                        hlShowTender.Visible = true;
-                        hlEvaluate.Visible = false;
-                        lbtnCancel.Visible = true;
-                        lbtnClosed.Visible = false;
-                        break;
-                    case Model.CreditState.InProgress:
-                        hlUpdate.Visible = false;
-                        lbtnRelease.Visible = false;
-                        lbtnDelete.Visible = false;
-                        hlShowTender.Visible = false;
-                        hlEvaluate.Visible = false;
-                        lbtnCancel.Visible = true;
-                        lbtnClosed.Visible = false;
-                        break;
-                    case Model.CreditState.CreditConfirm:
-                        hlUpdate.Visible = false;
-                        lbtnRelease.Visible = false;
-                        lbtnDelete.Visible = false;
-                        hlShowTender.Visible = true;
-                        hlEvaluate.Visible = false;
-                        lbtnCancel.Visible = false;
-                        lbtnClosed.Visible = true;
-                        break;
-                    case Model.CreditState.CreditEnd:
-                        hlUpdate.Visible = false;
-                        lbtnRelease.Visible = false;
-                        lbtnDelete.Visible = false;
-                        hlShowTender.Visible = true;
-                        if (isCreditEvaluation)
-                        {
-                            hlEvaluate.Visible = false;
-                        }
-                        else
-                        {
-                            hlEvaluate.Visible = true;
-                        }
-                        lbtnCancel.Visible = false;
-                        lbtnClosed.Visible = false;
-                        break;
-                    case Model.CreditState.Canceled:
-                        hlUpdate.Visible = true;
-                        lbtnRelease.Visible = true;
-                        lbtnDelete.Visible = true;
-                        hlShowTender.Visible = false;
-                        hlEvaluate.Visible = false;
-                        lbtnCancel.Visible = false;
-                        lbtnClosed.Visible = false;
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
 
         /// <summary>
         /// 根据债权信息ID获取该债权信息的投标个数
@@ -336,6 +167,21 @@ namespace XYECOM.Web.Creditor
         {
             int id = MyConvert.GetInt32(CreditID.ToString());
             return new TenderInfoManager().GetTenderCountByCreditID(id);
+        }
+
+        /// <summary>
+        /// 获取部门名称
+        /// </summary>
+        /// <param name="DeparID"></param>
+        /// <returns></returns>
+        public string GetDeparName(object DeparID)
+        {
+            int parId = MyConvert.GetInt32(DeparID.ToString());
+            if (parId <= 0)
+            {
+                return "";
+            }
+            return new XYECOM.Business.UserInfo().GetPartNameById(parId);
         }
     }
 }

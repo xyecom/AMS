@@ -2,20 +2,6 @@
     CodeBehind="DeparCreditList.aspx.cs" Inherits="XYECOM.Web.Creditor.DeparCreditList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script type="text/javascript">
-        var ConfirmCredit = function () {
-            if (window.confirm("确认取消案件吗？")) {
-                return window.confirm("案件一旦取消标识着案件中止建议请联系并和案件服务商协商，否则出现纠纷无本网站无关？");
-            }
-            return false;
-        }
-        var ClosedCredit = function () {
-            if (window.confirm("确认关闭案件吗？")) {
-                return window.confirm("请认真核实案件是否完全结束，关闭后案件中止？");
-            }
-            return false;
-        }    
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->
@@ -59,12 +45,15 @@
             <!--serch end-->
             <!--列表 start-->
             <div id="list">
-                <asp:Repeater ID="rptList" runat="server" OnItemDataBound="rptList_ItemDataBound">
+                <asp:Repeater ID="rptList" runat="server">
                     <HeaderTemplate>
                         <table>
                             <tr id="trtop">
                                 <td align="center" width="20%">
                                     案件标题
+                                </td>
+                                <td align="center" width="15%">
+                                    部门名称
                                 </td>
                                 <td align="center" width="20%">
                                     添加时间
@@ -75,7 +64,7 @@
                                 <td align="center" width="15%">
                                     案件状态
                                 </td>
-                                <td align="center" width="25%">
+                                <td align="center" width="10%">
                                     操作
                                 </td>
                             </tr>
@@ -87,6 +76,9 @@
                                 <%# Eval("Title") %>
                             </td>
                             <td>
+                                <%# GetDeparName(Eval("DepartId"))%>
+                            </td>
+                            <td>
                                 <%# Eval("CreateDate")%>
                             </td>
                             <td>
@@ -96,18 +88,7 @@
                                 <%# GetApprovaStatus(Eval("ApprovaStatus"))%>
                             </td>
                             <td>
-                                <asp:HiddenField ID="hidState" runat="server" Value='<%# Eval("ApprovaStatus")%>' />
-                                <asp:HiddenField ID="hidInfoId" runat="server" Value='<%# Eval("CreditId")%>' />
-                                <asp:HiddenField ID="hidIsCreditEvaluation" runat="server" Value='<%# Eval("IsCreditEvaluation")%>' />
-                                <asp:HyperLink ID="hlUpdate" runat="server" NavigateUrl='<%# "UpdateCreditInfo.aspx?Id=" + Eval("CreditId") %>'>修改</asp:HyperLink>
                                 <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'>查看竞标</asp:HyperLink>
-                                <asp:HyperLink ID="hlEvaluate" runat="server" NavigateUrl='<%# "AddEvaluation.aspx?Id=" + Eval("CreditId") %>'>评价</asp:HyperLink>
-                                <asp:LinkButton ID="lbtnCancel" runat="server" Text="取消案件" OnClick="lbtnCancel_Click"
-                                    OnClientClick="javascript:return ConfirmCredit();" CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
-                                <asp:LinkButton ID="lbtnClosed" runat="server" Text="关闭案件" OnClick="lbtnClose_Click"
-                                    OnClientClick="javascript:return ClosedCredit();" CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
-                                <asp:LinkButton ID="lbtnRelease" runat="server" Text="发布" OnClick="lbtnRelease_Click"
-                                    CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
                                 <asp:LinkButton ID="lbtnDelete" runat="server" Text="删除" OnClientClick="javascript:return confirm('确定删除吗？');"
                                     OnClick="lbtnDelete_Click" CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
                             </td>

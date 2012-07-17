@@ -14,16 +14,17 @@
             债权业务</h1>
         <ul>
             <li><a tabindex="2" href="/Creditor/AddCreditInfo.aspx">发布债权</a></li>
-            <li><a tabindex="3" href="/Creditor/CreditInfoList.aspx">管理债权</a></li></ul>
-        <li>
-            <asp:HyperLink runat="server" ID="hypCredManage">部门债权管理</asp:HyperLink></li>
+            <li><a tabindex="3" href="/Creditor/CreditInfoList.aspx">管理债权</a></li>
+            <li id="liCredManage" runat="server"><a tabindex="4" href="/Creditor/DeparCreditList.aspx">
+                部门债权管理</a> </li>
+        </ul>
         <h1>
             抵债业务</h1>
         <ul>
-            <li><a tabindex="1" href="/Creditor/AddForeclosed.aspx">发布抵债信息</a></li>
-            <li><a tabindex="2" href="/Creditor/ForeclosedList.aspx">抵债信息管理</a></li>
-            <li>
-                <asp:HyperLink runat="server" ID="hypForeManage">部门抵债管理</asp:HyperLink></li>
+            <li><a tabindex="5" href="/Creditor/AddForeclosed.aspx">发布抵债信息</a></li>
+            <li><a tabindex="6" href="/Creditor/ForeclosedList.aspx">抵债信息管理</a></li>
+            <li runat="server" id="liForeManage"><a tabindex="7" href="/Creditor/DeparForeclosedList.aspx">
+                部门抵债管理</a></li>
         </ul>
         <h1>
             其他设置</h1>

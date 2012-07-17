@@ -6,6 +6,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Text;
 using XYECOM.Business.AMS;
+using XYECOM.Core;
 namespace XYECOM.Web.Creditor
 {
     public partial class DeparForeclosedList : XYECOM.Web.AppCode.UserCenter.Creditor
@@ -14,6 +15,13 @@ namespace XYECOM.Web.Creditor
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (!userinfo.IsPrimary)
+                {
+                    GotoMsgBoxPageForDynamicPage("您无权操作该列表，请联系主账户！", 1, "Index.aspx");
+                }
+            }
         }
         /// <summary>
         /// 绑定数据
@@ -25,7 +33,7 @@ namespace XYECOM.Web.Creditor
 
             this.lblMessage.Text = "";
 
-            StringBuilder strWhere = new StringBuilder(" 1=1 and (DepartmentId = " + userinfo.userid + ")");
+            StringBuilder strWhere = new StringBuilder(" 1=1 and (DepartmentId in (select u_id from dbo.u_User where companyid = " + userinfo.userid + " and isPrimary = 'false'))");
             if (!string.IsNullOrEmpty(typeName) && typeName != "所有")
             {
                 strWhere.Append(" and (ForeColseTypeName like '%" + typeName + "%')");
@@ -113,27 +121,6 @@ namespace XYECOM.Web.Creditor
             }
         }
 
-        /// <summary>
-        /// 关闭某抵债信息
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void lbtnClose_Click(object sender, EventArgs e)
-        {
-            LinkButton linkButton = (LinkButton)(sender as LinkButton);
-            if (linkButton != null)
-            {
-                int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
-                if (Id > 0)
-                {
-                    int result = manage.ClosedByID(Id);
-                    if (result > 0)
-                    {
-                        BindData();
-                    }
-                }
-            }
-        }
 
         /// <summary>
         ///获取竞价个数
@@ -148,6 +135,21 @@ namespace XYECOM.Web.Creditor
                 return 0;
             }
             return new BidInfoManager().GetBidInfoCountByForeID(id);
+        }
+
+        /// <summary>
+        /// 获取部门名称
+        /// </summary>
+        /// <param name="DeparID"></param>
+        /// <returns></returns>
+        public string GetDeparName(object DeparID)
+        {
+            int parId = MyConvert.GetInt32(DeparID.ToString());
+            if (parId <= 0)
+            {
+                return "";
+            }
+            return new XYECOM.Business.UserInfo().GetPartNameById(parId);
         }
     }
 }

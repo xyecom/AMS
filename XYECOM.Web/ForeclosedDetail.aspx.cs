@@ -61,7 +61,7 @@ namespace XYECOM.Web
                 this.labHighPrice.Text = info.HighPrice.ToString();
                 this.labLinePrice.Text = info.LinePrice.ToString();
                 this.labDescription.Text = info.Description;
-                this.labUserName.Text = GetUserName(info.DepartmentId);
+                this.labUserName.Text =new Business.UserInfo().GetUserNameByID(info.DepartmentId);
             }
 
             DataTable dtLing = bidInfoManage.GetLingXian(id);
@@ -157,16 +157,6 @@ namespace XYECOM.Web
             {
                 GotoMsgBoxPageForDynamicPage("报价失败！", 1, "ForeclosedDetail.aspx?Id=" + foreId);
             }
-        }
-        /// <summary>
-        /// 根据用户编号获取用户名称
-        /// </summary>
-        /// <param name="userID"></param>
-        /// <returns></returns>
-        protected string GetUserName(object userID)
-        {
-            int uId = MyConvert.GetInt32(userID.ToString());
-            return new Business.UserInfo().GetCompNameByUId(uId);
         }
     }
 }
