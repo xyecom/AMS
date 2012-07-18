@@ -41,7 +41,7 @@ namespace XYECOM.Web.Creditor
             this.txtDescription.Text = info.Description;
             this.endDate.Value = info.EndDate.ToString("yyyy-MM-dd");
             this.droTypeName.SelectedValue = info.ForeColseTypeName;
-            //supplyImages.InfoID = info.ForeclosedId;
+            this.udForeclosedInfo.InfoID = info.ForeclosedId;
         }
 
         protected void btnOK_Click(object sender, EventArgs e)
@@ -75,7 +75,8 @@ namespace XYECOM.Web.Creditor
             info.State = (int)AuditingState.Null;
 
             bool isOK = manager.UpdateForeclosedByID(info);
-
+            this.udForeclosedInfo.InfoID = info.ForeclosedId;
+            this.udForeclosedInfo.Update();
             if (isOK)
             {
                 GotoMsgBoxPageForDynamicPage("抵债信息修改成功！", 1, "ForeclosedList.aspx");
