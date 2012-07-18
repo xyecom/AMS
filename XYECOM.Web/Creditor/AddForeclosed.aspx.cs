@@ -50,13 +50,14 @@ namespace XYECOM.Web.Creditor
             info.DepartmentId =MyConvert.GetInt32(userinfo.userid.ToString());
             info.CompanyId = userinfo.CompanyId;
             info.CreateDate = DateTime.Now;
-            this.udForeclosedInfo.InfoID= 
-
-            bool isOK = foreclosedManager.InsertForeclosed(info);
+            
+            int foreId = 0;
+            int result = foreclosedManager.InsertForeclosedReturnID(info,out foreId);
             string gotoUrl = "ForeclosedList.aspx";
-            if (isOK)
+            if (result>0)
             {
-                
+                this.udForeclosedInfo.InfoID = foreId;
+                udForeclosedInfo.Update();
                 GotoMsgBoxPageForDynamicPage("添加抵债信息成功！", 1, gotoUrl);
             }
             else

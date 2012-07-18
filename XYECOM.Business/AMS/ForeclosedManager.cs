@@ -31,6 +31,22 @@ namespace XYECOM.Business.AMS
         }
 
         /// <summary>
+        /// 新增操作，返回自增长ID
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="foreId"></param>
+        /// <returns></returns>
+        public int InsertForeclosedReturnID(ForeclosedInfo info, out int foreId)
+        {
+            foreId = 0;
+            if (info == null)
+            {
+                return 0;
+            }
+            return DAL.InsertForeclosed(info, out foreId);
+        }
+
+        /// <summary>
         /// 根据抵债编号修改抵债信息
         /// </summary>
         /// <param name="info"></param>

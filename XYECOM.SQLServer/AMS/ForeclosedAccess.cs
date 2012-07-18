@@ -44,12 +44,18 @@ namespace XYECOM.SQLServer.AMS
             return rowAffected;
         }
 
+        /// <summary>
+        /// 新增操作，返回自增长ID
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="foreId"></param>
+        /// <returns></returns>
         public int InsertForeclosed(ForeclosedInfo info, out int foreId)
         {
             string sql = @"insert into ForeclosedInfo (Title,IdentityNumber,Address,AreaId,EndDate,CreateDate,State,
                                     UserId,DepartmentId,LinePrice,description,ForeColseTypeName,HighPrice)
                                     values (@Title,@Identitynumber,@Address,@AreaId,@EndDate,@CreateDate,@State,@UserId,
-                                    @DepartmentId,@LinePrice,@Description,@ForeColseTypeName,0)";
+                                    @DepartmentId,@LinePrice,@Description,@ForeColseTypeName,0);select @ID = @@identity";
             SqlParameter[] param = new SqlParameter[]
             {
                 new SqlParameter("@ID",SqlDbType.Int),
@@ -66,7 +72,19 @@ namespace XYECOM.SQLServer.AMS
                 new SqlParameter("@Description",info.Description),
                 new SqlParameter("@ForeColseTypeName",info.ForeColseTypeName)
             };
+            param[0].Direction = ParameterDirection.Output;
             int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, param);
+            if (rowAffected >= 0)
+            {
+                if (param[0].Value != null && param[0].Value.ToString() != "")
+                    foreId = (int)param[0].Value;
+                else
+                    foreId = 0;
+            }
+            else
+            {
+                foreId = -1;
+            }
             return rowAffected;
         }
 
