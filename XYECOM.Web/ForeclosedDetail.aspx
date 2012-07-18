@@ -140,17 +140,20 @@
                                 <HeaderTemplate>
                                     <table>
                                         <tr id="trtop">
-                                            <td align="center" width="20%">
+                                            <td align="center" width="10%">
                                                 出价
                                             </td>
-                                            <td align="center" width="25%">
+                                            <td align="center" width="15%">
                                                 出价时间
                                             </td>
-                                            <td align="center" width="25%">
+                                            <td align="center" width="15%">
                                                 来自地区
                                             </td>
-                                            <td align="center" width="20%">
+                                            <td align="center" width="15%">
                                                 买家联系方式
+                                            </td>
+                                            <td align="center" width="35%">
+                                                留言
                                             </td>
                                             <td align="center" width="10%">
                                                 目前状态
@@ -168,6 +171,9 @@
                                         </td>
                                         <td>
                                             <%# Eval("FromAddress")%>
+                                        </td>
+                                        <td>
+                                            <%# Eval("Remark")%>
                                         </td>
                                         <td>
                                             <%# GetContact(Eval("Contact").ToString())%>

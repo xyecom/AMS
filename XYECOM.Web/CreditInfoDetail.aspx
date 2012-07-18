@@ -213,14 +213,17 @@
         <HeaderTemplate>
             <table>
                 <tr id="trtop">
-                    <td align="center" width="20%">
+                    <td align="center" width="10%">
                         服务商名称
                     </td>
-                    <td align="center" width="20%">
+                    <td align="center" width="10%">
                         投标日期
                     </td>
-                    <td align="center" width="15%">
+                    <td align="center" width="10%">
                         是否中标
+                    </td>
+                    <td align="center" width="35%">
+                        投标留言
                     </td>
                     <td align="center" width="25%">
                         操作
@@ -239,6 +242,9 @@
                 </td>
                 <td>
                     <%# GetTenderState(Eval("IsSuccess"))%>
+                </td>
+                <td>
+                    <%# Eval("Message")%>
                 </td>
                 <td>
                     <asp:HiddenField ID="hidCreditInfoId" runat="server" Value='<%# Eval("CreditInfoId")%>' />

@@ -44,6 +44,32 @@ namespace XYECOM.SQLServer.AMS
             return rowAffected;
         }
 
+        public int InsertForeclosed(ForeclosedInfo info, out int foreId)
+        {
+            string sql = @"insert into ForeclosedInfo (Title,IdentityNumber,Address,AreaId,EndDate,CreateDate,State,
+                                    UserId,DepartmentId,LinePrice,description,ForeColseTypeName,HighPrice)
+                                    values (@Title,@Identitynumber,@Address,@AreaId,@EndDate,@CreateDate,@State,@UserId,
+                                    @DepartmentId,@LinePrice,@Description,@ForeColseTypeName,0)";
+            SqlParameter[] param = new SqlParameter[]
+            {
+                new SqlParameter("@ID",SqlDbType.Int),
+                new SqlParameter("@Title",info.Title),
+                new SqlParameter("@Identitynumber",info.IdentityNumber),
+                new SqlParameter("@Address",info.Address),
+                new SqlParameter("@AreaId",info.AreaId),
+                new SqlParameter("@EndDate",info.EndDate),
+                new SqlParameter("@CreateDate",info.CreateDate),
+                new SqlParameter("@State",info.State),
+                new SqlParameter("@UserId",info.CompanyId),
+                new SqlParameter("@DepartmentId",info.DepartmentId),
+                new SqlParameter("@LinePrice",info.LinePrice),
+                new SqlParameter("@Description",info.Description),
+                new SqlParameter("@ForeColseTypeName",info.ForeColseTypeName)
+            };
+            int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, param);
+            return rowAffected;
+        }
+
         /// <summary>
         /// 修改抵债信息
         /// </summary>

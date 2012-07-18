@@ -50,6 +50,7 @@ namespace XYECOM.Web.Creditor
             info.DepartmentId =MyConvert.GetInt32(userinfo.userid.ToString());
             info.CompanyId = userinfo.CompanyId;
             info.CreateDate = DateTime.Now;
+            this.udForeclosedInfo.InfoID= 
 
             bool isOK = foreclosedManager.InsertForeclosed(info);
             string gotoUrl = "ForeclosedList.aspx";

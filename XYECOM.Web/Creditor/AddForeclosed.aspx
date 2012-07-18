@@ -2,6 +2,7 @@
     CodeBehind="AddForeclosed.aspx.cs" Inherits="XYECOM.Web.Creditor.AddForeclosed" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script language="javascript" type="text/javascript" src="/Other/js/ForeUploadControl.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->
@@ -77,7 +78,8 @@
                         物品详细描述：
                     </td>
                     <td colspan="3">
-                        <asp:TextBox runat="server" ID="txtDescription" Width="100%" TextMode="MultiLine" Rows="15"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtDescription" Width="100%" TextMode="MultiLine"
+                            Rows="15"></asp:TextBox>
                     </td>
                 </tr>
             </table>
@@ -90,8 +92,8 @@
                     选择图片：
                 </p>
                 <p>
-                    <%--<XYECOM:UploadImage ID="supplyImages" runat="server" Iswatermark="false" MaxAmount="3"
-                        TableName="i_supply" IsCreateThumbnailImg="true" />--%>
+                    <XYECOM:UploadImage ID="udForeclosedInfo" runat="server" Iswatermark="false" MaxAmount="1" TableName="ForeclosedInfo"
+                        IsCreateThumbnailImg="false" />
                 </p>
             </div>
         </div>
