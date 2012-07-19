@@ -60,15 +60,21 @@ namespace XYECOM.Web.Creditor
             info.LicenseType = this.txtLicenseType.Text.Trim();
             info.Remark = this.txtRemark.Text.Trim();
             info.UserId = MyConvert.GetInt32(userinfo.CompanyId.ToString());
-            bool isok = credManage.InsertCreditInfo(info);
-            if (isok)
+            int credId = 0;
+            int result = credManage.InsertCreditInfo(info,out credId);
+            if (result>0)
             {
+                this.udCreditInfo.InfoID = credId;
+                this.udCreditInfo.Update();
                 GotoMsgBoxPageForDynamicPage("添加债权信息成功！", 1, "Index.aspx");
             }
             else
             {
                 GotoMsgBoxPageForDynamicPage("添加债权信息失败！", 1, "Index.aspx");
             }
+
+            //添加选择的档案信息
+            string strCase = this.hdgetid.Value;
         }
     }
 }

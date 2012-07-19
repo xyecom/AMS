@@ -8,6 +8,7 @@ using System.Text;
 using System.Data;
 using XYECOM.Core;
 using XYECOM.Business;
+using XYECOM.Model;
 
 namespace XYECOM.Web
 {
@@ -24,7 +25,7 @@ namespace XYECOM.Web
 
             this.lblMessage.Text = "";
 
-            StringBuilder strWhere = new StringBuilder(" 1=1 and (State = " + (int)XYECOM.Model.AuditingState.Passed + ")");
+            StringBuilder strWhere = new StringBuilder(" 1=1 and (State = " + (int)AuditingState.Passed + ")");
             if (!string.IsNullOrEmpty(typeName) && typeName != "所有")
             {
                 strWhere.Append(" and (ForeColseTypeName like '%" + typeName + "%')");
@@ -84,6 +85,17 @@ namespace XYECOM.Web
         {
             int aId = MyConvert.GetInt32(areaId.ToString());
             return new Area().GetItem(aId).FullNameAll;
+        }
+
+        /// <summary>
+        /// 获取默认图片
+        /// </summary>
+        /// <param name="foreId"></param>
+        /// <returns></returns>
+        public string GetInfoImgHref(object foreId)
+        {
+            int id = MyConvert.GetInt32(foreId.ToString());
+            return XYECOM.Business.Attachment.GetInfoDefaultImgHref(AttachmentItem.ForeclosedInfo, id);
         }
     }
 }

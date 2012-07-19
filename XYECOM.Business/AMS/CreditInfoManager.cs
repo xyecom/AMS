@@ -34,6 +34,22 @@ namespace XYECOM.Business.AMS
             }
         }
 
+
+        /// <summary>
+        /// 新增操作，返回自增长ID
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="credId"></param>
+        /// <returns></returns>
+        public int InsertCreditInfo(CreditInfo info, out int credId)
+        {
+            credId = 0;
+            if (info == null)
+            {
+                return 0;
+            }
+            return DAL.InsertCreditInfo(info, out credId);
+        }
         /// <summary>
         /// 单条修改债权信息状态
         /// </summary>

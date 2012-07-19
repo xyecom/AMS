@@ -63,6 +63,7 @@ namespace XYECOM.Web.Creditor
             this.radIsSelfCollection.SelectedValue = info.IsSelfCollection ? "1" : "0";
             this.txtLicenseType.Text = info.LicenseType;
             this.txtRemark.Text = info.Remark;
+            this.udCreditInfo.InfoID = info.CreditId;
         }
 
         protected void btnOK_Click(object sender, EventArgs e)
@@ -116,6 +117,8 @@ namespace XYECOM.Web.Creditor
             int result = manager.UpdateCreditInfoByID(info);
             if (result > 0)
             {
+                this.udCreditInfo.InfoID = info.CreditId;
+                this.udCreditInfo.Update();
                 GotoMsgBoxPageForDynamicPage("修改债权信息成功！", 1, "CreditInfoList.aspx");
             }
             else

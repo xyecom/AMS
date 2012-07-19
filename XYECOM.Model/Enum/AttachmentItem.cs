@@ -113,7 +113,13 @@ namespace XYECOM.Model
         /// <summary>
         /// µ÷’Æ
         /// </summary>
-        ForeclosedInfo
+        ForeclosedInfo,
+
+        /// <summary>
+        /// ’Æ»®
+        /// </summary>
+        CreditInfo
+
 
     }
 }

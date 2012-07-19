@@ -192,6 +192,32 @@
                         </tr>
                     </table>
                 </div>
+                <div>
+                    <p>
+                        上传图片</p>
+                    <div id="baseinfo">
+                        <p>
+                            <XYECOM:UploadImage ID="udCreditInfo" runat="server" Iswatermark="false" MaxAmount="3"
+                                TableName="CreditInfo" IsCreateThumbnailImg="false" />
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        从本地上传资料</p>
+                </div>
+                <div>
+                    <p>
+                        从档案库选择资料</p>
+                    <div id="divtitle">
+                    </div>
+                    <input id="hdgetid" type="text" />
+                    <input id="ttt" type="hidden" />
+                    <script type="text/javascript">
+                        var cla = new ClassTypes("cla", 'ttt', 'divtitle', 'hdgetid', 5, '<%=this.userinfo.IsPrimary?"and CompanyId="+userinfo.CompanyId:"and userid="+userinfo.userid %>', "xy018");
+                        cla.Init();
+                    </script>
+                </div>
                 <div style="width: 756px; height: 50px; line-height: 50px; text-align: center">
                     <%--                    <input type="button" value="确 定" style="background: url(../images/yes.gif); width: 80px;
                         height: 25px; border: none; cursor: pointer; color: #FFF" />--%>

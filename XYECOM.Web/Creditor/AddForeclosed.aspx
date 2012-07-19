@@ -162,11 +162,11 @@
                 <div id="picshow">
                 </div>
                 <p>
-                    选择图片：
+                    图片：
                 </p>
                 <div id="baseinfo">
                     <p>
-                        <XYECOM:UploadImage ID="udForeclosedInfo" runat="server" Iswatermark="false" MaxAmount="1"
+                        <XYECOM:UploadImage ID="udForeclosedInfo" runat="server" Iswatermark="false" MaxAmount="3"
                             TableName="ForeclosedInfo" IsCreateThumbnailImg="false" />
                     </p>
                 </div>

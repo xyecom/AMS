@@ -129,9 +129,8 @@
                         【物品相关图片】
                         <hr />
                         <div id="dzbasepic">
-                            <a href="../images/left1.gif">
-                                <img src="/Common/images/logo.jpg" />
-                            </a>
+                            <XYECOM:UploadImage ID="udForeclosedInfo" runat="server" Iswatermark="false"
+                                MaxAmount="3" TableName="ForeclosedInfo" IsCreateThumbnailImg="false" />
                         </div>
                         【物品竞价信息】
                         <hr />
