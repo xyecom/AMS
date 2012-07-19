@@ -77,10 +77,9 @@
                                         发布者
                                     </td>
                                     <td align="center" width="10%">
-                                        欠款金额
-                                    </td>
+                                        欠款金额(元)
                                     <td align="center" width="10%">
-                                        悬赏金额
+                                        悬赏金额(元)
                                     </td>
                                     <td align="center" width="15%">
                                         投标人数

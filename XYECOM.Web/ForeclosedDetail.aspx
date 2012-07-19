@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>抵债详细信息</title>
     <script type="text/javascript" language="javascript">
         function ShowNo()                        //隐藏两个层 
         {
@@ -60,7 +60,7 @@
                                     发布者：
                                 </td>
                                 <td colspan="3">
-                                    <a href='showEvaluation.aspx?UserId=<%# Eval("DepartmentId") %>' target="_blank">
+                                    <a runat="server" id="aShow" target="_blank">
                                         <asp:Label runat="server" ID="labUserName"></asp:Label></a><span style="color: Red">点击发布者可查看其信用度</span>
                                 </td>
                             </tr>
@@ -128,9 +128,11 @@
                         <input type="hidden" id="hidId" runat="server" />
                         【物品相关图片】
                         <hr />
-                        <div id="dzbasepic">
-                            <XYECOM:UploadImage ID="udForeclosedInfo" runat="server" Iswatermark="false"
-                                MaxAmount="3" TableName="ForeclosedInfo" IsCreateThumbnailImg="false" />
+                        <div id="baseinfo">
+                            <p>
+                                <XYECOM:UploadImage ID="udForeclosedInfo" runat="server" Iswatermark="false" MaxAmount="3"
+                                    TableName="ForeclosedInfo" IsCreateThumbnailImg="false" />
+                            </p>
                         </div>
                         【物品竞价信息】
                         <hr />
@@ -140,7 +142,7 @@
                                     <table>
                                         <tr id="trtop">
                                             <td align="center" width="10%">
-                                                出价
+                                                出价(元)
                                             </td>
                                             <td align="center" width="15%">
                                                 出价时间
@@ -172,10 +174,10 @@
                                             <%# Eval("FromAddress")%>
                                         </td>
                                         <td>
-                                            <%# Eval("Remark")%>
+                                            <%# GetContact(Eval("Contact").ToString())%>
                                         </td>
                                         <td>
-                                            <%# GetContact(Eval("Contact").ToString())%>
+                                            <%# Eval("Remark")%>
                                         </td>
                                         <td>
                                             <img src="/Common/images/okhank.gif" />领先
@@ -200,6 +202,9 @@
                                         </td>
                                         <td>
                                             <%# GetContact(Eval("Contact").ToString())%>
+                                        </td>
+                                        <td>
+                                            <%# Eval("Remark")%>
                                         </td>
                                         <td>
                                             出局

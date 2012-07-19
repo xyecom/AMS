@@ -96,12 +96,16 @@
                     </td>
                     <td>
                         <asp:TextBox runat="server" ID="txtTitle" MaxLength="50"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtTitle"
+                            ErrorMessage="名称不能为空"></asp:RequiredFieldValidator>
                     </td>
                     <td class="info1">
                         <span style="color: Red">*</span>拍卖底价：
                     </td>
                     <td>
                         <asp:TextBox runat="server" ID="txtLinePrice"></asp:TextBox><span>元</span>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtLinePrice"
+                            ErrorMessage="拍卖底价不能为空"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -144,6 +148,8 @@
                     <td colspan="3">
                         <input id="endDate" style="width: 120px" runat="server" size="10" type="text" readonly="readonly"
                             onclick="getDateString(this);" />
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="endDate"
+                            ErrorMessage="结束竞拍时间不能为空"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>

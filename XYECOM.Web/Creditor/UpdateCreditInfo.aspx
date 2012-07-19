@@ -2,6 +2,80 @@
     CodeBehind="UpdateCreditInfo.aspx.cs" Inherits="XYECOM.Web.Creditor.UpdateCreditInfo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script language="javascript" type="text/javascript" src="/Other/js/ForeUploadControl.js"></script>
+    <style type="text/css">
+        .upload_bg
+        {
+            position: absolute;
+            background-color: #000;
+            margin: auto;
+            left: 0;
+            top: 0;
+            display: none;
+            z-index: 30;
+            filter: Alpha(opacity=30); /* IE */
+            -moz-opacity: 0.3; /* Moz + FF */
+            opacity: 0.3; /* CSS3*/
+        }
+        
+        .upload_frm
+        {
+            position: absolute;
+            display: none;
+            z-index: 40;
+        }
+        
+        .upload_fileitem
+        {
+            padding: 5px;
+            margin-left: 5px;
+            float: left;
+            text-align: center;
+            border: solid 1px #eee;
+        }
+        .upload_fileitem ul
+        {
+        }
+        .upload_fileitem li
+        {
+        }
+        .Upload_img
+        {
+        }
+        a.Upload_btn:link
+        {
+        }
+        
+        
+        .upload_fileitem_byfile
+        {
+            width: 80%;
+            float: left;
+            text-align: center;
+        }
+        .Upload_File
+        {
+            width: 100%;
+        }
+        .Upload_File li
+        {
+            height: 22px;
+            line-height: 22px;
+            text-align: left;
+            margin-top: 5px;
+            border: solid 1px #eee;
+            padding: 5px;
+            background-color: #f8f8f8;
+        }
+        .Upload_File li em
+        {
+            float: left;
+        }
+        .Upload_File li span
+        {
+            float: right;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->
@@ -202,7 +276,7 @@
                         </p>
                     </div>
                 </div>
-                <div>
+                <%--<div>
                     <p>
                         从本地上传资料</p>
                 </div>
@@ -217,7 +291,7 @@
                         var cla = new ClassTypes("cla", 'ttt', 'divtitle', 'hdgetid', 5, '<%=this.userinfo.IsPrimary?"and CompanyId="+userinfo.CompanyId:"and userid="+userinfo.userid %>', "xy018");
                         cla.Init();
                     </script>
-                </div>
+                </div>--%>
                 <div style="width: 756px; height: 50px; line-height: 50px; text-align: center">
                     <%--                    <input type="button" value="确 定" style="background: url(../images/yes.gif); width: 80px;
                         height: 25px; border: none; cursor: pointer; color: #FFF" />--%>

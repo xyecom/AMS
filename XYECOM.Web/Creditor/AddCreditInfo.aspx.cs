@@ -74,7 +74,7 @@ namespace XYECOM.Web.Creditor
             }
 
             //添加选择的档案信息
-            string strCase = this.hdgetid.Value;
+            //string strCase = this.hdgetid.Value;
         }
     }
 }

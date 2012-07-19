@@ -6,27 +6,36 @@ using System.Web.UI.WebControls;
 using XYECOM.Model.AMS;
 using XYECOM.Core;
 using XYECOM.Model;
+using XYECOM.Business.AMS;
 
 namespace XYECOM.Web.Creditor
 {
     public partial class AddForeclosed : XYECOM.Web.AppCode.UserCenter.Creditor
     {
-        XYECOM.Business.AMS.ForeclosedManager foreclosedManager = new Business.AMS.ForeclosedManager();
+        ForeclosedManager foreclosedManager = new ForeclosedManager();
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// 获取抵债信息编号
+        /// </summary>
+        /// <returns></returns>
         public static string GetUniqueNo()
         {
-            //todo: 为实现
             Random r = new Random();
             var number = r.Next(9999);
             string no = string.Format("{0}{1}", "FLS", DateTime.Now.ToString("yyyyMMddhhmmssfff").PadLeft(20 - 2, '0'));
             return no;
         }
 
+        /// <summary>
+        /// 保存操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnOK_Click(object sender, EventArgs e)
         {
             string title = this.txtTitle.Text.Trim();

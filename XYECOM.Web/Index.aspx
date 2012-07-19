@@ -62,7 +62,7 @@
                         </HeaderTemplate>
                         <ItemTemplate>
                             <dd>
-                                <img src="/Common/images/logo.jpg" />
+                                <img src='<%# GetInfoImgHref(Eval("ForeclosedId")) %>' />
                                 <p>
                                     <strong>
                                         <%#Eval("Title") %></strong><br />

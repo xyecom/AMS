@@ -57,7 +57,7 @@
                                     案件状态
                                 </td>
                                 <td align="center" width="15%">
-                                    催收期限
+                                    催收期限(天)
                                 </td>
                                 <td align="center" width="25%">
                                     操作菜单

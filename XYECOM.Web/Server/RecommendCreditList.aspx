@@ -24,7 +24,7 @@
                 &nbsp;&nbsp; &nbsp;&nbsp;
                 <%--<input type="text" value="请输入关键字" onfocus="this.value=''" onblur="if(!value){value=defaultValue;}"
                     style="color: #a8a4a3"><input name="" type="button" value="查 询" />--%>
-                标题：<asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
+                标题：<asp:TextBox runat="server" ID="txtKey"></asp:TextBox>
                 <asp:Button runat="server" ID="btnSearch" Text="搜索" OnClick="btnSearch_Click" />
             </div>
             <!--serch end-->

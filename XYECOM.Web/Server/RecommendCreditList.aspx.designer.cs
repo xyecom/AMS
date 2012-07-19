@@ -22,13 +22,13 @@ namespace XYECOM.Web.Server {
         protected global::System.Web.UI.WebControls.DropDownList drpArrears;
         
         /// <summary>
-        /// txtTitle control.
+        /// txtKey control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTitle;
+        protected global::System.Web.UI.WebControls.TextBox txtKey;
         
         /// <summary>
         /// btnSearch control.

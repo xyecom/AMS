@@ -83,7 +83,7 @@
         <!--rightzqmain start-->
         <div id="rightzqmain">
             <h2>
-                添加抵债物品</h2>
+                修改抵债物品</h2>
             <div class="rhr">
             </div>
             <!--基本信息 start-->
@@ -92,16 +92,20 @@
             <table class="dzbasetb">
                 <tr>
                     <td class="info1">
-                        名称：
+                        <span style="color: Red">*</span> 名称：
                     </td>
                     <td>
                         <asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtTitle"
+                            ErrorMessage="名称不能为空"></asp:RequiredFieldValidator>
                     </td>
                     <td class="info1">
-                        拍卖底价：
+                        <span style="color: Red">*</span>拍卖底价：
                     </td>
                     <td>
                         <asp:TextBox runat="server" ID="txtLinePrice"></asp:TextBox><span>元</span>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtLinePrice"
+                            ErrorMessage="拍卖底价不能为空"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -139,10 +143,13 @@
                 </tr>
                 <tr>
                     <td class="info1">
-                        结束竞拍时间：
+                        <span style="color: Red">*</span>结束竞拍时间：
                     </td>
                     <td colspan="3">
-                        <input id="endDate" runat="server" size="10" type="text" readonly="readonly" onclick="getDateString(this);" />
+                        <input id="endDate" style="width: 120px" runat="server" size="10" type="text" readonly="readonly"
+                            onclick="getDateString(this);" />
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="endDate"
+                            ErrorMessage="结束竞拍时间不能为空"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>

@@ -13,8 +13,8 @@
         <h1>
             债权业务</h1>
         <ul>
-            <li><a tabindex="2" href="/Creditor/AddCreditInfo.aspx">发布债权</a></li>
-            <li><a tabindex="3" href="/Creditor/CreditInfoList.aspx">管理债权</a></li>
+            <li><a tabindex="2" href="/Creditor/AddCreditInfo.aspx">发布债权信息</a></li>
+            <li><a tabindex="3" href="/Creditor/CreditInfoList.aspx">债权信息管理</a></li>
             <li id="liCredManage" runat="server"><a tabindex="4" href="/Creditor/DeparCreditList.aspx">
                 部门债权管理</a> </li>
         </ul>

@@ -17,7 +17,7 @@ namespace XYECOM.Web.Server
         protected override void BindData()
         {
             this.lblMessage.Text = "";
-            string title = this.txtTitle.Text.Trim();
+            string title = txtKey.Text.Trim();
             string arrears = this.drpArrears.SelectedValue;
             StringBuilder strWhere = new StringBuilder(" 1=1 and (AreaId = " + userinfo.AreaId + ") and (ApprovaStatus  =2)");
             if (arrears != "所有")

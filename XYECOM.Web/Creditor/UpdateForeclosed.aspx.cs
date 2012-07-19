@@ -66,8 +66,7 @@ namespace XYECOM.Web.Creditor
             string description = this.txtDescription.Text;
             info.Title = title;
             info.LinePrice = linePrice;
-            //info.AreaId = areaId;
-            info.AreaId = 10;
+            info.AreaId = areaId;
             info.ForeColseTypeName = typeName;
             info.Address = address;
             info.EndDate = date;

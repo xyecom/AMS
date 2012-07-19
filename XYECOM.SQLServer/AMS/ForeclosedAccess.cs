@@ -97,7 +97,7 @@ namespace XYECOM.SQLServer.AMS
         {
             string sql = @"UPDATE ForeclosedInfo SET Title =                                                                                                              
                                     @Title,Address=@Address,AreaId=@AreaId,EndDate=@EndDate,LinePrice=@LinePrice,Description=@Description,
-                                    ForeColseTypeName=@ForeColseTypeName WHERE ForeclosedId=@Id";
+                                    ForeColseTypeName=@ForeColseTypeName,State=@State WHERE ForeclosedId=@Id";
 
             SqlParameter[] param = new SqlParameter[]
             {
@@ -108,6 +108,7 @@ namespace XYECOM.SQLServer.AMS
                 new SqlParameter("@LinePrice",info.LinePrice),
                 new SqlParameter("@Description",info.Description),
                 new SqlParameter("@ForeColseTypeName",info.ForeColseTypeName),
+                new SqlParameter("@State",info.State),
                 new SqlParameter("@Id",info.ForeclosedId)
             };
             int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, param);
