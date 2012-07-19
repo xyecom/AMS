@@ -23,11 +23,11 @@ namespace XYECOM.Web.Creditor
                     GotoMsgBoxPageForDynamicPage("该抵债信息不存在！", 1, "ForeclosedList.aspx");                    
                 }
                 this.hiddID.Value = id.ToString();
-                BindData(id);
+                DataBind(id);
             }
         }
 
-        public void BindData(int id)
+        public void DataBind(int id)
         {
             ForeclosedInfo info = manager.GetForeclosedInfoById(id);
             if (info == null)

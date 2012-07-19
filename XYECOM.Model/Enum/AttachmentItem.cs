@@ -108,6 +108,12 @@ namespace XYECOM.Model
         /// <summary>
         /// Õ≈π∫
         /// </summary>
-        TeamBuy
+        TeamBuy,
+
+        /// <summary>
+        /// µ÷’Æ
+        /// </summary>
+        ForeclosedInfo
+
     }
 }

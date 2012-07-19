@@ -2,6 +2,7 @@
     CodeBehind="AddCreditInfo.aspx.cs" Inherits="XYECOM.Web.Creditor.AddCreditInfo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link href="/common/css/xylib.css" type="text/css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->
@@ -220,6 +221,19 @@
                     <input type="button" value="返回" onclick="javascript:history.back();" />
                 </div>
             </div>
+        </div>
+        <div>
+            <p></p>
+        </div>
+        <div>
+            <div id="divtitle">
+            </div>
+            <input id="hdgetid" type="text" />
+            <input id="ttt" type="hidden" />
+            <script type="text/javascript">
+                var cla = new ClassTypes("cla", 'ttt', 'divtitle', 'hdgetid', 5, '<%=this.userinfo.IsPrimary?"and CompanyId="+userinfo.CompanyId:"and userid="+userinfo.userid %>', "xy018");
+                cla.Init();
+            </script>
         </div>
         <!--rightzqmain end-->
     </div>
