@@ -76,7 +76,7 @@
                         </tbody>
                     </table>
                     <div style="margin: 10px 100px; color: red; font-size: 13px; font-weight: bold">
-                        <a href="getpassword.aspx">忘记密码 </a>&nbsp;&nbsp; |&nbsp;&nbsp;<a href="register.aspx">
+                        <a href="/getpassword.aspx">忘记密码 </a>&nbsp;&nbsp; |&nbsp;&nbsp;<a href="/register.aspx">
                             免费注册</a></div>
                 </div>
             </div>

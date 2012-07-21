@@ -19,6 +19,11 @@ namespace XYECOM.Web
         }
         protected override void BindData()
         {
+            BindDzInfo();
+        }
+
+        private void BindDzInfo()
+        {
             string typeName = this.droTypeName.SelectedValue;
             int aredId = MyConvert.GetInt32(this.city.Value);
 
@@ -72,7 +77,7 @@ namespace XYECOM.Web
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            BindData();
+            BindDzInfo();
         }
 
         /// <summary>

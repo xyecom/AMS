@@ -7,73 +7,73 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace XYECOM.Web {
+namespace XYECOM.Web.Other.UserContorl {
     
     
-    public partial class IndexCreditList1 {
+    public partial class ReceiveMessageInfo {
         
         /// <summary>
-        /// form1 控件。
+        /// MultiView1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.MultiView MultiView1;
         
         /// <summary>
-        /// drpArrears 控件。
+        /// View1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpArrears;
+        protected global::System.Web.UI.WebControls.View View1;
         
         /// <summary>
-        /// txtTitle 控件。
+        /// sender 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTitle;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell sender;
         
         /// <summary>
-        /// city 控件。
+        /// addtime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden city;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell addtime;
         
         /// <summary>
-        /// btnSearch 控件。
+        /// subject 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell subject;
         
         /// <summary>
-        /// dlCreditList 控件。
+        /// content 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater dlCreditList;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell content;
         
         /// <summary>
-        /// Page1 控件。
+        /// View2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::xymanage_UserControl_page Page1;
+        protected global::System.Web.UI.WebControls.View View2;
         
         /// <summary>
         /// lblMessage 控件。

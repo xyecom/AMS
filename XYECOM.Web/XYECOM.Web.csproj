@@ -215,6 +215,27 @@
     <Compile Include="Creditor\ForeclosedList.aspx.designer.cs">
       <DependentUpon>ForeclosedList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Creditor\ReceiveMessageInfo.aspx.cs">
+      <DependentUpon>ReceiveMessageInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\ReceiveMessageInfo.aspx.designer.cs">
+      <DependentUpon>ReceiveMessageInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\ReceiveMessageList.aspx.cs">
+      <DependentUpon>ReceiveMessageList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\ReceiveMessageList.aspx.designer.cs">
+      <DependentUpon>ReceiveMessageList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\SendMessageList.aspx.cs">
+      <DependentUpon>SendMessageList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\SendMessageList.aspx.designer.cs">
+      <DependentUpon>SendMessageList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Creditor\UpdateCreditInfo.aspx.cs">
       <DependentUpon>UpdateCreditInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -347,6 +368,27 @@
     </Compile>
     <Compile Include="Other\UserContorl\ModifyPwd.ascx.designer.cs">
       <DependentUpon>ModifyPwd.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Other\UserContorl\ReceiveMessage.ascx.cs">
+      <DependentUpon>ReceiveMessage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Other\UserContorl\ReceiveMessage.ascx.designer.cs">
+      <DependentUpon>ReceiveMessage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Other\UserContorl\ReceiveMessageInfo.ascx.cs">
+      <DependentUpon>ReceiveMessageInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Other\UserContorl\ReceiveMessageInfo.ascx.designer.cs">
+      <DependentUpon>ReceiveMessageInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Other\UserContorl\SendMessageList.ascx.cs">
+      <DependentUpon>SendMessageList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Other\UserContorl\SendMessageList.ascx.designer.cs">
+      <DependentUpon>SendMessageList.ascx</DependentUpon>
     </Compile>
     <Compile Include="Other\UserContorl\SetQuestion.ascx.cs">
       <DependentUpon>SetQuestion.ascx</DependentUpon>
@@ -1740,6 +1782,9 @@
     <Content Include="Creditor\CreditInfoList.aspx" />
     <Content Include="Creditor\EvaluationList.aspx" />
     <Content Include="Creditor\ForeclosedList.aspx" />
+    <Content Include="Creditor\ReceiveMessageInfo.aspx" />
+    <Content Include="Creditor\ReceiveMessageList.aspx" />
+    <Content Include="Creditor\SendMessageList.aspx" />
     <Content Include="Creditor\UpdateCreditInfo.aspx" />
     <Content Include="Creditor\UpdateForeclosed.aspx" />
     <Content Include="Creditor\BaseEdit.aspx" />
@@ -1803,6 +1848,9 @@
     <Content Include="Other\js\login.js" />
     <Content Include="Other\js\validate.js" />
     <Content Include="Other\UserContorl\ModifyPwd.ascx" />
+    <Content Include="Other\UserContorl\ReceiveMessage.ascx" />
+    <Content Include="Other\UserContorl\ReceiveMessageInfo.ascx" />
+    <Content Include="Other\UserContorl\SendMessageList.ascx" />
     <Content Include="Other\UserContorl\SetQuestion.ascx" />
     <Content Include="Register.aspx" />
     <Content Include="Other\css\layout.css" />
@@ -1905,6 +1953,8 @@
     <Content Include="Server\UserContorl\left.ascx" />
     <Content Include="Server\UserContorl\menu.ascx" />
     <Content Include="showEvaluation.aspx" />
+    <Content Include="templates\default\images\ly_img2.gif" />
+    <Content Include="templates\default\images\ly_img3.gif" />
     <Content Include="templates\default\js\attribute.js" />
     <Content Include="templates\_shop\default\about.gif" />
     <Content Include="templates\_shop\default\about.xml" />
@@ -4089,7 +4139,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
-          <DevelopmentServerPort>49793</DevelopmentServerPort>
+          <DevelopmentServerPort>8100</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://127.0.0.1:8100/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
