@@ -53,8 +53,6 @@
                             OnClick="btnDel_Click">删除</asp:LinkButton>
                         <a href='/Creditor/UploadCase.aspx?id=<%# Eval("Id") %>'>修改</a> <a href='<%# Eval("FilePath") %>'>
                             下载</a>
-                        <asp:LinkButton ID="btnDownLoad" runat="server" CommandArgument='<%# Eval("FilePath") %>'
-                            OnClick="btnDownLoad_Click" Visible="false">下载</asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

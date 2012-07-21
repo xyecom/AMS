@@ -683,7 +683,7 @@ function ClassType(objName, moduleFlagTextId, showDivID, inputTxtID, level, ac, 
 
     this.IndexLevel = 0;
     this.InputTxtID = inputTxtID;
-    this.ModuleName = $("#" + moduleFlagTextId)[0] != undefined ? $F(moduleFlagTextId) : moduleFlagTextId;
+    this.ModuleName = moduleFlagTextId;
     //存储默认值
     var OldValue = "";
 
@@ -931,18 +931,18 @@ function ClassType(objName, moduleFlagTextId, showDivID, inputTxtID, level, ac, 
     }
 }
 
-function ClassTypes(objName, moduleFlagTextId, showDivID, inputTxtID, maxNum, params,ac) {
+function ClassTypes(objName, moduleFlagTextId, showDivID, inputTxtID, maxNum, params, ac) {
     //初始化全局变量    
     if (ac == undefined || ac == "") {
         this.ActionID = "XY001";
     } else {
         this.ActionID = ac;
     }
-    
+
     this.MaxNum = undefined == maxNum ? 999 : arguments[5];
     this.IndexLevel = 0;
     this.InputTxtID = inputTxtID;
-    this.ModuleName = $("#" + moduleFlagTextId)[0] != undefined ? $('#'+moduleFlagTextId).val() : moduleFlagTextId;
+    this.ModuleName = $("#" + moduleFlagTextId)[0] != undefined ? $('#' + moduleFlagTextId).val() : moduleFlagTextId;
     this.Params = params == undefined ? "" : params;
     //如果选择已经选择的父类的子类
     this.IsSelChild = false;

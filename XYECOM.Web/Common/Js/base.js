@@ -1,11 +1,5 @@
-function IncludeJs(path) {
-    var script = document.createElement('script');
-    script.src = path;
-    script.type = 'text/javascript';
+document.writeln("<script language=\"javascript\" type=\"text/javascript\" src=\"/config/js/config.js\"></script>");
 
-    document.getElementsByTagName('head')[0].appendChild(script);
-}
-IncludeJs("/config/js/config.js");
 //document.writeln("<script language=\"javascript\" type=\"text/javascript\" src=\"/config/js/config.js\"></script>");
 
 var XY_LOADING = "<img src =\"/common/images/ajax-loader.gif\"/><br/>数据正在录入，请稍等...";

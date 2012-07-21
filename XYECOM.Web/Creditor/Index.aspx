@@ -30,7 +30,7 @@
                                 <img src="/Other/images/zhzt.gif">
                             </td>
                             <td width="100">
-                                <a href="#">修改账户密码</a>
+                                <a href="/Creditor/ModifyPwd.aspx">修改账户密码</a>
                             </td>
                             <td width="21">
                                 <img src="/Other/images/sjyes.gif">
