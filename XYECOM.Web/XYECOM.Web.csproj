@@ -475,6 +475,13 @@
     <Compile Include="Server\ModifyPwd.aspx.designer.cs">
       <DependentUpon>ModifyPwd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Server\SendMessageList.aspx.cs">
+      <DependentUpon>SendMessageList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\SendMessageList.aspx.designer.cs">
+      <DependentUpon>SendMessageList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Server\Server.master.cs">
       <DependentUpon>Server.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1948,6 +1955,7 @@
     <Content Include="Server\ParticipateCreditList.aspx" />
     <Content Include="Server\RecommendCreditList.aspx" />
     <Content Include="Server\ModifyPwd.aspx" />
+    <Content Include="Server\SendMessageList.aspx" />
     <Content Include="Server\SetQuestion.aspx" />
     <Content Include="Server\UpLoadPicture.aspx" />
     <Content Include="Server\UserContorl\left.ascx" />
