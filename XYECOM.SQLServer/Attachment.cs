@@ -337,5 +337,17 @@ namespace XYECOM.SQLServer
             }
             return info;
         }
+
+        /// <summary>
+        /// 获取图片集合
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="descTabID"></param>
+        /// <returns></returns>
+        public DataTable GetAllImgHref(string descTableName, long descTabID)
+        {
+            string sql = "select at_path  from pl_Attachment where DescTabName = '" + descTableName + "' and DescTabID = " + descTabID;
+            return SqlHelper.ExecuteTable(sql);
+        }
     }
 }

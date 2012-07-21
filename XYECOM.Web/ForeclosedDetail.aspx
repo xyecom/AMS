@@ -128,12 +128,13 @@
                         <input type="hidden" id="hidId" runat="server" />
                         【物品相关图片】
                         <hr />
-                        <div id="baseinfo">
-                            <p>
-                                <XYECOM:UploadImage ID="udForeclosedInfo" runat="server" Iswatermark="false" MaxAmount="3"
-                                    TableName="ForeclosedInfo" IsCreateThumbnailImg="false" />
-                            </p>
-                        </div>
+                        <p>
+                            <asp:Repeater runat="server" ID="rpPrice">
+                                <ItemTemplate>
+                                    <img width="96px;" src='/Upload/<%# Eval("At_Path") %>' />
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </p>
                         【物品竞价信息】
                         <hr />
                         <div id="basetbjj">

@@ -62,8 +62,13 @@ namespace XYECOM.Web
                 this.labLinePrice.Text = info.LinePrice.ToString();
                 this.labDescription.Text = info.Description;
                 this.labUserName.Text = new Business.UserInfo().GetUserNameByID(info.DepartmentId);
-                this.udForeclosedInfo.InfoID = info.ForeclosedId;
                 this.aShow.HRef = "showEvaluation.aspx?UserId=" + info.DepartmentId;
+            }
+            DataTable price = XYECOM.Business.Attachment.GetAllImgHref(AttachmentItem.ForeclosedInfo, info.ForeclosedId);
+            if (price.Rows.Count > 0)
+            {
+                this.rpPrice.DataSource = price;
+                this.rpPrice.DataBind();
             }
 
             DataTable dtLing = bidInfoManage.GetLingXian(id);

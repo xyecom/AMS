@@ -399,5 +399,16 @@ namespace XYECOM.Business
         {
             return DAL.GetItemInfoOfVideo(userid);
         }
+        /// <summary>
+        /// 根据表名和Id获取附近图片集合
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="descTabID"></param>
+        /// <returns></returns>
+        public static DataTable GetAllImgHref(Model.AttachmentItem item, long descTabID)
+        {
+            string decsTabName = GetDescTableName(item);
+            return DAL.GetAllImgHref(decsTabName, descTabID);
+        }
     }
 }
