@@ -10,7 +10,7 @@
             <div id="msgimg">
                 <img src="/Other/images/man.GIF"><br>
                 <br>
-                <a href="#">修改头像</a>
+                <a href="UpLoadPicture.aspx">修改头像</a>
             </div>
             <div id="line">
             </div>

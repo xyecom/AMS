@@ -76,6 +76,13 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activation .aspx.cs">
+      <DependentUpon>Activation .aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Activation .aspx.designer.cs">
+      <DependentUpon>Activation .aspx</DependentUpon>
+    </Compile>
     <Compile Include="AppCode\CaseUploadManager.cs" />
     <Compile Include="AppCode\Html\HtmlInfo.cs" />
     <Compile Include="AppCode\Html\HtmlManage.cs" />
@@ -313,6 +320,13 @@
     <Compile Include="Creditor\UploadCase.aspx.designer.cs">
       <DependentUpon>UploadCase.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Creditor\UpLoadPicture.aspx.cs">
+      <DependentUpon>UpLoadPicture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\UpLoadPicture.aspx.designer.cs">
+      <DependentUpon>UpLoadPicture.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Creditor\UserContorl\left.ascx.cs">
       <DependentUpon>left.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -326,6 +340,13 @@
     </Compile>
     <Compile Include="Creditor\UserContorl\menu.ascx.designer.cs">
       <DependentUpon>menu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Fore.Master.cs">
+      <DependentUpon>Fore.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fore.Master.designer.cs">
+      <DependentUpon>Fore.Master</DependentUpon>
     </Compile>
     <Compile Include="ForeclosedDetail.aspx.cs">
       <DependentUpon>ForeclosedDetail.aspx</DependentUpon>
@@ -1751,6 +1772,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Activation .aspx" />
     <Content Include="Agreement.htm" />
     <Content Include="Common\Controls\CascadeData.ascx" />
     <Content Include="Common\Css\css.css" />
@@ -1821,6 +1843,7 @@
     <Content Include="Creditor\PartList.aspx" />
     <Content Include="Creditor\SetQuestion.aspx" />
     <Content Include="Creditor\UploadCase.aspx" />
+    <Content Include="Creditor\UpLoadPicture.aspx" />
     <Content Include="Creditor\UserContorl\left.ascx" />
     <Content Include="Creditor\UserContorl\menu.ascx" />
     <Content Include="ForeclosedDetail.aspx" />
@@ -1969,8 +1992,8 @@
     <Content Include="Other\js\zd.js" />
     <Content Include="Other\js\zu.js" />
     <Content Include="Server\ParticipateCreditList.aspx" />
-    <Content Include="Server\RecommendCreditList.aspx" />
     <Content Include="Server\ModifyPwd.aspx" />
+    <Content Include="Server\RecommendCredList.aspx" />
     <Content Include="Server\SendMessageList.aspx" />
     <Content Include="Server\SetQuestion.aspx" />
     <Content Include="Server\UpLoadPicture.aspx" />
@@ -4080,6 +4103,7 @@
     <Content Include="Other\UserCenter.Master" />
     <Content Include="Creditor\Creditor.master" />
     <Content Include="Server\Server.master" />
+    <Content Include="Fore.Master" />
     <None Include="templates\default\images\inquire2.gif_bac" />
     <Content Include="config\HTML.config" />
     <Content Include="config\Shop.config" />
