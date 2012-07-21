@@ -6,7 +6,7 @@
                 <ul class="menu">
                     <li class="stmenu">
                         <h3>
-                            <a class="xialaguang" href="#"><span>首页</span></a></h3>
+                            <a class="xialaguang" href="/"><span>首页</span></a></h3>
                     </li>
                     <!--企业简介-->
                     <li class="stmenu">
@@ -171,7 +171,7 @@
                     <!--信用评价-->
                     <li class="stmenu">
                         <h3>
-                            <a class="xialaguang" href="#"><span>信用评价</span></a></h3>
+                            <a class="xialaguang" href="/Creditor/EvaluationList.aspx"><span>信用评价</span></a></h3>
                     </li>
                     <li class="overlay"></li>
                 </ul>
@@ -180,14 +180,14 @@
     </div>
 </div>
 <script type="text/javascript">
-//    JQuery(document).ready(function () {
-//        JQuery('#nav-menu .menu > li').hover(function () {
-//            JQuery(this).find('.children').animate({ opacity: 'show', height: 'show' }, 300);
-//            JQuery(this).find('.xialaguang').addClass('navhover');
-//        }, function () {
-//            JQuery('.children').stop(true, true).hide();
-//            JQuery('.xialaguang').removeClass('navhover');
-//        }
-//).slice(-3, -1).find('.children').addClass('sleft');
-//    });    
+    $(document).ready(function () {
+        $('#nav-menu .menu > li').hover(function () {
+            $(this).find('.children').animate({ opacity: 'show', height: 'show' }, 300);
+            $(this).find('.xialaguang').addClass('navhover');
+        }, function () {
+            $('.children').stop(true, true).hide();
+            $('.xialaguang').removeClass('navhover');
+        }
+).slice(-3, -1).find('.children').addClass('sleft');
+    }); 
 </script>

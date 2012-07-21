@@ -109,6 +109,9 @@ namespace XYECOM.Business
             if (item == XYECOM.Model.AttachmentItem.UserVideo) return "Video";
             if (item == XYECOM.Model.AttachmentItem.Slides) return "Slides";
             if (item == XYECOM.Model.AttachmentItem.TeamBuy) return "TeamBuy";
+            if (item == XYECOM.Model.AttachmentItem.ForeclosedInfo) return "ForeclosedInfo";
+            if (item == XYECOM.Model.AttachmentItem.CreditInfo) return "CreditInfo";
+
             return "";
         }
 
@@ -181,6 +184,8 @@ namespace XYECOM.Business
             if (descTabName.Equals("video")) return XYECOM.Model.AttachmentItem.UserVideo;
             if (descTabName.Equals("slides")) return XYECOM.Model.AttachmentItem.Slides;
             if (descTabName.Equals("teambuy")) return XYECOM.Model.AttachmentItem.TeamBuy;
+            if (descTabName.Equals("foreclosedinfo")) return XYECOM.Model.AttachmentItem.ForeclosedInfo;
+            if (descTabName.Equals("creditinfo")) return XYECOM.Model.AttachmentItem.CreditInfo;
             return XYECOM.Model.AttachmentItem.Null;
         }
         /// <summary>

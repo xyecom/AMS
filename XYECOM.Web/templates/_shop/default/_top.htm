@@ -1,0 +1,13 @@
+﻿<div id="top">
+    <%if islogin %>
+    <div id="top1">
+        您好，欢迎&nbsp;&nbsp;<strong>{loginname}</strong>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{editinfourl}">修改资料</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+            href="{modifypwdurl}">修改密码</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/">网站首页</a></div>
+    <div id="top2">
+        <a href="/LogOut.aspx">【退出系统】</a></div>
+    <%else%>
+    <div id="top1">
+        <a href="/login.aspx">登陆</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/Register.aspx">注册</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+            href="/">网站首页</a></div>
+    <%/if%>
+</div>

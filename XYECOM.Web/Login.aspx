@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>服务商登陆</title>
-    <link href="/front/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="/Other/css/layout.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -12,14 +12,14 @@
         <!----------头部开始----------------->
         <div id="top">
             <div class="logo">
-                <img src="front/images/logo.png" alt="" /></div>
+                <img src="/Other/images/logo.png" alt="" /></div>
             <p class="p1">
                 <a href="#">关于我们</a> | <a href="#">安全承诺</a> | <a href="#">加入收藏</a> | <a href="#">设为首页</a></p>
         </div>
         <!----------内容开始-------------->
         <div id="middle">
             <div id="regleft">
-                <img style="margin: 0px 20px" align="middle" src="front/images/723280_121819740000_2.gif"
+                <img style="margin: 0px 20px" align="middle" src="/Other/images/723280_121819740000_2.gif"
                     alt="" /><br />
                 <p style="line-height: 22px; margin: 5px auto; width: 300px; color: #8c8c8c">
                     <strong style="color: red">还不是包青天会员？</strong>

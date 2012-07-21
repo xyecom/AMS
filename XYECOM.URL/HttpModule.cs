@@ -133,6 +133,11 @@ namespace XYECOM.URL
             {
                 return;
             }
+
+            if (input.StartsWith(text + "case/"))
+            {
+                return;
+            }
             //系统是否在运行状态
             if (!XYECOM.Configuration.WebInfo.Instance.IsRun)
             {
@@ -140,8 +145,9 @@ namespace XYECOM.URL
                 context.Response.End();
             }
 
+
             //如果是注册或登陆直接进入
-            if (input.StartsWith("/login.aspx") || input.StartsWith("/register.aspx") || input.StartsWith("/getpassword.aspx") || input.StartsWith("/logout.aspx"))
+            if (input.StartsWith("/login.aspx") || input.StartsWith("/register.aspx") || input.StartsWith("/getpassword.aspx") || input.StartsWith("/logout.aspx") || input.StartsWith("/creditor/") || input.StartsWith("/server/"))
             {
                 return;
             }
@@ -153,150 +159,22 @@ namespace XYECOM.URL
 
             string curDomain = context.Request.Url.Authority;
 
-            bool isTopDomain = true;
-            if (curDomain.StartsWith("192.168") || curDomain.StartsWith("127.0") || curDomain.StartsWith("localhost"))
-            {
-                isTopDomain = false;
-            }
-
-            ///用户绑定顶级域名处理
-            if (isTopDomain && IsUserTopDomain(curDomain))
-            {
-                Model.UserDomainInfo udInfo = userDomainBLL.GetItem(curDomain);
-
-                if (udInfo == null || udInfo.State != XYECOM.Model.AuditingState.Passed)
-                {
-                    context.Response.Status = "301 Moved Permanently";
-                    context.Response.AddHeader("Location", webInfo.WebDomain);
-                    context.Response.End();
-                    return;
-                }
-
-                string userTmpName = string.Empty;
-                XYECOM.Model.UserRegInfo userRegInfo = userRegBLL.GetItem(udInfo.UserId);
-                if (userRegInfo != null)
-                {
-                    userTmpName = userRegInfo.TemplateName;
-
-                    if (userTmpName.IndexOf("|") != -1)
-                    {
-                        userTmpName = userTmpName.Split('|')[0];
-                    }
-                }
-
-                if (string.IsNullOrEmpty(userTmpName))
-                {
-                    context.Response.Status = "301 Moved Permanently";
-                    context.Response.AddHeader("Location", webInfo.WebDomain);
-                    context.Response.End();
-                    return;
-                }
-
-
-                foreach (URLPatternInfo rewrite2 in Urls.Instance.TopShopUrlItems)
-                {
-                    string tmpInput = input == "/" ? "/index." + webInfo.WebSuffix : input;
-                    if (Regex.IsMatch(context.Request.Url.Host + tmpInput, rewrite2.Pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase))
-                    {
-                        string queryString = Regex.Replace(context.Request.Url.Host + tmpInput, rewrite2.Pattern, rewrite2.QueryString, RegexOptions.Compiled | RegexOptions.IgnoreCase);
-
-                        context.RewritePath(text + "aspx/" + rewrite2.Page.Insert(rewrite2.Page.LastIndexOf("/"), userTmpName), string.Empty, queryString);
-                        return;
-                    }
-                }
-            }
-
             if (input.StartsWith(text))
             {
                 //当前模板名称
                 string curTmpName = XYECOM.Configuration.Template.Instance.Path;
 
-                //是否启用二级域名
-                bool isDomain = XYECOM.Configuration.WebInfo.Instance.IsDomain;
-
-
-                //是否启用地区二级域名
-                bool isAreaDomain = XYECOM.Configuration.WebInfo.Instance.IsAreaDomain;
-
                 string urlPrefix = GetURLPrefix(context.Request.Url.Host);
 
                 if (input == text)
                 {
-                    context.RewritePath("/aspx/" + curTmpName + "/index." + webInfo.WebSuffix);
+                   
                     return;
-                }
-
-                //如果进入为二级域名
-                if (!urlPrefix.Equals(""))
-                {
-                    //如果已经启用地区二级域名
-                    if (isAreaDomain)
-                    {
-                        string customAreaFolder = "";
-
-                        Model.AreaSiteInfo areaSiteInfo = new Business.AreaSite().GetItemByFlagName(urlPrefix);
-
-                        if (areaSiteInfo != null)
-                        {
-                            if (areaSiteInfo.IsCostomTemplate) customAreaFolder = urlPrefix;
-
-                            foreach (URLPatternInfo rewrite2 in Urls.Instance.AreaUrlItems)
-                            {
-                                if (Regex.IsMatch(context.Request.Url.Host + input, rewrite2.Pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase))
-                                {
-                                    string queryString = Regex.Replace(context.Request.Url.Host + input, rewrite2.Pattern, rewrite2.QueryString, RegexOptions.Compiled | RegexOptions.IgnoreCase);
-
-                                    context.RewritePath(text + "aspx/" + curTmpName + rewrite2.Page.Insert(rewrite2.Page.LastIndexOf("/"), customAreaFolder), string.Empty, queryString);
-                                    return;
-                                }
-                            }
-                        }
-                    }
-
-
-
-                    //如果网店已启用二级域名
-                    if (isDomain)
-                    {
-                        string userTmpName = "";
-                        if (context.Request.Url.Host.Contains("localhost")
-                            || context.Request.Url.Host.Contains("127.0.0.1"))
-                        {
-                            userTmpName = "default";
-                        }
-                        else
-                        {
-                            XYECOM.Model.UserRegInfo userRegInfo = userRegBLL.GetItem(urlPrefix);
-
-                            if (userRegInfo != null)
-                            {
-                                userTmpName = userRegInfo.TemplateName;
-
-                                if (userTmpName.IndexOf("|") != -1)
-                                    userTmpName = userTmpName.Split('|')[0];
-                            }
-                        }
-
-                        if (userTmpName != "")
-                        {
-                            foreach (URLPatternInfo rewrite2 in Urls.Instance.ShopUrlItems)
-                            {
-                                if (Regex.IsMatch(context.Request.Url.Host + input, rewrite2.Pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase))
-                                {
-                                    string queryString = Regex.Replace(context.Request.Url.Host + input, rewrite2.Pattern, rewrite2.QueryString, RegexOptions.Compiled | RegexOptions.IgnoreCase);
-
-                                    context.RewritePath(text + "aspx/" + rewrite2.Page.Insert(rewrite2.Page.LastIndexOf("/"), userTmpName), string.Empty, queryString);
-                                    return;
-                                }
-                            }
-                        }
-                    }
-
                 }
 
                 if (input.Substring(text.Length).IndexOf("/") == -1)
                 {
-                    context.RewritePath(text + "aspx/" + curTmpName + input.Substring(context.Request.Path.LastIndexOf("/")));
+                   
                     return;
                 }
 
@@ -306,11 +184,10 @@ namespace XYECOM.URL
                     return;
                 }
 
-
-                //产品栏目，首先查看是否为自定义文件夹栏目
-                if (input.StartsWith(text + "cate/"))
+                //地区频道
+                if (input.StartsWith(text + "area/"))
                 {
-                    foreach (URLPatternInfo rewrite2 in Urls.Instance.ProCateUrlItems)
+                    foreach (URLPatternInfo rewrite2 in Urls.Instance.AreaUrlItems)
                     {
                         if (Regex.IsMatch(context.Request.Url.Host + input, rewrite2.Pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase))
                         {
@@ -320,23 +197,24 @@ namespace XYECOM.URL
 
                             int length = endIndex - startIndex;
 
-                            string proFlagName = input.Substring(startIndex, length);
+                            string areaFlagName = input.Substring(startIndex, length);
 
-                            Model.ProductTypeInfo proTypeInfo = new Business.ProductType().GetItemByFlagName(proFlagName);
+                            Model.AreaSiteInfo areaSiteInfo = new Business.AreaSite().GetItemByFlagName(areaFlagName);
 
-                            string customFolder = "";
-                            if (proTypeInfo != null && proTypeInfo.IsCustomTemplate)
+                            string customAreaFolder = "";
+                            if (areaSiteInfo != null && areaSiteInfo.IsCostomTemplate)
                             {
-                                customFolder = proFlagName;
+                                customAreaFolder = areaFlagName;
                             }
 
                             string queryString = Regex.Replace(input, rewrite2.Pattern, rewrite2.QueryString, RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
-                            context.RewritePath(text + "aspx/" + curTmpName + rewrite2.Page.Insert(rewrite2.Page.LastIndexOf("/"), customFolder), string.Empty, queryString);
+                            context.RewritePath(text + "aspx/" + curTmpName + rewrite2.Page.Insert(rewrite2.Page.LastIndexOf("/"), customAreaFolder), string.Empty, queryString);
                             return;
                         }
                     }
                 }
+
 
                 if (input.StartsWith(text + "shop/"))
                 {
@@ -372,62 +250,11 @@ namespace XYECOM.URL
                     return;
                 }
 
-                //全部匹配
-                foreach (URLPatternInfo rewrite2 in Urls.Instance.GeneralUrlItems)
-                {
-                    if (Regex.IsMatch(input, rewrite2.Pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase))
-                    {
-                        string queryString = Regex.Replace(input, rewrite2.Pattern, rewrite2.QueryString, RegexOptions.Compiled | RegexOptions.IgnoreCase);
-                        context.RewritePath(text + "aspx/" + curTmpName + rewrite2.Page, string.Empty, queryString);
-                        return;
-                    }
-                }
-
-                string folderName = "";
-
-                if (input.StartsWith(text + "area/")) folderName = "area";
-
-                if (input.StartsWith(text + "cate/")) folderName = "cate";
-
-                if (input.StartsWith(text + "search/")) folderName = "search";
-
-                if (input.StartsWith(text + "creditor/")) folderName = "creditor";
-
-                if (input.StartsWith(text + "server/")) folderName = "server";
-
-
-                if (!string.IsNullOrEmpty(folderName))
-                {
-                    string vPath = text + "aspx/" + curTmpName + "/" + folderName + "/" + input.Substring(context.Request.Path.LastIndexOf("/"));
-                    if (folderName == "creditor" || folderName == "server")
-                    {
-                        string filePath = context.Server.MapPath(vPath);
-                        if (!System.IO.File.Exists(filePath))
-                        {
-                            return;
-                        }
-                    }
-                    context.RewritePath(vPath);
-                    return;
-                }
-
-
-
-                string text1 = input.Substring(text.Length, input.LastIndexOf('/') - 1);
-
-                foreach (XYECOM.Configuration.ModuleInfo item in XYECOM.Configuration.Module.Instance.ModuleItems)
-                {
-                    if (Regex.IsMatch(text1, item.EName, RegexOptions.Compiled | RegexOptions.IgnoreCase))
-                    {
-                        context.RewritePath(text + "aspx/" + curTmpName + "/" + item.EName + "/" + input.Substring(context.Request.Path.LastIndexOf("/")));
-                        return;
-                    }
-                }
-
-                context.RewritePath(text + "aspx/" + curTmpName + input.Substring(context.Request.Path.LastIndexOf("/")));
+                //context.RewritePath(text + "aspx/" + curTmpName + input.Substring(context.Request.Path.LastIndexOf("/")));
 
                 //add by botao 2010-04-21
-                context.Response.Flush();
+                //context.Response.Flush();
+                return;
             }
         }
 

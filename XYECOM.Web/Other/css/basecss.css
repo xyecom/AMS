@@ -1,0 +1,29 @@
+﻿/* CSS Document */
+body,td,th {
+	font-size: 14px;
+	color: #555;
+}
+body {
+	margin:0px;
+}
+a:link {
+	color: #555;
+}
+a:visited {
+	color: #555;
+}
+a:hover {
+	color: #990000;
+}
+a:active {
+	color: #555;
+}
+.top{width:800px; height:115px; background:url(../images/toplader.gif); border-bottom:3px solid #990000}
+.container { border:1px #ccc solid; width:800px; margin:0 auto;}
+ .main {line-height:28px; padding:5px 8px;}
+ .title {border-bottom:2px #990000 solid; margin-bottom:10px;}
+.bottom {margin-top:10px; border-top:4px #990000 solid;}
+.about { font-size:12px; margin:5px auto;}
+.about ul {list-style:none; display:inline; margin:0px auto; padding:0px;}
+.about ul li { float:left; margin:0px 15px; padding:5px; }
+.copyright {text-align:center; font-size:12px; margin-top:10px; line-height:22px; }

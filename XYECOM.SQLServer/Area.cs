@@ -39,7 +39,7 @@ namespace XYECOM.SQLServer
                 {
                     info.FullName = GetFullName(info.FullID);
                 }
-                info.FullNameAll = "" == info.FullName ? info.Name : info.FullName + "," + info.Name;
+                info.FullNameAll = info.FullName + info.Name;
             }
             return info;
         }

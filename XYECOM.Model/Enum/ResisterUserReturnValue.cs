@@ -36,6 +36,7 @@ namespace XYECOM.Model
         /// <summary>
         /// ½ûÖ¹×¢²á
         /// </summary>
-        ForbidRegister
+        ForbidRegister,
+        PartNameExists
     }
 }

@@ -261,5 +261,33 @@ namespace XYECOM.Page
             }
         }
         #endregion
+
+
+       
+
+        #region 属性 用户中心登陆用户的全局对象
+
+        /// <summary>
+        /// 是否登陆 登陆为true未登陆为false
+        /// </summary>
+        protected bool islogin
+        {
+            get
+            {
+                return XYECOM.Business.CheckUser.CheckUserLogin();
+            }
+        }
+
+        /// <summary>
+        /// 用户中心登陆用户的全局对象
+        /// </summary>
+        protected internal virtual XYECOM.Model.GeneralUserInfo userinfo
+        {
+            get
+            {
+                return Business.CheckUser.UserInfo;
+            }
+        }
+        #endregion
     }
 }

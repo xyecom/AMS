@@ -274,14 +274,7 @@ namespace XYECOM.Page
                         contentLabelManager.OuterParameter.TradeId = pageinfo.OuterTradeId;
                         contentLabelManager.OuterParameter.ProTypeId = pageinfo.OuterProTypeId;
                         contentLabelManager.OuterParameter.OrderStr = pageinfo.OuterOrderStr;
-
-                        //关键字排名相关参数
-                        if (contentLabelManager is XYECOM.Label.RankingLabelManager)
-                        {
-                            ((XYECOM.Label.RankingLabelManager)contentLabelManager).RankKeyId = pageinfo.RankKeyId;
-                            ((XYECOM.Label.RankingLabelManager)contentLabelManager).ModuleName = pageinfo.ModuleName;
-                        }
-
+                        
                         if (contentLabelManager.LabelContentType == XYECOM.Label.ContentLabelType.Pagination)
                         {
                             //分页标签需要的参数
@@ -342,15 +335,7 @@ namespace XYECOM.Page
 
                         XYECOM.Label.LabelCache.InsertCache(strlabelName, resultHTML, XYECOM.Label.LabelCacheType.PollLabel);
                     }
-
-                    if (labelType == XYECOM.Label.LabelType.PartLabel)
-                    {
-                        manager = XYECOM.Label.PartLabelManager.GetInstance(strlabelName);
-                        resultHTML = manager.CreateHTML();
-
-                        XYECOM.Label.LabelCache.InsertCache(strlabelName, resultHTML, XYECOM.Label.LabelCacheType.PartLabel);
-                    }
-
+                    
                     return resultHTML;
                 }
             }
@@ -1045,21 +1030,7 @@ namespace XYECOM.Page
 
             return temp.Split('|');
         }
-
-        /// <summary>
-        /// 返回指定用户的通用信息
-        /// </summary>
-        /// <param name="objUserId">用户编号</param>
-        /// <returns>指定用户通用信息</returns>
-        protected Model.GeneralUserInfo GetUserInfo(object objUserId)
-        {
-            long userId = Core.MyConvert.GetInt64(objUserId.ToString());
-
-            if (userId <= 0) return null;
-
-            return Business.CheckUser.GetUserInfo(userId);
-        }
-
+        
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -1068,6 +1039,12 @@ namespace XYECOM.Page
                 BindData();
             }
         }
+
+        protected virtual void BindData()
+        {
+
+        }
+
         protected string FormatDate(object scDate)
         {
             string sc = string.Empty;
@@ -1088,35 +1065,6 @@ namespace XYECOM.Page
             return string.Empty;
 
         }
-        protected virtual void BindData()
-        {
-
-        }
-
-        #region 属性 用户中心登陆用户的全局对象
-
-        /// <summary>
-        /// 是否登陆 登陆为true未登陆为false
-        /// </summary>
-        protected bool islogin
-        {
-            get
-            {
-                return XYECOM.Business.CheckUser.CheckUserLogin();
-            }
-        }
-
-        /// <summary>
-        /// 用户中心登陆用户的全局对象
-        /// </summary>
-        protected internal virtual XYECOM.Model.GeneralUserInfo userinfo
-        {
-            get
-            {
-                return Business.CheckUser.UserInfo;
-            }
-        }
-        #endregion
         /// <summary>
         /// 返回长度为三的一个列表，1为标题，2为连接，3为图片路径
         /// </summary>
@@ -1180,32 +1128,6 @@ namespace XYECOM.Page
 
             return string.Empty;
         }
-
-        /// <summary>
-        /// 根据用户编号获取用的联系地址信息（如果该用户为个人用户）
-        /// </summary>
-        /// <param name="userId">用户编号</param>
-        /// <returns></returns>
-        protected string GetUserConnectURL(object uid)
-        {
-            int userId = XYECOM.Core.MyConvert.GetInt32(uid.ToString());
-            string url = string.Empty;
-            XYECOM.Model.GeneralUserInfo generaUserInfo = Business.CheckUser.GetUserInfo(userId);
-
-            if (generaUserInfo != null)
-            {
-                if (generaUserInfo.usertype)
-                {
-                    url = string.Format("<a target='_blank' href='{0}shop/{1}/introduction.{2}'>{3}</a>", webInfo.WebDomain, generaUserInfo.loginname, webInfo.WebSuffix, generaUserInfo.name);
-                }
-                else
-                {
-                    url = string.Format("<a href=''>{0}:{1}</a>", generaUserInfo.realname, generaUserInfo.telephone);
-                }
-            }
-            return url;
-        }
-
 
         /// <summary>
         /// 获取订单状态值

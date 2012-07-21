@@ -47,7 +47,7 @@ namespace XYECOM.Business
                                 XYECOM.Core.Utils.WriteCookie("UserId", _userInfo.UserId.ToString(), cookieDomain);
                                 //用户所在组
                                 XYECOM.Core.Utils.WriteCookie("UserGradeId", _userInfo.GradeId.ToString(), cookieDomain);
-                                
+
                                 string strUserType = "user";
 
                                 XYECOM.Core.Utils.WriteCookie("UserType", strUserType, cookieDomain);
@@ -99,13 +99,45 @@ namespace XYECOM.Business
             if (userRegInfo == null) return null;
             XYECOM.Model.GeneralUserInfo _templateuserinfo = new XYECOM.Model.GeneralUserInfo();
 
+
+            _templateuserinfo.CompanyId = userRegInfo.CompanyId;
+
+            _templateuserinfo.IsPrimary = userRegInfo.IsPrimary;
+            //部门名称(律师姓名)	LayerName	varchar(50)	50		FALSE	FALSE	FALSE
+            _templateuserinfo.LayerName = userRegInfo.LayerName;
+            //部门描述	Description	text			FALSE	FALSE	FALSE
+            _templateuserinfo.Description = userRegInfo.Description;
+            //电话	Telphone	varchar(50)	50		FALSE	FALSE	FALSE
+            _templateuserinfo.Telphone = userRegInfo.Telphone;
+            //其他联系方式	OtherContact	varchar(200)	200		FALSE	FALSE	FALSE
+            _templateuserinfo.OtherContact = userRegInfo.OtherContact;
+            //性别0 男 1女	Sex	bit			FALSE	FALSE	FALSE
+            _templateuserinfo.Sex = userRegInfo.Sex;
+            //身份证	IdNumber	varchar(50)	50		FALSE	FALSE	FALSE
+            _templateuserinfo.IdNumber = userRegInfo.IdNumber;
+            //律师证	LayerId	varchar(50)	50		FALSE	FALSE	FALSE
+            _templateuserinfo.LayerId = userRegInfo.LayerId;
+            //所属地区	AreaId	int			FALSE	FALSE	FALSE
+            _templateuserinfo.AreaId = userRegInfo.AreaId;
+            //是否是认证专家	IsExport	bit			FALSE	FALSE	FALSE
+            _templateuserinfo.IsExport = userRegInfo.IsPrimary;
+            //企业类型（企业&个人&律师&非律师））	UserType	int			FALSE	FALSE	FALSE
+            _templateuserinfo.UserType = (Model.UserType)userRegInfo.UserType;
+            //删除状态	DelState	int			FALSE	FALSE	FALSE
+            _templateuserinfo.DelState = userRegInfo.DelState;
+            //唯一标示	IdentityNumber	varchar(50)	50		FALSE	FALSE	FALSE
+            _templateuserinfo.IdentityNumber = userRegInfo.IdentityNumber;
+
+            _templateuserinfo.PartManagerName = userRegInfo.PartManagerName;
+            _templateuserinfo.PartManagerTel = userRegInfo.PartManagerTel;
+
             _templateuserinfo.accountid = userRegInfo.AccountId;
             _templateuserinfo.creditintegral = userRegInfo.CreditIntegral;
             _templateuserinfo.creditleavl = new CreditLeavlManager().GetItemByPoint(userRegInfo.CreditIntegral);
 
             _templateuserinfo.userid = userRegInfo.UserId;
 
-            _templateuserinfo.loginname = userRegInfo.LoginName;
+            _templateuserinfo.LoginName = userRegInfo.LoginName;
 
             _templateuserinfo.regdate = userRegInfo.RegDate;
 
@@ -117,22 +149,31 @@ namespace XYECOM.Business
 
             _templateuserinfo.isaudited = userRegInfo.AuditingState == XYECOM.Model.AuditingState.Passed ? true : false;
 
-            _templateuserinfo.email = userRegInfo.Email;
-
-            _templateuserinfo.mark = userRegInfo.Mark;
+            _templateuserinfo.Email = userRegInfo.Email;
 
             if (userRegInfo.IsHasImage)
-                _templateuserinfo.imgurl = Business.Attachment.GetInfoDefaultImgHref(XYECOM.Model.AttachmentItem.User, _templateuserinfo.userid);
+                _templateuserinfo.LayerPicture = Business.Attachment.GetInfoDefaultImgHref(XYECOM.Model.AttachmentItem.User, _templateuserinfo.userid);
             else
-                _templateuserinfo.imgurl = SYS_NOIMAGE_PATH;
+                _templateuserinfo.LayerPicture = SYS_NOIMAGE_PATH;
 
-            XYECOM.Model.UserInfo _UserInfo = new XYECOM.Business.UserInfo().GetItem(userRegInfo.UserId);
+            XYECOM.Model.UserInfo _UserInfo = new XYECOM.Business.UserInfo().GetItem(userRegInfo.CompanyId);
 
             if (_UserInfo != null)
             {
-                _templateuserinfo.years = userRegInfo.Years;
-
-                if (_templateuserinfo.years.Equals("0")) _templateuserinfo.years = "1";
+                //手机绑定状态	IsBoundMobile	bit			FALSE	FALSE	FALSE
+                _templateuserinfo.IsBoundMobile = _UserInfo.IsBoundMobile;
+                //邮箱绑定状态	IsBoundEmail	bit			FALSE	FALSE	FALSE
+                _templateuserinfo.IsBoundEmail = _UserInfo.IsBoundEmail;
+                //评价积分	Point	int			FALSE	FALSE	FALSE
+                _templateuserinfo.Point = _UserInfo.Point;
+                //是否实名认证	IsReal	bit			FALSE	FALSE	FALSE
+                _templateuserinfo.IsReal = _UserInfo.IsReal;
+                //好评数	GoodTimes	int			FALSE	FALSE	FALSE
+                _templateuserinfo.GoodTimes = _UserInfo.GoodTimes;
+                //中评数	MidTimes	int			FALSE	FALSE	FALSE
+                _templateuserinfo.MidTimes = _UserInfo.MidTimes;
+                //差评数	BadTimes	int			FALSE	FALSE	FALSE
+                _templateuserinfo.BadTimes = _UserInfo.BadTimes;
 
                 _templateuserinfo.template = userRegInfo.TemplateName;
 
@@ -147,31 +188,11 @@ namespace XYECOM.Business
 
                 _templateuserinfo.commonerr = userRegInfo.CommonErr;
 
-                _templateuserinfo.linkman = _UserInfo.LinkMan.ToString();
+                _templateuserinfo.LinkMan = _UserInfo.LinkMan.ToString();
+                                                
+                _templateuserinfo.CompanyName = _UserInfo.Name.ToString();
 
-                _templateuserinfo.sexbool = _UserInfo.Sex;
-
-                _templateuserinfo.manageaddress = _UserInfo.BusinessAddress;
-
-                if (_UserInfo.Sex.ToString() == "True")
-                    _templateuserinfo.sex = "先生";
-                else
-                    _templateuserinfo.sex = "女士";
-
-                _templateuserinfo.name = _UserInfo.Name.ToString();
-
-                //之后删除
-                _templateuserinfo.unitname = _UserInfo.Name.ToString();
-
-                _templateuserinfo.mobile = _UserInfo.Mobile;
-
-                _templateuserinfo.telephone = _UserInfo.Telephone;
-
-                _templateuserinfo.fax = _UserInfo.Fax;
-
-                _templateuserinfo.gradeid = _UserInfo.RegInfo.GradeId;
-
-                _templateuserinfo.synopsis = _UserInfo.Synopsis;
+                _templateuserinfo.Fax = _UserInfo.Fax;
 
                 _templateuserinfo.homepage = _UserInfo.HomePage;
 
@@ -181,18 +202,8 @@ namespace XYECOM.Business
 
                 _templateuserinfo.tradeids = _UserInfo.TradeIds;
 
-                _templateuserinfo.unittype = "";
-                if (_UserInfo._UserTypeInfo != null)
-                    _templateuserinfo.unittype = _UserInfo._UserTypeInfo.UT_Type;
 
                 _templateuserinfo.employeetotal = _UserInfo.EmployeeTotal;
-
-                if (_UserInfo.RegAreaId > 0)
-                {
-                    Model.AreaInfo areainfo = new Business.Area().GetItem(_UserInfo.RegAreaId);
-                    if (null != areainfo)
-                        _templateuserinfo.regarea = areainfo.FullNameAll;
-                }
 
                 _templateuserinfo.regareaid = _UserInfo.RegAreaId;
 
@@ -200,15 +211,10 @@ namespace XYECOM.Business
                 {
                     Model.AreaInfo areainfo = new Business.Area().GetItem(_UserInfo.AreaId);
                     if (null != areainfo)
-                        _templateuserinfo.areaname = areainfo.FullNameAll;
+                        _templateuserinfo.AreaName = areainfo.FullNameAll;
                 }
 
-
-                //_templateuserinfo.address = _UserInfo.U_Address;
-
-                _templateuserinfo.address = _UserInfo.Address;
-
-                _templateuserinfo.areaid = _UserInfo.AreaId;
+                _templateuserinfo.Address = _UserInfo.Address;
 
                 _templateuserinfo.mode = _UserInfo.Mode;
 
@@ -229,42 +235,6 @@ namespace XYECOM.Business
                 _templateuserinfo.supplyorbuy = _UserInfo.SupplyOrBuy;
 
                 _templateuserinfo.im = _UserInfo.IM;
-
-                if (_templateuserinfo.isshop)
-                {
-                    //如果允许绑定顶级域名
-                    Model.UserDomainInfo domainInfo = new Business.UserDomain().GetItem(_templateuserinfo.userid);
-                    if (_templateuserinfo.isbindingtopdomain && domainInfo != null && domainInfo.State == XYECOM.Model.AuditingState.Passed)
-                    {
-                        _templateuserinfo.shopindex = "http://" + domainInfo.Domain;
-                        _templateuserinfo.domain = "http://" + domainInfo.Domain + "/";
-                        _templateuserinfo.contactus = _templateuserinfo.shopindex + "/contact." + webInfo.WebSuffix;
-                    }
-                    else if (webInfo.IsDomain && _templateuserinfo.issubdomain)
-                    {
-                        _templateuserinfo.shopindex = webInfo.GetSubDomain(_templateuserinfo.loginname);
-                        _templateuserinfo.contactus = webInfo.GetSubDomain(_templateuserinfo.loginname) + "contact." + webInfo.WebSuffix;
-                        _templateuserinfo.domain = webInfo.GetSubDomain(_templateuserinfo.loginname);
-                        //http://yijia.botao.com/
-                    }
-                    else
-                    {
-                        _templateuserinfo.shopindex = webInfo.WebDomain + "shop/" + _templateuserinfo.loginname + "/index." + webInfo.WebSuffix;
-                        _templateuserinfo.contactus = webInfo.WebDomain + "shop/" + _templateuserinfo.loginname + "/contact." + webInfo.WebSuffix;
-                        _templateuserinfo.domain = webInfo.WebDomain + "shop/" + _templateuserinfo.loginname + "/";
-                        //http://www.botao.com/shop/yijia/
-                    }
-                }
-                else
-                {
-                    if (webInfo.IsBogusStatic)
-                        _templateuserinfo.shopindex = webInfo.WebDomain + "company/info-" + _templateuserinfo.userid + "." + webInfo.WebSuffix;
-                    else
-                        _templateuserinfo.shopindex = webInfo.WebDomain + "company/info." + webInfo.WebSuffix + "?ui=" + _templateuserinfo.userid;
-
-                    _templateuserinfo.contactus = _templateuserinfo.shopindex;
-                    _templateuserinfo.domain = webInfo.WebDomain;
-                }
             }
 
             return _templateuserinfo;

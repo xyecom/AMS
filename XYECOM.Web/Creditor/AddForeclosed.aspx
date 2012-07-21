@@ -2,6 +2,80 @@
     CodeBehind="AddForeclosed.aspx.cs" Inherits="XYECOM.Web.Creditor.AddForeclosed" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script language="javascript" type="text/javascript" src="/Other/js/ForeUploadControl.js"></script>
+    <style type="text/css">
+        .upload_bg
+        {
+            position: absolute;
+            background-color: #000;
+            margin: auto;
+            left: 0;
+            top: 0;
+            display: none;
+            z-index: 30;
+            filter: Alpha(opacity=30); /* IE */
+            -moz-opacity: 0.3; /* Moz + FF */
+            opacity: 0.3; /* CSS3*/
+        }
+        
+        .upload_frm
+        {
+            position: absolute;
+            display: none;
+            z-index: 40;
+        }
+        
+        .upload_fileitem
+        {
+            padding: 5px;
+            margin-left: 5px;
+            float: left;
+            text-align: center;
+            border: solid 1px #eee;
+        }
+        .upload_fileitem ul
+        {
+        }
+        .upload_fileitem li
+        {
+        }
+        .Upload_img
+        {
+        }
+        a.Upload_btn:link
+        {
+        }
+        
+        
+        .upload_fileitem_byfile
+        {
+            width: 80%;
+            float: left;
+            text-align: center;
+        }
+        .Upload_File
+        {
+            width: 100%;
+        }
+        .Upload_File li
+        {
+            height: 22px;
+            line-height: 22px;
+            text-align: left;
+            margin-top: 5px;
+            border: solid 1px #eee;
+            padding: 5px;
+            background-color: #f8f8f8;
+        }
+        .Upload_File li em
+        {
+            float: left;
+        }
+        .Upload_File li span
+        {
+            float: right;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->
@@ -18,16 +92,20 @@
             <table class="dzbasetb">
                 <tr>
                     <td class="info1">
-                        名称：
+                        <span style="color: Red">*</span> 名称：
                     </td>
                     <td>
-                        <asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtTitle" MaxLength="50"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtTitle"
+                            ErrorMessage="名称不能为空"></asp:RequiredFieldValidator>
                     </td>
                     <td class="info1">
-                        拍卖底价：
+                        <span style="color: Red">*</span>拍卖底价：
                     </td>
                     <td>
                         <asp:TextBox runat="server" ID="txtLinePrice"></asp:TextBox><span>元</span>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtLinePrice"
+                            ErrorMessage="拍卖底价不能为空"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -35,12 +113,17 @@
                         地区：
                     </td>
                     <td>
-                        <div id="divarea">
-                            <input type="hidden" id="city" name="city" runat="server" />
+                        <div id="divArea">
                         </div>
+                        <input type="hidden" id="areaid" name="areaid" runat="server" />
+                        <script type="text/javascript">
+                            var cla = new ClassType("cla", 'area', 'divArea', '<%=areaid.ClientID %>', 1);
+                            cla.Mode = "select";
+                            cla.Init();
+                        </script>
                     </td>
                     <td class="info1">
-                        物品类型：
+                        <span style="color: Red">*</span>物品类型：
                     </td>
                     <td>
                         <asp:DropDownList runat="server" ID="droTypeName" Width="135px">
@@ -55,15 +138,18 @@
                         详细地址：
                     </td>
                     <td colspan="3">
-                        <asp:TextBox runat="server" ID="txtAddress"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtAddress" Width="100%" MaxLength="25"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="info1">
-                        结束竞拍时间：
+                        <span style="color: Red">*</span>结束竞拍时间：
                     </td>
                     <td colspan="3">
-                        <input id="endDate" runat="server" size="10" type="text" readonly="readonly" onclick="getDateString(this);" />
+                        <input id="endDate" style="width: 120px" runat="server" size="10" type="text" readonly="readonly"
+                            onclick="getDateString(this);" />
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="endDate"
+                            ErrorMessage="结束竞拍时间不能为空"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -71,9 +157,8 @@
                         物品详细描述：
                     </td>
                     <td colspan="3">
-                        <FCKeditorV2:FCKeditor ID="fckDescription" runat="server" BasePath="/Common/fckeditor/"
-                            ToolbarSet="News" Height="200px">
-                        </FCKeditorV2:FCKeditor>
+                        <asp:TextBox runat="server" ID="txtDescription" Width="100%" TextMode="MultiLine"
+                            Rows="15"></asp:TextBox>
                     </td>
                 </tr>
             </table>
@@ -83,17 +168,14 @@
                 <div id="picshow">
                 </div>
                 <p>
-                    选择图片：
+                    图片：
                 </p>
-                <p>
-                    <input type="file" size="20" onchange="upimg(this);" />
-                </p>
-                <p>
-                    <input type="file" size="20" onchange="upimg(this);" />
-                </p>
-                <p>
-                    <input type="file" size="20" onchange="upimg(this);" />
-                </p>
+                <div id="baseinfo">
+                    <p>
+                        <XYECOM:UploadImage ID="udForeclosedInfo" runat="server" Iswatermark="false" MaxAmount="3"
+                            TableName="ForeclosedInfo" IsCreateThumbnailImg="false" />
+                    </p>
+                </div>
             </div>
         </div>
         <!--rightzqmain end-->
@@ -101,12 +183,8 @@
             <%--  <input type="button" value="确 定" style="background: url(../images/yes.gif); width: 80px;
                 height: 25px; border: none; cursor: pointer; color: #FFF" />--%>
             <asp:Button runat="server" ID="btnOK" Width="80px" Height="25px" Text="确定" OnClick="btnOK_Click" />
+            <input type="button" value="返回" onclick="javascript:history.back();" />
         </div>
     </div>
-    <script type="text/javascript">
-        var claarea = new ClassType("claarea", 'area', 'divarea', 'city');
-        claarea.Mode = "select";
-        claarea.Init();
-    </script>
     <!--right end-->
 </asp:Content>

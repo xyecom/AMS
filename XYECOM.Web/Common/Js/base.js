@@ -916,9 +916,14 @@ function ClassType(objName, moduleFlagTextId, showDivID, inputTxtID, level, ac, 
     }
 }
 
-function ClassTypes(objName, moduleFlagTextId, showDivID, inputTxtID, maxNum) {
-    //初始化全局变量
-    this.ActionID = "XY001";
+function ClassTypes(objName, moduleFlagTextId, showDivID, inputTxtID, maxNum,ac) {
+    //初始化全局变量    
+    if (ac == undefined || ac == "") {
+        this.ActionID = "XY001";
+    } else {
+        this.ActionID = ac;
+    }
+
     this.MaxNum = undefined == maxNum ? 999 : arguments[5];
     this.IndexLevel = 0;
     this.InputTxtID = inputTxtID;

@@ -1,6 +1,12 @@
 ﻿body 
 {margin:0; overflow:auto;background:url(../images/nry_03.jpg) repeat-x;font-size:13px;font-family:Tahoma, Arial, Helvetica, Sans-serif;}
 table{border-collapse:collapse;/*细线表格*/}
+#top{ height:34px; width:1000px;margin:0 auto;}
+#top1{font-size:12px; line-height:34px;float:left; width:500px;}
+#top2{width:400px; float:right; text-align:right; margin-right:30px;font-size:12px; line-height:34px;}
+#top a{ color:#333; text-decoration:none}
+#top a:hover{color:#f00; text-decoration:underline}
+
 /*---------------------首页top--------------------------*/
 #header{width:1000px; height:108px;background:#fff; margin:0 auto }
 #header .logo{width:270px; float:left;height:67px; margin:0 auto;background:url('../images/logo.gif') no-repeat left bottom;}
@@ -78,6 +84,8 @@ h4{ font-size:13px;margin:0;height:20px;}
 #bottom a:hover{ text-decoration:underline; color:#f00}
 #bottom ul{list-style:none; width:192px;float:left; margin:0; padding:0}
 #bottom ul li{ font-size:14px; line-height:23px; text-align:left; padding-left:60px;}
+#bottomtel{height: 90px;margin:20px 10px; width: 191px; float:left}
+
 /*---------------------footer----------------------------------*/
 #footer{ font-size:13px;width:1002px;height:150px;text-align:center; margin:2px auto}
 #footer a{ font-size:13px; text-decoration:none; color:#333; font-weight:bold}
@@ -85,4 +93,4 @@ h4{ font-size:13px;margin:0;height:20px;}
 #footer h2{ float:left; font-size:14px;color:#cc0000; font-weight:bold;}
 #footer table{ width:1002px; height:50px; border:1px solid #ddd}
 #footer table td{ width:160px;}
-#footer p{ margin:10px;color:#666; width:900px}
+#footer p{ margin:10px;color:#666; width:980px}

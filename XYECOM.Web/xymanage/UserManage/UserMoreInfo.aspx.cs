@@ -114,7 +114,7 @@ public partial class xymanage_UserManage_UserMoreInfo : XYECOM.Web.BasePage.Mana
 
 
             this.lbyear.Text = userInfo.RegYear.ToString(); //注册时间
-            this.lbarea.Text = userInfo.BusinessAddress; //主要经营地点
+            this.lbarea.Text = userInfo.Address; //主要经营地点
             this.lbaddress.Value = userInfo.RegAreaId.ToString(); //企业注册地
             //this.tdptype.Text = userInfo.U_PType; //主营产品/服务
             this.lbnumber.Text = userInfo.EmployeeTotal; //企业人数
@@ -190,7 +190,7 @@ public partial class xymanage_UserManage_UserMoreInfo : XYECOM.Web.BasePage.Mana
         }
 
         info.RegYear = XYECOM.Core.MyConvert.GetInt32(lbyear.Text.Trim()); //注册时间
-        info.BusinessAddress = lbarea.Text.Trim(); //主要经营地点
+        info.Address = lbarea.Text.Trim(); //主要经营地点
         info.RegAreaId = XYECOM.Core.MyConvert.GetInt32(lbaddress.Value.Trim()); //企业注册地
         //info.U_PType = tdptype.Text.Trim(); //主营产品/服务
         info.MainProduct = tdsupply.Text.Trim();

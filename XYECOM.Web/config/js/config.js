@@ -6,7 +6,7 @@ function WebConfig() {
       Suffix:"aspx",
       WebName:"°²×°²âÊÔ1",
       WebURL:"http://127.0.0.1:8100/",
-      TemplatePath:""
+      TemplatePath:"default"
   };
 }
 var config = new WebConfig();

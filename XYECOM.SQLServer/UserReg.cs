@@ -190,7 +190,7 @@ namespace XYECOM.SQLServer
                 info.Question = reader["U_Question"].ToString();
                 info.RegDate = Core.MyConvert.GetDateTime(reader["U_RegDate"].ToString());
 
-                info.GradeId = Core.MyConvert.GetInt32(reader["UG_ID"].ToString());                
+                info.GradeId = Core.MyConvert.GetInt32(reader["UG_ID"].ToString());
 
 
                 info.Cred = Core.MyConvert.GetInt32(reader["U_Cred"].ToString());
@@ -243,16 +243,26 @@ namespace XYECOM.SQLServer
                 info.LayerId = reader["LayerId"].ToString();
 
                 info.Description = reader["Description"].ToString();
-                info.DelState = Core.MyConvert.GetInt32(reader["DelState"].ToString()); 
+                info.DelState = Core.MyConvert.GetInt32(reader["DelState"].ToString());
                 info.Telphone = reader["Telphone"].ToString();
                 info.OtherContact = reader["OtherContact"].ToString();
-                info.Sex = Core.MyConvert.GetBoolean(reader["Sex"].ToString());
+                string strSex = reader["Sex"].ToString();
+                if (!string.IsNullOrEmpty(strSex)) 
+                {
+                    info.Sex = bool.Parse(strSex);
+                }
+                
                 info.IdNumber = reader["IdNumber"].ToString();
 
                 info.AreaId = Core.MyConvert.GetInt32(reader["AreaId"].ToString());
                 info.IsExport = Core.MyConvert.GetBoolean(reader["IsExport"].ToString()); ;
                 info.UserType = Core.MyConvert.GetInt32(reader["UserType"].ToString());
                 info.IdentityNumber = reader["IdentityNumber"].ToString();
+
+                info.CompanyId = Core.MyConvert.GetInt32(reader["CompanyId"].ToString());
+
+                info.PartManagerTel = reader["PartManagerTel"].ToString();
+                info.PartManagerName = reader["PartManagerName"].ToString();
             }
 
             return info;
@@ -291,6 +301,13 @@ namespace XYECOM.SQLServer
             };
 
             return (int)XYECOM.Core.Data.SqlHelper.ExecuteScalar(CommandType.StoredProcedure, "XYP_IsExistUserName", Param);
+        }
+
+
+        public int IsExistThePartName(string partName, long companyId)
+        {
+            string sql = "select  count(u_name) from u_user where UserType in (" + (int)Model.UserType.CreditorEnterprise + "," + (int)Model.UserType.CreditorIndividual + ") and CompanyId=" + companyId + " and LayerName = '" + partName + "'";
+            return (int)XYECOM.Core.Data.SqlHelper.ExecuteScalar(sql);
         }
         #endregion
 
@@ -391,7 +408,7 @@ namespace XYECOM.SQLServer
                     eu.Password = dr["U_PassWord"].ToString();
                     eu.Question = dr["U_Question"].ToString();
                     eu.RegDate = Core.MyConvert.GetDateTime(dr["U_RegDate"].ToString());
-                    
+
                     eu.Cred = Core.MyConvert.GetInt32(dr["U_Cred"].ToString());
                     eu.MessageNum = Core.MyConvert.GetInt32(dr["U_MessageNum"].ToString());
                     eu.NoMessgeNum = Core.MyConvert.GetInt32(dr["U_NoMessgeNum"].ToString());
@@ -667,6 +684,67 @@ namespace XYECOM.SQLServer
         {
             string sql = "update u_User set U_Email='" + info.Email + "',U_Question='" + info.Question + "',U_Answer='" + info.Answer + "',U_RegDate='" + info.RegDate + "' where U_ID=" + info.UserId;
 
+            return SqlHelper.ExecuteNonQuery(sql);
+        }
+
+        public int UpdatePartInfo(XYECOM.Model.UserRegInfo info)
+        {
+            string sqlFmt = @"update u_User set LayerName='{6}', Description='{0}', U_Email='{1}', OtherContact='{2}', PartManagerName='{3}', PartManagerTel='{4}',Telphone='{7}' where u_id={5}";
+            string sql = string.Format(sqlFmt, info.Description, info.Email, info.OtherContact, info.PartManagerName, info.PartManagerTel, info.UserId, info.LayerName, info.Telphone);
+
+            if (info.IsPrimary)
+            {
+                string.Format("update u_userinfo set Description='{0}',Email='{1}' where u_id={2}", info.Description, info.Email, info.CompanyId);
+            }
+            return SqlHelper.ExecuteNonQuery(sql);
+        }
+
+
+        public int AddPart(Model.UserRegInfo regInfo)
+        {
+            long uid = 0;
+
+            regInfo.Answer = string.Empty;
+            regInfo.Question = string.Empty;
+
+            string sqlfmt = @"insert u_User(U_Name,U_PassWord,U_Email,U_Question,U_Answer,U_RegDate,U_TempName,UserAuditingState,IsPrimary,LayerName,
+                              Description,Telphone,OtherContact,AreaId,UserType,
+                                DelState,CompanyId,PartManagerName,PartManagerTel)
+                              values('{0}','{1}','{2}','{3}','{4}',getdate(),'default',1,0,'{5}',
+                              '{6}','{7}','{8}',{9},{10},
+                               0,{11},'{12}','{13}')";
+
+            string sql = string.Format(sqlfmt, regInfo.LoginName, regInfo.Password, regInfo.Email, regInfo.Question, regInfo.Answer, regInfo.LayerName,
+                regInfo.Description, regInfo.Telphone, regInfo.OtherContact, regInfo.AreaId, regInfo.UserType, regInfo.CompanyId, regInfo.PartManagerName, regInfo.PartManagerTel);
+
+            return SqlHelper.ExecuteNonQuery(sql);
+        }
+
+        public DataTable GetPartList(long companyId)
+        {
+            string sql = "select LayerName,PartManagerName,PartManagerTel,UserAuditingState,CompanyId,U_ID,Telphone,U_RegDate From u_user where CompanyId=" + companyId + " and IsPrimary=0";
+
+            return SqlHelper.ExecuteTable(sql);
+        }
+
+        public int UpdatePartState(string userId, string stateId)
+        {
+            string sqlfmt = @"update u_user set UserAuditingState={0} where u_id={1}";
+            string sql = string.Empty;
+            if (stateId == "0")
+            {
+                sql = string.Format(sqlfmt, 1, userId);
+            }
+            else
+            {
+                sql = string.Format(sqlfmt, 0, userId);
+            }
+            return SqlHelper.ExecuteNonQuery(sql);
+        }
+
+        public int SetQuestAndAnswer(long userId, string question, string answer)
+        {
+            string sql = "update u_user set U_Question='" + question + "',U_Answer='" + answer + "' where u_id=" + userId;
             return SqlHelper.ExecuteNonQuery(sql);
         }
     }

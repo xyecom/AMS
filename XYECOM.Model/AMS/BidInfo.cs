@@ -17,6 +17,16 @@ namespace XYECOM.Model.AMS
             get;
             set;
         }
+
+        /// <summary>
+        /// 抵债信息ID
+        /// </summary>
+        public int ForeclosedId
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// 出价
         /// </summary>

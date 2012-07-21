@@ -10,11 +10,6 @@ namespace XYECOM.Model
     /// </summary>
     public class GeneralUserInfo
     {
-        /// <summary>
-        /// 用户类型 true 企业会员 false 个人会员
-        /// </summary>
-        public bool usertype = true;
-
         #region 共用属性
         /// <summary>
         /// 留言总条数
@@ -39,24 +34,12 @@ namespace XYECOM.Model
         /// <summary>
         /// 用户Id
         /// </summary>
-        public int userid = 0;
+        public long userid = 0;
         /// <summary>
         /// 登录名
         /// </summary>
-        public string loginname = "";
-        /// <summary>
-        /// 性别
-        /// </summary>
-        public string sex = "";
-        /// <summary>
-        /// 性别bool型
-        /// </summary>
-        public bool sexbool = true;
-        /// <summary>
-        /// 邮件
-        /// </summary>
-        public string email = "";
-
+        public string LoginName = "";
+        
         /// <summary>
         /// 注册日期
         /// </summary>
@@ -68,10 +51,6 @@ namespace XYECOM.Model
         public bool isaudited = false;
 
         /// <summary>
-        /// [公司或个人]电话
-        /// </summary>
-        public string telephone = "";
-        /// <summary>
         /// [公司或个人]手机
         /// </summary>
         public string mobile = "";
@@ -82,14 +61,9 @@ namespace XYECOM.Model
         public string zipcode = "";
 
         /// <summary>
-        /// [公司或个人]所在地Id
-        /// </summary>
-        public int areaid = 0;
-
-        /// <summary>
         /// [公司或个人]所在地名称
         /// </summary>
-        public string areaname = "";
+        public string AreaName = "";
 
         #endregion
 
@@ -104,27 +78,9 @@ namespace XYECOM.Model
         public int linkmannum = 0;
 
         /// <summary>
-        /// 积分
+        /// 律师形象照片
         /// </summary>
-        public int mark = 0;
-        /// <summary>
-        /// 等级名称
-        /// </summary>
-        public string gradename = "";
-
-        /// <summary>
-        /// 等级Id
-        /// </summary>
-        public int gradeid = 0;
-
-        /// <summary>
-        /// 当前会员等级第几年
-        /// </summary>
-        public string years = "";
-        /// <summary>
-        /// 企业形象图片
-        /// </summary>
-        public string imgurl = "";
+        public string LayerPicture = "";
         /// <summary>
         /// 企业banner图片地址
         /// </summary>
@@ -150,25 +106,11 @@ namespace XYECOM.Model
         /// 邮箱是否已经激活
         /// </summary>
         public bool activation = false;
-
+        
         /// <summary>
         /// 企业名称
         /// </summary>
-        public string unitname = "";
-
-        /// <summary>
-        /// 企业名称(用于取代unitname)
-        /// </summary>
-        public string name = "";
-        /// <summary>
-        /// 联系人
-        /// </summary>
-        public string linkman = "";
-
-        /// <summary>
-        /// 传真
-        /// </summary>
-        public string fax = "";
+        public string CompanyName = "";
 
         /// <summary>
         /// 是否有权限开设网店
@@ -193,12 +135,7 @@ namespace XYECOM.Model
         /// 诚信指数
         /// </summary>
         public int cred = 0;
-
-        /// <summary>
-        /// 企业简介
-        /// </summary>
-        public string synopsis = "";
-
+        
         /// <summary>
         /// 企业主页
         /// </summary>
@@ -242,7 +179,13 @@ namespace XYECOM.Model
         /// <summary>
         /// 详细地址
         /// </summary>
-        public string address = "";
+        private string address = "";
+
+        public string Address
+        {
+            get { return address; }
+            set { address = value; }
+        }
 
         /// <summary>
         /// 经营模式
@@ -300,11 +243,6 @@ namespace XYECOM.Model
         public string im = "";
 
         /// <summary>
-        /// 经营地址
-        /// </summary>
-        public string manageaddress = "";
-
-        /// <summary>
         /// 网店公告
         /// </summary>
         public string shopannounce = "";
@@ -336,5 +274,57 @@ namespace XYECOM.Model
         public decimal creditintegral;
 
         public Model.CreditLeavlInfo creditleavl;
+
+        public string IdentityNumber { get; set; }
+
+        public int DelState { get; set; }
+
+        public Model.UserType UserType { get; set; }
+
+        public bool IsExport { get; set; }
+
+        public int AreaId { get; set; }
+
+        public string LayerId { get; set; }
+
+        public string IdNumber { get; set; }
+
+        public bool Sex { get; set; }
+
+        public string OtherContact { get; set; }
+
+        public string Telphone { get; set; }
+
+        public string Description { get; set; }
+
+        public string LayerName { get; set; }
+
+        public bool IsPrimary { get; set; }
+
+        public string Email { get; set; }
+
+        public bool IsBoundMobile { get; set; }
+
+        public bool IsBoundEmail { get; set; }
+
+        public int Point { get; set; }
+
+        public bool IsReal { get; set; }
+
+        public int GoodTimes { get; set; }
+
+        public int MidTimes { get; set; }
+
+        public int BadTimes { get; set; }
+
+        public long CompanyId { get; set; }
+
+        public string Fax { get; set; }
+
+        public string LinkMan { get; set; }
+
+        public string PartManagerName { get; set; }
+
+        public string PartManagerTel { get; set; }
     }
 }

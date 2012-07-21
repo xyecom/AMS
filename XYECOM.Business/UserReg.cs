@@ -108,6 +108,15 @@ namespace XYECOM.Business
 
             return false;
         }
+
+        public bool IsExistThePartName(string partName, long companyId)
+        {
+            if (string.IsNullOrEmpty(partName) || partName.Trim().Equals("")) return true;
+
+            if (DAL.IsExistThePartName(partName, companyId) > 0) return true;
+
+            return false;
+        }
         #endregion
 
         #region 检验用户邮箱是否已经存在
@@ -414,7 +423,7 @@ namespace XYECOM.Business
             #endregion
 
             #region 添加补充资料
-            if (userInfo.Name.ToString() != "" && userInfo.Mode.ToString() != "" && userInfo.MoneyType.ToString() != "" && userInfo.RegYear.ToString() != "" && userInfo.Address.ToString() != "" && userInfo.BusinessAddress.ToString() != "" && userInfo.EmployeeTotal.ToString() != "" && userInfo.MainProduct.ToString() != "" && userInfo.Synopsis.ToString() != "")
+            if (userInfo.Name.ToString() != "" && userInfo.Mode.ToString() != "" && userInfo.MoneyType.ToString() != "" && userInfo.RegYear.ToString() != "" && userInfo.Address.ToString() != "" && userInfo.Address.ToString() != "" && userInfo.EmployeeTotal.ToString() != "" && userInfo.MainProduct.ToString() != "" && userInfo.Synopsis.ToString() != "")
             {
                 if (webInfo.AdvancedDatumPercent.ToString() != "")
                 {
@@ -705,7 +714,7 @@ namespace XYECOM.Business
 
             #region 添加企业用户信息
             userInfo.UserId = userId;
-
+            userInfo.Email = userRegInfo.Email;
             XYECOM.Business.UserInfo userInfoBLL = new XYECOM.Business.UserInfo();
 
             _result = userInfoBLL.Insert(userInfo);
@@ -799,7 +808,7 @@ namespace XYECOM.Business
             userInfo.Mode = "";
             userInfo.RegisteredCapital = 0;
             userInfo.RegYear = 0;
-            userInfo.BusinessAddress = "";
+            userInfo.Address = "";
             userInfo.Mode = "";
             userInfo.MainProduct = "";
             userInfo.MoneyType = "";
@@ -895,7 +904,7 @@ namespace XYECOM.Business
             //---------------------------------------------------------------------
 
             string strUserType = "user";
-            
+
             if (isSaveInfo)
             {
                 XYECOM.Core.Utils.WriteCookie("U_Name", userInfo.LoginName.ToString(), 1, cookieDomain);
@@ -966,5 +975,66 @@ namespace XYECOM.Business
             userLoginBLL.Insert(userInfo.UserId, ip, XYECOM.Model.UserLog.Login.ToString());
         }
         #endregion
+
+        public int UpdatePartInfo(XYECOM.Model.UserRegInfo userRegInfo)
+        {
+            return DAL.UpdatePartInfo(userRegInfo);
+        }
+
+        public Model.ResisterUserReturnValue AddPart(Model.UserRegInfo regInfo)
+        {
+            if (IsExistTheUserName(regInfo.LoginName))
+            {
+                return XYECOM.Model.ResisterUserReturnValue.UserNameExists;
+            }
+            if (IsExistThePartName(regInfo.LayerName, regInfo.CompanyId))
+            {
+                return XYECOM.Model.ResisterUserReturnValue.PartNameExists;
+            }
+            if (IsExistTheEmail(regInfo.Email))
+            {
+                return XYECOM.Model.ResisterUserReturnValue.EmailExists;
+            }
+
+
+            XYECOM.Configuration.WebInfo webInfo = XYECOM.Configuration.WebInfo.Instance;
+
+            if (webInfo.ForbidName != "")
+            {
+                string[] names = webInfo.ForbidName.Split(',');
+
+                for (int j = 0; j < names.Length; j++)
+                {
+                    if (regInfo.LoginName.Equals(names[j].ToLower()))
+                    {
+                        return XYECOM.Model.ResisterUserReturnValue.ForbidName;
+                    }
+                }
+            }
+
+            int result = DAL.AddPart(regInfo);
+
+            if (result < 1)
+            {
+                return Model.ResisterUserReturnValue.Failed;
+            }
+
+            return Model.ResisterUserReturnValue.Success;
+        }
+
+        public DataTable GetPartList(long companyId)
+        {
+            return DAL.GetPartList(companyId);
+        }
+
+        public int UpdatePartState(string userId, string stateId)
+        {
+            return DAL.UpdatePartState(userId, stateId);
+        }
+
+        public int SetQuestAndAnswer(long userId, string question, string answer)
+        {
+            return DAL.SetQuestAndAnswer(userId, question, answer);
+        }
     }
 }

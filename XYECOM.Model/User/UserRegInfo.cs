@@ -383,6 +383,10 @@ namespace XYECOM.Model
         }
         #endregion
 
-        public int CompanyId { get; set; }
+        public long CompanyId { get; set; }
+
+        public string PartManagerTel { get; set; }
+
+        public string PartManagerName { get; set; }
     }
 }

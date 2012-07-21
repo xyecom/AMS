@@ -44,7 +44,7 @@ namespace XYECOM.SQLServer
                 new SqlParameter("@U_Mode",info .Mode ),
                 new SqlParameter("@U_Money",info .RegisteredCapital ),
                 new SqlParameter("@U_Year",info.RegYear ),
-                new SqlParameter("@U_Address",info .BusinessAddress ),
+                new SqlParameter("@U_Address",info .Address ),
                 new SqlParameter("@U_PType",info .MainProduct ),
                 new SqlParameter("@U_MoneyType",info .MoneyType ),
                 new SqlParameter("@Area_ID",info.AreaId ),
@@ -91,7 +91,7 @@ namespace XYECOM.SQLServer
                 new SqlParameter ("@U_Mode",info .Mode ),
                 new SqlParameter ("@U_Money",info .RegisteredCapital ),
                 new SqlParameter ("@U_Year",info .RegYear ),
-                new SqlParameter ("@U_Address",info .BusinessAddress ),
+                new SqlParameter ("@U_Address",info .Address ),
                 new SqlParameter ("@U_PType",info .MainProduct ),
                 new SqlParameter ("@U_MoneyType",info .MoneyType ),
                 new SqlParameter ("@Area_ID",info .AreaId ),
@@ -178,7 +178,7 @@ namespace XYECOM.SQLServer
                     info.Mode = reader["U_Mode"].ToString();
                     info.RegisteredCapital = Core.MyConvert.GetDecimal(reader["U_Money"].ToString());
                     info.RegYear = Core.MyConvert.GetInt32(reader["U_Year"].ToString());
-                    info.BusinessAddress = reader["U_Address"].ToString();
+                    info.Address = reader["U_Address"].ToString();
                     info.MainProduct = reader["U_PType"].ToString();
                     info.MoneyType = reader["U_MoneyType"].ToString();
 
@@ -190,6 +190,7 @@ namespace XYECOM.SQLServer
 
                     info.IM = reader["IM"].ToString();
                     info.TradeIds = Core.Utils.RemoveComma(reader["tradeIds"].ToString());
+
                 }
             }
             return info;
@@ -355,13 +356,13 @@ namespace XYECOM.SQLServer
         }
 
         /// <summary>
-        /// 根据用户编号获取公司名称 王振添加（2011-04-15）
+        /// 根据公司编号获取公司名称 王振添加（2011-04-15）
         /// </summary>
         /// <param name="uid">用户编号</param>
         /// <returns>公司名称</returns>
         public string GetCompNameByUId(int uid)
         {
-            string sql = "select ui_name from u_userinfo where u_id = "+uid+"";
+            string sql = "select ui_name from dbo.u_UserInfo where U_id = " + uid;
             object obj = XYECOM.Core.Data.SqlHelper.ExecuteScalar(sql);
             if (obj != null)
             {
@@ -371,6 +372,79 @@ namespace XYECOM.SQLServer
             {
                 return string.Empty;
             }
+        }
+
+        /// <summary>
+        /// 根据用户编号获取用户名称
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public string GetUserNameByID(int userId)
+        {
+            string sql = "SELECT U_Name FROM dbo.u_User WHERE U_Id = " + userId;
+            object obj = XYECOM.Core.Data.SqlHelper.ExecuteScalar(sql);
+            if (obj != null)
+            {
+                return obj.ToString();
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// 根据用户编号获取用户所在的部门名称
+        /// </summary>
+        /// <param name="PartId"></param>
+        /// <returns></returns>
+        public string GetPartNameById(int PartId)
+        {
+            string sql = "select LayerName from u_user  where u_id = " + PartId;
+            object obj = XYECOM.Core.Data.SqlHelper.ExecuteScalar(sql);
+            if (obj != null)
+            {
+                return obj.ToString();
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+
+
+        /// <summary>
+        /// 根据用户编号获取用户邮箱
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public string GetEmailByID(int userId)
+        {
+            string sql = "SELECT U_Email FROM dbo.u_User WHERE U_Id = " + userId;
+            object obj = XYECOM.Core.Data.SqlHelper.ExecuteScalar(sql);
+            if (obj != null)
+            {
+                return obj.ToString();
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+
+        public int UpdateBaseInfo(Model.GeneralUserInfo userinfo)
+        {
+            string sqlfmt = @"update u_userinfo set UI_Name='{0}',U_Address='{1}',Email='{2}',Description='{3}',FAX='{4}',Telephone='{5}',UI_LinkMan='{6}' where U_ID={7}";
+            string sql = string.Format(sqlfmt, userinfo.CompanyName, userinfo.Address, userinfo.Email, userinfo.Description, userinfo.OtherContact, userinfo.Telphone, userinfo.LinkMan, userinfo.CompanyId);
+
+
+            string sqlfmt2 = @"{5};Update u_user set LayerName='{0}', Description='{1}', Telphone='{2}', OtherContact='{3}',PartManagerName='{6}',Sex={7},LayerId='{8}',IdNumber='{9}' where CompanyId ={4}";
+
+            string sql2 = string.Format(sqlfmt2, userinfo.LayerName, userinfo.Description, userinfo.Telphone, userinfo.OtherContact, userinfo.CompanyId, sql, userinfo.LinkMan, userinfo.Sex ? 1 : 0, userinfo.LayerId, userinfo.IdNumber);
+
+
+            return SqlHelper.ExecuteNonQuery(sql2);
+
         }
     }
 }

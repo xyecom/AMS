@@ -1,62 +1,58 @@
-﻿<%Include _head%>
-<div id="ubox">
-
-<!--左边导航-->
-<div id="uleftnav">
-<%Include _left%>
-</div>
-<!--左边导航  end-->
-
-<!--右边主要内容-->
-<div id="uright">
-
-    <!--站点导航-->
-<div style="display:none;"><em id="linkmessage" style ="display :none"></em><em id="clicknum" style="display :none "></em><em id="msy" style="display :none "></em><em id="clicknum1" style="display :none "></em><em id="messnum" style="display :none "></em> </div>
-	<div class="rcon pb15">
-	<h2>诚信档案</h2>
-	 <div class=" rcont">
-       <table class="table_value">
-	  <tr>
-		<th class="line1">企业资料完善率：</th>
-		<td class="line2"><label><img alt="企业资料完善率" src="{config.WebURL}templates/{config.TemplatePath}/shop/default/images/rate.gif"  width="{XYV_formation}"/></label><i>( {shopuserinfo.infoperfectpercent}% )</i></td>
-	  </tr>
-	  <tr>
-		<th class="line1">会员年限：</th>
-		<td class="line2">{config.WebName} {shopuserinfo.gradename} 第 <span class="f_f00">{year}</span> 年 </td>
-	  </tr>
-	  <tr>
-		<th class="line1">处罚信息：</th>
-		<td class="line2">恶意填写处罚 <span class="f_f00">{shopuserinfo.maliceerr}</span> 次， 错误填写处罚 <span class="f_f00">{shopuserinfo.commonerr}</span> 次</td>
-	  </tr>
-	  
-	</table></div>
-
-</div>
-
-   
-	<div class="rcon pb15">
-	<h2><span>证书信息</span></h2>
-	<div class="list_zs">	
-	 <ul class="bg">
-	  <li>证书图片</li><li>证书名称</li><li>发证机构</li><li>生效日期</li><li>截至日期</li>
-	 </ul>
-	 <%set data = GetCertificate()%>
-     <%loop (DataRow) info data%>
-     <%set str = GetInfoImgHref("certificate",info["CE_ID"])%>
-	 <ul class="c">	  
-	  <li>
-	   <a href="{str}">
-	  <img src="{str}" alt="证书" /></a></li>
-	  <li><a href="{str}">{info[CE_Name]}</a></li>
-	  <li>{info[CE_Organ]}</li>
-	  <li><%formatdatetime(info[CE_Begin],yyyy-MM-dd)%></li>
-	  <li><%formatdatetime(info[CE_Upto],yyyy-MM-dd)%></li>	  
-	 </ul>
-     <%/loop%>	
-	 </div>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>服务商个人主页</title>
+    <link href="/Other/css/serverinfo.css" rel="stylesheet" type="text/css" />
+    <script src="/Other/js/jquery.js" type="text/javascript"></script>
+</head>
+<body>
+    <!--top start-->
+    <%Include _top%>
+    <!--top end-->
+    <%Include _banner%>
+    <!--menu start-->
+    <%Include _menu%>
+    <!--menu end-->
+    <!--middle start-->
+    <div id="middle">
+        <!--left start-->
+        <%Include _left%>
+        <!--left end-->
+        <!--right start-->
+        <div id="right">
+            <div id="uright">
+                <div class="rcon pb15">
+                    <h2>
+                        诚信档案</h2>
+                </div>
+                <div class="rcon pb15">
+                    <h2>
+                        <span>证书信息</span></h2>
+                    <div class="list_zs">
+                        <ul class="bg">
+                            <li>证书图片</li><li>证书名称</li><li>发证机构</li><li>生效日期</li><li>截至日期</li>
+                        </ul>
+                        <%set data = GetCertificate()%>
+                        <%loop (DataRow) info data%>
+                        <%set str = GetInfoImgHref(info["CE_ID"])%>
+                        <ul class="c">
+                            <li><a href="{str}">
+                                <img src="{str}" alt="证书" /></a></li>
+                            <li><a href="{str}">{info[CE_Name]}</a></li>
+                            <li>{info[CE_Organ]}</li>
+                            <li>
+                                <%formatdatetime(info[CE_Begin],yyyy-MM-dd)%></li>
+                            <li>
+                                <%formatdatetime(info[CE_Upto],yyyy-MM-dd)%></li>
+                        </ul>
+                        <%/loop%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--right end-->
     </div>
-	
-	</div>
-</div>
-
-<%Include _footer%>
+    <!--middle end-->
+    <%Include _footer%>
+</body>
+</html>
