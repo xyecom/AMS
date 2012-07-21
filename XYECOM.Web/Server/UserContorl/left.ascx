@@ -21,7 +21,6 @@
             案件资讯</h1>
         <ul>
             <li><a href="/Server/RecommendCreditList.aspx">系统推荐</a></li></ul>
-        </ul>
     </div>
 </div>
 <!--left1 end-->
