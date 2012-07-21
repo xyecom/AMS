@@ -301,17 +301,21 @@
                 <div>
                     <p>
                         从本地上传资料</p>
+                    选择文件:
+                    <asp:FileUpload ID="flCase" runat="server" />
                 </div>
-                <p>
-                    从档案库选择资料</p>
-                <div id="divtitle">
+                <div>
+                    <p>
+                        从档案库选择资料</p>
+                    <div id="divtitle">
+                    </div>
+                    <input id="hdgetid" type="hidden" runat="server" />
+                    <input id="ttt" type="hidden" />
+                    <script type="text/javascript">
+                        var cla = new ClassTypes("cla", 'ttt', 'divtitle', '<%=hdgetid.ClientID %>', 5, '<%=this.userinfo.IsPrimary?"and CompanyId="+userinfo.CompanyId:"and userid="+userinfo.userid %>', "xy018");
+                        cla.Init();
+                    </script>
                 </div>
-                <input id="hdgetid" type="hidden" runat="server" />
-                <input id="ttt" type="hidden" />
-                <script type="text/javascript">
-                    var cla = new ClassTypes("cla", 'ttt', 'divtitle', '<%=hdgetid.ClientID %>', 5, '<%=this.userinfo.IsPrimary?"and CompanyId="+userinfo.CompanyId:"and userid="+userinfo.userid %>', "xy018");
-                    cla.Init();
-                </script>
                 <div style="width: 756px; height: 50px; line-height: 50px; text-align: center">
                     <asp:Button runat="server" ID="btnOk" OnClick="btnOk_Click" Text="确定" />
                     <input type="button" value="返回" onclick="javascript:history.back();" />

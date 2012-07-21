@@ -7,6 +7,7 @@ using XYECOM.Model.AMS;
 using XYECOM.Core;
 using XYECOM.Model;
 using XYECOM.Business.AMS;
+using XYECOM.Business;
 
 namespace XYECOM.Web.Creditor
 {
@@ -74,7 +75,10 @@ namespace XYECOM.Web.Creditor
             }
 
             //添加选择的档案信息
-            //string strCase = this.hdgetid.Value;
+            RelatedCaseInfoManager relateManage = new RelatedCaseInfoManager();            
+            string strCase = this.hdgetid.Value;
+            string[] cases = strCase.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            relateManage.RelatedInfo(TableInfoType.ZqInfo, credId, userinfo.userid, userinfo.CompanyId, cases);
         }
     }
 }
