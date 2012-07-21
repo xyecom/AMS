@@ -21,6 +21,9 @@ namespace XYECOM.Web.Creditor
         {
             string sql = string.Empty;
 
+            int typeId = XYECOM.Core.XYRequest.GetQueryInt("ID", 0);
+
+
             if (userinfo.IsPrimary)
             {
                 sql = @"select * from CaseInfo where CompanyId=" + userinfo.userid;
@@ -28,6 +31,12 @@ namespace XYECOM.Web.Creditor
             else
             {
                 sql = @"select * from CaseInfo where partid=" + userinfo.userid;
+            }
+
+
+            if (typeId > 0)
+            {
+                sql += " and CaseTypeID=" + typeId;
             }
 
             DataTable table = Core.Data.SqlHelper.ExecuteTable(sql);
@@ -57,10 +66,6 @@ namespace XYECOM.Web.Creditor
             }
 
             BindData();
-        }
-
-        protected void btnDownLoad_Click(object sender, EventArgs e)
-        {
         }
     }
 }
