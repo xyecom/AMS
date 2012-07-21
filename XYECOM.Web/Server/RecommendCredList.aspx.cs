@@ -6,10 +6,12 @@ using System.Web.UI.WebControls;
 using System.Text;
 using XYECOM.Core;
 using System.Data;
+using XYECOM.Model.AMS;
+using XYECOM.Business.AMS;
 
 namespace XYECOM.Web.Server
 {
-    public partial class RecommendCreditList : XYECOM.Web.AppCode.UserCenter.Server
+    public partial class RecommendCredList : XYECOM.Web.AppCode.UserCenter.Server
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,8 +19,8 @@ namespace XYECOM.Web.Server
         protected override void BindData()
         {
             this.lblMessage.Text = "";
-            string title = txtKey.Text.Trim();
             string arrears = this.drpArrears.SelectedValue;
+            string title = this.txtKey.Text.Trim();
             StringBuilder strWhere = new StringBuilder(" 1=1 and (AreaId = " + userinfo.AreaId + ") and (ApprovaStatus  =2)");
             if (arrears != "所有")
             {

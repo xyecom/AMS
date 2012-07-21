@@ -10,7 +10,7 @@
 namespace XYECOM.Web.Server {
     
     
-    public partial class RecommendCreditList {
+    public partial class RecommendCredList {
         
         /// <summary>
         /// drpArrears control.

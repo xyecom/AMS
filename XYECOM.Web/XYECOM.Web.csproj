@@ -433,19 +433,19 @@
     <Compile Include="Server\ParticipateCreditList.aspx.designer.cs">
       <DependentUpon>ParticipateCreditList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Server\RecommendCreditList.aspx.cs">
-      <DependentUpon>RecommendCreditList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Server\RecommendCreditList.aspx.designer.cs">
-      <DependentUpon>RecommendCreditList.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Server\ModifyPwd.aspx.cs">
       <DependentUpon>ModifyPwd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Server\ModifyPwd.aspx.designer.cs">
       <DependentUpon>ModifyPwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Server\RecommendCredList.aspx.cs">
+      <DependentUpon>RecommendCredList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\RecommendCredList.aspx.designer.cs">
+      <DependentUpon>RecommendCredList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Server\Server.master.cs">
       <DependentUpon>Server.master</DependentUpon>
@@ -1914,8 +1914,8 @@
     <Content Include="Other\js\zd.js" />
     <Content Include="Other\js\zu.js" />
     <Content Include="Server\ParticipateCreditList.aspx" />
-    <Content Include="Server\RecommendCreditList.aspx" />
     <Content Include="Server\ModifyPwd.aspx" />
+    <Content Include="Server\RecommendCredList.aspx" />
     <Content Include="Server\SetQuestion.aspx" />
     <Content Include="Server\UpLoadPicture.aspx" />
     <Content Include="Server\UserContorl\left.ascx" />

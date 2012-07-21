@@ -95,5 +95,32 @@ namespace XYECOM.Business.AMS
             }
             return DAL.GetTenderByCredId(credId);
         }
+        /// <summary>
+        /// 根据债权编号设置所有的投标为未中标
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int AllUpdateTenderToFailure(int creditId)
+        {
+            if (creditId <= 0)
+            {
+                return 0;
+            }
+            return DAL.AllUpdateTenderToFailure(creditId);
+        }
+
+        /// <summary>
+        /// 根据债权编号删除投标信息
+        /// </summary>
+        /// <param name="creditId"></param>
+        /// <returns></returns>
+        public int DeleteByCreID(int creditId)
+        {
+            if (creditId <= 0)
+            {
+                return 0;
+            }
+            return DAL.DeleteByCreID(creditId);
+        }
     }
 }

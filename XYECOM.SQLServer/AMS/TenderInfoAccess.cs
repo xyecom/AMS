@@ -108,6 +108,30 @@ namespace XYECOM.SQLServer.AMS
         }
 
         /// <summary>
+        /// 根据债权编号设置所有的投标为未中标
+        /// </summary>
+        /// <param name="creditId"></param>
+        /// <returns></returns>
+        public int AllUpdateTenderToFailure(int creditId)
+        {
+            string sql = "update tenderInfo set issuccess = -1 where creditInfoId = " + creditId;
+            int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
+            return rowAffected;
+        }
+
+        /// <summary>
+        /// 根据债权编号删除投标信息
+        /// </summary>
+        /// <param name="creditId"></param>
+        /// <returns></returns>
+        public int DeleteByCreID(int creditId)
+        {
+            string sql = "Delete tenderInfo where creditInfoId = " + creditId;
+            int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
+            return rowAffected;
+        }
+
+        /// <summary>
         /// 根据债权信息获取投标成功的投标信息
         /// </summary>
         /// <param name="credId"></param>

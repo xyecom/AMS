@@ -174,7 +174,7 @@
                             </div>
                             <input type="hidden" id="areaid" name="areaid" runat="server" />
                             <script type="text/javascript">
-                                var cla = new ClassType("cla", 'area', 'divArea', '<%=areaid.ClientID %>');
+                                var cla = new ClassType("cla", 'area', 'divArea', '<%=areaid.ClientID %>', 1);
                                 cla.Mode = "select";
                                 cla.Init();
                             </script>

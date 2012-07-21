@@ -45,7 +45,7 @@
                         <tr id="trmidd" style="height: 28px; border-top: 1px solid #ccc" onmousemove="this.style.backgroundColor='#F7F7F7'"
                             onmouseout="this.style.backgroundColor='#ffffff'">
                             <td id="tdtitle">
-                                <%# isServer == true ? Eval("User2Name") : Eval("UserName")%>
+                                <%# isServer == true ? Eval("UserName") :Eval("User2Name") %>
                             </td>
                             <td>
                                 <%# GetCreditTitle(Eval("CreditInfoId"))%>

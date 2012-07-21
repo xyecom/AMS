@@ -13,7 +13,7 @@ namespace XYECOM.Web.Creditor
     public partial class CreditInfoList : XYECOM.Web.AppCode.UserCenter.Creditor
     {
         protected CreditInfoManager manage = new CreditInfoManager();
-
+        protected TenderInfoManager tenderManage = new TenderInfoManager();
         protected void Page_Load(object sender, EventArgs e)
         {
         }
@@ -110,6 +110,7 @@ namespace XYECOM.Web.Creditor
                     int result = manage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.Delete);
                     if (result > 0)
                     {
+                        tenderManage.DeleteByCreID(Id);
                         BindData();
                     }
                 }
@@ -154,6 +155,7 @@ namespace XYECOM.Web.Creditor
                     int result = manage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.Canceled);
                     if (result > 0)
                     {
+                        tenderManage.DeleteByCreID(Id);
                         BindData();
                     }
                 }
