@@ -51,29 +51,21 @@
     <DocumentationFile>bin\XYECOM.Web.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CFCA.Payment">
-      <HintPath>..\..\..\Document\CFCA.Payment.dll</HintPath>
-    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <HintPath>..\..\..\Document\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.JScript" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Mobile" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activation .aspx.cs">
@@ -1884,17 +1876,6 @@
     <Content Include="My97DatePicker\skin\whyGreen\datepicker.css" />
     <Content Include="My97DatePicker\skin\whyGreen\img.gif" />
     <Content Include="My97DatePicker\WdatePicker.js" />
-    <Content Include="My97DatePicker\开发包\lang\en.js" />
-    <Content Include="My97DatePicker\开发包\lang\zh-cn.js" />
-    <Content Include="My97DatePicker\开发包\lang\zh-tw.js" />
-    <Content Include="My97DatePicker\开发包\readme.txt" />
-    <Content Include="My97DatePicker\开发包\skin\datePicker.gif" />
-    <Content Include="My97DatePicker\开发包\skin\default\datepicker.css" />
-    <Content Include="My97DatePicker\开发包\skin\default\img.gif" />
-    <Content Include="My97DatePicker\开发包\skin\WdatePicker.css" />
-    <Content Include="My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
-    <Content Include="My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
-    <Content Include="My97DatePicker\开发包\skin\whyGreen\img.gif" />
     <Content Include="Other\css\basecss.css" />
     <Content Include="Other\css\serverinfo.css" />
     <Content Include="Other\images\1359619_174309069902_2.gif" />
@@ -4203,7 +4184,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49453</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
