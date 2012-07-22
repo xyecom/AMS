@@ -10,6 +10,7 @@ using XYECOM.Core;
 using XYECOM.Business.AMS;
 using XYECOM.Business;
 using XYECOM.Model.AMS;
+using XYECOM.Model;
 
 namespace XYECOM.Web
 {
@@ -17,25 +18,25 @@ namespace XYECOM.Web
     {
         CreditInfoManager manage = new CreditInfoManager();
 
-        Business.UserInfo userInfoManage = new UserInfo();
+        Business.UserInfo userInfoManage = new Business.UserInfo();
 
         TenderInfoManager tenderManage = new TenderInfoManager();
 
         #region 页面加载
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Business.CheckUser.CheckUserLogin())
-            {
-                GotoMsgBoxPageForDynamicPage("登录后才能访问详情页面！", 2, "Login.aspx?backurl=" + Request.Path);
-                return;
-            }
-            int Id = XYECOM.Core.XYRequest.GetQueryInt("ID", 0);
-            if (Id <= 0)
-            {
-                GotoMsgBoxPageForDynamicPage("该债权信息不存在！", 1, "IndexCreditList.aspx");
-            }
             if (!IsPostBack)
             {
+                if (!Business.CheckUser.CheckUserLogin())
+                {
+                    GotoMsgBoxPageForDynamicPage("登录后才能访问详情页面！", 2, "Login.aspx?backurl=" + Request.Path);
+                    return;
+                }
+                int Id = XYECOM.Core.XYRequest.GetQueryInt("ID", 0);
+                if (Id <= 0)
+                {
+                    GotoMsgBoxPageForDynamicPage("该债权信息不存在！", 1, "IndexCreditList.aspx");
+                }
                 this.hidID.Value = Id.ToString();
                 BindData(Id);
             }
@@ -74,7 +75,18 @@ namespace XYECOM.Web
                 this.labIsSelfCollection.Text = info.IsSelfCollection ? "是" : "否";
                 this.hidStae.Value = info.ApprovaStatus.ToString();
             }
-
+            DataTable price = XYECOM.Business.Attachment.GetAllImgHref(AttachmentItem.CreditInfo, info.CreditId);
+            if (price.Rows.Count > 0)
+            {
+                this.rpPrice.DataSource = price;
+                this.rpPrice.DataBind();
+            }
+            DataTable ralaCases = new RelatedCaseInfoManager().GetFilePaths(info.CreditId, Model.TableInfoType.ZqInfo);
+            if (ralaCases.Rows.Count > 0)
+            {
+                this.rpfile.DataSource = ralaCases;
+                this.rpfile.DataBind();
+            }
             StringBuilder strWhere = new StringBuilder(" 1=1 and  CreditInfoId = " + id);
             int totalRecord = 0;
             DataTable dt = XYECOM.Business.Utils.GetPaginationData("TenderInfo", "TenderId", "*", " TenderDate desc", strWhere.ToString(), this.Page1.PageSize, this.Page1.CurPage, out totalRecord);
@@ -90,6 +102,7 @@ namespace XYECOM.Web
                 this.lblMessage.Text = "还没有人进行投标";
                 this.rptList.DataBind();
             }
+
         }
         #endregion
         protected string GetApprovaStatus(object state)

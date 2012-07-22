@@ -9,6 +9,7 @@ using XYECOM.Model;
 using XYECOM.Business.AMS;
 using System.Text;
 using System.Data;
+using XYECOM.Business;
 
 namespace XYECOM.Web.Creditor
 {
@@ -81,6 +82,19 @@ namespace XYECOM.Web.Creditor
             {
                 this.lblMessage.Text = "还没有人进行投标";
                 this.rptList.DataBind();
+            }
+
+            DataTable price = XYECOM.Business.Attachment.GetAllImgHref(AttachmentItem.CreditInfo, info.CreditId);
+            if (price.Rows.Count > 0)
+            {
+                this.rpPrice.DataSource = price;
+                this.rpPrice.DataBind();
+            }
+            DataTable ralaCases = new RelatedCaseInfoManager().GetFilePaths(info.CreditId, Model.TableInfoType.ZqInfo);
+            if (ralaCases.Rows.Count > 0)
+            {
+                this.rpfile.DataSource = ralaCases;
+                this.rpfile.DataBind();
             }
         }
         #endregion

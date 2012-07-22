@@ -202,6 +202,26 @@
                             </td>
                         </tr>
                     </table>
+                    【图片信息】
+                    <hr />
+                    <p>
+                        <asp:Repeater runat="server" ID="rpPrice">
+                            <ItemTemplate>
+                                <img width="96px;" src='/Upload/<%# Eval("At_Path") %>' />
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </p>
+                    【文件信息】
+                    <hr />
+                    <p>
+                        <asp:Repeater runat="server" ID="rpfile">
+                            <ItemTemplate>
+                                <a href='<%# Eval("FilePath") %>'>
+                                    <%# Eval("CaseName") %>
+                                </a>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </p>
                 </div>
             </td>
         </tr>

@@ -67,20 +67,11 @@ namespace XYECOM.SQLServer
         /// <param name="infoId"></param>
         /// <param name="infoType"></param>
         /// <returns></returns>
-        public IList<string> GetFilePaths(long infoId, Model.TableInfoType infoType)
+        public DataTable GetFilePaths(long infoId, Model.TableInfoType infoType)
         {
-            string sql = "select Id,FilePath from CaseInfo where Id in (select Id from RelatedCaseInfo where InfoType='" + (int)infoType + "' and InfoId=" + infoId + ")";
+            string sql = "select Id,FilePath,CaseName from CaseInfo where Id in (select Id from RelatedCaseInfo where InfoType='" + (int)infoType + "' and InfoId=" + infoId + ")";
 
-            DataTable table = SqlHelper.ExecuteTable(sql);
-
-            IList<string> list = new List<string>();
-
-            foreach (DataRow row in table.Rows)
-            {
-                list.Add(row["FilePath"].ToString());
-            }
-
-            return list;
+            return SqlHelper.ExecuteTable(sql);
         }
         /// <summary>
         /// 该方法与上面的方法基本一致，只是这个仅仅返回一条文档路径。
@@ -90,7 +81,7 @@ namespace XYECOM.SQLServer
         /// <returns></returns>
         public string GetFilePath(long infoId, Model.TableInfoType infoType)
         {
-            string sql = "select top 1 Id,FilePath from CaseInfo where Id in (select Id from RelatedCaseInfo where InfoType='" + (int)infoType + "' and InfoId=" + infoId + ")";
+            string sql = "select top 1 Id,FilePath,CaseName from CaseInfo where Id in (select Id from RelatedCaseInfo where InfoType='" + (int)infoType + "' and InfoId=" + infoId + ")";
 
             DataTable table = SqlHelper.ExecuteTable(sql);
 

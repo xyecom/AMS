@@ -27,3 +27,23 @@ a:active {
 .about ul {list-style:none; display:inline; margin:0px auto; padding:0px;}
 .about ul li { float:left; margin:0px 15px; padding:5px; }
 .copyright {text-align:center; font-size:12px; margin-top:10px; line-height:22px; }
+
+table{border-collapse:collapse;/*细线表格*/}
+
+
+.dzbasetb{ width:729px; 
+margin:8px auto
+}
+.dzbasetb td{ border:1px solid #F3F2F0; height:20px;}
+.dzbasetb .info1{width:120px; background:#FFF7DE;}
+
+#list { width:764px; 
+height:auto; overflow:hidden;
+}
+
+#list table{ width:100%;border:1px solid #ddd; cellpadding:0; cellspacing:0} 
+#trtop{height:30px; background-image:url(../images/border_bg.jpg); font-size:13px;color:#333}
+#trmidd #tdtitle{text-align:left;border-bottom: solid 1px #ccc; border-right: solid 1px #ddd; padding-left:10px; }
+#trmidd #tdtitle a{color:#333; text-decoration:none}
+#trmidd #tdtitle a:hover{color:#C00; text-decoration:underline}
+#trmidd td{border-bottom: solid 1px #ddd; border-right: solid 1px #ddd; text-align:center}

@@ -162,62 +162,18 @@
                         案件相关资料</h4>
                 </div>
                 <div style="width: 763px; height: auto; overflow: hidden">
-                    <div style="float: left; width: 47%; height: 55px; border: 1px solid #ccc; margin: 6px 0;
-                        padding: 8px 8px">
-                        <table>
-                            <tr>
-                                <td>
-                                    <img src="../images/.doc.PNG" />
-                                </td>
-                                <td>
-                                    <a href="#">苏丹红事件看动画设计.doc</a><br />
-                                    2010-05-12
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div style="float: right; width: 47%; height: 55px; border: 1px solid #ccc; margin: 6px 0;
-                        padding: 8px 8px">
-                        <table>
-                            <tr>
-                                <td>
-                                    <img src="../images/.doc.PNG" />
-                                </td>
-                                <td>
-                                    <a href="#">苏丹红事件看动画设计.doc</a><br />
-                                    2010-05-12
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div style="float: left; width: 47%; height: 55px; border: 1px solid #ccc; margin: 6px 0;
-                        padding: 8px 8px">
-                        <table>
-                            <tr>
-                                <td>
-                                    <img src="../images/.gif.PNG" />
-                                </td>
-                                <td>
-                                    <a href="#">苏丹红事件看动画设计.gif</a><br />
-                                    2010-05-12
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div style="float: right; width: 47%; height: 55px; border: 1px solid #ccc; margin: 6px 0;
-                        padding: 8px 8px">
-                        <table>
-                            <tr>
-                                <td>
-                                    <img src="../images/.gif.PNG" />
-                                </td>
-                                <td>
-                                    <a href="#">苏丹红事件看动画设计.gif</a><br />
-                                    2010-05-12
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+                    <asp:Repeater runat="server" ID="rpPrice">
+                        <ItemTemplate>
+                            <img width="96px;" src='/Upload/<%# Eval("At_Path") %>' />
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <asp:Repeater runat="server" ID="rpfile">
+                        <ItemTemplate>
+                            <a href='<%# Eval("FilePath") %>'>
+                                <%# Eval("CaseName") %>
+                            </a>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </div>
                 <div style="width: 758px; text-align: center; margin-top: 5px">
                     <h4>

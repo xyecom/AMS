@@ -181,20 +181,6 @@
     <Compile Include="Creditor\CaseList.aspx.designer.cs">
       <DependentUpon>CaseList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Creditor\CreditDetils.aspx.cs">
-      <DependentUpon>CreditDetils.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Creditor\CreditDetils.aspx.designer.cs">
-      <DependentUpon>CreditDetils.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Creditor\CreditInfoList.aspx.cs">
-      <DependentUpon>CreditInfoList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Creditor\CreditInfoList.aspx.designer.cs">
-      <DependentUpon>CreditInfoList.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Creditor\CaseTypeAdd.aspx.cs">
       <DependentUpon>CaseTypeAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -208,6 +194,20 @@
     </Compile>
     <Compile Include="Creditor\CaseTypeList.aspx.designer.cs">
       <DependentUpon>CaseTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\CreditDetils.aspx.cs">
+      <DependentUpon>CreditDetils.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\CreditDetils.aspx.designer.cs">
+      <DependentUpon>CreditDetils.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\CreditInfoList.aspx.cs">
+      <DependentUpon>CreditInfoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\CreditInfoList.aspx.designer.cs">
+      <DependentUpon>CreditInfoList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Creditor\Creditor.master.cs">
       <DependentUpon>Creditor.master</DependentUpon>
@@ -230,6 +230,13 @@
     <Compile Include="Creditor\DeparForeclosedList.aspx.designer.cs">
       <DependentUpon>DeparForeclosedList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Creditor\EditPartInfo.aspx.cs">
+      <DependentUpon>EditPartInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\EditPartInfo.aspx.designer.cs">
+      <DependentUpon>EditPartInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Creditor\EvaluationList.aspx.cs">
       <DependentUpon>EvaluationList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -250,48 +257,6 @@
     </Compile>
     <Compile Include="Creditor\ForeclosedList.aspx.designer.cs">
       <DependentUpon>ForeclosedList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Creditor\ReceiveMessageInfo.aspx.cs">
-      <DependentUpon>ReceiveMessageInfo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Creditor\ReceiveMessageInfo.aspx.designer.cs">
-      <DependentUpon>ReceiveMessageInfo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Creditor\ReceiveMessageList.aspx.cs">
-      <DependentUpon>ReceiveMessageList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Creditor\ReceiveMessageList.aspx.designer.cs">
-      <DependentUpon>ReceiveMessageList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Creditor\SendMessageList.aspx.cs">
-      <DependentUpon>SendMessageList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Creditor\SendMessageList.aspx.designer.cs">
-      <DependentUpon>SendMessageList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Creditor\UpdateCreditInfo.aspx.cs">
-      <DependentUpon>UpdateCreditInfo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Creditor\UpdateCreditInfo.aspx.designer.cs">
-      <DependentUpon>UpdateCreditInfo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Creditor\UpdateForeclosed.aspx.cs">
-      <DependentUpon>UpdateForeclosed.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Creditor\UpdateForeclosed.aspx.designer.cs">
-      <DependentUpon>UpdateForeclosed.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Creditor\EditPartInfo.aspx.cs">
-      <DependentUpon>EditPartInfo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Creditor\EditPartInfo.aspx.designer.cs">
-      <DependentUpon>EditPartInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Creditor\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -321,12 +286,47 @@
     <Compile Include="Creditor\PartList.aspx.designer.cs">
       <DependentUpon>PartList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Creditor\ReceiveMessageInfo.aspx.cs">
+      <DependentUpon>ReceiveMessageInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\ReceiveMessageInfo.aspx.designer.cs">
+      <DependentUpon>ReceiveMessageInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\ReceiveMessageList.aspx.cs">
+      <DependentUpon>ReceiveMessageList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\ReceiveMessageList.aspx.designer.cs">
+      <DependentUpon>ReceiveMessageList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\SendMessageList.aspx.cs">
+      <DependentUpon>SendMessageList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\SendMessageList.aspx.designer.cs">
+      <DependentUpon>SendMessageList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Creditor\SetQuestion.aspx.cs">
       <DependentUpon>SetQuestion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Creditor\SetQuestion.aspx.designer.cs">
       <DependentUpon>SetQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\UpdateCreditInfo.aspx.cs">
+      <DependentUpon>UpdateCreditInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\UpdateCreditInfo.aspx.designer.cs">
+      <DependentUpon>UpdateCreditInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\UpdateForeclosed.aspx.cs">
+      <DependentUpon>UpdateForeclosed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\UpdateForeclosed.aspx.designer.cs">
+      <DependentUpon>UpdateForeclosed.aspx</DependentUpon>
     </Compile>
     <Compile Include="Creditor\UploadCase.aspx.cs">
       <DependentUpon>UploadCase.aspx</DependentUpon>
@@ -1838,28 +1838,28 @@
     <Content Include="Creditor\AddCreditInfo.aspx" />
     <Content Include="Creditor\AddEvaluation.aspx" />
     <Content Include="Creditor\AddForeclosed.aspx" />
-    <Content Include="Creditor\CreditDetils.aspx" />
-    <Content Include="Creditor\CreditInfoList.aspx" />
-    <Content Include="Creditor\DeparCreditList.aspx" />
-    <Content Include="Creditor\DeparForeclosedList.aspx" />
-    <Content Include="Creditor\EvaluationList.aspx" />
-    <Content Include="Creditor\ForeclosedDetail.aspx" />
-    <Content Include="Creditor\ForeclosedList.aspx" />
-    <Content Include="Creditor\ReceiveMessageInfo.aspx" />
-    <Content Include="Creditor\ReceiveMessageList.aspx" />
-    <Content Include="Creditor\SendMessageList.aspx" />
-    <Content Include="Creditor\UpdateCreditInfo.aspx" />
-    <Content Include="Creditor\UpdateForeclosed.aspx" />
     <Content Include="Creditor\BaseEdit.aspx" />
     <Content Include="Creditor\CaseList.aspx" />
     <Content Include="Creditor\CaseTypeAdd.aspx" />
     <Content Include="Creditor\CaseTypeList.aspx" />
+    <Content Include="Creditor\CreditDetils.aspx" />
+    <Content Include="Creditor\CreditInfoList.aspx" />
+    <Content Include="Creditor\DeparCreditList.aspx" />
+    <Content Include="Creditor\DeparForeclosedList.aspx" />
     <Content Include="Creditor\EditPartInfo.aspx" />
+    <Content Include="Creditor\EvaluationList.aspx" />
+    <Content Include="Creditor\ForeclosedDetail.aspx" />
+    <Content Include="Creditor\ForeclosedList.aspx" />
     <Content Include="Creditor\Index.aspx" />
     <Content Include="Creditor\ModifyPwd.aspx" />
     <Content Include="Creditor\PartIndex.aspx" />
     <Content Include="Creditor\PartList.aspx" />
+    <Content Include="Creditor\ReceiveMessageInfo.aspx" />
+    <Content Include="Creditor\ReceiveMessageList.aspx" />
+    <Content Include="Creditor\SendMessageList.aspx" />
     <Content Include="Creditor\SetQuestion.aspx" />
+    <Content Include="Creditor\UpdateCreditInfo.aspx" />
+    <Content Include="Creditor\UpdateForeclosed.aspx" />
     <Content Include="Creditor\UploadCase.aspx" />
     <Content Include="Creditor\UpLoadPicture.aspx" />
     <Content Include="Creditor\UserContorl\left.ascx" />
@@ -4119,9 +4119,9 @@
     <None Include="Common\Js\jquery.uploadify\uploadify.php" />
     <Content Include="Common\UploadHandler.ashx" />
     <Content Include="Other\UserCenter.Master" />
-    <Content Include="Creditor\Creditor.master" />
     <Content Include="Server\Server.master" />
     <Content Include="Fore.Master" />
+    <Content Include="Creditor\Creditor.master" />
     <None Include="templates\default\images\inquire2.gif_bac" />
     <Content Include="config\HTML.config" />
     <Content Include="config\Shop.config" />

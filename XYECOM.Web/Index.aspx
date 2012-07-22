@@ -139,7 +139,7 @@
                             <ItemTemplate>
                                 <tr>
                                     <td class="tdtitle">
-                                        <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'>查看详细<%# Eval("Title") %></asp:HyperLink>
+                                        <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'><%# Eval("Title") %></asp:HyperLink>
                                     </td>
                                     <td class="tdprice">
                                         <%# Eval("Arrears")%>元
@@ -148,7 +148,7 @@
                                         <%# Eval("Bounty")%>
                                     </td>
                                     <td class="tdtime">
-                                        <%# Eval("CreateDate")%>
+                                        <%# Eval("CreateDate", "{0:yyyy-MM-dd}")%>
                                     </td>
                                     <td class="tdnumber">
                                         <%# GetTenderCountByCreditID(Eval("CreditId"))%>

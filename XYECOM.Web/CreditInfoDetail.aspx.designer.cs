@@ -184,6 +184,24 @@ namespace XYECOM.Web {
         protected global::System.Web.UI.WebControls.Label labAreaId;
         
         /// <summary>
+        /// rpPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpPrice;
+        
+        /// <summary>
+        /// rpfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpfile;
+        
+        /// <summary>
         /// rptList control.
         /// </summary>
         /// <remarks>

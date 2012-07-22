@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Data;
 
 namespace XYECOM.Business
 {
@@ -40,7 +41,7 @@ namespace XYECOM.Business
         /// <param name="infoId"></param>
         /// <param name="infoType"></param>
         /// <returns></returns>
-        public IList<string> GetFilePaths(long infoId, Model.TableInfoType infoType)
+        public DataTable GetFilePaths(long infoId, Model.TableInfoType infoType)
         {
             return DAL.GetFilePaths(infoId, infoType);
         }
