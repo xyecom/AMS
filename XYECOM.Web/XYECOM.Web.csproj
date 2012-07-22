@@ -4163,7 +4163,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>8100</DevelopmentServerPort>
+          <DevelopmentServerPort>49453</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://127.0.0.1:8100/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

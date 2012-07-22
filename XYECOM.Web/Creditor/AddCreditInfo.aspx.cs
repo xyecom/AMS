@@ -17,7 +17,14 @@ namespace XYECOM.Web.Creditor
         CreditInfoManager credManage = new CreditInfoManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (!userinfo.IsReal)
+                {
+                    this.radSelect.SelectedValue = "草稿";
+                    this.radSelect.Enabled = false;
+                }
+            }
         }
 
         protected void btnOk_Click(object sender, EventArgs e)
@@ -52,7 +59,7 @@ namespace XYECOM.Web.Creditor
             info.DebtorReason = this.txtDebtorReason.Text.Trim();
             info.DebtorTelpone = this.txtDebtorTelpone.Text.Trim();
             info.DebtorType = this.txtDebtorType.Text.Trim();
-            info.DepartId =MyConvert.GetInt32(userinfo.userid.ToString());
+            info.DepartId = MyConvert.GetInt32(userinfo.userid.ToString());
             info.Introduction = this.txtIntroduction.Text.Trim();
             info.IsConfirm = this.radIsConfirm.SelectedValue == "1" ? true : false;
             info.IsInLitigation = this.radIsInLitigation.SelectedValue == "1" ? true : false;
@@ -62,8 +69,8 @@ namespace XYECOM.Web.Creditor
             info.Remark = this.txtRemark.Text.Trim();
             info.UserId = MyConvert.GetInt32(userinfo.CompanyId.ToString());
             int credId = 0;
-            int result = credManage.InsertCreditInfo(info,out credId);
-            if (result>0)
+            int result = credManage.InsertCreditInfo(info, out credId);
+            if (result > 0)
             {
                 this.udCreditInfo.InfoID = credId;
                 this.udCreditInfo.Update();
@@ -75,7 +82,7 @@ namespace XYECOM.Web.Creditor
             }
 
             //添加选择的档案信息
-            RelatedCaseInfoManager relateManage = new RelatedCaseInfoManager();            
+            RelatedCaseInfoManager relateManage = new RelatedCaseInfoManager();
             string strCase = this.hdgetid.Value;
             string[] cases = strCase.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
             relateManage.RelatedInfo(TableInfoType.ZqInfo, credId, userinfo.userid, userinfo.CompanyId, cases);

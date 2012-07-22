@@ -22,6 +22,11 @@ namespace XYECOM.Web.Creditor
                 {
                     GotoMsgBoxPageForDynamicPage("该债权信息不存在！", 1, "CreditInfoList.aspx");
                 }
+                if (!userinfo.IsReal)
+                {
+                    this.radSelect.SelectedValue = "草稿";
+                    this.radSelect.Enabled = false;
+                }
                 this.hiddID.Value = id.ToString();
                 BindData(id);
             }
