@@ -246,7 +246,14 @@ namespace XYECOM.Web.Creditor
                 {
                     case Model.CreditState.Draft:
                         hlUpdate.Visible = true;
-                        lbtnRelease.Visible = true;
+                        if (userinfo.IsReal)
+                        {
+                            lbtnRelease.Visible = true;
+                        }
+                        else
+                        {
+                            lbtnRelease.Visible = false;                            
+                        }
                         lbtnDelete.Visible = true;
                         hlShowTender.Visible = false;
                         hlEvaluate.Visible = false;
@@ -316,7 +323,14 @@ namespace XYECOM.Web.Creditor
                         break;
                     case Model.CreditState.Canceled:
                         hlUpdate.Visible = true;
-                        lbtnRelease.Visible = true;
+                        if (userinfo.IsReal)
+                        {
+                            lbtnRelease.Visible = true;
+                        }
+                        else
+                        {
+                            lbtnRelease.Visible = false;
+                        }
                         lbtnDelete.Visible = true;
                         hlShowTender.Visible = false;
                         hlEvaluate.Visible = false;

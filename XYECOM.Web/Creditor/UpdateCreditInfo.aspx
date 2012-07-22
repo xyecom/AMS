@@ -105,6 +105,8 @@
                         </td>
                         <td colspan="3">
                             <asp:TextBox runat="server" ID="txtTitle" Width="600px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtTitle"
+                                ErrorMessage="案件标题不能为空"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -113,12 +115,18 @@
                         </td>
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtDebtorName"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDebtorName"
+                                ErrorMessage="欠款人姓名不能为空"></asp:RequiredFieldValidator>
                         </td>
                         <td class="info_lei3">
                             欠款人联系电话
                         </td>
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtDebtorTelpone"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtDebtorTelpone"
+                                ErrorMessage="欠款人联系电话不能为空"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtDebtorTelpone"
+                                ErrorMessage="手机号码格式不正确" ValidationExpression="\s*((\d{2,3}-){0,1}\d{11})\s*"></asp:RegularExpressionValidator>
                         </td>
                     </tr>
                     <tr>
@@ -126,13 +134,15 @@
                             欠款金额
                         </td>
                         <td class="info_lei2">
-                            <asp:TextBox runat="server" ID="txtArrears"></asp:TextBox>元
+                            <asp:TextBox runat="server" ID="txtArrears"></asp:TextBox>元<asp:RequiredFieldValidator
+                                ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtArrears" ErrorMessage="欠款金额不能为空"></asp:RequiredFieldValidator>
                         </td>
                         <td class="info_lei3">
                             悬赏金额
                         </td>
                         <td class="info_lei2">
-                            <asp:TextBox runat="server" ID="txtBounty"></asp:TextBox>元
+                            <asp:TextBox runat="server" ID="txtBounty"></asp:TextBox>元<asp:RequiredFieldValidator
+                                ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtBounty" ErrorMessage="悬赏金额不能为空"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -161,7 +171,9 @@
                             欠款原因
                         </td>
                         <td colspan="3">
-                            <asp:TextBox runat="server" ID="txtDebtorReason" Width="600px"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtDebtorReason" Width="600px"></asp:TextBox><asp:RequiredFieldValidator
+                                ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtDebtorReason"
+                                ErrorMessage="欠款原因不能为空"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -169,7 +181,9 @@
                             催收期限
                         </td>
                         <td class="info_lei2">
-                            <asp:TextBox runat="server" ID="txtCollectionPeriod"></asp:TextBox>天
+                            <asp:TextBox runat="server" ID="txtCollectionPeriod"></asp:TextBox>天<asp:RequiredFieldValidator
+                                ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtCollectionPeriod"
+                                ErrorMessage="催收期限不能为空"></asp:RequiredFieldValidator>
                         </td>
                         <td class="info_lei3">
                             备注
@@ -199,6 +213,8 @@
                         </td>
                         <td colspan="3">
                             <asp:TextBox runat="server" ID="txtIntroduction" Width="100%" Rows="10"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtIntroduction"
+                                ErrorMessage="案情简介不能为空"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                 </table>

@@ -23,10 +23,12 @@ namespace XYECOM.Web
                 if (isServer == 1)
                 {
                     this.labTitle.Text = "服务商基本信息";
+                    this.labTitle1.Text = "服务商基本信息";
                 }
                 else
                 {
                     this.labTitle.Text = "债权商基本信息";
+                    this.labTitle1.Text = "债权商基本信息";
                 }
                 int userId = XYECOM.Core.XYRequest.GetQueryInt("UserId", 0);
                 if (userId <= 0)

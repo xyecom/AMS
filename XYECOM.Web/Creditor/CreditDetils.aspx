@@ -203,7 +203,7 @@
                                     服务商所在地：<strong style="color: Red; font-weight: bold; font-size: 14px"><%# GetAreaName(Eval("LayerId"))%></strong>
                                     &nbsp; &nbsp;</div>
                                 <div style="text-align: right; color: #666; width: 727px; height: 19px;">
-                                    投标时间：<%# Eval("TenderDate")%>&nbsp; &nbsp;</div>
+                                    投标时间：<%# Eval("TenderDate", "{0:yyyy-MM-dd}")%>&nbsp; &nbsp;</div>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>

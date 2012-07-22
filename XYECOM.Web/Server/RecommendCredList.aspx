@@ -52,7 +52,7 @@
                                 <%# Eval("Title") %>
                             </td>
                             <td>
-                                <%# Eval("CreateDate")%>
+                                <%# Eval("CreateDate", "{0:yyyy-MM-dd}")%>
                             </td>
                             <td>
                                 <%# GetApprovaStatus(Eval("ApprovaStatus"))%>

@@ -166,7 +166,7 @@
                                             <%# Eval("Price")%>
                                         </td>
                                         <td>
-                                            <%# Eval("PriceDate")%>
+                                            <%# Eval("PriceDate", "{0:yyyy-MM-dd}")%>
                                         </td>
                                         <td>
                                             <%# Eval("FromAddress")%>
@@ -193,7 +193,7 @@
                                             <%# Eval("Price")%>
                                         </td>
                                         <td>
-                                            <%# Eval("PriceDate")%>
+                                            <%# Eval("PriceDate", "{0:yyyy-MM-dd}")%>
                                         </td>
                                         <td>
                                             <%# Eval("FromAddress")%>

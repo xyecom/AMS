@@ -18,9 +18,12 @@ namespace XYECOM.Web.Creditor
         CreditInfoManager credManage = new CreditInfoManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!userinfo.IsReal)
+            if (!IsPostBack)
             {
-                this.radSelect.Enabled = false;
+                if (!userinfo.IsReal)
+                {
+                    this.radSelect.Enabled = false;
+                }
             }
         }
 
@@ -98,7 +101,7 @@ namespace XYECOM.Web.Creditor
                 caseInfo.PartName = userinfo.LayerName;
                 int infoId = 0;
 
-                caseManager.Insert(caseInfo,out infoId);
+                caseManager.Insert(caseInfo, out infoId);
 
                 RelatedCaseInfoManager relateManage = new RelatedCaseInfoManager();
 

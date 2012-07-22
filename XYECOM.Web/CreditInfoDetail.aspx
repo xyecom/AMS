@@ -51,6 +51,15 @@
                     <table width="100%" class="xy_tb xy_tb2 infotable" id="InfoShow">
                         <tr>
                             <th>
+                                发布者：
+                            </th>
+                            <td>
+                                <a runat="server" id="aShow" target="_blank" alt="点击发布者可查看其信用度">
+                                    <asp:Label ID="labUserName" runat="server"></asp:Label></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
                                 标题：
                             </th>
                             <td>
@@ -59,7 +68,7 @@
                         </tr>
                         <tr>
                             <th>
-                                欠款人姓名：
+                                欠款人姓名(中标后可查看)：
                             </th>
                             <td>
                                 <asp:Label ID="labDebtorName" runat="server"></asp:Label>
@@ -67,7 +76,7 @@
                         </tr>
                         <tr>
                             <th>
-                                欠款人联系电话：
+                                欠款人联系电话(中标后可查看)：
                             </th>
                             <td>
                                 <asp:Label ID="labDebtorTelpone" runat="server"></asp:Label>
@@ -127,14 +136,6 @@
                             </th>
                             <td>
                                 <asp:Label ID="labCompanyName" runat="server"></asp:Label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                发布者：
-                            </th>
-                            <td>
-                                <asp:Label ID="labUserName" runat="server"></asp:Label>
                             </td>
                         </tr>
                         <tr>
@@ -202,7 +203,7 @@
                             </td>
                         </tr>
                     </table>
-                    【图片信息】
+                    【图片信息】(中标后可查看)
                     <hr />
                     <p>
                         <asp:Repeater runat="server" ID="rpPrice">
@@ -211,7 +212,7 @@
                             </ItemTemplate>
                         </asp:Repeater>
                     </p>
-                    【文件信息】
+                    【文件信息】(中标后可查看)
                     <hr />
                     <p>
                         <asp:Repeater runat="server" ID="rpfile">
@@ -256,7 +257,7 @@
                         <%# GetUserName(Eval("LayerId"))%></a>
                 </td>
                 <td>
-                    <%# Eval("TenderDate")%>
+                    <%# Eval("TenderDate", "{0:yyyy-MM-dd}")%>
                 </td>
                 <td>
                     <%# GetTenderState(Eval("IsSuccess"))%>

@@ -173,7 +173,7 @@
                                         <%# Eval("Title") %>
                                     </td>
                                     <td>
-                                        <%# Eval("CreateDate")%>
+                                         <%# Eval("CreateDate", "{0:yyyy-MM-dd}")%>
                                     </td>
                                     <td>
                                         <a href='showEvaluation.aspx?UserId=<%# Eval("DepartId") %>' target="_blank" alt="点击发布者可查看其信用度">

@@ -13,6 +13,24 @@ namespace XYECOM.Web {
     public partial class CreditInfoDetail {
         
         /// <summary>
+        /// aShow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor aShow;
+        
+        /// <summary>
+        /// labUserName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labUserName;
+        
+        /// <summary>
         /// labTitle control.
         /// </summary>
         /// <remarks>
@@ -101,15 +119,6 @@ namespace XYECOM.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label labCompanyName;
-        
-        /// <summary>
-        /// labUserName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labUserName;
         
         /// <summary>
         /// labIntroduction control.

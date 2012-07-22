@@ -55,7 +55,7 @@
                                 <%# Eval("CaseTypeName")%>
                             </td>
                             <td>
-                                <%# Eval("CreateDate")%>
+                                <%# Eval("CreateDate", "{0:yyyy-MM-dd}")%>
                             </td>
                             <td>
                                 <%# Eval("PartName")%>

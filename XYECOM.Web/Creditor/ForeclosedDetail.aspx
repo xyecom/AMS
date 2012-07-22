@@ -107,7 +107,7 @@
                                     <%# Eval("Price")%>元
                                 </td>
                                 <td>
-                                    <%# Eval("PriceDate")%>
+                                    <%# Eval("PriceDate", "{0:yyyy-MM-dd}")%>
                                 </td>
                                 <td>
                                     <%# Eval("FromAddress")%>

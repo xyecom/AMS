@@ -71,7 +71,7 @@
                                 <%# GetCreditInfoByCredID(Eval("CreditInfoId")).Title%>
                             </td>
                             <td>
-                                <%# Eval("TenderDate")%>
+                                <%# Eval("TenderDate", "{0:yyyy-MM-dd}")%>
                             </td>
                             <td>
                                 <%# GetTenderState(Eval("IsSuccess"))%>

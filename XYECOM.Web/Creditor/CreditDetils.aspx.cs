@@ -49,7 +49,7 @@ namespace XYECOM.Web.Creditor
             if (null != info)
             {
                 this.labAge.Text = info.Age.ToString();
-                this.labCreateDate.Text = info.CreateDate.ToString();
+                this.labCreateDate.Text = info.CreateDate.ToString("yyyy-MM-dd");
                 this.labTitle.Text = info.Title;
                 this.labArrears.Text = info.Arrears.ToString();
                 this.labBounty.Text = info.Bounty.ToString();

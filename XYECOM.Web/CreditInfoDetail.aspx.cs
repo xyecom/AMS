@@ -56,7 +56,7 @@ namespace XYECOM.Web
             {
                 this.labAge.Text = info.Age.ToString();
                 this.labAreaId.Text = new Area().GetItem(info.AreaId).FullNameAll;
-                this.labCreateDate.Text = info.CreateDate.ToString();
+                this.labCreateDate.Text = info.CreateDate.ToString("yyyy-MM-dd");
                 this.labCompanyName.Text = userInfoManage.GetCompNameByUId(info.UserId);
                 this.labUserName.Text = userInfoManage.GetUserNameByID(info.DepartId);
                 this.labTitle.Text = info.Title;
@@ -64,9 +64,50 @@ namespace XYECOM.Web
                 this.labBounty.Text = info.Bounty.ToString();
                 this.labCollectionPeriod.Text = info.CollectionPeriod;
                 this.labDebtObligation.Text = info.DebtObligation;
-                this.labDebtorName.Text = info.DebtorName;
+                XYECOM.Model.GeneralUserInfo userInfo = Business.CheckUser.UserInfo;
+                TenderInfo tenderInfo = new TenderInfoManager().GetTenderByCredId(info.CreditId);
+                if (tenderInfo != null)
+                {
+                    if (userInfo.userid == tenderInfo.LayerId)
+                    {
+                        this.labDebtorTelpone.Text = info.DebtorTelpone;
+                        this.labDebtorName.Text = info.DebtorName;
+                        DataTable price = XYECOM.Business.Attachment.GetAllImgHref(AttachmentItem.CreditInfo, info.CreditId);
+                        if (price.Rows.Count > 0)
+                        {
+                            this.rpPrice.DataSource = price;
+                            this.rpPrice.DataBind();
+                        }
+                        DataTable ralaCases = new RelatedCaseInfoManager().GetFilePaths(info.CreditId, Model.TableInfoType.ZqInfo);
+                        if (ralaCases.Rows.Count > 0)
+                        {
+                            this.rpfile.DataSource = ralaCases;
+                            this.rpfile.DataBind();
+                        }
+                    }
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(info.DebtorName) && info.DebtorName.Length > 1)
+                    {
+                        this.labDebtorName.Text = info.DebtorName.Substring(0, 1) + "**";
+                    }
+                    else
+                    {
+                        this.labDebtorName.Text = info.DebtorName;
+                    }
+                    if (!string.IsNullOrEmpty(info.DebtorTelpone) && info.DebtorTelpone.Length > 1)
+                    {
+                        this.labDebtorTelpone.Text = info.DebtorTelpone.Substring(0, 6) + "**";
+                    }
+                    else
+                    {
+                        this.labDebtorTelpone.Text = info.DebtorTelpone;
+                    }
+                }
+
+
                 this.labDebtorReason.Text = info.DebtorReason;
-                this.labDebtorTelpone.Text = info.DebtorTelpone;
                 this.labIntroduction.Text = info.Introduction;
                 this.labState.Text = GetApprovaStatus(info.ApprovaStatus);
                 this.labIsConfirm.Text = info.IsConfirm ? "确认" : "不确认";
@@ -74,19 +115,9 @@ namespace XYECOM.Web
                 this.labIsLitigationed.Text = info.IsLitigationed ? "是" : "否";
                 this.labIsSelfCollection.Text = info.IsSelfCollection ? "是" : "否";
                 this.hidStae.Value = info.ApprovaStatus.ToString();
+                this.aShow.HRef = "showEvaluation.aspx?UserId=" + info.DepartId;
             }
-            DataTable price = XYECOM.Business.Attachment.GetAllImgHref(AttachmentItem.CreditInfo, info.CreditId);
-            if (price.Rows.Count > 0)
-            {
-                this.rpPrice.DataSource = price;
-                this.rpPrice.DataBind();
-            }
-            DataTable ralaCases = new RelatedCaseInfoManager().GetFilePaths(info.CreditId, Model.TableInfoType.ZqInfo);
-            if (ralaCases.Rows.Count > 0)
-            {
-                this.rpfile.DataSource = ralaCases;
-                this.rpfile.DataBind();
-            }
+
             StringBuilder strWhere = new StringBuilder(" 1=1 and  CreditInfoId = " + id);
             int totalRecord = 0;
             DataTable dt = XYECOM.Business.Utils.GetPaginationData("TenderInfo", "TenderId", "*", " TenderDate desc", strWhere.ToString(), this.Page1.PageSize, this.Page1.CurPage, out totalRecord);
