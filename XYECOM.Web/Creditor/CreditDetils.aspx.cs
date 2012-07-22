@@ -250,7 +250,7 @@ namespace XYECOM.Web.Creditor
         {
             int UserId = MyConvert.GetInt32(userId.ToString());
             XYECOM.Model.GeneralUserInfo userInfo = Business.CheckUser.GetUserInfo(UserId);
-            return userinfo.AreaName;
+            return userInfo.AreaName;
         }
         #endregion
     }
