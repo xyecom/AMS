@@ -71,7 +71,7 @@ namespace XYECOM.Web.Creditor
                 sql = @"select * from CaseInfo where partid=" + userinfo.userid;
             }
 
-            if (!string.IsNullOrEmpty(key))
+            if (!string.IsNullOrEmpty(key) && key != "请输入关键字")
             {
                 sql += " and CaseName like '%" + key + "%'";
             }
