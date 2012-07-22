@@ -184,7 +184,7 @@
                                 border: 1px solid #ccc; margin: 10px 0">
                                 <div style="text-align: left; margin: 0 10px; width: 711px">
                                     <img src='<%# GetInfoImgHref(Eval("LayerId")) %>' width="50" height="50" />
-                                    <a href='showEvaluation.aspx?isServer=1&UserId=<%# Eval("LayerId") %>' alt="点击发布者可查看其信用度"
+                                    <a href='/showEvaluation.aspx?isServer=1&UserId=<%# Eval("LayerId") %>' alt="点击发布者可查看其信用度"
                                         target="_blank">
                                         <%# GetUserName(Eval("LayerId"))%></a> &nbsp; &nbsp; &nbsp; 是否中标：<strong style="color: Red;
                                             font-weight: bold; font-size: 14px"><%# GetTenderState(Eval("IsSuccess"))%></strong>&nbsp;
