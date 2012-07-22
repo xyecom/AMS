@@ -112,7 +112,7 @@ namespace XYECOM.SQLServer
 
             foreach (DataRow row in table.Rows)
             {
-                ids += row["Id"].ToString();
+                ids += row["CaseId"].ToString();
                 ids += ",";
             }
 

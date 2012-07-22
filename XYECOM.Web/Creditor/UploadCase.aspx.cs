@@ -88,13 +88,14 @@ namespace XYECOM.Web.Creditor
                 string filePath = CaseUploadManager.UpLoadFile(userinfo.CompanyId, userinfo.userid, info.CaseTypeId);
                 if (!string.IsNullOrEmpty(filePath))
                 {
+                    int id = 0;
                     info.PartId = userinfo.userid;
                     info.CompanyId = userinfo.CompanyId;
                     info.PartName = userinfo.LayerName;
                     info.CompanyName = userinfo.CompanyName;
                     info.CreateDate = DateTime.Now;
                     info.FilePath = filePath;
-                    caseManager.Insert(info);
+                    caseManager.Insert(info, out id);
                 }
                 else
                 {

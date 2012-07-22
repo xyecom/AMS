@@ -4,6 +4,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using XYECOM.Web.AppCode;
 
 namespace XYECOM.Web.Creditor.UserContorl
 {
@@ -18,8 +19,8 @@ namespace XYECOM.Web.Creditor.UserContorl
                 {
                     this.liPart.Visible = true;
 
-                    string sql = "select layername,u_id from u_user where CompanyId=" + XYECOM.Business.CheckUser.UserInfo.userid + " and isprimary = 0";
-                    DataTable dt = XYECOM.Core.Data.SqlHelper.ExecuteTable(sql);
+
+                    DataTable dt = Utitl.GetSubUsers(XYECOM.Business.CheckUser.UserInfo.userid);
 
                     this.rptPart.DataSource = dt;
                     this.rptPart.DataBind();

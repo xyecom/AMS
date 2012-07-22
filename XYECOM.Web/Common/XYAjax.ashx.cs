@@ -148,15 +148,24 @@ namespace XYECOM.Web.Common
 
         private void GetCaseList()
         {
+            string ids = XYECOM.Core.XYRequest.GetQueryString("strID");
             string customParams = XYECOM.Core.XYRequest.GetQueryString("Params");
-
+            string Mode = XYECOM.Core.XYRequest.GetQueryString("Mode").Trim();
             string sql = sql = @"select Id,CaseName from CaseInfo where 1=1 ";
 
-            sql += customParams;
+            if (Mode == "")
+            {
+
+                sql += customParams;
+            }
+            else if ("GetInfos" == Mode && "" != ids)//获取多条记录
+            {
+                sql += " and id in (" + ids + ")";
+            }
 
             DataTable table = Core.Data.SqlHelper.ExecuteTable(sql);
             StringBuilder sb = new StringBuilder();
-            
+
             foreach (DataRow row in table.Rows)
             {
                 sb.AppendFormat("<Item><ID>{0}</ID><Name>{1}</Name><HasSub>{2}</HasSub></Item>", row["Id"], Core.Utils.JSEscape(row["CaseName"].ToString()), "false");

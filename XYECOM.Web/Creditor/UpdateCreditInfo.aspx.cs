@@ -6,12 +6,15 @@ using System.Web.UI.WebControls;
 using XYECOM.Model.AMS;
 using XYECOM.Core;
 using XYECOM.Model;
+using XYECOM.Business;
+using XYECOM.Web.AppCode;
 
 namespace XYECOM.Web.Creditor
 {
     public partial class UpdateCreditInfo : XYECOM.Web.AppCode.UserCenter.Creditor
     {
         XYECOM.Business.AMS.CreditInfoManager manager = new Business.AMS.CreditInfoManager();
+        RelatedCaseInfoManager relateManage = new RelatedCaseInfoManager();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,6 +27,11 @@ namespace XYECOM.Web.Creditor
                 }
                 this.hiddID.Value = id.ToString();
                 BindData(id);
+
+                if (!userinfo.IsReal)
+                {
+                    this.radSelect.Enabled = false;
+                }
             }
         }
 
@@ -64,6 +72,9 @@ namespace XYECOM.Web.Creditor
             this.txtLicenseType.Text = info.LicenseType;
             this.txtRemark.Text = info.Remark;
             this.udCreditInfo.InfoID = info.CreditId;
+
+
+            hdgetid.Value = relateManage.GetSelectCaseIds(info.CreditId, TableInfoType.ZqInfo);
         }
 
         protected void btnOK_Click(object sender, EventArgs e)
@@ -115,6 +126,45 @@ namespace XYECOM.Web.Creditor
             info.Remark = this.txtRemark.Text.Trim();
             info.UserId = MyConvert.GetInt32(userinfo.CompanyId.ToString());
             int result = manager.UpdateCreditInfoByID(info);
+
+            relateManage.DeleteRelatedCaseInfo(info.CreditId, TableInfoType.ZqInfo);
+
+            string caseType = Request.Form["case"];
+
+            if (caseType == "1")
+            {
+                //添加选择的档案信息                
+                string strCase = this.hdgetid.Value;
+                string[] cases = strCase.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                relateManage.RelatedInfo(TableInfoType.ZqInfo, info.CreditId, userinfo.userid, userinfo.CompanyId, cases);
+            }
+
+            if (caseType == "0")
+            {
+                Business.CaseManager caseManager = new Business.CaseManager();
+
+                string filePath = CaseUploadManager.UpLoadFile(userinfo.CompanyId, userinfo.userid, 0);
+
+                CaseInfo caseInfo = new CaseInfo();
+                caseInfo.CaseName = info.Title;
+                caseInfo.CaseTypeId = 0;
+                caseInfo.CaseTypeName = "默认分类";
+                caseInfo.CompanyId = userinfo.CompanyId;
+                caseInfo.CompanyName = userinfo.CompanyName;
+                caseInfo.CreateDate = DateTime.Now;
+                caseInfo.Description = info.Introduction;
+                caseInfo.FilePath = filePath;
+                caseInfo.PartId = userinfo.userid;
+                caseInfo.PartName = userinfo.LayerName;
+                int infoId = 0;
+
+                caseManager.Insert(caseInfo, out infoId);
+
+                relateManage.RelatedInfo(TableInfoType.ZqInfo, info.CreditId, userinfo.userid, userinfo.CompanyId, infoId);
+            }
+
+
+
             if (result > 0)
             {
                 this.udCreditInfo.InfoID = info.CreditId;

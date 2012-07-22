@@ -2,6 +2,7 @@
     CodeBehind="UpdateCreditInfo.aspx.cs" Inherits="XYECOM.Web.Creditor.UpdateCreditInfo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link href="/common/css/xylib.css" type="text/css" rel="stylesheet" />
     <script language="javascript" type="text/javascript" src="/Other/js/ForeUploadControl.js"></script>
     <style type="text/css">
         .upload_bg
@@ -74,6 +75,11 @@
         .Upload_File li span
         {
             float: right;
+        }
+        #divtitle h2
+        {
+            width: 100px;
+            margin: 0px;
         }
     </style>
 </asp:Content>
@@ -253,19 +259,17 @@
                             </asp:CheckBoxList>
                         </td>
                     </tr>
+                    <tr>
+                        <td class="info_lei3">
+                            档案选择：
+                        </td>
+                        <td class="info_lei2" colspan="3">
+                            档案库选择<input type="radio" name="case" value="1" id="remo" onclick="document.getElementById('loc').style.display='none';document.getElementById('remote').style.display='';"
+                                checked="checked" />
+                            从本地上传<input type="radio" name="case" value="0" id="locat" onclick="document.getElementById('loc').style.display='';document.getElementById('remote').style.display='none';" />
+                        </td>
+                    </tr>
                 </table>
-                <div style="width: 756px; height: 40px; line-height: 40px; text-align: center">
-                    <table style="width: 600px; text-align: center">
-                        <tr>
-                            <td align="center" colspan="2">
-                                <asp:RadioButtonList runat="server" ID="radSelect" RepeatDirection="Horizontal">
-                                    <asp:ListItem Value="发布" Selected="True">直接对外发布</asp:ListItem>
-                                    <asp:ListItem Value="草稿">存为债权草稿</asp:ListItem>
-                                </asp:RadioButtonList>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
                 <div>
                     <p>
                         上传图片</p>
@@ -276,25 +280,39 @@
                         </p>
                     </div>
                 </div>
-                <%--<div>
+                <div style="clear: both;">
+                </div>
+                <div id="loc" style="display: none;">
                     <p>
                         从本地上传资料</p>
+                    选择文件:
+                    <asp:FileUpload ID="flCase" runat="server" />
                 </div>
-                <div>
+                <div id="remote">
                     <p>
                         从档案库选择资料</p>
                     <div id="divtitle">
                     </div>
-                    <input id="hdgetid" type="text" />
+                    <input id="hdgetid" type="hidden" runat="server" />
                     <input id="ttt" type="hidden" />
                     <script type="text/javascript">
-                        var cla = new ClassTypes("cla", 'ttt', 'divtitle', 'hdgetid', 5, '<%=this.userinfo.IsPrimary?"and CompanyId="+userinfo.CompanyId:"and userid="+userinfo.userid %>', "xy018");
+                        var cla = new ClassTypes("cla", 'ttt', 'divtitle', '<%=hdgetid.ClientID %>', 5, '<%=this.userinfo.IsPrimary?"and CompanyId="+userinfo.CompanyId:"and userid="+userinfo.userid %>', "xy018");
                         cla.Init();
                     </script>
-                </div>--%>
+                </div>
+                <div style="width: 756px; height: 40px; line-height: 40px; text-align: center">
+                    <table style="width: 600px; text-align: center">
+                        <tr>
+                            <td align="center" colspan="2">
+                                <asp:RadioButtonList runat="server" ID="radSelect" RepeatDirection="Horizontal">
+                                    <asp:ListItem Value="发布">直接对外发布</asp:ListItem>
+                                    <asp:ListItem Value="草稿" Selected="True">存为债权草稿</asp:ListItem>
+                                </asp:RadioButtonList>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
                 <div style="width: 756px; height: 50px; line-height: 50px; text-align: center">
-                    <%--                    <input type="button" value="确 定" style="background: url(../images/yes.gif); width: 80px;
-                        height: 25px; border: none; cursor: pointer; color: #FFF" />--%>
                     <asp:Button runat="server" ID="btnOk" OnClick="btnOK_Click" Text="确定" />
                     <input type="button" value="返回" onclick="javascript:history.back();" />
                     <input type="hidden" id="hiddID" runat="server" />

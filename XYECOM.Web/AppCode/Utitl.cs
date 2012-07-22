@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web;
+using System.Data;
 
 namespace XYECOM.Web.AppCode
 {
@@ -13,6 +14,12 @@ namespace XYECOM.Web.AppCode
             string sql = string.Format(sqlFmt, tblName, strWhere);
 
             return XYECOM.Core.Data.SqlHelper.ExecuteScalar(sql);
+        }
+
+        public static DataTable GetSubUsers(long userid)
+        {
+            string sql = "select layername,u_id from u_user where CompanyId=" + userid + " and isprimary = 0";
+            return XYECOM.Core.Data.SqlHelper.ExecuteTable(sql);
         }
     }
 }
