@@ -82,38 +82,61 @@
                 <h2>
                     <asp:Label ID="lblZqMessage" runat="server" Text=""></asp:Label>
                 </h2>
-                <asp:Repeater ID="rptCreadit" runat="server">
+                <asp:Repeater ID="rptList" runat="server" OnItemDataBound="rptList_ItemDataBound">
                     <HeaderTemplate>
                         <table>
-                            <tbody>
-                                <tr id="trtop">
-                                    <td width="40%" align="middle">
-                                        案件标题
-                                    </td>
-                                    <td width="20%" align="middle">
-                                        发布时间
-                                    </td>
-                                    <td width="25%" align="middle">
-                                        操作菜单
-                                    </td>
-                                </tr>
+                            <tr id="trtop">
+                                <td align="center" width="20%">
+                                    案件标题
+                                </td>
+                                <td align="center" width="20%">
+                                    投标时间
+                                </td>
+                                <td align="center" width="10%">
+                                    投标状态
+                                </td>
+                                <td align="center" width="10%">
+                                    案件状态
+                                </td>
+                                <td align="center" width="15%">
+                                    催收期限(天)
+                                </td>
+                                <td align="center" width="25%">
+                                    操作菜单
+                                </td>
+                            </tr>
                     </HeaderTemplate>
                     <ItemTemplate>
-                        <tr style="background-color: #ffffff; height: 28px; border-top: #ccc 1px solid" onmousemove="this.style.backgroundColor='#F7F7F7'"
+                        <tr id="trmidd" style="height: 28px; border-top: 1px solid #ccc" onmousemove="this.style.backgroundColor='#F7F7F7'"
                             onmouseout="this.style.backgroundColor='#ffffff'">
                             <td id="tdtitle">
-                                <%# Eval("Title") %>
+                                <%# GetCreditInfoByCredID(Eval("CreditInfoId")).Title%>
                             </td>
                             <td>
-                                <%# Eval("CreateDate") %>
+                                <%# Eval("TenderDate", "{0:yyyy-MM-dd}")%>
                             </td>
                             <td>
-                                <a href='<%#  string.Format("/CreditInfoDetail.aspx?Id={0}",Eval("CreditId")) %>'>详情</a>
+                                <%# GetTenderState(Eval("IsSuccess"))%>
+                            </td>
+                            <td>
+                                <%# GetApprovaStatus(Eval("CreditInfoId"))%>
+                            </td>
+                            <td>
+                                <%# GetCreditInfoByCredID(Eval("CreditInfoId")).CollectionPeriod%>
+                            </td>
+                            <td>
+                                <asp:HiddenField ID="hidCreditInfoId" runat="server" Value='<%# Eval("CreditInfoId")%>' />
+                                <asp:HiddenField ID="hidTenderId" runat="server" Value='<%# Eval("TenderId")%>' />
+                                <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditInfoId") %>'>查看详细</asp:HyperLink>
+                                <asp:HyperLink Visible="false" ID="hlEvaluate" runat="server" NavigateUrl='<%# "AddEvaluation.aspx?Id=" + Eval("CreditInfoId") %>'>评价</asp:HyperLink>
+                                <asp:LinkButton Visible="false" ID="lbtnCreditConfirm" runat="server" Text="确认案件完成"
+                                    OnClientClick="javascript:return confirm('确定该案件执行完毕吗？');" OnClick="lbtnCreditConfirm_Click"
+                                    CommandArgument='<%# Eval("CreditInfoId") %>'></asp:LinkButton>
                             </td>
                         </tr>
                     </ItemTemplate>
                     <FooterTemplate>
-                        </tbody> </table></FooterTemplate>
+                        </table></FooterTemplate>
                 </asp:Repeater>
             </div>
             <!--列表 end-->
