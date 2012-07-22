@@ -243,12 +243,10 @@ public partial class xymanage_UserManage_UserListManger : XYECOM.Web.BasePage.Ma
         string isreal = string.Empty;
         if (real == "1")
         {
-            isreal = "0";
-            btn.Text = "普通会员";
+            isreal = "0";            
         }
         else
         {
-            btn.Text = "实名会员";
             isreal = "1";
         }
         string uid = realId[1];
