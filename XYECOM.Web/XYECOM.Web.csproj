@@ -580,6 +580,13 @@
     <Compile Include="showEvaluation.aspx.designer.cs">
       <DependentUpon>showEvaluation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UploadImage.aspx.cs">
       <DependentUpon>UploadImage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2675,7 +2682,7 @@
     <Content Include="templates\_shop\store\images\w980_titb.jpg" />
     <Content Include="templates\_shop\store\images\xsp_pic1.jpg" />
     <Content Include="templates\_shop\store\images\xsp_pic2.jpg" />
-    <Content Include="templates\_shop\store\images\茵曼.jpg" />
+    <Content Include="templates\_shop\store\images\yinman.jpg" />
     <Content Include="templates\_shop\store\index.htm" />
     <Content Include="templates\_shop\store\introduction.htm" />
     <Content Include="templates\_shop\store\investment.htm" />
@@ -3051,6 +3058,7 @@
     <Content Include="templates\_shop\yys_2009\_left.htm" />
     <Content Include="templates\_shop\yys_2009\_menu.htm" />
     <Content Include="templates\_shop\yys_2009\_top.htm" />
+    <Content Include="Test.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -4201,8 +4209,8 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49453</DevelopmentServerPort>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8100</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://127.0.0.1:8100/</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>

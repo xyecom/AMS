@@ -145,6 +145,11 @@ namespace XYECOM.URL
                 context.Response.End();
             }
 
+            if (text == input)
+            {
+                context.RewritePath("/index.aspx");
+                return;
+            }
 
             //如果是注册或登陆直接进入
             if (input.StartsWith("/login.aspx") || input.StartsWith("/register.aspx") || input.StartsWith("/getpassword.aspx") || input.StartsWith("/logout.aspx") || input.StartsWith("/creditor/") || input.StartsWith("/server/"))
@@ -168,13 +173,13 @@ namespace XYECOM.URL
 
                 if (input == text)
                 {
-                   
+
                     return;
                 }
 
                 if (input.Substring(text.Length).IndexOf("/") == -1)
                 {
-                   
+
                     return;
                 }
 
