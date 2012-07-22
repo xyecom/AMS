@@ -4171,7 +4171,7 @@
     <Folder Include="templates\_shop\skins_2009\001\css\bgimages\" />
     <Folder Include="templates\_shop\store\css\bgimages\" />
     <Folder Include="templates\_shop\yys_2009\001\css\bgimages\" />
-    <Folder Include="Upload\Image\" />
+    <Folder Include="Upload\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
