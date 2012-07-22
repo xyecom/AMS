@@ -27,16 +27,10 @@ namespace XYECOM.Web.Creditor
                 }
                 if (!userinfo.IsReal)
                 {
-                    this.radSelect.SelectedValue = "草稿";
                     this.radSelect.Enabled = false;
                 }
                 this.hiddID.Value = id.ToString();
                 BindData(id);
-
-                if (!userinfo.IsReal)
-                {
-                    this.radSelect.Enabled = false;
-                }
             }
         }
 

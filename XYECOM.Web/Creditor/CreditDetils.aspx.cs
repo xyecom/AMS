@@ -257,7 +257,7 @@ namespace XYECOM.Web.Creditor
         public string GetInfoImgHref(object userId)
         {
             int id = MyConvert.GetInt32(userId.ToString());
-            return XYECOM.Business.Attachment.GetInfoDefaultImgHref(AttachmentItem.Individual, id);
+            return XYECOM.Business.Attachment.GetInfoDefaultImgHref(AttachmentItem.User, id);
         }
 
         public string GetAreaName(object userId)
