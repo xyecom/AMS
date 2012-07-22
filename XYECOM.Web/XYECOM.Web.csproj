@@ -99,6 +99,7 @@
     <Compile Include="AppCode\UserCenter\Server.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="AppCode\Utitl.cs" />
     <Compile Include="Common\AdsClick.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>AdsClick.aspx</DependentUpon>

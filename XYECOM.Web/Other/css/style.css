@@ -119,7 +119,7 @@ height:32px;
 #right1{width:260px; height:auto; overflow:hidden; background:url(../images/lit.gif) repeat-x; line-height:37px;border:1px solid #ddd;}
 #right2{width:260px; height:auto; overflow:hidden; background:url(../images/lit.gif) repeat-x; line-height:37px;border:1px solid #ddd; margin-top:5px;}
 
-.qul ul{ width:250px;float:left; margin-left:0px}
+.qul ul{ width:250px;float:left; margin-left:0px; padding-left:0px}
 .qul ul li{height:24px;line-height:24px;text-align:left}
 .qul ul li font{ color:#D6000C;font-size:12px;}
 

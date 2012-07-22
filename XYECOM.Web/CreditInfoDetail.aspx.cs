@@ -24,6 +24,11 @@ namespace XYECOM.Web
         #region 页面加载
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Business.CheckUser.CheckUserLogin())
+            {
+                GotoMsgBoxPageForDynamicPage("登录后才能访问详情页面！", 2, "Login.aspx?backurl=" + Request.Path);
+                return;
+            }
             int Id = XYECOM.Core.XYRequest.GetQueryInt("ID", 0);
             if (Id <= 0)
             {
@@ -51,8 +56,8 @@ namespace XYECOM.Web
                 this.labAge.Text = info.Age.ToString();
                 this.labAreaId.Text = new Area().GetItem(info.AreaId).FullNameAll;
                 this.labCreateDate.Text = info.CreateDate.ToString();
-                this.labCompanyName.Text =userInfoManage.GetCompNameByUId(info.UserId);
-                this.labUserName.Text =userInfoManage.GetUserNameByID(info.DepartId);
+                this.labCompanyName.Text = userInfoManage.GetCompNameByUId(info.UserId);
+                this.labUserName.Text = userInfoManage.GetUserNameByID(info.DepartId);
                 this.labTitle.Text = info.Title;
                 this.labArrears.Text = info.Arrears.ToString();
                 this.labBounty.Text = info.Bounty.ToString();
