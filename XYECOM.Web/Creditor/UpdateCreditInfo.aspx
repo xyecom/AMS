@@ -140,13 +140,20 @@
                             授权类型
                         </td>
                         <td class="info_lei2">
-                            <asp:TextBox runat="server" ID="txtLicenseType"></asp:TextBox>
+                            <asp:RadioButtonList runat="server" ID="rdLicenseType">
+                                <asp:ListItem Value="全部授权">全部授权</asp:ListItem>
+                                <asp:ListItem Value="部分授权">部分授权</asp:ListItem>
+                            </asp:RadioButtonList>
                         </td>
                         <td class="info_lei3">
                             欠款类型
                         </td>
                         <td class="info_lei2">
-                            <asp:TextBox runat="server" ID="txtDebtorType"></asp:TextBox>
+                            <asp:RadioButtonList runat="server" ID="rdDebtorType">
+                                <asp:ListItem Value="货款逾期">货款逾期</asp:ListItem>
+                                <asp:ListItem Value="商业纠纷">商业纠纷</asp:ListItem>
+                                <asp:ListItem Value="其他类型">其他类型</asp:ListItem>
+                            </asp:RadioButtonList>
                         </td>
                     </tr>
                     <tr>

@@ -55,14 +55,14 @@ namespace XYECOM.Web.Creditor
             info.DebtorName = this.txtDebtorName.Text.Trim();
             info.DebtorReason = this.txtDebtorReason.Text.Trim();
             info.DebtorTelpone = this.txtDebtorTelpone.Text.Trim();
-            info.DebtorType = this.txtDebtorType.Text.Trim();
+            info.DebtorType = this.rdDebtorType.SelectedValue;
             info.DepartId = MyConvert.GetInt32(userinfo.userid.ToString());
             info.Introduction = this.txtIntroduction.Text.Trim();
             info.IsConfirm = this.radIsConfirm.SelectedValue == "1" ? true : false;
             info.IsInLitigation = this.radIsInLitigation.SelectedValue == "1" ? true : false;
             info.IsLitigationed = this.radIsLitigationed.SelectedValue == "1" ? true : false;
             info.IsSelfCollection = this.radIsSelfCollection.SelectedValue == "1" ? true : false;
-            info.LicenseType = this.txtLicenseType.Text.Trim();
+            info.LicenseType = this.rdLicenseType.SelectedValue;
             info.Remark = this.txtRemark.Text.Trim();
             info.UserId = MyConvert.GetInt32(userinfo.CompanyId.ToString());
             int credId = 0;

@@ -68,13 +68,13 @@ namespace XYECOM.Web.Creditor
             this.txtDebtorName.Text = info.DebtorName;
             this.txtDebtorReason.Text = info.DebtorReason;
             this.txtDebtorTelpone.Text = info.DebtorTelpone;
-            this.txtDebtorType.Text = info.DebtorType;
+            this.rdDebtorType.SelectedValue = info.DebtorType;
             this.txtIntroduction.Text = info.Introduction;
             this.radIsConfirm.SelectedValue = info.IsConfirm ? "1" : "0";
             this.radIsInLitigation.SelectedValue = info.IsInLitigation ? "1" : "0";
             this.radIsLitigationed.SelectedValue = info.IsLitigationed ? "1" : "0";
             this.radIsSelfCollection.SelectedValue = info.IsSelfCollection ? "1" : "0";
-            this.txtLicenseType.Text = info.LicenseType;
+            this.rdLicenseType.SelectedValue = info.LicenseType;
             this.txtRemark.Text = info.Remark;
             this.udCreditInfo.InfoID = info.CreditId;
 
@@ -121,13 +121,13 @@ namespace XYECOM.Web.Creditor
             info.DebtorName = this.txtDebtorName.Text.Trim();
             info.DebtorReason = this.txtDebtorReason.Text.Trim();
             info.DebtorTelpone = this.txtDebtorTelpone.Text.Trim();
-            info.DebtorType = this.txtDebtorType.Text.Trim();
+            info.DebtorType = this.rdDebtorType.SelectedValue;
             info.Introduction = this.txtIntroduction.Text.Trim();
             info.IsConfirm = this.radIsConfirm.SelectedValue == "1" ? true : false;
             info.IsInLitigation = this.radIsInLitigation.SelectedValue == "1" ? true : false;
             info.IsLitigationed = this.radIsLitigationed.SelectedValue == "1" ? true : false;
             info.IsSelfCollection = this.radIsSelfCollection.SelectedValue == "1" ? true : false;
-            info.LicenseType = this.txtLicenseType.Text.Trim();
+            info.LicenseType = this.rdLicenseType.SelectedValue;
             info.Remark = this.txtRemark.Text.Trim();
             info.UserId = MyConvert.GetInt32(userinfo.CompanyId.ToString());
             int result = manager.UpdateCreditInfoByID(info);
