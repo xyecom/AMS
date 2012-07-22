@@ -117,7 +117,8 @@
                                             <ItemTemplate>
                                                 <div style="margin-top: 2px; color: #f60;">
                                                     <a href='<%# GetSubUserUrl(Eval("U_ID"),Eval("UserType")) %>'>
-                                                        <%# Eval("UI_Name") %></a>
+                                                        <%# Eval("UI_Name") %>
+                                                        (<%# Eval("IsReal").ToString() == "True" ? "已实名认证" : "未实名认证"%>) </a>
                                                 </div>
                                             </ItemTemplate>
                                         </asp:TemplateField>
@@ -126,7 +127,7 @@
                                             <ItemStyle CssClass="gvLeft" Width="22%" />
                                             <ItemTemplate>
                                                 <asp:LinkButton ID="btnSetIsReal" runat="server" CommandArgument='<%# string.Format("{0}|{1}",Eval("IsReal"),Eval("U_Id")) %>'
-                                                    OnClick="btnSetIsReal_Click">普通会员</asp:LinkButton>
+                                                    OnClick="btnSetIsReal_Click"><%# Eval("IsReal").ToString() == "True" ? "取消实名" : "实名认证"%></asp:LinkButton>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="用户类型">
