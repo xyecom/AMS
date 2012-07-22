@@ -29,6 +29,7 @@ namespace XYECOM.Web
             int aredId = MyConvert.GetInt32(this.city.Value);
 
             this.lblMessage.Text = "";
+            this.labCreditMessage.Text = "";
 
             StringBuilder strWhere = new StringBuilder(" 1=1 and (State = " + (int)AuditingState.Passed + ")");
             if (!string.IsNullOrEmpty(typeName) && typeName != "所有")
@@ -50,8 +51,21 @@ namespace XYECOM.Web
             }
             else
             {
-                this.lblMessage.Text = "没有相关信息记录";
+                this.lblMessage.Text = "没有可查看的抵债信息";
                 this.dlForeclosed.DataBind();
+            }
+            StringBuilder where = new StringBuilder(" 1=1 and ( ApprovaStatus  =2)");
+            DataTable dtZ = XYECOM.Business.Utils.GetPaginationData("CreditInfo", "CreditId", "*", " CreateDate desc", where.ToString(), 20, 1, out totalRecord);
+
+            if (dtZ.Rows.Count > 0)
+            {
+                this.dlCreditList.DataSource = dtZ;
+                this.dlCreditList.DataBind();
+            }
+            else
+            {
+                this.labCreditMessage.Text = "没有可查看的债权信息";
+                this.dlCreditList.DataBind();
             }
         }
 
@@ -101,6 +115,17 @@ namespace XYECOM.Web
         {
             int id = MyConvert.GetInt32(foreId.ToString());
             return XYECOM.Business.Attachment.GetInfoDefaultImgHref(AttachmentItem.ForeclosedInfo, id);
+        }
+
+        /// <summary>
+        /// 根据债权信息ID获取该债权信息的投标个数
+        /// </summary>
+        /// <param name="CreditID"></param>
+        /// <returns></returns>
+        public int GetTenderCountByCreditID(object CreditID)
+        {
+            int id = MyConvert.GetInt32(CreditID.ToString());
+            return new XYECOM.Business.AMS.TenderInfoManager().GetTenderCountByCreditID(id);
         }
     }
 }

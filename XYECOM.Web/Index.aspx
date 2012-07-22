@@ -30,8 +30,9 @@
             <div class="logo">
             </div>
             <div class="logoright" style="width: 250px">
-                <a href="#">设为首页</a>&nbsp; |&nbsp; <a href="#">加入收藏</a>&nbsp;|&nbsp; <a href="/Login.aspx">
-                    登陆</a>&nbsp;|&nbsp;<a href="/Register.aspx">注册</a>
+                <a onclick="javascript:this.style.behavior='url(#default#homepage)';this.setHomePage('www.boqt.com');"
+                    href="#" target="_self">设为首页</a> &nbsp; |&nbsp; <a href="javascript:window.external.addFavorite('www.boqt.com','包青天')">
+                        添加到收藏夹</a>&nbsp;|&nbsp; <a href="/Login.aspx">登陆</a>&nbsp;|&nbsp;<a href="/Register.aspx">注册</a>
             </div>
             <div id="menu" style="float: left;">
                 <ul>
@@ -104,28 +105,6 @@
                         <div style="width: 514px; float: right; height: 40px; line-height: 35px; text-align: center">
                             <table width="512" style="height: 31px; width: 480px; float: left">
                                 <tr>
-                                    <td width="50">
-                                        标的额
-                                    </td>
-                                    <td width="92">
-                                        <select id="Select1">
-                                            <option>1万以下</option>
-                                            <option>10~50万</option>
-                                        </select>
-                                    </td>
-                                    <td width="39">
-                                        地区
-                                    </td>
-                                    <td width="76">
-                                        <select id="Select2">
-                                            <option>陕西</option>
-                                            <option>湖南</option>
-                                        </select>
-                                    </td>
-                                    <td width="92">
-                                        <input name="搜索" type="button" value="搜索" style="background: url(/Other/images/yes.gif);
-                                            width: 80px; height: 25px; border: none; cursor: pointer; color: #FFF" />
-                                    </td>
                                     <td width="44">
                                         <a href="/IndexCreditList.aspx">更多>></a>
                                     </td>
@@ -142,7 +121,7 @@
                                 标的金额
                             </td>
                             <td class="tdarea">
-                                所在地区
+                                悬赏金额
                             </td>
                             <td class="tdtime">
                                 发布时间
@@ -152,310 +131,47 @@
                             </td>
                         </tr>
                     </table>
-                    <table width="702" id="zqtj">
-                        <tr>
-                            <td class="tdtitle">
-                                <img src="/Other/images/jian.gif" /><a href="#">与xxx企业的业务往来</a>
-                            </td>
-                            <td class="tdprice">
-                                12，234.00
-                            </td>
-                            <td class="tdarea">
-                                陕西·西安
-                            </td>
-                            <td class="tdtime">
-                                2012-6-10
-                            </td>
-                            <td class="tdnumber">
-                                4
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="tdtitle">
-                                <img src="/Other/images/jian.gif" /><a href="#">与xxx企业的业务往来</a>
-                            </td>
-                            <td class="tdprice">
-                                12，234.00
-                            </td>
-                            <td class="tdarea">
-                                陕西·西安
-                            </td>
-                            <td class="tdtime">
-                                2012-6-10
-                            </td>
-                            <td class="tdnumber">
-                                4
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="tdtitle">
-                                <img src="/Other/images/jian.gif" /><a href="#">与xxx企业的业务往来</a>
-                            </td>
-                            <td class="tdprice">
-                                12，234.00
-                            </td>
-                            <td class="tdarea">
-                                陕西·西安
-                            </td>
-                            <td class="tdtime">
-                                2012-6-10
-                            </td>
-                            <td class="tdnumber">
-                                4
-                            </td>
-                        </tr>
-                    </table>
                     <div class="box" id="marqueebox1">
-                        <table id="zqlist2">
-                            <tr>
-                                <td class="tdtitle">
-                                    <a href="#">与xxx企业的业务往来</a>
-                                </td>
-                                <td class="tdprice">
-                                    12，234.00
-                                </td>
-                                <td class="tdarea">
-                                    陕西·西安
-                                </td>
-                                <td class="tdtime">
-                                    2012-6-10
-                                </td>
-                                <td class="tdnumber">
-                                    4
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdtitle">
-                                    <a href="#">与xxx企业的业务往来</a>
-                                </td>
-                                <td class="tdprice">
-                                    12，234.00
-                                </td>
-                                <td class="tdarea">
-                                    陕西·西安
-                                </td>
-                                <td class="tdtime">
-                                    2012-6-10
-                                </td>
-                                <td class="tdnumber">
-                                    4
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdtitle">
-                                    <a href="#">与xxx企业的业务往来</a>
-                                </td>
-                                <td class="tdprice">
-                                    12，234.00
-                                </td>
-                                <td class="tdarea">
-                                    陕西·西安
-                                </td>
-                                <td class="tdtime">
-                                    2012-6-10
-                                </td>
-                                <td class="tdnumber">
-                                    4
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdtitle">
-                                    <a href="#">与xxx企业的业务往来</a>
-                                </td>
-                                <td class="tdprice">
-                                    12，234.00
-                                </td>
-                                <td class="tdarea">
-                                    陕西·西安
-                                </td>
-                                <td class="tdtime">
-                                    2012-6-10
-                                </td>
-                                <td class="tdnumber">
-                                    4
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdtitle">
-                                    <a href="#">与xxx企业的业务往来</a>
-                                </td>
-                                <td class="tdprice">
-                                    12，234.00
-                                </td>
-                                <td class="tdarea">
-                                    陕西·西安
-                                </td>
-                                <td class="tdtime">
-                                    2012-6-10
-                                </td>
-                                <td class="tdnumber">
-                                    4
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdtitle">
-                                    <a href="#">与xxx企业的业务往来</a>
-                                </td>
-                                <td class="tdprice">
-                                    12，234.00
-                                </td>
-                                <td class="tdarea">
-                                    陕西·西安
-                                </td>
-                                <td class="tdtime">
-                                    2012-6-10
-                                </td>
-                                <td class="tdnumber">
-                                    4
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdtitle">
-                                    <a href="#">与xxx企业的业务往来</a>
-                                </td>
-                                <td class="tdprice">
-                                    12，234.00
-                                </td>
-                                <td class="tdarea">
-                                    陕西·西安
-                                </td>
-                                <td class="tdtime">
-                                    2012-6-10
-                                </td>
-                                <td class="tdnumber">
-                                    4
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdtitle">
-                                    <a href="#">与xxx企业的业务往来</a>
-                                </td>
-                                <td class="tdprice">
-                                    12，234.00
-                                </td>
-                                <td class="tdarea">
-                                    陕西·西安
-                                </td>
-                                <td class="tdtime">
-                                    2012-6-10
-                                </td>
-                                <td class="tdnumber">
-                                    4
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdtitle">
-                                    <a href="#">与xxx企业的业务往来</a>
-                                </td>
-                                <td class="tdprice">
-                                    12，234.00
-                                </td>
-                                <td class="tdarea">
-                                    陕西·西安
-                                </td>
-                                <td class="tdtime">
-                                    2012-6-10
-                                </td>
-                                <td class="tdnumber">
-                                    4
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdtitle">
-                                    <a href="#">与xxx企业的业务往来</a>
-                                </td>
-                                <td class="tdprice">
-                                    12，234.00
-                                </td>
-                                <td class="tdarea">
-                                    陕西·西安
-                                </td>
-                                <td class="tdtime">
-                                    2012-6-10
-                                </td>
-                                <td class="tdnumber">
-                                    4
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdtitle">
-                                    <a href="#">与xxx企业的业务往来</a>
-                                </td>
-                                <td class="tdprice">
-                                    12，234.00
-                                </td>
-                                <td class="tdarea">
-                                    陕西·西安
-                                </td>
-                                <td class="tdtime">
-                                    2012-6-10
-                                </td>
-                                <td class="tdnumber">
-                                    4
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdtitle">
-                                    <a href="#">与xxx企业的业务往来</a>
-                                </td>
-                                <td class="tdprice">
-                                    12，234.00
-                                </td>
-                                <td class="tdarea">
-                                    陕西·西安
-                                </td>
-                                <td class="tdtime">
-                                    2012-6-10
-                                </td>
-                                <td class="tdnumber">
-                                    4
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdtitle">
-                                    <a href="#">与xxx企业的业务往来</a>
-                                </td>
-                                <td class="tdprice">
-                                    12，234.00
-                                </td>
-                                <td class="tdarea">
-                                    陕西·西安
-                                </td>
-                                <td class="tdtime">
-                                    2012-6-10
-                                </td>
-                                <td class="tdnumber">
-                                    4
-                                </td>
-                            </tr>
-                        </table>
+                        <asp:Repeater ID="dlCreditList" runat="server">
+                            <HeaderTemplate>
+                                <table id="zqlist2">
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <tr>
+                                    <td class="tdtitle">
+                                        <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'>查看详细<%# Eval("Title") %></asp:HyperLink>
+                                    </td>
+                                    <td class="tdprice">
+                                        <%# Eval("Arrears")%>元
+                                    </td>
+                                    <td class="tdarea">
+                                        <%# Eval("Bounty")%>
+                                    </td>
+                                    <td class="tdtime">
+                                        <%# Eval("CreateDate")%>
+                                    </td>
+                                    <td class="tdnumber">
+                                        <%# GetTenderCountByCreditID(Eval("CreditId"))%>
+                                    </td>
+                                </tr>
+                            </ItemTemplate>
+                            <FooterTemplate>
+                                </table>
+                            </FooterTemplate>
+                        </asp:Repeater>
+                        <div>
+                            <p style="text-align: center;">
+                                <asp:Label ID="labCreditMessage" runat="server" ForeColor="Red"></asp:Label></p>
+                        </div>
                     </div>
                     <script type="text/javascript">
-                        function startmarquee(lh, speed, delay, index) {
-                            var t;
-                            var p = false;
-                            var o = document.getElementById("marqueebox" + index);
-                            o.innerHTML += o.innerHTML;
-                            o.onmouseover = function () { p = true }
-                            o.onmouseout = function () { p = false }
-                            o.scrollTop = 0;
-                            function start() {
-                                t = setInterval(scrolling, speed);
-                                if (!p) { o.scrollTop += 1; }
-                            }
-                            function scrolling() {
-                                if (o.scrollTop % lh != 0) {
-                                    o.scrollTop += 1;
-                                    if (o.scrollTop >= o.scrollHeight / 2) o.scrollTop = 0;
-                                } else {
-                                    clearInterval(t);
-                                    setTimeout(start, delay);
-                                }
-                            }
-                            setTimeout(start, delay);
-                        }
-                        startmarquee(25, 40, 0, 1);
-                    </script>
+            function startmarquee(lh, speed, delay, index) { var t; var p = false; var o = document.getElementById("marqueebox"
+            + index); o.innerHTML += o.innerHTML; o.onmouseover = function () { p = true } o.onmouseout
+            = function () { p = false } o.scrollTop = 0; function start() { t = setInterval(scrolling,
+            speed); if (!p) { o.scrollTop += 1; } } function scrolling() { if (o.scrollTop %
+            lh != 0) { o.scrollTop += 1; if (o.scrollTop >= o.scrollHeight / 2) o.scrollTop
+            = 0; } else { clearInterval(t); setTimeout(start, delay); } } setTimeout(start,
+            delay); } startmarquee(25, 40, 0, 1); </script>
                 </div>
                 <!--left3 结束-->
                 <!--left4开始-->
@@ -485,19 +201,13 @@
                                         <div id="divarea">
                                         </div>
                                         <input type="hidden" id="city" name="city" runat="server" />
-                                        <script type="text/javascript">
-
-                                            var claarea = new ClassType("claarea", 'area', 'divarea', 'city', 1);
-                                            claarea.Mode = "select";
-                                            claarea.Init();
-                                        </script>
+                                        <script type="text/javascript">                                            var claarea
+            = new ClassType("claarea", 'area', 'divarea', 'city', 1); claarea.Mode = "select";
+                                            claarea.Init(); </script>
                                     </td>
                                     <td width="123">
                                         <asp:Button runat="server" ID="btnSearch" OnClick="btnSearch_Click" CssClass="btnok"
                                             Text="搜索" />
-                                    </td>
-                                    <td width="42">
-                                        <a href="#">更多>></a>
                                     </td>
                                 </tr>
                             </table>
@@ -521,7 +231,8 @@
                                     <p>
                                         <font>物品所在地：<%# GetAreaIdFull(Eval("AreaId"))%></font></p>
                                     <p>
-                                        <a href='ForeclosedDetail.aspx?Id=<%# Eval("ForeclosedId") %>'>查看详情>></a></p>
+                                        <a href='ForeclosedDetail.aspx?Id=<%#
+            Eval("ForeclosedId") %>'>查看详情>></a></p>
                                 </dd>
                             </ItemTemplate>
                             <FooterTemplate>

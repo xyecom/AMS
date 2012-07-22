@@ -23,14 +23,19 @@ namespace XYECOM.Web
 
         #region 页面加载
         protected void Page_Load(object sender, EventArgs e)
-        {
-            int Id = XYECOM.Core.XYRequest.GetQueryInt("ID", 0);
-            if (Id <= 0)
-            {
-                GotoMsgBoxPageForDynamicPage("该债权信息不存在！", 1, "IndexCreditList.aspx");
-            }
+        {            
             if (!IsPostBack)
             {
+                XYECOM.Model.GeneralUserInfo userInfo = Business.CheckUser.UserInfo;
+                if (userInfo == null)
+                {
+                    GotoMsgBoxPageForDynamicPage("请登录后进行查看债权信息！", 1, "IndexCreditList.aspx");
+                }
+                int Id = XYECOM.Core.XYRequest.GetQueryInt("ID", 0);
+                if (Id <= 0)
+                {
+                    GotoMsgBoxPageForDynamicPage("该债权信息不存在！", 1, "IndexCreditList.aspx");
+                }
                 this.hidID.Value = Id.ToString();
                 BindData(Id);
             }

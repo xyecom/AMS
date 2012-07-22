@@ -23,13 +23,13 @@ namespace XYECOM.Web.Creditor
         #region 页面加载
         protected void Page_Load(object sender, EventArgs e)
         {
-            int Id = XYECOM.Core.XYRequest.GetQueryInt("ID", 0);
-            if (Id <= 0)
-            {
-                GotoMsgBoxPageForDynamicPage("该债权信息不存在！", 1, "IndexCreditList.aspx");
-            }
             if (!IsPostBack)
             {
+                int Id = XYECOM.Core.XYRequest.GetQueryInt("ID", 0);
+                if (Id <= 0)
+                {
+                    GotoMsgBoxPageForDynamicPage("该债权信息不存在！", 1, "IndexCreditList.aspx");
+                }
                 this.hidID.Value = Id.ToString();
                 BindData(Id);
             }
@@ -243,7 +243,7 @@ namespace XYECOM.Web.Creditor
         public string GetInfoImgHref(object userId)
         {
             int id = MyConvert.GetInt32(userId.ToString());
-            return XYECOM.Business.Attachment.GetInfoDefaultImgHref(AttachmentItem.Individual, id);         
+            return XYECOM.Business.Attachment.GetInfoDefaultImgHref(AttachmentItem.Individual, id);
         }
 
         public string GetAreaName(object userId)
