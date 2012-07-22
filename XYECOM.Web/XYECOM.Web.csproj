@@ -518,6 +518,20 @@
     <Compile Include="Server\ModifyPwd.aspx.designer.cs">
       <DependentUpon>ModifyPwd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Server\ReceiveMessageInfo.aspx.cs">
+      <DependentUpon>ReceiveMessageInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\ReceiveMessageInfo.aspx.designer.cs">
+      <DependentUpon>ReceiveMessageInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Server\ReceiveMessageList.aspx.cs">
+      <DependentUpon>ReceiveMessageList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\ReceiveMessageList.aspx.designer.cs">
+      <DependentUpon>ReceiveMessageList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Server\RecommendCredList.aspx.cs">
       <DependentUpon>RecommendCredList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2011,6 +2025,8 @@
     <Content Include="Other\js\zu.js" />
     <Content Include="Server\ParticipateCreditList.aspx" />
     <Content Include="Server\ModifyPwd.aspx" />
+    <Content Include="Server\ReceiveMessageInfo.aspx" />
+    <Content Include="Server\ReceiveMessageList.aspx" />
     <Content Include="Server\RecommendCredList.aspx" />
     <Content Include="Server\SendMessageList.aspx" />
     <Content Include="Server\SetQuestion.aspx" />
