@@ -5,8 +5,8 @@
         <h1>
             存储业务</h1>
         <ul>
-            <li><a tabindex="1" href="#">存储业务</a></li>
-            <li><a tabindex="2" href="#">管理存储业务</a></li>
+<%--            <li><a tabindex="1" href="#">存储业务</a></li>
+            <li><a tabindex="2" href="#">管理存储业务</a></li>--%>
             <li><a href="/Creditor/CaseTypeList.aspx">档案分类管理</a></li>
             <li><a href="/Creditor/CaseList.aspx">档案管理</a></li>
         </ul>
@@ -32,11 +32,11 @@
             <li>
                 <asp:HyperLink ID="hlInfo" runat="server" TabIndex="1">资料修改</asp:HyperLink>
             </li>
-            <li><a tabindex="2" href="/Creditor/PartList.aspx">部门管理</a></li>
-            <li><a tabindex="3" href="#">站内信</a></li>
-            <li><a tabindex="4" href="#">信用管理</a></li>
-            <li><a tabindex="5" href="#">认证管理</a></li>
-            <li><a tabindex="5" href="#">头像修改</a></li></ul>
+            <li runat="server" id="liPart"><a tabindex="2" href="/Creditor/PartList.aspx">部门管理</a></li>
+            <li><a tabindex="3" href="/Creditor/ReceiveMessageList.aspx">站内信</a></li>
+<%--            <li><a tabindex="4" href="#">信用管理</a></li>--%>
+            <li><a tabindex="5" href="/Creditor/CreditInfoList.aspx">认证管理</a></li>
+            <li><a tabindex="5" href="/Creditor/UpLoadPicture.aspx">头像修改</a></li></ul>
     </div>
 </div>
 <!--left2 start-->

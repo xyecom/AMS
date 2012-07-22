@@ -76,6 +76,11 @@
         {
             float: right;
         }
+        #divtitle h2
+        {
+            width: 100px;
+            margin: 0px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
@@ -275,46 +280,57 @@
                             </asp:CheckBoxList>
                         </td>
                     </tr>
+                    <tr>
+                        <td class="info_lei3">
+                            图片上传
+                        </td>
+                        <td class="info_lei2" colspan="3">
+                            <XYECOM:UploadImage ID="udCreditInfo" runat="server" Iswatermark="false" MaxAmount="3"
+                                TableName="CreditInfo" IsCreateThumbnailImg="false" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="info_lei3">
+                            档案选择：
+                        </td>
+                        <td class="info_lei2">
+                            档案库选择<input type="radio" name="case" value="1" id="remo" onclick="document.getElementById('loc').style.display='none';document.getElementById('remote').style.display='';"
+                                checked="checked" />
+                            从本地上传<input type="radio" name="case" value="0" id="locat" onclick="document.getElementById('loc').style.display='';document.getElementById('remote').style.display='none';" />
+                        </td>
+                        <td class="info_lei3" colspan="2">
+                            <div id="loc" style="display: none;">
+                                <p>
+                                    从本地上传资料</p>
+                                选择文件:
+                                <asp:FileUpload ID="flCase" runat="server" />
+                            </div>
+                            <div id="remote">
+                                <p>
+                                    从档案库选择资料</p>
+                                <div id="divtitle">
+                                </div>
+                                <input id="hdgetid" type="hidden" runat="server" />
+                                <input id="ttt" type="hidden" />
+                                <script type="text/javascript">
+                                    var cla = new ClassTypes("cla", 'ttt', 'divtitle', '<%=hdgetid.ClientID %>', 5, '<%=this.userinfo.IsPrimary?"and CompanyId="+userinfo.CompanyId:"and userid="+userinfo.userid %>', "xy018");
+                                    cla.Init();
+                                </script>
+                            </div>
+                        </td>
+                    </tr>
                 </table>
                 <div style="width: 756px; height: 40px; line-height: 40px; text-align: center">
                     <table style="width: 600px; text-align: center">
                         <tr>
                             <td align="center" colspan="2">
                                 <asp:RadioButtonList runat="server" ID="radSelect" RepeatDirection="Horizontal">
-                                    <asp:ListItem Value="发布" Selected="True">直接对外发布</asp:ListItem>
-                                    <asp:ListItem Value="草稿">存为债权草稿</asp:ListItem>
+                                    <asp:ListItem Value="发布">直接对外发布</asp:ListItem>
+                                    <asp:ListItem Value="草稿" Selected="True">存为债权草稿</asp:ListItem>
                                 </asp:RadioButtonList>
                             </td>
                         </tr>
                     </table>
-                </div>
-                <div>
-                    <p>
-                        上传图片</p>
-                    <div id="baseinfo">
-                        <p>
-                            <XYECOM:UploadImage ID="udCreditInfo" runat="server" Iswatermark="false" MaxAmount="3"
-                                TableName="CreditInfo" IsCreateThumbnailImg="false" />
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <p>
-                        从本地上传资料</p>
-                    选择文件:
-                    <asp:FileUpload ID="flCase" runat="server" />
-                </div>
-                <div>
-                    <p>
-                        从档案库选择资料</p>
-                    <div id="divtitle">
-                    </div>
-                    <input id="hdgetid" type="hidden" runat="server" />
-                    <input id="ttt" type="hidden" />
-                    <script type="text/javascript">
-                        var cla = new ClassTypes("cla", 'ttt', 'divtitle', '<%=hdgetid.ClientID %>', 5, '<%=this.userinfo.IsPrimary?"and CompanyId="+userinfo.CompanyId:"and userid="+userinfo.userid %>', "xy018");
-                        cla.Init();
-                    </script>
                 </div>
                 <div style="width: 756px; height: 50px; line-height: 50px; text-align: center">
                     <asp:Button runat="server" ID="btnOk" OnClick="btnOk_Click" Text="确定" />

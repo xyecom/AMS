@@ -138,35 +138,26 @@
                         </ul>
                     </li>
                     <!--企业下属部门-->
-                    <li class="stmenu">
+                    <li class="stmenu" runat="server" id="liPart">
                         <h3>
                             <a class="xialaguang" href="#"><span>下属部门</span></a></h3>
-                        <ul style="display: none" class="children clearfixmenu sleft">
-                            <li>
-                                <h3>
-                                    <a class="stmenu" href="#"><span>办公室</span></a></h3>
-                            </li>
-                            <li class="noborder">
-                                <h3>
-                                    <a class="stmenu" href="#"><span>行政部</span></a></h3>
-                            </li>
-                            <li>
-                                <h3>
-                                    <a class="stmenu" href="#"><span>技术部</span></a></h3>
-                            </li>
-                            <li class="noborder">
-                                <h3>
-                                    <a class="stmenu" href="#">融资部<span></span></a></h3>
-                            </li>
-                            <li class="noborder">
-                                <h3>
-                                    <a class="stmenu" href="#">车队<span></span></a></h3>
-                            </li>
-                            <li class="count noborder">
-                                <div>
-                                    总账号可查看部门所有资料</div>
-                            </li>
-                        </ul>
+                        <asp:Repeater ID="rptPart" runat="server">
+                            <HeaderTemplate>
+                                <ul style="display: none" class="children clearfixmenu sleft">
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <li>
+                                    <h3>
+                                        <a class="stmenu" href='<%# string.Format("/Creditor/EditPartInfo.aspx?ac=u&partid={0}",Eval("U_ID")) %>'>
+                                            <span>
+                                                <%# Eval("LayerName") %></span> </a>
+                                    </h3>
+                                </li>
+                            </ItemTemplate>
+                            <FooterTemplate>
+                                </ul>
+                            </FooterTemplate>
+                        </asp:Repeater>
                     </li>
                     <!--信用评价-->
                     <li class="stmenu">

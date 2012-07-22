@@ -19,9 +19,9 @@ namespace XYECOM.Business
             return DAL.Update(info);
         }
 
-        public int Insert(CaseInfo info)
+        public int Insert(CaseInfo info, out int infoId)
         {
-            return DAL.Insert(info);
+            return DAL.Insert(info, out infoId);
         }
 
         public int Delete(string infoids)

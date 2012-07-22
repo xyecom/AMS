@@ -49,15 +49,16 @@ namespace XYECOM.SQLServer
 
             string sql = "update CaseInfo set ";
             sql += "CaseName=@CaseName,";
-            sql += "Description=@Description";            
+            sql += "Description=@Description";
             sql += " where Id = @Id";
             return SqlHelper.ExecuteNonQuery(CommandType.Text, sql, parame);
         }
 
-        public int Insert(Model.CaseInfo info)
+        public int Insert(Model.CaseInfo info , out int infoId)
         {
             SqlParameter[] parame = new SqlParameter[]
 			{
+                new SqlParameter("@CaseId", SqlDbType.Int),
 				new SqlParameter("@CaseName",info.CaseName),
 				new SqlParameter("@CaseTypeId",info.CaseTypeId),
 				new SqlParameter("@CaseTypeName",info.CaseTypeName),
@@ -69,6 +70,7 @@ namespace XYECOM.SQLServer
 				new SqlParameter("@PartName",info.PartName)		
 			};
 
+            parame[0].Direction = ParameterDirection.Output;
             string sql = @"INSERT INTO CaseInfo
                         (CaseName
                         ,Description
@@ -90,9 +92,23 @@ namespace XYECOM.SQLServer
                         ,@PartId
                         ,@PartName
                         ,@CompanyId
-                        ,@CompanyName)";
+                        ,@CompanyName);select @CaseId = @@identity";
 
-            return SqlHelper.ExecuteNonQuery(CommandType.Text, sql, parame);
+            int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, parame);
+
+            if (rowAffected >= 0)
+            {
+                if (parame[0].Value != null && parame[0].Value.ToString() != "")
+                    infoId = (int)parame[0].Value;
+                else
+                    infoId = 0;
+            }
+            else
+            {
+                infoId = -1;
+            }
+
+            return rowAffected;
         }
 
         public int Delete(string infoids)

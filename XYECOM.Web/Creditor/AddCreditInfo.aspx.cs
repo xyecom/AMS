@@ -8,6 +8,7 @@ using XYECOM.Core;
 using XYECOM.Model;
 using XYECOM.Business.AMS;
 using XYECOM.Business;
+using XYECOM.Web.AppCode;
 
 namespace XYECOM.Web.Creditor
 {
@@ -17,13 +18,9 @@ namespace XYECOM.Web.Creditor
         CreditInfoManager credManage = new CreditInfoManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!userinfo.IsReal)
             {
-                if (!userinfo.IsReal)
-                {
-                    this.radSelect.SelectedValue = "草稿";
-                    this.radSelect.Enabled = false;
-                }
+                this.radSelect.Enabled = false;
             }
         }
 
@@ -70,6 +67,44 @@ namespace XYECOM.Web.Creditor
             info.UserId = MyConvert.GetInt32(userinfo.CompanyId.ToString());
             int credId = 0;
             int result = credManage.InsertCreditInfo(info, out credId);
+
+            string caseType = Request.Form["case"];
+
+            if (caseType == "1")
+            {
+                //添加选择的档案信息
+                RelatedCaseInfoManager relateManage = new RelatedCaseInfoManager();
+                string strCase = this.hdgetid.Value;
+                string[] cases = strCase.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                relateManage.RelatedInfo(TableInfoType.ZqInfo, credId, userinfo.userid, userinfo.CompanyId, cases);
+            }
+
+            if (caseType == "0")
+            {
+                Business.CaseManager caseManager = new Business.CaseManager();
+
+                string filePath = CaseUploadManager.UpLoadFile(userinfo.CompanyId, userinfo.userid, 0);
+
+                CaseInfo caseInfo = new CaseInfo();
+                caseInfo.CaseName = info.Title;
+                caseInfo.CaseTypeId = 0;
+                caseInfo.CaseTypeName = "默认分类";
+                caseInfo.CompanyId = userinfo.CompanyId;
+                caseInfo.CompanyName = userinfo.CompanyName;
+                caseInfo.CreateDate = DateTime.Now;
+                caseInfo.Description = info.Introduction;
+                caseInfo.FilePath = filePath;
+                caseInfo.PartId = userinfo.userid;
+                caseInfo.PartName = userinfo.LayerName;
+                int infoId = 0;
+
+                caseManager.Insert(caseInfo,out infoId);
+
+                RelatedCaseInfoManager relateManage = new RelatedCaseInfoManager();
+
+                relateManage.RelatedInfo(TableInfoType.ZqInfo, credId, userinfo.userid, userinfo.CompanyId, infoId);
+            }
+
             if (result > 0)
             {
                 this.udCreditInfo.InfoID = credId;
@@ -80,12 +115,6 @@ namespace XYECOM.Web.Creditor
             {
                 GotoMsgBoxPageForDynamicPage("添加债权信息失败！", 1, "Index.aspx");
             }
-
-            //添加选择的档案信息
-            RelatedCaseInfoManager relateManage = new RelatedCaseInfoManager();
-            string strCase = this.hdgetid.Value;
-            string[] cases = strCase.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            relateManage.RelatedInfo(TableInfoType.ZqInfo, credId, userinfo.userid, userinfo.CompanyId, cases);
         }
     }
 }

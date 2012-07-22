@@ -5,6 +5,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.IO;
+using XYECOM.Web.AppCode;
 
 namespace XYECOM.Web.Creditor
 {
@@ -14,7 +15,37 @@ namespace XYECOM.Web.Creditor
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                BindParts();
+            }
+        }
 
+        void BindParts()
+        {
+            this.ddlPart.Items.Clear();
+            if (userinfo.UserType == Model.UserType.CreditorEnterprise)
+            {
+                if (userinfo.IsPrimary)
+                {
+                    DataTable table = Utitl.GetSubUsers(userinfo.userid);
+                    this.ddlPart.DataTextField = "LayerName";
+                    this.ddlPart.DataValueField = "U_ID";
+                    this.ddlPart.DataSource = table;
+                    this.ddlPart.DataBind();
+
+                    this.ddlPart.Items.Insert(0, new ListItem("请选择…", ""));
+                }
+                else
+                {
+                    this.ddlPart.Items.Insert(0, new ListItem(userinfo.LayerName, userinfo.userid.ToString()));
+                }
+            }
+            else if (userinfo.UserType == Model.UserType.CreditorIndividual)
+            {
+                this.ddlPart.Items.Insert(0, new ListItem("请选择…", ""));
+                this.ddlPart.Enabled = false;
+            }
         }
 
         protected override void BindData()
@@ -23,16 +54,27 @@ namespace XYECOM.Web.Creditor
 
             int typeId = XYECOM.Core.XYRequest.GetQueryInt("ID", 0);
 
+            string selpart = this.ddlPart.SelectedValue;
+            string key = this.txtKey.Value.Trim();
 
             if (userinfo.IsPrimary)
             {
                 sql = @"select * from CaseInfo where CompanyId=" + userinfo.userid;
+
+                if (!string.IsNullOrEmpty(selpart))
+                {
+                    sql += " and partid=" + selpart;
+                }
             }
             else
             {
                 sql = @"select * from CaseInfo where partid=" + userinfo.userid;
             }
 
+            if (!string.IsNullOrEmpty(key))
+            {
+                sql += " and CaseName like '%" + key + "%'";
+            }
 
             if (typeId > 0)
             {
@@ -41,8 +83,8 @@ namespace XYECOM.Web.Creditor
 
             DataTable table = Core.Data.SqlHelper.ExecuteTable(sql);
 
-            this.GridView1.DataSource = table;
-            this.GridView1.DataBind();
+            this.rptList.DataSource = table;
+            this.rptList.DataBind();
         }
 
         protected void btnDel_Click(object sender, EventArgs e)
@@ -65,6 +107,16 @@ namespace XYECOM.Web.Creditor
                 }
             }
 
+            BindData();
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            BindData();
+        }
+
+        protected void Page1_PageChanged(object sender, System.EventArgs e)
+        {
             BindData();
         }
     }

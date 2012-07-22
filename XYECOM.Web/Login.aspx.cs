@@ -40,29 +40,33 @@ namespace XYECOM.Web
             XYECOM.Model.UserRegInfo userInfo = userRegBLL.Login(userName, password, true);
             if (userInfo == null || userInfo.DelState == 1 || userInfo.AuditingState == Model.AuditingState.NoPass)
             {
-                GotoMsgBoxPageForDynamicPage("用户名或密码错误或账号被禁用！", 1, "/login.aspx");
+                GotoMsgBoxPageForDynamicPage("用户名或密码错误或账号被禁用！", 2, "/login.aspx");
                 return;
             }
 
-            string gotoUrl = string.Empty;
-            Model.UserType userType = (Model.UserType)userInfo.UserType;
-            switch (userType)
+            string gotoUrl = Request.QueryString["backurl"];
+
+            if (string.IsNullOrEmpty(gotoUrl))
             {
-                case XYECOM.Model.UserType.CreditorEnterprise:
-                case XYECOM.Model.UserType.CreditorIndividual:
-                    if (userInfo.IsPrimary)
-                    {
-                        gotoUrl = "/Creditor/Index.aspx";
-                    }
-                    else
-                    {
-                        gotoUrl = "/Creditor/PartIndex.aspx";
-                    }
-                    break;
-                case XYECOM.Model.UserType.Layer:
-                case XYECOM.Model.UserType.NotLayer:
-                    gotoUrl = "Server/index.aspx";
-                    break;
+                Model.UserType userType = (Model.UserType)userInfo.UserType;
+                switch (userType)
+                {
+                    case XYECOM.Model.UserType.CreditorEnterprise:
+                    case XYECOM.Model.UserType.CreditorIndividual:
+                        if (userInfo.IsPrimary)
+                        {
+                            gotoUrl = "/Creditor/Index.aspx";
+                        }
+                        else
+                        {
+                            gotoUrl = "/Creditor/PartIndex.aspx";
+                        }
+                        break;
+                    case XYECOM.Model.UserType.Layer:
+                    case XYECOM.Model.UserType.NotLayer:
+                        gotoUrl = "Server/index.aspx";
+                        break;
+                }
             }
             GotoMsgBoxPageForDynamicPage("登陆成功！", 1, gotoUrl);
         }
