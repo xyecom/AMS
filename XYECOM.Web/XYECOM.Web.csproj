@@ -180,6 +180,13 @@
     <Compile Include="Creditor\CaseList.aspx.designer.cs">
       <DependentUpon>CaseList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Creditor\CreditDetils.aspx.cs">
+      <DependentUpon>CreditDetils.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\CreditDetils.aspx.designer.cs">
+      <DependentUpon>CreditDetils.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Creditor\CreditInfoList.aspx.cs">
       <DependentUpon>CreditInfoList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -228,6 +235,13 @@
     </Compile>
     <Compile Include="Creditor\EvaluationList.aspx.designer.cs">
       <DependentUpon>EvaluationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\ForeclosedDetail.aspx.cs">
+      <DependentUpon>ForeclosedDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\ForeclosedDetail.aspx.designer.cs">
+      <DependentUpon>ForeclosedDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Creditor\ForeclosedList.aspx.cs">
       <DependentUpon>ForeclosedList.aspx</DependentUpon>
@@ -1791,6 +1805,7 @@
     <Content Include="Common\Images\butn_jxcg.jpg" />
     <Content Include="Common\Images\butn_jxgw1.jpg" />
     <Content Include="Common\Images\butn_qjs.jpg" />
+    <Content Include="Common\Images\cj.gif" />
     <Content Include="Common\Images\comm_07.gif" />
     <Content Include="Common\Images\fk_pic1.jpg" />
     <Content Include="Common\Images\i_14.jpg" />
@@ -1822,10 +1837,12 @@
     <Content Include="Creditor\AddCreditInfo.aspx" />
     <Content Include="Creditor\AddEvaluation.aspx" />
     <Content Include="Creditor\AddForeclosed.aspx" />
+    <Content Include="Creditor\CreditDetils.aspx" />
     <Content Include="Creditor\CreditInfoList.aspx" />
     <Content Include="Creditor\DeparCreditList.aspx" />
     <Content Include="Creditor\DeparForeclosedList.aspx" />
     <Content Include="Creditor\EvaluationList.aspx" />
+    <Content Include="Creditor\ForeclosedDetail.aspx" />
     <Content Include="Creditor\ForeclosedList.aspx" />
     <Content Include="Creditor\ReceiveMessageInfo.aspx" />
     <Content Include="Creditor\ReceiveMessageList.aspx" />

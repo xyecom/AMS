@@ -18,10 +18,12 @@
                     <td>
                         请选择:
                     </td>
-                    <asp:RadioButtonList runat="server" ID="radEvaluationType">
-                        <asp:ListItem Value="1" Text="好评"></asp:ListItem>
-                        <asp:ListItem Value="0" Text="差评"></asp:ListItem>
-                    </asp:RadioButtonList>
+                    <td>
+                        <asp:RadioButtonList runat="server" ID="radEvaluationType" RepeatDirection="Horizontal">
+                            <asp:ListItem Value="1" Text="好评"></asp:ListItem>
+                            <asp:ListItem Value="0" Text="差评"></asp:ListItem>
+                        </asp:RadioButtonList>
+                    </td>
                 </tr>
             </table>
             <table class="pjtb">
@@ -30,13 +32,11 @@
                         请填写您的评价：
                     </td>
                     <td>
-                        <asp:TextBox runat="server" ID="txtDescription" TextMode="MultiLine"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtDescription" TextMode="MultiLine" Rows="15" Width="426px"></asp:TextBox>
                     </td>
                 </tr>
             </table>
             <div style="width: 756px; height: 50px; line-height: 50px; text-align: center">
-                <%--                <input type="button" value="确 定" style="background: url(../images/yes.gif); width: 80px;
-                    height: 25px; border: none; cursor: pointer; color: #FFF" />--%>
                 <input type="hidden" runat="server" id="hidCredId" />
                 <asp:Button runat="server" ID="btnOk" Text="我要评价" OnClick="btnOk_Click" />
             </div>

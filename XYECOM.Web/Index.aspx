@@ -511,7 +511,7 @@
                             </HeaderTemplate>
                             <ItemTemplate>
                                 <dd style="float: left; width: 25%">
-                                    <img src='<%# GetInfoImgHref(Eval("ForeclosedId")) %>' style="width: 100px" />
+                                    <img width="96px;" src='<%# GetInfoImgHref(Eval("ForeclosedId")) %>' style="width: 100px" />
                                     <p>
                                         <strong>
                                             <%#Eval("Title") %></strong><br />
@@ -520,8 +520,6 @@
                                         <font>物品底价：<%# Eval("LinePrice")%>元</font></p>
                                     <p>
                                         <font>物品所在地：<%# GetAreaIdFull(Eval("AreaId"))%></font></p>
-                                    <p>
-                                        <font>竞价结束时间：<%# GetEndDate(Eval("EndDate"))%></font></p>
                                     <p>
                                         <a href='ForeclosedDetail.aspx?Id=<%# Eval("ForeclosedId") %>'>查看详情>></a></p>
                                 </dd>

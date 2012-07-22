@@ -229,11 +229,11 @@ namespace XYECOM.SQLServer.AMS
             string sql = string.Empty;
             if (state)
             {
-                sql = "UPDATE dbo.ForeclosedInfo SET State = 1 WHERE ForeclosedId in (" + fIds + ")";
+                sql = "UPDATE dbo.ForeclosedInfo SET State = 1,PassDate=getDate() WHERE ForeclosedId in (" + fIds + ")";
             }
             else
             {
-                sql = "UPDATE dbo.ForeclosedInfo SET State = 0 WHERE ForeclosedId in (" + fIds + ")";
+                sql = "UPDATE dbo.ForeclosedInfo SET State = 0,PassDate=getDate() WHERE ForeclosedId in (" + fIds + ")";
             }
             int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
             return rowAffected;

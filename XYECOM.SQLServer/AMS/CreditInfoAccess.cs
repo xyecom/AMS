@@ -159,7 +159,7 @@ namespace XYECOM.SQLServer.AMS
         /// <returns></returns>
         public int UpdateApprovaStatusByID(int id, XYECOM.Model.CreditState state)
         {
-            string sql = "Update dbo.CreditInfo set ApprovaStatus= " + (int)state + " where CreditId = " + id;
+            string sql = "Update dbo.CreditInfo set ApprovaStatus= " + (int)state + ",PassDate=getDate() where CreditId = " + id;
             int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
             return rowAffected;
         }
@@ -172,7 +172,7 @@ namespace XYECOM.SQLServer.AMS
         /// <returns></returns>
         public int UpdateApprovaStatusByID(string id, XYECOM.Model.CreditState state)
         {
-            string sql = "Update CreditInfo set ApprovaStatus= " + (int)state + " where CreditId in ( " + id + " )";
+            string sql = "Update CreditInfo set ApprovaStatus= " + (int)state + ",PassDate=getDate() where CreditId in ( " + id + " )";
             int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
             return rowAffected;
         }

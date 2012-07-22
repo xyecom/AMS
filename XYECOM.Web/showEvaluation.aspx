@@ -96,7 +96,7 @@
                     <%# GetCreditTitle(Eval("CreditInfoId"))%>
                 </td>
                 <td>
-                    <%# Eval("IsSuccess").ToString()=="1"?"好评":"差评"%>
+                    <%# Eval("Evaluation").ToString() == "1" ? "好评" : "差评"%>
                 </td>
                 <td>
                     <%# Eval("Description")%>

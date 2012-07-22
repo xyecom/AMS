@@ -7,10 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace XYECOM.Web {
+namespace XYECOM.Web.Creditor {
     
     
-    public partial class CreditInfoDetail {
+    public partial class CreditDetils {
+        
+        /// <summary>
+        /// labCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labCount;
         
         /// <summary>
         /// labTitle control.
@@ -40,13 +49,13 @@ namespace XYECOM.Web {
         protected global::System.Web.UI.WebControls.Label labDebtorTelpone;
         
         /// <summary>
-        /// labCollectionPeriod control.
+        /// labArrears control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labCollectionPeriod;
+        protected global::System.Web.UI.WebControls.Label labArrears;
         
         /// <summary>
         /// labDebtorReason control.
@@ -58,22 +67,13 @@ namespace XYECOM.Web {
         protected global::System.Web.UI.WebControls.Label labDebtorReason;
         
         /// <summary>
-        /// labArrears control.
+        /// labCollectionPeriod control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labArrears;
-        
-        /// <summary>
-        /// labBounty control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labBounty;
+        protected global::System.Web.UI.WebControls.Label labCollectionPeriod;
         
         /// <summary>
         /// labCreateDate control.
@@ -94,22 +94,22 @@ namespace XYECOM.Web {
         protected global::System.Web.UI.WebControls.Label labState;
         
         /// <summary>
-        /// labCompanyName control.
+        /// labDebtorType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labCompanyName;
+        protected global::System.Web.UI.WebControls.Label labDebtorType;
         
         /// <summary>
-        /// labUserName control.
+        /// labBounty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labUserName;
+        protected global::System.Web.UI.WebControls.Label labBounty;
         
         /// <summary>
         /// labIntroduction control.
@@ -175,13 +175,13 @@ namespace XYECOM.Web {
         protected global::System.Web.UI.WebControls.Label labDebtObligation;
         
         /// <summary>
-        /// labAreaId control.
+        /// hidID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labAreaId;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hidID;
         
         /// <summary>
         /// rptList control.
@@ -209,41 +209,5 @@ namespace XYECOM.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMessage;
-        
-        /// <summary>
-        /// hidID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hidID;
-        
-        /// <summary>
-        /// hidStae control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hidStae;
-        
-        /// <summary>
-        /// txtRemark control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRemark;
-        
-        /// <summary>
-        /// btnOK control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOK;
     }
 }

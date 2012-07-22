@@ -52,7 +52,7 @@ namespace XYECOM.Web.xymanage
             int state = MyConvert.GetInt32(this.drpState.SelectedValue);
             //设置编辑或查看后要返回当前页面的状态
             backURL = XYECOM.Core.Utils.JSEscape(
-                "ForeclosedList.aspx?" +
+                "CreditorList.aspx?" +
                 "page=" + Page1.CurPage.ToString() +
                 "&keyWord=" + txtKeyword.Text.Trim() +
                 "&State=" + drpState.Text.Trim() +

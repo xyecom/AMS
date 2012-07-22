@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using XYECOM.Page;
+using XYECOM.Model.AMS;
+using XYECOM.Core;
+using XYECOM.Model;
+using XYECOM.Business.AMS;
 using System.Text;
 using System.Data;
-using XYECOM.Core;
-using XYECOM.Business;
-using XYECOM.Model;
 
-namespace XYECOM.Web
+namespace XYECOM.Web.Creditor
 {
-    public partial class ForeclosedDetail : ForeBasePage
+    public partial class ForeclosedDetail : XYECOM.Web.AppCode.UserCenter.Creditor
     {
         XYECOM.Business.AMS.ForeclosedManager foreManage = new Business.AMS.ForeclosedManager();
         XYECOM.Business.AMS.BidInfoManager bidInfoManage = new Business.AMS.BidInfoManager();
@@ -54,15 +54,11 @@ namespace XYECOM.Web
             if (null != info)
             {
                 this.labAddress.Text = info.Address;
-                this.labAreid.Text = new Area().GetItem(info.AreaId).FullNameAll;
                 this.labTitle.Text = info.Title;
-                this.labIdentityNumber.Text = info.IdentityNumber;
                 this.labEndDate.Text = info.EndDate.ToString("yyyy-MM-dd");
                 this.labHighPrice.Text = info.HighPrice.ToString();
                 this.labLinePrice.Text = info.LinePrice.ToString();
-                this.labDescription.Text = info.Description;
-                this.labUserName.Text = new Business.UserInfo().GetUserNameByID(info.DepartmentId);
-                this.aShow.HRef = "showEvaluation.aspx?UserId=" + info.DepartmentId;
+                this.labCount.Text = GetBidInfoCountByForeID(info.ForeclosedId).ToString();
             }
             DataTable price = XYECOM.Business.Attachment.GetAllImgHref(AttachmentItem.ForeclosedInfo, info.ForeclosedId);
             if (price.Rows.Count > 0)
@@ -119,51 +115,19 @@ namespace XYECOM.Web
                 return contact.Substring(0, 6) + "*****";
             }
         }
-
         /// <summary>
-        /// 竞价操作
+        ///获取竞价个数
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void btnOK_Click(object sender, EventArgs e)
+        /// <param name="foreId"></param>
+        /// <returns></returns>
+        public int GetBidInfoCountByForeID(object foreId)
         {
-            int foreId = MyConvert.GetInt32(this.hidId.Value);
-            if (foreId <= 0)
+            int id = XYECOM.Core.MyConvert.GetInt32(foreId.ToString());
+            if (id <= 0)
             {
-                GotoMsgBoxPageForDynamicPage("该抵债信息不存在！", 1, "Index.aspx");
+                return 0;
             }
-            DateTime date = XYECOM.Core.MyConvert.GetDateTime(labEndDate.Text);
-            if (date.CompareTo(DateTime.Now) < 0)
-            {
-                GotoMsgBoxPageForDynamicPage("该抵债信息已过期不能进行竞标！", 1, "Index.aspx");
-            }
-            XYECOM.Model.AMS.ForeclosedInfo info = foreManage.GetForeclosedInfoById(foreId);
-            XYECOM.Model.GeneralUserInfo userInfo = Business.CheckUser.UserInfo;
-            if (userInfo != null && userInfo.userid == info.DepartmentId)
-            {
-                GotoMsgBoxPageForDynamicPage("不能对自己的抵债信息发布竞价！", 1, "Index.aspx");
-            }
-            string name = this.txtName.Text.Trim();
-            decimal price = MyConvert.GetDecimal(this.txtPrice.Text.Trim());
-            string address = this.txtAddress.Text.Trim();
-            string contact = this.txtContact.Text.Trim();
-            string remark = this.txtRemark.Text.Trim();
-            XYECOM.Model.AMS.BidInfo bidInfo = new Model.AMS.BidInfo();
-            bidInfo.ForeclosedId = foreId;
-            bidInfo.Contact = contact;
-            bidInfo.FromAddress = address;
-            bidInfo.Price = price;
-            bidInfo.PriceDate = DateTime.Now;
-            bidInfo.Remark = remark;
-            bool isok = bidInfoManage.InserBidInfo(bidInfo);
-            if (isok)
-            {
-                GotoMsgBoxPageForDynamicPage("报价成功！", 1, "ForeclosedDetail.aspx?Id=" + foreId);
-            }
-            else
-            {
-                GotoMsgBoxPageForDynamicPage("报价失败！", 1, "ForeclosedDetail.aspx?Id=" + foreId);
-            }
+            return new BidInfoManager().GetBidInfoCountByForeID(id);
         }
     }
 }

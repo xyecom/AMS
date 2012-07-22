@@ -14,7 +14,7 @@
             </div>
             <!--serch start-->
             <div class="serchl">
-                <asp:RadioButtonList runat="server" ID="radEvaType">
+                <asp:RadioButtonList runat="server" ID="radEvaType" RepeatDirection="Horizontal">
                     <asp:ListItem Value="credit" Selected="True">我对服务商的评价</asp:ListItem>
                     <asp:ListItem Value="server">服务商对我的评价</asp:ListItem>
                 </asp:RadioButtonList>

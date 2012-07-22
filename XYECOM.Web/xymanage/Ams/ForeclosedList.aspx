@@ -142,7 +142,7 @@
                                             <ItemStyle Width="15%" />
                                             <ItemTemplate>
                                                 <a href='ForeclosedInfo.aspx?ID=<%# Eval("ForeclosedId") %>&backURL=<%# backURL %>'>
-                                                    查看详细</a> &nbsp; <a href='/ForeclosedDetail.aspx?Id=<%# Eval("ForeclosedId") %>'>查看竞价</a>
+                                                    查看详细</a> &nbsp; <a href='/ForeclosedDetail.aspx?Id=<%# Eval("ForeclosedId") %>' target="_blank">查看竞价</a>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:BoundField DataField="AuditingState" HeaderText="AuditingState" Visible="False" />

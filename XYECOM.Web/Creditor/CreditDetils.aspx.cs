@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using XYECOM.Page;
+using XYECOM.Model.AMS;
+using XYECOM.Core;
+using XYECOM.Model;
+using XYECOM.Business.AMS;
 using System.Text;
 using System.Data;
-using XYECOM.Core;
-using XYECOM.Business.AMS;
-using XYECOM.Business;
-using XYECOM.Model.AMS;
 
-namespace XYECOM.Web
+namespace XYECOM.Web.Creditor
 {
-    public partial class CreditInfoDetail : ForeBasePage
+    public partial class CreditDetils : XYECOM.Web.AppCode.UserCenter.Creditor
     {
         CreditInfoManager manage = new CreditInfoManager();
 
-        Business.UserInfo userInfoManage = new UserInfo();
+        Business.UserInfo userInfoManage = new Business.UserInfo();
 
         TenderInfoManager tenderManage = new TenderInfoManager();
 
@@ -49,10 +48,7 @@ namespace XYECOM.Web
             if (null != info)
             {
                 this.labAge.Text = info.Age.ToString();
-                this.labAreaId.Text = new Area().GetItem(info.AreaId).FullNameAll;
                 this.labCreateDate.Text = info.CreateDate.ToString();
-                this.labCompanyName.Text = userInfoManage.GetCompNameByUId(info.UserId);
-                this.labUserName.Text = userInfoManage.GetUserNameByID(info.DepartId);
                 this.labTitle.Text = info.Title;
                 this.labArrears.Text = info.Arrears.ToString();
                 this.labBounty.Text = info.Bounty.ToString();
@@ -67,7 +63,8 @@ namespace XYECOM.Web
                 this.labIsInLitigation.Text = info.IsInLitigation ? "是" : "否";
                 this.labIsLitigationed.Text = info.IsLitigationed ? "是" : "否";
                 this.labIsSelfCollection.Text = info.IsSelfCollection ? "是" : "否";
-                this.hidStae.Value = info.ApprovaStatus.ToString();
+                this.labCount.Text = GetTenderCountByCreditID(info.CreditId).ToString();
+                this.labDebtorType.Text = info.DebtorType;
             }
 
             StringBuilder strWhere = new StringBuilder(" 1=1 and  CreditInfoId = " + id);
@@ -156,46 +153,6 @@ namespace XYECOM.Web
             return new Business.UserInfo().GetUserNameByID(uId);
         }
 
-        protected void btnTender_Click(object sender, EventArgs e)
-        {
-            int state = MyConvert.GetInt32(this.hidStae.Value);
-            XYECOM.Model.CreditState cState = (XYECOM.Model.CreditState)state;
-            if (cState != XYECOM.Model.CreditState.Tender)
-            {
-                GotoMsgBoxPageForDynamicPage("该债权信息不能进行投标！", 1, "IndexCreditList.aspx");
-            }
-            XYECOM.Model.GeneralUserInfo userInfo = Business.CheckUser.UserInfo;
-            if (userInfo == null)
-            {
-                GotoMsgBoxPageForDynamicPage("请登录后进行投标！", 1, "IndexCreditList.aspx");
-            }
-            if (userInfo.UserType != XYECOM.Model.UserType.Layer && userInfo.UserType != XYECOM.Model.UserType.NotLayer)
-            {
-                GotoMsgBoxPageForDynamicPage("债权帐号不能进行投标！", 1, "IndexCreditList.aspx");
-            }
-            int credId = MyConvert.GetInt32(this.hidID.Value);
-            //检查该服务商是否已经投标
-            bool isCheckTender = tenderManage.CheckTenderByCredID(credId, (int)userInfo.userid);
-            if (isCheckTender)
-            {
-                GotoMsgBoxPageForDynamicPage("不能重复投标，请耐心等待债权人选择！", 1, "IndexCreditList.aspx");
-            }
-            TenderInfo info = new TenderInfo();
-            info.CreditInfoId = credId;
-            info.IsSuccess = (int)TenderState.Tender;
-            info.LayerId = (int)userInfo.userid;
-            info.Message = this.txtRemark.Text.Trim();
-            info.TenderDate = DateTime.Now;
-            int result = new TenderInfoManager().InsertTenderInfo(info);
-            if (result > 0)
-            {
-                GotoMsgBoxPageForDynamicPage("投标成功！", 1, "CreditInfoDetail.aspx?Id=" + credId);
-            }
-            else
-            {
-                GotoMsgBoxPageForDynamicPage("投标失败！", 1, "CreditInfoDetail.aspx?Id=" + credId);
-            }
-        }
         protected void rptList_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
@@ -265,12 +222,35 @@ namespace XYECOM.Web
                 }
             }
         }
+        /// <summary>
+        /// 根据债权信息ID获取该债权信息的投标个数
+        /// </summary>
+        /// <param name="CreditID"></param>
+        /// <returns></returns>
+        public int GetTenderCountByCreditID(object CreditID)
+        {
+            int id = MyConvert.GetInt32(CreditID.ToString());
+            return new TenderInfoManager().GetTenderCountByCreditID(id);
+        }
         #region 分页相关代码
 
         protected void Page1_PageChanged(object sender, System.EventArgs e)
         {
             int credId = MyConvert.GetInt32(this.hidID.Value);
             this.BindData(credId);
+        }
+
+        public string GetInfoImgHref(object userId)
+        {
+            int id = MyConvert.GetInt32(userId.ToString());
+            return XYECOM.Business.Attachment.GetInfoDefaultImgHref(AttachmentItem.Individual, id);         
+        }
+
+        public string GetAreaName(object userId)
+        {
+            int UserId = MyConvert.GetInt32(userId.ToString());
+            XYECOM.Model.GeneralUserInfo userInfo = Business.CheckUser.GetUserInfo(UserId);
+            return userinfo.AreaName;
         }
         #endregion
     }

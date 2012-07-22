@@ -1,9 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreditInfoDetail.aspx.cs" Inherits="XYECOM.Web.CreditInfoDetail" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Fore.Master" AutoEventWireup="true"
+    CodeBehind="CreditInfoDetail.aspx.cs" Inherits="XYECOM.Web.CreditInfoDetail" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>债权详细信息</title>
     <script type="text/javascript" language="javascript">
         function ShowNo()                        //隐藏两个层 
@@ -38,9 +36,8 @@
             return { top: top, left: left, height: height, width: width };
         } 
     </script>
-</head>
-<body>
-    <form id="form1" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>
         债权详细信息</h1>
     <table width="100%">
@@ -89,7 +86,7 @@
                                 欠款原因：
                             </th>
                             <td>
-                                <asp:Label ID="labDebtorReason" runat="server"></asp:Label>元
+                                <asp:Label ID="labDebtorReason" runat="server"></asp:Label>
                             </td>
                         </tr>
                         <tr>
@@ -234,8 +231,9 @@
             <tr id="trmidd" style="height: 28px; border-top: 1px solid #ccc" onmousemove="this.style.backgroundColor='#F7F7F7'"
                 onmouseout="this.style.backgroundColor='#ffffff'">
                 <td id="tdtitle">
-                    <a href='showEvaluation.aspx?isServer=1&UserId=<%# Eval("LayerId") %>' target="_blank">
-                        <%# GetUserName(Eval("LayerId"))%></a><span style="color: Red">点击发布者可查看其信用度</span>
+                    <a href='showEvaluation.aspx?isServer=1&UserId=<%# Eval("LayerId") %>' alt="点击发布者可查看其信用度"
+                        target="_blank">
+                        <%# GetUserName(Eval("LayerId"))%></a>
                 </td>
                 <td>
                     <%# Eval("TenderDate")%>
@@ -270,7 +268,7 @@
     <div style="width: 710px; height: 40px; line-height: 40px; text-align: center">
         <div style="background: url(../images/yes.gif) no-repeat; width: 396px; height: 25px;
             float: right; line-height: 25px; text-align: left; padding-left: 10px; margin: 10px">
-            <a href="javascript:void(0)" onclick="showFloat()"><strong style="color: White">我要投标</strong></a>
+            <a href="javascript:void(0)" onclick="showFloat()"><strong style="color: Red">我要投标</strong></a>
         </div>
     </div>
     <!--加一个半透明层-->
@@ -302,7 +300,4 @@
         </div>
     </div>
     <!--半透明层结束-->
-    </form>
-</body>
-</html>
-
+</asp:Content>
