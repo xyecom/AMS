@@ -238,7 +238,7 @@ namespace XYECOM.SQLServer
                 info.CreditIntegral = Core.MyConvert.GetDecimal(reader["CreditIntegral"].ToString());
                 info.CreditLeavl = new CreditLeavlAccess().GetItemByPoint(info.CreditIntegral);
 
-                info.IsPrimary = Core.MyConvert.GetBoolean(reader["IsPrimary"].ToString()); ;
+                info.IsPrimary = Core.MyConvert.GetBoolean(reader["IsPrimary"].ToString());
                 info.LayerName = reader["LayerName"].ToString();
                 info.LayerId = reader["LayerId"].ToString();
 

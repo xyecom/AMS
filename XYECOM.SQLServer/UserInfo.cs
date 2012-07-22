@@ -191,6 +191,20 @@ namespace XYECOM.SQLServer
                     info.IM = reader["IM"].ToString();
                     info.TradeIds = Core.Utils.RemoveComma(reader["tradeIds"].ToString());
 
+                    info.Email = reader["Email"].ToString();
+                    info.Description = reader["Description"].ToString();
+                    info.CreateDate = Core.MyConvert.GetDateTime(reader["CreateDate"].ToString());
+                    info.State = Core.MyConvert.GetInt32(reader["State"].ToString());
+                    info.PassTime = Core.MyConvert.GetDateTime(reader["PassTime"].ToString());
+                    info.ManagerId = Core.MyConvert.GetInt32(reader["ManagerId"].ToString());
+                    info.IsBoundEmail = Core.MyConvert.GetBoolean(reader["IsBoundEmail"].ToString());
+                    info.IsBoundMobile = Core.MyConvert.GetBoolean(reader["IsBoundMobile"].ToString());
+
+                    info.IsReal = Core.MyConvert.GetBoolean(reader["IsReal"].ToString()); ;
+                    info.Point = Core.MyConvert.GetInt32(reader["Point"].ToString());
+                    info.GoodTimes = Core.MyConvert.GetInt32(reader["GoodTimes"].ToString());
+                    info.MidTimes = Core.MyConvert.GetInt32(reader["MidTimes"].ToString());
+                    info.BadTimes = Core.MyConvert.GetInt32(reader["BadTimes"].ToString());
                 }
             }
             return info;
