@@ -47,10 +47,7 @@ namespace XYECOM.Web.Creditor
             {
                 GotoMsgBoxPageForDynamicPage("该抵债信息不存在！", 1, "Index.aspx");
             }
-            if (info.State != (int)AuditingState.Passed)
-            {
-                GotoMsgBoxPageForDynamicPage("该抵债信息未通过审核！", 1, "Index.aspx");
-            }
+           
             if (null != info)
             {
                 this.labAddress.Text = info.Address;

@@ -23,10 +23,10 @@ namespace XYECOM.SQLServer.AMS
         {
             string sql = @"Insert into CreditInfo (Title,DebtorName,DebtorTelpone,CollectionPeriod,DebtorReason,Arrears,Bounty,
                                     Remark,LicenseType,DebtorType,Introduction,Age,IsInLitigation,IsLitigationed,IsSelfCollection,IsConfirm,
-                                    DebtObligation,DepartId,UserId,ApprovaStatus,CreateDate,AreaId)
+                                    DebtObligation,DepartId,UserId,ApprovaStatus,CreateDate,AreaId,IsDraft)
                                     values (@Title,@DebtorName,@DebtorTelpone,@CollectionPeriod,@DebtorReason,@Arrears,@Bounty,@Remark,
                                     @LicenseType,@DebtorType,@Introduction,@Age,@IsInLitigation,@IsLitigationed,@IsSelfCollection,@IsConfirm,
-                                    @DebtObligation,@DepartId,@UserId,@ApprovaStatus,@CreateDate,@AreaId)";
+                                    @DebtObligation,@DepartId,@UserId,@ApprovaStatus,@CreateDate,@AreaId,@IsDraft)";
             SqlParameter[] param = new SqlParameter[]
             {
                 new SqlParameter("@Title",info.Title),
@@ -50,7 +50,8 @@ namespace XYECOM.SQLServer.AMS
                 new SqlParameter("@UserId",info.UserId),
                 new SqlParameter("@ApprovaStatus",info.ApprovaStatus),
                 new SqlParameter("@CreateDate",info.CreateDate),
-                new SqlParameter("@AreaId",info.AreaId)
+                new SqlParameter("@AreaId",info.AreaId),
+                new SqlParameter("@IsDraft",info.IsDraft)
             };
             int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, param);
             return rowAffected;
@@ -66,10 +67,10 @@ namespace XYECOM.SQLServer.AMS
         {
             string sql = @"Insert into CreditInfo (Title,DebtorName,DebtorTelpone,CollectionPeriod,DebtorReason,Arrears,Bounty,
                                     Remark,LicenseType,DebtorType,Introduction,Age,IsInLitigation,IsLitigationed,IsSelfCollection,IsConfirm,
-                                    DebtObligation,DepartId,UserId,ApprovaStatus,CreateDate,AreaId)
+                                    DebtObligation,DepartId,UserId,ApprovaStatus,CreateDate,AreaId,IsDraft)
                                     values (@Title,@DebtorName,@DebtorTelpone,@CollectionPeriod,@DebtorReason,@Arrears,@Bounty,@Remark,
                                     @LicenseType,@DebtorType,@Introduction,@Age,@IsInLitigation,@IsLitigationed,@IsSelfCollection,@IsConfirm,
-                                    @DebtObligation,@DepartId,@UserId,@ApprovaStatus,@CreateDate,@AreaId);select @ID = @@identity";
+                                    @DebtObligation,@DepartId,@UserId,@ApprovaStatus,@CreateDate,@AreaId,@IsDraft);select @ID = @@identity";
             SqlParameter[] param = new SqlParameter[]
             {
                 new SqlParameter("@ID",SqlDbType.Int),
@@ -94,7 +95,9 @@ namespace XYECOM.SQLServer.AMS
                 new SqlParameter("@UserId",info.UserId),
                 new SqlParameter("@ApprovaStatus",info.ApprovaStatus),
                 new SqlParameter("@CreateDate",info.CreateDate),
-                new SqlParameter("@AreaId",info.AreaId)
+                new SqlParameter("@AreaId",info.AreaId),
+                new SqlParameter("@IsDraft",info.IsDraft)
+
             };
             param[0].Direction = ParameterDirection.Output;
             int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, param);
@@ -122,7 +125,7 @@ namespace XYECOM.SQLServer.AMS
                                     @Title,DebtorName=@DebtorName,DebtorTelpone=@DebtorTelpone,CollectionPeriod=@CollectionPeriod,DebtorReason=@DebtorReason,
                                     Arrears=@Arrears,Bounty=@Bounty,Remark=@Remark,LicenseType=@LicenseType,DebtorType=@DebtorType,Introduction=@Introduction,
                                     Age=@Age,IsInLitigation=@IsInLitigation,IsLitigationed=@IsLitigationed,IsSelfCollection=@IsSelfCollection,IsConfirm=@IsConfirm,DebtObligation=@DebtObligation,
-                                   ApprovaStatus=@ApprovaStatus,AreaId=@AreaId WHERE CreditId=@CreditId";
+                                   ApprovaStatus=@ApprovaStatus,AreaId=@AreaId,IsDraft=@IsDraft WHERE CreditId=@CreditId";
 
             SqlParameter[] param = new SqlParameter[]
             {
@@ -145,7 +148,8 @@ namespace XYECOM.SQLServer.AMS
                 new SqlParameter("@DebtObligation",info.DebtObligation),
                 new SqlParameter("@ApprovaStatus",info.ApprovaStatus),
                 new SqlParameter("@AreaId",info.AreaId),
-                new SqlParameter("@CreditId",info.CreditId)
+                new SqlParameter("@CreditId",info.CreditId),
+                new SqlParameter("@IsDraft",info.IsDraft)
             };
             int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, param);
             return rowAffected;
@@ -173,6 +177,27 @@ namespace XYECOM.SQLServer.AMS
         public int UpdateApprovaStatusByID(string id, XYECOM.Model.CreditState state)
         {
             string sql = "Update CreditInfo set ApprovaStatus= " + (int)state + ",PassDate=getDate() where CreditId in ( " + id + " )";
+            int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
+            return rowAffected;
+        }
+
+        /// <summary>
+        /// 推荐or不推荐
+        /// </summary>
+        /// <param name="credId"></param>
+        /// <param name="isJian"></param>
+        /// <returns></returns>
+        public int UpdateIsDraftById(int credId,bool isJian)
+        {
+            string sql = string.Empty;
+            if (isJian)
+            {
+                sql = "update creditinfo set IsDraft = 'True' where CreditId = " + credId;
+            }
+            else
+            {
+                sql = "update creditinfo set IsDraft = 'False' where CreditId = " + credId;
+            }
             int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
             return rowAffected;
         }
@@ -224,6 +249,7 @@ namespace XYECOM.SQLServer.AMS
                     info.PassDate = Core.MyConvert.GetDateTime(reader["PassDate"].ToString());
                     info.Remark = reader["Remark"].ToString();
                     info.UserId = Core.MyConvert.GetInt32(reader["UserId"].ToString());
+                    info.IsDraft = Core.MyConvert.GetBoolean(reader["IsDraft"].ToString());
                 }
             }
             return info;

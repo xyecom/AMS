@@ -16,7 +16,7 @@
             <div class="divtext">
                 <div style="text-align: center; margin-top: 5px">
                     <div style="float: right; width: 131px;">
-                        关注度：<a href="#"><strong style="color: Red"><asp:Label runat="server" ID="labCount"></asp:Label></strong></a></div>
+                        关注度：<strong style="color: Red"><asp:Label runat="server" ID="labCount"></asp:Label></strong></div>
                     <h4>
                         债务基本资料</h4>
                 </div>
@@ -162,12 +162,13 @@
                         案件相关资料</h4>
                 </div>
                 <div style="width: 763px; height: auto; overflow: hidden">
-                    <asp:Repeater runat="server" ID="rpPrice">
+                    图片资料：<asp:Repeater runat="server" ID="rpPrice">
                         <ItemTemplate>
                             <img width="96px;" src='/Upload/<%# Eval("At_Path") %>' />
                         </ItemTemplate>
                     </asp:Repeater>
-                    <asp:Repeater runat="server" ID="rpfile">
+                    <br />
+                    附件资料：<asp:Repeater runat="server" ID="rpfile">
                         <ItemTemplate>
                             <a href='<%# Eval("FilePath") %>'>
                                 <%# Eval("CaseName") %>

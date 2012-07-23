@@ -202,7 +202,7 @@ namespace XYECOM.Model.AMS
             set;
         }
         /// <summary>
-        /// 是否是草稿
+        /// 是否是草稿 更改为是否推荐
         /// </summary>
 
         public bool IsDraft

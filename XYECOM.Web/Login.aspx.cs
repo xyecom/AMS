@@ -15,7 +15,37 @@ namespace XYECOM.Web
             if (!IsPostBack)
             {
                 lblMessage.Text = "";
+                XYECOM.Model.GeneralUserInfo userInfo = Business.CheckUser.UserInfo;
+                string gotoUrl = Request.QueryString["backurl"];
+
+                if (userInfo!=null)
+                {
+                    if (string.IsNullOrEmpty(gotoUrl))
+                    {
+                        Model.UserType userType = (Model.UserType)userInfo.UserType;
+                        switch (userType)
+                        {
+                            case XYECOM.Model.UserType.CreditorEnterprise:
+                            case XYECOM.Model.UserType.CreditorIndividual:
+                                if (userInfo.IsPrimary)
+                                {
+                                    gotoUrl = "/Creditor/Index.aspx";
+                                }
+                                else
+                                {
+                                    gotoUrl = "/Creditor/PartIndex.aspx";
+                                }
+                                break;
+                            case XYECOM.Model.UserType.Layer:
+                            case XYECOM.Model.UserType.NotLayer:
+                                gotoUrl = "Server/index.aspx";
+                                break;
+                        }
+                        Response.Redirect(gotoUrl);
+                    }
+                }
             }
+
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

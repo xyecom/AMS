@@ -102,13 +102,16 @@
                         <table>
                             <tbody>
                                 <tr id="trtop">
-                                    <td width="40%" align="middle">
+                                    <td width="20%" align="center">
                                         案件标题
                                     </td>
-                                    <td width="20%" align="middle">
+                                    <td width="20%" align="center">
+                                        案件状态
+                                    </td>
+                                    <td width="20%" align="center">
                                         发布时间
                                     </td>
-                                    <td width="25%" align="middle">
+                                    <td width="25%" align="center">
                                         操作菜单
                                     </td>
                                 </tr>
@@ -120,10 +123,13 @@
                                 <%# Eval("Title") %>
                             </td>
                             <td>
+                                <%# GetApprovaStatus(Eval("ApprovaStatus"))%>
+                            </td>
+                            <td>
                                 <%# Eval("CreateDate") %>
                             </td>
                             <td>
-                                <a href='<%#  string.Format("/CreditInfoDetail.aspx?Id={0}",Eval("CreditId")) %>'>详情</a>
+                                <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "CreditDetils.aspx?Id=" + Eval("CreditId") %>'>查看竞标</asp:HyperLink>
                             </td>
                         </tr>
                     </ItemTemplate>
