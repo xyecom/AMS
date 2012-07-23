@@ -43,7 +43,7 @@ namespace XYECOM.URL
             HttpApplication application = (HttpApplication)sender;
             HttpContext context = application.Context;
             context.Response.Write("<html><body style=\"font-size:14px;\">");
-            context.Response.Write("纵横B2B电子商务系统 Error:<br />");
+            context.Response.Write("系统 Error:<br />");
             context.Response.Write("<textarea name=\"errormessage\" style=\"width:80%; height:200px; word-break:break-all\">");
             context.Response.Write(HttpUtility.HtmlEncode(context.Server.GetLastError().ToString()));
             context.Response.Write("</textarea>");

@@ -26,12 +26,12 @@
                         <ul class="tab1">
                             <li class="current"><a href="WebInfo.aspx"><span>基本配置</span></a></li>
                             <li><a href="Function.aspx"><span>功能配置</span></a></li>
-                            <li><a href="BussinessInfoSet.aspx"><span>商业信息相关</span></a></li>
+                            <li style="display: none;"><a href="BussinessInfoSet.aspx"><span>商业信息相关</span></a></li>
                             <li><a href="UserInfoSet.aspx"><span>用户相关</span></a></li>
-                            <li><a href="ShopSet.aspx"><span>网店相关</span></a></li>
+                            <li style="display: none;"> <a href="ShopSet.aspx"><span>网店相关</span></a></li>
                             <li><a href="Server.aspx"><span>附件服务器</span></a></li>
                             <li><a href="EMailBoxInfoSet.aspx"><span>网站邮箱</span></a></li>
-                            <li><a href="SEO.aspx"><span>SEO设置</span></a></li>
+                            <li style="display: none;"><a href="SEO.aspx"><span>SEO设置</span></a></li>
                             <li><a href="SecuritySet.aspx"><span>安全设置</span></a></li>
                         </ul>
                     </div>
@@ -49,7 +49,7 @@
                             <td colspan="2" class="tipsblock">
                                 <ul id="tipslis">
                                     <li>网站域名必须以/结尾</li>
-                                    <li>伪后缀和静态页面后缀不能相同</li>
+                                    <li style="display: none;">伪后缀和静态页面后缀不能相同</li>
                                 </ul>
                             </td>
                         </tr>
@@ -63,7 +63,7 @@
                                 <asp:TextBox ID="tbwebname" runat="server" CssClass="txt" MaxLength="24"></asp:TextBox>
                             </td>
                             <td class="vtop tips2">
-                                此处填写您的网站名称，如“纵横商务网”。
+                                此处填写您的网站名称，如“商务网”。
                             </td>
                         </tr>
                         <tr>
@@ -92,12 +92,12 @@
                                 请填写网站完整Logo地址，如http://www.xyecom.com/logo.gif。
                             </td>
                         </tr>
-                        <tr class="nobg">
+                        <tr class="nobg" style="display: none;">
                             <td colspan="2" class="td27">
                                 伪后缀名:
                             </td>
                         </tr>
-                        <tr>
+                        <tr style="display: none;">
                             <td class="vtop rowform">
                                 <asp:TextBox ID="tbwebsuffix" runat="server" CssClass="txt" MaxLength="5"></asp:TextBox>
                             </td>
@@ -105,12 +105,12 @@
                                 请填写伪后缀名，不要超过5个字符，关于伪后缀及其设置方法，请查询<a href="#" target="_blank">帮助文档</a>。
                             </td>
                         </tr>
-                        <tr class="nobg">
+                        <tr class="nobg" style="display: none;">
                             <td colspan="2" class="td27">
                                 静态页面后缀:
                             </td>
                         </tr>
-                        <tr>
+                        <tr style="display: none;">
                             <td class="vtop rowform">
                                 <asp:DropDownList runat="server" ID="ddlstaticpagesuffix" CssClass="input">
                                     <asp:ListItem Value="html">html</asp:ListItem>
@@ -123,12 +123,12 @@
                                 选择生成静态页面的后缀名。注：不能与伪后缀相同。
                             </td>
                         </tr>
-                        <tr class="nobg">
+                        <tr class="nobg" style="display: none;">
                             <td colspan="2" class="td27">
                                 是否启用伪静态:
                             </td>
                         </tr>
-                        <tr>
+                        <tr style="display: none;">
                             <td class="vtop rowform">
                                 <asp:RadioButtonList ID="rbbogusstatic" runat="server" RepeatDirection="Horizontal"
                                     RepeatLayout="Flow">
@@ -140,12 +140,12 @@
                                 选择启用伪静态，可以展示友好的URL地址，推荐选择启用。
                             </td>
                         </tr>
-                        <tr class="nobg">
+                        <tr class="nobg" style="display: none;">
                             <td colspan="2" class="td27">
                                 二级域名开启项：
                             </td>
                         </tr>
-                        <tr>
+                        <tr style="display: none;">
                             <td class="vtop" colspan="2">
                                 <asp:CheckBox ID="rbdomain" runat="server" Text="网店" />
                                 <asp:CheckBox ID="rbnewsdomain" runat="server" Text="资讯栏目" />
@@ -168,17 +168,17 @@
                                 Cookie 数据的有效范围。选择启用网店二级域名后，必须正确设置此项。
                             </td>
                         </tr>
-                        <tr class="nobg">
+                        <tr class="nobg" style="display: none;">
                             <td colspan="2" class="td27">
                                 虚拟货币名称：
                             </td>
                         </tr>
-                        <tr>
+                        <tr style="display: none;">
                             <td class="vtop rowform">
                                 <asp:TextBox ID="webmoney" runat="server" MaxLength="10" CssClass="txt"></asp:TextBox>
                             </td>
                             <td class="vtop tips2">
-                                可以结合网站给虚拟货币取一个名字。如“QQ币”、“纵横通宝”
+                                可以结合网站给虚拟货币取一个名字。如“QQ币”、“通宝”
                             </td>
                         </tr>
                         <tr class="nobg">

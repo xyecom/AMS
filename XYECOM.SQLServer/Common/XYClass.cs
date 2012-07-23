@@ -9,7 +9,7 @@ namespace XYECOM.SQLServer
 {
 
     /*----------------------------------------------------------------
-    * Copyright (C) 2008 纵横易商软件有限公司
+    * Copyright (C) 2008 
     * 版权所有。 
     *
     * 文件名：XYECOM.SQLServer.XYClass.cs
