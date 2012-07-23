@@ -112,30 +112,50 @@
                             </table>
                         </div>
                     </div>
-                    <table id="zqlist1">
-                        <tr>
-                            <td height="23" class="tdtitle">
-                                债权标题
-                            </td>
-                            <td class="tdprice">
-                                标的金额
-                            </td>
-                            <td class="tdarea">
-                                悬赏金额
-                            </td>
-                            <td class="tdtime">
-                                发布时间
-                            </td>
-                            <td class="tdnumber">
-                                投标人数
-                            </td>
-                        </tr>
-                    </table>
                     <div class="box" id="marqueebox1">
-                        <asp:Repeater ID="dlCreditList" runat="server">
+                        <asp:Repeater ID="rpJian" runat="server">
                             <HeaderTemplate>
-                                <table id="zqlist2">
+                                <table id="zqlist1">
+                                    <tr>
+                                        <td height="23" class="tdtitle">
+                                            债权标题
+                                        </td>
+                                        <td class="tdprice">
+                                            标的金额
+                                        </td>
+                                        <td class="tdarea">
+                                            所在地区
+                                        </td>
+                                        <td class="tdtime">
+                                            发布时间
+                                        </td>
+                                        <td class="tdnumber">
+                                            投标人数
+                                        </td>
+                                    </tr>
                             </HeaderTemplate>
+                            <ItemTemplate>
+                                <tr>
+                                    <td class="tdtitle">
+                                        <img alt="推荐信息" src="/Other/images/jian.gif" /><asp:HyperLink ID="hlShowTender" runat="server"
+                                            NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'><%# Eval("Title") %></asp:HyperLink>
+                                    </td>
+                                    <td class="tdprice">
+                                        <%# Eval("Arrears")%>元
+                                    </td>
+                                    <td class="tdarea">
+                                        <%# GetAreaIdFull(Eval("AreaId"))%>
+                                    </td>
+                                    <td class="tdtime">
+                                        <%# Eval("CreateDate", "{0:yyyy-MM-dd}")%>
+                                    </td>
+                                    <td class="tdnumber">
+                                        <%# GetTenderCountByCreditID(Eval("CreditId"))%>
+                                    </td>
+                                </tr>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        <asp:Repeater ID="dlCreditList" runat="server">
                             <ItemTemplate>
                                 <tr>
                                     <td class="tdtitle">
@@ -145,7 +165,7 @@
                                         <%# Eval("Arrears")%>元
                                     </td>
                                     <td class="tdarea">
-                                        <%# Eval("Bounty")%>
+                                        <%# GetAreaIdFull(Eval("AreaId"))%>
                                     </td>
                                     <td class="tdtime">
                                         <%# Eval("CreateDate", "{0:yyyy-MM-dd}")%>
@@ -165,13 +185,23 @@
                         </div>
                     </div>
                     <script type="text/javascript">
-            function startmarquee(lh, speed, delay, index) { var t; var p = false; var o = document.getElementById("marqueebox"
-            + index); o.innerHTML += o.innerHTML; o.onmouseover = function () { p = true } o.onmouseout
-            = function () { p = false } o.scrollTop = 0; function start() { t = setInterval(scrolling,
-            speed); if (!p) { o.scrollTop += 1; } } function scrolling() { if (o.scrollTop %
-            lh != 0) { o.scrollTop += 1; if (o.scrollTop >= o.scrollHeight / 2) o.scrollTop
-            = 0; } else { clearInterval(t); setTimeout(start, delay); } } setTimeout(start,
-            delay); } startmarquee(25, 40, 0, 1); </script>
+                            function startmarquee(lh, speed, delay, index) 
+                            { 
+                                var t; 
+                                var p = false; 
+                                var o = document.getElementById("marqueebox"  + index); o.innerHTML += o.innerHTML; 
+                                o.onmouseover = function () 
+                                    {
+                                        p = true 
+                                     } 
+                                 o.onmouseout= function () { p = false } o.scrollTop = 0; function start() { t = setInterval(scrolling,
+                                speed); if (!p) { o.scrollTop += 1; } } function scrolling() { if (o.scrollTop %
+                                lh != 0) { o.scrollTop += 1; if (o.scrollTop >= o.scrollHeight / 2) o.scrollTop
+                                = 0; } else { clearInterval(t); setTimeout(start, delay); } } setTimeout(start,
+                                delay); 
+                            } 
+                            startmarquee(25, 40, 0, 1); 
+                    </script>
                 </div>
                 <!--left3 结束-->
                 <!--left4开始-->
@@ -180,34 +210,11 @@
                         height: auto; overflow: hidden;">
                         <div style="width: 100px; line-height: 38px; margin-left: 55px; float: left; font-size: 14px">
                             <strong>抵债物品资讯</strong></div>
-                        <div style="width: 514px; float: right; height: 40px; text-align: center">
-                            <table style="height: 31px; width: 514px;">
+                        <div style="width: 514px; float: right; height: 40px; line-height: 35px; text-align: center">
+                            <table width="512" style="height: 31px; width: 480px; float: left">
                                 <tr>
-                                    <td width="65">
-                                        物品类型
-                                    </td>
-                                    <td width="113">
-                                        <asp:DropDownList runat="server" ID="droTypeName">
-                                            <asp:ListItem Value="所有" Text="--所有--"></asp:ListItem>
-                                            <asp:ListItem Value="房屋" Text="房屋"></asp:ListItem>
-                                            <asp:ListItem Value="汽车" Text="汽车"></asp:ListItem>
-                                            <asp:ListItem Value="金条" Text="金条"></asp:ListItem>
-                                        </asp:DropDownList>
-                                    </td>
-                                    <td width="29">
-                                        地区
-                                    </td>
-                                    <td width="80">
-                                        <div id="divarea">
-                                        </div>
-                                        <input type="hidden" id="city" name="city" runat="server" />
-                                        <script type="text/javascript">                                            var claarea
-            = new ClassType("claarea", 'area', 'divarea', 'city', 1); claarea.Mode = "select";
-                                            claarea.Init(); </script>
-                                    </td>
-                                    <td width="123">
-                                        <asp:Button runat="server" ID="btnSearch" OnClick="btnSearch_Click" CssClass="btnok"
-                                            Text="搜索" />
+                                    <td width="44">
+                                        <a href="/IndexForeclosed.aspx">更多>></a>
                                     </td>
                                 </tr>
                             </table>
@@ -238,9 +245,6 @@
                             <FooterTemplate>
                                 </dl></FooterTemplate>
                         </asp:DataList>
-                        <div style="width: 705px; height: 30px; line-height: 30px; text-align: center">
-                            <XYECOM:Page ID="Page1" runat="server" PageSize="20" OnPageChanged="Page1_PageChanged" />
-                        </div>
                         <div>
                             <p style="text-align: center;">
                                 <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></p>

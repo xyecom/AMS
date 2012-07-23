@@ -292,6 +292,11 @@ namespace XYECOM.Web.xymanage
         }
         #endregion
 
+        /// <summary>
+        /// 审核不通过
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void lbtnNo_Click(object sender, EventArgs e)
         {
             LinkButton linkButton = (LinkButton)(sender as LinkButton);
@@ -309,6 +314,11 @@ namespace XYECOM.Web.xymanage
             }
         }
 
+        /// <summary>
+        /// 审核通过
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void lbtnYes_Click(object sender, EventArgs e)
         {
             LinkButton linkButton = (LinkButton)(sender as LinkButton);
@@ -326,6 +336,49 @@ namespace XYECOM.Web.xymanage
             }
         }
 
+        /// <summary>
+        /// 不推荐
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void lbtnNoJian_Click(object sender, EventArgs e)
+        {
+            LinkButton linkButton = (LinkButton)(sender as LinkButton);
+            if (linkButton != null)
+            {
+                int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
+                if (Id > 0)
+                {
+                    int result = coreManage.UpdateIsDraftById(Id,false);
+                    if (result > 0)
+                    {
+                        BindData();
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 推荐
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void lbtnJian_Click(object sender, EventArgs e)
+        {
+            LinkButton linkButton = (LinkButton)(sender as LinkButton);
+            if (linkButton != null)
+            {
+                int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
+                if (Id > 0)
+                {
+                    int result = coreManage.UpdateIsDraftById(Id, true);
+                    if (result > 0)
+                    {
+                        BindData();
+                    }
+                }
+            }
+        }
 
         #region 审核商业信息失败给用户留言
         private void SendToMessage(long U_ID)

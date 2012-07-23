@@ -48,10 +48,9 @@ namespace XYECOM.Web.Creditor
 
         void BindZqInfo()
         {
-
             this.lblZqMessage.Text = "";
 
-            StringBuilder strWhere = new StringBuilder(" 1=1 and ( ApprovaStatus in (2,3,4))");
+            StringBuilder strWhere = new StringBuilder(" 1=1 and (DepartId = " + userinfo.userid + ") and ( ApprovaStatus ! =7)");
 
             int totalRecord = 0;
             DataTable dt = XYECOM.Business.Utils.GetPaginationData("CreditInfo", "CreditId", "*", " CreateDate desc", strWhere.ToString(), 10, 1, out totalRecord);
@@ -86,7 +85,40 @@ namespace XYECOM.Web.Creditor
             this.ltlPartCount.Text = Utitl.GetInfoCount("u_user", "CompanyId=" + userinfo.userid + " and IsPrimary=0").ToString();
         }
 
-
+        protected string GetApprovaStatus(object state)
+        {
+            int stateId = MyConvert.GetInt32(state.ToString());
+            Model.CreditState sta = (Model.CreditState)stateId;
+            string name = "";
+            switch (sta)
+            {
+                case XYECOM.Model.CreditState.Draft:
+                    name = "草稿";
+                    break;
+                case XYECOM.Model.CreditState.Null:
+                    name = "未审核";
+                    break;
+                case XYECOM.Model.CreditState.NoPass:
+                    name = "审核未通过";
+                    break;
+                case XYECOM.Model.CreditState.Tender:
+                    name = "投标中";
+                    break;
+                case XYECOM.Model.CreditState.InProgress:
+                    name = "案件进行中";
+                    break;
+                case XYECOM.Model.CreditState.CreditConfirm:
+                    name = "服务商案件完成等待债权人确认";
+                    break;
+                case XYECOM.Model.CreditState.CreditEnd:
+                    name = "案件结束";
+                    break;
+                case XYECOM.Model.CreditState.Canceled:
+                    name = "债权人取消案件";
+                    break;
+            }
+            return name;
+        }
         public string GetEndDate(object endDate)
         {
             DateTime date = XYECOM.Core.MyConvert.GetDateTime(endDate.ToString());

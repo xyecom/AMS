@@ -322,5 +322,17 @@ namespace XYECOM.Web
             this.BindData(credId);
         }
         #endregion
+
+        public string GetFileName(object filePath)
+        {
+            string path = filePath.ToString();
+            int index = path.LastIndexOf("/");
+            string name = string.Empty;
+            if (path.Length > 0)
+            {
+                name = path.Substring(index + 1);
+            }
+            return name;
+        }
     }
 }

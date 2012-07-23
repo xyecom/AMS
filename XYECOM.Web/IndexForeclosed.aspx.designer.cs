@@ -10,43 +10,34 @@
 namespace XYECOM.Web {
     
     
-    public partial class Index1 {
+    public partial class IndexForeclosed {
         
         /// <summary>
-        /// form1 control.
+        /// droTypeName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.DropDownList droTypeName;
         
         /// <summary>
-        /// rpJian control.
+        /// city control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpJian;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden city;
         
         /// <summary>
-        /// dlCreditList control.
+        /// btnSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater dlCreditList;
-        
-        /// <summary>
-        /// labCreditMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labCreditMessage;
+        protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
         /// dlForeclosed control.
@@ -56,6 +47,15 @@ namespace XYECOM.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataList dlForeclosed;
+        
+        /// <summary>
+        /// Page1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::xymanage_UserControl_page Page1;
         
         /// <summary>
         /// lblMessage control.

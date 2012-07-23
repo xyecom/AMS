@@ -29,7 +29,7 @@ namespace XYECOM.Web.Creditor
                 int Id = XYECOM.Core.XYRequest.GetQueryInt("ID", 0);
                 if (Id <= 0)
                 {
-                    GotoMsgBoxPageForDynamicPage("该债权信息不存在！", 1, "IndexCreditList.aspx");
+                    GotoMsgBoxPageForDynamicPage("该债权信息不存在！", 1, "CreditInfoList.aspx");
                 }
                 this.hidID.Value = Id.ToString();
                 BindData(Id);
@@ -43,7 +43,7 @@ namespace XYECOM.Web.Creditor
             CreditInfo info = manage.GetCreditInfoById(id);
             if (info == null)
             {
-                GotoMsgBoxPageForDynamicPage("该债权信息不存在！", 1, "IndexCreditList.aspx");
+                GotoMsgBoxPageForDynamicPage("该债权信息不存在！", 1, "CreditInfoList.aspx");
             }
 
             if (null != info)
@@ -223,7 +223,7 @@ namespace XYECOM.Web.Creditor
                     int result = tenderManage.UpdateTenderByID(Id, info.CreditInfoId);
                     if (info == null)
                     {
-                        GotoMsgBoxPageForDynamicPage("该投标信息不存在！", 1, "CreditInfoDetail.aspx");
+                        GotoMsgBoxPageForDynamicPage("该投标信息不存在！", 1, "CreditInfoList.aspx");
                     }
                     if (result > 0)
                     {
@@ -267,5 +267,17 @@ namespace XYECOM.Web.Creditor
             return userInfo.AreaName;
         }
         #endregion
+
+        public string GetFileName(object filePath)
+        {
+            string path = filePath.ToString();
+            int index = path.LastIndexOf("/");
+            string name = string.Empty;
+            if (path.Length > 0)
+            {
+                name =path.Substring(index+1);
+            }
+            return name;
+        }
     }
 }

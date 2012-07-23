@@ -18,31 +18,16 @@ namespace XYECOM.Web
         {
 
         }
+
         protected override void BindData()
         {
-            BindDzInfo();
-        }
-
-        private void BindDzInfo()
-        {
-            string typeName = this.droTypeName.SelectedValue;
-            int aredId = MyConvert.GetInt32(this.city.Value);
-
             this.lblMessage.Text = "";
             this.labCreditMessage.Text = "";
 
+            //加载抵债信息
             StringBuilder strWhere = new StringBuilder(" 1=1 and (State = " + (int)AuditingState.Passed + ")");
-            if (!string.IsNullOrEmpty(typeName) && typeName != "所有")
-            {
-                strWhere.Append(" and (ForeColseTypeName like '%" + typeName + "%')");
-            }
-            if (aredId > 0)
-            {
-                strWhere.Append(" and (AreaId =" + aredId + ")");
-            }
             int totalRecord = 0;
-            DataTable dt = XYECOM.Business.Utils.GetPaginationData("ForeclosedInfo", "ForeclosedId", "*", " CreateDate desc", strWhere.ToString(), this.Page1.PageSize, this.Page1.CurPage, out totalRecord);
-            this.Page1.RecTotal = totalRecord;
+            DataTable dt = XYECOM.Business.Utils.GetPaginationData("ForeclosedInfo", "ForeclosedId", "*", " CreateDate desc", strWhere.ToString(), 20, 1, out totalRecord);
 
             if (dt.Rows.Count > 0)
             {
@@ -54,7 +39,11 @@ namespace XYECOM.Web
                 this.lblMessage.Text = "没有可查看的抵债信息";
                 this.dlForeclosed.DataBind();
             }
-            StringBuilder where = new StringBuilder(" 1=1 and ( ApprovaStatus  =2)");
+
+
+
+            //加载债权信息
+            StringBuilder where = new StringBuilder(" 1=1 and ( ApprovaStatus  =2) and IsDraft = 'false'");
             DataTable dtZ = XYECOM.Business.Utils.GetPaginationData("CreditInfo", "CreditId", "*", " CreateDate desc", where.ToString(), 20, 1, out totalRecord);
 
             if (dtZ.Rows.Count > 0)
@@ -64,8 +53,24 @@ namespace XYECOM.Web
             }
             else
             {
-                this.labCreditMessage.Text = "没有可查看的债权信息";
                 this.dlCreditList.DataBind();
+            }
+
+            StringBuilder whereJian = new StringBuilder(" 1=1 and ( ApprovaStatus  =2) and IsDraft = 'true'");
+            DataTable dtJian = XYECOM.Business.Utils.GetPaginationData("CreditInfo", "CreditId", "*", " CreateDate desc", whereJian.ToString(), 20, 1, out totalRecord);
+
+            if (dtJian.Rows.Count > 0)
+            {
+                this.rpJian.DataSource = dtJian;
+                this.rpJian.DataBind();
+            }
+            else
+            {
+                if (dtZ.Rows.Count <= 0)
+                {
+                    this.labCreditMessage.Text = "没有可查看的债权信息";
+                }
+                this.rpJian.DataBind();
             }
         }
 
@@ -80,19 +85,6 @@ namespace XYECOM.Web
             {
                 return date.ToString("yyyy-MM-dd");
             }
-        }
-
-        #region 分页相关代码
-
-        protected void Page1_PageChanged(object sender, System.EventArgs e)
-        {
-            this.BindData();
-        }
-        #endregion
-
-        protected void btnSearch_Click(object sender, EventArgs e)
-        {
-            BindDzInfo();
         }
 
         /// <summary>

@@ -67,6 +67,7 @@ namespace XYECOM.Web.Creditor
             info.IsSelfCollection = this.radIsSelfCollection.SelectedValue == "1" ? true : false;
             info.LicenseType = this.rdLicenseType.SelectedValue;
             info.Remark = this.txtRemark.Text.Trim();
+            info.IsDraft = false;
             info.UserId = MyConvert.GetInt32(userinfo.CompanyId.ToString());
             int credId = 0;
             int result = credManage.InsertCreditInfo(info, out credId);

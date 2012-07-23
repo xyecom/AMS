@@ -122,5 +122,20 @@ namespace XYECOM.Business.AMS
             }
             return DAL.UpdateEvaluationByCredId(credId, isServer);
         }
+
+        /// <summary>
+        /// 推荐or不推荐
+        /// </summary>
+        /// <param name="credId"></param>
+        /// <param name="isJian"></param>
+        /// <returns></returns>
+        public int UpdateIsDraftById(int credId, bool isJian)
+        {
+            if (credId <= 0)
+            {
+                return 0;
+            }
+            return DAL.UpdateIsDraftById(credId,isJian);
+        }
     }
 }

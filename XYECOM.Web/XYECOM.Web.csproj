@@ -383,6 +383,13 @@
     <Compile Include="IndexCreditList.aspx.designer.cs">
       <DependentUpon>IndexCreditList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="IndexForeclosed.aspx.cs">
+      <DependentUpon>IndexForeclosed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexForeclosed.aspx.designer.cs">
+      <DependentUpon>IndexForeclosed.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1874,6 +1881,7 @@
     <Content Include="GetPassWord.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="IndexCreditList.aspx" />
+    <Content Include="IndexForeclosed.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="LogOut.aspx" />
     <Content Include="My97DatePicker\calendar.js" />

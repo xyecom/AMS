@@ -90,8 +90,7 @@
                         <tr>
                             <td>
                                 <asp:GridView ID="GV1" HeaderStyle-CssClass="gv_header_style" runat="server" AutoGenerateColumns="False"
-                                    DataKeyNames="CreditId" GridLines="None" OnRowDataBound="GV1_RowDataBound1"
-                                    Width="100%">
+                                    DataKeyNames="CreditId" GridLines="None" OnRowDataBound="GV1_RowDataBound1" Width="100%">
                                     <Columns>
                                         <asp:BoundField DataField="ID" HeaderText="ID" Visible="False" />
                                         <asp:TemplateField HeaderText="选择">
@@ -133,20 +132,30 @@
                                             </ItemTemplate>
                                             <ItemStyle Width="10%" CssClass="action" />
                                         </asp:TemplateField>
+                                         <asp:TemplateField HeaderText="是否推荐">
+                                            <ItemTemplate>
+                                                <%# Eval("IsDraft").ToString() == "True" ? "推荐" : "不推荐"%>
+                                            </ItemTemplate>
+                                            <ItemStyle Width="10%" CssClass="action" />
+                                        </asp:TemplateField>
                                         <asp:TemplateField HeaderText="投标个数">
                                             <ItemTemplate>
                                                 <%# GetTenderCountByCreditID(Eval("CreditId"))%>
                                             </ItemTemplate>
-                                            <ItemStyle Width="10%" CssClass="action" />
+                                            <ItemStyle Width="5%" CssClass="action" />
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="操作">
-                                            <ItemStyle Width="20%" />
+                                            <ItemStyle Width="30%" />
                                             <ItemTemplate>
-                                                <a href='CreditorInfo.aspx?ID=<%# Eval("CreditId") %>&backURL=<%# backURL %>'>
-                                                    查看详细</a> &nbsp; <a href='/CreditInfoDetail.aspx?Id=<%# Eval("CreditId") %>' target="_blank">查看投标</a>
-                                                <asp:LinkButton ID="lbtnRelease" runat="server" Text="审核通过"  OnClick="lbtnYes_Click"
+                                                <a href='CreditorInfo.aspx?ID=<%# Eval("CreditId") %>&backURL=<%# backURL %>'>查看详细</a>
+                                                &nbsp; <a href='/CreditInfoDetail.aspx?Id=<%# Eval("CreditId") %>' target="_blank">查看投标</a>
+                                                <asp:LinkButton ID="lbtnRelease" runat="server" Text="审核通过" OnClick="lbtnYes_Click"
                                                     CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
-                                                <asp:LinkButton ID="lbtnDelete" runat="server" Text="审核不通过"  OnClick="lbtnNo_Click"
+                                                <asp:LinkButton ID="lbtnDelete" runat="server" Text="审核不通过" OnClick="lbtnNo_Click"
+                                                    CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
+                                                <asp:LinkButton ID="LinkButton1" runat="server" Text="推荐" OnClick="lbtnJian_Click"
+                                                    CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
+                                                <asp:LinkButton ID="LinkButton2" runat="server" Text="不推荐" OnClick="lbtnNoJian_Click"
                                                     CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
                                             </ItemTemplate>
                                         </asp:TemplateField>

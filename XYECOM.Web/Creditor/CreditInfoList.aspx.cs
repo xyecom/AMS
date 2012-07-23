@@ -233,7 +233,7 @@ namespace XYECOM.Web.Creditor
 
 
                 HyperLink hlUpdate = (HyperLink)e.Item.FindControl("hlUpdate");//修改债权信息
-                HyperLink hlShowTender = (HyperLink)e.Item.FindControl("hlShowTender");//查看竞标
+                //HyperLink hlShowTender = (HyperLink)e.Item.FindControl("hlShowTender");//查看竞标
                 HyperLink hlEvaluate = (HyperLink)e.Item.FindControl("hlEvaluate");//评价         
                 LinkButton lbtnCancel = (LinkButton)e.Item.FindControl("lbtnCancel");//取消债权信息
                 LinkButton lbtnClosed = (LinkButton)e.Item.FindControl("lbtnClosed");//关闭债权信息
@@ -255,7 +255,7 @@ namespace XYECOM.Web.Creditor
                             lbtnRelease.Visible = false;                            
                         }
                         lbtnDelete.Visible = true;
-                        hlShowTender.Visible = false;
+                        //hlShowTender.Visible = false;
                         hlEvaluate.Visible = false;
                         lbtnCancel.Visible = false;
                         lbtnClosed.Visible = false;
@@ -264,7 +264,7 @@ namespace XYECOM.Web.Creditor
                         hlUpdate.Visible = true;
                         lbtnRelease.Visible = false;
                         lbtnDelete.Visible = true;
-                        hlShowTender.Visible = false;
+                        //hlShowTender.Visible = false;
                         hlEvaluate.Visible = false;
                         lbtnCancel.Visible = false;
                         lbtnClosed.Visible = false;
@@ -273,7 +273,7 @@ namespace XYECOM.Web.Creditor
                         hlUpdate.Visible = true;
                         lbtnRelease.Visible = false;
                         lbtnDelete.Visible = true;
-                        hlShowTender.Visible = false;
+                        //hlShowTender.Visible = false;
                         hlEvaluate.Visible = false;
                         lbtnCancel.Visible = false;
                         lbtnClosed.Visible = false;
@@ -282,7 +282,7 @@ namespace XYECOM.Web.Creditor
                         hlUpdate.Visible = false;
                         lbtnRelease.Visible = false;
                         lbtnDelete.Visible = false;
-                        hlShowTender.Visible = true;
+                        //hlShowTender.Visible = true;
                         hlEvaluate.Visible = false;
                         lbtnCancel.Visible = true;
                         lbtnClosed.Visible = false;
@@ -291,7 +291,7 @@ namespace XYECOM.Web.Creditor
                         hlUpdate.Visible = false;
                         lbtnRelease.Visible = false;
                         lbtnDelete.Visible = false;
-                        hlShowTender.Visible = false;
+                        //hlShowTender.Visible = false;
                         hlEvaluate.Visible = false;
                         lbtnCancel.Visible = true;
                         lbtnClosed.Visible = false;
@@ -300,7 +300,7 @@ namespace XYECOM.Web.Creditor
                         hlUpdate.Visible = false;
                         lbtnRelease.Visible = false;
                         lbtnDelete.Visible = false;
-                        hlShowTender.Visible = true;
+                        //hlShowTender.Visible = true;
                         hlEvaluate.Visible = false;
                         lbtnCancel.Visible = false;
                         lbtnClosed.Visible = true;
@@ -309,7 +309,7 @@ namespace XYECOM.Web.Creditor
                         hlUpdate.Visible = false;
                         lbtnRelease.Visible = false;
                         lbtnDelete.Visible = false;
-                        hlShowTender.Visible = true;
+                        //hlShowTender.Visible = true;
                         if (isCreditEvaluation)
                         {
                             hlEvaluate.Visible = false;
@@ -332,7 +332,7 @@ namespace XYECOM.Web.Creditor
                             lbtnRelease.Visible = false;
                         }
                         lbtnDelete.Visible = true;
-                        hlShowTender.Visible = false;
+                        //hlShowTender.Visible = false;
                         hlEvaluate.Visible = false;
                         lbtnCancel.Visible = false;
                         lbtnClosed.Visible = false;
