@@ -218,7 +218,7 @@
                         <asp:Repeater runat="server" ID="rpfile">
                             <ItemTemplate>
                                 <a href='<%# Eval("FilePath") %>'>
-                                    <%# Eval("CaseName") %>
+                                    <%# GetFileName(Eval("FilePath")) %>
                                 </a>
                             </ItemTemplate>
                         </asp:Repeater>
