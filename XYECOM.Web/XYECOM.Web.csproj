@@ -230,6 +230,13 @@
     <Compile Include="Creditor\DeparForeclosedList.aspx.designer.cs">
       <DependentUpon>DeparForeclosedList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Creditor\DraftCreditList.aspx.cs">
+      <DependentUpon>DraftCreditList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\DraftCreditList.aspx.designer.cs">
+      <DependentUpon>DraftCreditList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Creditor\EditPartInfo.aspx.cs">
       <DependentUpon>EditPartInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1867,6 +1874,7 @@
     <Content Include="Creditor\CreditInfoList.aspx" />
     <Content Include="Creditor\DeparCreditList.aspx" />
     <Content Include="Creditor\DeparForeclosedList.aspx" />
+    <Content Include="Creditor\DraftCreditList.aspx" />
     <Content Include="Creditor\EditPartInfo.aspx" />
     <Content Include="Creditor\EvaluationList.aspx" />
     <Content Include="Creditor\ForeclosedDetail.aspx" />

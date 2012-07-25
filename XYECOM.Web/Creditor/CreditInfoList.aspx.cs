@@ -43,7 +43,7 @@ namespace XYECOM.Web.Creditor
             StringBuilder strWhere = new StringBuilder(" 1=1 and (DepartId = " + userinfo.userid + ")");
             if (state == -2)
             {
-                strWhere.Append(" and ( ApprovaStatus ! =7)");
+                strWhere.Append(" and ( ApprovaStatus ! =7 and ApprovaStatus ! =0)");
             }
             else
             {
@@ -244,22 +244,6 @@ namespace XYECOM.Web.Creditor
 
                 switch (sta)
                 {
-                    case Model.CreditState.Draft:
-                        hlUpdate.Visible = true;
-                        if (userinfo.IsReal)
-                        {
-                            lbtnRelease.Visible = true;
-                        }
-                        else
-                        {
-                            lbtnRelease.Visible = false;                            
-                        }
-                        lbtnDelete.Visible = true;
-                        //hlShowTender.Visible = false;
-                        hlEvaluate.Visible = false;
-                        lbtnCancel.Visible = false;
-                        lbtnClosed.Visible = false;
-                        break;
                     case Model.CreditState.Null:
                         hlUpdate.Visible = true;
                         lbtnRelease.Visible = false;

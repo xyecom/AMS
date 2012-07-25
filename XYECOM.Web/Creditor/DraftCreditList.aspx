@@ -1,21 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Creditor/Creditor.master" AutoEventWireup="true"
-    CodeBehind="CreditInfoList.aspx.cs" Inherits="XYECOM.Web.Creditor.CreditInfoList" %>
+    CodeBehind="DraftCreditList.aspx.cs" Inherits="XYECOM.Web.Creditor.DraftCreditList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script type="text/javascript">
-        var ConfirmCredit = function () {
-            if (window.confirm("确认取消案件吗？")) {
-                return window.confirm("案件一旦取消标识着案件中止建议请联系并和案件服务商协商，否则出现纠纷无本网站无关？");
-            }
-            return false;
-        }
-        var ClosedCredit = function () {
-            if (window.confirm("确认关闭案件吗？")) {
-                return window.confirm("请认真核实案件是否完全结束，关闭后案件中止？");
-            }
-            return false;
-        }    
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->
@@ -40,19 +26,7 @@
                         ControlToCompare="bgdate" ControlToValidate="egdate" Operator="GreaterThan" Type="Date">截至日期必须大于生效日期
                     </asp:CompareValidator>
                 </div>
-                &nbsp;&nbsp; 案件状态：<asp:DropDownList Width="150px" ID="drpState" runat="server">
-                    <asp:ListItem Value="-2" Text="所有"></asp:ListItem>
-                    <asp:ListItem Value="-1" Text="未审核"></asp:ListItem>
-                    <asp:ListItem Value="1" Text="审核未通过"></asp:ListItem>
-                    <asp:ListItem Value="2" Text="投标中"></asp:ListItem>
-                    <asp:ListItem Value="3" Text="案件进行中"></asp:ListItem>
-                    <asp:ListItem Value="4" Text="服务商案件完成等待债权人确认"></asp:ListItem>
-                    <asp:ListItem Value="5" Text="案件结束"></asp:ListItem>
-                    <asp:ListItem Value="6" Text="债权人取消案件"></asp:ListItem>
-                </asp:DropDownList>
                 &nbsp;&nbsp; 标题：<asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
-                <%--<input type="text" value="请输入关键字" onfocus="this.value=''" onblur="if(!value){value=defaultValue;}"
-                    style="color: #a8a4a3"><input name="" type="button" value="查 询" />--%>
                 <asp:Button runat="server" ID="btnSearch" Text="搜索" OnClick="btnSearch_Click" />
             </div>
             <!--serch end-->
@@ -72,7 +46,7 @@
                                     投标个数
                                 </td>
                                 <td align="center" width="15%">
-                                    案件状态
+                                    账龄
                                 </td>
                                 <td align="center" width="25%">
                                     操作
@@ -92,21 +66,13 @@
                                 <%# GetTenderCountByCreditID(Eval("CreditId"))%>
                             </td>
                             <td>
-                                <%# GetApprovaStatus(Eval("ApprovaStatus"))%>
+                                <%# Eval("Age")%>
                             </td>
                             <td>
-                                <asp:HiddenField ID="hidState" runat="server" Value='<%# Eval("ApprovaStatus")%>' />
-                                <asp:HiddenField ID="hidInfoId" runat="server" Value='<%# Eval("CreditId")%>' />
-                                <asp:HiddenField ID="hidIsCreditEvaluation" runat="server" Value='<%# Eval("IsCreditEvaluation")%>' />
                                 <asp:HyperLink ID="hlUpdate" runat="server" NavigateUrl='<%# "UpdateCreditInfo.aspx?Id=" + Eval("CreditId") %>'>修改</asp:HyperLink>
-                                <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "CreditDetils.aspx?Id=" + Eval("CreditId") %>'>查看竞标</asp:HyperLink>
-                                <asp:HyperLink ID="hlEvaluate" runat="server" NavigateUrl='<%# "AddEvaluation.aspx?Id=" + Eval("CreditId") %>'>评价</asp:HyperLink>
-                                <asp:LinkButton ID="lbtnCancel" runat="server" Text="取消案件" OnClick="lbtnCancel_Click"
-                                    OnClientClick="javascript:return ConfirmCredit();" CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
-                                <asp:LinkButton ID="lbtnClosed" runat="server" Text="关闭案件" OnClick="lbtnClose_Click"
-                                    OnClientClick="javascript:return ClosedCredit();" CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
                                 <asp:LinkButton ID="lbtnRelease" runat="server" Text="发布" OnClick="lbtnRelease_Click"
                                     CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
+                                <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "CreditDetils.aspx?Id=" + Eval("CreditId") %>'>查看详细</asp:HyperLink>
                                 <asp:LinkButton ID="lbtnDelete" runat="server" Text="删除" OnClientClick="javascript:return confirm('确定删除吗？');"
                                     OnClick="lbtnDelete_Click" CommandArgument='<%# Eval("CreditId") %>'></asp:LinkButton>
                             </td>
