@@ -7,22 +7,23 @@
         <ul>
 <%--            <li><a tabindex="1" href="#">存储业务</a></li>
             <li><a tabindex="2" href="#">管理存储业务</a></li>--%>
-            <li><a href="/Creditor/CaseTypeList.aspx">档案分类管理</a></li>
-            <li><a href="/Creditor/CaseList.aspx">档案管理</a></li>
+            <li><a tabindex="1" href="/Creditor/CaseTypeList.aspx">档案分类管理</a></li>
+            <li><a tabindex="2" href="/Creditor/CaseList.aspx">档案管理</a></li>
         </ul>
         <h1>
             债权业务</h1>
         <ul>
-            <li><a tabindex="2" href="/Creditor/AddCreditInfo.aspx">发布债权信息</a></li>
-            <li><a tabindex="3" href="/Creditor/CreditInfoList.aspx">债权信息管理</a></li>
+            <li><a tabindex="3" href="/Creditor/AddCreditInfo.aspx">发布债权信息</a></li>
+            <li><a tabindex="4" href="/Creditor/DraftCreditList.aspx">债权草稿管理</a></li>
+            <li><a tabindex="5" href="/Creditor/CreditInfoList.aspx">外包债权管理</a></li>
             <li id="liCredManage" runat="server"><a tabindex="4" href="/Creditor/DeparCreditList.aspx">
                 部门债权管理</a> </li>
         </ul>
         <h1>
             抵债业务</h1>
         <ul>
-            <li><a tabindex="5" href="/Creditor/AddForeclosed.aspx">发布抵债信息</a></li>
-            <li><a tabindex="6" href="/Creditor/ForeclosedList.aspx">抵债信息管理</a></li>
+            <li><a tabindex="6" href="/Creditor/AddForeclosed.aspx">发布抵债信息</a></li>
+            <li><a tabindex="7" href="/Creditor/ForeclosedList.aspx">抵债信息管理</a></li>
             <li runat="server" id="liForeManage"><a tabindex="7" href="/Creditor/DeparForeclosedList.aspx">
                 部门抵债管理</a></li>
         </ul>
