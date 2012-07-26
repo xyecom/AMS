@@ -19,7 +19,7 @@ namespace XYECOM.Web.Other.UserContorl
                 return;
             }
 
-            if (!IsPostBack) 
+            if (!IsPostBack)
             {
                 BindData();
             }
@@ -52,44 +52,15 @@ namespace XYECOM.Web.Other.UserContorl
 
             string strwhere = " where  UR_ID=" + userinfo.userid.ToString();
 
-            //if (XYECOM.Core.XYRequest.GetFormString("nokan") != "")
-            //{
-            //    strwhere += " and M_HasReply=" + XYECOM.Core.XYRequest.GetFormString("nokan");
-            //}
 
-            //if (XYECOM.Core.XYRequest.GetFormString("datemes") != "")
-            //{
-            //    strwhere += " and M_AddTime  between  '" + DateTime.Now.AddMonths(-Convert.ToInt32(XYECOM.Core.XYRequest.GetFormString("datemes"))) + "' and  '" + DateTime.Now + "'";
-            //}
-            //if (XYECOM.Core.XYRequest.GetQueryString("datemes") != "")
-            //{
-            //    strwhere += " and M_AddTime  between  '" + DateTime.Now.AddMonths(-Convert.ToInt32(XYECOM.Core.XYRequest.GetFormString("datemes"))) + "' and  '" + DateTime.Now + "'";
-            //}
-            //if (XYECOM.Core.XYRequest.GetQueryString("type") != "")
-            //{
-            //    strwhere += " and M_SenderType=" + XYECOM.Core.XYRequest.GetQueryString("type");
-            //}
-            //if (XYECOM.Core.XYRequest.GetQueryString("infoid") != "")
-            //{
-            //    strwhere += " and InfoID=" + XYECOM.Core.XYRequest.GetQueryString("infoid");
-            //}
-
-            //if (XYECOM.Core.XYRequest.GetQueryString("nosee") != "")
-            //{
-            //    strwhere += " and M_HasReply=" + XYECOM.Core.XYRequest.GetQueryString("nosee");
-            //}
-
-            //string url = System.Web.HttpContext.Current.Request.RawUrl;
-            //if (url.IndexOf("pageindex") > 0)
-            //    url = url.Remove(url.IndexOf("pageindex") - 1, url.Substring(url.IndexOf("pageindex")).Length + 1);
 
             pageinfo.PageSize = 10;
             this.pageinfo.RecTotal = XYECOM.Core.Function.GetRows(" XYV_RecverManage ", "M_ID", strwhere);
             this.pageinfo.CurPage = XYECOM.Core.XYRequest.GetInt("PageIndex", 1);
 
             DataTable table = XYECOM.Core.Function.GetPages(this.pageinfo.PageSize, this.pageinfo.CurPage, strwhere, " order by M_AddTime  desc ", " XYV_RecverManage ", "M_ID, Title,M_AddTime,M_HasReply,type,UR_ID,M_Title,U_ID,M_UserName,M_CompanyName,type", " M_ID ");
-            this.DataList1.DataSource = table;
-            this.DataList1.DataBind();
+            this.rptList.DataSource = table;
+            this.rptList.DataBind();
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)

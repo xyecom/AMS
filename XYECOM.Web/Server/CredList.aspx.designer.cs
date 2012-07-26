@@ -7,10 +7,37 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace XYECOM.Web.Other.UserContorl {
+namespace XYECOM.Web.Server {
     
     
-    public partial class ReceiveMessage {
+    public partial class CredList {
+        
+        /// <summary>
+        /// drpArrears 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpArrears;
+        
+        /// <summary>
+        /// txtKey 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtKey;
+        
+        /// <summary>
+        /// btnSearch 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
         /// rptList 控件。
@@ -22,13 +49,13 @@ namespace XYECOM.Web.Other.UserContorl {
         protected global::System.Web.UI.WebControls.Repeater rptList;
         
         /// <summary>
-        /// pageinfo 控件。
+        /// Page1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::xymanage_UserControl_page pageinfo;
+        protected global::xymanage_UserControl_page Page1;
         
         /// <summary>
         /// lblMessage 控件。

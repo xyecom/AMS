@@ -496,6 +496,13 @@
     <Compile Include="Server\CertificateList.aspx.designer.cs">
       <DependentUpon>CertificateList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Server\CredList.aspx.cs">
+      <DependentUpon>CredList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\CredList.aspx.designer.cs">
+      <DependentUpon>CredList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Server\EvaluationList.aspx.cs">
       <DependentUpon>EvaluationList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1852,6 +1859,7 @@
     <Content Include="Common\Js\jquery.uploadify\uploadify.css" />
     <Content Include="Common\Js\jquery.uploadify\uploadify.swf" />
     <Content Include="Copyright.htm" />
+    <Content Include="Server\CredList.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="zhaopin.htm" />
   </ItemGroup>

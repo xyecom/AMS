@@ -20,7 +20,9 @@
         <h1>
             案件资讯</h1>
         <ul>
-            <li><a href="/Server/RecommendCredList.aspx">系统推荐</a></li></ul>
+            <li><a href="/Server/CredList.aspx">全部案件</a></li>
+            <li><a href="/Server/RecommendCredList.aspx">系统推荐</a></li>
+        </ul>
     </div>
 </div>
 <!--left1 end-->

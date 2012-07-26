@@ -29,7 +29,7 @@ namespace XYECOM.Web
             {
                 if (!Business.CheckUser.CheckUserLogin())
                 {
-                    GotoMsgBoxPageForDynamicPage("登录后才能访问详情页面！", 2, "Login.aspx?backurl=" + Request.Path);
+                    GotoMsgBoxPageForDynamicPage("登录后才能访问详情页面！", 2, "Login.aspx?backurl=" + Request.Url.PathAndQuery);
                     return;
                 }
                 int Id = XYECOM.Core.XYRequest.GetQueryInt("ID", 0);
