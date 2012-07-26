@@ -19,9 +19,9 @@
     <div id="top">
         <div id="top1">
             您好，欢迎&nbsp;&nbsp;<strong><asp:Label ID="lblUserName" runat="server" Text="Label"></asp:Label></strong>&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:HyperLink ID="HyperLink1" runat="server">修改资料</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Creditor/BaseEdit.aspx">修改资料</asp:HyperLink>
             &nbsp;&nbsp;|&nbsp;&nbsp;
-            <asp:HyperLink ID="HyperLink2" runat="server">修改密码</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink2" runat="server"  NavigateUrl="~/Creditor/ModifyPwd.aspx">修改密码</asp:HyperLink>
             &nbsp;&nbsp;|&nbsp;&nbsp;
             <asp:HyperLink ID="HyperLink3" NavigateUrl="/" runat="server">网站首页</asp:HyperLink>
         </div>

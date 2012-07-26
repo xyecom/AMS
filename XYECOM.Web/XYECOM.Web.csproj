@@ -1845,6 +1845,8 @@
     <Content Include="Common\Js\jquery.uploadify\uploadify.css" />
     <Content Include="Common\Js\jquery.uploadify\uploadify.swf" />
     <Content Include="Copyright.htm" />
+    <Content Include="Test.aspx" />
+    <Content Include="zhaopin.htm" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CreditInfoDetail.aspx" />
@@ -1879,6 +1881,7 @@
     <Content Include="Creditor\UserContorl\menu.ascx" />
     <Content Include="ForeclosedDetail.aspx" />
     <Content Include="GetPassWord.aspx" />
+    <Content Include="hzq.htm" />
     <Content Include="Index.aspx" />
     <Content Include="IndexCreditList.aspx" />
     <Content Include="IndexForeclosed.aspx" />
@@ -1909,6 +1912,7 @@
     <Content Include="Other\images\pic3.gif" />
     <Content Include="Other\images\pic4.gif" />
     <Content Include="Other\images\ryjzs.gif" />
+    <Content Include="Other\images\sjno.gif" />
     <Content Include="Other\images\toplader.gif" />
     <Content Include="Other\images\vip_template_10.jpg" />
     <Content Include="Other\js\ForeUploadControl.js" />
@@ -3059,6 +3063,7 @@
     <Content Include="templates\_shop\yys_2009\_left.htm" />
     <Content Include="templates\_shop\yys_2009\_menu.htm" />
     <Content Include="templates\_shop\yys_2009\_top.htm" />
+    <Content Include="tk.htm" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

@@ -32,7 +32,7 @@
             </div>
             <div class="logoright" style="width: 250px">
                 <a href="#">设为首页</a>&nbsp; |&nbsp; <a href="#">加入收藏</a>&nbsp;|&nbsp; <a href="/Login.aspx">
-                    登陆</a>&nbsp;|&nbsp;<a href="/Register.aspx">注册</a>
+                    登录</a>&nbsp;|&nbsp;<a href="/Register.aspx">注册</a>
             </div>
             <div id="menu" style="float: left;">
                 <ul>
