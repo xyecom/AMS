@@ -2,6 +2,7 @@
     CodeBehind="UpdateCreditInfo.aspx.cs" Inherits="XYECOM.Web.Creditor.UpdateCreditInfo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <title>债权信息修改</title>
     <link href="/common/css/xylib.css" type="text/css" rel="stylesheet" />
     <script language="javascript" type="text/javascript" src="/Other/js/ForeUploadControl.js"></script>
     <style type="text/css">
@@ -89,7 +90,7 @@
         <!--rightzqmain start-->
         <div id="rightzqmain">
             <h2>
-                添加债权资料</h2>
+                债权信息修改</h2>
             <div class="rhr">
             </div>
             <!--基本信息 start-->

@@ -2,6 +2,7 @@
     CodeBehind="UpdateForeclosed.aspx.cs" Inherits="XYECOM.Web.Creditor.UpdateForeclosed" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <title>抵债信息修改</title>
     <script language="javascript" type="text/javascript" src="/Other/js/ForeUploadControl.js"></script>
     <style type="text/css">
         .upload_bg
@@ -83,16 +84,16 @@
         <!--rightzqmain start-->
         <div id="rightzqmain">
             <h2>
-                修改抵债物品</h2>
+                抵债信息修改</h2>
             <div class="rhr">
             </div>
             <!--基本信息 start-->
-            【物品基本信息】
+            物品基本信息
             <hr />
             <table class="dzbasetb">
                 <tr>
                     <td class="info1">
-                        <span style="color: Red">*</span> 名称：
+                        <span style="color: Red">*</span> 名称
                     </td>
                     <td>
                         <asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
@@ -100,7 +101,7 @@
                             ErrorMessage="名称不能为空"></asp:RequiredFieldValidator>
                     </td>
                     <td class="info1">
-                        <span style="color: Red">*</span>拍卖底价：
+                        <span style="color: Red">*</span>拍卖底价
                     </td>
                     <td>
                         <asp:TextBox runat="server" ID="txtLinePrice"></asp:TextBox><span>元</span>
@@ -110,7 +111,7 @@
                 </tr>
                 <tr>
                     <td class="info1">
-                        地区：
+                        地区
                     </td>
                     <td>
                         <div id="divArea">
@@ -123,7 +124,7 @@
                         </script>
                     </td>
                     <td class="info1">
-                        物品类型：
+                        物品类型
                     </td>
                     <td>
                         <asp:DropDownList runat="server" ID="droTypeName" Width="135px">
@@ -135,7 +136,7 @@
                 </tr>
                 <tr>
                     <td class="info1">
-                        详细地址：
+                        详细地址
                     </td>
                     <td colspan="3">
                         <asp:TextBox runat="server" ID="txtAddress"></asp:TextBox>
@@ -143,7 +144,7 @@
                 </tr>
                 <tr>
                     <td class="info1">
-                        <span style="color: Red">*</span>结束竞拍时间：
+                        <span style="color: Red">*</span>结束竞拍时间
                     </td>
                     <td colspan="3">
                         <input id="endDate" style="width: 120px" runat="server" size="10" type="text" readonly="readonly"
@@ -154,20 +155,20 @@
                 </tr>
                 <tr>
                     <td class="info1">
-                        物品详细描述：
+                        物品详细描述
                     </td>
                     <td colspan="3">
                         <asp:TextBox runat="server" ID="txtDescription" TextMode="MultiLine" Rows="15" Width="100%"></asp:TextBox>
                     </td>
                 </tr>
             </table>
-            【物品相关图片】
+            物品相关图片
             <hr />
             <div id="dzbasepic">
                 <div id="picshow">
                 </div>
                 <p>
-                    选择图片：
+                    选择图片
                 </p>
                 <div id="baseinfo">
                     <p>

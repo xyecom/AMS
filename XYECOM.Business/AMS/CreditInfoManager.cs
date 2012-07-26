@@ -135,7 +135,21 @@ namespace XYECOM.Business.AMS
             {
                 return 0;
             }
-            return DAL.UpdateIsDraftById(credId,isJian);
+            return DAL.UpdateIsDraftById(credId, isJian);
+        }
+
+        /// <summary>
+        /// 根据债权编号获取同一地区的推荐个数
+        /// </summary>
+        /// <param name="areaId"></param>
+        /// <returns></returns>
+        public int GetTuiJianCountById(int Id)
+        {
+            if (Id <= 0)
+            {
+                return 0;
+            }
+            return DAL.GetTuiJianCountById(Id);
         }
     }
 }

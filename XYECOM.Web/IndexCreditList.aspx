@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>首页</title>
+    <title>债权信息列表</title>
     <script src="/Common/Js/base.js" type="text/javascript"></script>
     <link href="/Other/css/vipnew_home_20110412.css" rel="stylesheet" type="text/css" />
     <link href="/Other/css/style.css" rel="stylesheet" type="text/css" />
@@ -143,26 +143,23 @@
                             <HeaderTemplate>
                                 <table>
                                     <tr id="trtop">
-                                        <td align="center" width="20%">
+                                        <td align="center" width="25%">
                                             案件标题
                                         </td>
-                                        <td align="center" width="10%">
+                                        <td align="center" width="15%">
                                             发布时间
                                         </td>
-                                        <td align="center" width="10%">
+                                        <td align="center" width="15%">
                                             发布者
                                         </td>
-                                        <td align="center" width="10%">
+                                        <td align="center" width="15%">
                                             欠款金额
                                         </td>
-                                        <td align="center" width="10%">
+                                        <td align="center" width="15%">
                                             悬赏金额
                                         </td>
                                         <td align="center" width="15%">
                                             投标人数
-                                        </td>
-                                        <td align="center" width="25%">
-                                            操作菜单
                                         </td>
                                     </tr>
                             </HeaderTemplate>
@@ -170,10 +167,11 @@
                                 <tr id="trmidd" style="height: 28px; border-top: 1px solid #ccc" onmousemove="this.style.backgroundColor='#F7F7F7'"
                                     onmouseout="this.style.backgroundColor='#ffffff'">
                                     <td id="tdtitle">
-                                        <%# Eval("Title") %>
+                                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'
+                                            ToolTip='<%# Eval("Title") %>'><%# GetTitle(Eval("Title"))%></asp:HyperLink>
                                     </td>
                                     <td>
-                                         <%# Eval("CreateDate", "{0:yyyy-MM-dd}")%>
+                                        <%# Eval("CreateDate", "{0:yyyy-MM-dd}")%>
                                     </td>
                                     <td>
                                         <a href='showEvaluation.aspx?UserId=<%# Eval("DepartId") %>' target="_blank" alt="点击发布者可查看其信用度">
@@ -187,9 +185,6 @@
                                     </td>
                                     <td>
                                         <%# GetTenderCountByCreditID(Eval("CreditId"))%>
-                                    </td>
-                                    <td>
-                                        <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'>查看详细</asp:HyperLink>
                                     </td>
                                 </tr>
                             </ItemTemplate>

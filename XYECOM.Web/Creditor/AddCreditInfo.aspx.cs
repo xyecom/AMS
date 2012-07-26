@@ -29,16 +29,19 @@ namespace XYECOM.Web.Creditor
 
         protected void btnOk_Click(object sender, EventArgs e)
         {
+            string goUrl = string.Empty;
             CreditInfo info = new CreditInfo();
             info.Title = this.txtTitle.Text.Trim();
             info.Age = this.txtAge.Text.Trim();
             string radSelect = this.radSelect.SelectedValue;
             if (radSelect == "草稿")
             {
+                goUrl = "DraftCreditList.aspx";
                 info.ApprovaStatus = (int)CreditState.Draft;
             }
             else
             {
+                goUrl = "CreditInfoList.aspx";
                 info.ApprovaStatus = (int)CreditState.Null;
             }
             info.AreaId = MyConvert.GetInt32(this.areaid.Value);
@@ -113,11 +116,11 @@ namespace XYECOM.Web.Creditor
             {
                 this.udCreditInfo.InfoID = credId;
                 this.udCreditInfo.Update();
-                GotoMsgBoxPageForDynamicPage("添加债权信息成功！", 1, "Index.aspx");
+                GotoMsgBoxPageForDynamicPage("添加债权信息成功！", 1, goUrl);
             }
             else
             {
-                GotoMsgBoxPageForDynamicPage("添加债权信息失败！", 1, "Index.aspx");
+                GotoMsgBoxPageForDynamicPage("添加债权信息失败！", 1, goUrl);
             }
         }
     }

@@ -2,6 +2,7 @@
     CodeBehind="CreditInfoList.aspx.cs" Inherits="XYECOM.Web.Creditor.CreditInfoList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <title>外包债权管理</title>
     <script type="text/javascript">
         var ConfirmCredit = function () {
             if (window.confirm("确认取消案件吗？")) {
@@ -23,7 +24,7 @@
         <!--rightzqlist start-->
         <div id="rightzqlist">
             <h2>
-                外包债权中心</h2>
+                外包债权管理</h2>
             <div class="rhr">
             </div>
             <!--serch start-->

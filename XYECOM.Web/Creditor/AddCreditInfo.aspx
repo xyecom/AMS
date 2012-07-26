@@ -2,6 +2,7 @@
     CodeBehind="AddCreditInfo.aspx.cs" Inherits="XYECOM.Web.Creditor.AddCreditInfo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <title>添加债权资料</title>
     <link href="/common/css/xylib.css" type="text/css" rel="stylesheet" />
     <script language="javascript" type="text/javascript" src="/Other/js/ForeUploadControl.js"></script>
     <style type="text/css">

@@ -2,6 +2,7 @@
     CodeBehind="IndexForeclosed.aspx.cs" Inherits="XYECOM.Web.IndexForeclosed" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<title>抵债信息列表</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="left4">

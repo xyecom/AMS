@@ -275,5 +275,17 @@ namespace XYECOM.SQLServer.AMS
             int rowAffected = SqlHelper.ExecuteNonQuery(CommandType.Text, sql, null);
             return rowAffected;
         }
+
+        /// <summary>
+        /// 获取同一地区的推荐个数
+        /// </summary>
+        /// <param name="areaId"></param>
+        /// <returns></returns>
+        public int GetTuiJianCountById(int Id)
+        {
+            string sql = @"select count(*) from CreditInfo where areaid = (select areaid from dbo.CreditInfo where creditid = "+Id+")  and isDraft = 1 and approvastatus !=7";
+            int count = (int)SqlHelper.ExecuteScalar(CommandType.Text, sql, null);
+            return count;
+        }
     }
 }
