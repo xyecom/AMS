@@ -78,6 +78,7 @@ namespace XYECOM.Web.Creditor
 
         protected void btnOK_Click(object sender, EventArgs e)
         {
+            string goUrl = string.Empty;
             int id = MyConvert.GetInt32(this.hiddID.Value);
             if (id < 0)
             {
@@ -93,10 +94,12 @@ namespace XYECOM.Web.Creditor
             string radSelect = this.radSelect.SelectedValue;
             if (radSelect == "草稿")
             {
+                goUrl = "DraftCreditList.aspx";
                 info.ApprovaStatus = (int)CreditState.Draft;
             }
             else
             {
+                goUrl = "CreditInfoList.aspx";
                 info.ApprovaStatus = (int)CreditState.Null;
             }
             info.AreaId = MyConvert.GetInt32(this.areaid.Value);
@@ -168,11 +171,11 @@ namespace XYECOM.Web.Creditor
             {
                 this.udCreditInfo.InfoID = info.CreditId;
                 this.udCreditInfo.Update();
-                GotoMsgBoxPageForDynamicPage("修改债权信息成功！", 1, "CreditInfoList.aspx");
+                GotoMsgBoxPageForDynamicPage("修改债权信息成功！", 1, goUrl);
             }
             else
             {
-                GotoMsgBoxPageForDynamicPage("修改债权信息失败！", 1, "CreditInfoList.aspx");
+                GotoMsgBoxPageForDynamicPage("修改债权信息失败！", 1, goUrl);
             }
         }
     }
