@@ -125,5 +125,23 @@ namespace XYECOM.Web
             int uId = MyConvert.GetInt32(userID.ToString());
             return new Business.UserInfo().GetUserNameByID(uId);
         }
+
+        /// <summary>
+        /// 获取债权信息
+        /// </summary>
+        /// <param name="title"></param>
+        /// <returns></returns>
+        public string GetTitle(object title)
+        {
+            string strTitle = title.ToString();
+            if (strTitle.Length > 15)
+            {
+                return strTitle.Substring(0, 15) + "…………";
+            }
+            else
+            {
+                return strTitle;
+            }
+        }
     }
 }
