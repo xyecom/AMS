@@ -33,6 +33,7 @@ namespace XYECOM.Web.Creditor
                 }
                 this.hidID.Value = Id.ToString();
                 BindData(Id);
+
             }
         }
         #endregion
@@ -64,7 +65,6 @@ namespace XYECOM.Web.Creditor
                 this.labIsInLitigation.Text = info.IsInLitigation ? "是" : "否";
                 this.labIsLitigationed.Text = info.IsLitigationed ? "是" : "否";
                 this.labIsSelfCollection.Text = info.IsSelfCollection ? "是" : "否";
-                this.labCount.Text = GetTenderCountByCreditID(info.CreditId).ToString();
                 this.labDebtorType.Text = info.DebtorType;
             }
 
@@ -98,6 +98,7 @@ namespace XYECOM.Web.Creditor
             }
         }
         #endregion
+
         protected string GetApprovaStatus(object state)
         {
             int stateId = MyConvert.GetInt32(state.ToString());
@@ -107,12 +108,15 @@ namespace XYECOM.Web.Creditor
             {
                 case XYECOM.Model.CreditState.Draft:
                     name = "草稿";
+                    btnUpdate.Enabled = true;
                     break;
                 case XYECOM.Model.CreditState.Null:
                     name = "未审核";
+                    btnUpdate.Enabled = true;
                     break;
                 case XYECOM.Model.CreditState.NoPass:
                     name = "审核未通过";
+                    btnUpdate.Enabled = true;
                     break;
                 case XYECOM.Model.CreditState.Tender:
                     name = "投标中";
@@ -128,6 +132,7 @@ namespace XYECOM.Web.Creditor
                     break;
                 case XYECOM.Model.CreditState.Canceled:
                     name = "债权人取消案件";
+                    btnUpdate.Enabled = true;
                     break;
             }
             return name;
@@ -278,6 +283,12 @@ namespace XYECOM.Web.Creditor
                 name =path.Substring(index+1);
             }
             return name;
+        }
+
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            int id = MyConvert.GetInt32(this.hidID.Value);
+            Response.Redirect("UpdateCreditInfo.aspx?Id="+id);
         }
     }
 }

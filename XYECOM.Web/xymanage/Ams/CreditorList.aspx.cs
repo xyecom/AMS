@@ -18,7 +18,7 @@ namespace XYECOM.Web.xymanage
 {
     public partial class CreditorList : XYECOM.Web.BasePage.ManagePage
     {
-        CreditInfoManager coreManage = new CreditInfoManager();
+        CreditInfoManager credManage = new CreditInfoManager();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -209,7 +209,7 @@ namespace XYECOM.Web.xymanage
             if (j.IndexOf(",") == 0)
             {
                 j = j.Substring(1);
-                int i = coreManage.UpdateApprovaStatusByID(j, XYECOM.Model.CreditState.Delete);
+                int i = credManage.UpdateApprovaStatusByID(j, XYECOM.Model.CreditState.Delete);
                 if (i >= 0)
                 {
                     BindData();
@@ -238,7 +238,7 @@ namespace XYECOM.Web.xymanage
 
                     if (infoId <= 0) continue;
 
-                    coreManage.UpdateApprovaStatusByID(infoId, XYECOM.Model.CreditState.Tender);
+                    credManage.UpdateApprovaStatusByID(infoId, XYECOM.Model.CreditState.Tender);
                 }
             }
 
@@ -261,7 +261,7 @@ namespace XYECOM.Web.xymanage
 
                     if (infoId <= 0) continue;
 
-                    coreManage.UpdateApprovaStatusByID(infoId, XYECOM.Model.CreditState.NoPass);
+                    credManage.UpdateApprovaStatusByID(infoId, XYECOM.Model.CreditState.NoPass);
                 }
             }
 
@@ -305,7 +305,7 @@ namespace XYECOM.Web.xymanage
                 int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
                 if (Id > 0)
                 {
-                    int result = coreManage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.NoPass);
+                    int result = credManage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.NoPass);
                     if (result > 0)
                     {
                         BindData();
@@ -327,7 +327,7 @@ namespace XYECOM.Web.xymanage
                 int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
                 if (Id > 0)
                 {
-                    int result = coreManage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.Tender);
+                    int result = credManage.UpdateApprovaStatusByID(Id, XYECOM.Model.CreditState.Tender);
                     if (result > 0)
                     {
                         BindData();
@@ -349,7 +349,7 @@ namespace XYECOM.Web.xymanage
                 int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
                 if (Id > 0)
                 {
-                    int result = coreManage.UpdateIsDraftById(Id,false);
+                    int result = credManage.UpdateIsDraftById(Id,false);
                     if (result > 0)
                     {
                         BindData();
@@ -369,9 +369,19 @@ namespace XYECOM.Web.xymanage
             if (linkButton != null)
             {
                 int Id = XYECOM.Core.MyConvert.GetInt32(linkButton.CommandArgument);
+                int tuiCount = credManage.GetTuiJianCountById(Id);
+
                 if (Id > 0)
                 {
-                    int result = coreManage.UpdateIsDraftById(Id, true);
+                    int result = 0;
+                    if (tuiCount < 3)
+                    {
+                        result = credManage.UpdateIsDraftById(Id, true);
+                    }
+                    else
+                    {
+                        Alert("同一地区推荐个数不能大于三条");
+                    }
                     if (result > 0)
                     {
                         BindData();

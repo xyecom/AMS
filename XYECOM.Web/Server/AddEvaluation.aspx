@@ -2,6 +2,7 @@
     CodeBehind="AddEvaluation.aspx.cs" Inherits="XYECOM.Web.Server.AddEvaluation" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <title>对债权商进行评价</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <!--right start-->
@@ -9,14 +10,14 @@
         <!--rightdzmain start-->
         <div id="rightdzmain">
             <h2>
-                对服务商进行评价</h2>
+                对债权商进行评价</h2>
             <div class="rhr">
             </div>
             <!--基本信息 start-->
             <table class="pjtb">
                 <tr>
                     <td>
-                        请选择:
+                        请选择
                     </td>
                     <asp:RadioButtonList runat="server" ID="radEvaluationType">
                         <asp:ListItem Value="1" Text="好评"></asp:ListItem>
@@ -27,7 +28,7 @@
             <table class="pjtb">
                 <tr>
                     <td>
-                        请填写您的评价：
+                        请填写您的评价
                     </td>
                     <td>
                         <asp:TextBox runat="server" ID="txtDescription" TextMode="MultiLine"></asp:TextBox>

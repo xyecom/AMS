@@ -2,6 +2,7 @@
     CodeBehind="DraftCreditList.aspx.cs" Inherits="XYECOM.Web.Creditor.DraftCreditList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <title>债权草稿管理</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->
@@ -9,7 +10,7 @@
         <!--rightzqlist start-->
         <div id="rightzqlist">
             <h2>
-                外包债权中心</h2>
+                债权草稿管理</h2>
             <div class="rhr">
             </div>
             <!--serch start-->

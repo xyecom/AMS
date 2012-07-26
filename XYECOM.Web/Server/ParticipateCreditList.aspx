@@ -2,6 +2,7 @@
     CodeBehind="ParticipateCreditList.aspx.cs" Inherits="XYECOM.Web.Server.ParticipateCreditList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <title>我参与的案件</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <!--right start-->

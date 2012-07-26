@@ -57,7 +57,7 @@ namespace XYECOM.Web
             }
 
             StringBuilder whereJian = new StringBuilder(" 1=1 and ( ApprovaStatus  =2) and IsDraft = 'true'");
-            DataTable dtJian = XYECOM.Business.Utils.GetPaginationData("CreditInfo", "CreditId", "*", " CreateDate desc", whereJian.ToString(), 20, 1, out totalRecord);
+            DataTable dtJian = XYECOM.Business.Utils.GetPaginationData("CreditInfo", "CreditId", "*", " CreateDate desc", whereJian.ToString(),3, 1, out totalRecord);
 
             if (dtJian.Rows.Count > 0)
             {
@@ -118,6 +118,24 @@ namespace XYECOM.Web
         {
             int id = MyConvert.GetInt32(CreditID.ToString());
             return new XYECOM.Business.AMS.TenderInfoManager().GetTenderCountByCreditID(id);
+        }
+
+        /// <summary>
+        /// 获取债权信息
+        /// </summary>
+        /// <param name="title"></param>
+        /// <returns></returns>
+        public string GetTitle(object title)
+        {
+            string strTitle = title.ToString();
+            if (strTitle.Length > 15)
+            {
+                return strTitle.Substring(0, 15) + "…………";
+            }
+            else
+            {
+                return strTitle;
+            }
         }
     }
 }
