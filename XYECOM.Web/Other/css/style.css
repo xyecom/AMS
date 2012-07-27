@@ -110,7 +110,8 @@ height:32px;
 #dztb a{ float:right; text-decoration:underline}
 #dztb p{ width:200px; float:left; margin:4px 10px}
 /*---------------------table----------------------------------*/
-.tdtitle{ width:220px;}
+.tdtitle{ width:220px; text-align:left; padding-left:4px}
+.tdtitle img{ padding-left:1px; padding-right:3px}
 .tdprice{width:100px;}
 .tdarea{width:90px;}
 .tdtime{width:100px;}
@@ -126,7 +127,7 @@ height:32px;
 .qul ul li{height:24px;line-height:24px;text-align:left}
 .qul ul li font{ color:#D6000C;font-size:12px;}
 
-#right3{border:1px solid #ddd; margin:5px auto}
+#right3{margin:5px auto; width:262px}
 #right4{ border:1px solid #ddd; width:260px; height:180px;}
 
 #rightdzmain{height:auto; overflow:hidden; border:1px solid #ddd; margin:5px auto}
