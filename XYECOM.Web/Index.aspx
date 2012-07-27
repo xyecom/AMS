@@ -19,7 +19,8 @@
             <div class="logo">
             </div>
             <div class="logoright" style="width: 250px">
-                 <a href="http://www.baoqt.cn" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.baoqt.cn/')">设为首页</a> &nbsp; |&nbsp; <a href='#' onclick='window.external.AddFavorite("http://www.baoqt.cn/","【包青天债权管理网】")'>
+                <a href="http://www.baoqt.cn" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.baoqt.cn/')">
+                    设为首页</a> &nbsp; |&nbsp; <a href='#' onclick='window.external.AddFavorite("http://www.baoqt.cn/","【包青天债权管理网】")'>
                         添加到收藏夹</a>&nbsp;|&nbsp; <a href="/Login.aspx">登录</a>&nbsp;|&nbsp;<a href="/Register.aspx">注册</a>
             </div>
             <div id="menu" style="float: left;">
@@ -52,19 +53,18 @@
                 <!--left1开始-->
                 <div id="left1">
                     <div id="fader">
-   <ul>
+                        <ul>
                             <li>
                                 <img src="/Other/images/1.gif" alt="债权管理方案"></li>
                             <li>
                                 <img src="/Other/images/2.gif" alt="抵债管理方案"></li>
                             <li>
                                 <img src="/Other/images/3.gif" alt="优质服务"></li>
-                                 <li>
+                            <li>
                                 <img src="/Other/images/pic3.gif" alt="价值共享"></li>
                             <li>
                                 <img src="/Other/images/pic4.gif" alt="财富积累"></li>
                         </ul>
-
                     </div>
                     <script type="text/javascript">
                         var fader = new Hongru.fader.init('fader', {
@@ -82,7 +82,7 @@
                         <div style="width: 100px; line-height: 38px; margin-left: 55px; float: left; font-size: 14px">
                             <strong>债权资讯</strong></div>
                         <div style="width: 514px; float: right; height: 40px; line-height: 35px; text-align: center">
-                            <table width="112" style="height: 31px;float:right">
+                            <table width="112" style="height: 31px; float: right">
                                 <tr>
                                     <td width="44">
                                         <a href="/IndexCreditList.aspx">更多>></a>
@@ -90,52 +90,33 @@
                                 </tr>
                             </table>
                         </div>
-                    </div>                             
-                       <table id="zqlist1">
-                                    <tr>
-                                        <td height="23" class="tdtitle">
-                                            债权标题
-                                        </td>
-                                        <td class="tdprice">
-                                            标的金额
-                                        </td>
-                                        <td class="tdarea">
-                                            所在地区
-                                        </td>
-                                        <td class="tdtime">
-                                            发布时间
-                                        </td>
-                                        <td class="tdnumber">
-                                            投标人数
-                                        </td>
-                                    </tr>
-                      </table>
-
-<table width="702" id="zqtj">
-<asp:Repeater ID="rpJian" runat="server">
-                            <ItemTemplate>
-
-
-            <tr>
-            <td class="tdtitle">  <img alt="推荐信息" src="/Other/images/jian.gif" /><asp:HyperLink ID="hlShowTender" runat="server"
-                                            NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'><%# Eval("Title") %></asp:HyperLink></td>
-    <td class="tdprice">￥<%# Eval("Arrears")%></td>
-    <td class="tdarea">  <%# GetAreaIdFull(Eval("AreaId"))%></td>
-    <td class="tdtime"><%# Eval("CreateDate", "{0:yyyy-MM-dd}")%></td>
-      <td class="tdnumber">  <%# GetTenderCountByCreditID(Eval("CreditId"))%>  </td>
-                </tr>
-          </ItemTemplate>
-                        </asp:Repeater>
-
-    </table>
-                  
-                    <div class="box" id="marqueebox1">
-     <table id="zqlist2">                     
-                        <asp:Repeater ID="dlCreditList" runat="server">
+                    </div>
+                    <table id="zqlist1">
+                        <tr>
+                            <td height="23" class="tdtitle">
+                                债权标题
+                            </td>
+                            <td class="tdprice">
+                                标的金额
+                            </td>
+                            <td class="tdarea">
+                                所在地区
+                            </td>
+                            <td class="tdtime">
+                                发布时间
+                            </td>
+                            <td class="tdnumber">
+                                投标人数
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="702" id="zqtj">
+                        <asp:Repeater ID="rpJian" runat="server">
                             <ItemTemplate>
                                 <tr>
                                     <td class="tdtitle">
-                                        <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'><%# Eval("Title") %></asp:HyperLink>
+                                        <img alt="推荐信息" src="/Other/images/jian.gif" /><asp:HyperLink ID="hlShowTender" runat="server"
+                                            NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>' ToolTip='<%# Eval("Title") %>'><%# GetTitle(Eval("Title"))%></asp:HyperLink>
                                     </td>
                                     <td class="tdprice">
                                         ￥<%# Eval("Arrears")%>
@@ -151,10 +132,32 @@
                                     </td>
                                 </tr>
                             </ItemTemplate>
-                </asp:Repeater>
-
-                                </table>
-                          
+                        </asp:Repeater>
+                    </table>
+                    <div class="box" id="marqueebox1">
+                        <table id="zqlist2">
+                            <asp:Repeater ID="dlCreditList" runat="server">
+                                <ItemTemplate>
+                                    <tr>
+                                        <td class="tdtitle">
+                                            <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>' ToolTip='<%# Eval("Title") %>'><%# GetTitle(Eval("Title"))%></asp:HyperLink>
+                                        </td>
+                                        <td class="tdprice">
+                                            ￥<%# Eval("Arrears")%>
+                                        </td>
+                                        <td class="tdarea">
+                                            <%# GetAreaIdFull(Eval("AreaId"))%>
+                                        </td>
+                                        <td class="tdtime">
+                                            <%# Eval("CreateDate", "{0:yyyy-MM-dd}")%>
+                                        </td>
+                                        <td class="tdnumber">
+                                            <%# GetTenderCountByCreditID(Eval("CreditId"))%>
+                                        </td>
+                                    </tr>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </table>
                         <div>
                             <p style="text-align: center;">
                                 <asp:Label ID="labCreditMessage" runat="server" ForeColor="Red"></asp:Label></p>
@@ -180,9 +183,9 @@
                     </script>
                 </div>
                 <!--left3 结束-->
-                <div style="width:730px; height:100p; margin-top:5px; margin-left:3px">
-<img src="/Other/images/5160202_091214089001_2.gif" />
-</div>
+                <div style="width: 730px; height: 100p; margin-top: 5px; margin-left: 3px">
+                    <img src="/Other/images/5160202_091214089001_2.gif" />
+                </div>
                 <!--left4开始-->
                 <div id="left4">
                     <div style="background: url('/Other/images/erji_titlebg.gif'); background-repeat: repeat-x;
@@ -190,7 +193,7 @@
                         <div style="width: 100px; line-height: 38px; margin-left: 55px; float: left; font-size: 14px">
                             <strong>抵债物品资讯</strong></div>
                         <div style="width: 514px; float: right; height: 40px; line-height: 35px; text-align: center">
-                            <table width="112" style="height: 31px;float:right">
+                            <table width="112" style="height: 31px; float: right">
                                 <tr>
                                     <td width="44">
                                         <a href="/IndexForeclosed.aspx">更多>></a>
@@ -201,29 +204,33 @@
                     </div>
                     <div style="height: auto; width: 730px;">
                         <asp:DataList ID="dlForeclosed" runat="server" RepeatColumns="2">
-                          <ItemTemplate>
-    <div style=" float:left;width:343px; height:105px; border:1px solid #ccc; margin:5px 1px; padding:5px 5px">
-<table id="dztb">
-<tr>
-<td>
-<img width="96px;" src='<%# GetInfoImgHref(Eval("ForeclosedId")) %>'/>
-<p><strong><%#Eval("Title") %></strong></p>
-<p><font>物品底价：￥<%# Eval("LinePrice")%></font></p>
-<p><font>物品所在地：<%# GetAreaIdFull(Eval("AreaId"))%></font></p>
-<p> <a href='ForeclosedDetail.aspx?Id=<%#Eval("ForeclosedId") %>'>查看详情>></a></p>
-</td>
-</tr>
-</table>
-</div>
+                            <ItemTemplate>
+                                <div style="float: left; width: 343px; height: 105px; border: 1px solid #ccc; margin: 5px 1px;
+                                    padding: 5px 5px">
+                                    <table id="dztb">
+                                        <tr>
+                                            <td>
+                                                <img width="96px;" src='<%# GetInfoImgHref(Eval("ForeclosedId")) %>' />
+                                                <p>
+                                                    <strong>
+                                                        <%#Eval("Title") %></strong></p>
+                                                <p>
+                                                    <font>物品底价：￥<%# Eval("LinePrice")%></font></p>
+                                                <p>
+                                                    <font>物品所在地：<%# GetAreaIdFull(Eval("AreaId"))%></font></p>
+                                                <p>
+                                                    <a href='ForeclosedDetail.aspx?Id=<%#Eval("ForeclosedId") %>'>查看详情>></a></p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </ItemTemplate>
-                 
-                        </asp:DataList> 
-                             </div>
-                        <div>
-                            <p style="text-align: center;">
-                                <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></p>
-                        </div>
-              
+                        </asp:DataList>
+                    </div>
+                    <div>
+                        <p style="text-align: center;">
+                            <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></p>
+                    </div>
                 </div>
                 <!--left4结束-->
             </div>
@@ -262,7 +269,8 @@
                 <!--right2结束-->
                 <!--right3开始-->
                 <div id="right3">
-                   <a href="Register.aspx"><img src="/Other/images/1359619_174309069902_2.gif" style="border:none"/></a> 
+                    <a href="Register.aspx">
+                        <img src="/Other/images/1359619_174309069902_2.gif" style="border: none" /></a>
                 </div>
                 <!--right3结束-->
                 <!--right4开始-->
@@ -326,9 +334,27 @@
             <div style="height: 50px; text-align: center">
                 <table>
                     <tr>
-              <td><img src="Other/images/11.gif" /></td><td><h2>不跨区·省时间</h2></td>
-<td><img src="Other/images/22.gif" /></td><td><h2>大商品·低价卖</h2></td>
-<td><img src="Other/images/33.gif" /></td><td><h2>多方案·优服务</h2></td>
+                        <td>
+                            <img src="Other/images/11.gif" />
+                        </td>
+                        <td>
+                            <h2>
+                                不跨区·省时间</h2>
+                        </td>
+                        <td>
+                            <img src="Other/images/22.gif" />
+                        </td>
+                        <td>
+                            <h2>
+                                大商品·低价卖</h2>
+                        </td>
+                        <td>
+                            <img src="Other/images/33.gif" />
+                        </td>
+                        <td>
+                            <h2>
+                                多方案·优服务</h2>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -345,5 +371,4 @@
     </div>
     </form>
 </body>
-
 </html>

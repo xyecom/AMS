@@ -27,7 +27,7 @@ namespace XYECOM.Web
             //加载抵债信息
             StringBuilder strWhere = new StringBuilder(" 1=1 and (State = " + (int)AuditingState.Passed + ")");
             int totalRecord = 0;
-            DataTable dt = XYECOM.Business.Utils.GetPaginationData("ForeclosedInfo", "ForeclosedId", "*", " CreateDate desc", strWhere.ToString(), 20, 1, out totalRecord);
+            DataTable dt = XYECOM.Business.Utils.GetPaginationData("ForeclosedInfo", "ForeclosedId", "*", " CreateDate desc", strWhere.ToString(), 4, 1, out totalRecord);
 
             if (dt.Rows.Count > 0)
             {
@@ -130,7 +130,7 @@ namespace XYECOM.Web
             string strTitle = title.ToString();
             if (strTitle.Length > 15)
             {
-                return strTitle.Substring(0, 15) + "…………";
+                return strTitle.Substring(0, 15) + "……";
             }
             else
             {

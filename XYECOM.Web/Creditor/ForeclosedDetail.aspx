@@ -2,6 +2,7 @@
     CodeBehind="ForeclosedDetail.aspx.cs" Inherits="XYECOM.Web.Creditor.ForeclosedDetail" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <title>抵债信息详情</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->
@@ -9,7 +10,7 @@
         <!--rightdzmain start-->
         <div id="rightdzmain">
             <h2>
-                抵债物品详情</h2>
+                抵债信息详情</h2>
             <div class="rhr">
             </div>
             <!--基本信息 start-->

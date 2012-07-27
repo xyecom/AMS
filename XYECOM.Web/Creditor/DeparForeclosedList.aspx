@@ -2,6 +2,7 @@
     CodeBehind="DeparForeclosedList.aspx.cs" Inherits="XYECOM.Web.Creditor.DeparForeclosedList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <title>部门抵债管理</title>
     <script type="text/javascript">
         var ConfirmForeclosed = function () {
             if (window.confirm("确认关闭信息吗？")) {
@@ -23,7 +24,7 @@
         <!--rightpart start-->
         <div id="rightpart">
             <h2>
-                抵债信息管理</h2>
+                部门债权管理</h2>
             <div class="rhr">
             </div>
             <!--serch start-->

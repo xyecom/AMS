@@ -33,7 +33,6 @@ namespace XYECOM.Web.Creditor
                 }
                 this.hidID.Value = Id.ToString();
                 BindData(Id);
-
             }
         }
         #endregion
