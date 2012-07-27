@@ -2,6 +2,7 @@
     CodeBehind="RecommendCredList.aspx.cs" Inherits="XYECOM.Web.Server.RecommendCredList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <title>系统推荐案件</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <!--right start-->

@@ -58,7 +58,7 @@ namespace XYECOM.Web.Creditor
                 }
             }
             this.txtAge.Text = info.Age.ToString();
-            this.cheDebtObligation.SelectedValue = info.DebtObligation;
+            //this.cheDebtObligation.SelectedValue = info.DebtObligation;
             this.txtDebtorName.Text = info.DebtorName;
             this.txtDebtorReason.Text = info.DebtorReason;
             this.txtDebtorTelpone.Text = info.DebtorTelpone;
@@ -114,7 +114,14 @@ namespace XYECOM.Web.Creditor
                     debtObligation += this.cheDebtObligation.Items[i].Value + ",";
                 }
             }
-            info.DebtObligation = debtObligation;
+            if (debtObligation.Length > 0)
+            {
+                info.DebtObligation = debtObligation.Substring(0, debtObligation.Length - 1);
+            }
+            else
+            {
+                info.DebtObligation = "";
+            }
             info.DebtorName = this.txtDebtorName.Text.Trim();
             info.DebtorReason = this.txtDebtorReason.Text.Trim();
             info.DebtorTelpone = this.txtDebtorTelpone.Text.Trim();

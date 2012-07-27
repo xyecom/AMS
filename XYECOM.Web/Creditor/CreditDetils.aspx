@@ -2,6 +2,7 @@
     CodeBehind="CreditDetils.aspx.cs" Inherits="XYECOM.Web.Creditor.CreditDetils" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <title>债权资料详情</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->
@@ -16,7 +17,7 @@
             <div class="divtext">
                 <div style="text-align: center; margin-top: 5px">
                     <div style="float: right; width: 131px;">
-                        关注度：<strong style="color: Red"><asp:Label runat="server" ID="labCount"></asp:Label></strong></div>
+                        <asp:Button runat="server" ID="btnUpdate" Text="修改" Enabled="false" OnClick="btnUpdate_Click" /></div>
                     <h4>
                         债务基本资料</h4>
                 </div>
@@ -171,7 +172,7 @@
                     附件资料：<asp:Repeater runat="server" ID="rpfile">
                         <ItemTemplate>
                             <a href='<%# Eval("FilePath") %>'>
-                                <%# GetFileName(Eval("FilePath")) %>
+                                <%# GetFileName(Eval("FilePath")) %><br />
                             </a>
                         </ItemTemplate>
                     </asp:Repeater>

@@ -66,25 +66,23 @@ namespace XYECOM.Web
                 this.labDebtObligation.Text = info.DebtObligation;
                 XYECOM.Model.GeneralUserInfo userInfo = Business.CheckUser.UserInfo;
                 TenderInfo tenderInfo = new TenderInfoManager().GetTenderByCredId(info.CreditId);
-                if (tenderInfo != null)
+                if ((tenderInfo != null && userInfo.userid == tenderInfo.LayerId) || userInfo.userid == info.DepartId)
                 {
-                    if (userInfo.userid == tenderInfo.LayerId)
+                    this.labDebtorTelpone.Text = info.DebtorTelpone;
+                    this.labDebtorName.Text = info.DebtorName;
+                    DataTable price = XYECOM.Business.Attachment.GetAllImgHref(AttachmentItem.CreditInfo, info.CreditId);
+                    if (price.Rows.Count > 0)
                     {
-                        this.labDebtorTelpone.Text = info.DebtorTelpone;
-                        this.labDebtorName.Text = info.DebtorName;
-                        DataTable price = XYECOM.Business.Attachment.GetAllImgHref(AttachmentItem.CreditInfo, info.CreditId);
-                        if (price.Rows.Count > 0)
-                        {
-                            this.rpPrice.DataSource = price;
-                            this.rpPrice.DataBind();
-                        }
-                        DataTable ralaCases = new RelatedCaseInfoManager().GetFilePaths(info.CreditId, Model.TableInfoType.ZqInfo);
-                        if (ralaCases.Rows.Count > 0)
-                        {
-                            this.rpfile.DataSource = ralaCases;
-                            this.rpfile.DataBind();
-                        }
+                        this.rpPrice.DataSource = price;
+                        this.rpPrice.DataBind();
                     }
+                    DataTable ralaCases = new RelatedCaseInfoManager().GetFilePaths(info.CreditId, Model.TableInfoType.ZqInfo);
+                    if (ralaCases.Rows.Count > 0)
+                    {
+                        this.rpfile.DataSource = ralaCases;
+                        this.rpfile.DataBind();
+                    }
+
                 }
                 else
                 {

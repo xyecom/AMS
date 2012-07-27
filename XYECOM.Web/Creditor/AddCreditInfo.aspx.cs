@@ -24,6 +24,7 @@ namespace XYECOM.Web.Creditor
                 {
                     this.radSelect.Enabled = false;
                 }
+                this.areaid.Value = userinfo.AreaId.ToString();
             }
         }
 
@@ -57,7 +58,14 @@ namespace XYECOM.Web.Creditor
                     debtObligation += this.cheDebtObligation.Items[i].Value + ",";
                 }
             }
-            info.DebtObligation = debtObligation;
+            if (debtObligation.Length > 0)
+            {
+                info.DebtObligation = debtObligation.Substring(0, debtObligation.Length - 1);
+            }
+            else
+            {
+                info.DebtObligation = "";
+            }
             info.DebtorName = this.txtDebtorName.Text.Trim();
             info.DebtorReason = this.txtDebtorReason.Text.Trim();
             info.DebtorTelpone = this.txtDebtorTelpone.Text.Trim();

@@ -16,7 +16,10 @@ namespace XYECOM.Web.Creditor
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                this.areaid.Value = userinfo.AreaId.ToString();
+            }
         }
 
         /// <summary>

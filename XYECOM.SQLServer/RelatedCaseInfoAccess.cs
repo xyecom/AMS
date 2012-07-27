@@ -69,7 +69,7 @@ namespace XYECOM.SQLServer
         /// <returns></returns>
         public DataTable GetFilePaths(long infoId, Model.TableInfoType infoType)
         {
-            string sql = "select Id,FilePath,CaseName from CaseInfo where Id in (select Id from RelatedCaseInfo where InfoType='" + (int)infoType + "' and InfoId=" + infoId + ")";
+            string sql = "select Id,FilePath,CaseName from CaseInfo where Id in (select caseId from RelatedCaseInfo where InfoType='" + (int)infoType + "' and InfoId=" + infoId + ")";
 
             return SqlHelper.ExecuteTable(sql);
         }
@@ -81,7 +81,7 @@ namespace XYECOM.SQLServer
         /// <returns></returns>
         public string GetFilePath(long infoId, Model.TableInfoType infoType)
         {
-            string sql = "select top 1 Id,FilePath,CaseName from CaseInfo where Id in (select Id from RelatedCaseInfo where InfoType='" + (int)infoType + "' and InfoId=" + infoId + ")";
+            string sql = "select top 1 Id,FilePath,CaseName from CaseInfo where Id in (select caseId from RelatedCaseInfo where InfoType='" + (int)infoType + "' and InfoId=" + infoId + ")";
 
             DataTable table = SqlHelper.ExecuteTable(sql);
 

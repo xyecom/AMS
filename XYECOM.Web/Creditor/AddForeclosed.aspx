@@ -2,7 +2,21 @@
     CodeBehind="AddForeclosed.aspx.cs" Inherits="XYECOM.Web.Creditor.AddForeclosed" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <title>添加抵债物品</title>
     <script language="javascript" type="text/javascript" src="/Other/js/ForeUploadControl.js"></script>
+    <script type="text/javascript" language="javascript">
+        function checkAredId() {
+            var areaId = $('#<%=areaid.ClientID %>').val();
+            if (areaId == 0) {
+                $("#spAreaMessage").html("请选择地区");
+                return false;
+            }
+            else {
+                $("#spAreaMessage").html("");
+                return true;
+            }
+        }
+    </script>
     <style type="text/css">
         .upload_bg
         {
@@ -83,7 +97,7 @@
         <!--rightzqmain start-->
         <div id="rightzqmain">
             <h2>
-                添加抵债物品</h2>
+                添加抵债信息</h2>
             <div class="rhr">
             </div>
             <!--基本信息 start-->
@@ -115,7 +129,8 @@
                     <td>
                         <div id="divArea">
                         </div>
-                        <input type="hidden" id="areaid" name="areaid" runat="server" />
+                        <input type="hidden" id="areaid" name="areaid" runat="server" /><span id="spAreaMessage"
+                            style="color: Red"></span>
                         <script type="text/javascript">
                             var cla = new ClassType("cla", 'area', 'divArea', '<%=areaid.ClientID %>', 1);
                             cla.Mode = "select";
@@ -182,7 +197,8 @@
         <div style="width: 812px; height: 40px; line-height: 40px; text-align: center">
             <%--  <input type="button" value="确 定" style="background: url(../images/yes.gif); width: 80px;
                 height: 25px; border: none; cursor: pointer; color: #FFF" />--%>
-            <asp:Button runat="server" ID="btnOK" Width="80px" Height="25px" Text="确定" OnClick="btnOK_Click" />
+            <asp:Button runat="server" ID="btnOK" Width="80px" Height="25px" Text="确定" OnClick="btnOK_Click"
+                OnClientClick="if(!checkAredId()) return true" />
             <input type="button" value="返回" onclick="javascript:history.back();" />
         </div>
     </div>
