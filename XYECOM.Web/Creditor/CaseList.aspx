@@ -86,7 +86,7 @@
         </div>
         <!--rightpart end-->
     </div>
-    <div>
+    <div style="text-align:right; padding-right:10px; font-size:14px; font-weight:bold; height:50px; line-height:50px">
         <a href="/Creditor/UploadCase.aspx">添加档案</a>
     </div>
 </asp:Content>

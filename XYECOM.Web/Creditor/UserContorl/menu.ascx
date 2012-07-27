@@ -6,13 +6,13 @@
                 <ul class="menu">
                     <li class="stmenu">
                         <h3>
-                            <a class="xialaguang" href="/"><span>首页</span></a></h3>
+                            <a class="xialaguang" href="/"><span>网站首页</span></a></h3>
                     </li>
                     <!--企业简介-->
-                    <li class="stmenu">
+                    <%--<li class="stmenu">
                         <h3>
                             <a class="xialaguang" href="#"><span>企业简介</span></a></h3>
-                    </li>
+                    </li>--%>
                     <!--外包债权-->
                     <li class="stmenu">
                         <h3>
@@ -162,7 +162,7 @@
                     <!--信用评价-->
                     <li class="stmenu">
                         <h3>
-                            <a class="xialaguang" href="/Creditor/EvaluationList.aspx"><span>信用评价</span></a></h3>
+                            <a class="xialaguang" href="/Creditor/Index.aspx"><span>个人中心</span></a></h3>
                     </li>
                     <li class="overlay"></li>
                 </ul>

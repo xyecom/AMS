@@ -2,7 +2,6 @@
     CodeBehind="EvaluationList.aspx.cs" Inherits="XYECOM.Web.Creditor.EvaluationList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <title>信用评价管理</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->
@@ -10,7 +9,7 @@
         <!--rightzqlist start-->
         <div id="rightzqlist">
             <h2>
-                信用评价管理</h2>
+                评价管理</h2>
             <div class="rhr">
             </div>
             <!--serch start-->

@@ -2,7 +2,6 @@
     CodeBehind="AddEvaluation.aspx.cs" Inherits="XYECOM.Web.Creditor.AddEvaluation" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<title>对服务商进行评价</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->
@@ -17,7 +16,7 @@
             <table class="pjtb">
                 <tr>
                     <td>
-                        请选择
+                        请选择:
                     </td>
                     <td>
                         <asp:RadioButtonList runat="server" ID="radEvaluationType" RepeatDirection="Horizontal">
@@ -30,7 +29,7 @@
             <table class="pjtb">
                 <tr>
                     <td>
-                        请填写您的评价
+                        请填写您的评价：
                     </td>
                     <td>
                         <asp:TextBox runat="server" ID="txtDescription" TextMode="MultiLine" Rows="15" Width="426px"></asp:TextBox>

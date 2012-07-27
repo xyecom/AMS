@@ -2,7 +2,6 @@
     CodeBehind="UpdateCreditInfo.aspx.cs" Inherits="XYECOM.Web.Creditor.UpdateCreditInfo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <title>债权信息修改</title>
     <link href="/common/css/xylib.css" type="text/css" rel="stylesheet" />
     <script language="javascript" type="text/javascript" src="/Other/js/ForeUploadControl.js"></script>
     <style type="text/css">
@@ -90,7 +89,7 @@
         <!--rightzqmain start-->
         <div id="rightzqmain">
             <h2>
-                债权信息修改</h2>
+                添加债权资料</h2>
             <div class="rhr">
             </div>
             <!--基本信息 start-->
@@ -107,7 +106,7 @@
                         <td colspan="3">
                             <asp:TextBox runat="server" ID="txtTitle" Width="600px"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtTitle"
-                                ErrorMessage="案件标题不能为空"></asp:RequiredFieldValidator>
+                                ErrorMessage="案件标题不能为空"   ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -117,7 +116,7 @@
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtDebtorName"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDebtorName"
-                                ErrorMessage="欠款人姓名不能为空"></asp:RequiredFieldValidator>
+                                ErrorMessage="欠款人姓名不能为空"    ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                         </td>
                         <td class="info_lei3">
                             欠款人联系电话
@@ -125,9 +124,9 @@
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtDebtorTelpone"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtDebtorTelpone"
-                                ErrorMessage="欠款人联系电话不能为空"></asp:RequiredFieldValidator>
+                                ErrorMessage="欠款人联系电话不能为空"   ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtDebtorTelpone"
-                                ErrorMessage="手机号码格式不正确" ValidationExpression="\s*((\d{2,3}-){0,1}\d{11})\s*"></asp:RegularExpressionValidator>
+                                ErrorMessage="手机号码格式不正确" ValidationExpression="\s*((\d{2,3}-){0,1}\d{11})\s*"   ForeColor="Red" Font-Size="9pt"></asp:RegularExpressionValidator>
                         </td>
                     </tr>
                     <tr>
@@ -136,14 +135,14 @@
                         </td>
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtArrears"></asp:TextBox>元<asp:RequiredFieldValidator
-                                ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtArrears" ErrorMessage="欠款金额不能为空"></asp:RequiredFieldValidator>
+                                ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtArrears" ErrorMessage="欠款金额不能为空"   ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                         </td>
                         <td class="info_lei3">
                             悬赏金额
                         </td>
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtBounty"></asp:TextBox>元<asp:RequiredFieldValidator
-                                ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtBounty" ErrorMessage="悬赏金额不能为空"></asp:RequiredFieldValidator>
+                                ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtBounty" ErrorMessage="悬赏金额不能为空"   ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -174,7 +173,7 @@
                         <td colspan="3">
                             <asp:TextBox runat="server" ID="txtDebtorReason" Width="600px"></asp:TextBox><asp:RequiredFieldValidator
                                 ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtDebtorReason"
-                                ErrorMessage="欠款原因不能为空"></asp:RequiredFieldValidator>
+                                ErrorMessage="欠款原因不能为空"   ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -184,7 +183,7 @@
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtCollectionPeriod"></asp:TextBox>天<asp:RequiredFieldValidator
                                 ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtCollectionPeriod"
-                                ErrorMessage="催收期限不能为空"></asp:RequiredFieldValidator>
+                                ErrorMessage="催收期限不能为空"   ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                         </td>
                         <td class="info_lei3">
                             备注
@@ -215,7 +214,7 @@
                         <td colspan="3">
                             <asp:TextBox runat="server" ID="txtIntroduction" Width="100%" Rows="10"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtIntroduction"
-                                ErrorMessage="案情简介不能为空"></asp:RequiredFieldValidator>
+                                ErrorMessage="案情简介不能为空"   ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                 </table>
@@ -287,43 +286,34 @@
                         <td class="info_lei3">
                             档案选择：
                         </td>
-                        <td class="info_lei2" colspan="3">
+                        <td class="info_lei2">
                             档案库选择<input type="radio" name="case" value="1" id="remo" onclick="document.getElementById('loc').style.display='none';document.getElementById('remote').style.display='';"
                                 checked="checked" />
                             从本地上传<input type="radio" name="case" value="0" id="locat" onclick="document.getElementById('loc').style.display='';document.getElementById('remote').style.display='none';" />
                         </td>
+                        <td class="info_lei3" colspan="2">
+                            <div id="loc" style="display: none;">
+                                <p>
+                                    从本地上传资料</p>
+                                选择文件:
+                                <asp:FileUpload ID="flCase" runat="server" />
+                            </div>
+                            <div id="remote">
+                                <p>
+                                    从档案库选择资料</p>
+                                <div id="divtitle">
+                                </div>
+                                <input id="hdgetid" type="hidden" runat="server" />
+                                <input id="ttt" type="hidden" />
+                                <script type="text/javascript">
+                                    var cla = new ClassTypes("cla", 'ttt', 'divtitle', '<%=hdgetid.ClientID %>', 5, '<%=this.userinfo.IsPrimary?"and CompanyId="+userinfo.CompanyId:"and userid="+userinfo.userid %>', "xy018");
+                                    cla.Init();
+                                </script>
+                            </div>
+                        </td>
                     </tr>
                 </table>
-                <div>
-                    <p>
-                        上传图片</p>
-                    <div id="baseinfo">
-                        <p>
-                            <XYECOM:UploadImage ID="udCreditInfo" runat="server" Iswatermark="false" MaxAmount="3"
-                                TableName="CreditInfo" IsCreateThumbnailImg="false" />
-                        </p>
-                    </div>
-                </div>
-                <div style="clear: both;">
-                </div>
-                <div id="loc" style="display: none;">
-                    <p>
-                        从本地上传资料</p>
-                    选择文件:
-                    <asp:FileUpload ID="flCase" runat="server" />
-                </div>
-                <div id="remote">
-                    <p>
-                        从档案库选择资料</p>
-                    <div id="divtitle">
-                    </div>
-                    <input id="hdgetid" type="hidden" runat="server" />
-                    <input id="ttt" type="hidden" />
-                    <script type="text/javascript">
-                        var cla = new ClassTypes("cla", 'ttt', 'divtitle', '<%=hdgetid.ClientID %>', 5, '<%=this.userinfo.IsPrimary?"and CompanyId="+userinfo.CompanyId:"and userid="+userinfo.userid %>', "xy018");
-                        cla.Init();
-                    </script>
-                </div>
+
                 <div style="width: 756px; height: 40px; line-height: 40px; text-align: center">
                     <table style="width: 600px; text-align: center">
                         <tr>

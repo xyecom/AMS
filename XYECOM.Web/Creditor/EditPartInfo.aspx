@@ -28,12 +28,12 @@
             <div id="Div1">
                 <div style="margin-top: 10px; width: 50%; float: left; height: 20px; font-size: 13px;
                     font-weight: bold">
-                    【部门登陆账号设置】</div>
+                    【部门登录账号设置】</div>
                 <table class="basetb">
                     <tbody>
                         <tr>
                             <td class="info_lei3">
-                                登陆名：
+                                登录名：
                             </td>
                             <td style="color: #999" class="info_lei2" colspan="3">
                                 <asp:TextBox ID="txtLoginName" runat="server"></asp:TextBox>

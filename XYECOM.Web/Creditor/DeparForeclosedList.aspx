@@ -2,7 +2,6 @@
     CodeBehind="DeparForeclosedList.aspx.cs" Inherits="XYECOM.Web.Creditor.DeparForeclosedList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <title>抵债信息管理</title>
     <script type="text/javascript">
         var ConfirmForeclosed = function () {
             if (window.confirm("确认关闭信息吗？")) {

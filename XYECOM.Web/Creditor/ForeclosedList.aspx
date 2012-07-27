@@ -2,16 +2,15 @@
     CodeBehind="ForeclosedList.aspx.cs" Inherits="XYECOM.Web.Creditor.ForeclosedList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <title>抵债信息管理</title>
     <script type="text/javascript">
         var ConfirmForeclosed = function () {
-            if (window.confirm("确认关闭抵债信息吗？")) {
+            if (window.confirm("确认关闭信息吗？")) {
                 return window.confirm("信息一旦关闭不能继续竞价，请确认？");
             }
             return false;
         }
         var DeleteForeclosed = function () {
-            if (window.confirm("确认删除抵债信息吗？")) {
+            if (window.confirm("确认删除案件吗？")) {
                 return window.confirm("只能删除未竞价的抵债信息？");
             }
             return false;

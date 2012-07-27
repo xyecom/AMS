@@ -154,7 +154,7 @@
     </div>
     </form>
     <script type="text/javascript">
-        var claarea = new ClassType("claarea", 'area', 'divarea', 'city', 1);
+        var claarea = new ClassType("claarea", 'area', 'divarea', 'city');
         claarea.Mode = "select";
         claarea.Init();
     </script>

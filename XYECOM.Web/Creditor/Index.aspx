@@ -93,31 +93,30 @@
             <div class="rhr">
             </div>
             <!--列表 start-->
-            <div id="list">
-                <h2>
+                        <div id="list">
+                   <div style="margin:5px auto; text-align:center; font-weight:bold">
                     <asp:Label ID="lblZqMessage" runat="server" Text=""></asp:Label>
-                </h2>
-                <asp:Repeater ID="rptCreadit" runat="server">
-                    <HeaderTemplate>
+              </div>
+               
                         <table>
-                            <tbody>
+                        
                                 <tr id="trtop">
-                                    <td width="20%" align="center">
+                                    <td width="44%" align="center">
                                         案件标题
                                     </td>
-                                    <td width="20%" align="center">
+                                    <td width="18%" align="center">
                                         案件状态
                                     </td>
                                     <td width="20%" align="center">
                                         发布时间
                                     </td>
-                                    <td width="25%" align="center">
+                                    <td width="18%" align="center">
                                         操作菜单
-                                    </td>
-                                </tr>
-                    </HeaderTemplate>
+                                    </td> 
+                                     </tr>
+                <asp:Repeater ID="rptCreadit" runat="server">
                     <ItemTemplate>
-                        <tr style="background-color: #ffffff; height: 28px; border-top: #ccc 1px solid" onmousemove="this.style.backgroundColor='#F7F7F7'"
+                        <tr  id="trmidd"  style="background-color: #ffffff; height: 28px; border-top: #ccc 1px solid" onmousemove="this.style.backgroundColor='#F7F7F7'"
                             onmouseout="this.style.backgroundColor='#ffffff'">
                             <td id="tdtitle">
                                 <%# Eval("Title") %>
@@ -129,14 +128,14 @@
                                 <%# Eval("CreateDate") %>
                             </td>
                             <td>
-                                <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "CreditDetils.aspx?Id=" + Eval("CreditId") %>'>查看竞标</asp:HyperLink>
+                                <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "CreditDetils.aspx?Id=" + Eval("CreditId") %>'>查看详情</asp:HyperLink>
                             </td>
                         </tr>
                     </ItemTemplate>
-                    <FooterTemplate>
-                        </tbody> </table></FooterTemplate>
                 </asp:Repeater>
+                </table>
             </div>
+
             <!--列表 end-->
         </div>
         <!--rightzqlist end-->
@@ -146,31 +145,28 @@
                 发布中的抵债物品</h2>
             <div class="rhr">
             </div>
-            <div id="dztb">
-                <h2>
+            <div style="height: auto; width: 800px;">
+                <div style="margin:5px auto; text-align:center; font-weight:bold">
                     <asp:Label ID="lblDzMessage" runat="server" Text=""></asp:Label>
-                </h2>
+              </div>
+
+              
                 <asp:DataList ID="dltDz" runat="server" RepeatColumns="2" Width="100%">
-                    <HeaderTemplate>
-                        <dl>
-                    </HeaderTemplate>
                     <ItemTemplate>
-                        <dd>
-                            <img src='<%# GetInfoImgHref(Eval("ForeclosedId")) %>' style="width: 100px" />
-                            <p>
-                                <strong>
-                                    <%#Eval("Title") %></strong><br />
-                            </p>
-                            <p>
-                                <font>物品底价：<%# Eval("LinePrice")%>元</font></p>
-                            <p>
-                                <font>竞价结束时间：<%# GetEndDate(Eval("EndDate"))%></font></p>
-                            <p>
-                                <a href='ForeclosedDetail.aspx?Id=<%# Eval("ForeclosedId") %>'>查看详情>></a></p>
-                        </dd>
+    <div style=" float:left;width:373px; height:105px; border:1px solid #ccc; margin:5px 8px; padding:5px 5px">
+<table id="dztb">
+<tr>
+<td>
+<img width="96px;" src='<%# GetInfoImgHref(Eval("ForeclosedId")) %>'/>
+<p><strong><%#Eval("Title") %></strong></p>
+<p><font>物品底价：￥<%# Eval("LinePrice")%></font></p>
+ <p><font>竞价结束时间：<%# GetEndDate(Eval("EndDate"))%></font></p>
+ <p> <a href='ForeclosedDetail.aspx?Id=<%#Eval("ForeclosedId") %>'>查看详情>></a></p>
+</td>
+</tr>
+                        </table>
+                       </div>
                     </ItemTemplate>
-                    <FooterTemplate>
-                        </dl></FooterTemplate>
                 </asp:DataList>
             </div>
         </div>
