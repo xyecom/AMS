@@ -5,6 +5,19 @@
     <title>添加债权资料</title>
     <link href="/common/css/xylib.css" type="text/css" rel="stylesheet" />
     <script language="javascript" type="text/javascript" src="/Other/js/ForeUploadControl.js"></script>
+    <script type="text/javascript" language="javascript">
+        function checkAredId() {
+            var areaId = $('#<%=areaid.ClientID %>').val();
+            if (areaId == 0) {
+                $("#spAreaMessage").html("请选择地区");
+                return false;
+            }
+            else {
+                $("#spAreaMessage").html();
+                return true;
+            }
+        }
+    </script>
     <style type="text/css">
         .upload_bg
         {
@@ -202,7 +215,7 @@
                         <td class="info_lei2">
                             <div id="divArea">
                             </div>
-                            <input type="hidden" id="areaid" name="areaid" runat="server" />
+                            <input type="hidden" id="areaid" name="areaid" runat="server" /><span id="spAreaMessage" style="color:Red"></span>
                             <script type="text/javascript">
                                 var cla = new ClassType("cla", 'area', 'divArea', '<%=areaid.ClientID %>', 1);
                                 cla.Mode = "select";
@@ -341,7 +354,7 @@
                     </table>
                 </div>
                 <div style="width: 756px; height: 50px; line-height: 50px; text-align: center">
-                    <asp:Button runat="server" ID="btnOk" OnClick="btnOk_Click" Text="确定" />
+                    <asp:Button runat="server" ID="btnOk" OnClick="btnOk_Click" Text="确定" OnClientClick="checkAredId()" />
                     <input type="button" value="返回" onclick="javascript:history.back();" />
                 </div>
             </div>
