@@ -30,7 +30,7 @@ h4{ font-size:14px}
         function showFloat()                    //根据屏幕的大小显示两个层 
         {
             var range = getRange();
-            $('doing').style.widtd = range.widtd + "px";
+            $('doing').style.width = range.width + "px";
             $('doing').style.height = range.height + "px";
             $('doing').style.display = "block";
             document.getElementById("divcj").style.display = "";
@@ -39,16 +39,16 @@ h4{ font-size:14px}
         {
             var top = document.body.scrollTop;
             var left = document.body.scrollLeft;
-            var height = document.body.clientdeight;
-            var widtd = document.body.clientWidtd;
+            var height = document.body.clientHeight;
+            var width = document.body.clientWidth;
 
             if (top == 0 && left == 0 && height == 0 && widtd == 0) {
                 top = document.documentElement.scrollTop;
                 left = document.documentElement.scrollLeft;
-                height = document.documentElement.clientdeight;
-                widtd = document.documentElement.clientWidtd;
+                height = document.documentElement.clientHeight;
+                width = document.documentElement.clientWidth;
             }
-            return { top: top, left: left, height: height, widtd: widtd };
+            return { "top": top, "height": left, "height": height, "width": width };
         } 
     </script>
 </asp:Content>

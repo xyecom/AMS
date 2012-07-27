@@ -27,7 +27,7 @@ namespace XYECOM.Web
             //加载抵债信息
             StringBuilder strWhere = new StringBuilder(" 1=1 and (State = " + (int)AuditingState.Passed + ")");
             int totalRecord = 0;
-            DataTable dt = XYECOM.Business.Utils.GetPaginationData("ForeclosedInfo", "ForeclosedId", "*", " CreateDate desc", strWhere.ToString(), 20, 1, out totalRecord);
+            DataTable dt = XYECOM.Business.Utils.GetPaginationData("ForeclosedInfo", "ForeclosedId", "*", " CreateDate desc", strWhere.ToString(), 4, 1, out totalRecord);
 
             if (dt.Rows.Count > 0)
             {
@@ -43,7 +43,7 @@ namespace XYECOM.Web
 
 
             //加载债权信息
-            StringBuilder where = new StringBuilder(" 1=1 and ( ApprovaStatus  =2) and IsDraft = 'false'");
+            StringBuilder where = new StringBuilder(" 1=1 and ( ApprovaStatus  =2) and IsDraft = 0");
             DataTable dtZ = XYECOM.Business.Utils.GetPaginationData("CreditInfo", "CreditId", "*", " CreateDate desc", where.ToString(), 20, 1, out totalRecord);
 
             if (dtZ.Rows.Count > 0)
@@ -57,7 +57,7 @@ namespace XYECOM.Web
             }
 
             StringBuilder whereJian = new StringBuilder(" 1=1 and ( ApprovaStatus  =2) and IsDraft = 'true'");
-            DataTable dtJian = XYECOM.Business.Utils.GetPaginationData("CreditInfo", "CreditId", "*", " CreateDate desc", whereJian.ToString(),3, 1, out totalRecord);
+            DataTable dtJian = XYECOM.Business.Utils.GetPaginationData("CreditInfo", "CreditId", "*", " CreateDate desc", whereJian.ToString(), 3, 1, out totalRecord);
 
             if (dtJian.Rows.Count > 0)
             {

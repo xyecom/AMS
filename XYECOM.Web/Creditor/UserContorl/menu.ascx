@@ -146,7 +146,7 @@
                                 <ul style="display: none" class="children clearfixmenu sleft">
                             </HeaderTemplate>
                             <ItemTemplate>
-                                <li>
+                                <li class="noborder">
                                     <h3>
                                         <a class="stmenu" href='<%# string.Format("/Creditor/EditPartInfo.aspx?ac=u&partid={0}",Eval("U_ID")) %>'>
                                             <span>

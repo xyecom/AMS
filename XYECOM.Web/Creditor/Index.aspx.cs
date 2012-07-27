@@ -77,7 +77,7 @@ namespace XYECOM.Web.Creditor
             this.ltlYxMessage.Text = userinfo.IsBoundEmail ? "邮箱已绑定" : "邮箱未绑定";
 
             this.ltlCaseCount.Text = Utitl.GetInfoCount("CaseInfo", "CompanyId=" + userinfo.userid).ToString();
-            this.ltlCompanyName.Text = userinfo.CompanyName;
+            this.ltlCompanyName.Text = userinfo.LoginName;
             this.ltlCreditInfoCount.Text = Utitl.GetInfoCount("CreditInfo", "UserId=" + userinfo.userid + " and ApprovaStatus in (2,3,4)").ToString();
             this.ltlDraftCount.Text = Utitl.GetInfoCount("CreditInfo", "UserId=" + userinfo.userid + " and ApprovaStatus=0").ToString();
             this.ltlLastLoginTime.Text = new Business.UserLogin().GetItem(userinfo.userid).LastLoginDate;
