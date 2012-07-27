@@ -12,11 +12,15 @@ function mover(object){
   }
   //子菜单
   var ss=document.getElementById("s_"+object);
-  ss.style.display="block";
+  if(ss!=null){
+    ss.style.display="block";
+  }
   //初始子菜单先隐藏效果
   if(def!=0){
     var sdef=document.getElementById("s_"+def);
-    sdef.style.display="none";
+    if(sdef!=null){
+        sdef.style.display="none";
+    }
   }
 }
 
@@ -31,11 +35,15 @@ function mout(object){
   }
   //子菜单
   var ss=document.getElementById("s_"+object);
-  ss.style.display="none";
+  if(ss!=null){
+    ss.style.display="none";
+  }
   //初始子菜单还原效果
   if(def!=0){
     var sdef=document.getElementById("s_"+def);
-    sdef.style.display="block";
+    if(sdef!=null){
+        sdef.style.display="block";
+    }
   }
 }
 <!--焦点图片轮播-->

@@ -2,7 +2,6 @@
     CodeBehind="CreditInfoDetail.aspx.cs" Inherits="XYECOM.Web.CreditInfoDetail" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>债权详细信息</title>
     <style type="text/css">
         #zqmain
         {
@@ -79,7 +78,7 @@
         function showFloat()                    //根据屏幕的大小显示两个层 
         {
             var range = getRange();
-            $('doing').style.widtd = range.widtd + "px";
+            $('doing').style.width = range.width + "px";
             $('doing').style.height = range.height + "px";
             $('doing').style.display = "block";
             document.getElementById("divcj").style.display = "";
@@ -88,16 +87,16 @@
         {
             var top = document.body.scrollTop;
             var left = document.body.scrollLeft;
-            var height = document.body.clientdeight;
-            var widtd = document.body.clientWidtd;
+            var height = document.body.clientHeight;
+            var width = document.body.clientWidth;
 
             if (top == 0 && left == 0 && height == 0 && widtd == 0) {
                 top = document.documentElement.scrollTop;
                 left = document.documentElement.scrollLeft;
-                height = document.documentElement.clientdeight;
-                widtd = document.documentElement.clientWidtd;
+                height = document.documentElement.clientHeight;
+                width = document.documentElement.clientWidth;
             }
-            return { top: top, left: left, height: height, widtd: widtd };
+            return { "top": top, "height": left, "height": height, "width": width };
         } 
     </script>
 </asp:Content>
@@ -277,7 +276,7 @@
                 <p>
                     <asp:Repeater runat="server" ID="rpPrice">
                         <ItemTemplate>
-                            <img widtd="96px;" src='/Upload/<%# Eval("At_Patd") %>' />
+                            <img width="96px;" src='/Upload/<%# Eval("At_Path") %>' />
                         </ItemTemplate>
                     </asp:Repeater>
                 </p>
@@ -287,8 +286,8 @@
                 <p>
                     <asp:Repeater runat="server" ID="rpfile">
                         <ItemTemplate>
-                            <a href='<%# Eval("FilePatd") %>'>
-                                <%# GetFileName(Eval("FilePatd")) %>
+                            <a href='<%# Eval("FilePath") %>'>
+                                <%# GetFileName(Eval("FilePath")) %><br />
                             </a>
                         </ItemTemplate>
                     </asp:Repeater>
