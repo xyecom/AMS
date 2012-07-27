@@ -28,12 +28,12 @@
 <ul class="tab1">
     <li><a href="WebInfo.aspx"><span>基本配置</span></a></li>
     <li><a href="Function.aspx"><span>功能配置</span></a></li>
-    <li><a href="BussinessInfoSet.aspx"><span>商业信息相关</span></a></li>
+    <li style="display: none;"><a href="BussinessInfoSet.aspx"><span>商业信息相关</span></a></li>
     <li><a href="UserInfoSet.aspx"><span>用户相关</span></a></li>
-    <li><a href="ShopSet.aspx"><span>网店相关</span></a></li>
+    <li style="display: none;"><a href="ShopSet.aspx"><span>网店相关</span></a></li>
     <li class="current"><a href="Server.aspx"><span>附件服务器</span></a></li>
     <li><a href="EMailBoxInfoSet.aspx"><span>网站邮箱</span></a></li>
-    <li><a href="SEO.aspx"><span>SEO设置</span></a></li>
+    <li style="display: none;"><a href="SEO.aspx"><span>SEO设置</span></a></li>
     <li><a href="SecuritySet.aspx"><span>安全设置</span></a></li>
 </ul>
 </div>

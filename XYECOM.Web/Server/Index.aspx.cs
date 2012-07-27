@@ -53,7 +53,7 @@ namespace XYECOM.Web.Server
             this.ltlYxMessage.Text = userinfo.IsBoundEmail ? "邮箱已绑定" : "邮箱未绑定";
 
             this.labCanCount.Text = Utitl.GetInfoCount("TenderInfo", "LayerId=" + userinfo.userid).ToString();
-            this.ltlCompanyName.Text = userinfo.CompanyName;
+            this.ltlCompanyName.Text = userinfo.LoginName;
             this.labZhongCount.Text = Utitl.GetInfoCount("TenderInfo", "LayerId=" + userinfo.userid + " and IsSuccess = 1").ToString();
             this.ltlLastLoginTime.Text = new Business.UserLogin().GetItem(userinfo.userid).LastLoginDate;
             this.ltlMessageCount.Text = Utitl.GetInfoCount("XYV_RecverManage", "UR_ID=" + userinfo.userid).ToString();

@@ -43,7 +43,7 @@ namespace XYECOM.URL
             HttpApplication application = (HttpApplication)sender;
             HttpContext context = application.Context;
             context.Response.Write("<html><body style=\"font-size:14px;\">");
-            context.Response.Write("纵横B2B电子商务系统 Error:<br />");
+            context.Response.Write("系统 Error:<br />");
             context.Response.Write("<textarea name=\"errormessage\" style=\"width:80%; height:200px; word-break:break-all\">");
             context.Response.Write(HttpUtility.HtmlEncode(context.Server.GetLastError().ToString()));
             context.Response.Write("</textarea>");
@@ -145,6 +145,11 @@ namespace XYECOM.URL
                 context.Response.End();
             }
 
+            if (text == input)
+            {
+                context.RewritePath("/index.aspx");
+                return;
+            }
 
             //如果是注册或登陆直接进入
             if (input.StartsWith("/login.aspx") || input.StartsWith("/register.aspx") || input.StartsWith("/getpassword.aspx") || input.StartsWith("/logout.aspx") || input.StartsWith("/creditor/") || input.StartsWith("/server/"))
@@ -168,13 +173,13 @@ namespace XYECOM.URL
 
                 if (input == text)
                 {
-                   
+
                     return;
                 }
 
                 if (input.Substring(text.Length).IndexOf("/") == -1)
                 {
-                   
+
                     return;
                 }
 

@@ -96,6 +96,7 @@
             margin: 0px;
         }
     </style>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->
@@ -118,9 +119,10 @@
                             <span style="color: Red">*</span>案件标题
                         </td>
                         <td colspan="3">
-                            <asp:TextBox runat="server" ID="txtTitle" Width="600px"></asp:TextBox>
+
+                             <asp:TextBox runat="server" ID="txtTitle" Width="530px"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtTitle"
-                                ErrorMessage="案件标题不能为空"></asp:RequiredFieldValidator>
+                                ErrorMessage="不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -130,7 +132,7 @@
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtDebtorName"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDebtorName"
-                                ErrorMessage="欠款人姓名不能为空"></asp:RequiredFieldValidator>
+                                ErrorMessage="不能为空"  ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                         </td>
                         <td class="info_lei3">
                             <span style="color: Red">*</span>欠款人手机
@@ -138,9 +140,9 @@
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtDebtorTelpone"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtDebtorTelpone"
-                                ErrorMessage="欠款人联系电话不能为空"></asp:RequiredFieldValidator>
+                                ErrorMessage="不能为空"  ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtDebtorTelpone"
-                                ErrorMessage="手机号码格式不正确" ValidationExpression="\s*((\d{2,3}-){0,1}\d{11})\s*"></asp:RegularExpressionValidator>
+                                ErrorMessage="格式不正确" ValidationExpression="\s*((\d{2,3}-){0,1}\d{11})\s*"   ForeColor="Red" Font-Size="9pt"></asp:RegularExpressionValidator>
                         </td>
                     </tr>
                     <tr>
@@ -150,7 +152,7 @@
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtArrears"></asp:TextBox>元
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtArrears"
-                                ErrorMessage="欠款金额不能为空"></asp:RequiredFieldValidator>
+                                ErrorMessage="不能为空"  ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                         </td>
                         <td class="info_lei3">
                             <span style="color: Red">*</span>悬赏金额
@@ -158,7 +160,7 @@
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtBounty"></asp:TextBox>元
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtBounty"
-                                ErrorMessage="悬赏金额不能为空"></asp:RequiredFieldValidator>
+                                ErrorMessage="不能为空"  ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -166,16 +168,18 @@
                             授权类型
                         </td>
                         <td class="info_lei2">
-                            <asp:RadioButtonList runat="server" ID="rdLicenseType">
+                            <asp:RadioButtonList runat="server" ID="rdLicenseType" 
+                                RepeatDirection="Horizontal">
                                 <asp:ListItem Value="全部授权">全部授权</asp:ListItem>
-                                <asp:ListItem Value="部分授权">部分授权</asp:ListItem>
+                                <asp:ListItem Value="部分授权" >部分授权</asp:ListItem>
                             </asp:RadioButtonList>
                         </td>
                         <td class="info_lei3">
                             欠款类型
                         </td>
                         <td class="info_lei2">
-                            <asp:RadioButtonList runat="server" ID="rdDebtorType">
+                            <asp:RadioButtonList runat="server" ID="rdDebtorType" 
+                                RepeatDirection="Horizontal">
                                 <asp:ListItem Value="货款逾期">货款逾期</asp:ListItem>
                                 <asp:ListItem Value="商业纠纷">商业纠纷</asp:ListItem>
                                 <asp:ListItem Value="其他类型">其他类型</asp:ListItem>
@@ -187,9 +191,9 @@
                             <span style="color: Red">*</span>欠款原因
                         </td>
                         <td colspan="3">
-                            <asp:TextBox runat="server" ID="txtDebtorReason" Width="600px"></asp:TextBox>
+                             <asp:TextBox runat="server" ID="txtDebtorReason" Width="530px"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtDebtorReason"
-                                ErrorMessage="欠款原因不能为空"></asp:RequiredFieldValidator>
+                                ErrorMessage="不能为空"  ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -199,7 +203,7 @@
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtCollectionPeriod"></asp:TextBox>天
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtCollectionPeriod"
-                                ErrorMessage="催收期限不能为空"></asp:RequiredFieldValidator>
+                                ErrorMessage="不能为空"  ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                         </td>
                         <td class="info_lei3">
                             备注
@@ -212,7 +216,7 @@
                         <td class="info_lei3">
                             案件所在地
                         </td>
-                        <td class="info_lei2">
+                        <td class="info_lei2" colspan="3">
                             <div id="divArea">
                             </div>
                             <input type="hidden" id="areaid" name="areaid" runat="server" /><span id="spAreaMessage" style="color:Red"></span>
@@ -229,9 +233,9 @@
                         </td>
                         <td colspan="3">
                             <asp:TextBox runat="server" ID="txtIntroduction" TextMode="MultiLine" Width="100%"
-                                Rows="10"></asp:TextBox>
+                                Rows="5" style=" padding:10px"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtIntroduction"
-                                ErrorMessage="案情简介不能为空"></asp:RequiredFieldValidator>
+                                ErrorMessage="案情简介不能为空"   ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                 </table>
@@ -247,7 +251,7 @@
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtAge"></asp:TextBox>天
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtAge"
-                                ErrorMessage="债龄不能为空"></asp:RequiredFieldValidator>
+                                ErrorMessage="不能为空"   ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                         </td>
                         <td class="info_lei3">
                             是否在诉讼期
@@ -297,7 +301,7 @@
                                 <asp:ListItem Value="合同">合同</asp:ListItem>
                                 <asp:ListItem Value="发票">发票</asp:ListItem>
                                 <asp:ListItem Value="欠条">欠条</asp:ListItem>
-                                <asp:ListItem Value="发票其他凭证">发票其他凭证</asp:ListItem>
+                                <asp:ListItem Value="其他凭证">其他凭证</asp:ListItem>
                             </asp:CheckBoxList>
                         </td>
                     </tr>
@@ -345,7 +349,8 @@
                     <table style="width: 600px; text-align: center">
                         <tr>
                             <td align="center" colspan="2">
-                                <asp:RadioButtonList runat="server" ID="radSelect" RepeatDirection="Horizontal">
+                                <asp:RadioButtonList runat="server" ID="radSelect" RepeatDirection="Horizontal" 
+                                    Width="396px">
                                     <asp:ListItem Value="发布">直接对外发布</asp:ListItem>
                                     <asp:ListItem Value="草稿" Selected="True">存为债权草稿</asp:ListItem>
                                 </asp:RadioButtonList>
@@ -354,8 +359,8 @@
                     </table>
                 </div>
                 <div style="width: 756px; height: 50px; line-height: 50px; text-align: center">
-                    <asp:Button runat="server" ID="btnOk" OnClick="btnOk_Click" Text="确定" OnClientClick="checkAredId()" />
-                    <input type="button" value="返回" onclick="javascript:history.back();" />
+                    <asp:Button runat="server" ID="btnOk" OnClick="btnOk_Click" Text="确 定" OnClientClick="checkAredId()"  style="background:url(../Other/images/ok.gif); width:96px; height:43px;border:none; cursor:pointer;color:#FFF" />
+                    <input type="button" value="返 回" onclick="javascript:history.back();" style="background:url(../Other/images/quit.gif); color:Black; width:96px; height:43px;border:none; cursor:pointer;color:#FFF"/>
                 </div>
             </div>
         </div>

@@ -2,7 +2,6 @@
     CodeBehind="ForeclosedDetail.aspx.cs" Inherits="XYECOM.Web.Creditor.ForeclosedDetail" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <title>抵债信息详情</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->
@@ -10,23 +9,23 @@
         <!--rightdzmain start-->
         <div id="rightdzmain">
             <h2>
-                抵债信息详情</h2>
+                抵债物品详情</h2>
             <div class="rhr">
             </div>
             <!--基本信息 start-->
             <div id="dzbase">
-                物品基本信息
+                【物品基本信息】
                 <hr />
                 <table class="dzbasetb">
                     <tr>
                         <td class="info1">
-                            名称
+                            名称：
                         </td>
                         <td>
                             <asp:Label ID="labTitle" runat="server"></asp:Label>
                         </td>
                         <td class="info1">
-                            拍卖底价
+                            拍卖底价：
                         </td>
                         <td>
                             <asp:Label ID="labLinePrice" runat="server"></asp:Label>元
@@ -34,14 +33,14 @@
                     </tr>
                     <tr>
                         <td class="info1">
-                            承接人数
+                            承接人数：
                         </td>
                         <td>
                             <asp:Label runat="server" ID="labCount"></asp:Label>
                             个
                         </td>
                         <td class="info1">
-                            目前最高出价
+                            目前最高出价：
                         </td>
                         <td>
                             <asp:Label ID="labHighPrice" runat="server"></asp:Label>元
@@ -49,7 +48,7 @@
                     </tr>
                     <tr>
                         <td class="info1">
-                            物品所在地
+                            物品所在地：
                         </td>
                         <td colspan="3">
                             <asp:Label ID="labAddress" runat="server"></asp:Label>
@@ -57,14 +56,14 @@
                     </tr>
                     <tr>
                         <td class="info1">
-                            结束竞拍时间
+                            结束竞拍时间：
                         </td>
                         <td colspan="3">
                             <asp:Label ID="labEndDate" runat="server" ForeColor="Red"></asp:Label>
                         </td>
                     </tr>
                 </table>
-                物品相关图片
+                【物品相关图片】
                 <hr />
                 <div id="dzbasepic">
                     <asp:Repeater runat="server" ID="rpPrice">
@@ -74,7 +73,7 @@
                     </asp:Repeater>
                 </div>
                 <input type="hidden" id="hidId" runat="server" />
-                物品竞价信息
+                【物品竞价信息】
                 <hr />
                 <div id="basetbjj">
                     <asp:Repeater ID="rptList" runat="server">

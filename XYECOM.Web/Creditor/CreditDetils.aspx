@@ -2,7 +2,6 @@
     CodeBehind="CreditDetils.aspx.cs" Inherits="XYECOM.Web.Creditor.CreditDetils" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <title>债权信息详情</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->
@@ -10,15 +9,14 @@
         <!--rightzqmain start-->
         <div id="rightzqmain">
             <h2>
-                债权信息详情</h2>
+                债权资料详情</h2>
             <div class="rhr">
             </div>
             <!--基本信息 start-->
             <div class="divtext">
                 <div style="text-align: center; margin-top: 5px">
                     <div style="float: right; width: 131px;">
-                        <asp:Button runat="server" ID="btnUpdate" Text="修改" Enabled="false" OnClick="btnUpdate_Click" />
-                    </div>
+                        关注度：<strong style="color: Red"><asp:Label runat="server" ID="labCount"></asp:Label></strong></div>
                     <h4>
                         债务基本资料</h4>
                 </div>
@@ -203,8 +201,8 @@
                                 <div style="width: 714px; padding-left: 10px; text-align: left;">
                                     服务商留言：<%# Eval("Message")%></div>
                                 <div style="text-align: right; width: 727px; height: 18px">
-                                    服务商所在地：<strong style="color: Red; font-weight: bold; font-size: 14px"><%# GetAreaName(Eval("LayerId"))%></strong>&nbsp;
-                                    &nbsp;</div>
+                                    服务商所在地：<strong style="color: Red; font-weight: bold; font-size: 14px"><%# GetAreaName(Eval("LayerId"))%></strong>
+                                    &nbsp; &nbsp;</div>
                                 <div style="text-align: right; color: #666; width: 727px; height: 19px;">
                                     投标时间：<%# Eval("TenderDate", "{0:yyyy-MM-dd}")%>&nbsp; &nbsp;</div>
                             </div>

@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>纵横B2B电子商务系统-Management System Power by XYECS!B2B</title>
+    <title>系统-Management System Power by</title>
     <link rel="stylesheet" href="/common/css/xylib.css" type="text/css" />
     <script language="javascript" type="text/javascript" src="/common/js/base.js"></script>
     <script language="javascript" type="text/javascript" src="javascript/CheckedAll.js"></script>
@@ -25,7 +25,7 @@
 <body onload="getuserfocus();">
     <form action="" method="post" runat="server">
     <div id="login">
-        <img src="/xymanage/Images/logo.jpg" alt="纵横电子商务" />
+        <img src="/xymanage/Images/logo.jpg" alt="" />
         <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
             <tr>
                 <th>

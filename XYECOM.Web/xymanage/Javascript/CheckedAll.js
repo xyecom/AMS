@@ -1335,7 +1335,7 @@ function menuchange(num) {
         case 1:
             $("basic").className = "on";
             $("business").className = "";
-            $("news").className = "";
+           // $("news").className = "";
             $("users").className = "";
             $("templte").className = "";
             $("advance").className = "";
@@ -1351,7 +1351,7 @@ function menuchange(num) {
         case 2:
             $("basic").className = "";
             $("business").className = "on";
-            $("news").className = "";
+           // $("news").className = "";
             $("users").className = "";
             $("templte").className = "";
             $("advance").className = "";
@@ -1367,7 +1367,7 @@ function menuchange(num) {
         case 3:
             $("basic").className = "";
             $("business").className = "";
-            $("news").className = "on";
+           // $("news").className = "on";
             $("users").className = "";
             $("templte").className = "";
             $("advance").className = "";
@@ -1383,7 +1383,7 @@ function menuchange(num) {
         case 4:
             $("basic").className = "";
             $("business").className = "";
-            $("news").className = "";
+           // $("news").className = "";
             $("users").className = "on";
             $("templte").className = "";
             $("advance").className = "";
@@ -1399,7 +1399,7 @@ function menuchange(num) {
         case 5:
             $("basic").className = "";
             $("business").className = "";
-            $("news").className = "";
+           // $("news").className = "";
             $("users").className = "";
             $("templte").className = "on";
             $("advance").className = "";
@@ -1415,7 +1415,7 @@ function menuchange(num) {
         case 6:
             $("basic").className = "";
             $("business").className = "";
-            $("news").className = "";
+            //$("news").className = "";
             $("users").className = "";
             $("templte").className = "";
             $("advance").className = "on";
@@ -1431,7 +1431,7 @@ function menuchange(num) {
         case 7:
             $("basic").className = "";
             $("business").className = "";
-            $("news").className = "";
+           // $("news").className = "";
             $("users").className = "";
             $("templte").className = "";
             $("advance").className = "";

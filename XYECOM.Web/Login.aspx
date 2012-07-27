@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>服务商登陆</title>
+    <title>服务商登录</title>
     <link href="/Other/css/layout.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -43,7 +43,7 @@
                                 </td>
                                 <td width="210" style="text-align: left">
                                     <input runat="server" style="width: 200px; height: 20px" id="txtUserName" onfocus="if(this.value=='邮箱/客户码/用户名')  this.value=''"
-                                        title="如果您是部门登陆，只能用部门客户ID或部门负责人邮箱" value="邮箱/客户码/用户名" name="txtname" 
+                                        title="如果您是部门登录，只能用部门客户ID或部门负责人邮箱" value="邮箱/客户码/用户名" name="txtname" 
                                         tabindex="1" />
                                 </td>
                             </tr>

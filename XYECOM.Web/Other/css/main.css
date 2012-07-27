@@ -134,8 +134,8 @@ h4 a:hover{ color:#f00;text-decoration:underline}
 .searchaction{width: 21px;float: left;height: 17px;}
 /*---------------------抵债物品列表----------------------------------*/
 
-#dztb{ width:787px;margin:3px auto}
-#dztb td{ border-bottom:1px dotted #ccc; width:350px; padding-bottom:5px;}
+#dztb{ width:370px;margin:3px auto}
+#dztb td{width:350px; padding-bottom:5px;}
 #dztb td img{ width:100px;height:100px; border:1px solid #ddd; float:left}
 #dztb strong{ color:#f60000}
 #dztb font{ font-size:13px;}

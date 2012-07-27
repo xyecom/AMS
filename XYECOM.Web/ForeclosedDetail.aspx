@@ -2,6 +2,9 @@
     CodeBehind="ForeclosedDetail.aspx.cs" Inherits="XYECOM.Web.ForeclosedDetail" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="Other/js/FancyZoom.js" type="text/javascript"></script>
+    <script src="Other/js/FancyZoomHTML.js" type="text/javascript"></script>
+
     <title>抵债详细信息</title>
     <script type="text/javascript" language="javascript">
         function ShowNo()                        //隐藏两个层 
@@ -125,20 +128,21 @@
                         <input type="hidden" id="hidId" runat="server" />
                         【物品相关图片】
                         <hr />
-                        <p>
+                            <div id="dzbasepic">
+
                             <asp:Repeater runat="server" ID="rpPrice">
                                 <ItemTemplate>
-                                    <img width="96px;" src='/Upload/<%# Eval("At_Path") %>' />
+                                 <a href="/Upload/<%# Eval("At_Path") %>" target="_blank">  
+                                   <img width="96px;" src='/Upload/<%# Eval("At_Path") %>' />
+                                   </a>
                                 </ItemTemplate>
                             </asp:Repeater>
-                        </p>
+                     </div>
                         【物品竞价信息】
                         <hr />
-                        <div id="basetbjj">
-                            <asp:Repeater ID="rptList" runat="server">
-                                <HeaderTemplate>
-                                    <table>
-                                        <tr id="trtop">
+                        <div class="basetbjj">
+                                   <table>  
+                                     <tr id="trtop">
                                             <td align="center" width="10%">
                                                 出价(元)
                                             </td>
@@ -158,9 +162,9 @@
                                                 目前状态
                                             </td>
                                         </tr>
-                                </HeaderTemplate>
+                                        <asp:Repeater ID="rptList" runat="server">
                                 <ItemTemplate>
-                                    <tr style="height: 22px; text-align: center; : 1px solid #ccc" onmousemove="this.style.backgroundColor='#F7F7F7'"
+                                    <tr style="height: 22px; text-align: center;" onmousemove="this.style.backgroundColor='#F7F7F7'"
                                         onmouseout="this.style.backgroundColor='#ffffff'">
                                         <td>
                                             <%# Eval("Price")%>
@@ -182,12 +186,11 @@
                                         </td>
                                     </tr>
                                 </ItemTemplate>
-                                <FooterTemplate>
-                                </FooterTemplate>
                             </asp:Repeater>
+                         
                             <asp:Repeater ID="rpChuJu" runat="server">
                                 <ItemTemplate>
-                                    <tr style="height: 22px; text-align: center; : 1px solid #ccc" onmousemove="this.style.backgroundColor='#F7F7F7'"
+                                    <tr style="height: 22px; text-align: center;" onmousemove="this.style.backgroundColor='#F7F7F7'"
                                         onmouseout="this.style.backgroundColor='#ffffff'">
                                         <td>
                                             <%# Eval("Price")%>
@@ -209,9 +212,9 @@
                                         </td>
                                     </tr>
                                 </ItemTemplate>
-                                <FooterTemplate>
-                                    </table></FooterTemplate>
-                            </asp:Repeater>
+                               </asp:Repeater>
+                                    </table>
+                           
                             <div style="height: 30px;">
                                 <div align="center">
                                     <XYECOM:Page ID="Page1" runat="server" PageSize="20" OnPageChanged="Page1_PageChanged" />
@@ -222,10 +225,7 @@
                                     <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></p>
                             </div>
                             <div style="width: 710px; height: 40px; line-height: 40px; text-align: center">
-                                <div style="background: url(../images/yes.gif) no-repeat; width: 396px; height: 25px;
-                                    float: right; line-height: 25px; text-align: left; padding-left: 10px; margin: 10px">
-                                    <a href="javascript:void(0)" onclick="showFloat()"><strong style="color: Red">我要报价</strong></a>
-                                </div>
+                                  <div style=" background:url(/Other/images/yes.gif) no-repeat; width:396px; height: 25px; float:right; line-height:25px; text-align:left; padding-left:10px; margin:10px"><a href="javascript:void(0)" onclick="showFloat()"><strong style="color:White">我要报价</strong></a></div> 
                             </div>
                             <!--加一个半透明层-->
                             <div id="doing" style="filter: alpha(opacity=30); -moz-opacity: 0.3; opacity: 0.3;
@@ -234,48 +234,52 @@
                             </div>
                             <!--加一个层-->
                             <div id="divcj" style="border: solid 10px #898989; background: #fff; padding: 10px;
-                                width: 600px; z-index: 800; position: absolute; display: none; top: 50%; left: 50%;
-                                margin: 100px 0 0 -200px;">
+                                width: 630px; z-index: 800; position: absolute; display: none; top: 50%; left: 50%;
+                                margin: 100px 0 0 -300px;">
                                 <div style="padding: 3px 15px 3px 15px; text-align: center; vertical-align: middle;">
                                     <div style="margin: 8px 10px; font-size: 13px; color: #f00">
                                         * 注意：请认真填写您的相关资料！
                                     </div>
-                                    <div style="margin: 8px 10px;">
-                                        <span style="color: Red">*</span>姓名：
-                                        <asp:TextBox runat="server" ID="txtName" Width="254px"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtName"
-                                            ErrorMessage="姓名不能为空"></asp:RequiredFieldValidator>
-                                    </div>
-                                    <div style="margin: 8px 10px;">
-                                        <span style="color: Red">*</span>手机号码：
-                                        <asp:TextBox runat="server" ID="txtContact" Width="254px"></asp:TextBox>
-                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtContact"
-                                            ErrorMessage="手机号码格式不正确" ValidationExpression="\s*((\d{2,3}-){0,1}\d{11})\s*"></asp:RegularExpressionValidator>
+<table style=" width:610px; text-align:left">
+<tr>
+<td style="width:80px">姓名：</td > <td style="width:540px"> <asp:TextBox runat="server" ID="txtName" Width="300px"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+        ControlToValidate="txtName" ErrorMessage="姓名不能为空" Font-Size="9pt" 
+        ForeColor="Red"></asp:RequiredFieldValidator></td>
+</tr>
+<tr>
+<td style="width:80px">手机号码：</td><td style="width:540px">  <asp:TextBox runat="server" ID="txtContact" Width="300px"></asp:TextBox> 
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtContact"
+                                            ErrorMessage="手机号码格式不正确" 
+        ValidationExpression="\s*((\d{2,3}-){0,1}\d{11})\s*"  Font-Size="9pt" 
+        ForeColor="Red"></asp:RegularExpressionValidator>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtContact"
-                                            ErrorMessage="手机号码不能为空"></asp:RequiredFieldValidator>
-                                    </div>
-                                    <div style="margin: 8px 10px;">
-                                        地址：
-                                        <asp:TextBox runat="server" ID="txtAddress" Width="254px"></asp:TextBox>
-                                    </div>
-                                    <div style="margin: 8px 10px;">
-                                        <span style="color: Red">*</span>出价：
-                                        <asp:TextBox runat="server" ID="txtPrice" Width="254px"></asp:TextBox>元<asp:RequiredFieldValidator
-                                            ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtPrice" ErrorMessage="报价不能为空"></asp:RequiredFieldValidator>
-                                    </div>
-                                    <div style="margin: 8px 10px;">
-                                        留言：
-                                        <asp:TextBox runat="server" ID="txtRemark" Width="254px" TextMode="MultiLine" Rows="10"></asp:TextBox>
-                                    </div>
+                                            ErrorMessage="手机号码不能为空"  Font-Size="9pt" 
+        ForeColor="Red"></asp:RequiredFieldValidator></td>
+</tr>
+<tr>
+<td style="width:80px">地址：</td> <td style="width:540px">    <asp:TextBox runat="server" ID="txtAddress" Width="300px"></asp:TextBox></td>
+</tr>
+
+<tr>
+<td style="width:80px">出价：</td> <td style="width:540px">           <asp:TextBox runat="server" ID="txtPrice" Width="300px"></asp:TextBox>元<asp:RequiredFieldValidator
+                                            ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtPrice" ErrorMessage="报价不能为空"  Font-Size="9pt" 
+        ForeColor="Red"></asp:RequiredFieldValidator></td>
+</tr>
+
+<tr>
+<td style="width:80px">留言：</td> <td style="width:540px">  <asp:TextBox runat="server" ID="txtRemark" Width="300px" TextMode="MultiLine" Rows="10"></asp:TextBox></td>
+</tr>
+</table>
+
                                     <br />
+                                   
                                     <div>
-                                        &nbsp; &nbsp;
-                                        <%--<input id="bntok" type="button" value=" 确 定" style="background: url(../images/ok.gif);
-                                            width: 95px; height: 38px; border: none; cursor: pointer; font-size: 13px;" />--%>
-                                        <asp:Button runat="server" ID="btnOK" Text="确定" OnClick="btnOK_Click" />
-                                        &nbsp; &nbsp;
-                                        <input id="BttCancel" type="button" value=" 取 消 " onclick="ShowNo()" style="background: url(../images/quit.gif);
-                                            width: 95px; height: 41px; border: none; cursor: pointer; font-size: 13px;" />
+  <asp:Button ID="btnOK" runat="server" Text="确 定"  style=" background:url(/Other/images/ok.gif); width:95px; height:38px; border:none; cursor:pointer; font-size:13px;" 
+                        onclick="btnOK_Click"/>&nbsp; &nbsp; 
+                    <input id="BttCancel" type="button" value=" 取 消 " onclick="ShowNo()" style=" background:url(/Other/images/quit.gif); width:95px; height:41px; border:none; cursor:pointer; font-size:13px;"/> 
+
+                                    
                                     </div>
                                 </div>
                             </div>

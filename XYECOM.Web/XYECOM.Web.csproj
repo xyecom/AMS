@@ -51,29 +51,21 @@
     <DocumentationFile>bin\XYECOM.Web.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CFCA.Payment">
-      <HintPath>..\..\..\Document\CFCA.Payment.dll</HintPath>
-    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <HintPath>..\..\..\Document\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.JScript" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Mobile" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activation .aspx.cs">
@@ -503,6 +495,13 @@
     </Compile>
     <Compile Include="Server\CertificateList.aspx.designer.cs">
       <DependentUpon>CertificateList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Server\CredList.aspx.cs">
+      <DependentUpon>CredList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Server\CredList.aspx.designer.cs">
+      <DependentUpon>CredList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Server\EvaluationList.aspx.cs">
       <DependentUpon>EvaluationList.aspx</DependentUpon>
@@ -1860,6 +1859,9 @@
     <Content Include="Common\Js\jquery.uploadify\uploadify.css" />
     <Content Include="Common\Js\jquery.uploadify\uploadify.swf" />
     <Content Include="Copyright.htm" />
+    <Content Include="Server\CredList.aspx" />
+    <Content Include="Test.aspx" />
+    <Content Include="zhaopin.htm" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CreditInfoDetail.aspx" />
@@ -1895,6 +1897,7 @@
     <Content Include="Creditor\UserContorl\menu.ascx" />
     <Content Include="ForeclosedDetail.aspx" />
     <Content Include="GetPassWord.aspx" />
+    <Content Include="hzq.htm" />
     <Content Include="Index.aspx" />
     <Content Include="IndexCreditList.aspx" />
     <Content Include="IndexForeclosed.aspx" />
@@ -1914,17 +1917,6 @@
     <Content Include="My97DatePicker\skin\whyGreen\datepicker.css" />
     <Content Include="My97DatePicker\skin\whyGreen\img.gif" />
     <Content Include="My97DatePicker\WdatePicker.js" />
-    <Content Include="My97DatePicker\开发包\lang\en.js" />
-    <Content Include="My97DatePicker\开发包\lang\zh-cn.js" />
-    <Content Include="My97DatePicker\开发包\lang\zh-tw.js" />
-    <Content Include="My97DatePicker\开发包\readme.txt" />
-    <Content Include="My97DatePicker\开发包\skin\datePicker.gif" />
-    <Content Include="My97DatePicker\开发包\skin\default\datepicker.css" />
-    <Content Include="My97DatePicker\开发包\skin\default\img.gif" />
-    <Content Include="My97DatePicker\开发包\skin\WdatePicker.css" />
-    <Content Include="My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
-    <Content Include="My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
-    <Content Include="My97DatePicker\开发包\skin\whyGreen\img.gif" />
     <Content Include="Other\css\basecss.css" />
     <Content Include="Other\css\serverinfo.css" />
     <Content Include="Other\images\1359619_174309069902_2.gif" />
@@ -1936,6 +1928,7 @@
     <Content Include="Other\images\pic3.gif" />
     <Content Include="Other\images\pic4.gif" />
     <Content Include="Other\images\ryjzs.gif" />
+    <Content Include="Other\images\sjno.gif" />
     <Content Include="Other\images\toplader.gif" />
     <Content Include="Other\images\vip_template_10.jpg" />
     <Content Include="Other\js\ForeUploadControl.js" />
@@ -2710,7 +2703,7 @@
     <Content Include="templates\_shop\store\images\w980_titb.jpg" />
     <Content Include="templates\_shop\store\images\xsp_pic1.jpg" />
     <Content Include="templates\_shop\store\images\xsp_pic2.jpg" />
-    <Content Include="templates\_shop\store\images\茵曼.jpg" />
+    <Content Include="templates\_shop\store\images\yinman.jpg" />
     <Content Include="templates\_shop\store\index.htm" />
     <Content Include="templates\_shop\store\introduction.htm" />
     <Content Include="templates\_shop\store\investment.htm" />
@@ -3086,6 +3079,7 @@
     <Content Include="templates\_shop\yys_2009\_left.htm" />
     <Content Include="templates\_shop\yys_2009\_menu.htm" />
     <Content Include="templates\_shop\yys_2009\_top.htm" />
+    <Content Include="tk.htm" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -4235,9 +4229,9 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49453</DevelopmentServerPort>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8100</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://127.0.0.1:8100/</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
