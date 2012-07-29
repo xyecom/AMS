@@ -138,72 +138,57 @@
                             </table>
                         </div>
                     </div>
-                    <div style="height: auto; width: 721px;">
-                        <asp:Repeater ID="dlCreditList" runat="server">
-                            <HeaderTemplate>
-                                <table>
-                                    <tr id="trtop">
-                                        <td align="center" width="20%">
-                                            案件标题
+                    <table id="zqlist1">
+                        <tr>
+                            <td height="23" class="tdtitle">
+                                债权标题
+                            </td>
+                            <td class="tdprice">
+                                标的金额
+                            </td>
+                            <td class="tdarea">
+                                所在地区
+                            </td>
+                            <td class="tdtime">
+                                发布时间
+                            </td>
+                            <td class="tdnumber">
+                                投标人数
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="box" id="marqueebox1">
+                        <table id="zqlist2">
+                            <asp:Repeater ID="dlCreditList" runat="server">
+                                <ItemTemplate>
+                                    <tr>
+                                        <td class="tdtitle">
+                                            <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'
+                                                ToolTip='<%# Eval("Title") %>'><%# GetTitle(Eval("Title"))%></asp:HyperLink>
                                         </td>
-                                        <td align="center" width="10%">
-                                            发布时间
+                                        <td class="tdprice">
+                                            ￥<%# Eval("Arrears")%>
                                         </td>
-                                        <td align="center" width="10%">
-                                            发布者
+                                        <td class="tdarea">
+                                            <%# GetAreaIdFull(Eval("AreaId"))%>
                                         </td>
-                                        <td align="center" width="10%">
-                                            欠款金额
+                                        <td class="tdtime">
+                                            <%# Eval("CreateDate", "{0:yyyy-MM-dd}")%>
                                         </td>
-                                        <td align="center" width="10%">
-                                            悬赏金额
-                                        </td>
-                                        <td align="center" width="15%">
-                                            投标人数
-                                        </td>
-                                        <td align="center" width="25%">
-                                            操作菜单
+                                        <td class="tdnumber">
+                                            <%# GetTenderCountByCreditID(Eval("CreditId"))%>
                                         </td>
                                     </tr>
-                            </HeaderTemplate>
-                            <ItemTemplate>
-                                <tr id="trmidd" style="height: 28px; border-top: 1px solid #ccc" onmousemove="this.style.backgroundColor='#F7F7F7'"
-                                    onmouseout="this.style.backgroundColor='#ffffff'">
-                                    <td id="tdtitle">
-                                        <%# Eval("Title") %>
-                                    </td>
-                                    <td>
-                                        <%# Eval("CreateDate", "{0:yyyy-MM-dd}")%>
-                                    </td>
-                                    <td>
-                                        <a href='showEvaluation.aspx?UserId=<%# Eval("DepartId") %>' target="_blank" alt="点击发布者可查看其信用度">
-                                            <%# GetUserName(Eval("DepartId"))%></a>
-                                    </td>
-                                    <td>
-                                        <%# Eval("Arrears")%>
-                                    </td>
-                                    <td>
-                                        <%# Eval("Bounty")%>
-                                    </td>
-                                    <td>
-                                        <%# GetTenderCountByCreditID(Eval("CreditId"))%>
-                                    </td>
-                                    <td>
-                                        <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'>查看详细</asp:HyperLink>
-                                    </td>
-                                </tr>
-                            </ItemTemplate>
-                            <FooterTemplate>
-                                </table></FooterTemplate>
-                        </asp:Repeater>
-                        <div style="width: 705px; height: 30px; line-height: 30px; text-align: center">
-                            <XYECOM:Page ID="Page1" runat="server" PageSize="20" OnPageChanged="Page1_PageChanged" />
-                        </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </table>
                         <div>
                             <p style="text-align: center;">
-                                <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
-                            </p>
+                                <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></p>
                         </div>
+                    </div>
+                    <div style="width: 705px; height: 30px; line-height: 30px; text-align: center">
+                        <XYECOM:Page ID="Page1" runat="server" PageSize="20" OnPageChanged="Page1_PageChanged" />
                     </div>
                 </div>
                 <!--left3结束-->

@@ -130,7 +130,7 @@ namespace XYECOM.Web
             string strTitle = title.ToString();
             if (strTitle.Length > 15)
             {
-                return strTitle.Substring(0, 15) + "……";
+                return strTitle.Substring(0, 15) + "…";
             }
             else
             {
