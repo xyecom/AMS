@@ -104,7 +104,7 @@ height:32px;
 #left4{width:728px;float:left;margin-top:5px; border:1px solid #ddd}
 #dztb{ width:350px; margin:3px auto}
 #dztb td{width:350px; padding-bottom:5px;}
-#dztb td img{ width:100px;height:100px; border:1px solid #ccc; float:left}
+#dztb td img{ width:100px;height:100px; float:left}
 #dztb strong{ color:#f60000}
 #dztb font{ font-size:13px;}
 #dztb a{ float:right; text-decoration:underline}

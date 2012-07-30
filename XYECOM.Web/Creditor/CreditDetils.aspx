@@ -17,7 +17,8 @@
             <div class="divtext">
                 <div style="text-align: center; margin-top: 5px">
                     <div style="float: right; width: 131px;">
-                        <asp:Button runat="server" ID="btnUpdate" Text="修改" Enabled="false" OnClick="btnUpdate_Click" /></div>
+                        <asp:Button runat="server" ID="btnUpdate" Text="修 改" Enabled="false" OnClick="btnUpdate_Click" Style="background: url(../Other/images/yes.gif);
+                                    width: 80px; height: 25px; border: none; cursor: pointer; font-size: 13px; color: White"/></div>
                     <h4>
                         债务基本资料</h4>
                 </div>
@@ -163,19 +164,25 @@
                         案件相关资料</h4>
                 </div>
                 <div style="width: 763px; height: auto; overflow: hidden">
-                    图片资料：<asp:Repeater runat="server" ID="rpPrice">
+                <table>
+                <tr><td class="info_lei3">  图片资料：</td><td style="width:610px; border:1px solid #ddd"> <asp:Repeater runat="server" ID="rpPrice">
                         <ItemTemplate>
-                            <img width="96px;" src='/Upload/<%# Eval("At_Path") %>' />
+                           <a href="/Upload/<%# Eval("At_Path") %>" target="_blank"><img width="95px;" height="80" src='/Upload/<%# Eval("At_Path") %>' /></a> 
                         </ItemTemplate>
-                    </asp:Repeater>
-                    <br />
-                    附件资料：<asp:Repeater runat="server" ID="rpfile">
+                    </asp:Repeater></td></tr>
+                    <tr><td class="info_lei3">附件资料：</td><td style="width:610px; border:1px solid #ddd"> <asp:Repeater runat="server" ID="rpfile"  >
                         <ItemTemplate>
                             <a href='<%# Eval("FilePath") %>'>
                                 <%# GetFileName(Eval("FilePath")) %><br />
                             </a>
                         </ItemTemplate>
-                    </asp:Repeater>
+                    </asp:Repeater></td></tr>
+                </table>
+                  
+                    
+                    <br />
+                    
+                    
                 </div>
                 <div style="width: 758px; text-align: center; margin-top: 5px">
                     <h4>
@@ -202,8 +209,7 @@
                                 <div style="width: 714px; padding-left: 10px; text-align: left;">
                                     服务商留言：<%# Eval("Message")%></div>
                                 <div style="text-align: right; width: 727px; height: 18px">
-                                    服务商所在地：<strong style="color: Red; font-weight: bold; font-size: 14px"><%# GetAreaName(Eval("LayerId"))%></strong>
-                                    &nbsp; &nbsp;</div>
+                                    服务商所在地：<strong style="color: Red; font-weight: bold; font-size: 14px"><%# GetAreaName(Eval("LayerId"))%></strong>&nbsp; &nbsp;</div>
                                 <div style="text-align: right; color: #666; width: 727px; height: 19px;">
                                     投标时间：<%# Eval("TenderDate", "{0:yyyy-MM-dd}")%>&nbsp; &nbsp;</div>
                             </div>
@@ -213,7 +219,7 @@
                         <XYECOM:Page ID="Page1" runat="server" PageSize="20" OnPageChanged="Page1_PageChanged" />
                     </div>
                     <div>
-                        <p style="text-align: center;">
+                        <p style="text-align: center; font-weight:bold">
                             <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></p>
                     </div>
                 </div>

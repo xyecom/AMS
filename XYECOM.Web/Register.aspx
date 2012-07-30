@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>债权人注册</title>
+    <title>注册</title>
     <link href="/Other/css/layout.css" rel="stylesheet" type="text/css" />
     <link href="/common/css/xylib.css" type="text/css" rel="stylesheet" />
     <script language="javascript" type="text/javascript" src="/Common/js/base.js"></script>
@@ -23,7 +23,9 @@
             <div class="logo">
                 <img src="/Other/images/logo.png" /></div>
             <p class="p1">
-                <a href="#">关于我们</a> | <a href="#">安全承诺</a> | <a href="#">加入收藏</a> | <a href="#">设为首页</a></p>
+              <a href="aboutus.htm">关于我们</a> | <a href="aqcn.htm">安全承诺</a> |  <a href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.baoqt.cn/')">
+                    设为首页</a> | <a href='#' onclick='window.external.AddFavorite("http://www.baoqt.cn/","【包青天债权管理网】")'>
+                        添加到收藏夹</a></p>
         </div>
         <!----------内容开始-------------->
         <div id="middle">

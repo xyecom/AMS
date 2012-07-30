@@ -67,6 +67,7 @@
                                 <asp:ListItem Value="5" Text="案件结束"></asp:ListItem>
                                 <asp:ListItem Value="6" Text="债权人取消案件"></asp:ListItem>
                             </asp:DropDownList>
+                            </td>
                             <td>
                                 标题：
                             </td>

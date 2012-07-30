@@ -16,21 +16,43 @@
             <!--serch start-->
             <div class="serchl">
                 &nbsp;&nbsp;
-                <div>
-                    添加日期：
-                    <input id="bgdate" type="text" runat="server" readonly="readonly" onclick="getDateString(this);"
-                        maxlength="10" style="width: 80px;" />
-                    到
-                    <input id="egdate" type="text" runat="server" readonly="readonly" onclick="getDateString(this);"
-                        maxlength="10" style="width: 80px;" />
-                    <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="CompareValidator"
-                        ControlToCompare="bgdate" ControlToValidate="egdate" Operator="GreaterThan" Type="Date">截至日期必须大于生效日期
+                <table>
+                    <tr>
+                        <td>
+                            添加日期：
+                        </td>
+                        <td>
+                           <input id="bgdate" type="text" runat="server" readonly="readonly" onclick="getDateString(this);"
+                        maxlength="10"   style="width: 150px;" />
+                        </td>
+                        <td>
+                            &nbsp;到&nbsp;
+                        </td>
+                        <td>
+                           <input id="egdate" type="text" runat="server" readonly="readonly" onclick="getDateString(this);"
+                        maxlength="10"   style="width: 150px;"/>
+                             <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="CompareValidator"
+                        ControlToCompare="bgdate" ControlToValidate="egdate" Operator="GreaterThan" Type="Date" ForeColor="Red" Font-Size="9pt">截至日期必须大于生效日期
                     </asp:CompareValidator>
-                </div>
-                &nbsp;&nbsp; 标题：<asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
-                <asp:Button runat="server" ID="btnSearch" Text="搜索" OnClick="btnSearch_Click" />
+                        </td>
+                    </tr>
+                    <tr>
+                     
+               
+                            <td>
+                                标题：
+                            </td>
+                            <td>
+                                <asp:TextBox runat="server" ID="txtTitle"   style="width: 150px;"></asp:TextBox></td>
+                                <td></td>
+                                <td>
+                                <asp:Button runat="server" ID="btnSearch" Text="搜 索" OnClick="btnSearch_Click" Style="background: url(../Other/images/yes.gif);
+                                    width: 80px; height: 25px; border: none; cursor: pointer; font-size: 13px; color: White" />
+                            </td>
+                    </tr>
+                </table>
             </div>
-            <!--serch end-->
+   <!--serch end-->
             <!--列表 start-->
             <div id="list">
                 <asp:Repeater ID="rptList" runat="server" OnItemDataBound="rptList_ItemDataBound">
