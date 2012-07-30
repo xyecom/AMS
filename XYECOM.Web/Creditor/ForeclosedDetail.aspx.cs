@@ -56,6 +56,7 @@ namespace XYECOM.Web.Creditor
                 this.labHighPrice.Text = info.HighPrice.ToString();
                 this.labLinePrice.Text = info.LinePrice.ToString();
                 this.labCount.Text = GetBidInfoCountByForeID(info.ForeclosedId).ToString();
+                this.litTitle.Text = info.Title;
             }
             DataTable price = XYECOM.Business.Attachment.GetAllImgHref(AttachmentItem.ForeclosedInfo, info.ForeclosedId);
             if (price.Rows.Count > 0)

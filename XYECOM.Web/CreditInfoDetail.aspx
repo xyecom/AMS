@@ -65,7 +65,7 @@
             font-size: 14px;
         }
     </style>
-    <title>债权详细信息</title>
+    <title>案件<asp:Literal runat="server" ID="litTitle"></asp:Literal>详情</title>
     <script type="text/javascript" language="javascript">
         function ShowNo()                        //隐藏两个层 
         {

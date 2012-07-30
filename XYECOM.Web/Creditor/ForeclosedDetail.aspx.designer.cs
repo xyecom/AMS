@@ -13,6 +13,15 @@ namespace XYECOM.Web.Creditor {
     public partial class ForeclosedDetail {
         
         /// <summary>
+        /// litTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litTitle;
+        
+        /// <summary>
         /// labTitle control.
         /// </summary>
         /// <remarks>

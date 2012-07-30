@@ -63,6 +63,7 @@ namespace XYECOM.Web
                 this.labDescription.Text = info.Description;
                 this.labUserName.Text = new Business.UserInfo().GetUserNameByID(info.DepartmentId);
                 this.aShow.HRef = "showEvaluation.aspx?UserId=" + info.DepartmentId;
+                this.litTitle.Text = info.Title;
             }
             DataTable price = XYECOM.Business.Attachment.GetAllImgHref(AttachmentItem.ForeclosedInfo, info.ForeclosedId);
             if (price.Rows.Count > 0)

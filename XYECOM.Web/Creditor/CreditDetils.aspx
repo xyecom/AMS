@@ -2,7 +2,7 @@
     CodeBehind="CreditDetils.aspx.cs" Inherits="XYECOM.Web.Creditor.CreditDetils" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <title>债权资料详情</title>
+    <title>案件<asp:Literal runat="server" ID="litTitle"></asp:Literal> 详情</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->

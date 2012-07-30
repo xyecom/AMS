@@ -5,7 +5,7 @@
     <script src="Other/js/FancyZoom.js" type="text/javascript"></script>
     <script src="Other/js/FancyZoomHTML.js" type="text/javascript"></script>
 
-    <title>抵债详细信息</title>
+    <title>抵债<asp:Literal runat="server" ID="litTitle"></asp:Literal>信息</title>
     <script type="text/javascript" language="javascript">
         function ShowNo()                        //隐藏两个层 
         {
