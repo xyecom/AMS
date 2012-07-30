@@ -2,7 +2,7 @@
     CodeBehind="ForeclosedDetail.aspx.cs" Inherits="XYECOM.Web.Creditor.ForeclosedDetail" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <title>抵债信息详情</title>
+    <title>抵债<asp:Literal runat="server" ID="litTitle"></asp:Literal>详情</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
     <!--right start-->

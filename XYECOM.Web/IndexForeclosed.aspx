@@ -3,6 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>抵债信息列表</title>
+    <script src="/Common/Js/base.js" type="text/javascript"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="left4">
@@ -29,11 +30,13 @@
                         </td>
                         <td width="80">
                             <div id="divarea">
+                                <input type="hidden" id="city" name="city" runat="server" />
                             </div>
-                            <input type="hidden" id="city" name="city" runat="server" />
-                            <script type="text/javascript">                                var claarea
-            = new ClassType("claarea", 'area', 'divarea', 'city', 1); claarea.Mode = "select";
-                                claarea.Init(); </script>
+                            <script type="text/javascript">
+                                var claarea = new ClassType("claarea", 'area', 'divarea', '<%=city.ClientID %>', 1);
+                                claarea.Mode = "select";
+                                claarea.Init();
+                            </script>
                         </td>
                         <td width="123">
                             <asp:Button runat="server" ID="btnSearch" OnClick="btnSearch_Click" CssClass="btnok"

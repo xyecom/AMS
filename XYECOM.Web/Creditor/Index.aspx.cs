@@ -29,7 +29,7 @@ namespace XYECOM.Web.Creditor
         {
             this.lblDzMessage.Text = "";
 
-            StringBuilder strWhere = new StringBuilder(" 1=1 and (State = " + (int)AuditingState.Passed + ")");
+            StringBuilder strWhere = new StringBuilder(" 1=1 and (State = " + (int)AuditingState.Passed + ") and (DepartmentId = " + userinfo.userid + ")");
 
             int totalRecord = 0;
             DataTable dt = XYECOM.Business.Utils.GetPaginationData("ForeclosedInfo", "ForeclosedId", "*", " CreateDate desc", strWhere.ToString(), 10, 1, out totalRecord);

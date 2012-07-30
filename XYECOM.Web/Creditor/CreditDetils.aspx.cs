@@ -65,6 +65,7 @@ namespace XYECOM.Web.Creditor
                 this.labIsLitigationed.Text = info.IsLitigationed ? "是" : "否";
                 this.labIsSelfCollection.Text = info.IsSelfCollection ? "是" : "否";
                 this.labDebtorType.Text = info.DebtorType;
+                this.litTitle.Text = info.Title;
             }
 
             StringBuilder strWhere = new StringBuilder(" 1=1 and  CreditInfoId = " + id);
