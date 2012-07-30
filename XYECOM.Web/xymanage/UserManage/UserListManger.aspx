@@ -116,9 +116,8 @@
                                             <ItemStyle CssClass="gvLeft" Width="22%" />
                                             <ItemTemplate>
                                                 <div style="margin-top: 2px; color: #f60;">
-                                                    <a href='<%# GetSubUserUrl(Eval("U_ID"),Eval("UserType")) %>'>
-                                                        <%# Eval("UI_Name") %>
-                                                        (<%# Eval("IsReal").ToString() == "True" ? "已实名认证" : "未实名认证"%>) </a>
+                                                    <%# Eval("UI_Name") %>
+                                                    (<%# Eval("IsReal").ToString() == "True" ? "已实名认证" : "未实名认证"%>)
                                                 </div>
                                             </ItemTemplate>
                                         </asp:TemplateField>
@@ -146,7 +145,8 @@
                                             <HeaderStyle CssClass="gvLeft" />
                                             <ItemTemplate>
                                                 <a href='UserInfo.aspx?U_ID=<%# Eval("U_ID") %>&backURL=<%# backURL %>'>
-                                                    <img src="../images/look.gif" alt="编辑" /></a>
+                                                    <img src="../images/look.gif" alt="编辑" /></a> <a href='<%# GetSubUserUrl(Eval("U_ID"),Eval("UserType")) %>'>
+                                                        子账户列表</a>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>

@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>服务商登录</title>
+    <title>登录</title>
     <link href="/Other/css/layout.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -14,7 +14,9 @@
             <div class="logo">
                 <img src="/Other/images/logo.png" alt="" /></div>
             <p class="p1">
-                <a href="#">关于我们</a> | <a href="#">安全承诺</a> | <a href="#">加入收藏</a> | <a href="#">设为首页</a></p>
+                <a href="aboutus.htm">关于我们</a> | <a href="aqcn.htm">安全承诺</a> |  <a href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.baoqt.cn/')">
+                    设为首页</a> | <a href='#' onclick='window.external.AddFavorite("http://www.baoqt.cn/","【包青天债权管理网】")'>
+                        添加到收藏夹</a></p>
         </div>
         <!----------内容开始-------------->
         <div id="middle">
@@ -24,7 +26,7 @@
                 <p style="line-height: 22px; margin: 5px auto; width: 300px; color: #8c8c8c">
                     <strong style="color: red">还不是包青天会员？</strong>
                     <br>
-                    包青天债权管理网是您债权管理的好帮手，您可以免费注册并获得我们的资讯等，并可以随时随地管理您的应收账款等债权信息。让您资产无忧！<a href="registers.aspx"><strong
+                    包青天债权管理网是您债权管理的好帮手，您可以免费注册并获得我们的资讯等，并可以随时随地管理您的应收账款等债权信息。让您资产无忧！<a href="Register.aspx"><strong
                         style="color: red">快来注册吧！</strong></a>
                 </p>
             </div>

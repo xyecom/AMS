@@ -205,7 +205,7 @@
                     <div style="height: auto; width: 730px;">
                         <asp:DataList ID="dlForeclosed" runat="server" RepeatColumns="2">
                             <ItemTemplate>
-                                <div style="float: left; width: 343px; height: 105px; border: 1px solid #ccc; margin: 5px 1px;
+                                <div style="float: left; width: 343px; height: 105px; border: 1px solid #ddd; margin: 5px 1px;
                                     padding: 5px 5px">
                                     <table id="dztb">
                                         <tr>
@@ -241,14 +241,14 @@
                 <div id="right1">
                     <strong style="margin-left: 20px;">快速了解包青天</strong>
                     <div class="qul">
-                        <ul>
+                        <ul>                           
+                            <li><font>【了解本网】</font><a href="aboutus.htm" target="_blank"> 包青天债权管理网简介</a></li>
+                            <li><font>【新手攻略】</font><a href="js.htm" target="_blank"> 如何快速定位自己的角色</a></li>
                             <li><font>【新手攻略】</font><a href="hzq.htm" target="_blank"> 债权人如何对外发布债权信息</a></li>
-                            <li><font>【新手攻略】</font><a href="#"> 债权人如何使用存储系统</a></li>
-                            <li><font>【常见问题】</font><a href="#"> 企业总账号如何管理部门</a></li>
-                            <li><font>【常见问题】</font><a href="#"> 如何承接抵债物品</a></li>
-                            <li><font>【安全须知】</font><a href="#"> 发布债权信息须知</a></li>
-                            <li><font>【常见问题】</font><a href="#"> 债权人如何对外发布债权信息</a></li>
-                            <li><font>【常见问题】</font><a href="#"> 债权人如何对外发布债权信息</a></li>
+                            <li><font>【新手攻略】</font><a href="hzq.htm" target="_blank"> 债权人如何使用存储系统</a></li>
+                            <li><font>【常见问题】</font><a href="mpart.htm" target="_blank"> 企业总账号如何管理部门</a></li>
+                            <li><font>【常见问题】</font><a href="cdz.htm" target="_blank"> 如何承接抵债物品</a></li>
+                            <li><font>【安全须知】</font><a href="hpas.htm" target="_blank"> 如何找回密码</a></li>
                         </ul>
                     </div>
                 </div>
@@ -297,31 +297,31 @@
             <div style="width: 1000px; height: 150px;">
                 <ul>
                     <li><strong>新手上路</strong></li>
-                    <li><a href="#">了解本网</a></li>
-                    <li><a href="#">注册债权人</a></li>
-                    <li><a href="#">注册服务商</a></li>
-                    <li><a href="#">帮助中心</a></li>
+                    <li><a href="aboutus.htm" target="_blank">了解本网</a></li>
+                    <li><a href="Register.aspx" target="_blank">注册债权人</a></li>
+                    <li><a href="Register.aspx" target="_blank">注册服务商</a></li>
+                    <li><a href="map.htm" target="_blank">网站地图</a></li>
                 </ul>
                 <ul>
                     <li><strong>交易指南</strong></li>
-                    <li><a href="#">如何发布债权</a></li>
-                    <li><a href="#">如何获取佣金</a></li>
-                    <li><a href="#">交易安全</a></li>
-                    <li><a href="#">服务中心</a></li>
+                    <li><a href="hzq.htm" target="_blank">如何发布债权</a></li>
+                    <li><a href="#" target="_blank">如何获取佣金</a></li>
+                    <li><a href="#" target="_blank">交易安全</a></li>
+                    <li><a href="#" target="_blank">服务中心</a></li>
                 </ul>
                 <ul>
                     <li><strong>交易保障</strong></li>
-                    <li><a href="#">担保交易</a></li>
-                    <li><a href="#">诚信保障服务</a></li>
-                    <li><a href="#">提供发票</a></li>
-                    <li><a href="#">全假信息识别</a></li>
+                    <li><a href="#" target="_blank">担保交易</a></li>
+                    <li><a href="#" target="_blank">诚信保障服务</a></li>
+                    <li><a href="#" target="_blank">提供发票</a></li>
+                    <li><a href="#" target="_blank">全假信息识别</a></li>
                 </ul>
                 <ul>
                     <li><strong>支付方式</strong></li>
-                    <li><a href="#">网银支付</a></li>
-                    <li><a href="#">银行柜台支付</a></li>
-                    <li><a href="#">支付宝担保交易</a></li>
-                    <li><a href="#">账户余额支付</a></li>
+                    <li><a href="#" target="_blank">网银支付</a></li>
+                    <li><a href="#" target="_blank">银行柜台支付</a></li>
+                    <li><a href="#" target="_blank">支付宝担保交易</a></li>
+                    <li><a href="#" target="_blank">账户余额支付</a></li>
                 </ul>
                 <div style="height: 90px; margin-left: 800px; margin: 20px 10px;">
                     <img src="/Other/images/tel.gif" /><strong style="font-size: 18px; color: #f00">400-100-1010</strong>
@@ -359,7 +359,7 @@
                 </table>
             </div>
             <p>
-                <a href="">网站地图</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                <a href="map.htm" target="_blank">网站地图</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="aboutus.htm" target="_blank">关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
                     href="">合作洽谈</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">客户手册</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
                         href="">客服中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">加入我们</a></p>
             <p>
@@ -369,6 +369,9 @@
         </div>
         <!--footer结束-->
     </div>
+
+
+
     </form>
 </body>
 </html>

@@ -11,17 +11,6 @@
     <link href="/Other/css/style.css" rel="stylesheet" type="text/css" />
     <script src="/Other/js/zu.js" type="text/javascript"></script>
     <script src="/Other/js/update8.js" type="text/javascript"></script>
-    <style type="text/css">
-        .btnok
-        {
-            background: url(/Other/images/yes.gif);
-            width: 80px;
-            height: 25px;
-            border: none;
-            cursor: pointer;
-            color: #FFF;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -31,7 +20,9 @@
             <div class="logo">
             </div>
             <div class="logoright" style="width: 250px">
-                <a href="#">设为首页</a>&nbsp; |&nbsp; <a href="#">加入收藏</a>&nbsp;|&nbsp; <a href="/Login.aspx">
+                  <a href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.baoqt.cn/')">
+                    设为首页</a> &nbsp; |&nbsp; <a href='#' onclick='window.external.AddFavorite("http://www.baoqt.cn/","【包青天债权管理网】")'>
+                        添加到收藏夹</a>&nbsp;|&nbsp; <a href="/Login.aspx">
                     登录</a>&nbsp;|&nbsp;<a href="/Register.aspx">注册</a>
             </div>
             <div id="menu" style="float: left;">
@@ -71,6 +62,10 @@
                                 <img src="/Other/images/2.gif" alt="抵债管理方案"></li>
                             <li>
                                 <img src="/Other/images/3.gif" alt="优质服务"></li>
+                                     <li>
+                                <img src="/Other/images/pic3.gif" alt="价值共享"></li>
+                            <li>
+                                <img src="/Other/images/pic4.gif" alt="财富积累"></li>
                         </ul>
                     </div>
                     <script type="text/javascript">
@@ -80,22 +75,7 @@
                     </script>
                 </div>
                 <!--left1结束-->
-                <!--left2开始-->
-                <div id="left2">
-                    <ul>
-                        <li><a href="javascript:void(0)">如何注册</a></li>
-                        <li><a href="javascript:void(0)">如何存储</a></li>
-                        <li><a href="javascript:void(0)">如何发布</a></li>
-                        <li><a href="javascript:void(0)">如何投标</a></li>
-                        <li><a href="javascript:void(0)">成交成功</a></li>
-                        <li><a href="javascript:void(0)">快速注册</a></li>
-                        <li><a href="javascript:void(0)">开始存储</a></li>
-                        <li><a href="javascript:void(0)">开始发布</a></li>
-                        <li><a href="javascript:void(0)">开始投标</a></li>
-                        <li><a href="javascript:void(0)">获取佣金</a></li>
-                    </ul>
-                </div>
-                <!--left2结束-->
+             
                 <!--left3开始-->
                 <div id="left3">
                     <div style="background: url('/Other/images/erji_titlebg.gif'); background-repeat: repeat-x;
@@ -138,7 +118,8 @@
                             </table>
                         </div>
                     </div>
-                    <table id="zqlist1">
+               
+                        <table id="zqlist2"> 
                         <tr>
                             <td height="23" class="tdtitle">
                                 债权标题
@@ -156,9 +137,6 @@
                                 投标人数
                             </td>
                         </tr>
-                    </table>
-                    <div class="box" id="marqueebox1">
-                        <table id="zqlist2">
                             <asp:Repeater ID="dlCreditList" runat="server">
                                 <ItemTemplate>
                                     <tr>
@@ -186,7 +164,6 @@
                             <p style="text-align: center;">
                                 <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></p>
                         </div>
-                    </div>
                     <div style="width: 705px; height: 30px; line-height: 30px; text-align: center">
                         <XYECOM:Page ID="Page1" runat="server" PageSize="20" OnPageChanged="Page1_PageChanged" />
                     </div>
@@ -201,13 +178,13 @@
                     <strong style="margin-left: 20px;">快速了解包青天</strong>
                     <div class="qul">
                         <ul>
-                            <li><font>【新手攻略】</font><a href="#"> 债权人如何对外发布债权信息</a></li>
-                            <li><font>【新手攻略】</font><a href="#"> 债权人如何使用存储系统</a></li>
-                            <li><font>【常见问题】</font><a href="#"> 企业总账号如何管理部门</a></li>
-                            <li><font>【常见问题】</font><a href="#"> 如何承接抵债物品</a></li>
-                            <li><font>【安全须知】</font><a href="#"> 发布债权信息须知</a></li>
-                            <li><font>【常见问题】</font><a href="#"> 债权人如何对外发布债权信息</a></li>
-                            <li><font>【常见问题】</font><a href="#"> 债权人如何对外发布债权信息</a></li>
+                            <li><font>【了解本网】</font><a href="aboutus.htm" target="_blank"> 包青天债权管理网简介</a></li>
+                            <li><font>【新手攻略】</font><a href="js.htm" target="_blank"> 如何快速定位自己的角色</a></li>
+                            <li><font>【新手攻略】</font><a href="hzq.htm" target="_blank"> 债权人如何对外发布债权信息</a></li>
+                            <li><font>【新手攻略】</font><a href="hzq.htm" target="_blank"> 债权人如何使用存储系统</a></li>
+                            <li><font>【常见问题】</font><a href="mpart.htm" target="_blank"> 企业总账号如何管理部门</a></li>
+                            <li><font>【常见问题】</font><a href="cdz.htm" target="_blank"> 如何承接抵债物品</a></li>
+                            <li><font>【安全须知】</font><a href="hpas.htm" target="_blank"> 如何找回密码</a></li>
                         </ul>
                     </div>
                 </div>
@@ -227,10 +204,10 @@
                 </div>
                 <!--right2结束-->
                 <!--right3开始-->
-                <div id="right3">
-                    <img src="/Other/images/1212.gif" />
-                </div>
-                <!--right3结束-->
+   <div id="right3">
+                    <a href="Register.aspx">
+                        <img src="/Other/images/1359619_174309069902_2.gif" style="border: none" /></a>
+                </div>                <!--right3结束-->
                 <!--right4开始-->
                 <div id="right4">
                     <strong style="margin-left: 20px; height: 35px; line-height: 35px;">媒体报道</strong>

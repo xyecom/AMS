@@ -94,7 +94,7 @@
             </div>
             <!--列表 start-->
                         <div id="list">
-                   <div style="margin:5px auto; text-align:center; font-weight:bold">
+                   <div style="margin:5px auto; text-align:center; font-weight:bold; font-size:14px">
                     <asp:Label ID="lblZqMessage" runat="server" Text=""></asp:Label>
               </div>
                
@@ -146,14 +146,14 @@
             <div class="rhr">
             </div>
             <div style="height: auto; width: 800px;">
-                <div style="margin:5px auto; text-align:center; font-weight:bold">
+                <div style="margin:5px auto; text-align:center; font-weight:bold; font-size:14px">
                     <asp:Label ID="lblDzMessage" runat="server" Text=""></asp:Label>
               </div>
 
               
                 <asp:DataList ID="dltDz" runat="server" RepeatColumns="2" Width="100%">
                     <ItemTemplate>
-    <div style=" float:left;width:373px; height:105px; border:1px solid #ccc; margin:5px 8px; padding:5px 5px">
+    <div style=" float:left;width:373px; height:105px; border:1px solid #ddd; margin:5px 8px; padding:5px 5px">
 <table id="dztb">
 <tr>
 <td>
