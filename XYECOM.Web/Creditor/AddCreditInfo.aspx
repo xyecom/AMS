@@ -308,7 +308,7 @@
                             图片上传
                         </td>
                         <td class="info_lei2" colspan="3">
-                            <XYECOM:UploadImage ID="udCreditInfo" runat="server" Iswatermark="false" MaxAmount="3"
+                            <XYECOM:UploadImage ID="udCreditInfo" runat="server" Iswatermark="false" MaxAmount="20"
                                 TableName="CreditInfo" IsCreateThumbnailImg="false" />
                         </td>
                     </tr>
@@ -348,15 +348,15 @@
                         <tr>
                             <td align="center" colspan="2">
                                 <asp:RadioButtonList runat="server" ID="radSelect" RepeatDirection="Horizontal" Width="396px">
-                                    <asp:ListItem Value="发布">直接对外发布</asp:ListItem>
-                                    <asp:ListItem Value="草稿" Selected="True">存为债权草稿</asp:ListItem>
+                                    <asp:ListItem Value="发布" Selected="True">直接对外发布</asp:ListItem>
+                                    <asp:ListItem Value="草稿">存为债权草稿</asp:ListItem>
                                 </asp:RadioButtonList>
                             </td>
                         </tr>
                     </table>
                 </div>
                 <div style="width: 756px; height: 50px; line-height: 50px; text-align: center">
-                    <asp:Button runat="server" ID="btnOk" OnClick="btnOk_Click" Text="确 定" OnClientClick="if(!checkAredId()) return true" 
+                    <asp:Button runat="server" ID="btnOk" OnClick="btnOk_Click" Text="确 定" OnClientClick="if(!checkAredId()) return true"
                         Style="background: url(../Other/images/ok.gif); width: 96px; height: 43px; border: none;
                         cursor: pointer; color: #FFF" />
                     <input type="button" value="返 回" onclick="javascript:history.back();" style="background: url(../Other/images/quit.gif);

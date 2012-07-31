@@ -114,6 +114,7 @@ namespace XYECOM.Web
                 this.labIsSelfCollection.Text = info.IsSelfCollection ? "是" : "否";
                 this.hidStae.Value = info.ApprovaStatus.ToString();
                 this.aShow.HRef = "showEvaluation.aspx?UserId=" + info.DepartId;
+
                 this.litTitle.Text = info.Title;
             }
 

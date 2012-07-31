@@ -22,6 +22,7 @@ namespace XYECOM.Web.Creditor
             {
                 if (!userinfo.IsReal)
                 {
+                    this.radSelect.SelectedIndex = 1;
                     this.radSelect.Enabled = false;
                 }
                 this.areaid.Value = userinfo.AreaId.ToString();
