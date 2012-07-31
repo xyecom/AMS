@@ -1814,8 +1814,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="aboutus.htm" />
     <Content Include="Activation .aspx" />
     <Content Include="Agreement.htm" />
+    <Content Include="aqcn.htm" />
+    <Content Include="cdz.htm" />
     <Content Include="Common\Controls\CascadeData.ascx" />
     <Content Include="Common\Css\css.css" />
     <Content Include="Common\Css\confirmorder.css" />
@@ -1858,10 +1861,18 @@
     <Content Include="Common\Js\jquery.uploadify\uploadify.allglyphs.swf" />
     <Content Include="Common\Js\jquery.uploadify\uploadify.css" />
     <Content Include="Common\Js\jquery.uploadify\uploadify.swf" />
+    <Content Include="content.htm" />
     <Content Include="Copyright.htm" />
+    <Content Include="hpas.htm" />
+    <Content Include="js.htm" />
+    <Content Include="map.htm" />
+    <Content Include="mpart.htm" />
     <Content Include="Server\CredList.aspx" />
+    <Content Include="sytk.htm" />
     <Content Include="Test.aspx" />
+    <Content Include="yszc.htm" />
     <Content Include="zhaopin.htm" />
+    <Content Include="zq.htm" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CreditInfoDetail.aspx" />
@@ -4229,7 +4240,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>8100</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
