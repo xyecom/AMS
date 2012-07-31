@@ -25,10 +25,7 @@ namespace XYECOM.Web.Creditor
                 {
                     GotoMsgBoxPageForDynamicPage("该债权信息不存在！", 1, "CreditInfoList.aspx");
                 }
-                if (!userinfo.IsReal)
-                {
-                    this.radSelect.Enabled = false;
-                }
+
                 this.hiddID.Value = id.ToString();
                 BindData(id);
             }
@@ -71,7 +68,15 @@ namespace XYECOM.Web.Creditor
             this.rdLicenseType.SelectedValue = info.LicenseType;
             this.txtRemark.Text = info.Remark;
             this.udCreditInfo.InfoID = info.CreditId;
-
+            if (!userinfo.IsReal)
+            {
+                this.radSelect.SelectedIndex = 1;
+                this.radSelect.Enabled = false;
+            }
+            else
+            {
+                this.radSelect.SelectedIndex = info.ApprovaStatus == (int)CreditState.Draft ? 1 : 0;
+            }
 
             hdgetid.Value = relateManage.GetSelectCaseIds(info.CreditId, TableInfoType.ZqInfo);
         }
