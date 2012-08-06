@@ -1863,7 +1863,9 @@
     <Content Include="Common\Js\jquery.uploadify\uploadify.swf" />
     <Content Include="content.htm" />
     <Content Include="Copyright.htm" />
+    <Content Include="hcc.htm" />
     <Content Include="hpas.htm" />
+    <Content Include="hqyj.htm" />
     <Content Include="js.htm" />
     <Content Include="map.htm" />
     <Content Include="mpart.htm" />
