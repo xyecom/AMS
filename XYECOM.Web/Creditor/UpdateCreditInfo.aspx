@@ -56,6 +56,7 @@
         }
         .Upload_img
         {
+             width:100px; height:95px;
         }
         a.Upload_btn:link
         {
@@ -118,9 +119,9 @@
                             <span class="red">*</span>案件标题
                         </td>
                         <td colspan="3">
-                            <asp:TextBox runat="server" ID="txtTitle" Width="600px"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtTitle" Width="538px"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtTitle"
-                                ErrorMessage="案件标题不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -130,18 +131,18 @@
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtDebtorName"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDebtorName"
-                                ErrorMessage="欠款人姓名不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
                         </td>
                         <td class="info_lei3">
-                            欠款人联系电话
+                            欠款人电话
                         </td>
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtDebtorTelpone"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtDebtorTelpone"
-                                ErrorMessage="欠款人联系电话不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtDebtorTelpone"
-                                ErrorMessage="手机号码格式不正确" ValidationExpression="\s*((\d{2,3}-){0,1}\d{11})\s*"
-                                ForeColor="Red" Font-Size="9pt"></asp:RegularExpressionValidator>
+                                ErrorMessage="*" ValidationExpression="\s*((\d{2,3}-){0,1}\d{11})\s*"
+                                ForeColor="Red" Font-Size="12pt"></asp:RegularExpressionValidator>
                         </td>
                     </tr>
                     <tr>
@@ -150,16 +151,16 @@
                         </td>
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtArrears"></asp:TextBox>元<asp:RequiredFieldValidator
-                                ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtArrears" ErrorMessage="欠款金额不能为空"
-                                ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
+                                ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtArrears" ErrorMessage="*"
+                                ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
                         </td>
                         <td class="info_lei3">
                             悬赏金额
                         </td>
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtBounty"></asp:TextBox>元<asp:RequiredFieldValidator
-                                ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtBounty" ErrorMessage="悬赏金额不能为空"
-                                ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
+                                ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtBounty" ErrorMessage="*"
+                                ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -188,9 +189,9 @@
                             欠款原因
                         </td>
                         <td colspan="3">
-                            <asp:TextBox runat="server" ID="txtDebtorReason" Width="600px"></asp:TextBox><asp:RequiredFieldValidator
+                            <asp:TextBox runat="server" ID="txtDebtorReason" Width="538px"></asp:TextBox><asp:RequiredFieldValidator
                                 ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtDebtorReason"
-                                ErrorMessage="欠款原因不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -200,7 +201,7 @@
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtCollectionPeriod"></asp:TextBox>天<asp:RequiredFieldValidator
                                 ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtCollectionPeriod"
-                                ErrorMessage="催收期限不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
                         </td>
                         <td class="info_lei3">
                             备注
@@ -230,9 +231,9 @@
                             案情简介
                         </td>
                         <td colspan="3">
-                            <asp:TextBox runat="server" ID="txtIntroduction" Width="100%" Rows="10"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtIntroduction" Width="90%" Rows="5" TextMode="MultiLine"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtIntroduction"
-                                ErrorMessage="案情简介不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                 </table>
@@ -296,7 +297,7 @@
                                 <asp:ListItem Value="合同">合同</asp:ListItem>
                                 <asp:ListItem Value="发票">发票</asp:ListItem>
                                 <asp:ListItem Value="欠条">欠条</asp:ListItem>
-                                <asp:ListItem Value="发票其他凭证">发票其他凭证</asp:ListItem>
+                                <asp:ListItem Value="其他凭证">其他凭证</asp:ListItem>
                             </asp:CheckBoxList>
                         </td>
                     </tr>
@@ -304,7 +305,7 @@
                         <td class="info_lei3">
                             图片上传
                         </td>
-                        <td class="info_lei2" colspan="3">
+                        <td colspan="3"  style="width:615px; height:auto">
                             <XYECOM:UploadImage ID="udCreditInfo" runat="server" Iswatermark="false" MaxAmount="20"
                                 TableName="CreditInfo" IsCreateThumbnailImg="false" />
                         </td>
@@ -314,11 +315,11 @@
                             档案选择：
                         </td>
                         <td class="info_lei2">
-                            档案库选择<input type="radio" name="case" value="1" id="remo" onclick="document.getElementById('loc').style.display='none';document.getElementById('remote').style.display='';"
-                                checked="checked" />
-                            从本地上传<input type="radio" name="case" value="0" id="locat" onclick="document.getElementById('loc').style.display='';document.getElementById('remote').style.display='none';" />
+                           <input type="radio" name="case" value="1" id="remo" onclick="document.getElementById('loc').style.display='none';document.getElementById('remote').style.display='';" 
+                                checked="checked" />档案库选择
+                            <input type="radio" name="case" value="0" id="locat" onclick="document.getElementById('loc').style.display='';document.getElementById('remote').style.display='none';" />从本地上传
                         </td>
-                        <td class="info_lei3" colspan="2">
+                        <td class="info_lei2" colspan="2">
                             <div id="loc" style="display: none;">
                                 <p>
                                     从本地上传资料</p>
@@ -345,16 +346,18 @@
                         <tr>
                             <td align="center" colspan="2">
                                 <asp:RadioButtonList runat="server" ID="radSelect" RepeatDirection="Horizontal">
-                                    <asp:ListItem Value="发布" Selected="True">直接对外发布</asp:ListItem>
-                                    <asp:ListItem Value="草稿">存为债权草稿</asp:ListItem>
+                                    <asp:ListItem Value="发布">直接对外发布</asp:ListItem>
+                                    <asp:ListItem Value="草稿" Selected="True">存为债权草稿</asp:ListItem>
                                 </asp:RadioButtonList>
                             </td>
                         </tr>
                     </table>
                 </div>
                 <div style="width: 756px; height: 50px; line-height: 50px; text-align: center">
-                    <asp:Button runat="server" ID="btnOk" OnClick="btnOK_Click" Text="确定" OnClientClick="if(!checkAredId()) return true" />
-                    <input type="button" value="返回" onclick="javascript:history.back();" />
+                    <asp:Button runat="server" ID="btnOk" OnClick="btnOK_Click" Text="确 定" OnClientClick="if(!checkAredId()) return true"   Style="background: url(../Other/images/yes.gif);    width: 80px; height: 25px;  border: none;
+                        cursor: pointer; color: #FFF"/>
+                    <input type="button" value="返 回" onclick="javascript:history.back();"style="background: url(../Other/images/no.gif);
+                        color: Black;   width: 80px; height: 25px; border: none; cursor: pointer; color: #FFF" />
                     <input type="hidden" id="hiddID" runat="server" />
                 </div>
             </div>

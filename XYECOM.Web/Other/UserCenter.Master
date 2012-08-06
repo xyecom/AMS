@@ -63,19 +63,19 @@
     <!--bottom start-->
     <div id="bottom">
         <ul>
-            <li><strong>新手上路</strong></li>
-            <li><a href="../aboutus.htm" target="_blank">了解本网</a></li>
+          <li><strong>新手上路</strong></li>
+                    <li><a href="../aboutus.htm" target="_blank">了解本网</a></li>
                     <li><a href="../Register.aspx" target="_blank">注册债权人</a></li>
                     <li><a href="../Register.aspx" target="_blank">注册服务商</a></li>
+                    <li><a href="../content.htm" target="_blank">联系我们</a></li>
+                </ul>
+                <ul>
+                    <li><strong>交易指南</strong></li>
+                    <li><a href="../hzq.htm" target="_blank">如何发布债权</a></li>
+                    <li><a href="../hqyj.htm" target="_blank">如何获取佣金</a></li>
+                      <li><a href="../aqcn.htm" target="_blank">安全承诺</a></li>
                     <li><a href="../map.htm" target="_blank">网站地图</a></li>
-        </ul>
-        <ul>
-            <li><strong>交易指南</strong></li>
-            <li><a href="#">如何发布债权</a></li>
-            <li><a href="#">如何获取佣金</a></li>
-            <li><a href="#">交易安全</a></li>
-            <li><a href="#">服务中心</a></li>
-        </ul>
+                </ul>
         <ul>
             <li><strong>交易保障</strong></li>
             <li><a href="#">担保交易</a></li>
@@ -126,9 +126,9 @@
             </table>
         </div>
         <p>
-            <a href="../map.htm" target="_blank">网站地图</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
-                href="">合作洽谈</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">客户手册</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
-                    href="">客服中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">加入我们</a></p>
+            <a href="../map.htm" target="_blank">网站地图</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../aboutus.htm" target="_blank">关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                href="../content.htm"target="_blank">合作洽谈</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="" target="_blank">客户手册</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                    href="" target="_blank">客服中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../Register.aspx" target="_blank">加入我们</a></p>
         <p>
             网站24小时服务热线：400-100-1010 传真：029-12345678 地址：陕西省西安市高新园区一号大厦3楼</p>
         <p>

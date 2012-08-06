@@ -4,9 +4,9 @@ function WebConfig() {
       IsDomain:true,
       IsNewsDomain:false,
       Suffix:"aspx",
-      WebName:"安装测试1",
-      WebURL:"http://127.0.0.1:8100/",
-      TemplatePath:"default"
+      WebName:"包青天债权管理网",
+      WebURL:"http://www.baoqt.cn/",
+      TemplatePath:""
   };
 }
 var config = new WebConfig();

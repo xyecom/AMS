@@ -88,9 +88,10 @@ table{border-collapse:collapse;/*细线表格*/}
 .divtext{height:auto; float:left; display:inline; margin:10px 30px}
 .divtext p{ padding:10px 20px;}
 
-.tab{border:1px solid #ddd;color:#555;width:760px}
+.tab{border:1px solid #ddd;color:#555;width:800px;}
+.tab td{padding:2px 5px;border:1px solid #ddd;}
 .info_lei3{width:130px;line-height:22px;padding:2px 5px;background-color:#f3f3f3;border:1px solid #ddd;}
-.info_lei2{width:250px;line-height:22px; border:1px solid #ddd;padding:2px 5px;}
+.info_lei2{width:270px;line-height:22px; border:1px solid #ddd;padding:2px 5px;}
 #heng{width:630px; height:auto; overflow:hidden;padding:2px 5px;}/*tabke中独占三列的tb*/
 .serverlist{  font-size:13px;}
 h4{ font-size:13px;margin:0;height:20px;}
