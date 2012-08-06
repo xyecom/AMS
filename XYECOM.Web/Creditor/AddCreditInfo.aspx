@@ -56,6 +56,7 @@
         }
         .Upload_img
         {
+            width:100px; height:95px;
         }
         a.Upload_btn:link
         {
@@ -115,51 +116,51 @@
                 <table style="margin-top: 2px;" class="tab">
                     <tr>
                         <td class="info_lei3">
-                            <span style="color: Red">*</span>案件标题
+                            案件标题
                         </td>
                         <td colspan="3">
                             <asp:TextBox runat="server" ID="txtTitle" Width="530px"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtTitle"
-                                ErrorMessage="不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
                         <td class="info_lei3">
-                            <span style="color: Red">*</span>欠款人姓名
+                            欠款人姓名
                         </td>
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtDebtorName"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDebtorName"
-                                ErrorMessage="不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
                         </td>
                         <td class="info_lei3">
-                            <span style="color: Red">*</span>欠款人手机
+                            欠款人手机
                         </td>
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtDebtorTelpone"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtDebtorTelpone"
-                                ErrorMessage="不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtDebtorTelpone"
-                                ErrorMessage="格式不正确" ValidationExpression="\s*((\d{2,3}-){0,1}\d{11})\s*" ForeColor="Red"
-                                Font-Size="9pt"></asp:RegularExpressionValidator>
+                                ErrorMessage="*" ValidationExpression="\s*((\d{2,3}-){0,1}\d{11})\s*" ForeColor="Red"
+                                Font-Size="12pt"></asp:RegularExpressionValidator>
                         </td>
                     </tr>
                     <tr>
                         <td class="info_lei3">
-                            <span style="color: Red">*</span>欠款金额
+                            欠款金额
                         </td>
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtArrears"></asp:TextBox>元
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtArrears"
-                                ErrorMessage="不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
                         </td>
                         <td class="info_lei3">
-                            <span style="color: Red">*</span>悬赏金额
+                            悬赏金额
                         </td>
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtBounty"></asp:TextBox>元
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtBounty"
-                                ErrorMessage="不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
@@ -185,22 +186,22 @@
                     </tr>
                     <tr>
                         <td class="info_lei3">
-                            <span style="color: Red">*</span>欠款原因
+                            欠款原因
                         </td>
                         <td colspan="3">
                             <asp:TextBox runat="server" ID="txtDebtorReason" Width="530px"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtDebtorReason"
-                                ErrorMessage="不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
                         <td class="info_lei3">
-                            <span style="color: Red">*</span>催收期限
+                            催收期限
                         </td>
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtCollectionPeriod"></asp:TextBox>天
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtCollectionPeriod"
-                                ErrorMessage="不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
                         </td>
                         <td class="info_lei3">
                             备注
@@ -227,13 +228,13 @@
                     </tr>
                     <tr>
                         <td class="info_lei3">
-                            <span style="color: Red">*</span>案情简介
+                            案情简介
                         </td>
                         <td colspan="3">
-                            <asp:TextBox runat="server" ID="txtIntroduction" TextMode="MultiLine" Width="100%"
+                            <asp:TextBox runat="server" ID="txtIntroduction" TextMode="MultiLine" Width="90%"
                                 Rows="5" Style="padding: 10px"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtIntroduction"
-                                ErrorMessage="案情简介不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                 </table>
@@ -244,12 +245,12 @@
                 <table style="margin-top: 1px;" class="tab">
                     <tr>
                         <td class="info_lei3">
-                            <span style="color: Red">*</span>债龄
+                            债龄
                         </td>
                         <td class="info_lei2">
                             <asp:TextBox runat="server" ID="txtAge"></asp:TextBox>天
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtAge"
-                                ErrorMessage="不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
+                                ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
                         </td>
                         <td class="info_lei3">
                             是否在诉讼期
@@ -307,7 +308,7 @@
                         <td class="info_lei3">
                             图片上传
                         </td>
-                        <td class="info_lei2" colspan="3">
+                        <td style="width:615px; height:auto" colspan="3">
                             <XYECOM:UploadImage ID="udCreditInfo" runat="server" Iswatermark="false" MaxAmount="20"
                                 TableName="CreditInfo" IsCreateThumbnailImg="false" />
                         </td>
@@ -348,19 +349,19 @@
                         <tr>
                             <td align="center" colspan="2">
                                 <asp:RadioButtonList runat="server" ID="radSelect" RepeatDirection="Horizontal" Width="396px">
-                                    <asp:ListItem Value="发布" Selected="True">直接对外发布</asp:ListItem>
-                                    <asp:ListItem Value="草稿">存为债权草稿</asp:ListItem>
+                                    <asp:ListItem Value="发布">直接对外发布</asp:ListItem>
+                                    <asp:ListItem Value="草稿" Selected="True">存为债权草稿</asp:ListItem>
                                 </asp:RadioButtonList>
                             </td>
                         </tr>
                     </table>
                 </div>
                 <div style="width: 756px; height: 50px; line-height: 50px; text-align: center">
-                    <asp:Button runat="server" ID="btnOk" OnClick="btnOk_Click" Text="确 定" OnClientClick="if(!checkAredId()) return true"
-                        Style="background: url(../Other/images/ok.gif); width: 96px; height: 43px; border: none;
+                    <asp:Button runat="server" ID="btnOk" OnClick="btnOk_Click" Text="确 定" OnClientClick="if(!checkAredId()) return true" 
+                        Style="background: url(../Other/images/yes.gif);    width: 80px; height: 25px;  border: none;
                         cursor: pointer; color: #FFF" />
-                    <input type="button" value="返 回" onclick="javascript:history.back();" style="background: url(../Other/images/quit.gif);
-                        color: Black; width: 96px; height: 43px; border: none; cursor: pointer; color: #FFF" />
+                    <input type="button" value="返 回" onclick="javascript:history.back();" style="background: url(../Other/images/no.gif);
+                        color: Black;   width: 80px; height: 25px; border: none; cursor: pointer; color: #FFF" />
                 </div>
             </div>
         </div>

@@ -54,7 +54,7 @@ protected override void OnLoad(EventArgs e)
 	XYBody.Append("         <li><a href=\"#\" onclick=\"history.back();\">返回继续操作</a></li>\r\n");
 	XYBody.Append("        <li><a href=\"/\">返回首页</a> | <a href=\"#\" onclick=\"window.close();\">关闭本页</a></li>\r\n");
 	XYBody.Append("    </ul>\r\n");
-	XYBody.Append("    <div id=\"r_f\">2000-2009　" +  XYECOMCreateHTML("XY_Copyright").ToString() + "　版权所有　纵横易商软件</div>\r\n");
+	XYBody.Append("    <div id=\"r_f\">2000-2009　" +  XYECOMCreateHTML("XY_Copyright").ToString() + "　版权所有　</div>\r\n");
 	XYBody.Append("</div>\r\n");
 	XYBody.Append("</body>\r\n");
 	XYBody.Append("</html>\r\n");

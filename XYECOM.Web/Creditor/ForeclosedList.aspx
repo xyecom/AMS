@@ -37,7 +37,8 @@
                     <asp:ListItem Value="金条" Text="金条"></asp:ListItem>
                 </asp:DropDownList>
                 &nbsp;&nbsp; &nbsp;&nbsp; 标题：<asp:TextBox runat="server" ID="txtTitle"></asp:TextBox>
-                <asp:Button runat="server" ID="btnSearch" Text="查询" OnClick="btnSearch_Click" />
+                <asp:Button runat="server" ID="btnSearch" Text="查询" OnClick="btnSearch_Click"  Style="background: url(../Other/images/yes.gif);
+                                width: 80px; height: 25px; border: none; cursor: pointer; font-size: 13px; color: White" />
             </div>
             <!--serch end-->
             <!--列表 start-->

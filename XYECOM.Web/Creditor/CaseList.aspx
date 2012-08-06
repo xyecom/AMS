@@ -18,7 +18,8 @@
                 &nbsp;&nbsp; &nbsp;&nbsp; 关键字:
                 <input onblur="if(!value){value=defaultValue;}" style="color: #a8a4a3" onfocus="this.value=''"
                     value="请输入关键字" type="text" runat="server" id="txtKey" />
-                <asp:Button ID="btnSearch" runat="server" Text="查询" OnClick="btnSearch_Click" />
+                <asp:Button ID="btnSearch" runat="server" Text="查询" OnClick="btnSearch_Click"  Style="background: url(../Other/images/yes.gif);
+                                width: 80px; height: 25px; border: none; cursor: pointer; font-size: 13px; color: White" />
             </div>
             <!--serch end-->
             <!--列表 start-->
@@ -46,7 +47,7 @@
                                 </tr>
                     </HeaderTemplate>
                     <ItemTemplate>
-                        <tr style="background-color: #ffffff; height: 28px; border-top: #ccc 1px solid" onmousemove="this.style.backgroundColor='#F7F7F7'"
+                        <tr id="trmidd"  style="background-color: #ffffff; height: 28px; border-top: #ccc 1px solid" onmousemove="this.style.backgroundColor='#F7F7F7'"
                             onmouseout="this.style.backgroundColor='#ffffff'">
                             <td id="tdtitle">
                                 <%# Eval("CaseName") %>

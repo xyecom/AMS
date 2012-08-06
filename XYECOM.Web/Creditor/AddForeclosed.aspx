@@ -101,6 +101,7 @@
             <div class="rhr">
             </div>
             <!--基本信息 start-->
+            <br /><br />
             【物品基本信息】
             <hr />
             <table class="dzbasetb">
@@ -111,7 +112,7 @@
                     <td>
                         <asp:TextBox runat="server" ID="txtTitle" MaxLength="50"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtTitle"
-                            ErrorMessage="名称不能为空"></asp:RequiredFieldValidator>
+                            ErrorMessage="名称不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                     </td>
                     <td class="info1">
                         <span style="color: Red">*</span>拍卖底价：
@@ -119,7 +120,7 @@
                     <td>
                         <asp:TextBox runat="server" ID="txtLinePrice"></asp:TextBox><span>元</span>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtLinePrice"
-                            ErrorMessage="拍卖底价不能为空"></asp:RequiredFieldValidator>
+                            ErrorMessage="拍卖底价不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -153,7 +154,7 @@
                         详细地址：
                     </td>
                     <td colspan="3">
-                        <asp:TextBox runat="server" ID="txtAddress" Width="100%" MaxLength="25"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtAddress" Width="90%" MaxLength="25"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -164,7 +165,7 @@
                         <input id="endDate" style="width: 120px" runat="server" size="10" type="text" readonly="readonly"
                             onclick="getDateString(this);" />
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="endDate"
-                            ErrorMessage="结束竞拍时间不能为空"></asp:RequiredFieldValidator>
+                            ErrorMessage="结束竞拍时间不能为空" ForeColor="Red" Font-Size="9pt"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -172,8 +173,8 @@
                         物品详细描述：
                     </td>
                     <td colspan="3">
-                        <asp:TextBox runat="server" ID="txtDescription" Width="100%" TextMode="MultiLine"
-                            Rows="15"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtDescription" Width="90%" TextMode="MultiLine"
+                            Rows="6"></asp:TextBox>
                     </td>
                 </tr>
             </table>
@@ -187,7 +188,7 @@
                 </p>
                 <div id="baseinfo">
                     <p>
-                        <XYECOM:UploadImage ID="udForeclosedInfo" runat="server" Iswatermark="false" MaxAmount="3"
+                        <XYECOM:UploadImage ID="udForeclosedInfo" runat="server" Iswatermark="false" MaxAmount="10"
                             TableName="ForeclosedInfo" IsCreateThumbnailImg="false" />
                     </p>
                 </div>
@@ -195,11 +196,11 @@
         </div>
         <!--rightzqmain end-->
         <div style="width: 812px; height: 40px; line-height: 40px; text-align: center">
-            <%--  <input type="button" value="确 定" style="background: url(../images/yes.gif); width: 80px;
-                height: 25px; border: none; cursor: pointer; color: #FFF" />--%>
             <asp:Button runat="server" ID="btnOK" Width="80px" Height="25px" Text="确定" OnClick="btnOK_Click"
-                OnClientClick="if(!checkAredId()) return true" />
-            <input type="button" value="返回" onclick="javascript:history.back();" />
+                OnClientClick="if(!checkAredId()) return true"   Style="background: url(../Other/images/yes.gif);    width: 80px; height: 25px;  border: none;
+                        cursor: pointer; color: #FFF" />
+            <input type="button" value="返回" onclick="javascript:history.back();"style="background: url(../Other/images/no.gif);
+                        color: Black;   width: 80px; height: 25px; border: none; cursor: pointer; color: #FFF"  />
         </div>
     </div>
     <!--right end-->
