@@ -56,7 +56,7 @@ namespace XYECOM.Web
                 this.dlCreditList.DataBind();
             }
 
-            StringBuilder whereJian = new StringBuilder(" 1=1 and ( ApprovaStatus  =2) and IsDraft = 'true'");
+            StringBuilder whereJian = new StringBuilder(" 1=1 and ( ApprovaStatus  =2) and IsDraft = 1");
             DataTable dtJian = XYECOM.Business.Utils.GetPaginationData("CreditInfo", "CreditId", "*", " CreateDate desc", whereJian.ToString(), 3, 1, out totalRecord);
 
             if (dtJian.Rows.Count > 0)
@@ -121,7 +121,7 @@ namespace XYECOM.Web
         }
 
         /// <summary>
-        /// 获取债权信息
+        /// 获取普通债权信息
         /// </summary>
         /// <param name="title"></param>
         /// <returns></returns>
@@ -131,6 +131,23 @@ namespace XYECOM.Web
             if (strTitle.Length > 15)
             {
                 return strTitle.Substring(0, 15) + "...";
+            }
+            else
+            {
+                return strTitle;
+            }
+        }
+        /// <summary>
+        /// 获取推荐
+        /// </summary>
+        /// <param name="title"></param>
+        /// <returns></returns>
+        public string GetTitleIsDraft(object title)
+        {
+            string strTitle = title.ToString();
+            if (strTitle.Length > 13)
+            {
+                return strTitle.Substring(0, 12) + "...";
             }
             else
             {

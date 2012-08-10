@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Creditor/Creditor.master" AutoEventWireup="true"
-    CodeBehind="EditPartInfo.aspx.cs" Inherits="XYECOM.Web.Creditor.EditPartInfo" %>
+    CodeBehind="ParDetail.aspx.cs" Inherits="XYECOM.Web.Creditor.ParDetail" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style type="text/css">
@@ -22,7 +22,7 @@
         <!--rightpart start-->
         <div id="rightpart">
             <h2>
-                添加部门</h2>
+                查看部门详情</h2>
             <div class="rhr">
             </div>
             <div id="Div1">
@@ -36,9 +36,7 @@
                                 登录名：
                             </td>
                             <td style="color: #999" class="info_lei2" colspan="3">
-                                <asp:TextBox ID="txtLoginName" runat="server"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtLoginName"
-                                    ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
+                                <asp:Label runat="server" ID="labLoginName"></asp:Label>
                             </td>
                             <td class="info_lei3">
                                 初始密码为：000000,添加成功后，请通知相关人员修改密码。
@@ -61,17 +59,13 @@
                                 部门名称：
                             </td>
                             <td style="color: #999" class="info_lei2">
-                                <asp:TextBox ID="txtPartName" runat="server"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtPartName"
-                                    ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
+                                <asp:Label runat="server" ID="labPartName"></asp:Label>
                             </td>
                             <td class="info_lei3">
                                 负责人E-Mail：
                             </td>
                             <td class="info_lei2">
-                                <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtEmail"
-                                    ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
+                                <asp:Label runat="server" ID="labEmail"></asp:Label>
                             </td>
                         </tr>
                         <tr>
@@ -85,9 +79,7 @@
                                 部门负责人：
                             </td>
                             <td style="color: #999" class="info_lei2">
-                                <asp:TextBox ID="txtPartManagerName" runat="server"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtPartManagerName"
-                                    ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
+                                <asp:Label runat="server" ID="labPartManagerName"></asp:Label>
                             </td>
                         </tr>
                         <tr>
@@ -95,17 +87,13 @@
                                 部门联系电话：
                             </td>
                             <td class="info_lei2">
-                                <asp:TextBox ID="txtPartManagerTel" runat="server"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtLoginName"
-                                    ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
+                                <asp:Label runat="server" ID="labPartManagerTel"></asp:Label>
                             </td>
                             <td class="info_lei3">
                                 负责人联系电话：
                             </td>
                             <td class="info_lei2">
-                                <asp:TextBox ID="txtLinkManTel" runat="server"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtLinkManTel"
-                                    ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
+                                <asp:Label runat="server" ID="labLinkManTel"></asp:Label>
                             </td>
                         </tr>
                         <tr>
@@ -113,7 +101,7 @@
                                 其他联系方式：
                             </td>
                             <td class="info_lei2" colspan="3">
-                                <asp:TextBox ID="txtOtherContact" runat="server"></asp:TextBox>
+                                <asp:Label runat="server" ID="labOtherContact"></asp:Label>
                             </td>
                         </tr>
                         <tr>
@@ -138,10 +126,7 @@
                             &nbsp;&nbsp;&nbsp; 部门介绍：
                         </td>
                         <td class="info_lei2">
-                            <asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine" Columns="50"
-                                Rows="5"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtDescription"
-                                ErrorMessage="*" ForeColor="Red" Font-Size="12pt"></asp:RequiredFieldValidator>
+                            <asp:Label ID="labDescription" runat="server" Text=""></asp:Label>
                         </td>
                     </tr>
                 </tbody>
@@ -149,7 +134,8 @@
             <div style="text-align: center; width: 812px; margin-bottom: 20px; height: 47px;
                 padding-top: 18px">
                 <asp:HiddenField ID="hidPartId" runat="server" />
-                <asp:Button ID="btnOK" runat="server" Text="确 定" CssClass="btnok" OnClick="btnOK_Click" />
+                <input type="button" value="返 回" onclick="javascript:history.back();" style="background: url(../Other/images/no.gif);
+                    color: Black; width: 80px; height: 25px; border: none; cursor: pointer; color: #FFF" />
             </div>
         </div>
         <!--rightpart end-->

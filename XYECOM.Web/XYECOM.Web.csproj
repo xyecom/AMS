@@ -271,6 +271,13 @@
     <Compile Include="Creditor\ModifyPwd.aspx.designer.cs">
       <DependentUpon>ModifyPwd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Creditor\ParDetail.aspx.cs">
+      <DependentUpon>ParDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\ParDetail.aspx.designer.cs">
+      <DependentUpon>ParDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Creditor\PartIndex.aspx.cs">
       <DependentUpon>PartIndex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1863,6 +1870,7 @@
     <Content Include="Common\Js\jquery.uploadify\uploadify.swf" />
     <Content Include="content.htm" />
     <Content Include="Copyright.htm" />
+    <Content Include="Creditor\ParDetail.aspx" />
     <Content Include="hpas.htm" />
     <Content Include="js.htm" />
     <Content Include="map.htm" />
@@ -4240,7 +4248,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>8100</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
