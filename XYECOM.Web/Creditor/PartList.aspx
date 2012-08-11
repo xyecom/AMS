@@ -64,6 +64,7 @@
                             <asp:LinkButton ID="lbtnDel" OnClick="lbtnDel_Click" OnClientClick="return confirm('确认删除！')"
                                 CommandArgument='<%# Eval("U_ID") %>' runat="server">删除</asp:LinkButton>&nbsp;&nbsp;&nbsp;&nbsp;<a
                                     href="/Creditor/EditPartInfo.aspx?ac=u&partid=<%# Eval("U_ID") %>">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href='/Creditor/ParDetail.aspx?ac=u&partid=<%# Eval("U_ID") %>'>查看详情</a>&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:LinkButton OnClick="lbtnStatus_Click" CommandArgument='<%# string.Format("{0}|{1}",Eval("U_ID"),Eval("UserAuditingState")) %>'
                                 ID="lbtnStatus" runat="server"><%# ToStateName(Eval("UserAuditingState").ToString(),false)%></asp:LinkButton>
                         </td>

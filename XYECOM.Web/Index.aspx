@@ -116,7 +116,7 @@
                                 <tr>
                                     <td class="tdtitle">
                                         <img alt="推荐信息" src="/Other/images/jian.gif" /><asp:HyperLink ID="hlShowTender" runat="server"
-                                            NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>' ToolTip='<%# Eval("Title") %>'><%# GetTitle(Eval("Title"))%></asp:HyperLink>
+                                            NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>' ToolTip='<%# Eval("Title") %>'><%# GetTitleIsDraft(Eval("Title"))%></asp:HyperLink>
                                     </td>
                                     <td class="tdprice">
                                         ￥<%# Eval("Arrears")%>

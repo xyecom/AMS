@@ -37,7 +37,7 @@
             <li runat="server" id="liPart"><a tabindex="10" href="/Creditor/PartList.aspx">部门管理</a></li>
             <li><a tabindex="11" href="/Creditor/ReceiveMessageList.aspx">站内信</a></li>
            <li><a tabindex="4" href="/Creditor/ModifyPwd.aspx">密码修改</a></li>
-            <li><a tabindex="12" href="#" title="暂未开放">认证管理</a></li>
+<%--            <li><a tabindex="12" href="#" title="暂未开放">认证管理</a></li>--%>
             <li><a tabindex="13" href="/Creditor/UpLoadPicture.aspx">头像修改</a></li></ul>
     </div>
 </div>

@@ -47,7 +47,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>true</RunCodeAnalysis>
-    <CodeAnalysisRules>-Microsoft.Interoperability#CA1403;-Microsoft.Interoperability#CA1406;-Microsoft.Interoperability#CA1413;-Microsoft.Interoperability#CA1402;-Microsoft.Interoperability#CA1407;-Microsoft.Interoperability#CA1404;-Microsoft.Interoperability#CA1410;-Microsoft.Interoperability#CA1411;-Microsoft.Interoperability#CA1405;-Microsoft.Interoperability#CA1409;-Microsoft.Interoperability#CA1415;-Microsoft.Interoperability#CA1408;-Microsoft.Interoperability#CA1414;-Microsoft.Interoperability#CA1412;-Microsoft.Interoperability#CA1400;-Microsoft.Interoperability#CA1401;-Microsoft.Reliability#CA2000;-Microsoft.Reliability#CA2002;-Microsoft.Reliability#CA2003;-Microsoft.Reliability#CA2004;-Microsoft.Reliability#CA2006;-Microsoft.Maintainability#CA1502;-Microsoft.Maintainability#CA1501;-Microsoft.Maintainability#CA1500;-Microsoft.Portability#CA1901;-Microsoft.Portability#CA1900;-Microsoft.Naming#CA1718;-Microsoft.Naming#CA1720;-Microsoft.Naming#CA1700;-Microsoft.Naming#CA1712;-Microsoft.Naming#CA1713;-Microsoft.Naming#CA1709;-Microsoft.Naming#CA1708;-Microsoft.Naming#CA1715;-Microsoft.Naming#CA1710;-Microsoft.Naming#CA1707;-Microsoft.Naming#CA1722;-Microsoft.Naming#CA1711;-Microsoft.Naming#CA1716;-Microsoft.Naming#CA1705;-Microsoft.Naming#CA1725;-Microsoft.Naming#CA1719;-Microsoft.Naming#CA1721;-Microsoft.Naming#CA1706;-Microsoft.Naming#CA1724;-Microsoft.Naming#CA1726;-Microsoft.Globalization#CA1301;-Microsoft.Globalization#CA1302;-Microsoft.Globalization#CA1303;-Microsoft.Globalization#CA1306;-Microsoft.Globalization#CA1304;-Microsoft.Globalization#CA1305;-Microsoft.Globalization#CA1300;-Microsoft.Design#CA1012;-Microsoft.Design#CA2210;-Microsoft.Design#CA1040;-Microsoft.Design#CA1005;-Microsoft.Design#CA1020;-Microsoft.Design#CA1021;-Microsoft.Design#CA1010;-Microsoft.Design#CA1011;-Microsoft.Design#CA1009;-Microsoft.Design#CA1050;-Microsoft.Design#CA1026;-Microsoft.Design#CA1019;-Microsoft.Design#CA1031;-Microsoft.Design#CA1047;-Microsoft.Design#CA1000;-Microsoft.Design#CA1048;-Microsoft.Design#CA1051;-Microsoft.Design#CA1002;-Microsoft.Design#CA1061;-Microsoft.Design#CA1006;-Microsoft.Design#CA1046;-Microsoft.Design#CA1045;-Microsoft.Design#CA1038;-Microsoft.Design#CA1008;-Microsoft.Design#CA1028;-Microsoft.Design#CA1004;-Microsoft.Design#CA1035;-Microsoft.Design#CA1063;-Microsoft.Design#CA1032;-Microsoft.Design#CA1023;-Microsoft.Design#CA1033;-Microsoft.Design#CA1039;-Microsoft.Design#CA1016;-Microsoft.Design#CA1014;-Microsoft.Design#CA1017;-Microsoft.Design#CA1018;-Microsoft.Design#CA1027;-Microsoft.Design#CA1059;-Microsoft.Design#CA1060;-Microsoft.Design#CA1034;-Microsoft.Design#CA1013;-Microsoft.Design#CA1036;-Microsoft.Design#CA1044;-Microsoft.Design#CA1041;-Microsoft.Design#CA1025;-Microsoft.Design#CA1052;-Microsoft.Design#CA1053;-Microsoft.Design#CA1057;-Microsoft.Design#CA1058;-Microsoft.Design#CA1001;-Microsoft.Design#CA1049;-Microsoft.Design#CA1054;-Microsoft.Design#CA1056;-Microsoft.Design#CA1055;-Microsoft.Design#CA1030;-Microsoft.Design#CA1003;-Microsoft.Design#CA1007;-Microsoft.Design#CA1043;-Microsoft.Design#CA1024;-Microsoft.Design#CA1062;-Microsoft.Performance#CA1809;-Microsoft.Performance#CA1811;-Microsoft.Performance#CA1812;-Microsoft.Performance#CA1807;-Microsoft.Performance#CA1813;-Microsoft.Performance#CA1823;-Microsoft.Performance#CA1816;-Microsoft.Performance#CA1817;-Microsoft.Performance#CA1800;-Microsoft.Performance#CA1818;-Microsoft.Performance#CA1805;-Microsoft.Performance#CA1810;-Microsoft.Performance#CA1822;-Microsoft.Performance#CA1815;-Microsoft.Performance#CA1814;-Microsoft.Performance#CA1819;-Microsoft.Performance#CA1804;-Microsoft.Performance#CA1820;-Microsoft.Performance#CA1802;-Microsoft.Mobility#CA1600;-Microsoft.Mobility#CA1601;-Microsoft.Usage#CA2209;-Microsoft.Usage#CA2236;-Microsoft.Usage#CA2227;-Microsoft.Usage#CA2213;-Microsoft.Usage#CA2216;-Microsoft.Usage#CA2215;-Microsoft.Usage#CA2214;-Microsoft.Usage#CA2222;-Microsoft.Usage#CA2202;-Microsoft.Usage#CA1806;-Microsoft.Usage#CA2217;-Microsoft.Usage#CA2212;-Microsoft.Usage#CA2219;-Microsoft.Usage#CA2201;-Microsoft.Usage#CA2228;-Microsoft.Usage#CA2221;-Microsoft.Usage#CA2220;-Microsoft.Usage#CA2240;-Microsoft.Usage#CA2229;-Microsoft.Usage#CA2238;-Microsoft.Usage#CA2207;-Microsoft.Usage#CA2208;-Microsoft.Usage#CA2235;-Microsoft.Usage#CA2237;-Microsoft.Usage#CA2232;-Microsoft.Usage#CA2223;-Microsoft.Usage#CA2211;-Microsoft.Usage#CA2233;-Microsoft.Usage#CA2225;-Microsoft.Usage#CA2226;-Microsoft.Usage#CA2231;-Microsoft.Usage#CA2224;-Microsoft.Usage#CA2218;-Microsoft.Usage#CA2234;-Microsoft.Usage#CA2241;-Microsoft.Usage#CA2239;-Microsoft.Usage#CA2200;-Microsoft.Usage#CA1801;-Microsoft.Usage#CA2205;-Microsoft.Usage#CA2230</CodeAnalysisRules>
+    <CodeAnalysisRules>-Microsoft.Interoperability#CA1403;-Microsoft.Interoperability#CA1406;-Microsoft.Interoperability#CA1413;-Microsoft.Interoperability#CA1402;-Microsoft.Interoperability#CA1407;-Microsoft.Interoperability#CA1404;-Microsoft.Interoperability#CA1410;-Microsoft.Interoperability#CA1411;-Microsoft.Interoperability#CA1405;-Microsoft.Interoperability#CA1409;-Microsoft.Interoperability#CA1415;-Microsoft.Interoperability#CA1408;-Microsoft.Interoperability#CA1414;-Microsoft.Interoperability#CA1412;-Microsoft.Interoperability#CA1400;-Microsoft.Interoperability#CA1401;-Microsoft.Reliability#CA2000;-Microsoft.Reliability#CA2002;-Microsoft.Reliability#CA2003;-Microsoft.Reliability#CA2004;-Microsoft.Reliability#CA2006;-Microsoft.Maintainability#CA1502;-Microsoft.Maintainability#CA1501;-Microsoft.Maintainability#CA1500;-Microsoft.Portability#CA1901;-Microsoft.Portability#CA1900;-Microsoft.Naming#CA1718;-Microsoft.Naming#CA1720;-Microsoft.Naming#CA1700;-Microsoft.Naming#CA1712;-Microsoft.Naming#CA1713;-Microsoft.Naming#CA1709;-Microsoft.Naming#CA1708;-Microsoft.Naming#CA1715;-Microsoft.Naming#CA1710;-Microsoft.Naming#CA1707;-Microsoft.Naming#CA1722;-Microsoft.Naming#CA1711;-Microsoft.Naming#CA1716;-Microsoft.Naming#CA1705;-Microsoft.Naming#CA1725;-Microsoft.Naming#CA1719;-Microsoft.Naming#CA1721;-Microsoft.Naming#CA1706;-Microsoft.Naming#CA1724;-Microsoft.Naming#CA1726;-Microsoft.Globalization#CA1301;-Microsoft.Globalization#CA1302;-Microsoft.Globalization#CA1303;-Microsoft.Globalization#CA1306;-Microsoft.Globalization#CA1304;-Microsoft.Globalization#CA1305;-Microsoft.Globalization#CA1300;-Microsoft.Design#CA1012;-Microsoft.Design#CA2210;-Microsoft.Design#CA1040;-Microsoft.Design#CA1005;-Microsoft.Design#CA1020;-Microsoft.Design#CA1021;-Microsoft.Design#CA1010;-Microsoft.Design#CA1011;-Microsoft.Design#CA1009;-Microsoft.Design#CA1050;-Microsoft.Design#CA1026;-Microsoft.Design#CA1019;-Microsoft.Design#CA1031;-Microsoft.Design#CA1047;-Microsoft.Design#CA1000;-Microsoft.Design#CA1048;-Microsoft.Design#CA1051;-Microsoft.Design#CA1002;-Microsoft.Design#CA1061;-Microsoft.Design#CA1006;-Microsoft.Design#CA1046;-Microsoft.Design#CA1045;-Microsoft.Design#CA1038;-Microsoft.Design#CA1008;-Microsoft.Design#CA1028;-Microsoft.Design#CA1004;-Microsoft.Design#CA1035;-Microsoft.Design#CA1063;-Microsoft.Design#CA1032;-Microsoft.Design#CA1023;-Microsoft.Design#CA1033;-Microsoft.Design#CA1039;-Microsoft.Design#CA1016;-Microsoft.Design#CA1014;-Microsoft.Design#CA1017;-Microsoft.Design#CA1018;-Microsoft.Design#CA1027;-Microsoft.Design#CA1059;-Microsoft.Design#CA1060;-Microsoft.Design#CA1034;-Microsoft.Design#CA1013;-Microsoft.Design#CA1036;-Microsoft.Design#CA1044;-Microsoft.Design#CA1041;-Microsoft.Design#CA1025;-Microsoft.Design#CA1052;-Microsoft.Design#CA1053;-Microsoft.Design#CA1057;-Microsoft.Design#CA1058;-Microsoft.Design#CA1001;-Microsoft.Design#CA1049;-Microsoft.Design#CA1054;-Microsoft.Design#CA1056;-Microsoft.Design#CA1055;-Microsoft.Design#CA1030;-Microsoft.Design#CA1003;-Microsoft.Design#CA1007;-Microsoft.Design#CA1043;-Microsoft.Design#CA1024;-Microsoft.Design#CA1062;-Microsoft.Performance#CA1809;-Microsoft.Performance#CA1811;-Microsoft.Performance#CA1812;-Microsoft.Performance#CA1807;-Microsoft.Performance#CA1813;-Microsoft.Performance#CA1823;-Microsoft.Performance#CA1816;-Microsoft.Performance#CA1817;-Microsoft.Performance#CA1800;-Microsoft.Performance#CA1818;-Microsoft.Performance#CA1805;-Microsoft.Performance#CA1810;-Microsoft.Performance#CA1822;-Microsoft.Performance#CA1815;-Microsoft.Performance#CA1814;-Microsoft.Performance#CA1819;-Microsoft.Performance#CA1804;-Microsoft.Performance#CA1820;-Microsoft.Performance#CA1802;-Microsoft.Mobility#CA1600;-Microsoft.Mobility#CA1601;-Microsoft.Usage#CA2209;-Microsoft.Usage#CA2236;-Microsoft.Usage#CA2227;-Microsoft.Usage#CA2213;-Microsoft.Usage#CA2216;-Microsoft.Usage#CA2215;-Microsoft.Usage#CA2214;-Microsoft.Usage#CA2222;-Microsoft.Usage#CA2202;-Microsoft.Usage#CA1806;-Microsoft.Usage#CA2217;-Microsoft.Usage#CA2212;-Microsoft.Usage#CA2219;-Microsoft.Usage#CA2201;-Microsoft.Usage#
+CA2228;-Microsoft.Usage#CA2221;-Microsoft.Usage#CA2220;-Microsoft.Usage#CA2240;-Microsoft.Usage#CA2229;-Microsoft.Usage#CA2238;-Microsoft.Usage#CA2207;-Microsoft.Usage#CA2208;-Microsoft.Usage#CA2235;-Microsoft.Usage#CA2237;-Microsoft.Usage#CA2232;-Microsoft.Usage#CA2223;-Microsoft.Usage#CA2211;-Microsoft.Usage#CA2233;-Microsoft.Usage#CA2225;-Microsoft.Usage#CA2226;-Microsoft.Usage#CA2231;-Microsoft.Usage#CA2224;-Microsoft.Usage#CA2218;-Microsoft.Usage#CA2234;-Microsoft.Usage#CA2241;-Microsoft.Usage#CA2239;-Microsoft.Usage#CA2200;-Microsoft.Usage#CA1801;-Microsoft.Usage#CA2205;-Microsoft.Usage#CA2230</CodeAnalysisRules>
     <DocumentationFile>bin\XYECOM.Web.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
@@ -270,6 +271,13 @@
     </Compile>
     <Compile Include="Creditor\ModifyPwd.aspx.designer.cs">
       <DependentUpon>ModifyPwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor\ParDetail.aspx.cs">
+      <DependentUpon>ParDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor\ParDetail.aspx.designer.cs">
+      <DependentUpon>ParDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Creditor\PartIndex.aspx.cs">
       <DependentUpon>PartIndex.aspx</DependentUpon>
@@ -1818,46 +1826,6 @@
     <Content Include="Activation .aspx" />
     <Content Include="Agreement.htm" />
     <Content Include="aqcn.htm" />
-    <Content Include="bin\FredCK.FCKeditorV2.dll" />
-    <Content Include="bin\FredCK.FCKeditorV2.pdb" />
-    <Content Include="bin\log4net.dll" />
-    <Content Include="bin\XYECOM.Business.dll" />
-    <Content Include="bin\XYECOM.Business.pdb" />
-    <Content Include="bin\XYECOM.Business.xml" />
-    <Content Include="bin\XYECOM.Cache.dll" />
-    <Content Include="bin\XYECOM.Cache.pdb" />
-    <Content Include="bin\XYECOM.Cache.xml" />
-    <Content Include="bin\XYECOM.Configuration.dll" />
-    <Content Include="bin\XYECOM.Configuration.pdb" />
-    <Content Include="bin\XYECOM.Configuration.xml" />
-    <Content Include="bin\XYECOM.Core.dll" />
-    <Content Include="bin\XYECOM.Core.pdb" />
-    <Content Include="bin\XYECOM.Core.xml" />
-    <Content Include="bin\XYECOM.Label.dll" />
-    <Content Include="bin\XYECOM.Label.pdb" />
-    <Content Include="bin\XYECOM.Label.xml" />
-    <Content Include="bin\XYECOM.Model.dll" />
-    <Content Include="bin\XYECOM.Model.pdb" />
-    <Content Include="bin\XYECOM.Model.xml" />
-    <Content Include="bin\XYECOM.Page.dll" />
-    <Content Include="bin\XYECOM.Page.pdb" />
-    <Content Include="bin\XYECOM.Page.xml" />
-    <Content Include="bin\XYECOM.Plugin.Payment.dll" />
-    <Content Include="bin\XYECOM.Plugin.Payment.pdb" />
-    <Content Include="bin\XYECOM.Plugin.Payment.xml" />
-    <Content Include="bin\XYECOM.SQLServer.dll" />
-    <Content Include="bin\XYECOM.SQLServer.pdb" />
-    <Content Include="bin\XYECOM.SQLServer.xml" />
-    <Content Include="bin\XYECOM.Template.dll" />
-    <Content Include="bin\XYECOM.Template.pdb" />
-    <Content Include="bin\XYECOM.Template.xml" />
-    <Content Include="bin\XYECOM.URL.dll" />
-    <Content Include="bin\XYECOM.URL.pdb" />
-    <Content Include="bin\XYECOM.URL.xml" />
-    <Content Include="bin\XYECOM.Web.dll" />
-    <Content Include="bin\XYECOM.Web.dll.CodeAnalysisLog.xml" />
-    <Content Include="bin\XYECOM.Web.pdb" />
-    <Content Include="bin\XYECOM.Web.XML" />
     <Content Include="cdz.htm" />
     <Content Include="Common\Controls\CascadeData.ascx" />
     <Content Include="Common\Css\css.css" />
@@ -1903,63 +1871,14 @@
     <Content Include="Common\Js\jquery.uploadify\uploadify.swf" />
     <Content Include="content.htm" />
     <Content Include="Copyright.htm" />
-    <Content Include="hcc.htm" />
+    <Content Include="Creditor\ParDetail.aspx" />
     <Content Include="hpas.htm" />
-    <Content Include="hqyj.htm" />
-    <Content Include="HttpErrors\404.htm" />
     <Content Include="js.htm" />
     <Content Include="map.htm" />
     <Content Include="mpart.htm" />
-    <Content Include="Other\images\no.gif" />
     <Content Include="Server\CredList.aspx" />
     <Content Include="sytk.htm" />
     <Content Include="Test.aspx" />
-    <Content Include="Upload\CreditInfo\12-07-22\120722231919218.gif" />
-    <Content Include="Upload\CreditInfo\12-07-22\120722231919265.gif" />
-    <Content Include="Upload\CreditInfo\12-07-22\120722231919281.jpg" />
-    <Content Include="Upload\CreditInfo\12-07-23\120723095913906.jpg" />
-    <Content Include="Upload\CreditInfo\12-07-23\120723095913937.jpg" />
-    <Content Include="Upload\CreditInfo\12-07-24\120724085437421.jpg" />
-    <Content Include="Upload\CreditInfo\12-07-25\120725162647468.jpg" />
-    <Content Include="Upload\CreditInfo\12-07-30\120730154902968.jpg" />
-    <Content Include="Upload\CreditInfo\12-07-30\120730154903015.jpg" />
-    <Content Include="Upload\CreditInfo\12-07-31\120731092504578.gif" />
-    <Content Include="Upload\CreditInfo\12-07-31\120731101212843.jpg" />
-    <Content Include="Upload\CreditInfo\12-07-31\120731101212875.jpg" />
-    <Content Include="Upload\CreditInfo\12-07-31\120731101318265.jpg" />
-    <Content Include="Upload\CreditInfo\12-07-31\120731101318296.png" />
-    <Content Include="Upload\CreditInfo\12-07-31\120731101550218.jpg" />
-    <Content Include="Upload\CreditInfo\12-07-31\120731101550265.jpg" />
-    <Content Include="Upload\CreditInfo\12-07-31\120731101709156.png" />
-    <Content Include="Upload\CreditInfo\12-07-31\120731101709218.jpg" />
-    <Content Include="Upload\CreditInfo\12-07-31\120731101709234.jpg" />
-    <Content Include="Upload\CreditInfo\12-07-31\120731101833953.png" />
-    <Content Include="Upload\CreditInfo\12-07-31\120731101833984.png" />
-    <Content Include="Upload\CreditInfo\12-07-31\120731101834031.png" />
-    <Content Include="Upload\CreditInfo\12-07-31\120731221042093.jpg" />
-    <Content Include="Upload\CreditInfo\12-08-01\120801085551062.jpg" />
-    <Content Include="Upload\CreditInfo\12-08-01\120801085551093.jpg" />
-    <Content Include="Upload\CreditInfo\12-08-01\120801085551187.jpg" />
-    <Content Include="Upload\CreditInfo\12-08-01\120801090607781.gif" />
-    <Content Include="Upload\CreditInfo\12-08-01\120801090607812.jpg" />
-    <Content Include="Upload\CreditInfo\12-08-01\120801090607843.png" />
-    <Content Include="Upload\CreditInfo\12-08-01\120801090607906.jpg" />
-    <Content Include="Upload\CreditInfo\12-08-01\120801090607921.png" />
-    <Content Include="Upload\CreditInfo\12-08-01\120801090608031.png" />
-    <Content Include="Upload\CreditInfo\12-08-01\120801091526593.png" />
-    <Content Include="Upload\CreditInfo\12-08-01\120801091526671.jpg" />
-    <Content Include="Upload\CreditInfo\12-08-01\120801091526703.jpg" />
-    <Content Include="Upload\CreditInfo\12-08-01\120801091526734.gif" />
-    <Content Include="Upload\CreditInfo\12-08-01\120801092651031.gif" />
-    <Content Include="UserManage\EnterUserCenter.aspx" />
-    <Content Include="UserManage\IndividualList.aspx" />
-    <Content Include="UserManage\LivenessInfo.aspx" />
-    <Content Include="UserManage\PartInfo.aspx" />
-    <Content Include="UserManage\SubUserList.aspx" />
-    <Content Include="UserManage\UserDomainManage.aspx" />
-    <Content Include="UserManage\UserInfo.aspx" />
-    <Content Include="UserManage\UserListManger.aspx" />
-    <Content Include="UserManage\UserMoreInfo.aspx" />
     <Content Include="yszc.htm" />
     <Content Include="zhaopin.htm" />
     <Content Include="zq.htm" />
@@ -4175,7 +4094,6 @@
     <Content Include="Common\XYAjax.ashx" />
     <Content Include="Common\DownLoad.ashx" />
     <Content Include="Common\CaseUploadHandler.ashx" />
-    <None Include="bin\XYECOM.Web.dll.lastcodeanalysissucceeded" />
     <None Include="Common\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.cfm" />
     <None Include="Common\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.php" />
     <None Include="Common\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.pl" />
@@ -4270,10 +4188,6 @@
     <Content Include="xymanage\VoteManage\MoreText.aspx" />
     <Content Include="xymanage\VoteManage\SubjectManage.aspx" />
     <Content Include="xymanage\VoteManage\VoteResult.aspx" />
-    <Content Include="_LogData\log.config" />
-    <Content Include="_LogData\manage.config" />
-    <Content Include="_LogData\Service.config" />
-    <Content Include="_LogData\user.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FCKeditor.Net_2.5\FredCK.FCKeditorV2.csproj">
@@ -4314,15 +4228,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="aspnet_client\system_web\4_0_30319\" />
     <Folder Include="aspx\" />
     <Folder Include="cache\" />
-    <Folder Include="Case\" />
     <Folder Include="templates\default\icon\" />
     <Folder Include="templates\_shop\skins_2009\001\css\bgimages\" />
     <Folder Include="templates\_shop\store\css\bgimages\" />
     <Folder Include="templates\_shop\yys_2009\001\css\bgimages\" />
-    <Folder Include="_BackUp\" />
+    <Folder Include="Upload\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -4337,7 +4249,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>8100</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
