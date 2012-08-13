@@ -222,11 +222,30 @@
                             </div>
                             <div>
                                 <p style="text-align: center;">
-                                    <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label></p>
+                                    <asp:Label ID="lblMessage" runat="server" ForeColor="Red" Font-Bold="True"></asp:Label></p>
                             </div>
-                            <div style="width: 710px; height: 40px; line-height: 40px; text-align: center">
-                                  <div style=" background:url(/Other/images/yes.gif) no-repeat; width:396px; height: 25px; float:right; line-height:25px; text-align:left; padding-left:10px; margin:10px"><a href="javascript:void(0)" onclick="showFloat()"><strong style="color:White">我要报价</strong></a></div> 
-                            </div>
+
+
+        <div style="width: 656px; height: 25px; line-height: 25px; text-align:center; margin: 10px">
+  
+             <input type="button" value="我要报价" onclick="showFloat()" style="background: url(/Other/images/yes.gif);
+                        color: Black;   width: 80px; height: 25px; border: none; cursor: pointer; color: #FFF" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="Index.aspx"><strong style="color:Red">返回首页</strong></a>
+
+            </div> 
+
+     <div style="width:700px; padding-left:30px; height:60px">                      
+<!-- Baidu Button BEGIN -->
+    <div id="bdshare" class="bdshare_b" style="line-height: 12px;"><img src="http://bdimg.share.baidu.com/static/images/type-button-5.jpg" />
+		<a class="shareCount"></a>
+	</div>
+<script type="text/javascript" id="bdshare_js" data="type=button&amp;uid=251453" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script>
+<!-- Baidu Button END -->
+ </div>                    
                             <!--加一个半透明层-->
                             <div id="doing" style="filter: alpha(opacity=30); -moz-opacity: 0.3; opacity: 0.3;
                                 background-color: #000; width: 100%; height: 100%; z-index: 800; position: absolute;

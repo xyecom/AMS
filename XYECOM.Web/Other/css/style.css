@@ -48,7 +48,7 @@ height:32px;
 	float:left; width:114px; line-height:32px;  text-align:center; margin-right:-2px; margin-left:-2px;
 }
 .m_li a{
-	display:block; color:#FFFFFF; width:114px;
+	display:block; color:#FFFFFF; width:114px; font-weight:bold
 }
 .m_line{
 	float:left; width:1px; height:32px;

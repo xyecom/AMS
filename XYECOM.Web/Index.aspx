@@ -5,6 +5,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>首页</title>
+    <script src="Other/js/ServiceQQ.js" type="text/javascript"></script>
+    <link href="Other/css/qq.css" rel="stylesheet" type="text/css" />
+
     <script language="javascript" type="text/javascript" src="/Common/js/base.js"></script>
     <link href="/Other/css/vipnew_home_20110412.css" rel="stylesheet" type="text/css" />
     <link href="/Other/css/style.css" rel="stylesheet" type="text/css" />
@@ -34,9 +37,13 @@
             height: 25px;
         }
     </style>
+<%--<script src="Other/js/kefu.js" type="text/javascript"></script>
+<link href="Other/css/kefu.css" rel="stylesheet" type="text/css" />
+--%>
 </head>
 <body>
-    <form id="form1" runat="server">
+
+   <form id="form1" runat="server">
     <div id="all">
         <!--头部开始-->
         <div id="header">
@@ -117,8 +124,8 @@
                     </div>
                     <table id="zqlist1">
                         <tr>
-                            <td height="23" class="tdtitle">
-                                债权标题
+                            <td class="tdtitle">
+                                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;债权标题
                             </td>
                             <td class="tdprice">
                                 标的金额
@@ -182,114 +189,6 @@
                                     </tr>
                                 </ItemTemplate>
                             </asp:Repeater>
-<%--                            <tr>
-                                <td class="tdtitle">
-                                    <a id="dlCreditList_ctl00_hlShowTender" title="测试2" href="/CreditInfoDetail.aspx?Id=20">
-                                        测试2</a>
-                                </td>
-                                <td class="tdprice">
-                                    ￥6.00
-                                </td>
-                                <td class="tdarea">
-                                    陕西,咸阳市
-                                </td>
-                                <td class="tdtime">
-                                    2012-08-11
-                                </td>
-                                <td class="tdnumber">
-                                    0
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdtitle">
-                                    <a id="dlCreditList_ctl01_hlShowTender" title="测试1" href="/CreditInfoDetail.aspx?Id=19">
-                                        测试1</a>
-                                </td>
-                                <td class="tdprice">
-                                    ￥7.00
-                                </td>
-                                <td class="tdarea">
-                                    陕西,咸阳市
-                                </td>
-                                <td class="tdtime">
-                                    2012-08-11
-                                </td>
-                                <td class="tdnumber">
-                                    0
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdtitle">
-                                    <a id="dlCreditList_ctl02_hlShowTender" title="ss" href="/CreditInfoDetail.aspx?Id=18">
-                                        ss</a>
-                                </td>
-                                <td class="tdprice">
-                                    ￥512.01
-                                </td>
-                                <td class="tdarea">
-                                    北京
-                                </td>
-                                <td class="tdtime">
-                                    2012-07-31
-                                </td>
-                                <td class="tdnumber">
-                                    0
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdtitle">
-                                    <a id="dlCreditList_ctl03_hlShowTender" title="热热热热热热热热热热v" href="/CreditInfoDetail.aspx?Id=17">
-                                        热热热热热热热热热热v</a>
-                                </td>
-                                <td class="tdprice">
-                                    ￥4.00
-                                </td>
-                                <td class="tdarea">
-                                    安徽
-                                </td>
-                                <td class="tdtime">
-                                    2012-07-31
-                                </td>
-                                <td class="tdnumber">
-                                    0
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdtitle">
-                                    <a id="dlCreditList_ctl04_hlShowTender" title="我饿的" href="/CreditInfoDetail.aspx?Id=9">
-                                        我饿的</a>
-                                </td>
-                                <td class="tdprice">
-                                    ￥4.00
-                                </td>
-                                <td class="tdarea">
-                                    内蒙
-                                </td>
-                                <td class="tdtime">
-                                    2012-07-27
-                                </td>
-                                <td class="tdnumber">
-                                    0
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdtitle">
-                                    <a id="dlCreditList_ctl05_hlShowTender" title="写欠条用错多音字“还” 2万元打水漂" href="/CreditInfoDetail.aspx?Id=6">
-                                        写欠条用错多音字“还” 2万元...</a>
-                                </td>
-                                <td class="tdprice">
-                                    ￥30000.00
-                                </td>
-                                <td class="tdarea">
-                                    湖北
-                                </td>
-                                <td class="tdtime">
-                                    2012-07-25
-                                </td>
-                                <td class="tdnumber">
-                                    0
-                                </td>
-                            </tr>--%>
                         </table>
                     </div>
                     <div>
@@ -325,7 +224,8 @@
                 </div>
                 <!--left3 结束-->
                 <div style="width: 730px; height: 100px; margin-top: 5px; margin-left: 3px">
-                    <img src="/Other/images/5160202_091214089001_2.gif" />
+               <img src="/Other/images/5160202_091214089001_2.gif" />
+                <%--  <img src="/Other/images/left34.gif" />--%>
                 </div>
                 <!--left4开始-->
                 <div id="left4">
@@ -397,15 +297,7 @@
                 <!--right2开始-->
                 <div id="right2">
                     <strong style="margin-left: 20px;">企业纪事</strong>
-                    <div class="qul">
-                        <ul>
-                            <li><font>【2011年3月】</font> 公司策划开始···</li>
-                            <li><font>【2011年3月】</font> 公司策划开始···</li>
-                            <li><font>【2011年3月】</font> 公司策划开始···</li>
-                            <li><font>【2011年3月】</font> 公司策划开始···</li>
-                            <li><font>【2011年3月】</font> 公司策划开始···</li>
-                        </ul>
-                    </div>
+                  <img src="/Other/images/right2.gif" style="border: none" />
                 </div>
                 <!--right2结束-->
                 <!--right3开始-->

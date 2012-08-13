@@ -1,0 +1,39 @@
+/*客服服务开始*/
+.QQbox {
+	Z-INDEX: 99; RIGHT: 0px; WIDTH: 178px; POSITION: absolute; TOP: 40px
+}
+.QQbox .press {
+	RIGHT: 0px; WIDTH: 33px; CURSOR: pointer; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; POSITION: absolute; HEIGHT: 158px; BORDER-BOTTOM-STYLE: none
+}
+.QQbox .Qlist {
+	BACKGROUND: url('../images/qq_listbg.gif') repeat-y -155px 0px; LEFT: 0px; WIDTH: 125px; POSITION: absolute;
+}
+.QQbox .Qlist .t {
+	FONT-SIZE: 1px; FLOAT: right; WIDTH: 145px; HEIGHT: 6px
+}
+.QQbox .Qlist .b {
+	FONT-SIZE: 1px; FLOAT: right; WIDTH: 145px; HEIGHT: 6px
+}
+
+.QQbox .Qlist .con {
+	BACKGROUND: #fff; MARGIN: 0px auto; WIDTH: 90%;
+}
+.QQbox .Qlist .con H2 {
+	BORDER-RIGHT: #3a708d 1px solid; BORDER-TOP: #3a708d 1px solid; BACKGROUND: url('../images/qq_listbg.gif') repeat-y -163px 0px; FONT: bold 12px/22px "宋体"; BORDER-LEFT: #3a708d 1px solid; COLOR: #fff; BORDER-BOTTOM: #3a708d 1px solid; HEIGHT: 22px; TEXT-ALIGN: center
+}
+.QQbox .Qlist .con UL {
+	
+}
+.QQbox .Qlist .con UL LI {
+	PADDING: 8px; BACKGROUND: #ffffff; HEIGHT: 20px;
+}
+.QQbox .Qlist .con UL LI.odd {BACKGROUND: #fff;height:22px;}
+
+.QQbox .Qlist .con UL LI.odd img{vertical-align:middle;}
+
+.QQbox .Qlist .con UL LI.odd1 {BACKGROUND: #fff; height:72px; padding-left:7px;}
+
+.QQbox .Qlist .con UL LI.odd2{ font-size:13px; height:22px;FONT: 13px Verdana;}
+
+.QQbox .Qlist .con UL LI SPAN{MARGIN-LEFT:5PX;}
+/*客服服务结束*/

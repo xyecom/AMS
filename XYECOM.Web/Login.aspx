@@ -12,7 +12,7 @@
         <!----------头部开始----------------->
         <div id="top">
             <div class="logo">
-                <img src="/Other/images/logo.png" alt="" /></div>
+                <a href="Index.aspx" title="返回首页"><img src="/Other/images/logo.png" style=" border:none" /></a></div>
             <p class="p1">
                 <a href="aboutus.htm">关于我们</a> | <a href="aqcn.htm">安全承诺</a> |  <a href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.baoqt.cn/')">
                     设为首页</a> | <a href='#' onclick='window.external.AddFavorite("http://www.baoqt.cn/","【包青天债权管理网】")'>

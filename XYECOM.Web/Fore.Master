@@ -9,7 +9,6 @@
     <link href="/Other/css/style.css" rel="stylesheet" type="text/css" />
     <script src="/Other/js/zu.js" type="text/javascript"></script>
     <script src="/Other/js/update8.js" type="text/javascript"></script>
-
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -76,16 +75,7 @@
                 <!--right1结束-->
                 <!--right2开始-->
                 <div id="right2">
-                    <strong style="margin-left: 20px;">企业纪事</strong>
-                    <div class="qul">
-                        <ul>
-                            <li><font>【2011年3月】</font> 公司策划开始···</li>
-                            <li><font>【2011年3月】</font> 公司策划开始···</li>
-                            <li><font>【2011年3月】</font> 公司策划开始···</li>
-                            <li><font>【2011年3月】</font> 公司策划开始···</li>
-                            <li><font>【2011年3月】</font> 公司策划开始···</li>
-                        </ul>
-                    </div>
+       <img src="/Other/images/right2.gif" style="border: none" />
                 </div>
                 <!--right2结束-->
                 <!--right3开始-->

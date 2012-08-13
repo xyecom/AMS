@@ -35,9 +35,7 @@
     <div id="middle">
         <!--nav end-->
         <!--topbar start-->
-        <div id="topbar">
-            <a href="#">
-                <img src="/Other/images/logo.gif" align="left" /></a>
+        <div id="topbar"> <a href="../Index.aspx"><img src="/Other/images/logo.gif" align="left" title="返回网站首页" /></a>
         </div>
         <!--topbar end-->
         <!--nav start-->
