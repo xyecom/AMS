@@ -127,9 +127,9 @@ namespace XYECOM.SQLServer
             sql += "PtName=@PtName,";
             sql += "InfoCount=@InfoCount,";
             sql += "UserId=@UserId,";
-            sql += "ParentId=@ParentId";
+            sql += "ParentId=@ParentId,";
             sql += "remark=@remark";
-            sql += " where Id = @Id";
+            sql += " where Id = @Id;update CaseInfo Set CaseTypeName=@PtName where CaseTypeId=@Id";
             return SqlHelper.ExecuteNonQuery(CommandType.Text, sql, parame);
         }
 

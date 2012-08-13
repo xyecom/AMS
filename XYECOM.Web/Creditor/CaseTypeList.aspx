@@ -35,7 +35,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="操作" ItemStyle-Width="200px">
                         <ItemTemplate>
-                            <asp:LinkButton ID="btnDel" runat="server" CommandArgument='<%# Eval("Id") %>' OnClick="btnDel_Click">删除</asp:LinkButton>
+                            <asp:LinkButton ID="btnDel" runat="server"  OnClientClick="javascript:return confirm('确定删除？');" CommandArgument='<%# Eval("Id") %>' OnClick="btnDel_Click">删除</asp:LinkButton>
                             <a href='/Creditor/CaseTypeAdd.aspx?id=<%# Eval("Id") %>'>修改</a> <a href='/Creditor/CaseList.aspx?id=<%# Eval("Id") %>'>
                                 档案管理 </a>
                         </ItemTemplate>

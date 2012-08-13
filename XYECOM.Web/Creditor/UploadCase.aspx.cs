@@ -32,8 +32,8 @@ namespace XYECOM.Web.Creditor
                 this.txtDescription.Text = info.Description;
                 this.ddlType.SelectedValue = info.CaseTypeId.ToString();
                 this.hidInfoId.Value = infoid.ToString();
-                this.divfile.Visible = false;
                 this.ddlType.Visible = false;
+                this.tbFile.Visible = false;
             }
             else
             {
@@ -43,6 +43,7 @@ namespace XYECOM.Web.Creditor
                 this.ddlType.DataValueField = "Id";
                 this.ddlType.DataBind();
                 this.ddlType.Items.Insert(0, new ListItem("默认分类", "0"));
+                this.tbFile.Visible = true;
             }
         }
 

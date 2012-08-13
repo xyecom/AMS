@@ -30,6 +30,10 @@ namespace XYECOM.Web.AppCode
         {
             string filePath = string.Empty;
 
+            if (string.IsNullOrEmpty(file.FileName))
+            {
+                return file.FileName;
+            }
 
             string filename = Path.GetFileName(file.FileName);
             string fileFormat = Path.GetExtension(file.FileName).Substring(1);

@@ -83,7 +83,15 @@ namespace XYECOM.Web.Creditor
             if (string.IsNullOrEmpty(hidUserId))
             {
                 //add
-                regInfo.LoginName = this.txtLoginName.Text;
+                string loginName = this.txtLoginName.Text;
+
+                if (userRegBll.IsExistTheUserName(loginName))
+                {
+                    GotoMsgBoxPageForDynamicPage("该登陆名已存在！", 2, "/Creditor/EditPartInfo.aspx");
+                    return;
+                }
+
+                regInfo.LoginName = loginName;
                 regInfo.IsPrimary = false;
                 regInfo.Password = Core.SecurityUtil.MD5("000000", XYECOM.Configuration.Security.Instance.Md5value);
                 Model.ResisterUserReturnValue returnvalue = userRegBll.AddPart(regInfo);

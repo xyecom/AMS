@@ -4,6 +4,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using XYECOM.Web.AppCode;
 
 namespace XYECOM.Web.Creditor
 {
@@ -48,10 +49,20 @@ namespace XYECOM.Web.Creditor
 
             long uid = XYECOM.Core.MyConvert.GetInt64(btn.CommandArgument);
 
-            //判断是否有 抵债或债权信息
+            //判断是否有 抵债或债权信息 判断是否有 档案信息            
+            int caseCount = XYECOM.Core.MyConvert.GetInt32(Utitl.GetInfoCount("CaseInfo", "PartId=" + uid).ToString());
+            int foreCount = XYECOM.Core.MyConvert.GetInt32(Utitl.GetInfoCount("ForeclosedInfo", "DepartmentId=" + uid).ToString());
+            int creditCount = XYECOM.Core.MyConvert.GetInt32(Utitl.GetInfoCount("CreditInfo", "DepartId=" + uid).ToString());
+            if (caseCount > 0 || foreCount > 0 || creditCount > 0)
+            {
+                GotoMsgBoxPageForDynamicPage("该部门下存在债权、抵债或档案信息，不能删除！", 2, "/Creditor/PartList.aspx");
+                return;
+            }
 
-            //判断是否有 档案信息
+            XYECOM.Business.UserReg ur = new XYECOM.Business.UserReg();
+            ur.Delete(uid.ToString());
 
+            BindData();
         }
     }
 }

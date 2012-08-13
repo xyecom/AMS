@@ -10,6 +10,30 @@
     <link href="/Other/css/style.css" rel="stylesheet" type="text/css" />
     <script src="/Other/js/zu.js" type="text/javascript"></script>
     <script src="/Other/js/update8.js" type="text/javascript"></script>
+    <style type="text/css">
+        .style1
+        {
+            width: 220px;
+            text-align: left;
+            padding-left: 4px;
+            height: 25px;
+        }
+        .style2
+        {
+            width: 100px;
+            height: 25px;
+        }
+        .style3
+        {
+            width: 90px;
+            height: 25px;
+        }
+        .style4
+        {
+            width: 60px;
+            height: 25px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -140,7 +164,8 @@
                                 <ItemTemplate>
                                     <tr>
                                         <td class="tdtitle">
-                                            <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>' ToolTip='<%# Eval("Title") %>'><%# GetTitle(Eval("Title"))%></asp:HyperLink>
+                                            <asp:HyperLink ID="hlShowTender" runat="server" NavigateUrl='<%# "/CreditInfoDetail.aspx?Id=" + Eval("CreditId") %>'
+                                                ToolTip='<%# Eval("Title") %>'><%# GetTitle(Eval("Title"))%></asp:HyperLink>
                                         </td>
                                         <td class="tdprice">
                                             ￥<%# Eval("Arrears")%>
@@ -157,33 +182,149 @@
                                     </tr>
                                 </ItemTemplate>
                             </asp:Repeater>
+<%--                            <tr>
+                                <td class="tdtitle">
+                                    <a id="dlCreditList_ctl00_hlShowTender" title="测试2" href="/CreditInfoDetail.aspx?Id=20">
+                                        测试2</a>
+                                </td>
+                                <td class="tdprice">
+                                    ￥6.00
+                                </td>
+                                <td class="tdarea">
+                                    陕西,咸阳市
+                                </td>
+                                <td class="tdtime">
+                                    2012-08-11
+                                </td>
+                                <td class="tdnumber">
+                                    0
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdtitle">
+                                    <a id="dlCreditList_ctl01_hlShowTender" title="测试1" href="/CreditInfoDetail.aspx?Id=19">
+                                        测试1</a>
+                                </td>
+                                <td class="tdprice">
+                                    ￥7.00
+                                </td>
+                                <td class="tdarea">
+                                    陕西,咸阳市
+                                </td>
+                                <td class="tdtime">
+                                    2012-08-11
+                                </td>
+                                <td class="tdnumber">
+                                    0
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdtitle">
+                                    <a id="dlCreditList_ctl02_hlShowTender" title="ss" href="/CreditInfoDetail.aspx?Id=18">
+                                        ss</a>
+                                </td>
+                                <td class="tdprice">
+                                    ￥512.01
+                                </td>
+                                <td class="tdarea">
+                                    北京
+                                </td>
+                                <td class="tdtime">
+                                    2012-07-31
+                                </td>
+                                <td class="tdnumber">
+                                    0
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdtitle">
+                                    <a id="dlCreditList_ctl03_hlShowTender" title="热热热热热热热热热热v" href="/CreditInfoDetail.aspx?Id=17">
+                                        热热热热热热热热热热v</a>
+                                </td>
+                                <td class="tdprice">
+                                    ￥4.00
+                                </td>
+                                <td class="tdarea">
+                                    安徽
+                                </td>
+                                <td class="tdtime">
+                                    2012-07-31
+                                </td>
+                                <td class="tdnumber">
+                                    0
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdtitle">
+                                    <a id="dlCreditList_ctl04_hlShowTender" title="我饿的" href="/CreditInfoDetail.aspx?Id=9">
+                                        我饿的</a>
+                                </td>
+                                <td class="tdprice">
+                                    ￥4.00
+                                </td>
+                                <td class="tdarea">
+                                    内蒙
+                                </td>
+                                <td class="tdtime">
+                                    2012-07-27
+                                </td>
+                                <td class="tdnumber">
+                                    0
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdtitle">
+                                    <a id="dlCreditList_ctl05_hlShowTender" title="写欠条用错多音字“还” 2万元打水漂" href="/CreditInfoDetail.aspx?Id=6">
+                                        写欠条用错多音字“还” 2万元...</a>
+                                </td>
+                                <td class="tdprice">
+                                    ￥30000.00
+                                </td>
+                                <td class="tdarea">
+                                    湖北
+                                </td>
+                                <td class="tdtime">
+                                    2012-07-25
+                                </td>
+                                <td class="tdnumber">
+                                    0
+                                </td>
+                            </tr>--%>
                         </table>
-                        <div>
-                            <p style="text-align: center;">
-                                <asp:Label ID="labCreditMessage" runat="server" ForeColor="Red"></asp:Label></p>
-                        </div>
+                    </div>
+                    <div>
+                        <p style="text-align: center;">
+                            <asp:Label ID="labCreditMessage" runat="server" ForeColor="Red"></asp:Label></p>
                     </div>
                     <script type="text/javascript">
-                            function startmarquee(lh, speed, delay, index) 
-                            { 
-                                var t; 
-                                var p = false; 
-                                var o = document.getElementById("marqueebox"  + index); o.innerHTML += o.innerHTML; 
-                                o.onmouseover = function () 
-                                    {
-                                        p = true 
-                                     } 
-                                 o.onmouseout= function () { p = false } o.scrollTop = 0; function start() { t = setInterval(scrolling,
-                                speed); if (!p) { o.scrollTop += 1; } } function scrolling() { if (o.scrollTop %
-                                lh != 0) { o.scrollTop += 1; if (o.scrollTop >= o.scrollHeight / 2) o.scrollTop
-                                = 0; } else { clearInterval(t); setTimeout(start, delay); } } setTimeout(start,
-                                delay); 
-                            } 
-                            startmarquee(25, 40, 0, 1); 
+                        function startmarquee(lh, speed, delay, index) {
+                            var t;
+                            var p = false;
+                            var o = document.getElementById("marqueebox" + index);
+                            o.innerHTML += o.innerHTML;
+                            o.onmouseover = function () { p = true }
+                            o.onmouseout = function () { p = false }
+                            o.scrollTop = 0;
+                            function start() {
+                                t = setInterval(scrolling, speed);
+                                if (!p) { o.scrollTop += 1; }
+                            }
+                            function scrolling() {
+                                if (o.scrollTop % lh != 0) {
+                                    o.scrollTop += 1;
+                                    if (o.scrollTop >= o.scrollHeight / 2) o.scrollTop = 0;
+                                } else {
+                                    clearInterval(t);
+                                    setTimeout(start, delay);
+                                }
+                            }
+                            setTimeout(start, delay);
+                        }
+                        startmarquee(25, 40, 0, 1);
                     </script>
                 </div>
                 <!--left3 结束-->
-                <div style="width: 730px; height: 100p; margin-top: 5px; margin-left: 3px">
+                <div style="width: 730px; height: 100px; margin-top: 5px; margin-left: 3px">
                     <img src="/Other/images/5160202_091214089001_2.gif" />
                 </div>
                 <!--left4开始-->
@@ -241,7 +382,7 @@
                 <div id="right1">
                     <strong style="margin-left: 20px;">快速了解包青天</strong>
                     <div class="qul">
-                        <ul>                           
+                        <ul>
                             <li><font>【了解本网】</font><a href="aboutus.htm" target="_blank"> 包青天债权管理网简介</a></li>
                             <li><font>【新手攻略】</font><a href="js.htm" target="_blank"> 如何快速定位自己的角色</a></li>
                             <li><font>【新手攻略】</font><a href="hzq.htm" target="_blank"> 债权人如何对外发布债权信息</a></li>
@@ -359,9 +500,10 @@
                 </table>
             </div>
             <p>
-                <a href="map.htm" target="_blank">网站地图</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="aboutus.htm" target="_blank">关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
-                    href="">合作洽谈</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">客户手册</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
-                        href="">客服中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">加入我们</a></p>
+                <a href="map.htm" target="_blank">网站地图</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="aboutus.htm"
+                    target="_blank">关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">合作洽谈</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                        href="">客户手册</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">客服中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                            href="">加入我们</a></p>
             <p>
                 网站24小时服务热线：400-100-1010 传真：029-12345678 地址：陕西省西安市高新园区一号大厦3楼</p>
             <p>
@@ -369,9 +511,6 @@
         </div>
         <!--footer结束-->
     </div>
-
-
-
     </form>
 </body>
 </html>

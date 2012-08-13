@@ -33,6 +33,7 @@ namespace XYECOM.Web.Creditor
 
             if (ept != null)
             {
+                this.hidInfoId.Value = ept.Id.ToString();
                 this.txtName.Text = ept.PtName;
                 this.txtRemark.Text = ept.Reamrk;
             }
